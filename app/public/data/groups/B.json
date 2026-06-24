@@ -18,7 +18,8 @@
       "form": "DWW",
       "status": "advanced",
       "maxPts": 7,
-      "confirmedFirst": true
+      "confirmedFirst": true,
+      "confirmedSecond": false
     },
     {
       "rank": 2,
@@ -37,7 +38,8 @@
       "form": "DWL",
       "status": "advanced",
       "maxPts": 4,
-      "confirmedFirst": false
+      "confirmedFirst": false,
+      "confirmedSecond": true
     },
     {
       "rank": 3,
@@ -55,7 +57,8 @@
       "pts": 4,
       "form": "DLW",
       "maxPts": 4,
-      "confirmedFirst": false
+      "confirmedFirst": false,
+      "confirmedSecond": false
     },
     {
       "rank": 4,
@@ -74,7 +77,8 @@
       "form": "DLL",
       "status": "eliminated",
       "maxPts": 1,
-      "confirmedFirst": false
+      "confirmedFirst": false,
+      "confirmedSecond": false
     }
   ],
   "remaining": 0,

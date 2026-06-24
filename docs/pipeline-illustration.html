@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WC2026 Pipeline — Score Update Logic</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020617;color:#e2e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:40px 24px 80px}
+
+/* Header */
+header{text-align:center;margin-bottom:48px}
+header h1{font-size:28px;font-weight:700;background:linear-gradient(135deg,#22d3ee,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+header p{color:#94a3b8;font-size:14px;font-family:'JetBrains Mono',monospace}
+header .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#34d399;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Sections */
+.section{margin-bottom:36px}
+.section-title{font-size:18px;font-weight:600;color:#22d3ee;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-title .tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+.tag-data{background:rgba(76,29,149,0.3);color:#a78bfa;border:1px solid rgba(167,139,250,.3)}
+.tag-code{background:rgba(8,51,68,0.3);color:#22d3ee;border:1px solid rgba(34,211,238,.3)}
+.tag-rule{background:rgba(120,53,15,0.3);color:#fbbf24;border:1px solid rgba(251,191,36,.3)}
+.tag-step{background:rgba(6,78,59,0.3);color:#34d399;border:1px solid rgba(52,211,153,.3)}
+
+/* Pipeline flow */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:32px;padding:16px;background:rgba(15,23,42,.5);border-radius:12px;border:1px solid #1e293b}
+.flow-box{padding:10px 16px;border-radius:8px;font-size:12px;font-weight:500;font-family:'JetBrains Mono',monospace;text-align:center;min-width:80px}
+.flow-box.input{background:rgba(8,51,68,.4);border:1.5px solid #22d3ee;color:#22d3ee}
+.flow-box.step{background:rgba(6,78,59,.3);border:1.5px solid #34d399;color:#34d399}
+.flow-box.output{background:rgba(76,29,149,.3);border:1.5px solid #a78bfa;color:#a78bfa}
+.flow-box.decision{background:rgba(120,53,15,.3);border:1.5px solid #fbbf24;color:#fbbf24}
+.flow-arrow{color:#475569;font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:rgba(15,23,42,.6);border:1px solid #1e293b;border-radius:12px;padding:20px;transition:border-color .2s}
+.card:hover{border-color:#334155}
+.card.full{grid-column:1/-1}
+.card h3{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3 .badge{font-size:10px;padding:1px 7px;border-radius:3px;font-weight:500}
+.badge-cyan{background:rgba(34,211,238,.15);color:#22d3ee}
+.badge-green{background:rgba(52,211,153,.15);color:#34d399}
+.badge-violet{background:rgba(167,139,250,.15);color:#a78bfa}
+.badge-amber{background:rgba(251,191,36,.15);color:#fbbf24}
+.badge-rose{background:rgba(251,113,133,.15);color:#fb7185}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:12px;font-family:'JetBrains Mono',monospace}
+th{text-align:left;padding:6px 10px;border-bottom:1px solid #1e293b;color:#64748b;font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:6px 10px;border-bottom:1px solid rgba(30,41,59,.5);color:#cbd5e1}
+tr:hover td{background:rgba(30,41,59,.3)}
+
+/* Code blocks */
+.code{background:rgba(0,0,0,.4);border:1px solid #1e293b;border-radius:8px;padding:14px 16px;font-size:12px;font-family:'JetBrains Mono',monospace;line-height:1.7;color:#94a3b8;overflow-x:auto;white-space:pre;margin-top:10px}
+.code .kw{color:#22d3ee}
+.code .fn{color:#34d399}
+.code .str{color:#a78bfa}
+.code .cm{color:#475569;font-style:italic}
+.code .num{color:#fbbf24}
+.code .hl{background:rgba(34,211,238,.08);display:block}
+
+/* Key-value lists */
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12px;font-family:'JetBrains Mono',monospace}
+.kv dt{color:#64748b;white-space:nowrap}
+.kv dd{color:#cbd5e1}
+
+/* Legend */
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;padding:12px 16px;background:rgba(15,23,42,.4);border-radius:8px;font-size:11px}
+.legend-item{display:flex;align-items:center;gap:6px;color:#94a3b8}
+.legend-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid}
+.legend-dot.cyan{background:rgba(34,211,238,.2);border-color:#22d3ee}
+.legend-dot.green{background:rgba(52,211,153,.2);border-color:#34d399}
+.legend-dot.violet{background:rgba(167,139,250,.2);border-color:#a78bfa}
+.legend-dot.amber{background:rgba(251,191,36,.2);border-color:#fbbf24}
+.legend-dot.rose{background:rgba(251,113,133,.2);border-color:#fb7185}
+
+/* Timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:linear-gradient(to bottom,#22d3ee,#34d399,#a78bfa)}
+.timeline-item{position:relative;margin-bottom:20px;padding:14px 18px;background:rgba(15,23,42,.5);border:1px solid #1e293b;border-radius:10px}
+.timeline-item::before{content:'';position:absolute;left:-22px;top:18px;width:10px;height:10px;border-radius:50%;border:2px solid;background:#020617}
+.timeline-item:nth-child(1)::before{border-color:#22d3ee}
+.timeline-item:nth-child(2)::before{border-color:#34d399}
+.timeline-item:nth-child(3)::before{border-color:#a78bfa}
+.timeline-item:nth-child(4)::before{border-color:#fbbf24}
+.timeline-item:nth-child(5)::before{border-color:#fb7185}
+.timeline-item h4{font-size:13px;font-weight:600;margin-bottom:6px;color:#e2e8f0}
+.timeline-item .meta{font-size:11px;color:#64748b;margin-bottom:8px;font-family:'JetBrains Mono',monospace}
+.timeline-item p{font-size:12px;color:#94a3b8;line-height:1.6}
+
+@media(max-width:768px){.card-grid{grid-template-columns:1fr}.flow{flex-direction:column;align-items:stretch}.flow-arrow{transform:rotate(90deg);text-align:center}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div><span class="dot"></span> WC2026 Pipeline v2</div>
+  <h1>Score Update &amp; Data Flow Logic</h1>
+  <p>pipeline/update.mjs → app/public/data/*.json → deploy</p>
+</header>
+
+<!-- 1. Pipeline Flow Overview -->
+<section class="section">
+  <div class="section-title">
+    Pipeline Overview
+    <span class="tag tag-step">Step 0–7</span>
+  </div>
+  <div class="flow">
+    <div class="flow-box input">fetch-scores</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box step">update.mjs</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box output">phase.json</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box output">groups/*.json</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box output">matches.json</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box output">top-scorers.json</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box output">third-placed.json</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box output">bracket.json</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-box step">resolve → matches.json</div>
+  </div>
+  <div class="legend">
+    <span class="legend-item"><span class="legend-dot cyan"></span> Input / Fetch</span>
+    <span class="legend-item"><span class="legend-dot green"></span> Pipeline Step</span>
+    <span class="legend-item"><span class="legend-dot violet"></span> Generated JSON</span>
+    <span class="legend-item"><span class="legend-dot amber"></span> Decision / Rule</span>
+  </div>
+</section>
+
+<!-- 2. Score Fetch -->
+<section class="section">
+  <div class="section-title">
+    <span class="tag tag-code">Step 0</span> Score Fetch
+  </div>
+  <div class="card full">
+    <h3><span class="badge badge-cyan">scripts/fetch-scores.mjs</span></h3>
+    <table>
+      <tr><th>Source</th><td>openfootball (live scores API)</td></tr>
+      <tr><th>Destination</th><td><code>sample-data.json</code> — the single source of truth</td></tr>
+      <tr><th>Logic</th><td>Pulls raw match data, updates scores for matches with new results. Skips already-final matches. Reports count of updated scores.</td></tr>
+      <tr><th>Dry run safe</th><td>Yes — only overwrites scores, never deletes data</td></tr>
+    </table>
+    <div class="code"><span class="cm">// 4 scores updated in sample-data.json</span>
+   104 matches in source, 50 with scores</div>
+  </div>
+</section>
+
+<!-- 3. Group Standings -->
+<section class="section">
+  <div class="section-title">
+    <span class="tag tag-code">Step 2</span> Group Standings &amp; A/E Flags
+    <span class="tag tag-rule">Key Logic</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3><span class="badge badge-cyan">Complete Groups (n=0)</span></h3>
+      <p style="font-size:12px;color:#94a3b8;margin-bottom:10px;line-height:1.5">When all 6 matches are played, no simulation needed — standings are final.</p>
+      <div class="code">if (n === 0) {
+  <span class="cm">// Use final sorted standings directly</span>
+  sorted.forEach((tid, idx) => {
+    if (idx &lt; 2) advanced.add(tid)       <span class="cm">// rank 1–2</span>
+    if (idx &gt;= 3) eliminated.add(tid)    <span class="cm">// rank 4</span>
+  })
+  confirmedFirst.add(sorted[0])           <span class="cm">// rank 1 is winner</span>
+  scenarios = 1
+}</div>
+      <div class="kv" style="margin-top:8px">
+        <dt>Result:</dt><dd>Switzerland ✅ advanced · Canada ✅ advanced · BIH ⏳ pending 3rd · Qatar ❌ eliminated</dd>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-amber">Incomplete Groups (n&gt;0)</span></h3>
+      <p style="font-size:12px;color:#94a3b8;margin-bottom:10px;line-height:1.5">For groups with remaining matches, run a 3ⁿ scenario simulation over all possible results.</p>
+      <div class="code"><span class="cm">// 3ⁿ simulation over remaining matches</span>
+<span class="kw">for</span> (<span class="kw">const</span> results of allResults) {
+  <span class="cm">// Apply results to get projected points</span>
+  <span class="kw">const</span> aheadd = teamIds.filter(o =&gt; {
+    <span class="kw">if</span> (fp[o] &gt; tp) <span class="kw">return true</span>
+    <span class="kw">if</span> (fp[o] === tp)
+      <span class="kw">return</span> isAheadOnTiebreakers(...)
+  }).length
+  <span class="kw">if</span> (aheadd &lt; 3) canFinishTop3 = <span class="kw">true</span>
+  <span class="kw">if</span> (aheadd &gt;= 2) canFinishOutsideTop2 = <span class="kw">true</span>
+}</div>
+    </div>
+  </div>
+
+  <!-- Tiebreaker Chain -->
+  <div class="card full" style="margin-top:16px">
+    <h3><span class="badge badge-green">Tiebreaker Chain</span> <code>isAheadOnTiebreakers(a, b, …)</code></h3>
+    <p style="font-size:12px;color:#94a3b8;margin-bottom:10px;line-height:1.5">When two teams are tied on points, the full tiebreaker chain is applied in order:</p>
+    <table>
+      <tr><th>#</th><th>Tiebreaker</th><th>Example (CAN vs BIH, Group B)</th></tr>
+      <tr><td>1</td><td><strong>H2H pts</strong> (head-to-head points)</td><td>CAN 1–1 BIH → CAN 1pt, BIH 1pt → tied</td></tr>
+      <tr><td>2</td><td><strong>H2H GD</strong> (head-to-head goal diff)</td><td>0–0 in H2H → tied</td></tr>
+      <tr><td>3</td><td><strong>H2H GF</strong> (head-to-head goals for)</td><td>1–1 in H2H → tied</td></tr>
+      <tr><td>4</td><td><strong>Overall GD</strong> (group goal difference)</td><td><span style="color:#34d399">CAN +5 &gt; BIH −1 → CAN wins</span></td></tr>
+      <tr><td>5</td><td><strong>Overall GF</strong> (group goals scored)</td><td>CAN 8 &gt; BIH 5 → CAN wins</td></tr>
+      <tr><td>6</td><td><strong>Alphabetical</strong> (deterministic fallback)</td><td>—</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 4. Third-Placed -->
+<section class="section">
+  <div class="section-title">
+    <span class="tag tag-code">Step 5</span> Best Third-Placed
+    <span class="tag tag-rule">Qualification Logic</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3><span class="badge badge-violet">Ranking Sort Order</span></h3>
+      <div class="code">entries.sort((a, b) =&gt;
+  b.pts - a.pts   ||  <span class="cm">// 1. Points (higher)</span>
+  b.gd - a.gd     ||  <span class="cm">// 2. GD (higher)</span>
+  b.gf - a.gf     ||  <span class="cm">// 3. GF (higher)</span>
+  a.ga - b.ga     ||  <span class="cm">// 4. GA (fewer)</span>
+  fpB - fpA       ||  <span class="cm">// 5. Fair play (higher)</span>
+  a.group &gt; b.group   <span class="cm">// 6. Group letter</span>
+)</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-amber">Mathematical Qualification</span></h3>
+      <p style="font-size:12px;color:#94a3b8;margin-bottom:8px;line-height:1.5">Not simply "current top 8". A team is <code>qualified: true</code> only when at most 7 other teams can still reach ≥ its points.</p>
+      <div class="code">entries.forEach((e, i) =&gt; {
+  e.overall_rank = i + 1
+  <span class="kw">const</span> threats = entries.filter(o =&gt; {
+    <span class="kw">const</span> maxPts = o.pts + (o.thirdLocked ? 0 : 3)
+    <span class="kw">return</span> maxPts &gt;= e.pts
+  }).length
+  e.qualified = threats &lt; 8  <span class="cm">// ≤ 7 threats → locked</span>
+})</div>
+    </div>
+  </div>
+
+  <div class="card full" style="margin-top:16px">
+    <h3><span class="badge badge-rose">thirdLocked Flag</span></h3>
+    <p style="font-size:12px;color:#94a3b8;margin-bottom:8px;line-height:1.5">Set when a team is confirmed as 3rd place in their group — either because the group is complete, or the team has an unassailable position.</p>
+    <div class="code">thirdLocked: third.status != <span class="kw">null</span> || allPlayed</div>
+    <p style="font-size:11px;color:#64748b;margin-top:6px">Note: <code>!= null</code> catches both <code>null</code> and <code>undefined</code> (vs <code>!== null</code> which misses undefined).</p>
+  </div>
+
+  <!-- Example Third-Placed Table -->
+  <div class="card full" style="margin-top:16px">
+    <h3><span class="badge badge-violet">Current Third-Placed Rankings</span></h3>
+    <table>
+      <tr><th>Rank</th><th>Team</th><th>Grp</th><th>Pts</th><th>GD</th><th>Max</th><th>Qualified</th><th>Locked</th><th>Note</th></tr>
+      <tr>
+        <td>1</td><td>Bosnia &amp; Hertz. 🇧🇦</td><td>B</td><td>4</td><td>−1</td><td>4</td>
+        <td style="color:#fb7185">false</td><td style="color:#34d399">true</td>
+        <td style="color:#64748b;font-size:11px">10 teams can reach ≥ 4pts</td>
+      </tr>
+      <tr>
+        <td>2</td><td>Sweden 🇸🇪</td><td>F</td><td>3</td><td>0</td><td>6</td>
+        <td style="color:#fb7185">false</td><td style="color:#fb7185">false</td>
+        <td style="color:#64748b;font-size:11px">Still has 1 match left</td>
+      </tr>
+      <tr>
+        <td colspan="9" style="color:#64748b;font-size:11px;text-align:center;padding:10px">
+          ⚡ 8 of 12 third-placed teams qualify for R32 · Combination matrix (495 rows) assigns to bracket slots when all groups complete
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- 5. Bracket Resolution -->
+<section class="section">
+  <div class="section-title">
+    <span class="tag tag-code">Step 6–7</span> Bracket Computation &amp; Resolution
+    <span class="tag tag-rule">Placeholder Safety</span>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3><span class="badge badge-cyan">Bracket JSON (Step 6)</span></h3>
+      <div class="code"><span class="cm">// bracket.json — 6 rounds × 32 matches</span>
+{
+  <span class="str">"r32"</span>: [
+    { matchId: 73, team1Id: <span class="str">"2A"</span>,
+      team2Id: <span class="str">"CAN"</span>,
+      team1Resolved: <span class="kw">false</span>,
+      team2Resolved: <span class="kw">true</span> },
+    ...
+  ]
+}</div>
+      <p style="font-size:11px;color:#64748b;margin-top:6px">Resolved teams show real names (e.g. CAN, SUI, ARG). Placeholders keep original format (e.g. 2A, 3E/F/G/I/J, W73).</p>
+    </div>
+
+    <div class="card">
+      <h3><span class="badge badge-green">Matches Resolution (Step 7)</span></h3>
+      <p style="font-size:12px;color:#94a3b8;margin-bottom:8px;line-height:1.5">After bracket computation, resolved team names are written <strong>back</strong> into <code>matches.json</code> so other pages (Schedule, MatchPage) show real names instead of placeholders.</p>
+      <div class="code"><span class="cm">// Build resolution map from bracket data</span>
+<span class="kw">const</span> resolvedMap = {}
+<span class="kw">for</span> (<span class="kw">const</span> ms of Object.values(bracket.rounds)) {
+  <span class="kw">for</span> (<span class="kw">const</span> bm of ms) {
+    resolvedMap[bm.matchId] = {
+      team1Id: bm.team1Id,
+      team2Id: bm.team2Id
+    }
+  }
+}
+
+<span class="cm">// Apply to cleanMatches</span>
+<span class="kw">for</span> (<span class="kw">const</span> cm of cleanMatches) {
+  <span class="kw">const</span> r = resolvedMap[cm.id]
+  <span class="kw">if</span> (r && (r.team1Id !== cm.team1Id
+           || r.team2Id !== cm.team2Id)) {
+    cm.team1Id = r.team1Id
+    cm.team2Id = r.team2Id
+  }
+}</div>
+    </div>
+  </div>
+
+  <div class="card full" style="margin-top:16px">
+    <h3><span class="badge badge-amber">Placeholder Detection — CRITICAL RULE</span></h3>
+    <div class="code"><span class="cm">// ❌ NEVER use this — misses W73, L101, 3A/B/C/D formats</span>
+<span class="hl"><span class="kw">if</span> (/^[1-3][A-L]/.test(teamId)) { ... }</span>
+
+<span class="cm">// ✅ ALWAYS use this — catches ANY ID not in the dataset</span>
+<span class="hl"><span class="kw">if</span> (!teamMap.has(teamId)) { <span class="cm">/* is placeholder */</span> }</span></div>
+    <p style="font-size:12px;color:#94a3b8;margin-top:8px">Placeholder formats encountered in bracket data:</p>
+    <table>
+      <tr><th>Format</th><th>Example</th><th>Meaning</th></tr>
+      <tr><td>N(group)</td><td><code>1A</code>, <code>2J</code>, <code>3L</code></td><td>1st/2nd/3rd place from group A–L</td></tr>
+      <tr><td>W(match)</td><td><code>W73</code>, <code>W101</code></td><td>Winner of match 73–102</td></tr>
+      <tr><td>L(match)</td><td><code>L101</code>, <code>L102</code></td><td>Loser of match 101–102 (3rd place match)</td></tr>
+      <tr><td>3A/B/C/D</td><td><code>3A/B/C/D/F</code></td><td>Complex: 3rd place from any of groups A/B/C/D/F</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 6. Full Pipeline Timeline -->
+<section class="section">
+  <div class="section-title">
+    <span class="tag tag-step">End-to-End</span> Data Flow Timeline
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>🔄 Score Fetch</h4>
+      <div class="meta">node scripts/fetch-scores.mjs</div>
+      <p>Pulls live scores from openfootball → writes updated scores to <code>sample-data.json</code>. Reports how many scores changed.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>📐 Phase Detection</h4>
+      <div class="meta">detectPhase(matches) → phase.json</div>
+      <p>Determines current tournament phase: <code>group</code>, <code>r32</code>, <code>r16</code>, <code>qf</code>, <code>sf</code>, <code>third</code>, <code>final</code>. Checks if all group matches are complete and if all groups are done.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>📊 Group Standings</h4>
+      <div class="meta">computeStandings(A–L) → groups/*.json</div>
+      <p>For each of 12 groups: compute stats, apply tiebreaker chain, run 3ⁿ scenario simulation (if incomplete), assign <code>advanced</code> / <code>eliminated</code> / <code>confirmedFirst</code> flags. <strong>Complete groups skip simulation.</strong></p>
+    </div>
+    <div class="timeline-item">
+      <h4>⚽ Top Scorers + Third-Placed</h4>
+      <div class="meta">computeTopScorers() + computeThirdPlaced()</div>
+      <p>Top scorers: aggregate goals from all played matches. Third-placed: rank 12 teams across groups, determine mathematical qualification, flag locked positions.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>🏆 Bracket + Resolution</h4>
+      <div class="meta">computeBracket() → bracket.json → resolve matches.json</div>
+      <p>Build 32-match knockout bracket (6 rounds). Resolve known team IDs (confirmed firsts, completed groups). Then propagate resolved names back into <code>matches.json</code> for Schedule/MatchPage display.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="text-align:center;padding:24px 0;border-top:1px solid #1e293b;color:#475569;font-size:12px;font-family:'JetBrains Mono',monospace">
+  WC2026 Pipeline v2 · <span style="color:#22d3ee">compute-on-update</span> · Generated from pipeline/update.mjs
+</footer>
+
+</div>
+</body>
+</html>

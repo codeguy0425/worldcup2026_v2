@@ -84,7 +84,7 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
 
   const n = remaining.length
   let scenarios
-  const advanced = new Set(), eliminated = new Set(), confirmedFirst = new Set()
+  const advanced = new Set(), eliminated = new Set(), confirmedFirst = new Set(), confirmedSecond = new Set()
 
   if (n === 0) {
     // Group complete — use final sorted standings directly (no simulation needed)
@@ -93,6 +93,7 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
       if (idx >= 3) eliminated.add(tid)
     })
     confirmedFirst.add(sorted[0])
+    if (sorted.length >= 2) confirmedSecond.add(sorted[1])
     scenarios = 1
   } else {
     // 3ⁿ simulation for incomplete groups
@@ -143,7 +144,7 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
     if (advanced.has(tid)) status = 'advanced'
     else if (eliminated.has(tid)) status = 'eliminated'
     const maxPts = s.pts + remaining.filter(m => m.team1Id === tid || m.team2Id === tid).length * 3
-    return { rank: idx + 1, teamId: tid, team: s.team, teamZh: s.teamZh, flag: s.flag, played: s.played, won: s.won, drawn: s.drawn, lost: s.lost, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts, form: s.form.join(''), status, maxPts, confirmedFirst: confirmedFirst.has(tid) || false }
+    return { rank: idx + 1, teamId: tid, team: s.team, teamZh: s.teamZh, flag: s.flag, played: s.played, won: s.won, drawn: s.drawn, lost: s.lost, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts, form: s.form.join(''), status, maxPts, confirmedFirst: confirmedFirst.has(tid) || false, confirmedSecond: confirmedSecond.has(tid) || false }
   })
 
   return { group: groupLetter, standings, remaining: remaining.length, scenarios }
