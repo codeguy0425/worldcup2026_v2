@@ -1,9 +1,11 @@
 /**
  * Third-placed — collect 3rd from all groups, sort, mark top 8.
+ *
+ * @param {Object}   fairPlayScores  - Optional { teamId: <fairPlayPoints> }, higher = better conduct
  */
 import { computeStandings } from './standings.mjs'
 
-export function computeThirdPlaced(allMatches, teamsMap, groupLabels) {
+export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlayScores = {}) {
   const entries = []
 
   for (const gl of groupLabels) {
@@ -24,12 +26,17 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels) {
     })
   }
 
-  // Sort: Pts → GD → GF → GA (fewer conceded better) → group letter (deterministic)
+  // Sort: Pts → GD → GF → GA → Fair Play (higher better) → group letter (deterministic)
   entries.sort((a, b) => {
     const cmp = b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.ga - b.ga
     if (cmp !== 0) return cmp
-    // Pts, GD, GF, GA all equal — would need fair play data from FIFA
-    console.warn(`⚠️  Fair play tiebreaker needed: ${a.group} and ${b.group} 3rd-placed teams are tied on all criteria`)
+    const fpA = fairPlayScores[a.teamId] ?? 0
+    const fpB = fairPlayScores[b.teamId] ?? 0
+    if (fpA !== fpB) return fpB - fpA
+    // Pts, GD, GF, GA, Fair Play all equal
+    if (fpA === 0 && fpB === 0) {
+      console.warn(`⚠️  Fair play tiebreaker needed: ${a.group}(${a.team}) and ${b.group}(${b.team}) 3rd-placed are tied on all criteria — add card data to data/fairplay.json`)
+    }
     return a.group.localeCompare(b.group)
   })
   entries.forEach((e, i) => { e.overall_rank = i + 1; e.qualified = i < 8 })

@@ -74,12 +74,13 @@ function main() {
   console.log(`   ✅ top-scorers.json — ${scorers.length} players (top: ${top ? top.scorer + ' ' + top.goals + 'g' : 'none'})`)
 
   // 5. Third-placed
-  const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels)
+  const fairPlayScores = loadJSON(resolve(ROOT, 'data', 'fairplay.json')).scores || {}
+  const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels, fairPlayScores)
   writeJSON(resolve(DATA_DIR, 'third-placed.json'), { rankings: thirdEntries, qualifyingCount: 8, totalGroups: 12 })
   console.log(`   ✅ third-placed.json — ${thirdEntries.length} entries`)
 
   // 6. Bracket
-  const bracket = computeBracket(matches, teamsMap, groupLabels)
+  const bracket = computeBracket(matches, teamsMap, groupLabels, fairPlayScores)
   writeJSON(resolve(DATA_DIR, 'bracket.json'), bracket)
   const totalBracket = Object.values(bracket.rounds).reduce((s, m) => s + m.length, 0)
   console.log(`   ✅ bracket.json — ${totalBracket} matches across ${Object.keys(bracket.rounds).length} rounds`)

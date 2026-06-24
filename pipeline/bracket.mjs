@@ -46,13 +46,13 @@ function resolveOne(id, standingsResults, thirdEntries, teamsMap, allGroupsCompl
   return id
 }
 
-export function computeBracket(matches, teamsMap, groupLabels) {
+export function computeBracket(matches, teamsMap, groupLabels, fairPlayScores = {}) {
   // Store full results (standings + remaining count)
   const standingsResults = {}
   for (const gl of groupLabels) {
     standingsResults[gl] = computeStandings(gl, matches, teamsMap)
   }
-  const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels)
+  const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels, fairPlayScores)
   const allGroupsComplete = groupLabels.every(gl => (standingsResults[gl]?.remaining ?? 1) === 0)
 
   // Compute FIFA combination matrix assignment when all groups are complete
