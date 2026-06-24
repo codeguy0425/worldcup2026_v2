@@ -227,10 +227,9 @@ tr:hover td{background:rgba(30,41,59,.3)}
       <div class="code">entries.sort((a, b) =&gt;
   b.pts - a.pts   ||  <span class="cm">// 1. Points (higher)</span>
   b.gd - a.gd     ||  <span class="cm">// 2. GD (higher)</span>
-  b.gf - a.gf     ||  <span class="cm">// 3. GF (higher)</span>
-  a.ga - b.ga     ||  <span class="cm">// 4. GA (fewer)</span>
-  fpB - fpA       ||  <span class="cm">// 5. Fair play (higher)</span>
-  a.group &gt; b.group   <span class="cm">// 6. Group letter</span>
+  b.gf - a.gf          <span class="cm">// 3. GF (higher)</span>
+                          <span class="cm">// 4. Fair play (higher, from data/fairplay.json)</span>
+                          <span class="cm">// 5. Drawing of lots (teamId, never group letter)</span>
 )</div>
     </div>
 

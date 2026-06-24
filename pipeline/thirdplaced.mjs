@@ -27,18 +27,19 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     })
   }
 
-  // Sort: Pts → GD → GF → GA → Fair Play (higher better) → group letter (deterministic)
+  // Sort: Pts → GD → GF → Fair Play (higher better) → drawing of lots (use teamId for deterministic order only, never group letter)
   entries.sort((a, b) => {
-    const cmp = b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.ga - b.ga
+    const cmp = b.pts - a.pts || b.gd - a.gd || b.gf - a.gf
     if (cmp !== 0) return cmp
     const fpA = fairPlayScores[a.teamId] ?? 0
     const fpB = fairPlayScores[b.teamId] ?? 0
     if (fpA !== fpB) return fpB - fpA
-    // Pts, GD, GF, GA, Fair Play all equal
+    // Pts, GD, GF, Fair Play all equal — would be drawing of lots per FIFA regs
+    // Use teamId for deterministic sorting (not group letter — no alphabetical bias)
     if (fpA === 0 && fpB === 0) {
       console.warn(`⚠️  Fair play tiebreaker needed: ${a.group}(${a.team}) and ${b.group}(${b.team}) 3rd-placed are tied on all criteria — add card data to data/fairplay.json`)
     }
-    return a.group.localeCompare(b.group)
+    return a.teamId < b.teamId ? -1 : 1
   })
 
   // Assign ranks and determine mathematical qualification / elimination
