@@ -2,6 +2,23 @@
   "rankings": [
     {
       "overall_rank": 1,
+      "group": "B",
+      "teamId": "BIH",
+      "team": "Bosnia & Herzegovina",
+      "flag": "🇧🇦",
+      "played": 3,
+      "won": 1,
+      "drawn": 1,
+      "lost": 1,
+      "gf": 5,
+      "ga": 6,
+      "gd": -1,
+      "pts": 4,
+      "qualified": true,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 2,
       "group": "F",
       "teamId": "SWE",
       "team": "Sweden",
@@ -18,7 +35,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 2,
+      "overall_rank": 3,
       "group": "C",
       "teamId": "SCO",
       "team": "Scotland",
@@ -35,7 +52,24 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 3,
+      "overall_rank": 4,
+      "group": "L",
+      "teamId": "CRO",
+      "team": "Croatia",
+      "flag": "🇭🇷",
+      "played": 2,
+      "won": 1,
+      "drawn": 0,
+      "lost": 1,
+      "gf": 3,
+      "ga": 4,
+      "gd": -1,
+      "pts": 3,
+      "qualified": true,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 5,
       "group": "J",
       "teamId": "ALG",
       "team": "Algeria",
@@ -52,7 +86,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 4,
+      "overall_rank": 6,
       "group": "D",
       "teamId": "PAR",
       "team": "Paraguay",
@@ -69,7 +103,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 5,
+      "overall_rank": 7,
       "group": "H",
       "teamId": "CPV",
       "team": "Cape Verde",
@@ -86,7 +120,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 6,
+      "overall_rank": 8,
       "group": "G",
       "teamId": "BEL",
       "team": "Belgium",
@@ -103,24 +137,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 7,
-      "group": "K",
-      "teamId": "COD",
-      "team": "DR Congo",
-      "flag": "🇨🇩",
-      "played": 1,
-      "won": 0,
-      "drawn": 1,
-      "lost": 0,
-      "gf": 1,
-      "ga": 1,
-      "gd": 0,
-      "pts": 1,
-      "qualified": true,
-      "thirdLocked": true
-    },
-    {
-      "overall_rank": 8,
+      "overall_rank": 9,
       "group": "A",
       "teamId": "CZE",
       "team": "Czech Republic",
@@ -133,11 +150,28 @@
       "ga": 3,
       "gd": -1,
       "pts": 1,
-      "qualified": true,
+      "qualified": false,
       "thirdLocked": true
     },
     {
-      "overall_rank": 9,
+      "overall_rank": 10,
+      "group": "K",
+      "teamId": "COD",
+      "team": "DR Congo",
+      "flag": "🇨🇩",
+      "played": 2,
+      "won": 0,
+      "drawn": 1,
+      "lost": 1,
+      "gf": 1,
+      "ga": 2,
+      "gd": -1,
+      "pts": 1,
+      "qualified": false,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 11,
       "group": "E",
       "teamId": "ECU",
       "team": "Ecuador",
@@ -150,40 +184,6 @@
       "ga": 1,
       "gd": -1,
       "pts": 1,
-      "qualified": false,
-      "thirdLocked": true
-    },
-    {
-      "overall_rank": 10,
-      "group": "B",
-      "teamId": "BIH",
-      "team": "Bosnia & Herzegovina",
-      "flag": "🇧🇦",
-      "played": 2,
-      "won": 0,
-      "drawn": 1,
-      "lost": 1,
-      "gf": 2,
-      "ga": 5,
-      "gd": -3,
-      "pts": 1,
-      "qualified": false,
-      "thirdLocked": true
-    },
-    {
-      "overall_rank": 11,
-      "group": "L",
-      "teamId": "PAN",
-      "team": "Panama",
-      "flag": "🇵🇦",
-      "played": 1,
-      "won": 0,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 0,
-      "ga": 1,
-      "gd": -1,
-      "pts": 0,
       "qualified": false,
       "thirdLocked": true
     },

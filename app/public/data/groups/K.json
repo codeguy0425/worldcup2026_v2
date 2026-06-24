@@ -3,6 +3,25 @@
   "standings": [
     {
       "rank": 1,
+      "teamId": "COL",
+      "team": "Colombia",
+      "teamZh": "哥倫比亞",
+      "flag": "🇨🇴",
+      "played": 2,
+      "won": 2,
+      "drawn": 0,
+      "lost": 0,
+      "gf": 4,
+      "ga": 1,
+      "gd": 3,
+      "pts": 6,
+      "form": "WW",
+      "status": "advanced",
+      "maxPts": 9,
+      "confirmedFirst": false
+    },
+    {
+      "rank": 2,
       "teamId": "POR",
       "team": "Portugal",
       "teamZh": "葡萄牙",
@@ -20,39 +39,21 @@
       "confirmedFirst": false
     },
     {
-      "rank": 2,
-      "teamId": "COL",
-      "team": "Colombia",
-      "teamZh": "哥倫比亞",
-      "flag": "🇨🇴",
-      "played": 1,
-      "won": 1,
-      "drawn": 0,
-      "lost": 0,
-      "gf": 3,
-      "ga": 1,
-      "gd": 2,
-      "pts": 3,
-      "form": "W",
-      "maxPts": 9,
-      "confirmedFirst": false
-    },
-    {
       "rank": 3,
       "teamId": "COD",
       "team": "DR Congo",
       "teamZh": "剛果民主共和國",
       "flag": "🇨🇩",
-      "played": 1,
+      "played": 2,
       "won": 0,
       "drawn": 1,
-      "lost": 0,
+      "lost": 1,
       "gf": 1,
-      "ga": 1,
-      "gd": 0,
+      "ga": 2,
+      "gd": -1,
       "pts": 1,
-      "form": "D",
-      "maxPts": 7,
+      "form": "DL",
+      "maxPts": 4,
       "confirmedFirst": false
     },
     {
@@ -74,6 +75,6 @@
       "confirmedFirst": false
     }
   ],
-  "remaining": 3,
-  "scenarios": 27
+  "remaining": 2,
+  "scenarios": 9
 }

@@ -297,7 +297,26 @@
     "group": "B",
     "groundId": "vancouver",
     "num": 11,
-    "stage": "group"
+    "stage": "group",
+    "score1": 2,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 46,
+        "scorer": "Rubén Vargas",
+        "teamId": "SUI"
+      },
+      {
+        "minute": 57,
+        "scorer": "Johan Manzambi",
+        "teamId": "SUI"
+      },
+      {
+        "minute": 76,
+        "scorer": "Promise David",
+        "teamId": "CAN"
+      }
+    ]
   },
   {
     "id": 12,
@@ -310,7 +329,32 @@
     "group": "B",
     "groundId": "seattle",
     "num": 12,
-    "stage": "group"
+    "stage": "group",
+    "score1": 3,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 29,
+        "scorer": "Kerim Alajbegovic",
+        "teamId": "BIH"
+      },
+      {
+        "minute": 34,
+        "scorer": "Mahmoud Abunada",
+        "teamId": "BIH",
+        "ownGoal": true
+      },
+      {
+        "minute": 42,
+        "scorer": "Hassan Al-Haydos",
+        "teamId": "QAT"
+      },
+      {
+        "minute": 80,
+        "scorer": "Ermin Mahmic",
+        "teamId": "BIH"
+      }
+    ]
   },
   {
     "id": 13,
@@ -1689,7 +1733,16 @@
     "group": "K",
     "groundId": "guadalajara",
     "num": 64,
-    "stage": "group"
+    "stage": "group",
+    "score1": 1,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 76,
+        "scorer": "Daniel Muñoz",
+        "teamId": "COL"
+      }
+    ]
   },
   {
     "id": 65,
@@ -1815,7 +1868,16 @@
     "group": "L",
     "groundId": "toronto",
     "num": 70,
-    "stage": "group"
+    "stage": "group",
+    "score1": 0,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 54,
+        "scorer": "Ante Budimir",
+        "teamId": "CRO"
+      }
+    ]
   },
   {
     "id": 71,
@@ -1850,7 +1912,7 @@
     "time": "03:00",
     "timeUtc": "19:00",
     "team1Id": "2A",
-    "team2Id": "2B",
+    "team2Id": "CAN",
     "group": "",
     "groundId": "los_angeles",
     "num": 73,
@@ -2005,7 +2067,7 @@
     "date": "2026-07-03",
     "time": "11:00",
     "timeUtc": "03:00",
-    "team1Id": "1B",
+    "team1Id": "SUI",
     "team2Id": "3E/F/G/I/J",
     "group": "",
     "groundId": "vancouver",
