@@ -202,13 +202,13 @@ export function MatchPage() {
         </p>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px' }}>
           <div style={{ textAlign: 'right' }}>
-            {isGroupPlaceholder(m.team1Id) ? (
+            {!teamMap.has(m.team1Id) ? (
               <span style={{ fontSize: '36px', lineHeight: 1.2 }}>{t1?.flag || ''}</span>
             ) : (
               <Link to={`/team/${m.team1Id}`} style={{ fontSize: '36px', lineHeight: 1.2, textDecoration: 'none' }}>{t1?.flag || ''}</Link>
             )}
             <br />
-            {isGroupPlaceholder(m.team1Id) ? (
+            {!teamMap.has(m.team1Id) ? (
               <span style={{ fontWeight: 600, fontSize: '16px', color: 'var(--text-muted)' }}>{t1?.name || m.team1Id}</span>
             ) : (
               <Link to={`/team/${m.team1Id}`} style={{ fontWeight: 600, fontSize: '16px', color: 'inherit', textDecoration: 'none' }}>{t1?.name || m.team1Id}</Link>
@@ -218,13 +218,13 @@ export function MatchPage() {
             {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
           </div>
           <div style={{ textAlign: 'left' }}>
-            {isGroupPlaceholder(m.team2Id) ? (
+            {!teamMap.has(m.team2Id) ? (
               <span style={{ fontSize: '36px', lineHeight: 1.2 }}>{t2?.flag || ''}</span>
             ) : (
               <Link to={`/team/${m.team2Id}`} style={{ fontSize: '36px', lineHeight: 1.2, textDecoration: 'none' }}>{t2?.flag || ''}</Link>
             )}
             <br />
-            {isGroupPlaceholder(m.team2Id) ? (
+            {!teamMap.has(m.team2Id) ? (
               <span style={{ fontWeight: 600, fontSize: '16px', color: 'var(--text-muted)' }}>{t2?.name || m.team2Id}</span>
             ) : (
               <Link to={`/team/${m.team2Id}`} style={{ fontWeight: 600, fontSize: '16px', color: 'inherit', textDecoration: 'none' }}>{t2?.name || m.team2Id}</Link>
