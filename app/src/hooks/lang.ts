@@ -19,7 +19,7 @@ export const zh = {
   home: { phaseGroup: '分組賽 — {played}/{total} 已賽', latest: '最新賽果', upcoming: '即將舉行', noResults: '暫無比賽' },
   teams: { title: '球隊', desc: '48 隊 · 12 組 · 6 洲份', byGroup: '按組別', byName: '按名稱', byContinent: '按洲份', allAZ: '全部球隊 (A–Z)' },
   groups: { title: '分組', desc: '12 組 · 首兩名 + 最佳第三名 8 隊晉級' },
-  third: { title: '第三名', desc: '12 組第三名中 top 8 進級', top8: '✅ top 8 進級', sortBy: '排序：積分 → 球差 → 入球' },
+  third: { title: '第三名', desc: '12 組第三名中最佳 8 隊晉級 32 強', top8: '✅ top 8 進級', sortBy: '排序：積分 → 球差 → 入球' },
   scorers: { title: '射手榜', desc: '{n} 名球員取得入球' },
   bracket: { title: '淘汰賽', desc: '淘汰賽階段 — 分組完成後顯示球隊名稱', dimmed: '⚡ 灰色 = 分組尚未完成。佔位符如 {ex} 將在分組完成後顯示實際球隊。' },
   stadiums: { title: '球場', desc: '3 個主辦國共 16 個球場', capacity: '容量' },
