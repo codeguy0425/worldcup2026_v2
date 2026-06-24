@@ -24,7 +24,8 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels) {
     })
   }
 
-  entries.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf)
+  // Sort: Pts → GD → GF → GA (fewer conceded better)
+  entries.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.ga - b.ga)
   entries.forEach((e, i) => { e.overall_rank = i + 1; e.qualified = i < 8 })
 
   return entries
