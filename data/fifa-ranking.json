@@ -1,0 +1,242 @@
+{
+  "MEX": {
+    "rank": 12,
+    "points": 1721.78,
+    "prevRank": 14
+  },
+  "RSA": {
+    "rank": 60,
+    "points": 1418.21,
+    "prevRank": 60
+  },
+  "KOR": {
+    "rank": 24,
+    "points": 1591.75,
+    "prevRank": 25
+  },
+  "CZE": {
+    "rank": 43,
+    "points": 1481.49,
+    "prevRank": 40
+  },
+  "SUI": {
+    "rank": 17,
+    "points": 1676,
+    "prevRank": 19
+  },
+  "CAN": {
+    "rank": 31,
+    "points": 1551.07,
+    "prevRank": 30
+  },
+  "BIH": {
+    "rank": 62,
+    "points": 1408.93,
+    "prevRank": 64
+  },
+  "QAT": {
+    "rank": 61,
+    "points": 1411.06,
+    "prevRank": 56
+  },
+  "BRA": {
+    "rank": 5,
+    "points": 1785.19,
+    "prevRank": 6
+  },
+  "MAR": {
+    "rank": 9,
+    "points": 1751.4,
+    "prevRank": 7
+  },
+  "HAI": {
+    "rank": 83,
+    "points": 1289.58,
+    "prevRank": 83
+  },
+  "SCO": {
+    "rank": 41,
+    "points": 1491.22,
+    "prevRank": 42
+  },
+  "USA": {
+    "rank": 14,
+    "points": 1709.59,
+    "prevRank": 17
+  },
+  "AUS": {
+    "rank": 26,
+    "points": 1584.55,
+    "prevRank": 27
+  },
+  "TUR": {
+    "rank": 32,
+    "points": 1550.13,
+    "prevRank": 22
+  },
+  "PAR": {
+    "rank": 37,
+    "points": 1517.39,
+    "prevRank": 41
+  },
+  "GER": {
+    "rank": 8,
+    "points": 1760.46,
+    "prevRank": 10
+  },
+  "CUW": {
+    "rank": 81,
+    "points": 1299.41,
+    "prevRank": 82
+  },
+  "CIV": {
+    "rank": 30,
+    "points": 1551.71,
+    "prevRank": 33
+  },
+  "ECU": {
+    "rank": 29,
+    "points": 1558.35,
+    "prevRank": 23
+  },
+  "NED": {
+    "rank": 7,
+    "points": 1764.4,
+    "prevRank": 8
+  },
+  "JPN": {
+    "rank": 16,
+    "points": 1681.26,
+    "prevRank": 18
+  },
+  "SWE": {
+    "rank": 36,
+    "points": 1517.99,
+    "prevRank": 38
+  },
+  "TUN": {
+    "rank": 56,
+    "points": 1437.69,
+    "prevRank": 45
+  },
+  "BEL": {
+    "rank": 10,
+    "points": 1727.88,
+    "prevRank": 9
+  },
+  "EGY": {
+    "rank": 27,
+    "points": 1583.37,
+    "prevRank": 29
+  },
+  "IRN": {
+    "rank": 21,
+    "points": 1611.18,
+    "prevRank": 20
+  },
+  "NZL": {
+    "rank": 85,
+    "points": 1277.34,
+    "prevRank": 85
+  },
+  "ESP": {
+    "rank": 3,
+    "points": 1864.32,
+    "prevRank": 2
+  },
+  "CPV": {
+    "rank": 64,
+    "points": 1401.77,
+    "prevRank": 67
+  },
+  "KSA": {
+    "rank": 58,
+    "points": 1426.71,
+    "prevRank": 61
+  },
+  "URU": {
+    "rank": 18,
+    "points": 1649.96,
+    "prevRank": 16
+  },
+  "FRA": {
+    "rank": 2,
+    "points": 1894.4,
+    "prevRank": 3
+  },
+  "SEN": {
+    "rank": 19,
+    "points": 1638.36,
+    "prevRank": 15
+  },
+  "IRQ": {
+    "rank": 59,
+    "points": 1419.24,
+    "prevRank": 57
+  },
+  "NOR": {
+    "rank": 22,
+    "points": 1606.48,
+    "prevRank": 31
+  },
+  "ARG": {
+    "rank": 1,
+    "points": 1901.93,
+    "prevRank": 1
+  },
+  "AUT": {
+    "rank": 23,
+    "points": 1599.99,
+    "prevRank": 24
+  },
+  "JOR": {
+    "rank": 72,
+    "points": 1355.89,
+    "prevRank": 63
+  },
+  "POR": {
+    "rank": 6,
+    "points": 1766.74,
+    "prevRank": 5
+  },
+  "COL": {
+    "rank": 11,
+    "points": 1727.42,
+    "prevRank": 13
+  },
+  "ENG": {
+    "rank": 4,
+    "points": 1829.82,
+    "prevRank": 4
+  },
+  "CRO": {
+    "rank": 13,
+    "points": 1711.48,
+    "prevRank": 11
+  },
+  "GHA": {
+    "rank": 65,
+    "points": 1398.57,
+    "prevRank": 73
+  },
+  "PAN": {
+    "rank": 42,
+    "points": 1489.05,
+    "prevRank": 34
+  },
+  "COD": {
+    "rank": 47,
+    "points": 1472.37,
+    "prevRank": 46
+  },
+  "UZB": {
+    "rank": 57,
+    "points": 1432.84,
+    "prevRank": 50
+  },
+  "ALG": {
+    "rank": 28,
+    "points": 1575.64,
+    "prevRank": 28
+  }
+}

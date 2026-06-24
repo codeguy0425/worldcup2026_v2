@@ -5,7 +5,7 @@
       "name": "Mexico",
       "nameZh": "墨西哥",
       "group": "A",
-      "ranking": 15,
+      "ranking": 12,
       "continent": "North America",
       "flag": "🇲🇽"
     },
@@ -23,7 +23,7 @@
       "name": "South Korea",
       "nameZh": "南韓",
       "group": "A",
-      "ranking": 23,
+      "ranking": 24,
       "continent": "Asia",
       "flag": "🇰🇷"
     },
@@ -32,7 +32,7 @@
       "name": "Czech Republic",
       "nameZh": "捷克",
       "group": "A",
-      "ranking": 36,
+      "ranking": 43,
       "continent": "Europe",
       "flag": "🇨🇿"
     },
@@ -41,7 +41,7 @@
       "name": "Canada",
       "nameZh": "加拿大",
       "group": "B",
-      "ranking": 48,
+      "ranking": 31,
       "continent": "North America",
       "flag": "🇨🇦"
     },
@@ -50,7 +50,7 @@
       "name": "Bosnia & Herzegovina",
       "nameZh": "波斯尼亞",
       "group": "B",
-      "ranking": 57,
+      "ranking": 62,
       "continent": "Europe",
       "flag": "🇧🇦"
     },
@@ -59,7 +59,7 @@
       "name": "Qatar",
       "nameZh": "卡塔爾",
       "group": "B",
-      "ranking": 34,
+      "ranking": 61,
       "continent": "Asia",
       "flag": "🇶🇦"
     },
@@ -68,7 +68,7 @@
       "name": "Switzerland",
       "nameZh": "瑞士",
       "group": "B",
-      "ranking": 19,
+      "ranking": 17,
       "continent": "Europe",
       "flag": "🇨🇭"
     },
@@ -86,7 +86,7 @@
       "name": "Morocco",
       "nameZh": "摩洛哥",
       "group": "C",
-      "ranking": 13,
+      "ranking": 9,
       "continent": "Africa",
       "flag": "🇲🇦"
     },
@@ -95,7 +95,7 @@
       "name": "Haiti",
       "nameZh": "海地",
       "group": "C",
-      "ranking": 90,
+      "ranking": 83,
       "continent": "North America",
       "flag": "🇭🇹"
     },
@@ -104,7 +104,7 @@
       "name": "Scotland",
       "nameZh": "蘇格蘭",
       "group": "C",
-      "ranking": 39,
+      "ranking": 41,
       "continent": "Europe",
       "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
     },
@@ -113,7 +113,7 @@
       "name": "USA",
       "nameZh": "美國",
       "group": "D",
-      "ranking": 16,
+      "ranking": 14,
       "continent": "North America",
       "flag": "🇺🇸"
     },
@@ -122,7 +122,7 @@
       "name": "Paraguay",
       "nameZh": "巴拉圭",
       "group": "D",
-      "ranking": 51,
+      "ranking": 37,
       "continent": "South America",
       "flag": "🇵🇾"
     },
@@ -131,7 +131,7 @@
       "name": "Australia",
       "nameZh": "澳洲",
       "group": "D",
-      "ranking": 27,
+      "ranking": 26,
       "continent": "Asia",
       "flag": "🇦🇺"
     },
@@ -140,7 +140,7 @@
       "name": "Turkey",
       "nameZh": "土耳其",
       "group": "D",
-      "ranking": 29,
+      "ranking": 32,
       "continent": "Europe",
       "flag": "🇹🇷"
     },
@@ -149,7 +149,7 @@
       "name": "Germany",
       "nameZh": "德國",
       "group": "E",
-      "ranking": 11,
+      "ranking": 8,
       "continent": "Europe",
       "flag": "🇩🇪"
     },
@@ -158,7 +158,7 @@
       "name": "Curaçao",
       "nameZh": "古拉索",
       "group": "E",
-      "ranking": 86,
+      "ranking": 81,
       "continent": "North America",
       "flag": "🇨🇼"
     },
@@ -167,7 +167,7 @@
       "name": "Ivory Coast",
       "nameZh": "科特迪瓦",
       "group": "E",
-      "ranking": 42,
+      "ranking": 30,
       "continent": "Africa",
       "flag": "🇨🇮"
     },
@@ -176,7 +176,7 @@
       "name": "Ecuador",
       "nameZh": "厄瓜多爾",
       "group": "E",
-      "ranking": 32,
+      "ranking": 29,
       "continent": "South America",
       "flag": "🇪🇨"
     },
@@ -194,7 +194,7 @@
       "name": "Japan",
       "nameZh": "日本",
       "group": "F",
-      "ranking": 18,
+      "ranking": 16,
       "continent": "Asia",
       "flag": "🇯🇵"
     },
@@ -203,7 +203,7 @@
       "name": "Sweden",
       "nameZh": "瑞典",
       "group": "F",
-      "ranking": 25,
+      "ranking": 36,
       "continent": "Europe",
       "flag": "🇸🇪"
     },
@@ -212,7 +212,7 @@
       "name": "Tunisia",
       "nameZh": "突尼西亞",
       "group": "F",
-      "ranking": 30,
+      "ranking": 56,
       "continent": "Africa",
       "flag": "🇹🇳"
     },
@@ -221,7 +221,7 @@
       "name": "Belgium",
       "nameZh": "比利時",
       "group": "G",
-      "ranking": 6,
+      "ranking": 10,
       "continent": "Europe",
       "flag": "🇧🇪"
     },
@@ -230,7 +230,7 @@
       "name": "Egypt",
       "nameZh": "埃及",
       "group": "G",
-      "ranking": 33,
+      "ranking": 27,
       "continent": "Africa",
       "flag": "🇪🇬"
     },
@@ -248,7 +248,7 @@
       "name": "New Zealand",
       "nameZh": "新西蘭",
       "group": "G",
-      "ranking": 104,
+      "ranking": 85,
       "continent": "Oceania",
       "flag": "🇳🇿"
     },
@@ -257,7 +257,7 @@
       "name": "Spain",
       "nameZh": "西班牙",
       "group": "H",
-      "ranking": 8,
+      "ranking": 3,
       "continent": "Europe",
       "flag": "🇪🇸"
     },
@@ -266,7 +266,7 @@
       "name": "Cape Verde",
       "nameZh": "佛得角",
       "group": "H",
-      "ranking": 67,
+      "ranking": 64,
       "continent": "Africa",
       "flag": "🇨🇻"
     },
@@ -275,7 +275,7 @@
       "name": "Saudi Arabia",
       "nameZh": "沙特阿拉伯",
       "group": "H",
-      "ranking": 53,
+      "ranking": 58,
       "continent": "Asia",
       "flag": "🇸🇦"
     },
@@ -284,7 +284,7 @@
       "name": "Uruguay",
       "nameZh": "烏拉圭",
       "group": "H",
-      "ranking": 14,
+      "ranking": 18,
       "continent": "South America",
       "flag": "🇺🇾"
     },
@@ -302,7 +302,7 @@
       "name": "Senegal",
       "nameZh": "塞內加爾",
       "group": "I",
-      "ranking": 20,
+      "ranking": 19,
       "continent": "Africa",
       "flag": "🇸🇳"
     },
@@ -311,7 +311,7 @@
       "name": "Iraq",
       "nameZh": "伊拉克",
       "group": "I",
-      "ranking": 68,
+      "ranking": 59,
       "continent": "Asia",
       "flag": "🇮🇶"
     },
@@ -320,7 +320,7 @@
       "name": "Norway",
       "nameZh": "挪威",
       "group": "I",
-      "ranking": 44,
+      "ranking": 22,
       "continent": "Europe",
       "flag": "🇳🇴"
     },
@@ -338,7 +338,7 @@
       "name": "Algeria",
       "nameZh": "阿爾及利亞",
       "group": "J",
-      "ranking": 31,
+      "ranking": 28,
       "continent": "Africa",
       "flag": "🇩🇿"
     },
@@ -347,7 +347,7 @@
       "name": "Austria",
       "nameZh": "奧地利",
       "group": "J",
-      "ranking": 24,
+      "ranking": 23,
       "continent": "Europe",
       "flag": "🇦🇹"
     },
@@ -356,7 +356,7 @@
       "name": "Jordan",
       "nameZh": "約旦",
       "group": "J",
-      "ranking": 70,
+      "ranking": 72,
       "continent": "Asia",
       "flag": "🇯🇴"
     },
@@ -365,7 +365,7 @@
       "name": "Portugal",
       "nameZh": "葡萄牙",
       "group": "K",
-      "ranking": 4,
+      "ranking": 6,
       "continent": "Europe",
       "flag": "🇵🇹"
     },
@@ -374,7 +374,7 @@
       "name": "DR Congo",
       "nameZh": "剛果民主共和國",
       "group": "K",
-      "ranking": 63,
+      "ranking": 47,
       "continent": "Africa",
       "flag": "🇨🇩"
     },
@@ -383,7 +383,7 @@
       "name": "Uzbekistan",
       "nameZh": "烏茲別克",
       "group": "K",
-      "ranking": 74,
+      "ranking": 57,
       "continent": "Asia",
       "flag": "🇺🇿"
     },
@@ -392,7 +392,7 @@
       "name": "Colombia",
       "nameZh": "哥倫比亞",
       "group": "K",
-      "ranking": 9,
+      "ranking": 11,
       "continent": "South America",
       "flag": "🇨🇴"
     },
@@ -401,7 +401,7 @@
       "name": "England",
       "nameZh": "英格蘭",
       "group": "L",
-      "ranking": 3,
+      "ranking": 4,
       "continent": "Europe",
       "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     },
@@ -410,7 +410,7 @@
       "name": "Croatia",
       "nameZh": "克羅地亞",
       "group": "L",
-      "ranking": 10,
+      "ranking": 13,
       "continent": "Europe",
       "flag": "🇭🇷"
     },
@@ -419,7 +419,7 @@
       "name": "Ghana",
       "nameZh": "加納",
       "group": "L",
-      "ranking": 61,
+      "ranking": 65,
       "continent": "Africa",
       "flag": "🇬🇭"
     },
@@ -428,7 +428,7 @@
       "name": "Panama",
       "nameZh": "巴拿馬",
       "group": "L",
-      "ranking": 46,
+      "ranking": 42,
       "continent": "North America",
       "flag": "🇵🇦"
     }
