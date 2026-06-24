@@ -84,10 +84,12 @@ function GroupTable({ group }: { group: string }) {
 export function GroupsPage() {
   return (
     <div>
-      <h1 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '2px' }}>Groups</h1>
-      <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
-        12 groups · top 2 + best 8 third advance
-      </p>
+      <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
+        <h1 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '2px' }}>Groups</h1>
+        <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+          12 groups · top 2 + best 8 third advance
+        </p>
+      </div>
       <div className="grid-groups" style={{ gap: '8px' }}>
         {groupLabels.map(g => <GroupTable key={g} group={g} />)}
       </div>

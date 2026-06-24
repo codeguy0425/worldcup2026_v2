@@ -14,12 +14,14 @@ export function StadiumsPage() {
 
   return (
     <div>
-      <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
-        Stadiums
-      </h1>
-      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
-        16 venues across 3 host countries
-      </p>
+      <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
+          Stadiums
+        </h1>
+        <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+          16 venues across 3 host countries
+        </p>
+      </div>
 
       {loading ? (
         <p style={{ color: 'var(--text-muted)' }}>Loading...</p>

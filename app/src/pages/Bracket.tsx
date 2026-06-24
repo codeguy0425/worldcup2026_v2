@@ -57,13 +57,14 @@ export function BracketPage() {
 
   return (
     <div>
-      <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Bracket</h1>
-      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
-        Knockout stage — placeholders shown until groups complete
-      </p>
+      <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Bracket</h1>
+        <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
+          Knockout stage — placeholders shown until groups complete
+        </p>
 
-      {/* Filter buttons */}
-      <div style={{ display: 'flex', gap: '4px', marginBottom: '16px', flexWrap: 'wrap' }}>
+        {/* Filter buttons */}
+        <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
         {stageFilters.map(f => (
           <button key={f.key} onClick={() => setFilter(f.key)} style={{
             fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
@@ -77,6 +78,7 @@ export function BracketPage() {
             {f.label}
           </button>
         ))}
+      </div>
       </div>
 
       {stageOrder.map(stage => {
