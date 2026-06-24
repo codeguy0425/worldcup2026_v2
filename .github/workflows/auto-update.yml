@@ -15,14 +15,17 @@ jobs:
         with:
           node-version: 22
 
-      - name: Run pipeline
+      - name: Fetch latest scores from openfootball
+        run: node scripts/fetch-scores.mjs
+
+      - name: Run computation pipeline
         run: node pipeline/update.mjs
 
       - name: Commit and push
         run: |
           git config user.name "WC2026 Bot"
           git config user.email "bot@worldcup2026.app"
-          git add app/public/data/
+          git add sample-data.json app/public/data/
           if git diff --cached --quiet; then
             echo "No changes — skipping commit"
             exit 0

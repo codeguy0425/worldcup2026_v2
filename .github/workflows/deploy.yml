@@ -27,6 +27,12 @@ jobs:
         with:
           node-version: 22
 
+      - name: Fetch latest scores
+        run: node scripts/fetch-scores.mjs
+
+      - name: Run pipeline
+        run: node pipeline/update.mjs
+
       - name: Install dependencies
         working-directory: ./app
         run: npm ci
