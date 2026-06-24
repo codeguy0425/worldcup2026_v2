@@ -50,7 +50,7 @@ export function HomePage() {
       const db = b.date + 'T' + (b.timeUtc || b.time || '00:00') + ':00Z'
       return da.localeCompare(db)
     })
-    .slice(0, 5)
+    .slice(0, 6)
 
   return (
     <div>
