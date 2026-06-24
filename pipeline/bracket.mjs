@@ -1,22 +1,34 @@
 /**
  * Bracket resolver — map placeholders (1A, 2B, 3A/B/C/D, W73, L101) to real teams.
+ * Only resolves group positions (1A, 2B) when the group has no remaining matches.
  */
 import { computeStandings } from './standings.mjs'
 import { computeThirdPlaced } from './thirdplaced.mjs'
 
 const teamIdRe = /^[A-Z]{3}$/
 
-function isPlaceholder(id) { return !teamIdRe.test(id) || id.includes('/') }
+/** Only resolve a group placeholder if the group is complete (no remaining matches) */
+function resolveOne(id, standingsResults, thirdEntries, teamsMap) {
+  // Real team ID → keep as-is
+  if (teamsMap[id]) return id
 
-function resolveOne(id, standingsMap, thirdEntries, teamsMap) {
-  if (teamsMap[id]) return id  // Real team
-
+  // 1A = group winner — only if group complete
   const w = id.match(/^1([A-L])$/)
-  if (w && standingsMap[w[1]] && standingsMap[w[1]].length > 0) return standingsMap[w[1]][0].teamId
+  if (w) {
+    const grp = standingsResults[w[1]]
+    if (grp && grp.standings.length > 0 && grp.remaining === 0) return grp.standings[0].teamId
+    return id // Group still in progress, keep placeholder
+  }
 
+  // 2B = runner-up — only if group complete
   const r = id.match(/^2([A-L])$/)
-  if (r && standingsMap[r[1]] && standingsMap[r[1]].length > 1) return standingsMap[r[1]][1].teamId
+  if (r) {
+    const grp = standingsResults[r[1]]
+    if (grp && grp.standings.length > 1 && grp.remaining === 0) return grp.standings[1].teamId
+    return id
+  }
 
+  // 3A/B/C/D = best third from listed groups — resolve if any candidate group is locked
   const t = id.match(/^3([A-L](?:\/[A-L])*)$/)
   if (t) {
     const candidates = new Set(t[1].split('/'))
@@ -30,9 +42,10 @@ function resolveOne(id, standingsMap, thirdEntries, teamsMap) {
 }
 
 export function computeBracket(matches, teamsMap, groupLabels) {
-  const standingsMap = {}
+  // Store full results (standings + remaining count)
+  const standingsResults = {}
   for (const gl of groupLabels) {
-    standingsMap[gl] = computeStandings(gl, matches, teamsMap).standings
+    standingsResults[gl] = computeStandings(gl, matches, teamsMap)
   }
   const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels)
 
@@ -43,11 +56,11 @@ export function computeBracket(matches, teamsMap, groupLabels) {
   for (const phase of phases) {
     const ms = matches.filter(m => m.stage === phase).sort((a, b) => a.id - b.id)
     rounds[phase] = ms.map(m => {
-      const t1 = resolveOne(m.team1Id, standingsMap, thirdEntries, teamsMap)
-      const t2 = resolveOne(m.team2Id, standingsMap, thirdEntries, teamsMap)
+      const t1 = resolveOne(m.team1Id, standingsResults, thirdEntries, teamsMap)
+      const t2 = resolveOne(m.team2Id, standingsResults, thirdEntries, teamsMap)
       const hasRes = m.score1 !== undefined
 
-      // Try W/L ref resolution for already-played matches
+      // W/L ref resolution for already-played matches
       let resolvedT1 = t1, resolvedT2 = t2
       const wm1 = m.team1Id.match(/^W(\d+)$/)
       if (wm1 && resolvedWinners[wm1[1]]) resolvedT1 = resolvedWinners[wm1[1]]
