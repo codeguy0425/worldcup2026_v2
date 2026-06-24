@@ -64,11 +64,12 @@ export function SchedulePage() {
 
   return (
     <div>
-      <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Schedule</h1>
-      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>{matches.length} matches</p>
+      <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', paddingBottom: '12px' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Schedule</h1>
+        <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>{matches.length} matches</p>
 
-      {/* Filter buttons */}
-      <div style={{ display: 'flex', gap: '4px', marginBottom: '16px', flexWrap: 'wrap' }}>
+        {/* Filter buttons */}
+        <div style={{ display: 'flex', gap: '4px', marginBottom: 0, flexWrap: 'wrap' }}>
         {stageFilters.map(f => (
           <button key={f.key} onClick={() => setFilter(f.key)} style={{
             fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
@@ -82,6 +83,7 @@ export function SchedulePage() {
             {f.label}
           </button>
         ))}
+      </div>
       </div>
 
       {loading ? <p style={{ color: 'var(--text-muted)' }}>Loading...</p> : (
