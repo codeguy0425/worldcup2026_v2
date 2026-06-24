@@ -54,7 +54,7 @@ export function StadiumsPage() {
                   {s.capacity.toLocaleString()}
                 </div>
                 <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                  Capacity
+                  {t.stadiums.capacity}
                 </div>
               </div>
             </div>
