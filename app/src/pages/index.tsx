@@ -59,7 +59,14 @@ export function SchedulePage() {
   const grouped: Record<string, Match[]> = {}
   for (const r of roundOrder) {
     const ms = filtered.filter(m => m.round === r)
-    if (ms.length) grouped[r] = ms
+    if (ms.length) {
+      ms.sort((a, b) => {
+        const da = a.date + 'T' + (a.timeUtc || a.time || '00:00') + ':00Z'
+        const db = b.date + 'T' + (b.timeUtc || b.time || '00:00') + ':00Z'
+        return da.localeCompare(db)
+      })
+      grouped[r] = ms
+    }
   }
 
   return (
