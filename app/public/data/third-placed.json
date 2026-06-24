@@ -14,7 +14,7 @@
       "ga": 6,
       "gd": -1,
       "pts": 4,
-      "qualified": true,
+      "qualified": false,
       "thirdLocked": true
     },
     {
@@ -31,8 +31,8 @@
       "ga": 6,
       "gd": 0,
       "pts": 3,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 3,
@@ -48,8 +48,8 @@
       "ga": 1,
       "gd": 0,
       "pts": 3,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 4,
@@ -65,8 +65,8 @@
       "ga": 4,
       "gd": -1,
       "pts": 3,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 5,
@@ -82,8 +82,8 @@
       "ga": 4,
       "gd": -2,
       "pts": 3,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 6,
@@ -99,8 +99,8 @@
       "ga": 4,
       "gd": -2,
       "pts": 3,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 7,
@@ -116,8 +116,8 @@
       "ga": 2,
       "gd": 0,
       "pts": 2,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 8,
@@ -133,8 +133,8 @@
       "ga": 1,
       "gd": 0,
       "pts": 2,
-      "qualified": true,
-      "thirdLocked": true
+      "qualified": false,
+      "thirdLocked": false
     },
     {
       "overall_rank": 9,
@@ -151,7 +151,7 @@
       "gd": -1,
       "pts": 1,
       "qualified": false,
-      "thirdLocked": true
+      "thirdLocked": false
     },
     {
       "overall_rank": 10,
@@ -168,7 +168,7 @@
       "gd": -1,
       "pts": 1,
       "qualified": false,
-      "thirdLocked": true
+      "thirdLocked": false
     },
     {
       "overall_rank": 11,
@@ -185,7 +185,7 @@
       "gd": -1,
       "pts": 1,
       "qualified": false,
-      "thirdLocked": true
+      "thirdLocked": false
     },
     {
       "overall_rank": 12,
@@ -202,7 +202,7 @@
       "gd": -3,
       "pts": 0,
       "qualified": false,
-      "thirdLocked": true
+      "thirdLocked": false
     }
   ],
   "qualifyingCount": 8,

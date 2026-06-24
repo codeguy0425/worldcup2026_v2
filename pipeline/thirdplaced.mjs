@@ -22,7 +22,7 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
       played: third.played, won: third.won, drawn: third.drawn, lost: third.lost,
       gf: third.gf, ga: third.ga, gd: third.gd, pts: third.pts,
       qualified: false,
-      thirdLocked: third.status !== null || allPlayed,
+      thirdLocked: third.status != null || allPlayed,
     })
   }
 
@@ -39,7 +39,18 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     }
     return a.group.localeCompare(b.group)
   })
-  entries.forEach((e, i) => { e.overall_rank = i + 1; e.qualified = i < 8 })
+
+  // Assign ranks and determine mathematical qualification
+  // A team is mathematically qualified when at most 7 other teams can still reach >= its pts
+  entries.forEach((e, i) => {
+    e.overall_rank = i + 1
+    const threats = entries.filter(o => {
+      if (o === e) return false
+      const maxPts = o.pts + (o.thirdLocked ? 0 : 3)
+      return maxPts >= e.pts
+    }).length
+    e.qualified = threats < 8
+  })
 
   return entries
 }
