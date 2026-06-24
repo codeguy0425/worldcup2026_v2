@@ -16,7 +16,8 @@
       "gd": 2,
       "pts": 4,
       "form": "WD",
-      "maxPts": 7
+      "maxPts": 7,
+      "confirmedFirst": false
     },
     {
       "rank": 2,
@@ -33,7 +34,8 @@
       "gd": 1,
       "pts": 4,
       "form": "WD",
-      "maxPts": 7
+      "maxPts": 7,
+      "confirmedFirst": false
     },
     {
       "rank": 3,
@@ -50,7 +52,8 @@
       "gd": -1,
       "pts": 0,
       "form": "L",
-      "maxPts": 6
+      "maxPts": 6,
+      "confirmedFirst": false
     },
     {
       "rank": 4,
@@ -67,7 +70,8 @@
       "gd": -2,
       "pts": 0,
       "form": "L",
-      "maxPts": 6
+      "maxPts": 6,
+      "confirmedFirst": false
     }
   ],
   "remaining": 3,

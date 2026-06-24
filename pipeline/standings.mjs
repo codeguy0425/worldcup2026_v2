@@ -64,10 +64,11 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
   }
   genResults(0, [])
 
-  const advanced = new Set(), eliminated = new Set()
+  const advanced = new Set(), eliminated = new Set(), confirmedFirst = new Set()
 
   for (const tid of teamIds) {
     let canFinishTop3 = false, canFinishOutsideTop2 = false
+    let alwaysFirst = true
 
     for (const results of allResults) {
       const fp = {}; for (const t of teamIds) fp[t] = standing[t].pts
@@ -89,10 +90,12 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
 
       if (defAhead < 3) canFinishTop3 = true
       if (notBehind > 2) canFinishOutsideTop2 = true
+      if (defAhead > 0) alwaysFirst = false
     }
 
     if (!canFinishTop3) eliminated.add(tid)
     if (!canFinishOutsideTop2) advanced.add(tid)
+    if (alwaysFirst) confirmedFirst.add(tid)
   }
 
   const sorted = teamIds.sort((a, b) => {
@@ -109,7 +112,7 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
     if (advanced.has(tid)) status = 'advanced'
     else if (eliminated.has(tid)) status = 'eliminated'
     const maxPts = s.pts + remaining.filter(m => m.team1Id === tid || m.team2Id === tid).length * 3
-    return { rank: idx + 1, teamId: tid, team: s.team, teamZh: s.teamZh, flag: s.flag, played: s.played, won: s.won, drawn: s.drawn, lost: s.lost, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts, form: s.form.join(''), status, maxPts }
+    return { rank: idx + 1, teamId: tid, team: s.team, teamZh: s.teamZh, flag: s.flag, played: s.played, won: s.won, drawn: s.drawn, lost: s.lost, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts, form: s.form.join(''), status, maxPts, confirmedFirst: confirmedFirst.has(tid) || false }
   })
 
   return { group: groupLetter, standings, remaining: remaining.length, scenarios: allResults.length }

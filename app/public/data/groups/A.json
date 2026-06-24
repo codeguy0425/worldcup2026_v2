@@ -17,7 +17,8 @@
       "pts": 6,
       "form": "WW",
       "status": "advanced",
-      "maxPts": 9
+      "maxPts": 9,
+      "confirmedFirst": true
     },
     {
       "rank": 2,
@@ -34,7 +35,8 @@
       "gd": 0,
       "pts": 3,
       "form": "WL",
-      "maxPts": 6
+      "maxPts": 6,
+      "confirmedFirst": false
     },
     {
       "rank": 3,
@@ -51,7 +53,8 @@
       "gd": -1,
       "pts": 1,
       "form": "LD",
-      "maxPts": 4
+      "maxPts": 4,
+      "confirmedFirst": false
     },
     {
       "rank": 4,
@@ -68,7 +71,8 @@
       "gd": -2,
       "pts": 1,
       "form": "LD",
-      "maxPts": 4
+      "maxPts": 4,
+      "confirmedFirst": false
     }
   ],
   "remaining": 2,

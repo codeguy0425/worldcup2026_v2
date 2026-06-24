@@ -175,11 +175,11 @@
         "round": "Round of 32",
         "date": "2026-07-03",
         "timeUtc": "22:00",
-        "team1Id": "1J",
+        "team1Id": "ARG",
         "team2Id": "2H",
         "team1Original": "1J",
         "team2Original": "2H",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "miami"
       },

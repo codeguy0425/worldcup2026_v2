@@ -12,12 +12,14 @@ function resolveOne(id, standingsResults, thirdEntries, teamsMap) {
   // Real team ID → keep as-is
   if (teamsMap[id]) return id
 
-  // 1A = group winner — only if group complete
+  // 1A = group winner — only if confirmed first OR group complete
   const w = id.match(/^1([A-L])$/)
   if (w) {
     const grp = standingsResults[w[1]]
-    if (grp && grp.standings.length > 0 && grp.remaining === 0) return grp.standings[0].teamId
-    return id // Group still in progress, keep placeholder
+    if (!grp || !grp.standings.length) return id
+    const top = grp.standings[0]
+    if (top.confirmedFirst || grp.remaining === 0) return top.teamId
+    return id // Not confirmed, keep placeholder
   }
 
   // 2B = runner-up — only if group complete
