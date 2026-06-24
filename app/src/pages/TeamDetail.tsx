@@ -1,12 +1,13 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
+import { shortHkt } from '../hooks/hkTime'
 
 interface Team { id: string; name: string; nameZh: string; group: string; ranking: number; continent: string; flag: string }
 
 interface Match {
   id: number; round: string; date: string; time: string; stage: string
   team1Id: string; team2Id: string; score1?: number; score2?: number; group?: string
-  goals?: { minute: number; scorer: string; teamId: string }[]
+  goals?: { minute: number; scorer: string; teamId: string }[]; timeUtc?: string
 }
 
 export function TeamPage() {
@@ -100,7 +101,7 @@ export function TeamPage() {
                       background: !hasScore ? 'var(--border)' : won ? 'var(--success)' : drew ? 'var(--text-muted)' : 'var(--danger)',
                     }} />
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '36px' }}>
-                      {m.date.slice(5)}
+                      {shortHkt(m.date, m.timeUtc)}
                     </span>
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', minWidth: '28px' }}>
                       {m.stage === 'group' ? `G${m.group}` : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || m.stage.toUpperCase()}

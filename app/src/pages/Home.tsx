@@ -1,5 +1,6 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
+import { shortHkt } from '../hooks/hkTime'
 
 interface Match {
   id: number; round: string; date: string; stage: string
@@ -83,7 +84,7 @@ export function HomePage() {
                 display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 10px',
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
-                <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{m.date.slice(5)}</span>
+                <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{shortHkt(m.date, m.timeUtc)}</span>
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center' }}>{m.score1}–{m.score2}</span>
                 <span style={{ flex: 1 }}>{t2?.flag || ''} {t2?.name || m.team2Id}</span>
@@ -106,7 +107,7 @@ export function HomePage() {
                 display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 10px',
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
-                <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{m.date.slice(5)}</span>
+                <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{shortHkt(m.date, m.timeUtc)}</span>
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 400, fontSize: '10px', minWidth: '22px', textAlign: 'center', color: 'var(--text-muted)' }}>vs</span>
                 <span style={{ flex: 1 }}>{t2?.flag || ''} {t2?.name || m.team2Id}</span>

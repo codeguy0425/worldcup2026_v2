@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
+import { shortHkt } from '../hooks/hkTime'
 
 interface Standing {
   rank: number; teamId: string; team: string; teamZh: string
@@ -8,7 +9,7 @@ interface Standing {
   status?: 'advanced' | 'eliminated'
 }
 interface GroupData { group: string; standings: Standing[] }
-interface Match { id: number; date: string; stage: string; group?: string; team1Id: string; team2Id: string; score1?: number; score2?: number }
+interface Match { id: number; date: string; stage: string; group?: string; team1Id: string; team2Id: string; score1?: number; score2?: number; timeUtc?: string }
 interface Team { id: string; name: string; flag: string }
 
 const groupNames: Record<string, string> = {
@@ -90,7 +91,7 @@ export function GroupPage() {
               borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)',
               textDecoration: 'none', color: 'inherit', fontSize: '12px',
             }}>
-              <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{m.date.slice(5)}</span>
+              <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{shortHkt(m.date, m.timeUtc)}</span>
               <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {t1?.flag || ''} {t1?.name || m.team1Id}
               </span>

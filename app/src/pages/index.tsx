@@ -11,6 +11,7 @@ export { GroupPage } from './GroupDetail'
 import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useJson } from '../hooks/useJson'
+import { shortHkt } from '../hooks/hkTime'
 
 // ─── Schedule Page ───
 
@@ -18,7 +19,7 @@ interface Match {
   id: number; round: string; date: string; time: string
   team1Id: string; team2Id: string; group?: string
   score1?: number; score2?: number; stage: string; groundId?: string
-  goals?: GoalEvent[]
+  goals?: GoalEvent[]; timeUtc?: string
 }
 
 interface GoalEvent {
@@ -107,7 +108,7 @@ export function SchedulePage() {
                     flexWrap: 'wrap',
                   }}>
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '36px' }}>
-                      {m.date.slice(5)}
+                      {shortHkt(m.date, m.timeUtc)}
                     </span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
                       <span>{t1?.flag || ''}</span>
