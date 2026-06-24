@@ -61,10 +61,11 @@ export function HomePage() {
           { to: '/stadiums', label: 'Stadiums', icon: '🏟️' },
         ].map(link => (
           <Link key={link.to} to={link.to} style={{
-            display: 'flex', alignItems: 'center', gap: '6px',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
             padding: '8px 14px', borderRadius: 'var(--radius-sm)',
             background: 'var(--surface)', border: '1px solid var(--border)',
             textDecoration: 'none', color: 'inherit', fontSize: '12px', fontWeight: 500,
+            flex: '1 1 0', minWidth: '100px',
           }}>
             {link.icon} {link.label}
           </Link>
