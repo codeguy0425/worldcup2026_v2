@@ -38,7 +38,7 @@ export function HomePage() {
     })
     .slice(0, 5)
 
-  // Upcoming & today's matches (next 5 unplayed or today's date)
+  // Upcoming & today's matches (next 6 unplayed or today's date)
   const upcoming = matches
     .filter(m => {
       if (m.score1 !== undefined) return false
@@ -105,7 +105,7 @@ export function HomePage() {
                 display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 10px',
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
-                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
+                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', color: 'var(--text-muted)', fontWeight: 600, minWidth: '18px', textAlign: 'center', letterSpacing: '0.2px' }}>{m.stage === 'group' ? m.group : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}</span>
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center' }}>{m.score1}–{m.score2}</span>
@@ -129,7 +129,7 @@ export function HomePage() {
                 display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 10px',
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
-                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
+                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', color: 'var(--text-muted)', fontWeight: 600, minWidth: '18px', textAlign: 'center', letterSpacing: '0.2px' }}>{m.stage === 'group' ? m.group : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}</span>
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 400, fontSize: '10px', minWidth: '22px', textAlign: 'center', color: 'var(--text-muted)' }}>vs</span>
