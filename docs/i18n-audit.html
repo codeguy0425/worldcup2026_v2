@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WC2026 — Translation Coverage</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#ffffff;color:#000000;font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:1.3;letter-spacing:-0.16px;min-height:100vh}
+
+/* bands */
+.band-dark{background:#010120;color:#ffffff;padding:80px 32px}
+.band-dark .inner{max-width:1100px;margin:0 auto}
+.band-white{background:#ffffff;padding:80px 32px}
+.band-white .inner{max-width:1100px;margin:0 auto}
+
+/* typography */
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;line-height:11px;letter-spacing:0.55px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.eyebrow-dark{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;line-height:11px;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px}
+.h1{font-size:64px;font-weight:500;line-height:1.1;letter-spacing:-1.92px;margin-bottom:16px}
+.h2{font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-0.8px;margin-bottom:24px}
+.body{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;letter-spacing:-0.14px}
+.body-dark{font-size:14px;color:#666;line-height:1.6;letter-spacing:-0.14px}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase}
+
+/* gradient bar */
+.gradient-bar{background:linear-gradient(90deg,#fc4c02,#ef2cc1,#bdbbff);height:4px;width:100%}
+
+/* stats cards */
+.stats-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:16px}
+.stat-card{border-radius:4px;padding:32px}
+.stat-card .number{font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-0.8px;margin-bottom:4px}
+.stat-card .label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;line-height:11px;letter-spacing:0.55px;text-transform:uppercase}
+.stat-card.mint{background:#c8f6f9;color:#000}
+.stat-card.periwinkle{background:#bdbbff;color:#000}
+.stat-card.dark{border:1px solid #313641;background:#010120;color:#fff}
+.stat-card.dark .label{color:rgba(255,255,255,0.5)}
+.stat-card.outline{border:1px solid #ebebeb;background:#ffffff;color:#000}
+
+/* data table (dark band) */
+.data-table{width:100%;border-collapse:collapse;font-size:14px;letter-spacing:-0.14px}
+.data-table thead th{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;line-height:11px;letter-spacing:0.55px;text-transform:uppercase;color:rgba(255,255,255,0.5);padding:12px 16px;border-bottom:1px solid #313641;text-align:left}
+.data-table tbody td{padding:16px;border-bottom:1px solid #313641;vertical-align:top;color:rgba(255,255,255,0.85)}
+.data-table tbody tr:last-child td{border-bottom:none}
+.data-table .file{font-family:'JetBrains Mono',monospace;font-size:12px;color:#c8f6f9;font-weight:500}
+.data-table .line{font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4)}
+.data-table .hardcoded{font-family:'JetBrains Mono',monospace;font-size:12px;color:#fff}
+.data-table .status{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.3px;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+.data-table .status.missing{background:rgba(252,76,2,0.2);color:#fc4c02}
+.data-table .status.unused{background:rgba(189,187,255,0.2);color:#bdbbff}
+.data-table .key{font-family:'JetBrains Mono',monospace;font-size:11px;color:#bdbbff}
+
+/* research card */
+.research-card{border:1px solid #313641;border-radius:4px;padding:24px;background:#010120}
+
+/* white-band table */
+.white-table{width:100%;border-collapse:collapse;font-size:14px;letter-spacing:-0.14px}
+.white-table thead th{background:#ebebeb;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;line-height:11px;letter-spacing:0.55px;text-transform:uppercase;color:#999;padding:12px 16px;text-align:left}
+.white-table tbody td{padding:16px;border-bottom:1px solid #ebebeb;vertical-align:top;color:#333}
+.white-table tbody tr:last-child td{border-bottom:none}
+.white-table .key-cell{font-family:'JetBrains Mono',monospace;font-size:12px;color:#010120;font-weight:500}
+.white-table .en-cell{font-size:14px;color:#555}
+.white-table .zh-cell{font-size:14px;color:#555}
+.white-table .used-cell{font-family:'JetBrains Mono',monospace;font-size:11px;color:#999}
+.white-table .used-cell a{color:#010120;text-decoration:none;border-bottom:1px dotted #ccc}
+
+/* footer wordmark */
+.footer-wordmark{font-size:64px;font-weight:500;letter-spacing:-1.92px;color:#ebebeb;line-height:1;padding:48px 32px;text-align:center}
+
+@media(max-width:768px){
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .h1{font-size:40px;letter-spacing:-1.2px}
+  .h2{font-size:28px;letter-spacing:-0.56px}
+  .footer-wordmark{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">i18n audit</div>
+    <div class="h1">Translation Coverage</div>
+    <div class="mono" style="color:rgba(255,255,255,0.3);margin-bottom:48px">2 files completely untranslated · 1 partial · ~16 new keys needed</div>
+    <div style="max-width:700px">
+      <div class="body">Audit of Chinese (<code style="color:#c8f6f9;font-size:13px">zh</code>) translation coverage across the React app. Translations live in <code style="color:#c8f6f9;font-size:13px">app/src/hooks/lang.ts</code> — this report identifies every hardcoded English string that needs a translation key.</div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- STATS -->
+<div class="band-white">
+  <div class="inner">
+    <div class="eyebrow-dark">overview</div>
+    <div class="h2" style="margin-bottom:32px">Coverage at a Glance</div>
+    <div class="stats-grid">
+      <div class="stat-card mint">
+        <div class="number">36</div>
+        <div class="label">total keys</div>
+      </div>
+      <div class="stat-card periwinkle">
+        <div class="number">36</div>
+        <div class="label">translated (zh)</div>
+      </div>
+      <div class="stat-card outline">
+        <div class="number">16</div>
+        <div class="label">new keys needed</div>
+      </div>
+      <div class="stat-card dark">
+        <div class="number">2</div>
+        <div class="label">files w/o useLang</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- MISSING TABLE (DARK) -->
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">findings</div>
+    <div class="h2" style="margin-bottom:32px">Missing Translations by File</div>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th style="width:200px">File</th>
+          <th style="width:60px">Line</th>
+          <th>Hardcoded Text</th>
+          <th style="width:100px">Status</th>
+          <th style="width:200px">Suggested Key</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">37</td>
+          <td class="hardcoded">← All groups</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">groups.back</td>
+        </tr>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">49</td>
+          <td class="hardcoded">RK, Team, P, W, D, L, GF, GA, GD, Pts</td>
+          <td><span class="status unused">key exists</span></td>
+          <td class="key">t.table.*</td>
+        </tr>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">61</td>
+          <td class="hardcoded">A (advance badge)</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">table.advanced</td>
+        </tr>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">62</td>
+          <td class="hardcoded">E (eliminated badge)</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">table.eliminated</td>
+        </tr>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">81</td>
+          <td class="hardcoded">Matches ({x}/{y})</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">match.matches</td>
+        </tr>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">99</td>
+          <td class="hardcoded">vs</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">match.vs</td>
+        </tr>
+        <tr>
+          <td class="file">GroupDetail.tsx</td>
+          <td class="line">30</td>
+          <td class="hardcoded">Loading...</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">match.loading</td>
+        </tr>
+        <tr>
+          <td class="file" style="border-top:2px solid #fc4c02">TeamDetail.tsx</td>
+          <td class="line" style="border-top:2px solid #fc4c02">36</td>
+          <td class="hardcoded">← All teams</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">teams.back</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">40</td>
+          <td class="hardcoded">Team not found</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">teams.notFound</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">56</td>
+          <td class="hardcoded">Group {letter}</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">team.group</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">64</td>
+          <td class="hardcoded">{n} GF · {n} GA</td>
+          <td><span class="status unused">key exists</span></td>
+          <td class="key">t.table.gf / t.table.ga</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">75</td>
+          <td class="hardcoded">Matches ({n})</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">match.matchesCount</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">107</td>
+          <td class="hardcoded">R32, R16, QF, SF, 3rd, Final</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">round.*Short (6×)</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">113</td>
+          <td class="hardcoded">vs</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">match.vs</td>
+        </tr>
+        <tr>
+          <td class="file">TeamDetail.tsx</td>
+          <td class="line">79</td>
+          <td class="hardcoded">Loading...</td>
+          <td><span class="status missing">missing</span></td>
+          <td class="key">match.loading</td>
+        </tr>
+        <tr>
+          <td class="file" style="border-top:2px solid #bdbbff">Stadiums.tsx</td>
+          <td class="line" style="border-top:2px solid #bdbbff">57</td>
+          <td class="hardcoded">Capacity</td>
+          <td><span class="status unused">key exists</span></td>
+          <td class="key">t.stadiums.capacity</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- NEW KEYS TABLE (WHITE) -->
+<div class="band-white">
+  <div class="inner">
+    <div class="eyebrow-dark">keys to add</div>
+    <div class="h2" style="margin-bottom:32px">New Translation Keys Needed</div>
+
+    <table class="white-table">
+      <thead>
+        <tr>
+          <th style="width:180px">New Key</th>
+          <th>English (en)</th>
+          <th>Chinese (zh)</th>
+          <th>Used In</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="key-cell">groups.back</td>
+          <td class="en-cell">← All groups</td>
+          <td class="zh-cell">← 全部小組</td>
+          <td class="used-cell">GroupDetail.tsx:37</td>
+        </tr>
+        <tr>
+          <td class="key-cell">teams.back</td>
+          <td class="en-cell">← All teams</td>
+          <td class="zh-cell">← 全部球隊</td>
+          <td class="used-cell">TeamDetail.tsx:36</td>
+        </tr>
+        <tr>
+          <td class="key-cell">teams.notFound</td>
+          <td class="en-cell">Team not found</td>
+          <td class="zh-cell">找不到球隊</td>
+          <td class="used-cell">TeamDetail.tsx:40</td>
+        </tr>
+        <tr>
+          <td class="key-cell">match.vs</td>
+          <td class="en-cell">vs</td>
+          <td class="zh-cell">對</td>
+          <td class="used-cell">GroupDetail.tsx:99, TeamDetail.tsx:113</td>
+        </tr>
+        <tr>
+          <td class="key-cell">match.matches</td>
+          <td class="en-cell">Matches ({played}/{total})</td>
+          <td class="zh-cell">比賽 ({played}/{total})</td>
+          <td class="used-cell">GroupDetail.tsx:81</td>
+        </tr>
+        <tr>
+          <td class="key-cell">match.matchesCount</td>
+          <td class="en-cell">Matches ({n})</td>
+          <td class="zh-cell">比賽 ({n})</td>
+          <td class="used-cell">TeamDetail.tsx:75</td>
+        </tr>
+        <tr>
+          <td class="key-cell">match.loading</td>
+          <td class="en-cell">Loading...</td>
+          <td class="zh-cell">載入中...</td>
+          <td class="used-cell">GroupDetail.tsx:30, TeamDetail.tsx:79</td>
+        </tr>
+        <tr>
+          <td class="key-cell">table.advanced</td>
+          <td class="en-cell">A</td>
+          <td class="zh-cell">晉級</td>
+          <td class="used-cell">GroupDetail.tsx:61</td>
+        </tr>
+        <tr>
+          <td class="key-cell">table.eliminated</td>
+          <td class="en-cell">E</td>
+          <td class="zh-cell">淘汰</td>
+          <td class="used-cell">GroupDetail.tsx:62</td>
+        </tr>
+        <tr>
+          <td class="key-cell">team.group</td>
+          <td class="en-cell">Group {letter}</td>
+          <td class="zh-cell">第{letter}組</td>
+          <td class="used-cell">TeamDetail.tsx:56</td>
+        </tr>
+        <tr>
+          <td class="key-cell">team.gfGa</td>
+          <td class="en-cell">{gf} GF · {ga} GA</td>
+          <td class="zh-cell">{gf} 入球 · {ga} 失球</td>
+          <td class="used-cell">TeamDetail.tsx:64</td>
+        </tr>
+        <tr>
+          <td class="key-cell">round.r32Short</td>
+          <td class="en-cell">R32</td>
+          <td class="zh-cell">32強</td>
+          <td class="used-cell">TeamDetail.tsx:107</td>
+        </tr>
+        <tr>
+          <td class="key-cell">round.r16Short</td>
+          <td class="en-cell">R16</td>
+          <td class="zh-cell">16強</td>
+          <td class="used-cell">TeamDetail.tsx:107</td>
+        </tr>
+        <tr>
+          <td class="key-cell">round.qfShort</td>
+          <td class="en-cell">QF</td>
+          <td class="zh-cell">半準決賽</td>
+          <td class="used-cell">TeamDetail.tsx:107</td>
+        </tr>
+        <tr>
+          <td class="key-cell">round.sfShort</td>
+          <td class="en-cell">SF</td>
+          <td class="zh-cell">準決賽</td>
+          <td class="used-cell">TeamDetail.tsx:107</td>
+        </tr>
+        <tr>
+          <td class="key-cell">round.thirdShort</td>
+          <td class="en-cell">3rd</td>
+          <td class="zh-cell">季軍戰</td>
+          <td class="used-cell">TeamDetail.tsx:107</td>
+        </tr>
+        <tr>
+          <td class="key-cell" style="border-bottom:none">round.finalShort</td>
+          <td class="en-cell" style="border-bottom:none">Final</td>
+          <td class="zh-cell" style="border-bottom:none">決賽</td>
+          <td class="used-cell" style="border-bottom:none">TeamDetail.tsx:107</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- NOTE -->
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">quick fix</div>
+    <div class="h2" style="margin-bottom:16px">Stadiums.tsx</div>
+    <div class="body" style="max-width:700px">
+      <code style="color:#c8f6f9;font-size:13px">Stadiums.tsx:57</code> already has access to <code style="color:#c8f6f9;font-size:13px">useLang()</code> and <code style="color:#c8f6f9;font-size:13px">t.stadiums.capacity</code> exists in <code style="color:#c8f6f9;font-size:13px">lang.ts</code> — just needs to replace <code style="background:#313641;padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#fff">'Capacity'</code> with <code style="background:#313641;padding:2px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#c8f6f9">{t.stadiums.capacity}</code>.
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- FOOTER WORDMARK -->
+<div class="footer-wordmark">translate · localise · ship</div>
+
+</body>
+</html>

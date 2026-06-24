@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
 import { shortHkt } from '../hooks/hkTime'
+import { useLang } from '../hooks/LangProvider'
 
 interface Team { id: string; name: string; nameZh: string; group: string; ranking: number; continent: string; flag: string }
 
@@ -12,6 +13,7 @@ interface Match {
 
 export function TeamPage() {
   const { id } = useParams()
+  const { t } = useLang()
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: matches, loading } = useJson<Match[]>('/data/matches.json')
 
@@ -33,11 +35,11 @@ export function TeamPage() {
   return (
     <div>
       <Link to="/teams" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>
-        ← All teams
+        {t.teams.backAll}
       </Link>
 
       {!team ? (
-        <p style={{ color: 'var(--text-muted)' }}>Team not found</p>
+        <p style={{ color: 'var(--text-muted)' }}>{t.teams.notFound}</p>
       ) : (
         <>
           {/* Team header */}

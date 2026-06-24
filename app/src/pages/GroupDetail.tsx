@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
 import { shortHkt } from '../hooks/hkTime'
+import { useLang } from '../hooks/LangProvider'
 
 interface Standing {
   rank: number; teamId: string; team: string; teamZh: string
@@ -20,6 +21,7 @@ const groupNames: Record<string, string> = {
 export function GroupPage() {
   const { id } = useParams<{ id: string }>()
   const g = id?.toUpperCase() || ''
+  const { t } = useLang()
 
   const { data: groupData } = useJson<GroupData>(`/data/groups/${g}.json`)
   const { data: matchData } = useJson<Match[]>('/data/matches.json')
@@ -34,7 +36,7 @@ export function GroupPage() {
 
   return (
     <div>
-      <Link to="/groups" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>← All groups</Link>
+      <Link to="/groups" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>{t.groups.backAll}</Link>
 
       <h1 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '16px' }}>
         {groupNames[g] || `Group ${g}`}
