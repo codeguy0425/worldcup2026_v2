@@ -162,6 +162,7 @@ export function SchedulePage() {
 // ─── Match Page ───
 
 export function MatchPage() {
+  const { t } = useLang()
   const { id } = useParams()
   const { data: matches, loading } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
@@ -185,7 +186,7 @@ export function MatchPage() {
 
   return (
     <div>
-      <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>← Back to schedule</Link>
+      <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>{t.match.back}</Link>
       <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>
           {m.round} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播">📺</span>}

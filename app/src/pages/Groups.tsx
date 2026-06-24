@@ -11,6 +11,7 @@ interface Standing {
 const groupLabels = ['A','B','C','D','E','F','G','H','I','J','K','L']
 
 function GroupTable({ group }: { group: string }) {
+  const { t } = useLang()
   const { data } = useJson<{ standings: Standing[]; remaining: number }>(`/data/groups/${group}.json`)
   if (!data) return null
 
@@ -26,7 +27,7 @@ function GroupTable({ group }: { group: string }) {
         fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 600,
         letterSpacing: '0.4px', textTransform: 'uppercase',
       }}>
-        <Link to={`/groups/${group}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>Group {group}</Link>
+        <Link to={`/groups/${group}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>{t.table.group} {group}</Link>
       </div>
       <div className="table-wrap">
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '11px' }}>

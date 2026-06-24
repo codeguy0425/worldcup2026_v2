@@ -27,7 +27,7 @@ export function TeamsPage() {
 
   if (view === 'group') {
     sections = groups.map(g => ({
-      heading: `Group ${g}`,
+      heading: `${t.table.group} ${g}`,
       items: teams.filter(t => t.group === g),
     }))
   } else if (view === 'name') {
