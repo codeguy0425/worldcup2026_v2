@@ -1,0 +1,116 @@
+{
+  "stadiums": [
+    {
+      "id": "mexico_city",
+      "name": "Estadio Azteca",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "capacity": 87523
+    },
+    {
+      "id": "guadalajara",
+      "name": "Estadio Guadalajara",
+      "city": "Guadalajara",
+      "country": "Mexico",
+      "capacity": 46632
+    },
+    {
+      "id": "monterrey",
+      "name": "Estadio BBVA",
+      "city": "Monterrey",
+      "country": "Mexico",
+      "capacity": 53500
+    },
+    {
+      "id": "toronto",
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada",
+      "capacity": 30991
+    },
+    {
+      "id": "vancouver",
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada",
+      "capacity": 54500
+    },
+    {
+      "id": "los_angeles",
+      "name": "SoFi Stadium",
+      "city": "Los Angeles",
+      "country": "USA",
+      "capacity": 70240
+    },
+    {
+      "id": "new_york",
+      "name": "MetLife Stadium",
+      "city": "New York/New Jersey",
+      "country": "USA",
+      "capacity": 82500
+    },
+    {
+      "id": "dallas",
+      "name": "AT&T Stadium",
+      "city": "Dallas",
+      "country": "USA",
+      "capacity": 80000
+    },
+    {
+      "id": "kansas_city",
+      "name": "Arrowhead Stadium",
+      "city": "Kansas City",
+      "country": "USA",
+      "capacity": 76416
+    },
+    {
+      "id": "houston",
+      "name": "NRG Stadium",
+      "city": "Houston",
+      "country": "USA",
+      "capacity": 72220
+    },
+    {
+      "id": "atlanta",
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "country": "USA",
+      "capacity": 71000
+    },
+    {
+      "id": "philadelphia",
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia",
+      "country": "USA",
+      "capacity": 69596
+    },
+    {
+      "id": "seattle",
+      "name": "Lumen Field",
+      "city": "Seattle",
+      "country": "USA",
+      "capacity": 69000
+    },
+    {
+      "id": "san_francisco",
+      "name": "Levi's Stadium",
+      "city": "San Francisco Bay Area",
+      "country": "USA",
+      "capacity": 68500
+    },
+    {
+      "id": "boston",
+      "name": "Gillette Stadium",
+      "city": "Boston",
+      "country": "USA",
+      "capacity": 65878
+    },
+    {
+      "id": "miami",
+      "name": "Hard Rock Stadium",
+      "city": "Miami",
+      "country": "USA",
+      "capacity": 65326
+    }
+  ]
+}

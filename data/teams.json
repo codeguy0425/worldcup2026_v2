@@ -1,0 +1,436 @@
+{
+  "teams": [
+    {
+      "id": "MEX",
+      "name": "Mexico",
+      "nameZh": "墨西哥",
+      "group": "A",
+      "ranking": 15,
+      "continent": "North America",
+      "flag": "🇲🇽"
+    },
+    {
+      "id": "RSA",
+      "name": "South Africa",
+      "nameZh": "南非",
+      "group": "A",
+      "ranking": 60,
+      "continent": "Africa",
+      "flag": "🇿🇦"
+    },
+    {
+      "id": "KOR",
+      "name": "South Korea",
+      "nameZh": "南韓",
+      "group": "A",
+      "ranking": 23,
+      "continent": "Asia",
+      "flag": "🇰🇷"
+    },
+    {
+      "id": "CZE",
+      "name": "Czech Republic",
+      "nameZh": "捷克",
+      "group": "A",
+      "ranking": 36,
+      "continent": "Europe",
+      "flag": "🇨🇿"
+    },
+    {
+      "id": "CAN",
+      "name": "Canada",
+      "nameZh": "加拿大",
+      "group": "B",
+      "ranking": 48,
+      "continent": "North America",
+      "flag": "🇨🇦"
+    },
+    {
+      "id": "BIH",
+      "name": "Bosnia & Herzegovina",
+      "nameZh": "波斯尼亞",
+      "group": "B",
+      "ranking": 57,
+      "continent": "Europe",
+      "flag": "🇧🇦"
+    },
+    {
+      "id": "QAT",
+      "name": "Qatar",
+      "nameZh": "卡塔爾",
+      "group": "B",
+      "ranking": 34,
+      "continent": "Asia",
+      "flag": "🇶🇦"
+    },
+    {
+      "id": "SUI",
+      "name": "Switzerland",
+      "nameZh": "瑞士",
+      "group": "B",
+      "ranking": 19,
+      "continent": "Europe",
+      "flag": "🇨🇭"
+    },
+    {
+      "id": "BRA",
+      "name": "Brazil",
+      "nameZh": "巴西",
+      "group": "C",
+      "ranking": 5,
+      "continent": "South America",
+      "flag": "🇧🇷"
+    },
+    {
+      "id": "MAR",
+      "name": "Morocco",
+      "nameZh": "摩洛哥",
+      "group": "C",
+      "ranking": 13,
+      "continent": "Africa",
+      "flag": "🇲🇦"
+    },
+    {
+      "id": "HAI",
+      "name": "Haiti",
+      "nameZh": "海地",
+      "group": "C",
+      "ranking": 90,
+      "continent": "North America",
+      "flag": "🇭🇹"
+    },
+    {
+      "id": "SCO",
+      "name": "Scotland",
+      "nameZh": "蘇格蘭",
+      "group": "C",
+      "ranking": 39,
+      "continent": "Europe",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"
+    },
+    {
+      "id": "USA",
+      "name": "USA",
+      "nameZh": "美國",
+      "group": "D",
+      "ranking": 16,
+      "continent": "North America",
+      "flag": "🇺🇸"
+    },
+    {
+      "id": "PAR",
+      "name": "Paraguay",
+      "nameZh": "巴拉圭",
+      "group": "D",
+      "ranking": 51,
+      "continent": "South America",
+      "flag": "🇵🇾"
+    },
+    {
+      "id": "AUS",
+      "name": "Australia",
+      "nameZh": "澳洲",
+      "group": "D",
+      "ranking": 27,
+      "continent": "Asia",
+      "flag": "🇦🇺"
+    },
+    {
+      "id": "TUR",
+      "name": "Turkey",
+      "nameZh": "土耳其",
+      "group": "D",
+      "ranking": 29,
+      "continent": "Europe",
+      "flag": "🇹🇷"
+    },
+    {
+      "id": "GER",
+      "name": "Germany",
+      "nameZh": "德國",
+      "group": "E",
+      "ranking": 11,
+      "continent": "Europe",
+      "flag": "🇩🇪"
+    },
+    {
+      "id": "CUW",
+      "name": "Curaçao",
+      "nameZh": "古拉索",
+      "group": "E",
+      "ranking": 86,
+      "continent": "North America",
+      "flag": "🇨🇼"
+    },
+    {
+      "id": "CIV",
+      "name": "Ivory Coast",
+      "nameZh": "科特迪瓦",
+      "group": "E",
+      "ranking": 42,
+      "continent": "Africa",
+      "flag": "🇨🇮"
+    },
+    {
+      "id": "ECU",
+      "name": "Ecuador",
+      "nameZh": "厄瓜多爾",
+      "group": "E",
+      "ranking": 32,
+      "continent": "South America",
+      "flag": "🇪🇨"
+    },
+    {
+      "id": "NED",
+      "name": "Netherlands",
+      "nameZh": "荷蘭",
+      "group": "F",
+      "ranking": 7,
+      "continent": "Europe",
+      "flag": "🇳🇱"
+    },
+    {
+      "id": "JPN",
+      "name": "Japan",
+      "nameZh": "日本",
+      "group": "F",
+      "ranking": 18,
+      "continent": "Asia",
+      "flag": "🇯🇵"
+    },
+    {
+      "id": "SWE",
+      "name": "Sweden",
+      "nameZh": "瑞典",
+      "group": "F",
+      "ranking": 25,
+      "continent": "Europe",
+      "flag": "🇸🇪"
+    },
+    {
+      "id": "TUN",
+      "name": "Tunisia",
+      "nameZh": "突尼西亞",
+      "group": "F",
+      "ranking": 30,
+      "continent": "Africa",
+      "flag": "🇹🇳"
+    },
+    {
+      "id": "BEL",
+      "name": "Belgium",
+      "nameZh": "比利時",
+      "group": "G",
+      "ranking": 6,
+      "continent": "Europe",
+      "flag": "🇧🇪"
+    },
+    {
+      "id": "EGY",
+      "name": "Egypt",
+      "nameZh": "埃及",
+      "group": "G",
+      "ranking": 33,
+      "continent": "Africa",
+      "flag": "🇪🇬"
+    },
+    {
+      "id": "IRN",
+      "name": "Iran",
+      "nameZh": "伊朗",
+      "group": "G",
+      "ranking": 21,
+      "continent": "Asia",
+      "flag": "🇮🇷"
+    },
+    {
+      "id": "NZL",
+      "name": "New Zealand",
+      "nameZh": "新西蘭",
+      "group": "G",
+      "ranking": 104,
+      "continent": "Oceania",
+      "flag": "🇳🇿"
+    },
+    {
+      "id": "ESP",
+      "name": "Spain",
+      "nameZh": "西班牙",
+      "group": "H",
+      "ranking": 8,
+      "continent": "Europe",
+      "flag": "🇪🇸"
+    },
+    {
+      "id": "CPV",
+      "name": "Cape Verde",
+      "nameZh": "佛得角",
+      "group": "H",
+      "ranking": 67,
+      "continent": "Africa",
+      "flag": "🇨🇻"
+    },
+    {
+      "id": "KSA",
+      "name": "Saudi Arabia",
+      "nameZh": "沙特阿拉伯",
+      "group": "H",
+      "ranking": 53,
+      "continent": "Asia",
+      "flag": "🇸🇦"
+    },
+    {
+      "id": "URU",
+      "name": "Uruguay",
+      "nameZh": "烏拉圭",
+      "group": "H",
+      "ranking": 14,
+      "continent": "South America",
+      "flag": "🇺🇾"
+    },
+    {
+      "id": "FRA",
+      "name": "France",
+      "nameZh": "法國",
+      "group": "I",
+      "ranking": 2,
+      "continent": "Europe",
+      "flag": "🇫🇷"
+    },
+    {
+      "id": "SEN",
+      "name": "Senegal",
+      "nameZh": "塞內加爾",
+      "group": "I",
+      "ranking": 20,
+      "continent": "Africa",
+      "flag": "🇸🇳"
+    },
+    {
+      "id": "IRQ",
+      "name": "Iraq",
+      "nameZh": "伊拉克",
+      "group": "I",
+      "ranking": 68,
+      "continent": "Asia",
+      "flag": "🇮🇶"
+    },
+    {
+      "id": "NOR",
+      "name": "Norway",
+      "nameZh": "挪威",
+      "group": "I",
+      "ranking": 44,
+      "continent": "Europe",
+      "flag": "🇳🇴"
+    },
+    {
+      "id": "ARG",
+      "name": "Argentina",
+      "nameZh": "阿根廷",
+      "group": "J",
+      "ranking": 1,
+      "continent": "South America",
+      "flag": "🇦🇷"
+    },
+    {
+      "id": "ALG",
+      "name": "Algeria",
+      "nameZh": "阿爾及利亞",
+      "group": "J",
+      "ranking": 31,
+      "continent": "Africa",
+      "flag": "🇩🇿"
+    },
+    {
+      "id": "AUT",
+      "name": "Austria",
+      "nameZh": "奧地利",
+      "group": "J",
+      "ranking": 24,
+      "continent": "Europe",
+      "flag": "🇦🇹"
+    },
+    {
+      "id": "JOR",
+      "name": "Jordan",
+      "nameZh": "約旦",
+      "group": "J",
+      "ranking": 70,
+      "continent": "Asia",
+      "flag": "🇯🇴"
+    },
+    {
+      "id": "POR",
+      "name": "Portugal",
+      "nameZh": "葡萄牙",
+      "group": "K",
+      "ranking": 4,
+      "continent": "Europe",
+      "flag": "🇵🇹"
+    },
+    {
+      "id": "COD",
+      "name": "DR Congo",
+      "nameZh": "剛果民主共和國",
+      "group": "K",
+      "ranking": 63,
+      "continent": "Africa",
+      "flag": "🇨🇩"
+    },
+    {
+      "id": "UZB",
+      "name": "Uzbekistan",
+      "nameZh": "烏茲別克",
+      "group": "K",
+      "ranking": 74,
+      "continent": "Asia",
+      "flag": "🇺🇿"
+    },
+    {
+      "id": "COL",
+      "name": "Colombia",
+      "nameZh": "哥倫比亞",
+      "group": "K",
+      "ranking": 9,
+      "continent": "South America",
+      "flag": "🇨🇴"
+    },
+    {
+      "id": "ENG",
+      "name": "England",
+      "nameZh": "英格蘭",
+      "group": "L",
+      "ranking": 3,
+      "continent": "Europe",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    },
+    {
+      "id": "CRO",
+      "name": "Croatia",
+      "nameZh": "克羅地亞",
+      "group": "L",
+      "ranking": 10,
+      "continent": "Europe",
+      "flag": "🇭🇷"
+    },
+    {
+      "id": "GHA",
+      "name": "Ghana",
+      "nameZh": "加納",
+      "group": "L",
+      "ranking": 61,
+      "continent": "Africa",
+      "flag": "🇬🇭"
+    },
+    {
+      "id": "PAN",
+      "name": "Panama",
+      "nameZh": "巴拿馬",
+      "group": "L",
+      "ranking": 46,
+      "continent": "North America",
+      "flag": "🇵🇦"
+    }
+  ]
+}
