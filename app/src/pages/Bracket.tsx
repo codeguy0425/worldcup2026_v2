@@ -2,6 +2,7 @@ import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { toHkt } from '../hooks/hkTime'
+import { useLang } from '../hooks/LangProvider'
 
 interface BracketMatch {
   matchId: number; round: string; date: string
@@ -29,6 +30,7 @@ function placeholderGroup(id: string): string | null {
 }
 
 export function BracketPage() {
+  const { t } = useLang()
   const { data: bracket } = useJson<BracketData>('/data/bracket.json')
   const { data: teamData } = useJson<{ teams: { id: string; name: string; flag: string }[] }>('/data/teams.json')
   const { data: matches } = useJson<Match[]>('/data/matches.json')
@@ -58,9 +60,9 @@ export function BracketPage() {
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Bracket</h1>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.bracket.title}</h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
-          Knockout stage — placeholders shown until groups complete
+          {t.bracket.desc}
         </p>
 
         {/* Filter buttons */}

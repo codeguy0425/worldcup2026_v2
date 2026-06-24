@@ -12,6 +12,7 @@ import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useJson } from '../hooks/useJson'
 import { toHkt } from '../hooks/hkTime'
+import { useLang } from '../hooks/LangProvider'
 
 // ─── Schedule Page ───
 
@@ -31,6 +32,7 @@ interface Team { id: string; name: string; flag: string }
 interface StadiumInfo { id: string; name: string; city: string; country: string }
 
 export function SchedulePage() {
+  const { t } = useLang()
   const { data: matchData, loading } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
 
@@ -77,7 +79,7 @@ export function SchedulePage() {
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Schedule</h1>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.schedule.title}</h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>{matches.length} matches</p>
 
         {/* Filter buttons */}

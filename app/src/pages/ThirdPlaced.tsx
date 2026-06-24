@@ -1,5 +1,6 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
+import { useLang } from '../hooks/LangProvider'
 
 interface ThirdEntry {
   overall_rank: number; group: string; teamId: string; team: string
@@ -9,6 +10,7 @@ interface ThirdEntry {
 }
 
 export function ThirdPlacedPage() {
+  const { t } = useLang()
   const { data, loading } = useJson<{ rankings: ThirdEntry[] }>('/data/third-placed.json')
   const entries = data?.rankings ?? []
 
@@ -16,10 +18,10 @@ export function ThirdPlacedPage() {
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
         <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
-          Third-Placed
+          {t.third.title}
         </h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          Best 8 of 12 third-placed teams advance to R32
+          {t.third.desc}
         </p>
       </div>
 

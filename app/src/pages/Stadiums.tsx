@@ -1,10 +1,12 @@
 import { useJson } from '../hooks/useJson'
+import { useLang } from '../hooks/LangProvider'
 
 interface Stadium {
   id: string; name: string; city: string; country: string; capacity: number
 }
 
 export function StadiumsPage() {
+  const { t } = useLang()
   const { data, loading } = useJson<{ stadiums: Stadium[] }>('/data/stadiums.json')
   const stadiums = data?.stadiums ?? []
 
@@ -16,10 +18,10 @@ export function StadiumsPage() {
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
         <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
-          Stadiums
+          {t.stadiums.title}
         </h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          16 venues across 3 host countries
+          {t.stadiums.desc}
         </p>
       </div>
 
