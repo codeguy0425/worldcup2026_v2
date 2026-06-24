@@ -1,0 +1,875 @@
+[
+  {
+    "scorer": "Lionel Messi",
+    "teamId": "ARG",
+    "teamName": "Argentina",
+    "flag": "🇦🇷",
+    "goals": 5,
+    "penalties": 0,
+    "rank": 1
+  },
+  {
+    "scorer": "Erling Haaland",
+    "teamId": "NOR",
+    "teamName": "Norway",
+    "flag": "🇳🇴",
+    "goals": 4,
+    "penalties": 0,
+    "rank": 2
+  },
+  {
+    "scorer": "Kylian Mbappé",
+    "teamId": "FRA",
+    "teamName": "France",
+    "flag": "🇫🇷",
+    "goals": 4,
+    "penalties": 0,
+    "rank": 3
+  },
+  {
+    "scorer": "Deniz Undav",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 3,
+    "penalties": 0,
+    "rank": 4
+  },
+  {
+    "scorer": "Jonathan David",
+    "teamId": "CAN",
+    "teamName": "Canada",
+    "flag": "🇨🇦",
+    "goals": 3,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
+    "scorer": "Ayase Ueda",
+    "teamId": "JPN",
+    "teamName": "Japan",
+    "flag": "🇯🇵",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 6
+  },
+  {
+    "scorer": "Brian Brobbey",
+    "teamId": "NED",
+    "teamName": "Netherlands",
+    "flag": "🇳🇱",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 7
+  },
+  {
+    "scorer": "Cody Gakpo",
+    "teamId": "NED",
+    "teamName": "Netherlands",
+    "flag": "🇳🇱",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 8
+  },
+  {
+    "scorer": "Cristiano Ronaldo",
+    "teamId": "POR",
+    "teamName": "Portugal",
+    "flag": "🇵🇹",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 9
+  },
+  {
+    "scorer": "Crysencio Summerville",
+    "teamId": "NED",
+    "teamName": "Netherlands",
+    "flag": "🇳🇱",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 10
+  },
+  {
+    "scorer": "Cyle Larin",
+    "teamId": "CAN",
+    "teamName": "Canada",
+    "flag": "🇨🇦",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 11
+  },
+  {
+    "scorer": "Daichi Kamada",
+    "teamId": "JPN",
+    "teamName": "Japan",
+    "flag": "🇯🇵",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 12
+  },
+  {
+    "scorer": "Elijah Just",
+    "teamId": "NZL",
+    "teamName": "New Zealand",
+    "flag": "🇳🇿",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 13
+  },
+  {
+    "scorer": "Folarin Balogun",
+    "teamId": "USA",
+    "teamName": "USA",
+    "flag": "🇺🇸",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 14
+  },
+  {
+    "scorer": "Harry Kane",
+    "teamId": "ENG",
+    "teamName": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "goals": 2,
+    "penalties": 1,
+    "rank": 15
+  },
+  {
+    "scorer": "Ismael Saibari",
+    "teamId": "MAR",
+    "teamName": "Morocco",
+    "flag": "🇲🇦",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 16
+  },
+  {
+    "scorer": "Ismaïla Sarr",
+    "teamId": "SEN",
+    "teamName": "Senegal",
+    "flag": "🇸🇳",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 17
+  },
+  {
+    "scorer": "Johan Manzambi",
+    "teamId": "SUI",
+    "teamName": "Switzerland",
+    "flag": "🇨🇭",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 18
+  },
+  {
+    "scorer": "Kai Havertz",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 2,
+    "penalties": 1,
+    "rank": 19
+  },
+  {
+    "scorer": "Matheus Cunha",
+    "teamId": "BRA",
+    "teamName": "Brazil",
+    "flag": "🇧🇷",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 20
+  },
+  {
+    "scorer": "Maxi Araújo",
+    "teamId": "URU",
+    "teamName": "Uruguay",
+    "flag": "🇺🇾",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 21
+  },
+  {
+    "scorer": "Mikel Oyarzabal",
+    "teamId": "ESP",
+    "teamName": "Spain",
+    "flag": "🇪🇸",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 22
+  },
+  {
+    "scorer": "Vinícius Júnior",
+    "teamId": "BRA",
+    "teamName": "Brazil",
+    "flag": "🇧🇷",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 23
+  },
+  {
+    "scorer": "Yasin Ayari",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 24
+  },
+  {
+    "scorer": "Abbosbek Fayzullaev",
+    "teamId": "UZB",
+    "teamName": "Uzbekistan",
+    "flag": "🇺🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 25
+  },
+  {
+    "scorer": "Abdulelah Al-Amri",
+    "teamId": "KSA",
+    "teamName": "Saudi Arabia",
+    "flag": "🇸🇦",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 26
+  },
+  {
+    "scorer": "Agustín Cano",
+    "teamId": "URU",
+    "teamName": "Uruguay",
+    "flag": "🇺🇾",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 27
+  },
+  {
+    "scorer": "Alex Freeman",
+    "teamId": "USA",
+    "teamName": "USA",
+    "flag": "🇺🇸",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 28
+  },
+  {
+    "scorer": "Alexander Isak",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 29
+  },
+  {
+    "scorer": "Ali Olwan",
+    "teamId": "JOR",
+    "teamName": "Jordan",
+    "flag": "🇯🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 30
+  },
+  {
+    "scorer": "Amad Diallo",
+    "teamId": "CIV",
+    "teamName": "Ivory Coast",
+    "flag": "🇨🇮",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 31
+  },
+  {
+    "scorer": "Amine Gouiri",
+    "teamId": "ALG",
+    "teamName": "Algeria",
+    "flag": "🇩🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 32
+  },
+  {
+    "scorer": "Anthony Elanga",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 33
+  },
+  {
+    "scorer": "Aymen Hussein",
+    "teamId": "IRQ",
+    "teamName": "Iraq",
+    "flag": "🇮🇶",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 34
+  },
+  {
+    "scorer": "Bradley Barcola",
+    "teamId": "FRA",
+    "teamName": "France",
+    "flag": "🇫🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 35
+  },
+  {
+    "scorer": "Breel Embolo",
+    "teamId": "SUI",
+    "teamName": "Switzerland",
+    "flag": "🇨🇭",
+    "goals": 1,
+    "penalties": 1,
+    "rank": 36
+  },
+  {
+    "scorer": "Caleb Yirenkyi",
+    "teamId": "GHA",
+    "teamName": "Ghana",
+    "flag": "🇬🇭",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 37
+  },
+  {
+    "scorer": "Connor Metcalfe",
+    "teamId": "AUS",
+    "teamName": "Australia",
+    "flag": "🇦🇺",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 38
+  },
+  {
+    "scorer": "Daniel Muñoz",
+    "teamId": "COL",
+    "teamName": "Colombia",
+    "flag": "🇨🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 39
+  },
+  {
+    "scorer": "Emam Ashour",
+    "teamId": "EGY",
+    "teamName": "Egypt",
+    "flag": "🇪🇬",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 40
+  },
+  {
+    "scorer": "Ermin Mahmic",
+    "teamId": "BIH",
+    "teamName": "Bosnia & Herzegovina",
+    "flag": "🇧🇦",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 41
+  },
+  {
+    "scorer": "Felix Nmecha",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 42
+  },
+  {
+    "scorer": "Finn Surman",
+    "teamId": "NZL",
+    "teamName": "New Zealand",
+    "flag": "🇳🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 43
+  },
+  {
+    "scorer": "Franck Kessié",
+    "teamId": "CIV",
+    "teamName": "Ivory Coast",
+    "flag": "🇨🇮",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 44
+  },
+  {
+    "scorer": "Giovanni Reyna",
+    "teamId": "USA",
+    "teamName": "USA",
+    "flag": "🇺🇸",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 45
+  },
+  {
+    "scorer": "Granit Xhaka",
+    "teamId": "SUI",
+    "teamName": "Switzerland",
+    "flag": "🇨🇭",
+    "goals": 1,
+    "penalties": 1,
+    "rank": 46
+  },
+  {
+    "scorer": "Hwang In-Beom",
+    "teamId": "KOR",
+    "teamName": "South Korea",
+    "flag": "🇰🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 47
+  },
+  {
+    "scorer": "Hélio Varela",
+    "teamId": "CPV",
+    "teamName": "Cape Verde",
+    "flag": "🇨🇻",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 48
+  },
+  {
+    "scorer": "Ibrahim Mbaye",
+    "teamId": "SEN",
+    "teamName": "Senegal",
+    "flag": "🇸🇳",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 49
+  },
+  {
+    "scorer": "Jamal Musiala",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 50
+  },
+  {
+    "scorer": "John McGinn",
+    "teamId": "SCO",
+    "teamName": "Scotland",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 51
+  },
+  {
+    "scorer": "Jovo Lukić",
+    "teamId": "BIH",
+    "teamName": "Bosnia & Herzegovina",
+    "flag": "🇧🇦",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 52
+  },
+  {
+    "scorer": "João Neves",
+    "teamId": "POR",
+    "teamName": "Portugal",
+    "flag": "🇵🇹",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 53
+  },
+  {
+    "scorer": "Jude Bellingham",
+    "teamId": "ENG",
+    "teamName": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 54
+  },
+  {
+    "scorer": "Julián Quiñones",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 55
+  },
+  {
+    "scorer": "Junya Ito",
+    "teamId": "JPN",
+    "teamName": "Japan",
+    "flag": "🇯🇵",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 56
+  },
+  {
+    "scorer": "Jáminton Campaz",
+    "teamId": "COL",
+    "teamName": "Colombia",
+    "flag": "🇨🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 57
+  },
+  {
+    "scorer": "Keito Nakamura",
+    "teamId": "JPN",
+    "teamName": "Japan",
+    "flag": "🇯🇵",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 58
+  },
+  {
+    "scorer": "Kevin Pina",
+    "teamId": "CPV",
+    "teamName": "Cape Verde",
+    "flag": "🇨🇻",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 59
+  },
+  {
+    "scorer": "Ladislav Krejcí",
+    "teamId": "CZE",
+    "teamName": "Czech Republic",
+    "flag": "🇨🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 60
+  },
+  {
+    "scorer": "Lamine Yamal",
+    "teamId": "ESP",
+    "teamName": "Spain",
+    "flag": "🇪🇸",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 61
+  },
+  {
+    "scorer": "Leo Østigard",
+    "teamId": "NOR",
+    "teamName": "Norway",
+    "flag": "🇳🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 62
+  },
+  {
+    "scorer": "Livano Comenencia",
+    "teamId": "CUW",
+    "teamName": "Curaçao",
+    "flag": "🇨🇼",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 63
+  },
+  {
+    "scorer": "Luis Díaz",
+    "teamId": "COL",
+    "teamName": "Colombia",
+    "flag": "🇨🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 64
+  },
+  {
+    "scorer": "Luis Romo",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 65
+  },
+  {
+    "scorer": "Marcus Holmgren Pedersen",
+    "teamId": "NOR",
+    "teamName": "Norway",
+    "flag": "🇳🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 66
+  },
+  {
+    "scorer": "Marcus Rashford",
+    "teamId": "ENG",
+    "teamName": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 67
+  },
+  {
+    "scorer": "Marko Arnautovic",
+    "teamId": "AUT",
+    "teamName": "Austria",
+    "flag": "🇦🇹",
+    "goals": 1,
+    "penalties": 1,
+    "rank": 68
+  },
+  {
+    "scorer": "Martin Baturina",
+    "teamId": "CRO",
+    "teamName": "Croatia",
+    "flag": "🇭🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 69
+  },
+  {
+    "scorer": "Mattias Svanberg",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 70
+  },
+  {
+    "scorer": "Matías Galarza",
+    "teamId": "PAR",
+    "teamName": "Paraguay",
+    "flag": "🇵🇾",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 71
+  },
+  {
+    "scorer": "Mauricio",
+    "teamId": "PAR",
+    "teamName": "Paraguay",
+    "flag": "🇵🇾",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 72
+  },
+  {
+    "scorer": "Michal Sadílek",
+    "teamId": "CZE",
+    "teamName": "Czech Republic",
+    "flag": "🇨🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 73
+  },
+  {
+    "scorer": "Mohamed Salah",
+    "teamId": "EGY",
+    "teamName": "Egypt",
+    "flag": "🇪🇬",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 74
+  },
+  {
+    "scorer": "Mohammad Mohebbi",
+    "teamId": "IRN",
+    "teamName": "Iran",
+    "flag": "🇮🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 75
+  },
+  {
+    "scorer": "Mostafa Zico",
+    "teamId": "EGY",
+    "teamName": "Egypt",
+    "flag": "🇪🇬",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 76
+  },
+  {
+    "scorer": "Nadhir Benbouali",
+    "teamId": "ALG",
+    "teamName": "Algeria",
+    "flag": "🇩🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 77
+  },
+  {
+    "scorer": "Nathan Saliba",
+    "teamId": "CAN",
+    "teamName": "Canada",
+    "flag": "🇨🇦",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 78
+  },
+  {
+    "scorer": "Nathaniel Brown",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 79
+  },
+  {
+    "scorer": "Nestory Irankunda",
+    "teamId": "AUS",
+    "teamName": "Australia",
+    "flag": "🇦🇺",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 80
+  },
+  {
+    "scorer": "Nico Schlotterbeck",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 81
+  },
+  {
+    "scorer": "Nizar Al-Rashdan",
+    "teamId": "JOR",
+    "teamName": "Jordan",
+    "flag": "🇯🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 82
+  },
+  {
+    "scorer": "Nuno Mendes",
+    "teamId": "POR",
+    "teamName": "Portugal",
+    "flag": "🇵🇹",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 83
+  },
+  {
+    "scorer": "Oh Hyeon-Gyu",
+    "teamId": "KOR",
+    "teamName": "South Korea",
+    "flag": "🇰🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 84
+  },
+  {
+    "scorer": "Omar Rekik",
+    "teamId": "TUN",
+    "teamName": "Tunisia",
+    "flag": "🇹🇳",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 85
+  },
+  {
+    "scorer": "Ousmane Dembélé",
+    "teamId": "FRA",
+    "teamName": "France",
+    "flag": "🇫🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 86
+  },
+  {
+    "scorer": "Petar Musa",
+    "teamId": "CRO",
+    "teamName": "Croatia",
+    "flag": "🇭🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 87
+  },
+  {
+    "scorer": "Rafael Leão",
+    "teamId": "POR",
+    "teamName": "Portugal",
+    "flag": "🇵🇹",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 88
+  },
+  {
+    "scorer": "Ramin Rezaeian",
+    "teamId": "IRN",
+    "teamName": "Iran",
+    "flag": "🇮🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 89
+  },
+  {
+    "scorer": "Raúl Jiménez",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 90
+  },
+  {
+    "scorer": "Romano Schmid",
+    "teamId": "AUT",
+    "teamName": "Austria",
+    "flag": "🇦🇹",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 91
+  },
+  {
+    "scorer": "Rubén Vargas",
+    "teamId": "SUI",
+    "teamName": "Switzerland",
+    "flag": "🇨🇭",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 92
+  },
+  {
+    "scorer": "Teboho Mokoena",
+    "teamId": "RSA",
+    "teamName": "South Africa",
+    "flag": "🇿🇦",
+    "goals": 1,
+    "penalties": 1,
+    "rank": 93
+  },
+  {
+    "scorer": "Trézéguet",
+    "teamId": "EGY",
+    "teamName": "Egypt",
+    "flag": "🇪🇬",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 94
+  },
+  {
+    "scorer": "Viktor Gyökeres",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 95
+  },
+  {
+    "scorer": "Virgil van Dijk",
+    "teamId": "NED",
+    "teamName": "Netherlands",
+    "flag": "🇳🇱",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 96
+  },
+  {
+    "scorer": "Yoane Wissa",
+    "teamId": "COD",
+    "teamName": "DR Congo",
+    "flag": "🇨🇩",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 97
+  }
+]

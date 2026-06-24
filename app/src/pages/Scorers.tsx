@@ -1,0 +1,79 @@
+import { useJson } from '../hooks/useJson'
+
+interface Scorer {
+  rank: number; scorer: string; teamId: string
+  teamName: string; flag: string; goals: number; penalties: number
+}
+
+export function ScorersPage() {
+  const { data, loading } = useJson<Scorer[]>('/data/top-scorers.json')
+  const scorers = data ?? []
+
+  return (
+    <div>
+      <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
+        Top Scorers
+      </h1>
+      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
+        {scorers.length} players have scored
+      </p>
+
+      {loading ? (
+        <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
+      ) : scorers.length === 0 ? (
+        <p style={{ color: 'var(--text-muted)' }}>No goals scored yet</p>
+      ) : (
+        <div className="table-wrap" style={{
+          background: 'var(--surface)', borderRadius: 'var(--radius-md)',
+          border: '1px solid var(--border)',
+        }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid var(--border)' }}>
+                {['RK','','Player','Team','Goals','Pen'].map(h => (
+                  <th key={h} style={{
+                    padding: '8px 8px', textAlign: h === 'Player' || h === 'Team' ? 'left' : 'center',
+                    fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 500,
+                    letterSpacing: '0.3px', textTransform: 'uppercase', color: 'var(--text-muted)',
+                    position: 'sticky', top: 0, background: 'var(--surface)',
+                  }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {scorers.map((s, i) => {
+                const medal = s.rank === 1 ? '🥇' : s.rank === 2 ? '🥈' : s.rank === 3 ? '🥉' : ''
+                return (
+                  <tr key={`${s.scorer}-${s.teamId}`} style={{
+                    borderBottom: i < scorers.length - 1 ? '1px solid var(--border)' : 'none',
+                  }}>
+                    <td style={{
+                      padding: '5px 8px', textAlign: 'center',
+                      fontWeight: s.rank <= 3 ? 700 : 400,
+                      fontSize: s.rank <= 3 ? '13px' : '11px',
+                    }}>
+                      {medal || s.rank}
+                    </td>
+                    <td style={{ padding: '5px 8px', textAlign: 'center', fontSize: '15px' }}>{s.flag}</td>
+                    <td style={{ padding: '5px 8px', fontWeight: s.goals >= 3 ? 600 : 400 }}>{s.scorer}</td>
+                    <td style={{ padding: '5px 8px', color: 'var(--text-muted)', fontSize: '11px' }}>{s.teamName}</td>
+                    <td style={{
+                      padding: '5px 8px', textAlign: 'center',
+                      fontWeight: 700, fontSize: '14px',
+                      color: s.goals >= 4 ? 'var(--accent)' : 'var(--text)',
+                    }}>
+                      {s.goals}
+                    </td>
+                    <td style={{ padding: '5px 8px', textAlign: 'center', fontSize: '10px', color: 'var(--text-muted)' }}>
+                      {s.penalties > 0 ? `${s.penalties}` : '—'}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
+  )
+}

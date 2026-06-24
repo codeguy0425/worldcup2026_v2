@@ -1,0 +1,2262 @@
+[
+  {
+    "id": 1,
+    "round": "Matchday 1",
+    "date": "2026-06-11",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "MEX",
+    "team2Id": "RSA",
+    "group": "A",
+    "groundId": "mexico_city",
+    "num": 1,
+    "stage": "group",
+    "score1": 2,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 9,
+        "scorer": "Julián Quiñones",
+        "teamId": "MEX"
+      },
+      {
+        "minute": 67,
+        "scorer": "Raúl Jiménez",
+        "teamId": "MEX"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "round": "Matchday 1",
+    "date": "2026-06-12",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "KOR",
+    "team2Id": "CZE",
+    "group": "A",
+    "groundId": "guadalajara",
+    "num": 2,
+    "stage": "group",
+    "score1": 2,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 59,
+        "scorer": "Ladislav Krejcí",
+        "teamId": "CZE"
+      },
+      {
+        "minute": 67,
+        "scorer": "Hwang In-Beom",
+        "teamId": "KOR"
+      },
+      {
+        "minute": 80,
+        "scorer": "Oh Hyeon-Gyu",
+        "teamId": "KOR"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "round": "Matchday 8",
+    "date": "2026-06-18",
+    "time": "00:00",
+    "timeUtc": "16:00",
+    "team1Id": "CZE",
+    "team2Id": "RSA",
+    "group": "A",
+    "groundId": "atlanta",
+    "num": 3,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 6,
+        "scorer": "Michal Sadílek",
+        "teamId": "CZE"
+      },
+      {
+        "minute": 83,
+        "scorer": "Teboho Mokoena",
+        "teamId": "RSA",
+        "penalty": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "round": "Matchday 8",
+    "date": "2026-06-19",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "MEX",
+    "team2Id": "KOR",
+    "group": "A",
+    "groundId": "guadalajara",
+    "num": 4,
+    "stage": "group",
+    "score1": 1,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 50,
+        "scorer": "Luis Romo",
+        "teamId": "MEX"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "round": "Matchday 14",
+    "date": "2026-06-25",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "CZE",
+    "team2Id": "MEX",
+    "group": "A",
+    "groundId": "mexico_city",
+    "num": 5,
+    "stage": "group"
+  },
+  {
+    "id": 6,
+    "round": "Matchday 14",
+    "date": "2026-06-25",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "RSA",
+    "team2Id": "KOR",
+    "group": "A",
+    "groundId": "monterrey",
+    "num": 6,
+    "stage": "group"
+  },
+  {
+    "id": 7,
+    "round": "Matchday 2",
+    "date": "2026-06-12",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "CAN",
+    "team2Id": "BIH",
+    "group": "B",
+    "groundId": "toronto",
+    "num": 7,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 21,
+        "scorer": "Jovo Lukić",
+        "teamId": "BIH"
+      },
+      {
+        "minute": 78,
+        "scorer": "Cyle Larin",
+        "teamId": "CAN"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "round": "Matchday 3",
+    "date": "2026-06-13",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "QAT",
+    "team2Id": "SUI",
+    "group": "B",
+    "groundId": "san_francisco",
+    "num": 8,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 17,
+        "scorer": "Breel Embolo",
+        "teamId": "SUI",
+        "penalty": true
+      },
+      {
+        "minute": 90,
+        "scorer": "Miro Muheim",
+        "teamId": "QAT",
+        "ownGoal": true,
+        "stoppageTime": 4
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "round": "Matchday 8",
+    "date": "2026-06-18",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "SUI",
+    "team2Id": "BIH",
+    "group": "B",
+    "groundId": "los_angeles",
+    "num": 9,
+    "stage": "group",
+    "score1": 4,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 74,
+        "scorer": "Johan Manzambi",
+        "teamId": "SUI"
+      },
+      {
+        "minute": 84,
+        "scorer": "Rubén Vargas",
+        "teamId": "SUI"
+      },
+      {
+        "minute": 90,
+        "scorer": "Johan Manzambi",
+        "teamId": "SUI"
+      },
+      {
+        "minute": 90,
+        "scorer": "Ermin Mahmic",
+        "teamId": "BIH",
+        "stoppageTime": 3
+      },
+      {
+        "minute": 90,
+        "scorer": "Granit Xhaka",
+        "teamId": "SUI",
+        "penalty": true,
+        "stoppageTime": 7
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "round": "Matchday 8",
+    "date": "2026-06-18",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "CAN",
+    "team2Id": "QAT",
+    "group": "B",
+    "groundId": "vancouver",
+    "num": 10,
+    "stage": "group",
+    "score1": 6,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 16,
+        "scorer": "Cyle Larin",
+        "teamId": "CAN"
+      },
+      {
+        "minute": 29,
+        "scorer": "Jonathan David",
+        "teamId": "CAN"
+      },
+      {
+        "minute": 45,
+        "scorer": "Jonathan David",
+        "teamId": "CAN",
+        "stoppageTime": 3
+      },
+      {
+        "minute": 64,
+        "scorer": "Nathan Saliba",
+        "teamId": "CAN"
+      },
+      {
+        "minute": 75,
+        "scorer": "Mohamed Manai",
+        "teamId": "CAN",
+        "ownGoal": true
+      },
+      {
+        "minute": 90,
+        "scorer": "Jonathan David",
+        "teamId": "CAN",
+        "stoppageTime": 2
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "round": "Matchday 14",
+    "date": "2026-06-24",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "SUI",
+    "team2Id": "CAN",
+    "group": "B",
+    "groundId": "vancouver",
+    "num": 11,
+    "stage": "group"
+  },
+  {
+    "id": 12,
+    "round": "Matchday 14",
+    "date": "2026-06-24",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "BIH",
+    "team2Id": "QAT",
+    "group": "B",
+    "groundId": "seattle",
+    "num": 12,
+    "stage": "group"
+  },
+  {
+    "id": 13,
+    "round": "Matchday 3",
+    "date": "2026-06-13",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "BRA",
+    "team2Id": "MAR",
+    "group": "C",
+    "groundId": "new_york",
+    "num": 13,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 21,
+        "scorer": "Ismael Saibari",
+        "teamId": "MAR"
+      },
+      {
+        "minute": 32,
+        "scorer": "Vinícius Júnior",
+        "teamId": "BRA"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "round": "Matchday 3",
+    "date": "2026-06-14",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "HAI",
+    "team2Id": "SCO",
+    "group": "C",
+    "groundId": "boston",
+    "num": 14,
+    "stage": "group",
+    "score1": 0,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 28,
+        "scorer": "John McGinn",
+        "teamId": "SCO"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "round": "Matchday 9",
+    "date": "2026-06-19",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "SCO",
+    "team2Id": "MAR",
+    "group": "C",
+    "groundId": "boston",
+    "num": 15,
+    "stage": "group",
+    "score1": 0,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 2,
+        "scorer": "Ismael Saibari",
+        "teamId": "MAR"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "round": "Matchday 9",
+    "date": "2026-06-20",
+    "time": "08:30",
+    "timeUtc": "00:30",
+    "team1Id": "BRA",
+    "team2Id": "HAI",
+    "group": "C",
+    "groundId": "philadelphia",
+    "num": 16,
+    "stage": "group",
+    "score1": 3,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 23,
+        "scorer": "Matheus Cunha",
+        "teamId": "BRA"
+      },
+      {
+        "minute": 36,
+        "scorer": "Matheus Cunha",
+        "teamId": "BRA"
+      },
+      {
+        "minute": 45,
+        "scorer": "Vinícius Júnior",
+        "teamId": "BRA",
+        "stoppageTime": 3
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "round": "Matchday 14",
+    "date": "2026-06-24",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "SCO",
+    "team2Id": "BRA",
+    "group": "C",
+    "groundId": "miami",
+    "num": 17,
+    "stage": "group"
+  },
+  {
+    "id": 18,
+    "round": "Matchday 14",
+    "date": "2026-06-24",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "MAR",
+    "team2Id": "HAI",
+    "group": "C",
+    "groundId": "atlanta",
+    "num": 18,
+    "stage": "group"
+  },
+  {
+    "id": 19,
+    "round": "Matchday 2",
+    "date": "2026-06-13",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "USA",
+    "team2Id": "PAR",
+    "group": "D",
+    "groundId": "los_angeles",
+    "num": 19,
+    "stage": "group",
+    "score1": 4,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 7,
+        "scorer": "Damian Bobadilla",
+        "teamId": "USA",
+        "ownGoal": true
+      },
+      {
+        "minute": 31,
+        "scorer": "Folarin Balogun",
+        "teamId": "USA"
+      },
+      {
+        "minute": 45,
+        "scorer": "Folarin Balogun",
+        "teamId": "USA",
+        "stoppageTime": 5
+      },
+      {
+        "minute": 73,
+        "scorer": "Mauricio",
+        "teamId": "PAR"
+      },
+      {
+        "minute": 90,
+        "scorer": "Giovanni Reyna",
+        "teamId": "USA",
+        "stoppageTime": 8
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "round": "Matchday 3",
+    "date": "2026-06-14",
+    "time": "12:00",
+    "timeUtc": "04:00",
+    "team1Id": "AUS",
+    "team2Id": "TUR",
+    "group": "D",
+    "groundId": "vancouver",
+    "num": 20,
+    "stage": "group",
+    "score1": 2,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 27,
+        "scorer": "Nestory Irankunda",
+        "teamId": "AUS"
+      },
+      {
+        "minute": 75,
+        "scorer": "Connor Metcalfe",
+        "teamId": "AUS"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "round": "Matchday 9",
+    "date": "2026-06-19",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "USA",
+    "team2Id": "AUS",
+    "group": "D",
+    "groundId": "seattle",
+    "num": 21,
+    "stage": "group",
+    "score1": 2,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 11,
+        "scorer": "Cameron Burgess",
+        "teamId": "USA",
+        "ownGoal": true
+      },
+      {
+        "minute": 43,
+        "scorer": "Alex Freeman",
+        "teamId": "USA"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "round": "Matchday 9",
+    "date": "2026-06-20",
+    "time": "11:00",
+    "timeUtc": "03:00",
+    "team1Id": "TUR",
+    "team2Id": "PAR",
+    "group": "D",
+    "groundId": "san_francisco",
+    "num": 22,
+    "stage": "group",
+    "score1": 0,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 2,
+        "scorer": "Matías Galarza",
+        "teamId": "PAR"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "round": "Matchday 15",
+    "date": "2026-06-26",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "TUR",
+    "team2Id": "USA",
+    "group": "D",
+    "groundId": "los_angeles",
+    "num": 23,
+    "stage": "group"
+  },
+  {
+    "id": 24,
+    "round": "Matchday 15",
+    "date": "2026-06-26",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "PAR",
+    "team2Id": "AUS",
+    "group": "D",
+    "groundId": "san_francisco",
+    "num": 24,
+    "stage": "group"
+  },
+  {
+    "id": 25,
+    "round": "Matchday 4",
+    "date": "2026-06-14",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "GER",
+    "team2Id": "CUW",
+    "group": "E",
+    "groundId": "houston",
+    "num": 25,
+    "stage": "group",
+    "score1": 7,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 6,
+        "scorer": "Felix Nmecha",
+        "teamId": "GER"
+      },
+      {
+        "minute": 21,
+        "scorer": "Livano Comenencia",
+        "teamId": "CUW"
+      },
+      {
+        "minute": 38,
+        "scorer": "Nico Schlotterbeck",
+        "teamId": "GER"
+      },
+      {
+        "minute": 45,
+        "scorer": "Kai Havertz",
+        "teamId": "GER",
+        "penalty": true,
+        "stoppageTime": 5
+      },
+      {
+        "minute": 47,
+        "scorer": "Jamal Musiala",
+        "teamId": "GER"
+      },
+      {
+        "minute": 68,
+        "scorer": "Nathaniel Brown",
+        "teamId": "GER"
+      },
+      {
+        "minute": 78,
+        "scorer": "Deniz Undav",
+        "teamId": "GER"
+      },
+      {
+        "minute": 88,
+        "scorer": "Kai Havertz",
+        "teamId": "GER"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "round": "Matchday 4",
+    "date": "2026-06-14",
+    "time": "07:00",
+    "timeUtc": "23:00",
+    "team1Id": "CIV",
+    "team2Id": "ECU",
+    "group": "E",
+    "groundId": "philadelphia",
+    "num": 26,
+    "stage": "group",
+    "score1": 1,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 90,
+        "scorer": "Amad Diallo",
+        "teamId": "CIV"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "round": "Matchday 10",
+    "date": "2026-06-20",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "GER",
+    "team2Id": "CIV",
+    "group": "E",
+    "groundId": "toronto",
+    "num": 27,
+    "stage": "group",
+    "score1": 2,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 30,
+        "scorer": "Franck Kessié",
+        "teamId": "CIV"
+      },
+      {
+        "minute": 68,
+        "scorer": "Deniz Undav",
+        "teamId": "GER"
+      },
+      {
+        "minute": 90,
+        "scorer": "Deniz Undav",
+        "teamId": "GER",
+        "stoppageTime": 4
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "round": "Matchday 10",
+    "date": "2026-06-21",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "ECU",
+    "team2Id": "CUW",
+    "group": "E",
+    "groundId": "kansas_city",
+    "num": 28,
+    "stage": "group",
+    "score1": 0,
+    "score2": 0
+  },
+  {
+    "id": 29,
+    "round": "Matchday 15",
+    "date": "2026-06-25",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "CUW",
+    "team2Id": "CIV",
+    "group": "E",
+    "groundId": "philadelphia",
+    "num": 29,
+    "stage": "group"
+  },
+  {
+    "id": 30,
+    "round": "Matchday 15",
+    "date": "2026-06-25",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "ECU",
+    "team2Id": "GER",
+    "group": "E",
+    "groundId": "new_york",
+    "num": 30,
+    "stage": "group"
+  },
+  {
+    "id": 31,
+    "round": "Matchday 4",
+    "date": "2026-06-14",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "NED",
+    "team2Id": "JPN",
+    "group": "F",
+    "groundId": "dallas",
+    "num": 31,
+    "stage": "group",
+    "score1": 2,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 51,
+        "scorer": "Virgil van Dijk",
+        "teamId": "NED"
+      },
+      {
+        "minute": 57,
+        "scorer": "Keito Nakamura",
+        "teamId": "JPN"
+      },
+      {
+        "minute": 64,
+        "scorer": "Crysencio Summerville",
+        "teamId": "NED"
+      },
+      {
+        "minute": 88,
+        "scorer": "Daichi Kamada",
+        "teamId": "JPN"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "round": "Matchday 4",
+    "date": "2026-06-15",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "SWE",
+    "team2Id": "TUN",
+    "group": "F",
+    "groundId": "monterrey",
+    "num": 32,
+    "stage": "group",
+    "score1": 5,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 7,
+        "scorer": "Yasin Ayari",
+        "teamId": "SWE"
+      },
+      {
+        "minute": 30,
+        "scorer": "Alexander Isak",
+        "teamId": "SWE"
+      },
+      {
+        "minute": 43,
+        "scorer": "Omar Rekik",
+        "teamId": "TUN"
+      },
+      {
+        "minute": 59,
+        "scorer": "Viktor Gyökeres",
+        "teamId": "SWE"
+      },
+      {
+        "minute": 84,
+        "scorer": "Mattias Svanberg",
+        "teamId": "SWE"
+      },
+      {
+        "minute": 90,
+        "scorer": "Yasin Ayari",
+        "teamId": "SWE",
+        "stoppageTime": 6
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "round": "Matchday 10",
+    "date": "2026-06-20",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "NED",
+    "team2Id": "SWE",
+    "group": "F",
+    "groundId": "houston",
+    "num": 33,
+    "stage": "group",
+    "score1": 5,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 5,
+        "scorer": "Brian Brobbey",
+        "teamId": "NED"
+      },
+      {
+        "minute": 17,
+        "scorer": "Brian Brobbey",
+        "teamId": "NED"
+      },
+      {
+        "minute": 47,
+        "scorer": "Cody Gakpo",
+        "teamId": "NED"
+      },
+      {
+        "minute": 54,
+        "scorer": "Cody Gakpo",
+        "teamId": "NED"
+      },
+      {
+        "minute": 59,
+        "scorer": "Anthony Elanga",
+        "teamId": "SWE"
+      },
+      {
+        "minute": 89,
+        "scorer": "Crysencio Summerville",
+        "teamId": "NED"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "round": "Matchday 10",
+    "date": "2026-06-21",
+    "time": "12:00",
+    "timeUtc": "04:00",
+    "team1Id": "TUN",
+    "team2Id": "JPN",
+    "group": "F",
+    "groundId": "monterrey",
+    "num": 34,
+    "stage": "group",
+    "score1": 0,
+    "score2": 4,
+    "goals": [
+      {
+        "minute": 4,
+        "scorer": "Daichi Kamada",
+        "teamId": "JPN"
+      },
+      {
+        "minute": 31,
+        "scorer": "Ayase Ueda",
+        "teamId": "JPN"
+      },
+      {
+        "minute": 69,
+        "scorer": "Junya Ito",
+        "teamId": "JPN"
+      },
+      {
+        "minute": 83,
+        "scorer": "Ayase Ueda",
+        "teamId": "JPN"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "round": "Matchday 15",
+    "date": "2026-06-25",
+    "time": "07:00",
+    "timeUtc": "23:00",
+    "team1Id": "JPN",
+    "team2Id": "SWE",
+    "group": "F",
+    "groundId": "dallas",
+    "num": 35,
+    "stage": "group"
+  },
+  {
+    "id": 36,
+    "round": "Matchday 15",
+    "date": "2026-06-25",
+    "time": "07:00",
+    "timeUtc": "23:00",
+    "team1Id": "TUN",
+    "team2Id": "NED",
+    "group": "F",
+    "groundId": "kansas_city",
+    "num": 36,
+    "stage": "group"
+  },
+  {
+    "id": 37,
+    "round": "Matchday 5",
+    "date": "2026-06-15",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "BEL",
+    "team2Id": "EGY",
+    "group": "G",
+    "groundId": "seattle",
+    "num": 37,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 19,
+        "scorer": "Emam Ashour",
+        "teamId": "EGY"
+      },
+      {
+        "minute": 66,
+        "scorer": "Mohamed Hany",
+        "teamId": "BEL",
+        "ownGoal": true
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "round": "Matchday 5",
+    "date": "2026-06-16",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "IRN",
+    "team2Id": "NZL",
+    "group": "G",
+    "groundId": "los_angeles",
+    "num": 38,
+    "stage": "group",
+    "score1": 2,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 7,
+        "scorer": "Elijah Just",
+        "teamId": "NZL"
+      },
+      {
+        "minute": 32,
+        "scorer": "Ramin Rezaeian",
+        "teamId": "IRN"
+      },
+      {
+        "minute": 54,
+        "scorer": "Elijah Just",
+        "teamId": "NZL"
+      },
+      {
+        "minute": 64,
+        "scorer": "Mohammad Mohebbi",
+        "teamId": "IRN"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "round": "Matchday 11",
+    "date": "2026-06-21",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "BEL",
+    "team2Id": "IRN",
+    "group": "G",
+    "groundId": "los_angeles",
+    "num": 39,
+    "stage": "group",
+    "score1": 0,
+    "score2": 0
+  },
+  {
+    "id": 40,
+    "round": "Matchday 11",
+    "date": "2026-06-22",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "NZL",
+    "team2Id": "EGY",
+    "group": "G",
+    "groundId": "vancouver",
+    "num": 40,
+    "stage": "group",
+    "score1": 1,
+    "score2": 3,
+    "goals": [
+      {
+        "minute": 15,
+        "scorer": "Finn Surman",
+        "teamId": "NZL"
+      },
+      {
+        "minute": 58,
+        "scorer": "Mostafa Zico",
+        "teamId": "EGY"
+      },
+      {
+        "minute": 67,
+        "scorer": "Mohamed Salah",
+        "teamId": "EGY"
+      },
+      {
+        "minute": 82,
+        "scorer": "Trézéguet",
+        "teamId": "EGY"
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "round": "Matchday 16",
+    "date": "2026-06-27",
+    "time": "11:00",
+    "timeUtc": "03:00",
+    "team1Id": "EGY",
+    "team2Id": "IRN",
+    "group": "G",
+    "groundId": "seattle",
+    "num": 41,
+    "stage": "group"
+  },
+  {
+    "id": 42,
+    "round": "Matchday 16",
+    "date": "2026-06-27",
+    "time": "11:00",
+    "timeUtc": "03:00",
+    "team1Id": "NZL",
+    "team2Id": "BEL",
+    "group": "G",
+    "groundId": "vancouver",
+    "num": 42,
+    "stage": "group"
+  },
+  {
+    "id": 43,
+    "round": "Matchday 5",
+    "date": "2026-06-15",
+    "time": "00:00",
+    "timeUtc": "16:00",
+    "team1Id": "ESP",
+    "team2Id": "CPV",
+    "group": "H",
+    "groundId": "atlanta",
+    "num": 43,
+    "stage": "group",
+    "score1": 0,
+    "score2": 0
+  },
+  {
+    "id": 44,
+    "round": "Matchday 5",
+    "date": "2026-06-15",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "KSA",
+    "team2Id": "URU",
+    "group": "H",
+    "groundId": "miami",
+    "num": 44,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 41,
+        "scorer": "Abdulelah Al-Amri",
+        "teamId": "KSA"
+      },
+      {
+        "minute": 80,
+        "scorer": "Maxi Araújo",
+        "teamId": "URU"
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "round": "Matchday 11",
+    "date": "2026-06-21",
+    "time": "00:00",
+    "timeUtc": "16:00",
+    "team1Id": "ESP",
+    "team2Id": "KSA",
+    "group": "H",
+    "groundId": "atlanta",
+    "num": 45,
+    "stage": "group",
+    "score1": 4,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 10,
+        "scorer": "Lamine Yamal",
+        "teamId": "ESP"
+      },
+      {
+        "minute": 21,
+        "scorer": "Mikel Oyarzabal",
+        "teamId": "ESP"
+      },
+      {
+        "minute": 24,
+        "scorer": "Mikel Oyarzabal",
+        "teamId": "ESP"
+      },
+      {
+        "minute": 49,
+        "scorer": "Hassan Al-Tambakti",
+        "teamId": "ESP",
+        "ownGoal": true
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "round": "Matchday 11",
+    "date": "2026-06-21",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "URU",
+    "team2Id": "CPV",
+    "group": "H",
+    "groundId": "miami",
+    "num": 46,
+    "stage": "group",
+    "score1": 2,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 21,
+        "scorer": "Kevin Pina",
+        "teamId": "CPV"
+      },
+      {
+        "minute": 44,
+        "scorer": "Maxi Araújo",
+        "teamId": "URU"
+      },
+      {
+        "minute": 45,
+        "scorer": "Agustín Cano",
+        "teamId": "URU",
+        "stoppageTime": 6
+      },
+      {
+        "minute": 61,
+        "scorer": "Hélio Varela",
+        "teamId": "CPV"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "round": "Matchday 16",
+    "date": "2026-06-27",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "CPV",
+    "team2Id": "KSA",
+    "group": "H",
+    "groundId": "houston",
+    "num": 47,
+    "stage": "group"
+  },
+  {
+    "id": 48,
+    "round": "Matchday 16",
+    "date": "2026-06-27",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "URU",
+    "team2Id": "ESP",
+    "group": "H",
+    "groundId": "guadalajara",
+    "num": 48,
+    "stage": "group"
+  },
+  {
+    "id": 49,
+    "round": "Matchday 6",
+    "date": "2026-06-16",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "FRA",
+    "team2Id": "SEN",
+    "group": "I",
+    "groundId": "new_york",
+    "num": 49,
+    "stage": "group",
+    "score1": 3,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 66,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 82,
+        "scorer": "Bradley Barcola",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 90,
+        "scorer": "Ibrahim Mbaye",
+        "teamId": "SEN",
+        "stoppageTime": 5
+      },
+      {
+        "minute": 90,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA",
+        "stoppageTime": 6
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "round": "Matchday 6",
+    "date": "2026-06-16",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "IRQ",
+    "team2Id": "NOR",
+    "group": "I",
+    "groundId": "boston",
+    "num": 50,
+    "stage": "group",
+    "score1": 1,
+    "score2": 4,
+    "goals": [
+      {
+        "minute": 29,
+        "scorer": "Erling Haaland",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 39,
+        "scorer": "Aymen Hussein",
+        "teamId": "IRQ"
+      },
+      {
+        "minute": 43,
+        "scorer": "Erling Haaland",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 76,
+        "scorer": "Leo Østigard",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 90,
+        "scorer": "Aymen Hussein",
+        "teamId": "NOR",
+        "ownGoal": true,
+        "stoppageTime": 6
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "round": "Matchday 12",
+    "date": "2026-06-22",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "FRA",
+    "team2Id": "IRQ",
+    "group": "I",
+    "groundId": "philadelphia",
+    "num": 51,
+    "stage": "group",
+    "score1": 3,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 14,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 54,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 66,
+        "scorer": "Ousmane Dembélé",
+        "teamId": "FRA"
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "round": "Matchday 12",
+    "date": "2026-06-23",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "NOR",
+    "team2Id": "SEN",
+    "group": "I",
+    "groundId": "new_york",
+    "num": 52,
+    "stage": "group",
+    "score1": 3,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 43,
+        "scorer": "Marcus Holmgren Pedersen",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 48,
+        "scorer": "Erling Haaland",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 53,
+        "scorer": "Ismaïla Sarr",
+        "teamId": "SEN"
+      },
+      {
+        "minute": 58,
+        "scorer": "Erling Haaland",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 90,
+        "scorer": "Ismaïla Sarr",
+        "teamId": "SEN",
+        "stoppageTime": 3
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "round": "Matchday 16",
+    "date": "2026-06-26",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "NOR",
+    "team2Id": "FRA",
+    "group": "I",
+    "groundId": "boston",
+    "num": 53,
+    "stage": "group"
+  },
+  {
+    "id": 54,
+    "round": "Matchday 16",
+    "date": "2026-06-26",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "SEN",
+    "team2Id": "IRQ",
+    "group": "I",
+    "groundId": "toronto",
+    "num": 54,
+    "stage": "group"
+  },
+  {
+    "id": 55,
+    "round": "Matchday 6",
+    "date": "2026-06-17",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "ARG",
+    "team2Id": "ALG",
+    "group": "J",
+    "groundId": "kansas_city",
+    "num": 55,
+    "stage": "group",
+    "score1": 3,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 17,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG"
+      },
+      {
+        "minute": 60,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG"
+      },
+      {
+        "minute": 76,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG"
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "round": "Matchday 6",
+    "date": "2026-06-17",
+    "time": "12:00",
+    "timeUtc": "04:00",
+    "team1Id": "AUT",
+    "team2Id": "JOR",
+    "group": "J",
+    "groundId": "san_francisco",
+    "num": 56,
+    "stage": "group",
+    "score1": 3,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 21,
+        "scorer": "Romano Schmid",
+        "teamId": "AUT"
+      },
+      {
+        "minute": 50,
+        "scorer": "Ali Olwan",
+        "teamId": "JOR"
+      },
+      {
+        "minute": 76,
+        "scorer": "Yazan Al-Arab",
+        "teamId": "AUT",
+        "ownGoal": true
+      },
+      {
+        "minute": 90,
+        "scorer": "Marko Arnautovic",
+        "teamId": "AUT",
+        "penalty": true,
+        "stoppageTime": 12
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "round": "Matchday 12",
+    "date": "2026-06-22",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "ARG",
+    "team2Id": "AUT",
+    "group": "J",
+    "groundId": "dallas",
+    "num": 57,
+    "stage": "group",
+    "score1": 2,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 38,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG"
+      },
+      {
+        "minute": 90,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG",
+        "stoppageTime": 5
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "round": "Matchday 12",
+    "date": "2026-06-23",
+    "time": "11:00",
+    "timeUtc": "03:00",
+    "team1Id": "JOR",
+    "team2Id": "ALG",
+    "group": "J",
+    "groundId": "san_francisco",
+    "num": 58,
+    "stage": "group",
+    "score1": 1,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 36,
+        "scorer": "Nizar Al-Rashdan",
+        "teamId": "JOR"
+      },
+      {
+        "minute": 69,
+        "scorer": "Nadhir Benbouali",
+        "teamId": "ALG"
+      },
+      {
+        "minute": 82,
+        "scorer": "Amine Gouiri",
+        "teamId": "ALG"
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "round": "Matchday 17",
+    "date": "2026-06-28",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "ALG",
+    "team2Id": "AUT",
+    "group": "J",
+    "groundId": "kansas_city",
+    "num": 59,
+    "stage": "group"
+  },
+  {
+    "id": 60,
+    "round": "Matchday 17",
+    "date": "2026-06-28",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "JOR",
+    "team2Id": "ARG",
+    "group": "J",
+    "groundId": "dallas",
+    "num": 60,
+    "stage": "group"
+  },
+  {
+    "id": 61,
+    "round": "Matchday 7",
+    "date": "2026-06-17",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "POR",
+    "team2Id": "COD",
+    "group": "K",
+    "groundId": "houston",
+    "num": 61,
+    "stage": "group",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 6,
+        "scorer": "João Neves",
+        "teamId": "POR"
+      },
+      {
+        "minute": 45,
+        "scorer": "Yoane Wissa",
+        "teamId": "COD",
+        "stoppageTime": 5
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "round": "Matchday 7",
+    "date": "2026-06-18",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "UZB",
+    "team2Id": "COL",
+    "group": "K",
+    "groundId": "mexico_city",
+    "num": 62,
+    "stage": "group",
+    "score1": 1,
+    "score2": 3,
+    "goals": [
+      {
+        "minute": 40,
+        "scorer": "Daniel Muñoz",
+        "teamId": "COL"
+      },
+      {
+        "minute": 60,
+        "scorer": "Abbosbek Fayzullaev",
+        "teamId": "UZB"
+      },
+      {
+        "minute": 65,
+        "scorer": "Luis Díaz",
+        "teamId": "COL"
+      },
+      {
+        "minute": 90,
+        "scorer": "Jáminton Campaz",
+        "teamId": "COL",
+        "stoppageTime": 9
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "round": "Matchday 13",
+    "date": "2026-06-23",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "POR",
+    "team2Id": "UZB",
+    "group": "K",
+    "groundId": "houston",
+    "num": 63,
+    "stage": "group",
+    "score1": 5,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 6,
+        "scorer": "Cristiano Ronaldo",
+        "teamId": "POR"
+      },
+      {
+        "minute": 17,
+        "scorer": "Nuno Mendes",
+        "teamId": "POR"
+      },
+      {
+        "minute": 39,
+        "scorer": "Cristiano Ronaldo",
+        "teamId": "POR"
+      },
+      {
+        "minute": 60,
+        "scorer": "Abduvohid Nematov",
+        "teamId": "POR",
+        "ownGoal": true
+      },
+      {
+        "minute": 87,
+        "scorer": "Rafael Leão",
+        "teamId": "POR"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "round": "Matchday 13",
+    "date": "2026-06-24",
+    "time": "10:00",
+    "timeUtc": "02:00",
+    "team1Id": "COL",
+    "team2Id": "COD",
+    "group": "K",
+    "groundId": "guadalajara",
+    "num": 64,
+    "stage": "group"
+  },
+  {
+    "id": 65,
+    "round": "Matchday 17",
+    "date": "2026-06-27",
+    "time": "07:30",
+    "timeUtc": "23:30",
+    "team1Id": "COL",
+    "team2Id": "POR",
+    "group": "K",
+    "groundId": "miami",
+    "num": 65,
+    "stage": "group"
+  },
+  {
+    "id": 66,
+    "round": "Matchday 17",
+    "date": "2026-06-27",
+    "time": "07:30",
+    "timeUtc": "23:30",
+    "team1Id": "COD",
+    "team2Id": "UZB",
+    "group": "K",
+    "groundId": "atlanta",
+    "num": 66,
+    "stage": "group"
+  },
+  {
+    "id": 67,
+    "round": "Matchday 7",
+    "date": "2026-06-17",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "ENG",
+    "team2Id": "CRO",
+    "group": "L",
+    "groundId": "dallas",
+    "num": 67,
+    "stage": "group",
+    "score1": 4,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 12,
+        "scorer": "Harry Kane",
+        "teamId": "ENG",
+        "penalty": true
+      },
+      {
+        "minute": 36,
+        "scorer": "Martin Baturina",
+        "teamId": "CRO"
+      },
+      {
+        "minute": 42,
+        "scorer": "Harry Kane",
+        "teamId": "ENG"
+      },
+      {
+        "minute": 45,
+        "scorer": "Petar Musa",
+        "teamId": "CRO",
+        "stoppageTime": 5
+      },
+      {
+        "minute": 47,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG"
+      },
+      {
+        "minute": 85,
+        "scorer": "Marcus Rashford",
+        "teamId": "ENG"
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "round": "Matchday 7",
+    "date": "2026-06-17",
+    "time": "07:00",
+    "timeUtc": "23:00",
+    "team1Id": "GHA",
+    "team2Id": "PAN",
+    "group": "L",
+    "groundId": "toronto",
+    "num": 68,
+    "stage": "group",
+    "score1": 1,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 90,
+        "scorer": "Caleb Yirenkyi",
+        "teamId": "GHA",
+        "stoppageTime": 5
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "round": "Matchday 13",
+    "date": "2026-06-23",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "ENG",
+    "team2Id": "GHA",
+    "group": "L",
+    "groundId": "boston",
+    "num": 69,
+    "stage": "group",
+    "score1": 0,
+    "score2": 0
+  },
+  {
+    "id": 70,
+    "round": "Matchday 13",
+    "date": "2026-06-23",
+    "time": "07:00",
+    "timeUtc": "23:00",
+    "team1Id": "PAN",
+    "team2Id": "CRO",
+    "group": "L",
+    "groundId": "toronto",
+    "num": 70,
+    "stage": "group"
+  },
+  {
+    "id": 71,
+    "round": "Matchday 17",
+    "date": "2026-06-27",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "PAN",
+    "team2Id": "ENG",
+    "group": "L",
+    "groundId": "new_york",
+    "num": 71,
+    "stage": "group"
+  },
+  {
+    "id": 72,
+    "round": "Matchday 17",
+    "date": "2026-06-27",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "CRO",
+    "team2Id": "GHA",
+    "group": "L",
+    "groundId": "philadelphia",
+    "num": 72,
+    "stage": "group"
+  },
+  {
+    "id": 73,
+    "round": "Round of 32",
+    "date": "2026-06-28",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "2A",
+    "team2Id": "2B",
+    "group": "",
+    "groundId": "los_angeles",
+    "num": 73,
+    "stage": "r32"
+  },
+  {
+    "id": 74,
+    "round": "Round of 32",
+    "date": "2026-06-29",
+    "time": "04:30",
+    "timeUtc": "20:30",
+    "team1Id": "GER",
+    "team2Id": "3A/B/C/D/F",
+    "group": "",
+    "groundId": "boston",
+    "num": 74,
+    "stage": "r32"
+  },
+  {
+    "id": 75,
+    "round": "Round of 32",
+    "date": "2026-06-30",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "1F",
+    "team2Id": "2C",
+    "group": "",
+    "groundId": "monterrey",
+    "num": 75,
+    "stage": "r32"
+  },
+  {
+    "id": 76,
+    "round": "Round of 32",
+    "date": "2026-06-29",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "1C",
+    "team2Id": "2F",
+    "group": "",
+    "groundId": "houston",
+    "num": 76,
+    "stage": "r32"
+  },
+  {
+    "id": 77,
+    "round": "Round of 32",
+    "date": "2026-06-30",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "1I",
+    "team2Id": "3C/D/F/G/H",
+    "group": "",
+    "groundId": "new_york",
+    "num": 77,
+    "stage": "r32"
+  },
+  {
+    "id": 78,
+    "round": "Round of 32",
+    "date": "2026-06-30",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "2E",
+    "team2Id": "2I",
+    "group": "",
+    "groundId": "dallas",
+    "num": 78,
+    "stage": "r32"
+  },
+  {
+    "id": 79,
+    "round": "Round of 32",
+    "date": "2026-07-01",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "MEX",
+    "team2Id": "3C/E/F/H/I",
+    "group": "",
+    "groundId": "mexico_city",
+    "num": 79,
+    "stage": "r32"
+  },
+  {
+    "id": 80,
+    "round": "Round of 32",
+    "date": "2026-07-01",
+    "time": "00:00",
+    "timeUtc": "16:00",
+    "team1Id": "1L",
+    "team2Id": "3E/H/I/J/K",
+    "group": "",
+    "groundId": "atlanta",
+    "num": 80,
+    "stage": "r32"
+  },
+  {
+    "id": 81,
+    "round": "Round of 32",
+    "date": "2026-07-02",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "USA",
+    "team2Id": "3B/E/F/I/J",
+    "group": "",
+    "groundId": "san_francisco",
+    "num": 81,
+    "stage": "r32"
+  },
+  {
+    "id": 82,
+    "round": "Round of 32",
+    "date": "2026-07-01",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "1G",
+    "team2Id": "3A/E/H/I/J",
+    "group": "",
+    "groundId": "seattle",
+    "num": 82,
+    "stage": "r32"
+  },
+  {
+    "id": 83,
+    "round": "Round of 32",
+    "date": "2026-07-02",
+    "time": "07:00",
+    "timeUtc": "23:00",
+    "team1Id": "2K",
+    "team2Id": "2L",
+    "group": "",
+    "groundId": "toronto",
+    "num": 83,
+    "stage": "r32"
+  },
+  {
+    "id": 84,
+    "round": "Round of 32",
+    "date": "2026-07-02",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "1H",
+    "team2Id": "2J",
+    "group": "",
+    "groundId": "los_angeles",
+    "num": 84,
+    "stage": "r32"
+  },
+  {
+    "id": 85,
+    "round": "Round of 32",
+    "date": "2026-07-03",
+    "time": "11:00",
+    "timeUtc": "03:00",
+    "team1Id": "1B",
+    "team2Id": "3E/F/G/I/J",
+    "group": "",
+    "groundId": "vancouver",
+    "num": 85,
+    "stage": "r32"
+  },
+  {
+    "id": 86,
+    "round": "Round of 32",
+    "date": "2026-07-03",
+    "time": "06:00",
+    "timeUtc": "22:00",
+    "team1Id": "1J",
+    "team2Id": "2H",
+    "group": "",
+    "groundId": "miami",
+    "num": 86,
+    "stage": "r32"
+  },
+  {
+    "id": 87,
+    "round": "Round of 32",
+    "date": "2026-07-04",
+    "time": "09:30",
+    "timeUtc": "01:30",
+    "team1Id": "1K",
+    "team2Id": "3D/E/I/J/L",
+    "group": "",
+    "groundId": "kansas_city",
+    "num": 87,
+    "stage": "r32"
+  },
+  {
+    "id": 88,
+    "round": "Round of 32",
+    "date": "2026-07-03",
+    "time": "02:00",
+    "timeUtc": "18:00",
+    "team1Id": "2D",
+    "team2Id": "2G",
+    "group": "",
+    "groundId": "dallas",
+    "num": 88,
+    "stage": "r32"
+  },
+  {
+    "id": 89,
+    "round": "Round of 16",
+    "date": "2026-07-04",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "W74",
+    "team2Id": "W77",
+    "group": "",
+    "groundId": "philadelphia",
+    "num": 89,
+    "stage": "r16"
+  },
+  {
+    "id": 90,
+    "round": "Round of 16",
+    "date": "2026-07-04",
+    "time": "01:00",
+    "timeUtc": "17:00",
+    "team1Id": "W73",
+    "team2Id": "W75",
+    "group": "",
+    "groundId": "houston",
+    "num": 90,
+    "stage": "r16"
+  },
+  {
+    "id": 91,
+    "round": "Round of 16",
+    "date": "2026-07-05",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "W76",
+    "team2Id": "W78",
+    "group": "",
+    "groundId": "new_york",
+    "num": 91,
+    "stage": "r16"
+  },
+  {
+    "id": 92,
+    "round": "Round of 16",
+    "date": "2026-07-06",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "W79",
+    "team2Id": "W80",
+    "group": "",
+    "groundId": "mexico_city",
+    "num": 92,
+    "stage": "r16"
+  },
+  {
+    "id": 93,
+    "round": "Round of 16",
+    "date": "2026-07-06",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "W83",
+    "team2Id": "W84",
+    "group": "",
+    "groundId": "dallas",
+    "num": 93,
+    "stage": "r16"
+  },
+  {
+    "id": 94,
+    "round": "Round of 16",
+    "date": "2026-07-07",
+    "time": "08:00",
+    "timeUtc": "00:00",
+    "team1Id": "W81",
+    "team2Id": "W82",
+    "group": "",
+    "groundId": "seattle",
+    "num": 94,
+    "stage": "r16"
+  },
+  {
+    "id": 95,
+    "round": "Round of 16",
+    "date": "2026-07-07",
+    "time": "00:00",
+    "timeUtc": "16:00",
+    "team1Id": "W86",
+    "team2Id": "W88",
+    "group": "",
+    "groundId": "atlanta",
+    "num": 95,
+    "stage": "r16"
+  },
+  {
+    "id": 96,
+    "round": "Round of 16",
+    "date": "2026-07-07",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "W85",
+    "team2Id": "W87",
+    "group": "",
+    "groundId": "vancouver",
+    "num": 96,
+    "stage": "r16"
+  },
+  {
+    "id": 97,
+    "round": "Quarter-final",
+    "date": "2026-07-09",
+    "time": "04:00",
+    "timeUtc": "20:00",
+    "team1Id": "W89",
+    "team2Id": "W90",
+    "group": "",
+    "groundId": "boston",
+    "num": 97,
+    "stage": "qf"
+  },
+  {
+    "id": 98,
+    "round": "Quarter-final",
+    "date": "2026-07-10",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "W93",
+    "team2Id": "W94",
+    "group": "",
+    "groundId": "los_angeles",
+    "num": 98,
+    "stage": "qf"
+  },
+  {
+    "id": 99,
+    "round": "Quarter-final",
+    "date": "2026-07-11",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "W91",
+    "team2Id": "W92",
+    "group": "",
+    "groundId": "miami",
+    "num": 99,
+    "stage": "qf"
+  },
+  {
+    "id": 100,
+    "round": "Quarter-final",
+    "date": "2026-07-12",
+    "time": "09:00",
+    "timeUtc": "01:00",
+    "team1Id": "W95",
+    "team2Id": "W96",
+    "group": "",
+    "groundId": "kansas_city",
+    "num": 100,
+    "stage": "qf"
+  },
+  {
+    "id": 101,
+    "round": "Semi-final",
+    "date": "2026-07-14",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "W97",
+    "team2Id": "W98",
+    "group": "",
+    "groundId": "dallas",
+    "num": 101,
+    "stage": "sf"
+  },
+  {
+    "id": 102,
+    "round": "Semi-final",
+    "date": "2026-07-15",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "W99",
+    "team2Id": "W100",
+    "group": "",
+    "groundId": "atlanta",
+    "num": 102,
+    "stage": "sf"
+  },
+  {
+    "id": 103,
+    "round": "Match for third place",
+    "date": "2026-07-18",
+    "time": "05:00",
+    "timeUtc": "21:00",
+    "team1Id": "L101",
+    "team2Id": "L102",
+    "group": "",
+    "groundId": "miami",
+    "num": 103,
+    "stage": "third"
+  },
+  {
+    "id": 104,
+    "round": "Final",
+    "date": "2026-07-19",
+    "time": "03:00",
+    "timeUtc": "19:00",
+    "team1Id": "W101",
+    "team2Id": "W102",
+    "group": "",
+    "groundId": "new_york",
+    "num": 104,
+    "stage": "final"
+  }
+]

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WC2026 — Site Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#ffffff;color:#000000;font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.3;letter-spacing:-0.16px}
+
+.band-dark{background:#010120;color:#ffffff;padding:80px 32px}
+.band-dark .inner{max-width:1100px;margin:0 auto}
+.band-white{background:#ffffff;padding:80px 32px}
+.band-white .inner{max-width:1100px;margin:0 auto}
+
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.eyebrow-dark{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px}
+.h1{font-size:64px;font-weight:500;line-height:1.1;letter-spacing:-1.92px;margin-bottom:16px}
+.h2{font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-0.8px;margin-bottom:24px}
+.h3{font-size:22px;font-weight:500;letter-spacing:-0.22px;margin-bottom:12px}
+.gradient-bar{background:linear-gradient(90deg,#fc4c02,#ef2cc1,#bdbbff);height:4px;width:100%}
+.body{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase}
+.footer-wordmark{font-size:64px;font-weight:500;letter-spacing:-1.92px;color:#ebebeb;line-height:1;padding:48px 32px;text-align:center}
+
+/* Sitemap tree */
+.map{max-width:900px;margin:0 auto}
+.map-row{display:flex;align-items:flex-start;gap:16px;padding:10px 0;border-bottom:1px solid #eee;font-size:14px}
+.map-row.head{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;border-bottom:2px solid #999;padding-bottom:12px}
+.map-path{font-family:'JetBrains Mono',monospace;font-weight:500;min-width:130px;color:#000}
+.map-desc{color:#555;flex:1;line-height:1.5}
+.map-links{font-size:12px;color:#999;min-width:180px;line-height:1.6}
+.map-links a{color:#010120;text-decoration:none;border-bottom:1px dotted #ccc}
+.map-links a:hover{border-bottom-color:#000}
+.map-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3px;text-transform:uppercase;padding:2px 8px;border-radius:3px;display:inline-block;margin-top:4px}
+.tag-all{background:#ebebeb;color:#666}
+.tag-nav{background:#010120;color:#fff}
+.tag-sub{background:#f0f0f0;color:#888}
+
+/* Flow diagram */
+.flow{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:32px 0}
+.flow-box{border:1px solid #313641;border-radius:4px;padding:12px 16px;background:rgba(255,255,255,0.04);text-align:center;min-width:90px}
+.flow-box .label{font-size:11px;color:rgba(255,255,255,0.7)}
+.flow-box.current .label{color:#fff;font-weight:500}
+.flow-arrow{color:rgba(255,255,255,0.2);font-size:14px}
+
+.nav-demo{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.nav-item{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;padding:6px 14px;border-radius:4px;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.4)}
+.nav-item.active{border-color:#fff;color:#fff;background:rgba(255,255,255,0.06)}
+</style>
+</head>
+<body>
+
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">information architecture</div>
+    <div class="h1">Site Map v2</div>
+    <div class="mono" style="color:rgba(255,255,255,0.3);margin-bottom:24px">14 pages · cross-linked · progressive detail</div>
+    <div class="body" style="max-width:750px">
+      Every page is accessible from nav or footer. Deep links between teams, matches, groups, and stadiums create a web — you can always drill deeper or jump sideways.
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<div class="band-white">
+  <div class="inner">
+    <div class="eyebrow-dark">page inventory</div>
+    <div class="h2" style="margin-bottom:32px">All Pages</div>
+
+    <div class="map">
+      <div class="map-row head">
+        <div class="map-path">Route</div>
+        <div class="map-desc">What's On It</div>
+        <div class="map-links">Links To</div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/</div>
+        <div class="map-desc">Today's matches, quick group snapshot, phase indicator, latest results</div>
+        <div class="map-links">
+          <a href="#">/schedule</a> · <a href="#">/groups</a> · <a href="#">/scorers</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/schedule</div>
+        <div class="map-desc">All 104 matches, grouped by round, filterable by stage. Each match shows score, teams, stadium, date</div>
+        <div class="map-links">
+          <a href="#">/match/:id</a> · <a href="#">/stadiums</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/match/:id</div>
+        <div class="map-desc">Single match: score, goalscorers with timeline, lineups, stadium info, group context</div>
+        <div class="map-links">
+          <a href="#">/team/:id</a> (×2) · <a href="#">/stadiums</a> · <a href="#">/groups</a><br>
+          <span class="map-tag tag-sub">sidebar / tap</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/teams</div>
+        <div class="map-desc">All 48 teams, filterable by group or continent. Grid of flags + names</div>
+        <div class="map-links">
+          <a href="#">/team/:id</a> · <a href="#">/groups</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/team/:id</div>
+        <div class="map-desc">Team info (flag, ranking, continent), group context, all their matches, form indicator, top scorer</div>
+        <div class="map-links">
+          <a href="#">/groups/:id</a> · <a href="#">/match/:id</a><br>
+          <span class="map-tag tag-sub">tap team badge</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/groups</div>
+        <div class="map-desc">All 12 group tables side by side or scrollable. Each table shows standings with (A)/(E) badges</div>
+        <div class="map-links">
+          <a href="#">/groups/:id</a> · <a href="#">/third-placed</a> · <a href="#">/team/:id</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/groups/:id</div>
+        <div class="map-desc">Single group: full standings table, all group matches (played + upcoming), H2H breakdown</div>
+        <div class="map-links">
+          <a href="#">/team/:id</a> · <a href="#">/match/:id</a> · <a href="#">/groups</a><br>
+          <span class="map-tag tag-sub">tap group header</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/third-placed</div>
+        <div class="map-desc">All 12 third-placed teams ranked, top 8 highlighted. Shows which groups feed which R32 slots</div>
+        <div class="map-links">
+          <a href="#">/groups/:id</a> · <a href="#">/team/:id</a> · <a href="#">/bracket</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/scorers</div>
+        <div class="map-desc">Top scorers table with tie cutoff. Player name, team, goals, penalties</div>
+        <div class="map-links">
+          <a href="#">/team/:id</a> · <a href="#">/match/:id</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/bracket</div>
+        <div class="map-desc">Full knockout tree. Shows fixture skeleton from day one — fills in real teams + scores as they're confirmed</div>
+        <div class="map-links">
+          <a href="#">/match/:id</a> · <a href="#">/team/:id</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row">
+        <div class="map-path">/stadiums</div>
+        <div class="map-desc">All 16 venues: map, name, city, capacity. Each stadium shows which matches were played there</div>
+        <div class="map-links">
+          <a href="#">/match/:id</a> · <a href="#">/schedule</a><br>
+          <span class="map-tag tag-nav">nav</span>
+        </div>
+      </div>
+
+      <div class="map-row" style="border-bottom:none">
+        <div class="map-path" style="color:#999;font-weight:400">404</div>
+        <div class="map-desc">Fallback page with link back to home</div>
+        <div class="map-links"><a href="#">/</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">navigation flow</div>
+    <div class="h2" style="margin-bottom:8px">How Users Move Around</div>
+    <div class="body" style="margin-bottom:32px">Every data item is tappable — team badges, group labels, match cards, stadium names. The nav bar and footer cover the top-level pages.</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <!-- Nav bar -->
+      <div style="border:1px solid #313641;border-radius:4px;padding:20px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.3px;text-transform:uppercase;margin-bottom:10px">nav bar (always visible)</div>
+        <div class="nav-demo">
+          <span class="nav-item active">Overview</span>
+          <span class="nav-item active">Schedule</span>
+          <span class="nav-item active">Teams</span>
+          <span class="nav-item active">Groups</span>
+          <span class="nav-item active">3rd Place</span>
+          <span class="nav-item active">Scorers</span>
+          <span class="nav-item active">Bracket</span>
+          <span class="nav-item active">Stadiums</span>
+        </div>
+      </div>
+
+      <!-- In-page links -->
+      <div style="border:1px solid #313641;border-radius:4px;padding:20px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.3px;text-transform:uppercase;margin-bottom:10px">cross-links (inside content)</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.7);line-height:1.8">
+          <div><span style="color:#c8f6f9">Team badge</span> → /team/:id</div>
+          <div><span style="color:#bdbbff">Group header</span> → /groups/:id</div>
+          <div><span style="color:#fc4c02">Match card</span> → /match/:id</div>
+          <div><span style="color:#fbbf24">Stadium name</span> → /stadiums/:id</div>
+          <div><span style="color:#999">Player name</span> → /team/:id</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example flow -->
+    <div style="margin-top:24px;border:1px solid #313641;border-radius:4px;padding:24px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:0.3px;text-transform:uppercase;margin-bottom:12px">example journey</div>
+      <div class="flow">
+        <div class="flow-box current"><span class="label">Overview</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box"><span class="label">Tap match →</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box"><span class="label">Match Detail</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box"><span class="label">Tap team →</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box"><span class="label">Team Detail</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box"><span class="label">Tap group →</span></div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-box"><span class="label">Group Detail</span></div>
+      </div>
+      <div style="text-align:center;margin-top:8px;font-size:11px;color:rgba(255,255,255,0.3)">Every tap drills deeper, nav bar always brings you back up</div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<div class="band-white">
+  <div class="inner" style="text-align:center">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:40px;font-weight:500;letter-spacing:-0.8px;color:#010120">14 pages</div>
+    <div style="font-size:14px;color:#999;margin-top:8px">8 nav routes · 4 detail pages · 1 home · 1 fallback</div>
+    <div style="font-size:12px;color:#ccc;margin-top:4px">all cross-linked, all static, all reading from JSON</div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<div class="footer-wordmark">overview · schedule · teams · groups · 3rd · scorers · bracket · stadiums</div>
+
+</body>
+</html>

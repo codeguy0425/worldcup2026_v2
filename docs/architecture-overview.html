@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WC2026 — Proposed Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#ffffff;color:#000000;font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:1.3;letter-spacing:-0.16px;min-height:100vh}
+
+/* ─── CANVAS DARK BAND ─── */
+.band-dark{background:#010120;color:#ffffff;padding:80px 32px}
+.band-dark .inner{max-width:1100px;margin:0 auto}
+.band-dark .inner h1{font-size:64px;font-weight:500;line-height:1.1;letter-spacing:-1.92px;margin-bottom:16px}
+.band-dark .inner .subtitle{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px}
+
+/* ─── CANVAS WHITE BAND ─── */
+.band-white{background:#ffffff;padding:80px 32px}
+.band-white .inner{max-width:1100px;margin:0 auto}
+.section-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px}
+.section-title{font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-0.8px;margin-bottom:24px}
+
+/* ─── CANVAS DARK BAND 2 ─── */
+.band-dark-2{background:#010120;color:#ffffff;padding:80px 32px}
+.band-dark-2 .inner{max-width:1100px;margin:0 auto}
+
+/* ─── CARDS ─── */
+.card-white{border:1px solid #ebebeb;border-radius:4px;padding:24px;background:#ffffff}
+.card-dark{border:1px solid #313641;border-radius:4px;padding:24px;background:#010120;color:#ffffff}
+
+/* ─── FLOW ─── */
+.flow{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:16px 0}
+.flow-box{border:1px solid;border-radius:4px;padding:12px 16px;text-align:center;min-width:120px}
+.flow-box .label{font-size:14px;font-weight:500;letter-spacing:-0.14px}
+.flow-box .sublabel{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:400;letter-spacing:0.05px;color:#999;margin-top:4px}
+.flow-arrow{color:#999;font-size:20px;font-weight:400}
+
+/* ─── BEFORE/AFTER ─── */
+.comparison{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:0}
+.col{border:1px solid #ebebeb;border-radius:4px;padding:24px;background:#ffffff}
+.col h3{font-size:18px;font-weight:500;letter-spacing:-0.18px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.col ul{list-style:none;font-size:14px;color:#666;line-height:2.2;letter-spacing:-0.14px}
+.col ul li::before{content:"• ";color:#ccc}
+.col.bad h3{color:#ef2cc1}
+.col.good h3{color:#c8f6f9}
+.col.good{background:#010120;border-color:#313641;color:#ffffff}
+.col.good ul{color:rgba(255,255,255,0.7)}
+
+/* ─── PHASES ─── */
+.phases{display:flex;gap:12px;flex-wrap:wrap}
+.phase{border:1px solid #313641;border-radius:4px;padding:16px;flex:1;min-width:130px;background:rgba(255,255,255,0.04)}
+.phase .name{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#ffffff;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.phase .name .dot{width:6px;height:6px;border-radius:9999px}
+.phase .files{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.8;font-family:'JetBrains Mono',monospace}
+.phase .files .active{color:#ffffff}
+.phase .files .active.green{color:#c8f6f9}
+
+/* ─── FILE TREE ─── */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.file-tree{font-size:12px;line-height:2;font-family:'JetBrains Mono',monospace}
+.file-tree .folder{color:#fc4c02}
+.file-tree .file{color:rgba(255,255,255,0.5);padding-left:16px}
+.file-tree .file .tag{font-size:9px;padding:1px 6px;border-radius:3px;margin-left:6px;font-family:'Inter',sans-serif;letter-spacing:0.3px;text-transform:uppercase;font-weight:500}
+.tag-always{border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:#c8f6f9}
+.tag-group{border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:#bdbbff}
+.tag-ko{border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:#fc4c02}
+
+/* ─── APP CODE ─── */
+.app-code{font-size:12px;line-height:2;font-family:'JetBrains Mono',monospace;color:rgba(255,255,255,0.7)}
+.app-code .comment{color:rgba(255,255,255,0.3)}
+.app-code .keyword{color:#bdbbff}
+.app-code .string{color:#c8f6f9}
+
+/* ─── NAV DEMO ─── */
+.nav-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.nav-item{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;padding:6px 14px;border-radius:4px;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.4)}
+.nav-item.active{border-color:#bdbbff;color:#ffffff;background:rgba(189,187,255,0.1)}
+.nav-item.hidden{opacity:.25;text-decoration:line-through;border-color:rgba(255,255,255,0.06)}
+
+/* ─── CORE CONCEPT ─── */
+.core-quote{font-size:18px;color:rgba(255,255,255,0.85);line-height:1.6;text-align:center;padding:12px 0;letter-spacing:-0.18px}
+.core-quote em{color:#bdbbff;font-style:normal;font-weight:500}
+
+/* ─── WHY CARDS ─── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.why-card{border:1px solid #313641;border-radius:4px;padding:20px;font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;letter-spacing:-0.14px}
+.why-card .num{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:500;color:#fc4c02;margin-bottom:8px;display:block}
+
+/* ─── GRADIENT BAR ─── */
+.gradient-bar{background:linear-gradient(90deg,#fc4c02,#ef2cc1,#bdbbff);height:4px;width:100%}
+
+/* ─── FOOTER WORDMARK ─── */
+.footer-wordmark{font-size:64px;font-weight:500;letter-spacing:-1.92px;color:#ebebeb;line-height:1;padding:48px 32px;text-align:center}
+
+/* ─── BADGES ─── */
+.mono-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.04);color:#999;display:inline-block;vertical-align:middle;margin-left:8px}
+</style>
+</head>
+<body>
+
+<!-- DARK BAND: HERO -->
+<div class="band-dark">
+  <div class="inner">
+    <div class="subtitle">architecture proposal</div>
+    <h1>WC2026 Redesign</h1>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:48px">compute-on-update · serve-only · phase-aware</div>
+
+    <div class="core-quote">
+      The update script does <em>all the math once</em>, outputs pre-computed JSON files,<br>
+      and the React app <em style="color:#c8f6f9">just renders them</em>.
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.3);margin-top:8px;letter-spacing:0px;text-transform:none">No runtime computation in the browser. At all.</div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- WHITE BAND: BEFORE / AFTER -->
+<div class="band-white">
+  <div class="inner">
+    <div class="section-eyebrow">current vs proposed</div>
+    <div class="section-title">Before & After</div>
+
+    <div class="comparison">
+      <div class="col bad">
+        <h3>← Before</h3>
+        <ul>
+          <li>Raw matches.ts → browser computes 3<sup>n</sup> scenarios every render</li>
+          <li>All logic paths loaded always</li>
+          <li>Bracket placeholders like "1E/3A/B/C/D" resolved at runtime</li>
+          <li>computeStandings() re-runs on every React state change</li>
+          <li>Hard to know what phase is active</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <h3>→ After</h3>
+        <ul>
+          <li>Script pre-computes everything → writes JSON files once</li>
+          <li>phase.json controls what exists — dead phases have no files</li>
+          <li>Bracket has real team names from the start</li>
+          <li>React = pure presentation: fetch JSON → render</li>
+          <li>Zero computation cost at runtime</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- DARK BAND: DATA PIPELINE -->
+<div class="band-dark-2">
+  <div class="inner">
+    <div class="section-eyebrow" style="color:rgba(255,255,255,0.4)">pipeline</div>
+    <div style="font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-0.8px;margin-bottom:24px">Data Pipeline</div>
+
+    <div class="flow">
+      <div class="flow-box" style="border-color:#fc4c02"><div class="label" style="color:#fc4c02">openfootball</div><div class="sublabel">source data</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:#bdbbff"><div class="label" style="color:#bdbbff">update-scores.mjs</div><div class="sublabel">does ALL the work</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:#c8f6f9"><div class="label" style="color:#c8f6f9">public/data/*.json</div><div class="sublabel">pre-computed</div></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box" style="border-color:#ffffff"><div class="label" style="color:#ffffff">React App</div><div class="sublabel">just renders JSON</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- WHITE BAND: TOURNAMENT PHASE -->
+<div class="band-white">
+  <div class="inner">
+    <div class="section-eyebrow">phase-aware</div>
+    <div class="section-title">Tournament Phase</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:24px">phase.json controls what exists — the app adapts navigation automatically</div>
+
+    <div class="phases">
+      <div class="phase" style="background:#010120;border-color:#313641">
+        <div class="name"><span class="dot" style="background:#c8f6f9"></span>Group Stage</div>
+        <div class="files">
+          <div class="active">├ groups/A–L.json ✓</div>
+          <div class="active">├ third-placed.json ✓</div>
+          <div class="active">└ top-scorers.json ✓</div>
+        </div>
+      </div>
+      <div class="phase" style="background:#010120;border-color:#313641">
+        <div class="name"><span class="dot" style="background:#bdbbff"></span>R32 → Knockout</div>
+        <div class="files">
+          <div style="color:rgba(255,255,255,0.15)">├ groups/ ✗</div>
+          <div style="color:rgba(255,255,255,0.15)">├ third-placed.json ✗</div>
+          <div class="active">├ bracket.json ✓</div>
+          <div class="active">└ top-scorers.json ✓</div>
+        </div>
+      </div>
+      <div class="phase" style="background:#010120;border-color:#313641">
+        <div class="name"><span class="dot" style="background:#fc4c02"></span>Tournament Ended</div>
+        <div class="files">
+          <div class="active">├ bracket.json (final)</div>
+          <div class="active">├ top-scorers.json</div>
+          <div class="active">└ full-results.json</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- DARK BAND: FILE STRUCTURE + APP CODE -->
+<div class="band-dark-2">
+  <div class="inner">
+    <div class="split">
+      <!-- File tree -->
+      <div>
+        <div class="section-eyebrow" style="color:rgba(255,255,255,0.4)">generated</div>
+        <div style="font-size:28px;font-weight:500;line-height:1.15;letter-spacing:-0.42px;margin-bottom:20px">public/data/</div>
+        <div class="file-tree">
+          <div class="folder">📁 public/data/</div>
+          <div class="file"><span style="color:#ffffff">├── phase.json</span> <span class="tag tag-always">always</span></div>
+          <div class="file" style="padding-left:16px;color:rgba(255,255,255,0.3)">│&nbsp;&nbsp; {"phase":"r32","groupComplete":true}</div>
+          <div class="file"><span style="color:#ffffff">├── matches.json</span> <span class="tag tag-always">always</span></div>
+          <div class="file"><span style="color:#ffffff">├── top-scorers.json</span> <span class="tag tag-always">always</span></div>
+          <div class="file"><span style="color:#ffffff">├── groups/</span> <span class="tag tag-group">group phase</span></div>
+          <div class="file" style="padding-left:16px;color:rgba(255,255,255,0.3)">│&nbsp;&nbsp; ├── A.json ... L.json</div>
+          <div class="file" style="padding-left:16px;color:rgba(255,255,255,0.3)">│&nbsp;&nbsp; └── 3<sup>n</sup> simulation done once</div>
+          <div class="file"><span style="color:#ffffff">├── third-placed.json</span> <span class="tag tag-group">group phase</span></div>
+          <div class="file"><span style="color:#ffffff">└── bracket.json</span> <span class="tag tag-ko">r32 onwards</span></div>
+          <div class="file" style="padding-left:16px;color:rgba(255,255,255,0.3)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;real team names, not placeholders</div>
+        </div>
+      </div>
+
+      <!-- React App -->
+      <div>
+        <div class="section-eyebrow" style="color:rgba(255,255,255,0.4)">presentation only</div>
+        <div style="font-size:28px;font-weight:500;line-height:1.15;letter-spacing:-0.42px;margin-bottom:20px">React App</div>
+        <div class="app-code">
+          <span class="comment">// No computeStandings()</span><br>
+          <span class="comment">// No 3<sup>n</sup> simulation</span><br>
+          <span class="comment">// No hooks inside loops</span><br><br>
+          <span class="keyword">function</span> GroupsPage() {<br>
+          &nbsp;&nbsp;<span class="keyword">const</span> data = fetch(<span class="string">'/data/groups/A.json'</span>)<br>
+          &nbsp;&nbsp;<span class="keyword">return</span> &lt;GroupTable standings={data} /&gt;<br>
+          }<br><br>
+          <span class="comment">// Nav adapts to phase:</span><br>
+          &nbsp;&nbsp;phase = <span class="string">"r32"</span> → hide Groups, show Bracket
+        </div>
+
+        <div class="nav-row">
+          <span class="nav-item active">🏆 Groups</span>
+          <span class="nav-item active">📋 3rd Place</span>
+          <span class="nav-item hidden">🏁 Bracket</span>
+          <span class="nav-item active">⚽ Schedule</span>
+          <span class="nav-item active">🥇 Top Scorers</span>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.3);margin-top:12px;letter-spacing:0.05px">When R32 starts → Groups &amp; 3rd Place auto-hide → Bracket appears</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- WHITE BAND: WHY THIS WORKS -->
+<div class="band-white">
+  <div class="inner">
+    <div class="section-eyebrow">summary</div>
+    <div class="section-title">Why This Works</div>
+
+    <div class="why-grid" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div class="card-white">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:500;color:#fc4c02;margin-bottom:8px">01</div>
+        <div style="color:#666;font-size:14px;line-height:1.6;letter-spacing:-0.14px">Script does the heavy lifting once, not the browser on every render</div>
+      </div>
+      <div class="card-white">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:500;color:#ef2cc1;margin-bottom:8px">02</div>
+        <div style="color:#666;font-size:14px;line-height:1.6;letter-spacing:-0.14px">Phase.json decides what exists — dead phases simply have no files</div>
+      </div>
+      <div class="card-white">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:500;color:#bdbbff;margin-bottom:8px">03</div>
+        <div style="color:#666;font-size:14px;line-height:1.6;letter-spacing:-0.14px">React is just HTML with data — instant loads, zero computation</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- FOOTER WORDMARK -->
+<div class="footer-wordmark">worldcup 2026</div>
+
+</body>
+</html>

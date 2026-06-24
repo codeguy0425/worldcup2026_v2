@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WC2026 — Spike Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#ffffff;color:#000000;font-family:'Inter','Helvetica Neue',Arial,sans-serif;font-weight:400;font-size:16px;line-height:1.3;letter-spacing:-0.16px;min-height:100vh}
+
+/* bands */
+.band-dark{background:#010120;color:#ffffff;padding:80px 32px}
+.band-dark .inner{max-width:1100px;margin:0 auto}
+.band-white{background:#ffffff;padding:80px 32px}
+.band-white .inner{max-width:1100px;margin:0 auto}
+
+/* typography */
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.eyebrow-light{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px}
+.h1{font-size:64px;font-weight:500;line-height:1.1;letter-spacing:-1.92px;margin-bottom:16px}
+.h2{font-size:40px;font-weight:500;line-height:1.2;letter-spacing:-0.8px;margin-bottom:24px}
+.h3{font-size:22px;font-weight:500;line-height:1.15;letter-spacing:-0.22px;margin-bottom:8px}
+.body{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.6;letter-spacing:-0.14px}
+.body-dark{font-size:14px;color:#666;line-height:1.6;letter-spacing:-0.14px}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase}
+
+/* gradient bar */
+.gradient-bar{background:linear-gradient(90deg,#fc4c02,#ef2cc1,#bdbbff);height:4px;width:100%}
+
+/* spike table */
+.spike-table{width:100%;border-collapse:collapse;font-size:14px;letter-spacing:-0.14px}
+.spike-table th{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;padding:12px 16px;border-bottom:1px solid #ebebeb;text-align:left}
+.spike-table td{padding:20px 16px;border-bottom:1px solid #ebebeb;vertical-align:top}
+.spike-table .num{font-weight:500;color:#000}
+.spike-table .status{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;padding:3px 10px;border-radius:4px;display:inline-block}
+.status-pending{background:#ebebeb;color:#666}
+.status-next{background:#010120;color:#fff}
+
+/* order flow */
+.order-flow{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;padding:32px 0 16px}
+.order-step{border:1px solid #313641;border-radius:4px;padding:12px 18px;background:rgba(255,255,255,0.04);text-align:center;min-width:90px}
+.order-step .num{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:500;color:#bdbbff}
+.order-step .name{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px}
+.order-step.current{border-color:#bdbbff;background:rgba(189,187,255,0.08)}
+.order-step.current .num{color:#fff}
+.order-step.current .name{color:#fff}
+.order-arrow{color:rgba(255,255,255,0.2);font-size:16px}
+
+/* path flow */
+.path-flow{display:flex;gap:16px;flex-wrap:wrap;padding:16px 0}
+.path-card{border:1px solid #ebebeb;border-radius:4px;padding:20px;flex:1;min-width:180px}
+.path-card .icon{font-size:24px;margin-bottom:6px}
+.path-card .path-label{font-size:14px;font-weight:500;margin-bottom:4px}
+.path-card .path-desc{font-size:12px;color:#666;line-height:1.5}
+
+/* deliverables */
+.deliv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.deliv-card{border:1px solid #313641;border-radius:4px;padding:20px;background:rgba(255,255,255,0.03)}
+.deliv-card .mono-small{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.3px;text-transform:uppercase;color:#c8f6f9;margin-bottom:6px}
+.deliv-card .deliv-filename{font-family:'JetBrains Mono',monospace;font-size:13px;color:#fff;margin-bottom:4px}
+.deliv-card .deliv-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5}
+
+/* footer wordmark */
+.footer-wordmark{font-size:64px;font-weight:500;letter-spacing:-1.92px;color:#ebebeb;line-height:1;padding:48px 32px;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">spike plan</div>
+    <div class="h1">WC2026 Redesign</div>
+    <div class="mono" style="color:rgba(255,255,255,0.3);margin-bottom:48px">5 spikes · validate before build</div>
+
+    <div style="max-width:700px">
+      <div class="body">Prototype the core data pipeline logic in standalone CLI scripts before committing to a full React build. Each spike is a disposable script in <code style="color:#c8f6f9;font-size:13px">spikes/</code> — run it, inspect the output, move on.</div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- SPIKE TABLE -->
+<div class="band-white">
+  <div class="inner">
+    <div class="eyebrow-light">spikes</div>
+    <div class="h2" style="margin-bottom:32px">Validation Plan</div>
+
+    <table class="spike-table">
+      <thead>
+        <tr>
+          <th style="width:60px">#</th>
+          <th style="width:200px">Spike</th>
+          <th>What It Validates</th>
+          <th style="width:180px">Observable Output</th>
+          <th style="width:100px">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="num">001</td>
+          <td><strong>Phase Detection</strong></td>
+          <td>Given raw match data (scores or null), determine current phase — group ongoing, group complete, R32, knockout, ended</td>
+          <td><code style="font-size:12px">phase: "r32"</code> + rules that triggered it</td>
+          <td><span class="status status-next">NEXT</span></td>
+        </tr>
+        <tr>
+          <td class="num">002</td>
+          <td><strong>Standings + A/E</strong></td>
+          <td>3ⁿ scenario simulation — standings sorted correctly, teams marked (A) or (E) or still in contention</td>
+          <td>Group A table with pts, H2H, (A)/(E) badges</td>
+          <td><span class="status status-pending">PENDING</span></td>
+        </tr>
+        <tr>
+          <td class="num">003</td>
+          <td><strong>Third-Placed Top 8</strong></td>
+          <td>Collect 3rd from all 12 groups, sort by rules, pick top 8 + ties</td>
+          <td>Sorted table: rank · group · team · pts · GD · GF</td>
+          <td><span class="status status-pending">PENDING</span></td>
+        </tr>
+        <tr>
+          <td class="num">004</td>
+          <td><strong>Bracket Resolution</strong></td>
+          <td>Map placeholders ("1E", "3A/B/C/D") to real team names after group stage completes</td>
+          <td>R32 bracket: actual team names, no placeholders</td>
+          <td><span class="status status-pending">PENDING</span></td>
+        </tr>
+        <tr>
+          <td class="num">005</td>
+          <td><strong>JSON Output</strong></td>
+          <td>Write all computed data as JSON files in the <code style="font-size:12px">public/data/</code> structure</td>
+          <td><code style="font-size:12px">ls public/data/</code> with valid JSON files</td>
+          <td><span class="status status-pending">PENDING</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- EXECUTION ORDER -->
+<div class="band-dark">
+  <div class="inner">
+    <div class="eyebrow">execution order</div>
+    <div class="h2" style="margin-bottom:8px">Build Order</div>
+    <div class="body" style="margin-bottom:24px">Each spike feeds into the next — 001 creates data that 002/003 consume, 004 depends on 001–003, 005 wraps everything</div>
+
+    <div class="order-flow">
+      <div class="order-step current">
+        <div class="num">001</div>
+        <div class="name">Phase Detection</div>
+      </div>
+      <div class="order-arrow">→</div>
+      <div class="order-step">
+        <div class="num">002</div>
+        <div class="name">Standings + A/E</div>
+      </div>
+      <div class="order-arrow">→</div>
+      <div class="order-step">
+        <div class="num">003</div>
+        <div class="name">Third-Placed Top 8</div>
+      </div>
+      <div class="order-arrow">→</div>
+      <div class="order-step">
+        <div class="num">004</div>
+        <div class="name">Bracket Resolution</div>
+      </div>
+      <div class="order-arrow">→</div>
+      <div class="order-step">
+        <div class="num">005</div>
+        <div class="name">JSON Output</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;border-top:1px solid #313641;padding-top:24px">
+      <div class="mono" style="color:rgba(255,255,255,0.4);margin-bottom:16px">data flow between spikes</div>
+      <div class="path-flow">
+        <div class="path-card" style="border-color:#313641;background:rgba(255,255,255,0.03)">
+          <div class="path-label" style="color:#fc4c02;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.55px;text-transform:uppercase">001 → 002/003</div>
+          <div class="body" style="color:rgba(255,255,255,0.5)">Phase detection tells 002/003 whether group-stage logic should run at all</div>
+        </div>
+        <div class="path-card" style="border-color:#313641;background:rgba(255,255,255,0.03)">
+          <div class="path-label" style="color:#bdbbff;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.55px;text-transform:uppercase">002 + 003 → 004</div>
+          <div class="body" style="color:rgba(255,255,255,0.5)">Standings from 002 feed bracket placeholder resolution in 004</div>
+        </div>
+        <div class="path-card" style="border-color:#313641;background:rgba(255,255,255,0.03)">
+          <div class="path-label" style="color:#c8f6f9;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.55px;text-transform:uppercase">001–004 → 005</div>
+          <div class="body" style="color:rgba(255,255,255,0.5)">All computed data gets serialized to the public/data/ JSON structure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- DELIVERABLES -->
+<div class="band-dark-2" style="background:#010120;color:#ffffff;padding:80px 32px">
+  <div class="inner" style="max-width:1100px;margin:0 auto">
+    <div class="eyebrow">files we'll produce</div>
+    <div class="h2" style="margin-bottom:32px">Spike Deliverables</div>
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(255,255,255,0.3);margin-bottom:8px">📁 spikes/</div>
+    <div class="deliv-grid">
+      <div class="deliv-card">
+        <div class="mono-small">001</div>
+        <div class="deliv-filename">001-phase-detection/</div>
+        <div class="deliv-desc">README.md + script that reads match data and outputs current phase</div>
+      </div>
+      <div class="deliv-card">
+        <div class="mono-small">002</div>
+        <div class="deliv-filename">002-standings/</div>
+        <div class="deliv-desc">README.md + script with 3ⁿ scenario simulation and (A)/(E) markers</div>
+      </div>
+      <div class="deliv-card">
+        <div class="mono-small">003</div>
+        <div class="deliv-filename">003-third-placed/</div>
+        <div class="deliv-desc">README.md + script that sorts all 12 3rd-placed teams, picks top 8</div>
+      </div>
+      <div class="deliv-card">
+        <div class="mono-small">004</div>
+        <div class="deliv-filename">004-bracket/</div>
+        <div class="deliv-desc">README.md + script that maps placeholders to real team names</div>
+      </div>
+      <div class="deliv-card">
+        <div class="mono-small">005</div>
+        <div class="deliv-filename">005-json-output/</div>
+        <div class="deliv-desc">README.md + script that writes the full public/data/ JSON tree</div>
+      </div>
+      <div class="deliv-card" style="border-color:#bdbbff;background:rgba(189,187,255,0.06)">
+        <div class="mono-small" style="color:#bdbbff">meta</div>
+        <div class="deliv-filename">sample-data.json</div>
+        <div class="deliv-desc">Shared dummy match data all spikes read from — keeps them decoupled</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<!-- TOOLING -->
+<div class="band-white">
+  <div class="inner">
+    <div class="eyebrow-light">tooling</div>
+    <div class="h2" style="margin-bottom:24px">Approach</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px">language</div>
+        <div style="font-size:14px;color:#666;line-height:1.6">Node.js with minimal deps (or plain Python). Each script reads <code style="font-size:12px;background:#ebebeb;padding:2px 6px;border-radius:3px">sample-data.json</code> and prints results to stdout.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px">output</div>
+        <div style="font-size:14px;color:#666;line-height:1.6">Every spike is a CLI you can run: <code style="font-size:12px;background:#ebebeb;padding:2px 6px;border-radius:3px">node 002-standings/spike.mjs</code> → readable tables printed to terminal</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px">no react</div>
+        <div style="font-size:14px;color:#666;line-height:1.6">Zero bundlers, zero JSX, zero Vite. Pure logic validation. React only comes in after all 5 spikes are validated.</div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:0.55px;text-transform:uppercase;color:#999;margin-bottom:8px">disposable</div>
+        <div style="font-size:14px;color:#666;line-height:1.6">Spikes get thrown away once they've paid their debt. The real app reimplements from scratch using the learnings.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gradient-bar"></div>
+
+<div class="footer-wordmark">spike · validate · build</div>
+
+</body>
+</html>
