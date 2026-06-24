@@ -4,11 +4,12 @@
  */
 import { computeStandings } from './standings.mjs'
 import { computeThirdPlaced } from './thirdplaced.mjs'
+import { resolveThirdPlaced } from './thirdmatrix.mjs'
 
 const teamIdRe = /^[A-Z]{3}$/
 
 /** Only resolve a group placeholder if the group position is locked */
-function resolveOne(id, standingsResults, thirdEntries, teamsMap, allGroupsComplete) {
+function resolveOne(id, standingsResults, thirdEntries, teamsMap, allGroupsComplete, thirdPlacedOverride) {
   // Real team ID → keep as-is
   if (teamsMap[id]) return id
 
@@ -34,6 +35,9 @@ function resolveOne(id, standingsResults, thirdEntries, teamsMap, allGroupsCompl
   const t = id.match(/^3([A-L](?:\/[A-L])*)$/)
   if (t) {
     if (!allGroupsComplete) return id
+    // Use combination matrix override if available (FIFA Annex C)
+    if (thirdPlacedOverride) return thirdPlacedOverride
+    // Fallback: greedy "pick best-ranked from candidates"
     const candidates = new Set(t[1].split('/'))
     const eligible = thirdEntries.filter(e => candidates.has(e.group) && e.qualified)
     if (eligible.length) return eligible[0].teamId
@@ -51,6 +55,13 @@ export function computeBracket(matches, teamsMap, groupLabels) {
   const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels)
   const allGroupsComplete = groupLabels.every(gl => (standingsResults[gl]?.remaining ?? 1) === 0)
 
+  // Compute FIFA combination matrix assignment when all groups are complete
+  let thirdPlacedMap = {}
+  if (allGroupsComplete) {
+    const qualifiedGroups = thirdEntries.filter(e => e.qualified).map(e => e.group).sort()
+    thirdPlacedMap = resolveThirdPlaced(qualifiedGroups, thirdEntries, teamsMap)
+  }
+
   const phases = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
   const rounds = {}
   const resolvedWinners = {}, resolvedLosers = {}
@@ -58,8 +69,10 @@ export function computeBracket(matches, teamsMap, groupLabels) {
   for (const phase of phases) {
     const ms = matches.filter(m => m.stage === phase).sort((a, b) => a.id - b.id)
     rounds[phase] = ms.map(m => {
-      const t1 = resolveOne(m.team1Id, standingsResults, thirdEntries, teamsMap, allGroupsComplete)
-      const t2 = resolveOne(m.team2Id, standingsResults, thirdEntries, teamsMap, allGroupsComplete)
+      // Pass combination matrix override for third-placed slots
+      const thirdOverride = thirdPlacedMap[m.id] || null
+      const t1 = resolveOne(m.team1Id, standingsResults, thirdEntries, teamsMap, allGroupsComplete, null)
+      const t2 = resolveOne(m.team2Id, standingsResults, thirdEntries, teamsMap, allGroupsComplete, thirdOverride)
       const hasRes = m.score1 !== undefined
 
       // W/L ref resolution for already-played matches
