@@ -1,0 +1,29 @@
+export const en = {
+  nav: { schedule: 'Schedule', teams: 'Teams', groups: 'Groups', thirdPlace: '3rd Place', scorers: 'Scorers', bracket: 'Bracket', stadiums: 'Stadiums' },
+  home: { phaseGroup: 'Group stage — {played}/{total} played', latest: 'Latest Results', upcoming: 'Upcoming', noResults: 'No matches played yet' },
+  teams: { title: 'Teams', desc: '48 teams · 12 groups · 6 confederations', byGroup: 'By Group', byName: 'By Name', byContinent: 'By Continent', allAZ: 'All Teams (A–Z)' },
+  groups: { title: 'Groups', desc: '12 groups · top 2 + best 8 third advance' },
+  third: { title: 'Third-Placed', desc: 'Best 8 of 12 third-placed teams advance to R32' },
+  scorers: { title: 'Top Scorers', desc: '{n} players have scored' },
+  bracket: { title: 'Bracket', desc: 'Knockout stage — placeholders shown until groups complete' },
+  stadiums: { title: 'Stadiums', desc: '16 venues across 3 host countries', capacity: 'Capacity' },
+  schedule: { title: 'Schedule', all: 'All' },
+  match: { back: 'Back to schedule' },
+  table: { rk: 'RK', team: 'Team', p: 'P', w: 'W', d: 'D', l: 'L', gf: 'GF', ga: 'GA', gd: 'GD', pts: 'Pts', player: 'Player', goals: 'Goals', pen: 'Pen', group: 'Group' },
+  lang: '中',
+}
+
+export const zh = {
+  nav: { schedule: '賽程', teams: '球隊', groups: '分組', thirdPlace: '第三名', scorers: '射手榜', bracket: '淘汰賽', stadiums: '球場' },
+  home: { phaseGroup: '分組賽 — {played}/{total} 已賽', latest: '最新賽果', upcoming: '即將舉行', noResults: '暫無比賽' },
+  teams: { title: '球隊', desc: '48 隊 · 12 組 · 6 洲份', byGroup: '按組別', byName: '按名稱', byContinent: '按洲份', allAZ: '全部球隊 (A–Z)' },
+  groups: { title: '分組', desc: '12 組 · 首兩名 + 最佳第三名 8 隊晉級' },
+  third: { title: '第三名', desc: '12 組第三名中最佳 8 隊晉級 32 強' },
+  scorers: { title: '射手榜', desc: '{n} 名球員取得入球' },
+  bracket: { title: '淘汰賽', desc: '淘汰賽階段 — 分組完成後顯示球隊名稱' },
+  stadiums: { title: '球場', desc: '3 個主辦國共 16 個球場', capacity: '容量' },
+  schedule: { title: '賽程', all: '全部' },
+  match: { back: '← 返回賽程' },
+  table: { rk: '排名', team: '球隊', p: '賽', w: '勝', d: '和', l: '負', gf: '入球', ga: '失球', gd: '球差', pts: '積分', player: '球員', goals: '入球', pen: '十二碼', group: '組別' },
+  lang: 'En',
+}

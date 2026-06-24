@@ -1,5 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from './themes/ThemeProvider'
+import { LangProvider } from './hooks/LangProvider'
 import { Layout } from './components/Layout'
 import { HomePage } from './pages/Home'
 import {
@@ -11,6 +12,7 @@ import {
 export default function App() {
   return (
     <HashRouter>
+      <LangProvider>
       <ThemeProvider>
         <Layout>
           <Routes>
@@ -29,6 +31,7 @@ export default function App() {
           </Routes>
         </Layout>
       </ThemeProvider>
+      </LangProvider>
     </HashRouter>
   )
 }

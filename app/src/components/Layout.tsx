@@ -1,22 +1,25 @@
 import { Link } from 'react-router-dom'
 import { ThemeSwitcher } from './ThemeSwitcher'
-
-const navLinks = [
-  { to: '/schedule', label: 'Schedule' },
-  { to: '/teams', label: 'Teams' },
-  { to: '/groups', label: 'Groups' },
-  { to: '/third-placed', label: '3rd Place' },
-  { to: '/scorers', label: 'Scorers' },
-  { to: '/bracket', label: 'Bracket' },
-  { to: '/stadiums', label: 'Stadiums' },
-]
+import { useLang } from '../hooks/LangProvider'
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const { t, toggle } = useLang()
+
+  const navLinks = [
+    { to: '/schedule', label: t.nav.schedule },
+    { to: '/teams', label: t.nav.teams },
+    { to: '/groups', label: t.nav.groups },
+    { to: '/third-placed', label: t.nav.thirdPlace },
+    { to: '/scorers', label: t.nav.scorers },
+    { to: '/bracket', label: t.nav.bracket },
+    { to: '/stadiums', label: t.nav.stadiums },
+  ]
+
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
+    <>
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
-        background: 'var(--surface)',
+        background: 'var(--bg-dark)', color: 'var(--text-on-dark)',
         borderBottom: '1px solid var(--border)',
         padding: '0 var(--space-lg)',
       }}>
@@ -29,6 +32,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
               </Link>
             ))}
           </div>
+          <button onClick={toggle} style={{
+            fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
+            letterSpacing: '0.3px', padding: '4px 8px', borderRadius: 'var(--radius-sm)',
+            border: '1px solid var(--border)',
+            background: 'var(--surface)', color: 'var(--text-muted)',
+            cursor: 'pointer', minWidth: '28px', textAlign: 'center',
+          }}>
+            {t.lang}
+          </button>
           <ThemeSwitcher />
         </div>
       </nav>
@@ -39,6 +51,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       }}>
         {children}
       </main>
-    </div>
+    </>
   )
 }

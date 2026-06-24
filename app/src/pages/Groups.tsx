@@ -1,19 +1,17 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
+import { useLang } from '../hooks/LangProvider'
 
 interface Standing {
   rank: number; teamId: string; team: string
   flag?: string; played: number; won: number; drawn: number; lost: number
-  gf: number; ga: number; gd: number; pts: number
-  status?: 'advanced' | 'eliminated'
+  gf: number; ga: number; gd: number; pts: number; status?: string
 }
-
-interface GroupData { group: string; standings: Standing[] }
 
 const groupLabels = ['A','B','C','D','E','F','G','H','I','J','K','L']
 
 function GroupTable({ group }: { group: string }) {
-  const { data } = useJson<GroupData>(`/data/groups/${group}.json`)
+  const { data } = useJson<{ standings: Standing[]; remaining: number }>(`/data/groups/${group}.json`)
   if (!data) return null
 
   const { standings } = data
@@ -82,12 +80,13 @@ function GroupTable({ group }: { group: string }) {
 }
 
 export function GroupsPage() {
+  const { t } = useLang()
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
-        <h1 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '2px' }}>Groups</h1>
+        <h1 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '2px' }}>{t.groups.title}</h1>
         <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-          12 groups · top 2 + best 8 third advance
+          {t.groups.desc}
         </p>
       </div>
       <div className="grid-groups" style={{ gap: '8px' }}>

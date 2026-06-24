@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
+import { useLang } from '../hooks/LangProvider'
 
 interface Team {
   id: string; name: string; nameZh: string
@@ -10,15 +11,16 @@ interface Team {
 const groups = ['A','B','C','D','E','F','G','H','I','J','K','L']
 
 export function TeamsPage() {
+  const { t } = useLang()
   const { data, loading } = useJson<{ teams: Team[] }>('/data/teams.json')
   const [view, setView] = useState<'group' | 'name' | 'continent'>('group')
 
   const teams = data?.teams ?? []
 
   const filters = [
-    { key: 'group' as const, label: 'By Group' },
-    { key: 'name' as const, label: 'By Name' },
-    { key: 'continent' as const, label: 'By Continent' },
+    { key: 'group' as const, label: t.teams.byGroup },
+    { key: 'name' as const, label: t.teams.byName },
+    { key: 'continent' as const, label: t.teams.byContinent },
   ]
 
   let sections: { heading: string; items: Team[] }[] = []
@@ -30,7 +32,7 @@ export function TeamsPage() {
     }))
   } else if (view === 'name') {
     const sorted = [...teams].sort((a, b) => a.name.localeCompare(b.name))
-    sections = [{ heading: 'All Teams (A–Z)', items: sorted }]
+    sections = [{ heading: t.teams.allAZ, items: sorted }]
   } else if (view === 'continent') {
     const continents = [...new Set(teams.map(t => t.continent))].sort()
     sections = continents.map(c => ({
@@ -42,9 +44,9 @@ export function TeamsPage() {
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Teams</h1>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.teams.title}</h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
-          48 teams · 12 groups · 6 confederations
+          {t.teams.desc}
         </p>
 
         {/* View toggle */}

@@ -1,4 +1,5 @@
 import { useJson } from '../hooks/useJson'
+import { useLang } from '../hooks/LangProvider'
 
 interface Scorer {
   rank: number; scorer: string; teamId: string
@@ -6,17 +7,18 @@ interface Scorer {
 }
 
 export function ScorersPage() {
-  const { data, loading } = useJson<Scorer[]>('/data/top-scorers.json')
-  const scorers = data ?? []
+  const { t } = useLang()
+  const { data: scorersRaw, loading } = useJson<Scorer[]>('/data/top-scorers.json')
+  const scorers = scorersRaw ?? []
 
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
         <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
-          Top Scorers
+          {t.scorers.title}
         </h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          {scorers.length} players have scored
+          {t.scorers.desc.replace('{n}', String(scorers.length))}
         </p>
       </div>
 

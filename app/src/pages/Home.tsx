@@ -1,6 +1,7 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
 import { toHkt } from '../hooks/hkTime'
+import { useLang } from '../hooks/LangProvider'
 
 interface Match {
   id: number; round: string; date: string; stage: string
@@ -10,6 +11,7 @@ interface Match {
 interface Team { id: string; name: string; flag: string }
 
 export function HomePage() {
+  const { t } = useLang()
   const { data: matches } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: phase } = useJson<{ phase: string; groupComplete: boolean }>('/data/phase.json')
@@ -60,7 +62,7 @@ export function HomePage() {
       }}>
         <span>
           {phase?.phase === 'ended' ? '🏆 Tournament ended' :
-           phase?.phase === 'group' ? `⚽ Group stage — ${played.length}/${total} played` :
+           phase?.phase === 'group' ? `⚽ ${t.home.phaseGroup.replace('{played}', String(played.length)).replace('{total}', String(total))}` :
            `🏁 ${(phase?.phase || '').toUpperCase()} underway`}
         </span>
       </div>
@@ -93,7 +95,7 @@ export function HomePage() {
         {/* Latest results */}
         <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', overflow: 'hidden' }}>
           <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--border)', fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)' }}>
-            📋 Latest Results
+            📋 {t.home.latest}
           </div>
           {latest.map(m => {
             const t1 = teamMap.get(m.team1Id)
@@ -117,7 +119,7 @@ export function HomePage() {
         {/* Upcoming */}
         <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', overflow: 'hidden' }}>
           <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--border)', fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)' }}>
-            🔜 Upcoming
+            🔜 {t.home.upcoming}
           </div>
           {upcoming.map(m => {
             const t1 = teamMap.get(m.team1Id)
