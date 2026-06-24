@@ -35,6 +35,8 @@ export function BracketPage() {
   const { data: bracket } = useJson<BracketData>('/data/bracket.json')
   const { data: teamData } = useJson<{ teams: { id: string; name: string; flag: string }[] }>('/data/teams.json')
   const { data: matches } = useJson<Match[]>('/data/matches.json')
+  const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
 
@@ -167,8 +169,9 @@ export function BracketPage() {
                     textDecoration: 'none', color: 'inherit', fontSize: '12px',
                     opacity: (isFaded1 || isFaded2) ? 0.55 : 1,
                   }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '54px' }}>
-                      {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '54px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}>
+                      <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>
+                      {viutvIds.has(m.matchId) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-16px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
                     </span>
                     <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                       {showFlag1} {showTeam1}
