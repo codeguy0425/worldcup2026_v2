@@ -37,7 +37,6 @@ export function ScorersPage() {
                     padding: '8px 8px', textAlign: h === 'Player' || h === 'Team' ? 'left' : 'center',
                     fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 500,
                     letterSpacing: '0.3px', textTransform: 'uppercase', color: 'var(--text-muted)',
-                    position: 'sticky', top: 0, background: 'var(--surface)', zIndex: 1,
                   }}>{h}</th>
                 ))}
               </tr>
