@@ -16,10 +16,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
   ]
 
   return (
-    <>
+    <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
-        background: 'var(--bg-dark)',
+        background: 'var(--surface)',
         borderBottom: '1px solid var(--border)',
         padding: '0 var(--space-lg)',
       }}>
@@ -51,6 +51,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       }}>
         {children}
       </main>
-    </>
+    </div>
   )
 }
