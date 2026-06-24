@@ -414,19 +414,19 @@
     "rank": 46
   },
   {
-    "scorer": "Hwang In-Beom",
-    "teamId": "KOR",
-    "teamName": "South Korea",
-    "flag": "🇰🇷",
+    "scorer": "Hélio Varela",
+    "teamId": "CPV",
+    "teamName": "Cape Verde",
+    "flag": "🇨🇻",
     "goals": 1,
     "penalties": 0,
     "rank": 47
   },
   {
-    "scorer": "Hélio Varela",
-    "teamId": "CPV",
-    "teamName": "Cape Verde",
-    "flag": "🇨🇻",
+    "scorer": "Hwang In-Beom",
+    "teamId": "KOR",
+    "teamName": "South Korea",
+    "flag": "🇰🇷",
     "goals": 1,
     "penalties": 0,
     "rank": 48
@@ -450,22 +450,13 @@
     "rank": 50
   },
   {
-    "scorer": "John McGinn",
-    "teamId": "SCO",
-    "teamName": "Scotland",
-    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "scorer": "Jáminton Campaz",
+    "teamId": "COL",
+    "teamName": "Colombia",
+    "flag": "🇨🇴",
     "goals": 1,
     "penalties": 0,
     "rank": 51
-  },
-  {
-    "scorer": "Jovo Lukić",
-    "teamId": "BIH",
-    "teamName": "Bosnia & Herzegovina",
-    "flag": "🇧🇦",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 52
   },
   {
     "scorer": "João Neves",
@@ -474,7 +465,25 @@
     "flag": "🇵🇹",
     "goals": 1,
     "penalties": 0,
+    "rank": 52
+  },
+  {
+    "scorer": "John McGinn",
+    "teamId": "SCO",
+    "teamName": "Scotland",
+    "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+    "goals": 1,
+    "penalties": 0,
     "rank": 53
+  },
+  {
+    "scorer": "Jovo Lukić",
+    "teamId": "BIH",
+    "teamName": "Bosnia & Herzegovina",
+    "flag": "🇧🇦",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 54
   },
   {
     "scorer": "Jude Bellingham",
@@ -483,7 +492,7 @@
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "goals": 1,
     "penalties": 0,
-    "rank": 54
+    "rank": 55
   },
   {
     "scorer": "Julián Quiñones",
@@ -492,22 +501,13 @@
     "flag": "🇲🇽",
     "goals": 1,
     "penalties": 0,
-    "rank": 55
+    "rank": 56
   },
   {
     "scorer": "Junya Ito",
     "teamId": "JPN",
     "teamName": "Japan",
     "flag": "🇯🇵",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 56
-  },
-  {
-    "scorer": "Jáminton Campaz",
-    "teamId": "COL",
-    "teamName": "Colombia",
-    "flag": "🇨🇴",
     "goals": 1,
     "penalties": 0,
     "rank": 57
@@ -621,19 +621,19 @@
     "rank": 69
   },
   {
-    "scorer": "Mattias Svanberg",
-    "teamId": "SWE",
-    "teamName": "Sweden",
-    "flag": "🇸🇪",
+    "scorer": "Matías Galarza",
+    "teamId": "PAR",
+    "teamName": "Paraguay",
+    "flag": "🇵🇾",
     "goals": 1,
     "penalties": 0,
     "rank": 70
   },
   {
-    "scorer": "Matías Galarza",
-    "teamId": "PAR",
-    "teamName": "Paraguay",
-    "flag": "🇵🇾",
+    "scorer": "Mattias Svanberg",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
     "goals": 1,
     "penalties": 0,
     "rank": 71

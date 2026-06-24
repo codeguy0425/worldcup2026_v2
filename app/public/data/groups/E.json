@@ -34,7 +34,6 @@
       "gd": 0,
       "pts": 3,
       "form": "WL",
-      "status": null,
       "maxPts": 6
     },
     {
@@ -52,7 +51,6 @@
       "gd": -1,
       "pts": 1,
       "form": "LD",
-      "status": null,
       "maxPts": 4
     },
     {
@@ -70,7 +68,6 @@
       "gd": -6,
       "pts": 1,
       "form": "LD",
-      "status": null,
       "maxPts": 4
     }
   ],

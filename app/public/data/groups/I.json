@@ -52,7 +52,6 @@
       "gd": -3,
       "pts": 0,
       "form": "LL",
-      "status": null,
       "maxPts": 3
     },
     {
@@ -70,7 +69,6 @@
       "gd": -6,
       "pts": 0,
       "form": "LL",
-      "status": null,
       "maxPts": 3
     }
   ],
