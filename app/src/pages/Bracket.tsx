@@ -1,13 +1,14 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { toHkt } from '../hooks/hkTime'
 
 interface BracketMatch {
   matchId: number; round: string; date: string
   team1Id: string; team2Id: string
   team1Original?: string; team2Original?: string
   team1Resolved?: boolean; team2Resolved?: boolean
-  score1?: number; score2?: number
+  score1?: number; score2?: number; timeUtc?: string
 }
 
 interface BracketData { rounds: Record<string, BracketMatch[]> }
@@ -154,8 +155,8 @@ export function BracketPage() {
                     textDecoration: 'none', color: 'inherit', fontSize: '12px',
                     opacity: (isFaded1 || isFaded2) ? 0.55 : 1,
                   }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '20px' }}>
-                      #{m.matchId}
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '54px' }}>
+                      {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}
                     </span>
                     <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                       {showFlag1} {showTeam1}

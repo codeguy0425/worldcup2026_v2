@@ -11,7 +11,6 @@ export { GroupPage } from './GroupDetail'
 import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useJson } from '../hooks/useJson'
-import { shortHkt } from '../hooks/hkTime'
 import { toHkt } from '../hooks/hkTime'
 
 // ─── Schedule Page ───
@@ -108,8 +107,8 @@ export function SchedulePage() {
                     textDecoration: 'none', color: 'inherit', fontSize: '13px',
                     flexWrap: 'wrap',
                   }}>
-                    <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '36px' }}>
-                      {shortHkt(m.date, m.timeUtc)}
+                    <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '52px' }}>
+                      {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} ${h.time}` })()}
                     </span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
                       <span>{t1?.flag || ''}</span>
