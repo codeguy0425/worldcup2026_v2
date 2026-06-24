@@ -70,13 +70,13 @@ export function HomePage() {
       {/* Quick links */}
       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '20px' }}>
         {[
-          { to: '/schedule', label: 'Schedule', icon: '📅' },
-          { to: '/teams', label: 'Teams', icon: '👥' },
-          { to: '/groups', label: 'Groups', icon: '🏆' },
-          { to: '/third-placed', label: '3rd Place', icon: '📋' },
-          { to: '/scorers', label: 'Scorers', icon: '⚽' },
-          { to: '/bracket', label: 'Bracket', icon: '🏁' },
-          { to: '/stadiums', label: 'Stadiums', icon: '🏟️' },
+          { to: '/schedule', label: t.nav.schedule, icon: '📅' },
+          { to: '/teams', label: t.nav.teams, icon: '👥' },
+          { to: '/groups', label: t.nav.groups, icon: '🏆' },
+          { to: '/third-placed', label: t.nav.thirdPlace, icon: '📋' },
+          { to: '/scorers', label: t.nav.scorers, icon: '⚽' },
+          { to: '/bracket', label: t.nav.bracket, icon: '🏁' },
+          { to: '/stadiums', label: t.nav.stadiums, icon: '🏟️' },
         ].map(link => (
           <Link key={link.to} to={link.to} style={{
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',

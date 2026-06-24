@@ -42,6 +42,13 @@ export function SchedulePage() {
   const matches = matchData ?? []
   const roundOrder = ['Matchday 1','Matchday 2','Matchday 3','Matchday 4','Matchday 5','Matchday 6','Matchday 7','Matchday 8','Matchday 9','Matchday 10','Matchday 11','Matchday 12','Matchday 13','Matchday 14','Matchday 15','Matchday 16','Matchday 17','Round of 32','Round of 16','Quarter-final','Semi-final','Match for third place','Final']
 
+  function trRound(r: string): string {
+    const md = r.match(/^Matchday (\d+)$/)
+    if (md) return t.round.md(parseInt(md[1]))
+    const m: Record<string, string> = { 'Round of 32': t.round.r32, 'Round of 16': t.round.r16, 'Quarter-final': t.round.qf, 'Semi-final': t.round.sf, 'Match for third place': t.round.third, 'Final': t.round.final }
+    return m[r] || r
+  }
+
   const [filter, setFilter] = useState<string>('all')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
@@ -80,7 +87,7 @@ export function SchedulePage() {
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
         <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.schedule.title}</h1>
-        <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>{matches.length} matches</p>
+        <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>{t.schedule.desc.replace('{n}', String(matches.length))}</p>
 
         {/* Filter buttons */}
         <div style={{ display: 'flex', gap: '4px', marginBottom: 0, flexWrap: 'wrap' }}>
@@ -108,7 +115,7 @@ export function SchedulePage() {
               letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--accent)', marginBottom: '8px'
             }}>
-              {round}
+              {trRound(round)}
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               {ms.map(m => {

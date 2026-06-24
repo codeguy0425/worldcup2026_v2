@@ -183,7 +183,7 @@ export function BracketPage() {
       })}
 
       <div style={{ padding: '10px 14px', borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)', fontSize: '11px', color: 'var(--text-muted)', marginTop: '8px' }}>
-        ⚡ Dimmed = group not yet complete. Placeholders like <code style={{ fontSize: '10px' }}>2A</code> will resolve once the group finishes.
+        {t.bracket.dimmed.split('{ex}')[0]}<code style={{ fontSize: '10px' }}>2A</code>{t.bracket.dimmed.split('{ex}')[1]}
       </div>
     </div>
   )
