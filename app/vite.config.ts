@@ -32,6 +32,21 @@ export default defineConfig({
           },
         ],
       },
+      workbox: {
+        // Don't precache data files — always fetch fresh
+        globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        // Network-first for JSON data so live scores are always fresh
+        runtimeCaching: [
+          {
+            urlPattern: /\/data\/.*\.json$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'wc-data',
+              expiration: { maxEntries: 50, maxAgeSeconds: 86400 },
+            },
+          },
+        ],
+      },
     }),
   ],
   base: '/worldcup2026_v2/',
