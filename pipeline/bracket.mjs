@@ -7,8 +7,8 @@ import { computeThirdPlaced } from './thirdplaced.mjs'
 
 const teamIdRe = /^[A-Z]{3}$/
 
-/** Only resolve a group placeholder if the group is complete (no remaining matches) */
-function resolveOne(id, standingsResults, thirdEntries, teamsMap) {
+/** Only resolve a group placeholder if the group position is locked */
+function resolveOne(id, standingsResults, thirdEntries, teamsMap, allGroupsComplete) {
   // Real team ID → keep as-is
   if (teamsMap[id]) return id
 
@@ -19,7 +19,7 @@ function resolveOne(id, standingsResults, thirdEntries, teamsMap) {
     if (!grp || !grp.standings.length) return id
     const top = grp.standings[0]
     if (top.confirmedFirst || grp.remaining === 0) return top.teamId
-    return id // Not confirmed, keep placeholder
+    return id
   }
 
   // 2B = runner-up — only if group complete
@@ -30,14 +30,13 @@ function resolveOne(id, standingsResults, thirdEntries, teamsMap) {
     return id
   }
 
-  // 3A/B/C/D = best third from listed groups — resolve if any candidate group is locked
+  // 3A/B/C/D = best third from listed groups — only if all groups complete
   const t = id.match(/^3([A-L](?:\/[A-L])*)$/)
   if (t) {
+    if (!allGroupsComplete) return id
     const candidates = new Set(t[1].split('/'))
     const eligible = thirdEntries.filter(e => candidates.has(e.group) && e.qualified)
     if (eligible.length) return eligible[0].teamId
-    const fallback = thirdEntries.filter(e => candidates.has(e.group))
-    if (fallback.length) return fallback[0].teamId
   }
 
   return id
@@ -50,6 +49,7 @@ export function computeBracket(matches, teamsMap, groupLabels) {
     standingsResults[gl] = computeStandings(gl, matches, teamsMap)
   }
   const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels)
+  const allGroupsComplete = groupLabels.every(gl => (standingsResults[gl]?.remaining ?? 1) === 0)
 
   const phases = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
   const rounds = {}
@@ -58,8 +58,8 @@ export function computeBracket(matches, teamsMap, groupLabels) {
   for (const phase of phases) {
     const ms = matches.filter(m => m.stage === phase).sort((a, b) => a.id - b.id)
     rounds[phase] = ms.map(m => {
-      const t1 = resolveOne(m.team1Id, standingsResults, thirdEntries, teamsMap)
-      const t2 = resolveOne(m.team2Id, standingsResults, thirdEntries, teamsMap)
+      const t1 = resolveOne(m.team1Id, standingsResults, thirdEntries, teamsMap, allGroupsComplete)
+      const t2 = resolveOne(m.team2Id, standingsResults, thirdEntries, teamsMap, allGroupsComplete)
       const hasRes = m.score1 !== undefined
 
       // W/L ref resolution for already-played matches
