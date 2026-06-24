@@ -22,7 +22,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         padding: '0 var(--space-lg)',
       }}>
         <div className="nav-wrap" style={{ maxWidth: '1100px', margin: '0 auto' }}>
-          <Link to="/" className="nav-brand">WC2026</Link>
+          <a href="/worldcup2026_v2/" className="nav-brand">WC2026</a>
           <div className="nav-links">
             {navLinks.map(link => (
               <Link key={link.to} to={link.to} className="nav-link">
