@@ -109,13 +109,13 @@ export function TeamPage() {
                       {m.stage === 'group' ? `G${m.group}` : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || m.stage.toUpperCase()}
                     </span>
                     <span style={{ flex: 1, textAlign: 'right' }}>
-                      {isHome ? <><span style={{ marginRight: '4px' }}>{opponent?.flag || ''}</span>{opponent?.name || oppId}</> : <><b>{team?.name}</b><span style={{ marginLeft: '4px' }}>{team?.flag || ''}</span></>}
+                      {isHome ? <><span style={{ marginRight: '4px' }}>{opponent?.flag || ''}</span>{opponent?.name || oppId}</> : <>{team?.flag || ''}<b>{team?.name}</b></>}
                     </span>
                     <span style={{ fontWeight: 700, fontSize: '14px', minWidth: '28px', textAlign: 'center' }}>
                       {hasScore ? `${teamScore}–${oppScore}` : 'vs'}
                     </span>
                     <span style={{ flex: 1 }}>
-                      {isHome ? <><b>{team?.name}</b><span style={{ marginLeft: '4px' }}>{team?.flag || ''}</span></> : <>{opponent?.flag || ''} {opponent?.name || oppId}</>}
+                      {isHome ? <><b>{team?.name}</b><span style={{ marginLeft: '4px' }}>{team?.flag || ''}</span></> : <>{opponent?.name || oppId} {opponent?.flag || ''}</>}
                     </span>
                   </Link>
                 )

@@ -86,8 +86,15 @@ export function BracketPage() {
 
       {stageOrder.map(stage => {
         if (filter !== 'all' && stage !== filter) return null
-        const stageMatches = bracket?.rounds?.[stage]
+        let stageMatches = bracket?.rounds?.[stage]
         if (!stageMatches?.length) return null
+
+        // Sort within stage by date+time
+        stageMatches = [...stageMatches].sort((a, b) => {
+          const da = a.date + 'T' + (a.timeUtc || '00:00') + ':00Z'
+          const db = b.date + 'T' + (b.timeUtc || '00:00') + ':00Z'
+          return da.localeCompare(db)
+        })
 
         return (
           <div key={stage} style={{ marginBottom: '28px' }}>

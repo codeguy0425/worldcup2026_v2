@@ -30,14 +30,15 @@ function GroupTable({ group }: { group: string }) {
         <Link to={`/groups/${group}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>{t.table.group} {group}</Link>
       </div>
       <div className="table-wrap">
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '11px' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '11px', tableLayout: 'fixed' }}>
           <thead>
             <tr style={{ borderBottom: '1px solid var(--border)' }}>
-              {['RK','','Team','P','W','D','L','GD','Pts'].map(h => (
+              {['RK','','Team','P','W','D','L','GD','Pts'].map((h, i) => (
                 <th key={h} style={{
                   padding: '5px 4px', textAlign: h === 'Team' ? 'left' : 'center',
                   fontFamily: 'var(--font-mono)', fontSize: '8px', fontWeight: 500,
                   letterSpacing: '0.2px', textTransform: 'uppercase', color: 'var(--text-muted)',
+                  width: i === 2 ? 'auto' : i === 1 ? '20px' : '24px',
                 }}>{h}</th>
               ))}
             </tr>
