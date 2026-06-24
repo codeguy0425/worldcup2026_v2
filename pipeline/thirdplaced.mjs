@@ -42,8 +42,9 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
   })
 
   // Assign ranks and determine mathematical qualification / elimination
-  // A team is mathematically qualified when at most 7 other teams can still reach >= its pts
-  // A team is mathematically eliminated when 8+ other teams can still reach > its pts
+  // qualified: ≤ 7 other teams can still reach >= my pts (can't be pushed out)
+  // eliminated: 8+ other teams are definitively ahead (their worst > my best)
+  //   i.e. other team's current pts (lose remaining) > my max possible pts
   entries.forEach((e, i) => {
     e.overall_rank = i + 1
     const threats = entries.filter(o => {
@@ -54,12 +55,12 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     e.qualified = threats < 8
 
     const myMax = e.pts + (e.thirdLocked ? 0 : 3)
-    const canBeat = entries.filter(o => {
+    const definitivelyAhead = entries.filter(o => {
       if (o === e) return false
-      const maxPts = o.pts + (o.thirdLocked ? 0 : 3)
-      return maxPts > myMax
+      // Other team's minimum = current pts (losing remaining adds 0)
+      return o.pts > myMax
     }).length
-    e.eliminated = canBeat >= 8
+    e.eliminated = definitivelyAhead >= 8
   })
 
   return entries

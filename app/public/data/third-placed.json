@@ -213,7 +213,7 @@
       "gd": -3,
       "pts": 0,
       "qualified": false,
-      "eliminated": true,
+      "eliminated": false,
       "thirdLocked": false
     }
   ],
