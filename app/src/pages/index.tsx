@@ -130,7 +130,6 @@ export function SchedulePage() {
                     padding: '8px 12px', borderRadius: 'var(--radius-sm)',
                     background: 'var(--surface)', border: '1px solid var(--border)',
                     textDecoration: 'none', color: 'inherit', fontSize: '13px',
-                    flexWrap: 'wrap',
                   }}>
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '52px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}>
                       <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} ${h.time}` })()}</span>
