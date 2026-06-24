@@ -24,8 +24,14 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels) {
     })
   }
 
-  // Sort: Pts → GD → GF → GA (fewer conceded better)
-  entries.sort((a, b) => b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.ga - b.ga)
+  // Sort: Pts → GD → GF → GA (fewer conceded better) → group letter (deterministic)
+  entries.sort((a, b) => {
+    const cmp = b.pts - a.pts || b.gd - a.gd || b.gf - a.gf || a.ga - b.ga
+    if (cmp !== 0) return cmp
+    // Pts, GD, GF, GA all equal — would need fair play data from FIFA
+    console.warn(`⚠️  Fair play tiebreaker needed: ${a.group} and ${b.group} 3rd-placed teams are tied on all criteria`)
+    return a.group.localeCompare(b.group)
+  })
   entries.forEach((e, i) => { e.overall_rank = i + 1; e.qualified = i < 8 })
 
   return entries
