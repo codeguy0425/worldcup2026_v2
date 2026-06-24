@@ -35,7 +35,7 @@ export function TeamsPage() {
     const continents = [...new Set(teams.map(t => t.continent))].sort()
     sections = continents.map(c => ({
       heading: c,
-      items: teams.filter(t => t.continent === c),
+      items: teams.filter(t => t.continent === c).sort((a, b) => a.name.localeCompare(b.name)),
     }))
   }
 
