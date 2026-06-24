@@ -136,9 +136,9 @@ export function SchedulePage() {
                     textDecoration: 'none', color: 'inherit', fontSize: '13px',
                     flexWrap: 'wrap',
                   }}>
-                    <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '52px', display: 'flex', alignItems: 'center', gap: '2px' }}>
-                      {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} ${h.time}` })()}
-                      {viutvIds.has(m.id) && <span title="ViuTV 免費直播">📺</span>}
+                    <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '52px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}>
+                      <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} ${h.time}` })()}</span>
+                      {viutvIds.has(m.id) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-16px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
                     </span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
                       <span>{t1?.flag || ''}</span>
@@ -194,8 +194,8 @@ export function MatchPage() {
     <div>
       <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>{t.match.back}</Link>
       <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
-        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>
-          {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播">📺</span>}
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px', position: 'relative', display: 'inline-block' }}>
+          {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
         </p>
         <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
           {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} · ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}

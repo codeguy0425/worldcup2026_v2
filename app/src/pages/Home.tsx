@@ -105,7 +105,7 @@ export function HomePage() {
                 display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 10px',
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
-                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px' }}>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}{viutvIds.has(m.id) && <span>📺</span>}</span>
+                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center' }}>{m.score1}–{m.score2}</span>
                 <span style={{ flex: 1 }}>{t2?.name || m.team2Id} {t2?.flag || ''}</span>
@@ -128,7 +128,7 @@ export function HomePage() {
                 display: 'flex', alignItems: 'center', gap: '6px', padding: '6px 10px',
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
-                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px' }}>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}{viutvIds.has(m.id) && <span>📺</span>}</span>
+                <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 400, fontSize: '10px', minWidth: '22px', textAlign: 'center', color: 'var(--text-muted)' }}>vs</span>
                 <span style={{ flex: 1 }}>{t2?.name || m.team2Id} {t2?.flag || ''}</span>
