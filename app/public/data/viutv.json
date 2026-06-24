@@ -1,0 +1,152 @@
+[
+  {
+    "matchId": 1,
+    "hkDate": "2026-06-12",
+    "hkTime": "03:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 7,
+    "hkDate": "2026-06-13",
+    "hkTime": "03:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 19,
+    "hkDate": "2026-06-13",
+    "hkTime": "09:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 49,
+    "hkDate": "2026-06-17",
+    "hkTime": "03:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 62,
+    "hkDate": "2026-06-18",
+    "hkTime": "10:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 4,
+    "hkDate": "2026-06-19",
+    "hkTime": "09:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 21,
+    "hkDate": "2026-06-20",
+    "hkTime": "03:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 36,
+    "hkDate": "2026-06-21",
+    "hkTime": "12:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 40,
+    "hkDate": "2026-06-22",
+    "hkTime": "09:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 52,
+    "hkDate": "2026-06-23",
+    "hkTime": "08:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 58,
+    "hkDate": "2026-06-23",
+    "hkTime": "11:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 70,
+    "hkDate": "2026-06-24",
+    "hkTime": "07:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 64,
+    "hkDate": "2026-06-24",
+    "hkTime": "10:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 6,
+    "hkDate": "2026-06-25",
+    "hkTime": "09:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 23,
+    "hkDate": "2026-06-26",
+    "hkTime": "10:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 42,
+    "hkDate": "2026-06-27",
+    "hkTime": "11:00",
+    "stage": "Group Stage"
+  },
+  {
+    "matchId": 89,
+    "hkDate": "2026-07-04",
+    "hkTime": "05:00",
+    "stage": "Round of 16"
+  },
+  {
+    "matchId": 91,
+    "hkDate": "2026-07-05",
+    "hkTime": "04:00",
+    "stage": "Round of 16"
+  },
+  {
+    "matchId": 93,
+    "hkDate": "2026-07-07",
+    "hkTime": "03:00",
+    "stage": "Round of 16"
+  },
+  {
+    "matchId": 98,
+    "hkDate": "2026-07-10",
+    "hkTime": "03:00",
+    "stage": "Quarter-final"
+  },
+  {
+    "matchId": 100,
+    "hkDate": "2026-07-12",
+    "hkTime": "09:00",
+    "stage": "Quarter-final"
+  },
+  {
+    "matchId": 101,
+    "hkDate": "2026-07-14",
+    "hkTime": "03:00",
+    "stage": "Semi-final"
+  },
+  {
+    "matchId": 102,
+    "hkDate": "2026-07-15",
+    "hkTime": "03:00",
+    "stage": "Semi-final"
+  },
+  {
+    "matchId": 103,
+    "hkDate": "2026-07-19",
+    "hkTime": "05:00",
+    "stage": "Third Place"
+  },
+  {
+    "matchId": 104,
+    "hkDate": "2026-07-20",
+    "hkTime": "03:00",
+    "stage": "Final"
+  }
+]

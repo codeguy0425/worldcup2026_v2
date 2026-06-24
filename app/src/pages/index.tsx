@@ -41,6 +41,8 @@ export function SchedulePage() {
   const roundOrder = ['Matchday 1','Matchday 2','Matchday 3','Matchday 4','Matchday 5','Matchday 6','Matchday 7','Matchday 8','Matchday 9','Matchday 10','Matchday 11','Matchday 12','Matchday 13','Matchday 14','Matchday 15','Matchday 16','Matchday 17','Round of 32','Round of 16','Quarter-final','Semi-final','Match for third place','Final']
 
   const [filter, setFilter] = useState<string>('all')
+  const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
   const stageFilters = [
     { key: 'all', label: 'All' },
@@ -50,10 +52,13 @@ export function SchedulePage() {
     { key: 'qf', label: 'QF' },
     { key: 'sf', label: 'SF' },
     { key: 'final', label: 'Final' },
+    { key: 'viutv', label: '📺 ViuTV' },
   ]
 
   const filtered = filter === 'all'
     ? matches
+    : filter === 'viutv'
+    ? matches.filter(m => viutvIds.has(m.id))
     : matches.filter(m => m.stage === filter || (filter === 'group' && m.stage === 'group'))
 
   const grouped: Record<string, Match[]> = {}
@@ -119,6 +124,7 @@ export function SchedulePage() {
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '52px' }}>
                       {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} ${h.time}` })()}
                     </span>
+                    {viutvIds.has(m.id) && <span style={{ fontSize: '10px' }} title="ViuTV 免費直播">📺</span>}
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
                       <span>{t1?.flag || ''}</span>
                       <span style={{ fontWeight: 500, fontSize: '12px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '80px' }}>{t1?.name || m.team1Id}</span>
@@ -151,6 +157,8 @@ export function MatchPage() {
   const { data: matches, loading } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
+  const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
   const teamMap = new Map<string, Team>()
   teamData?.teams.forEach(t => teamMap.set(t.id, t))
@@ -171,7 +179,7 @@ export function MatchPage() {
       <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>← Back to schedule</Link>
       <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px' }}>
-          {m.round}
+          {m.round} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播">📺</span>}
         </p>
         <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
           {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} · ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}
