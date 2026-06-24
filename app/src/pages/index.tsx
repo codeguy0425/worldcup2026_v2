@@ -64,7 +64,7 @@ export function SchedulePage() {
 
   return (
     <div>
-      <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', paddingBottom: '12px' }}>
+      <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
         <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Schedule</h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>{matches.length} matches</p>
 

@@ -35,8 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       <main style={{
         maxWidth: '1100px', margin: '0 auto',
-        padding: 'var(--space-lg)',
-        paddingBottom: '80px',
+        padding: 'var(--space-lg) var(--space-lg) var(--space-xl)',
       }}>
         {children}
       </main>
