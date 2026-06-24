@@ -3,8 +3,8 @@
   "///": "Formula: Yellow=-1, SecondYellow/Red=-3, DirectRed=-4, Yellow+DirectRed=-5",
   "///": "Add team IDs here when you have the card data from FIFA.com or ESPN",
   "scores": {
-    "PAR": 0,
-    "ALG": 0,
+    "PAR": -11,
+    "ALG": -1,
     "MEX": 0,
     "RSA": 0,
     "KOR": 0,
