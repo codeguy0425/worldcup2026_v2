@@ -4,6 +4,25 @@
 
 function hasScore(m) { return m.score1 !== undefined && m.score2 !== undefined }
 
+/**
+ * Full tiebreaker comparison between two teams tied on points.
+ * Returns true if team a finishes ahead of team b.
+ * Chain: H2H pts → H2H GD → H2H GF → overall GD → overall GF → alphabetical (deterministic)
+ */
+function isAheadOnTiebreakers(a, b, h2hPts, h2hGd, h2hGf, standing) {
+  const hPts = (h2hPts[a][b] || 0) - (h2hPts[b][a] || 0)
+  if (hPts !== 0) return hPts > 0
+  const hGd = (h2hGd[a][b] || 0) - (h2hGd[b][a] || 0)
+  if (hGd !== 0) return hGd > 0
+  const hGf = (h2hGf[a][b] || 0) - (h2hGf[b][a] || 0)
+  if (hGf !== 0) return hGf > 0
+  const gd = (standing[a].gd || 0) - (standing[b].gd || 0)
+  if (gd !== 0) return gd > 0
+  const gf = (standing[a].gf || 0) - (standing[b].gf || 0)
+  if (gf !== 0) return gf > 0
+  return a < b // deterministic: group letter / teamId
+}
+
 export function computeStandings(groupLetter, allMatches, teamsMap) {
   const groupMatches = allMatches.filter(m => m.stage === 'group' && m.group === groupLetter)
   const played = groupMatches.filter(hasScore)
@@ -80,17 +99,17 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
       }
 
       const tp = fp[tid]
-      const defAhead = teamIds.filter(o => {
+      // Count teams definitely ahead using full tiebreaker chain
+      const aheadd = teamIds.filter(o => {
         if (o === tid) return false
         if (fp[o] > tp) return true
-        if (fp[o] === tp) return (h2hPts[o][tid] || 0) > (h2hPts[tid][o] || 0)
+        if (fp[o] === tp) return isAheadOnTiebreakers(o, tid, h2hPts, h2hGd, h2hGf, standing)
         return false
       }).length
-      const notBehind = Object.values(fp).filter(p => p >= tp).length
 
-      if (defAhead < 3) canFinishTop3 = true
-      if (notBehind > 2) canFinishOutsideTop2 = true
-      if (defAhead > 0) alwaysFirst = false
+      if (aheadd < 3) canFinishTop3 = true
+      if (aheadd >= 2) canFinishOutsideTop2 = true
+      if (aheadd > 0) alwaysFirst = false
     }
 
     if (!canFinishTop3) eliminated.add(tid)
