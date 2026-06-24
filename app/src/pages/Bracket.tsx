@@ -108,7 +108,7 @@ export function BracketPage() {
                   // If it's a group placeholder (1A, 2B, etc), check if the group is done
                   if (isGroupPlaceholder(orig)) {
                     const grp = placeholderGroup(orig)
-                    if (grp && groupsComplete[grp]) return m.team1Resolved ? (t1?.name || m.team1Id) : orig
+                    if (grp && (groupsComplete[grp] || m.team1Resolved)) return t1?.name || m.team1Id
                     return orig
                   }
                   // If it was resolved (e.g. host team), show the team name
@@ -119,19 +119,19 @@ export function BracketPage() {
                   const orig = m.team1Original ?? m.team1Id
                   if (isGroupPlaceholder(orig)) {
                     const grp = placeholderGroup(orig)
-                    if (grp && groupsComplete[grp]) return t1?.flag || ''
+                    if (grp && (groupsComplete[grp] || m.team1Resolved)) return t1?.flag || ''
                     return ''
                   }
                   return t1?.flag || ''
                 })()
 
-                const isFaded1 = isGroupPlaceholder(m.team1Original ?? m.team1Id)
+                const isFaded1 = isGroupPlaceholder(m.team1Original ?? m.team1Id) && !m.team1Resolved
 
                 const showTeam2 = (() => {
                   const orig = m.team2Original ?? m.team2Id
                   if (isGroupPlaceholder(orig)) {
                     const grp = placeholderGroup(orig)
-                    if (grp && groupsComplete[grp]) return m.team2Resolved ? (t2?.name || m.team2Id) : orig
+                    if (grp && (groupsComplete[grp] || m.team2Resolved)) return t2?.name || m.team2Id
                     return orig
                   }
                   return t2?.name || m.team2Id
@@ -141,13 +141,13 @@ export function BracketPage() {
                   const orig = m.team2Original ?? m.team2Id
                   if (isGroupPlaceholder(orig)) {
                     const grp = placeholderGroup(orig)
-                    if (grp && groupsComplete[grp]) return t2?.flag || ''
+                    if (grp && (groupsComplete[grp] || m.team2Resolved)) return t2?.flag || ''
                     return ''
                   }
                   return t2?.flag || ''
                 })()
 
-                const isFaded2 = isGroupPlaceholder(m.team2Original ?? m.team2Id)
+                const isFaded2 = isGroupPlaceholder(m.team2Original ?? m.team2Id) && !m.team2Resolved
 
                 return (
                   <Link key={m.matchId} to={`/match/${m.matchId}`} style={{
