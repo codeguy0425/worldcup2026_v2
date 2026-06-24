@@ -176,6 +176,8 @@ export function MatchPage() {
   const stadiumMap = new Map<string, StadiumInfo>()
   stadiumData?.stadiums.forEach(s => stadiumMap.set(s.id, s))
 
+  const bracketStages = new Set(['r32', 'r16', 'qf', 'sf', 'third', 'final'])
+
   if (loading) return <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
   const m = matches?.find(m => m.id === Number(id))
   if (!m) return <p style={{ color: 'var(--text-muted)' }}>Match not found</p>
@@ -184,10 +186,14 @@ export function MatchPage() {
   const t2 = teamMap.get(m.team2Id)
   const stadium = m.groundId ? stadiumMap.get(m.groundId) : null
   const hasScore = m.score1 !== undefined
+  const isBracketMatch = bracketStages.has(m.stage)
 
   return (
     <div>
-      <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>{t.match.back}</Link>
+      <div style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}>
+        <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)' }}>{t.match.back}</Link>
+        {isBracketMatch && <Link to="/bracket" style={{ fontSize: '12px', color: 'var(--accent)' }}>{t.match.backBracket}</Link>}
+      </div>
       <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px', position: 'relative', display: 'inline-block' }}>
           {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
