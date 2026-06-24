@@ -26,6 +26,8 @@ export function GroupPage() {
   const { data: groupData } = useJson<GroupData>(`/data/groups/${g}.json`)
   const { data: matchData } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
+  const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
 
@@ -93,7 +95,7 @@ export function GroupPage() {
               borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)',
               textDecoration: 'none', color: 'inherit', fontSize: '12px',
             }}>
-              <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px' }}>{shortHkt(m.date, m.timeUtc)}</span>
+              <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{shortHkt(m.date, m.timeUtc)}</span>{viutvIds.has(m.id) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
               <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {t1?.flag || ''} {t1?.name || m.team1Id}
               </span>
