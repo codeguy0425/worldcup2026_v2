@@ -5,7 +5,7 @@ import { shortHkt } from '../hooks/hkTime'
 interface Match {
   id: number; round: string; date: string; stage: string
   team1Id: string; team2Id: string; group?: string
-  score1?: number; score2?: number; timeUtc?: string
+  score1?: number; score2?: number; timeUtc?: string; time?: string
 }
 interface Team { id: string; name: string; flag: string }
 
@@ -22,8 +22,14 @@ export function HomePage() {
   const played = groupMatches.filter(m => m.score1 !== undefined)
   const total = groupMatches.length
 
-  // Latest results (last 5 played, sorted by id desc)
-  const latest = [...matches].filter(m => m.score1 !== undefined).sort((a, b) => b.id - a.id).slice(0, 5)
+  // Latest results (last 5 played, sorted by date descending)
+  const latest = [...matches].filter(m => m.score1 !== undefined)
+    .sort((a, b) => {
+      const da = a.date + 'T' + (a.timeUtc || a.time || '00:00') + ':00Z'
+      const db = b.date + 'T' + (b.timeUtc || b.time || '00:00') + ':00Z'
+      return db.localeCompare(da)
+    })
+    .slice(0, 5)
 
   // Today's fixtures (next 5 unplayed, sorted by id)
   const upcoming = matches.filter(m => m.score1 === undefined).sort((a, b) => a.id - b.id).slice(0, 5)
