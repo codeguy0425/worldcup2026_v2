@@ -138,7 +138,6 @@ export function BracketPage() {
                     const hasScore = m.score1 !== undefined
                     const faded = t1d.faded || t2d.faded
                     // Connector class: even-indexed matches are tops of pairs, odd are bottoms
-                    const pairIdx = Math.floor(ri / 2)  // which pair in the next round
                     const isSecondOfPair = ri % 2 === 1   // if odd, it's the second (bottom) of a pair
 
                     return (
