@@ -80,8 +80,8 @@ export function ThirdPlacedPage() {
             </tbody>
           </table>
           <div style={{ padding: '8px 12px', borderTop: '1px solid var(--border)', fontSize: '11px', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
-            <span>✅ Top 8 advance</span>
-            <span>Sorted by: Pts → GD → GF</span>
+            <span>{t.third.top8}</span>
+            <span>{t.third.sortBy}</span>
           </div>
         </div>
       )}
