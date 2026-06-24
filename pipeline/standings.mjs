@@ -74,49 +74,6 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
     return [-s.pts, -h2hP, -h2hD, -h2hF, -s.gd, -s.gf]
   }
 
-  // 3ⁿ simulation
-  const n = remaining.length
-  const allResults = []
-  function genResults(idx, cur) {
-    if (idx === n) { allResults.push([...cur]); return }
-    for (const r of [0, 1, 2]) { cur.push(r); genResults(idx + 1, cur); cur.pop() }
-  }
-  genResults(0, [])
-
-  const advanced = new Set(), eliminated = new Set(), confirmedFirst = new Set()
-
-  for (const tid of teamIds) {
-    let canFinishTop3 = false, canFinishOutsideTop2 = false
-    let alwaysFirst = true
-
-    for (const results of allResults) {
-      const fp = {}; for (const t of teamIds) fp[t] = standing[t].pts
-      for (let i = 0; i < n; i++) {
-        const m = remaining[i], r = results[i]
-        if (r === 0) fp[m.team1Id] += 3
-        else if (r === 2) fp[m.team2Id] += 3
-        else { fp[m.team1Id] += 1; fp[m.team2Id] += 1 }
-      }
-
-      const tp = fp[tid]
-      // Count teams definitely ahead using full tiebreaker chain
-      const aheadd = teamIds.filter(o => {
-        if (o === tid) return false
-        if (fp[o] > tp) return true
-        if (fp[o] === tp) return isAheadOnTiebreakers(o, tid, h2hPts, h2hGd, h2hGf, standing)
-        return false
-      }).length
-
-      if (aheadd < 3) canFinishTop3 = true
-      if (aheadd >= 2) canFinishOutsideTop2 = true
-      if (aheadd > 0) alwaysFirst = false
-    }
-
-    if (!canFinishTop3) eliminated.add(tid)
-    if (!canFinishOutsideTop2) advanced.add(tid)
-    if (alwaysFirst) confirmedFirst.add(tid)
-  }
-
   const sorted = teamIds.sort((a, b) => {
     const ka = sortKey(a), kb = sortKey(b)
     for (let i = 0; i < ka.length; i++) {
@@ -124,6 +81,61 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
     }
     return 0
   })
+
+  const n = remaining.length
+  let scenarios
+  const advanced = new Set(), eliminated = new Set(), confirmedFirst = new Set()
+
+  if (n === 0) {
+    // Group complete — use final sorted standings directly (no simulation needed)
+    sorted.forEach((tid, idx) => {
+      if (idx < 2) advanced.add(tid)
+      if (idx >= 3) eliminated.add(tid)
+    })
+    confirmedFirst.add(sorted[0])
+    scenarios = 1
+  } else {
+    // 3ⁿ simulation for incomplete groups
+    const allResults = []
+    function genResults(idx, cur) {
+      if (idx === n) { allResults.push([...cur]); return }
+      for (const r of [0, 1, 2]) { cur.push(r); genResults(idx + 1, cur); cur.pop() }
+    }
+    genResults(0, [])
+    scenarios = allResults.length
+
+    for (const tid of teamIds) {
+      let canFinishTop3 = false, canFinishOutsideTop2 = false
+      let alwaysFirst = true
+
+      for (const results of allResults) {
+        const fp = {}; for (const t of teamIds) fp[t] = standing[t].pts
+        for (let i = 0; i < n; i++) {
+          const m = remaining[i], r = results[i]
+          if (r === 0) fp[m.team1Id] += 3
+          else if (r === 2) fp[m.team2Id] += 3
+          else { fp[m.team1Id] += 1; fp[m.team2Id] += 1 }
+        }
+
+        const tp = fp[tid]
+        // Count teams definitely ahead using full tiebreaker chain
+        const aheadd = teamIds.filter(o => {
+          if (o === tid) return false
+          if (fp[o] > tp) return true
+          if (fp[o] === tp) return isAheadOnTiebreakers(o, tid, h2hPts, h2hGd, h2hGf, standing)
+          return false
+        }).length
+
+        if (aheadd < 3) canFinishTop3 = true
+        if (aheadd >= 2) canFinishOutsideTop2 = true
+        if (aheadd > 0) alwaysFirst = false
+      }
+
+      if (!canFinishTop3) eliminated.add(tid)
+      if (!canFinishOutsideTop2) advanced.add(tid)
+      if (alwaysFirst) confirmedFirst.add(tid)
+    }
+  }
 
   const standings = sorted.map((tid, idx) => {
     const s = standing[tid]
@@ -134,5 +146,5 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
     return { rank: idx + 1, teamId: tid, team: s.team, teamZh: s.teamZh, flag: s.flag, played: s.played, won: s.won, drawn: s.drawn, lost: s.lost, gf: s.gf, ga: s.ga, gd: s.gd, pts: s.pts, form: s.form.join(''), status, maxPts, confirmedFirst: confirmedFirst.has(tid) || false }
   })
 
-  return { group: groupLetter, standings, remaining: remaining.length, scenarios: allResults.length }
+  return { group: groupLetter, standings, remaining: remaining.length, scenarios }
 }
