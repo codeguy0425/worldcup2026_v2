@@ -22,6 +22,9 @@ export function HomePage() {
   const played = groupMatches.filter(m => m.score1 !== undefined)
   const total = groupMatches.length
 
+  // Today's HKT date
+  const todayHkt = new Date().toISOString().slice(0, 10)
+
   // Latest results (last 5 played, sorted by date descending)
   const latest = [...matches].filter(m => m.score1 !== undefined)
     .sort((a, b) => {
@@ -31,8 +34,19 @@ export function HomePage() {
     })
     .slice(0, 5)
 
-  // Today's fixtures (next 5 unplayed, sorted by id)
-  const upcoming = matches.filter(m => m.score1 === undefined).sort((a, b) => a.id - b.id).slice(0, 5)
+  // Upcoming & today's matches (next 5 unplayed or today's date)
+  const upcoming = matches
+    .filter(m => {
+      if (m.score1 !== undefined) return false
+      const hktDate = toHkt(m.date, m.timeUtc).date
+      return hktDate >= todayHkt
+    })
+    .sort((a, b) => {
+      const da = a.date + 'T' + (a.timeUtc || a.time || '00:00') + ':00Z'
+      const db = b.date + 'T' + (b.timeUtc || b.time || '00:00') + ':00Z'
+      return da.localeCompare(db)
+    })
+    .slice(0, 5)
 
   return (
     <div>
@@ -97,7 +111,7 @@ export function HomePage() {
           {latest.length === 0 && <div style={{ padding: '16px', color: 'var(--text-muted)', fontSize: '12px', textAlign: 'center' }}>No matches played yet</div>}
         </div>
 
-        {/* Upcoming fixtures */}
+        {/* Upcoming */}
         <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', overflow: 'hidden' }}>
           <div style={{ padding: '10px 14px', borderBottom: '1px solid var(--border)', fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)' }}>
             🔜 Upcoming
