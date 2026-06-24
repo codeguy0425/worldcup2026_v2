@@ -1,8 +1,8 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import { toHkt } from '../hooks/hkTime'
 import { useLang } from '../hooks/LangProvider'
+import { useRef, useEffect } from 'react'
 
 interface BracketMatch {
   matchId: number; round: string; date: string
@@ -13,187 +13,219 @@ interface BracketMatch {
 }
 
 interface BracketData { rounds: Record<string, BracketMatch[]> }
-interface Match { group?: string; score1?: number; stage: string }
 
-const stageOrder = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
-
-function trStage(stage: string, t: any): string {
-  const m: Record<string, string> = { r32: t.round.r32, r16: t.round.r16, qf: t.round.qf, sf: t.round.sf, third: t.round.third, final: t.round.final }
-  return m[stage] || stage
+const ROUND_LABELS: Record<string, string> = {
+  r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final',
+  sf: 'Semi-final', third: 'Third place', final: 'Final',
 }
+const KNOCKOUT_ROUNDS = ['r32', 'r16', 'qf', 'sf', 'final']
+const TREE_ROWS: Record<string, number> = { r32: 16, r16: 8, qf: 4, sf: 2, final: 1 }
+const GAP_PX = 14
 
-function isGroupPlaceholder(id: string): boolean {
-  return /^[1-3][A-L]/.test(id)
-}
-function placeholderGroup(id: string): string | null {
-  const m = id.match(/^[1-3]([A-L])/)
-  return m ? m[1] : null
+function teamDisplay(m: BracketMatch, side: 1|2, teamMap: Map<string,any>, groupsComplete: Record<string,boolean>) {
+  const id = side === 1 ? m.team1Id : m.team2Id
+  const orig = side === 1 ? (m.team1Original ?? id) : (m.team2Original ?? id)
+  const resolved = side === 1 ? m.team1Resolved : m.team2Resolved
+  const t = teamMap.get(id)
+  if (/^[1-3][A-L]/.test(orig)) {
+    const grp = orig.match(/^[1-3]([A-L])/)?.[1]
+    if (grp && (groupsComplete[grp] || resolved))
+      return { name: t?.name ?? id, flag: t?.flag ?? '', faded: false }
+    return { name: orig, flag: '', faded: true }
+  }
+  return { name: t?.name ?? id, flag: t?.flag ?? '', faded: false }
 }
 
 export function BracketPage() {
   const { t } = useLang()
   const { data: bracket } = useJson<BracketData>('/data/bracket.json')
   const { data: teamData } = useJson<{ teams: { id: string; name: string; flag: string }[] }>('/data/teams.json')
-  const { data: matches } = useJson<Match[]>('/data/matches.json')
+  const { data: matches } = useJson<{ group?: string; score1?: number; stage: string }[]>('/data/matches.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
-
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
+  const scrollRef = useRef<HTMLDivElement>(null)
 
-  // Determine which groups are complete (all group matches have scores)
+  // Scroll to final on desktop
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth
+    }
+  }, [])
+
   const groupsComplete: Record<string, boolean> = {}
   if (matches) {
     for (const letter of 'ABCDEFGHIJKL') {
-      const groupMatches = matches.filter(m => m.group === letter && m.stage === 'group')
-      groupsComplete[letter] = groupMatches.length > 0 && groupMatches.every(m => m.score1 !== undefined)
+      const gms = matches.filter(m => m.group === letter && m.stage === 'group')
+      groupsComplete[letter] = gms.length > 0 && gms.every(m => m.score1 !== undefined)
     }
   }
 
-  const [filter, setFilter] = useState<string>('all')
+  const rounds = bracket?.rounds ?? {}
 
-  const stageFilters = [
-    { key: 'all', label: 'All' },
-    { key: 'r32', label: 'R32' },
-    { key: 'r16', label: 'R16' },
-    { key: 'qf', label: 'QF' },
-    { key: 'sf', label: 'SF' },
-    { key: 'final', label: 'Final' },
-  ]
+  // Build slot arrays: each round has TREE_ROWS[phase] slots, matches placed every N slots
+  function buildSlots(phase: string, all: BracketMatch[]) {
+    const total = TREE_ROWS[phase] || 0
+    const out: (BracketMatch|null)[] = new Array(total).fill(null)
+    const step = all.length > 0 ? total / all.length : 1
+    for (let i = 0; i < all.length; i++) out[Math.round(i * step)] = all[i]
+    return out
+  }
+
+  const slots: Record<string, (BracketMatch|null)[]> = {}
+  for (const ph of KNOCKOUT_ROUNDS) {
+    const ms = rounds[ph] ?? []
+    slots[ph] = buildSlots(ph, [...ms].sort((a, b) => a.matchId - b.matchId))
+  }
 
   return (
     <div>
+      <style>{`
+        .btr-slot{position:relative}
+        .btr-slot::after{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:2px;background:var(--border);pointer-events:none}
+        .btr-slot.even::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;bottom:50%;width:${GAP_PX}px;height:calc(50% + 1px);border-right:2px solid var(--border);border-top:2px solid var(--border);border-radius:0 3px 0 0;background:transparent;pointer-events:none}
+        .btr-slot.odd::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:calc(50% + 1px);border-right:2px solid var(--border);border-bottom:2px solid var(--border);border-radius:0 0 3px 0;background:transparent;pointer-events:none}
+        .btr-slot.last::after,.btr-slot.last::before{display:none}
+      `}</style>
+
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
         <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.bracket.title}</h1>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
           {t.bracket.desc}
         </p>
-
-        {/* Filter buttons */}
-        <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-        {stageFilters.map(f => (
-          <button key={f.key} onClick={() => setFilter(f.key)} style={{
-            fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
-            letterSpacing: '0.3px', textTransform: 'uppercase',
-            padding: '4px 10px', borderRadius: 'var(--radius-sm)',
-            border: `1px solid ${filter === f.key ? 'var(--accent)' : 'var(--border)'}`,
-            background: filter === f.key ? 'var(--accent)' : 'var(--surface)',
-            color: filter === f.key ? '#fff' : 'var(--text-muted)',
-            cursor: 'pointer',
-          }}>
-            {f.label}
-          </button>
-        ))}
-      </div>
       </div>
 
-      {stageOrder.map(stage => {
-        if (filter !== 'all' && stage !== filter) return null
-        let stageMatches = bracket?.rounds?.[stage]
-        if (!stageMatches?.length) return null
+      {/* ─── Tree ─── */}
+      <div ref={scrollRef} style={{
+        overflowX: 'auto', overflowY: 'hidden',
+        paddingBottom: '10px',
+        WebkitOverflowScrolling: 'touch',
+      }}>
+        <div style={{
+          display: 'flex', gap: `${GAP_PX}px`,
+          minWidth: '740px',
+        }}>
+          {KNOCKOUT_ROUNDS.map((phase, ci) => {
+            const s = slots[phase] || []
+            const rows = TREE_ROWS[phase] || 1
+            const isLast = ci === KNOCKOUT_ROUNDS.length - 1
 
-        // Sort within stage by date+time
-        stageMatches = [...stageMatches].sort((a, b) => {
-          const da = a.date + 'T' + (a.timeUtc || '00:00') + ':00Z'
-          const db = b.date + 'T' + (b.timeUtc || '00:00') + ':00Z'
-          return da.localeCompare(db)
-        })
+            return (
+              <div key={phase} style={{
+                display: 'flex', flexDirection: 'column',
+                flex: 1, minWidth: '140px',
+              }}>
+                <div style={{
+                  fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 600,
+                  letterSpacing: '0.4px', textTransform: 'uppercase',
+                  color: 'var(--accent)', textAlign: 'center',
+                  padding: '6px 0', borderBottom: '1px solid var(--border)',
+                  marginBottom: '4px',
+                }}>
+                  {ROUND_LABELS[phase]}
+                </div>
 
+                <div style={{
+                  display: 'grid',
+                  gridTemplateRows: `repeat(${rows}, 1fr)`,
+                  flex: 1, gap: '2px',
+                }}>
+                  {s.map((m, ri) => {
+                    if (!m) return <div key={ri} style={{ minHeight: '38px' }} />
+
+                    const t1d = teamDisplay(m, 1, teamMap, groupsComplete)
+                    const t2d = teamDisplay(m, 2, teamMap, groupsComplete)
+                    const hasScore = m.score1 !== undefined
+                    const faded = t1d.faded || t2d.faded
+                    // Connector class: even-indexed matches are tops of pairs, odd are bottoms
+                    const pairIdx = Math.floor(ri / 2)  // which pair in the next round
+                    const isSecondOfPair = ri % 2 === 1   // if odd, it's the second (bottom) of a pair
+
+                    return (
+                      <Link
+                        key={m.matchId}
+                        to={`/match/${m.matchId}`}
+                        className={`btr-slot${isLast ? ' last' : ''}${isSecondOfPair ? ' odd' : ' even'}`}
+                        style={{
+                          display: 'flex', alignItems: 'center', gap: '3px',
+                          padding: '4px 6px', borderRadius: 'var(--radius-sm)',
+                          background: 'var(--surface)', border: '1px solid var(--border)',
+                          textDecoration: 'none', color: 'inherit', fontSize: '10px',
+                          opacity: faded ? 0.5 : 1,
+                          minHeight: '36px',
+                          transition: 'border-color .15s',
+                        }}
+                      >
+                        <span style={{
+                          fontFamily: 'var(--font-mono)', fontSize: '7px',
+                          color: 'var(--text-muted)', minWidth: '30px',
+                          whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '1px', position: 'relative',
+                        }}>
+                          <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)}` })()}</span>
+                          {viutvIds.has(m.matchId) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-12px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1, fontSize: '8px' }}>📺</span>}
+                        </span>
+                        <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                          <span style={{ fontSize: '12px' }}>{t1d.flag}</span>
+                          <span style={{ marginLeft: '1px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '44px', display: 'inline-block', verticalAlign: 'middle' }}>{t1d.name}</span>
+                        </span>
+                        <span style={{
+                          fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center',
+                          color: hasScore ? 'var(--text)' : 'var(--text-muted)',
+                        }}>
+                          {hasScore ? `${m.score1}–${m.score2}` : 'v'}
+                        </span>
+                        <span style={{ flex: 1, overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '44px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>
+                          <span style={{ marginLeft: '1px', fontSize: '12px' }}>{t2d.flag}</span>
+                        </span>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* ─── Third place ─── */}
+      {rounds.third && rounds.third.length > 0 && (() => {
+        const m = rounds.third[0]
+        const t1d = teamDisplay(m, 1, teamMap, groupsComplete)
+        const t2d = teamDisplay(m, 2, teamMap, groupsComplete)
+        const hasScore = m.score1 !== undefined
         return (
-          <div key={stage} style={{ marginBottom: '28px' }}>
-            <h3 style={{
-              fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 500,
-              letterSpacing: '0.5px', textTransform: 'uppercase',
-              color: 'var(--accent)', marginBottom: '8px',
+          <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
+            <div style={{
+              fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 600,
+              letterSpacing: '0.4px', textTransform: 'uppercase',
+              color: 'var(--text-muted)', marginBottom: '6px',
             }}>
-              {trStage(stage, t)}
-            </h3>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
-              {stageMatches.map(m => {
-                const t1 = teamMap.get(m.team1Id)
-                const t2 = teamMap.get(m.team2Id)
-                const hasScore = m.score1 !== undefined
-
-                // Decide what to display
-                const showTeam1 = (() => {
-                  const orig = m.team1Original ?? m.team1Id
-                  // If it's a group placeholder (1A, 2B, etc), check if the group is done
-                  if (isGroupPlaceholder(orig)) {
-                    const grp = placeholderGroup(orig)
-                    if (grp && (groupsComplete[grp] || m.team1Resolved)) return t1?.name || m.team1Id
-                    return orig
-                  }
-                  // If it was resolved (e.g. host team), show the team name
-                  return t1?.name || m.team1Id
-                })()
-
-                const showFlag1 = (() => {
-                  const orig = m.team1Original ?? m.team1Id
-                  if (isGroupPlaceholder(orig)) {
-                    const grp = placeholderGroup(orig)
-                    if (grp && (groupsComplete[grp] || m.team1Resolved)) return t1?.flag || ''
-                    return ''
-                  }
-                  return t1?.flag || ''
-                })()
-
-                const isFaded1 = isGroupPlaceholder(m.team1Original ?? m.team1Id) && !m.team1Resolved
-
-                const showTeam2 = (() => {
-                  const orig = m.team2Original ?? m.team2Id
-                  if (isGroupPlaceholder(orig)) {
-                    const grp = placeholderGroup(orig)
-                    if (grp && (groupsComplete[grp] || m.team2Resolved)) return t2?.name || m.team2Id
-                    return orig
-                  }
-                  return t2?.name || m.team2Id
-                })()
-
-                const showFlag2 = (() => {
-                  const orig = m.team2Original ?? m.team2Id
-                  if (isGroupPlaceholder(orig)) {
-                    const grp = placeholderGroup(orig)
-                    if (grp && (groupsComplete[grp] || m.team2Resolved)) return t2?.flag || ''
-                    return ''
-                  }
-                  return t2?.flag || ''
-                })()
-
-                const isFaded2 = isGroupPlaceholder(m.team2Original ?? m.team2Id) && !m.team2Resolved
-
-                return (
-                  <Link key={m.matchId} to={`/match/${m.matchId}`} style={{
-                    display: 'flex', alignItems: 'center', gap: '6px',
-                    padding: '6px 10px', borderRadius: 'var(--radius-sm)',
-                    background: 'var(--surface)', border: '1px solid var(--border)',
-                    textDecoration: 'none', color: 'inherit', fontSize: '12px',
-                    opacity: (isFaded1 || isFaded2) ? 0.55 : 1,
-                  }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '54px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}>
-                      <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>
-                      {viutvIds.has(m.matchId) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-16px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
-                    </span>
-                    <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                      {showFlag1} {showTeam1}
-                    </span>
-                    <span style={{
-                      fontWeight: 700, fontSize: '12px', minWidth: '24px', textAlign: 'center',
-                      color: hasScore ? 'var(--text)' : 'var(--text-muted)',
-                    }}>
-                      {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
-                    </span>
-                    <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                      {showFlag2} {showTeam2}
-                    </span>
-                  </Link>
-                )
-              })}
+              {t.round.third}
             </div>
+            <Link to={`/match/${m.matchId}`} style={{
+              display: 'flex', alignItems: 'center', gap: '8px',
+              padding: '6px 12px', borderRadius: 'var(--radius-sm)',
+              background: 'var(--surface)', border: '1px solid var(--border)',
+              textDecoration: 'none', color: 'inherit', fontSize: '12px',
+              maxWidth: '300px',
+            }}>
+              <span style={{ flex: 1, textAlign: 'right' }}>{t1d.flag} {t1d.name}</span>
+              <span style={{ fontWeight: 700, color: hasScore ? 'var(--text)' : 'var(--text-muted)' }}>
+                {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
+              </span>
+              <span style={{ flex: 1 }}>{t2d.name} {t2d.flag}</span>
+            </Link>
           </div>
         )
-      })}
+      })()}
 
-      <div style={{ padding: '10px 14px', borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)', fontSize: '11px', color: 'var(--text-muted)', marginTop: '8px' }}>
+      {/* Footnote */}
+      <div style={{
+        padding: '10px 14px', borderRadius: 'var(--radius-sm)',
+        background: 'var(--surface)', border: '1px solid var(--border)',
+        fontSize: '11px', color: 'var(--text-muted)', marginTop: '16px',
+      }}>
         {t.bracket.dimmed.split('{ex}')[0]}<code style={{ fontSize: '10px' }}>2A</code>{t.bracket.dimmed.split('{ex}')[1]}
       </div>
     </div>

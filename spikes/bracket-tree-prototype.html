@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WC2026 — Bracket Tree Prototype</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d1a;color:#fff;font-family:Inter,system-ui,sans-serif;padding:40px 20px}
+
+h1{font-size:20px;font-weight:600;margin-bottom:8px;letter-spacing:-0.3px}
+.sub{font-size:12px;color:#888;margin-bottom:32px}
+
+/* ─── Bracket Container ─── */
+.bracket{
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  padding-bottom:24px;
+  min-height:480px;
+}
+
+/* ─── Round Column ─── */
+.round{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-around;
+  min-width:170px;
+  flex-shrink:0;
+}
+
+.round-header{
+  font-family:ui-monospace,monospace;
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:#666;
+  text-align:center;
+  padding:8px 0;
+  border-bottom:1px solid #222;
+  margin-bottom:4px;
+}
+
+/* ─── Match Slot (empty space for connector routing) ─── */
+.match-slot{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:48px;
+  padding:2px 16px 2px 12px;
+}
+
+/* ─── Match Card ─── */
+.match-card{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 10px;
+  border-radius:6px;
+  background:#16162a;
+  border:1px solid #2a2a45;
+  text-decoration:none;
+  color:inherit;
+  font-size:11px;
+  width:100%;
+  cursor:pointer;
+  transition:background .15s;
+  position:relative;
+  z-index:2;
+}
+.match-card:hover{background:#1e1e3a;border-color:#4444aa}
+.match-card.faded{opacity:.5}
+
+.team{display:flex;align-items:center;gap:4px;overflow:hidden}
+.team-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:55px;font-weight:500}
+.team-flag{font-size:14px;line-height:1}
+.score{font-weight:700;font-size:13px;min-width:22px;text-align:center;color:#fff}
+.score.muted{color:#555}
+.stage-tag{font-family:ui-monospace,monospace;font-size:7px;color:#555;font-weight:600;min-width:16px;text-align:center}
+
+/* ─── Connector Lines ─── */
+.match-slot::after{
+  content:'';
+  position:absolute;
+  z-index:1;
+}
+
+/* Rightward line from match to next round */
+.match-slot::after{
+  right:-16px;
+  top:50%;
+  width:16px;
+  height:2px;
+  background:#2a2a45;
+}
+
+/* Vertical line joining two matches into one */
+.match-slot.top::before{
+  content:'';
+  position:absolute;
+  z-index:1;
+  right:-16px;
+  bottom:50%;
+  width:16px;
+  height:calc(100% + 4px);
+  border-right:2px solid #2a2a45;
+  border-top:2px solid #2a2a45;
+  border-radius:0 4px 0 0;
+  background:transparent;
+}
+.match-slot.bottom::before{
+  content:'';
+  position:absolute;
+  z-index:1;
+  right:-16px;
+  top:50%;
+  width:16px;
+  height:calc(100% + 4px);
+  border-right:2px solid #2a2a45;
+  border-bottom:2px solid #2a2a45;
+  border-radius:0 0 4px 0;
+  background:transparent;
+}
+
+/* Connector at last round (final) — no rightward line */
+.match-slot.last::after{display:none}
+.match-slot.last::before{display:none}
+
+/* ─── Final and 3rd Place special ─── */
+.third-place{
+  margin-top:24px;
+  border-top:1px solid #222;
+  padding-top:16px;
+}
+.third-place .round-header{color:#555}
+.third-place .match-card{background:#12121f}
+
+/* ─── Responsive ─── */
+@media(max-width:600px){
+  .round{min-width:150px}
+  .match-card{font-size:10px;padding:5px 8px}
+  .team-name{max-width:45px}
+}
+</style>
+</head>
+<body>
+
+<h1>🏆 WC2026 Bracket Tree</h1>
+<p class="sub">Knockout stage — click any match to open</p>
+
+<div class="bracket" id="bracket"></div>
+<div class="third-place" id="thirdPlace"></div>
+
+<script>
+// ─── Sample Data ───
+const BRACKET = {
+  rounds: {
+    r32: [
+      { id:73,team1:'2A',      team2:'2B',      s1:null,s2:null,res1:false,res2:false },
+      { id:74,team1:'GER',     team2:'3A/B/C/D',s1:3,s2:0,     res1:true, res2:false },
+      { id:75,team1:'1F',      team2:'2C',      s1:null,s2:null,res1:false,res2:false },
+      { id:76,team1:'1C',      team2:'2F',      s1:null,s2:null,res1:false,res2:false },
+      { id:77,team1:'1I',      team2:'3C/D/F/G',s1:null,s2:null,res1:false,res2:false },
+      { id:78,team1:'2E',      team2:'2I',      s1:null,s2:null,res1:false,res2:false },
+      { id:79,team1:'MEX',     team2:'3C/E/F/H',s1:null,s2:null,res1:true, res2:false },
+      { id:80,team1:'1L',      team2:'3E/H/I/J',s1:null,s2:null,res1:false,res2:false },
+      // Bottom half
+      { id:81,team1:'USA',     team2:'3B/E/F/I',s1:2,s2:1,     res1:true, res2:false },
+      { id:82,team1:'1G',      team2:'3A/E/H/I',s1:null,s2:null,res1:false,res2:false },
+      { id:83,team1:'2K',      team2:'2L',      s1:null,s2:null,res1:false,res2:false },
+      { id:84,team1:'1H',      team2:'2J',      s1:null,s2:null,res1:false,res2:false },
+      { id:85,team1:'1B',      team2:'3E/F/G/I',s1:null,s2:null,res1:false,res2:false },
+      { id:86,team1:'ARG',     team2:'2H',      s1:4,s2:0,     res1:true, res2:false },
+      { id:87,team1:'1K',      team2:'3D/E/I/J',s1:null,s2:null,res1:false,res2:false },
+      { id:88,team1:'2D',      team2:'2G',      s1:null,s2:null,res1:false,res2:false },
+    ],
+    r16: [
+      { id:89, team1:'W74',team2:'W77',s1:null,s2:null },
+      { id:90, team1:'W73',team2:'W75',s1:null,s2:null },
+      { id:91, team1:'W76',team2:'W78',s1:null,s2:null },
+      { id:92, team1:'W79',team2:'W80',s1:null,s2:null },
+      { id:93, team1:'W83',team2:'W84',s1:null,s2:null },
+      { id:94, team1:'W81',team2:'W82',s1:null,s2:null },
+      { id:95, team1:'W86',team2:'W88',s1:null,s2:null },
+      { id:96, team1:'W85',team2:'W87',s1:null,s2:null },
+    ],
+    qf: [
+      { id:97, team1:'W89',team2:'W90',s1:null,s2:null },
+      { id:98, team1:'W93',team2:'W94',s1:null,s2:null },
+      { id:99, team1:'W91',team2:'W92',s1:null,s2:null },
+      { id:100,team1:'W95',team2:'W96',s1:null,s2:null },
+    ],
+    sf: [
+      { id:101,team1:'W97',team2:'W98',s1:null,s2:null },
+      { id:102,team1:'W99',team2:'W100',s1:null,s2:null },
+    ],
+    final: [
+      { id:104,team1:'W101',team2:'W102',s1:null,s2:null },
+    ],
+  }
+}
+
+const TEAMS = {
+  GER:'🇩🇪', MEX:'🇲🇽', USA:'🇺🇸', ARG:'🇦🇷',
+  // just a few flags for resolved teams
+}
+
+const NAMES = {
+  GER:'Germany', MEX:'Mexico', USA:'USA', ARG:'Argentina',
+}
+
+function esc(t){return t||'?'}
+
+function cardHTML(m, stage){
+  const resolved1 = (m.res1 || m.res1 === undefined) && !!TEAMS[m.team1]
+  const resolved2 = (m.res2 || m.res2 === undefined) && !!TEAMS[m.team2]
+  const faded = !resolved1 && /^[1-3W]/.test(m.team1)
+  const hasScore = m.s1 !== null && m.s1 !== undefined
+  const flag1 = TEAMS[m.team1] || ''
+  const flag2 = TEAMS[m.team2] || ''
+  const name1 = NAMES[m.team1] || m.team1
+  const name2 = NAMES[m.team2] || m.team2
+  const stageTag = stage==='r32'?'R32':stage==='r16'?'R16':stage==='qf'?'QF':stage==='sf'?'SF':''
+
+  return `<a class="match-card${faded?' faded':''}" href="javascript:alert('Match ${m.id}')">
+    <span class="stage-tag">${stageTag||''}</span>
+    <span class="team" style="flex:1;text-align:right">
+      <span class="team-flag">${flag1}</span>
+      <span class="team-name">${esc(name1)}</span>
+    </span>
+    <span class="score${hasScore?'':' muted'}">${hasScore?m.s1+'–'+m.s2:'vs'}</span>
+    <span class="team" style="flex:1">
+      <span class="team-name">${esc(name2)}</span>
+      <span class="team-flag">${flag2}</span>
+    </span>
+  </a>`
+}
+
+function build(){
+  const phases = ['r32','r16','qf','sf','final']
+  const el = document.getElementById('bracket')
+  const rounds = BRACKET.rounds
+
+  phases.forEach((phase,i)=>{
+    const ms = rounds[phase]
+    const isLast = i === phases.length-1
+    const col = document.createElement('div')
+    col.className = 'round'
+
+    const hdr = document.createElement('div')
+    hdr.className = 'round-header'
+    const labels = {r32:'Round of 32',r16:'Round of 16',qf:'Quarter-final',sf:'Semi-final',final:'Final'}
+    hdr.textContent = labels[phase]
+    col.appendChild(hdr)
+
+    // For r32, we have 16 matches → 8 pairs for top/bottom
+    // For r16, 8 matches → 4 pairs
+    // For qf, 4 matches → 2 pairs
+    // For sf, 2 matches → 1 pair
+    // For final, 1 match → single
+    const pairCount = ms.length / 2
+
+    // Create top half slots
+    for(let j=0; j<ms.length; j+=2){
+      // Create a pair-group (two matches + connector)
+      const grp = document.createElement('div')
+      grp.style.cssText = 'display:flex;flex-direction:column;gap:0;flex:1;justify-content:center'
+
+      if(ms.length === 1){
+        // Final — single match, no connectors
+        const slot = document.createElement('div')
+        slot.className = 'match-slot last'
+        slot.innerHTML = cardHTML(ms[j], phase)
+        grp.appendChild(slot)
+      } else {
+        // Top match of pair
+        const slot1 = document.createElement('div')
+        slot1.className = 'match-slot top'
+        slot1.innerHTML = cardHTML(ms[j], phase)
+        grp.appendChild(slot1)
+
+        // Bottom match of pair
+        const slot2 = document.createElement('div')
+        slot2.className = 'match-slot bottom'
+        slot2.innerHTML = cardHTML(ms[j+1], phase)
+        grp.appendChild(slot2)
+      }
+
+      col.appendChild(grp)
+    }
+
+    // Pad to match height of previous round
+    el.appendChild(col)
+  })
+
+  // Third place
+  const tp = document.getElementById('thirdPlace')
+  const hdr = document.createElement('div')
+  hdr.className = 'round-header'
+  hdr.textContent = 'Match for third place'
+  tp.appendChild(hdr)
+
+  const slot = document.createElement('div')
+  slot.className = 'match-slot'
+  slot.style.cssText = 'max-width:300px;margin:0 auto'
+  slot.innerHTML = cardHTML({id:103,team1:'L101',team2:'L102',s1:null,s2:null},'third')
+  tp.appendChild(slot)
+}
+
+build()
+</script>
+</body>
+</html>
