@@ -58,15 +58,14 @@ function main() {
   }
   console.log(`   ✅ groups/ (A–L) — ${groupLabels.length} files`)
 
-  // 3. Matches (pass-through with clean format)
+  // 3. Matches (pass-through with clean format, resolved later with bracket data)
   const cleanMatches = matches.map(m => {
     const entry = { id: m.id, round: m.round, date: m.date, time: m.time, timeUtc: m.timeUtc, team1Id: m.team1Id, team2Id: m.team2Id, group: m.group || '', groundId: m.groundId, num: m.num, stage: m.stage }
     if (m.score1 !== undefined) { entry.score1 = m.score1; entry.score2 = m.score2 }
     if (m.goals) entry.goals = m.goals
     return entry
   })
-  writeJSON(resolve(DATA_DIR, 'matches.json'), cleanMatches)
-  console.log(`   ✅ matches.json — ${cleanMatches.length} matches`)
+  console.log(`   ⏳ matches.json (${cleanMatches.length} matches raw)`)
 
   // 4. Top scorers
   const scorers = computeTopScorers(matches, teamsMap)
@@ -85,7 +84,26 @@ function main() {
   const totalBracket = Object.values(bracket.rounds).reduce((s, m) => s + m.length, 0)
   console.log(`   ✅ bracket.json — ${totalBracket} matches across ${Object.keys(bracket.rounds).length} rounds`)
 
-  // 7. Teams + Stadiums (pass-through from source)
+  // 7. Apply bracket resolution back to matches (so Schedule/MatchPage show real names)
+  const resolvedMap = {}
+  for (const ms of Object.values(bracket.rounds)) {
+    for (const bm of ms) {
+      resolvedMap[bm.matchId] = { team1Id: bm.team1Id, team2Id: bm.team2Id }
+    }
+  }
+  let resolved = 0
+  for (const cm of cleanMatches) {
+    const r = resolvedMap[cm.id]
+    if (r && (r.team1Id !== cm.team1Id || r.team2Id !== cm.team2Id)) {
+      cm.team1Id = r.team1Id
+      cm.team2Id = r.team2Id
+      resolved++
+    }
+  }
+  writeJSON(resolve(DATA_DIR, 'matches.json'), cleanMatches)
+  console.log(`   ✅ matches.json — ${cleanMatches.length} matches (${resolved} placeholders resolved)`)
+
+  // 8. Teams + Stadiums (pass-through from source)
   writeJSON(resolve(DATA_DIR, 'teams.json'), { teams: source.teams })
   writeJSON(resolve(DATA_DIR, 'stadiums.json'), { stadiums: source.stadiums })
 
