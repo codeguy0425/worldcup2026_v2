@@ -82,7 +82,7 @@ async function main() {
         TEAM_IDS[m.team1] === match.team1Id && TEAM_IDS[m.team2] === match.team2Id
       )
     }
-    if (!ofm || !ofm.score?.ft?.length === 2) continue
+    if (!ofm || !ofm.score?.ft) continue
 
     const [s1, s2] = ofm.score.ft
     if (match.score1 !== s1 || match.score2 !== s2) {
