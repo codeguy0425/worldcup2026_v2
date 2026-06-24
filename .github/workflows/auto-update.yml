@@ -3,7 +3,8 @@ name: Auto-Update Scores
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 7 * * *'   # 7am UTC = 3pm HKT daily
+    - cron: '0 23 * * *'   # 7am HKT
+    - cron: '0 5 * * *'    # 1pm HKT
 
 jobs:
   update:
