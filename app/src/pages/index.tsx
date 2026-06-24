@@ -16,10 +16,6 @@ import { useLang } from '../hooks/LangProvider'
 
 // ─── Shared helpers ───
 
-function isGroupPlaceholder(id: string): boolean {
-  return /^[1-3][A-L]/.test(id)
-}
-
 function trRound(r: string, t: any): string {
   const md = r.match(/^Matchday (\d+)$/)
   if (md) return t.round.md(parseInt(md[1]))
