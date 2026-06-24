@@ -13,6 +13,8 @@ export function HomePage() {
   const { data: matches } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: phase } = useJson<{ phase: string; groupComplete: boolean }>('/data/phase.json')
+  const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
 
@@ -102,6 +104,7 @@ export function HomePage() {
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
                 <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px' }}>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>
+                      {viutvIds.has(m.id) && <span style={{ fontSize: '9px' }}>📺</span>}
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center' }}>{m.score1}–{m.score2}</span>
                 <span style={{ flex: 1 }}>{t2?.flag || ''} {t2?.name || m.team2Id}</span>
@@ -125,6 +128,7 @@ export function HomePage() {
                 borderBottom: '1px solid var(--border)', textDecoration: 'none', color: 'inherit', fontSize: '11px',
               }}>
                 <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px' }}>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)} ${h.time}` })()}</span>
+                      {viutvIds.has(m.id) && <span style={{ fontSize: '9px' }}>📺</span>}
                 <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
                 <span style={{ fontWeight: 400, fontSize: '10px', minWidth: '22px', textAlign: 'center', color: 'var(--text-muted)' }}>vs</span>
                 <span style={{ flex: 1 }}>{t2?.flag || ''} {t2?.name || m.team2Id}</span>
