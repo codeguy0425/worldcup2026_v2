@@ -15,11 +15,12 @@ interface BracketMatch {
 interface BracketData { rounds: Record<string, BracketMatch[]> }
 interface Match { group?: string; score1?: number; stage: string }
 
-const stageLabels: Record<string, string> = {
-  r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-finals',
-  sf: 'Semi-finals', third: 'Third Place', final: 'Final',
-}
 const stageOrder = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
+
+function trStage(stage: string, t: any): string {
+  const m: Record<string, string> = { r32: t.round.r32, r16: t.round.r16, qf: t.round.qf, sf: t.round.sf, third: t.round.third, final: t.round.final }
+  return m[stage] || stage
+}
 
 function isGroupPlaceholder(id: string): boolean {
   return /^[1-3][A-L]/.test(id)
@@ -95,7 +96,7 @@ export function BracketPage() {
               letterSpacing: '0.5px', textTransform: 'uppercase',
               color: 'var(--accent)', marginBottom: '8px',
             }}>
-              {stageLabels[stage]}
+              {trStage(stage, t)}
             </h3>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
