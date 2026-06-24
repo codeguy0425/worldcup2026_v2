@@ -19,7 +19,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <>
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
-        background: 'var(--bg-dark)', color: 'var(--text-on-dark)',
+        background: 'var(--bg-dark)',
         borderBottom: '1px solid var(--border)',
         padding: '0 var(--space-lg)',
       }}>
