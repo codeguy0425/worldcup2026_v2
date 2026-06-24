@@ -166,15 +166,17 @@ export function MatchPage() {
         </p>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px' }}>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontSize: '36px', lineHeight: 1.2 }}>{t1?.flag || ''}</div>
-            <Link to={`/team/${m.team1Id}`} style={{ fontWeight: 600, fontSize: '16px', marginTop: '4px', color: 'inherit', textDecoration: 'none' }}>{t1?.name || m.team1Id}</Link>
+            <Link to={`/team/${m.team1Id}`} style={{ fontSize: '36px', lineHeight: 1.2, textDecoration: 'none' }}>{t1?.flag || ''}</Link>
+            <br />
+            <Link to={`/team/${m.team1Id}`} style={{ fontWeight: 600, fontSize: '16px', color: 'inherit', textDecoration: 'none' }}>{t1?.name || m.team1Id}</Link>
           </div>
           <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px' }}>
             {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
           </div>
           <div style={{ textAlign: 'left' }}>
-            <div style={{ fontSize: '36px', lineHeight: 1.2 }}>{t2?.flag || ''}</div>
-            <Link to={`/team/${m.team2Id}`} style={{ fontWeight: 600, fontSize: '16px', marginTop: '4px', color: 'inherit', textDecoration: 'none' }}>{t2?.name || m.team2Id}</Link>
+            <Link to={`/team/${m.team2Id}`} style={{ fontSize: '36px', lineHeight: 1.2, textDecoration: 'none' }}>{t2?.flag || ''}</Link>
+            <br />
+            <Link to={`/team/${m.team2Id}`} style={{ fontWeight: 600, fontSize: '16px', color: 'inherit', textDecoration: 'none' }}>{t2?.name || m.team2Id}</Link>
           </div>
         </div>
         {hasScore && m.goals && m.goals.length > 0 && (
