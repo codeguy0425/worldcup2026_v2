@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['icon-512.jpeg'],
+      includeAssets: ['icon-512.png'],
       manifest: {
         name: 'World Cup 2026',
         short_name: 'WC2026',
@@ -20,15 +20,15 @@ export default defineConfig({
         scope: '/worldcup2026_v2/',
         icons: [
           {
-            src: 'icon-512.jpeg',
-            sizes: '512x512',
-            type: 'image/jpeg',
-            purpose: 'any maskable',
+            src: 'icon-192.png',
+            sizes: '192x192',
+            type: 'image/png',
           },
           {
-            src: 'icon-512.jpeg',
-            sizes: '192x192',
-            type: 'image/jpeg',
+            src: 'icon-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
       },
