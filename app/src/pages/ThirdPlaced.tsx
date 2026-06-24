@@ -1,4 +1,5 @@
 import { useJson } from '../hooks/useJson'
+import { Link } from 'react-router-dom'
 
 interface ThirdEntry {
   overall_rank: number; group: string; teamId: string; team: string
@@ -54,7 +55,9 @@ export function ThirdPlacedPage() {
                       {e.group}
                     </td>
                     <td style={{ padding: '8px 6px', textAlign: 'center', fontSize: '16px' }}>{e.flag || ''}</td>
-                    <td style={{ padding: '8px 6px', fontWeight: 500 }}>{e.team}</td>
+                    <td style={{ padding: '8px 6px', fontWeight: 500 }}>
+                      <Link to={`/team/${e.teamId}`} style={{ color: 'inherit', textDecoration: 'none' }}>{e.team}</Link>
+                    </td>
                     <td style={{ padding: '8px 6px', textAlign: 'center' }}>{e.played}</td>
                     <td style={{ padding: '8px 6px', textAlign: 'center', color: 'var(--text-muted)' }}>{e.won}</td>
                     <td style={{ padding: '8px 6px', textAlign: 'center', color: 'var(--text-muted)' }}>{e.drawn}</td>

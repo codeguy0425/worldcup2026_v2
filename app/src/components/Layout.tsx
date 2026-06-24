@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import { ThemeSwitcher } from './ThemeSwitcher'
 
 const navLinks = [
-  { to: '/', label: 'Overview' },
   { to: '/schedule', label: 'Schedule' },
   { to: '/teams', label: 'Teams' },
   { to: '/groups', label: 'Groups' },

@@ -21,9 +21,8 @@ export function HomePage() {
   const groupMatches = matches.filter(m => m.stage === 'group')
   const played = groupMatches.filter(m => m.score1 !== undefined)
   const total = groupMatches.length
-  const pct = Math.round(played.length / total * 100)
 
-  // Latest results (last 5 played)
+  // Latest results (last 5 played, sorted by id desc)
   const latest = [...matches].filter(m => m.score1 !== undefined).sort((a, b) => b.id - a.id).slice(0, 5)
 
   // Today's fixtures (next 5 unplayed, sorted by id)
@@ -34,16 +33,13 @@ export function HomePage() {
       {/* Phase banner */}
       <div style={{
         background: 'var(--accent)', color: '#fff', borderRadius: 'var(--radius-md)',
-        padding: '12px 16px', marginBottom: '20px', fontSize: '13px', fontWeight: 500,
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px',
+        padding: '10px 14px', marginBottom: '20px', fontSize: '13px', fontWeight: 500,
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '6px',
       }}>
         <span>
           {phase?.phase === 'ended' ? '🏆 Tournament ended' :
-           phase?.phase === 'group' ? `⚽ Group stage — ${pct}% complete (${played.length}/${total})` :
-           `🏁 ${phase?.phase?.toUpperCase() || 'Tournament'} underway`}
-        </span>
-        <span style={{ fontSize: '11px', opacity: 0.8 }}>
-          48 teams · 12 groups · 104 matches
+           phase?.phase === 'group' ? `⚽ Group stage — ${played.length}/${total} played` :
+           `🏁 ${(phase?.phase || '').toUpperCase()} underway`}
         </span>
       </div>
 

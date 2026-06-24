@@ -1,5 +1,6 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 interface BracketMatch {
   matchId: number; round: string; date: string
@@ -42,14 +43,43 @@ export function BracketPage() {
     }
   }
 
+  const [filter, setFilter] = useState<string>('all')
+
+  const stageFilters = [
+    { key: 'all', label: 'All' },
+    { key: 'r32', label: 'R32' },
+    { key: 'r16', label: 'R16' },
+    { key: 'qf', label: 'QF' },
+    { key: 'sf', label: 'SF' },
+    { key: 'final', label: 'Final' },
+  ]
+
   return (
     <div>
       <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>Bracket</h1>
-      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>
+      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '12px' }}>
         Knockout stage — placeholders shown until groups complete
       </p>
 
+      {/* Filter buttons */}
+      <div style={{ display: 'flex', gap: '4px', marginBottom: '16px', flexWrap: 'wrap' }}>
+        {stageFilters.map(f => (
+          <button key={f.key} onClick={() => setFilter(f.key)} style={{
+            fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 500,
+            letterSpacing: '0.3px', textTransform: 'uppercase',
+            padding: '4px 10px', borderRadius: 'var(--radius-sm)',
+            border: `1px solid ${filter === f.key ? 'var(--accent)' : 'var(--border)'}`,
+            background: filter === f.key ? 'var(--accent)' : 'var(--surface)',
+            color: filter === f.key ? '#fff' : 'var(--text-muted)',
+            cursor: 'pointer',
+          }}>
+            {f.label}
+          </button>
+        ))}
+      </div>
+
       {stageOrder.map(stage => {
+        if (filter !== 'all' && stage !== filter) return null
         const stageMatches = bracket?.rounds?.[stage]
         if (!stageMatches?.length) return null
 
