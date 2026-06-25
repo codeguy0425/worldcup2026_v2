@@ -6,6 +6,9 @@ on:
     - cron: '0 23 * * *'   # 7am HKT
     - cron: '0 5 * * *'    # 1pm HKT
 
+permissions:
+  contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
