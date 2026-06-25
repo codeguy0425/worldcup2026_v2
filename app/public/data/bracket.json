@@ -33,11 +33,11 @@
         "date": "2026-06-30",
         "timeUtc": "01:00",
         "team1Id": "1F",
-        "team2Id": "2C",
+        "team2Id": "MAR",
         "team1Original": "1F",
         "team2Original": "2C",
         "team1Resolved": false,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "monterrey"
       },
       {
@@ -45,11 +45,11 @@
         "round": "Round of 32",
         "date": "2026-06-29",
         "timeUtc": "17:00",
-        "team1Id": "1C",
+        "team1Id": "BRA",
         "team2Id": "2F",
         "team1Original": "1C",
         "team2Original": "2F",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "houston"
       },

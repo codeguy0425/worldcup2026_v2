@@ -38,24 +38,6 @@
     },
     {
       "overall_rank": 3,
-      "group": "C",
-      "teamId": "SCO",
-      "team": "Scotland",
-      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-      "played": 2,
-      "won": 1,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 1,
-      "ga": 1,
-      "gd": 0,
-      "pts": 3,
-      "qualified": false,
-      "eliminated": false,
-      "thirdLocked": false
-    },
-    {
-      "overall_rank": 4,
       "group": "L",
       "teamId": "CRO",
       "team": "Croatia",
@@ -73,7 +55,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 5,
+      "overall_rank": 4,
       "group": "J",
       "teamId": "ALG",
       "team": "Algeria",
@@ -91,7 +73,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 6,
+      "overall_rank": 5,
       "group": "D",
       "teamId": "PAR",
       "team": "Paraguay",
@@ -107,6 +89,24 @@
       "qualified": false,
       "eliminated": false,
       "thirdLocked": false
+    },
+    {
+      "overall_rank": 6,
+      "group": "C",
+      "teamId": "SCO",
+      "team": "Scotland",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "played": 3,
+      "won": 1,
+      "drawn": 0,
+      "lost": 2,
+      "gf": 1,
+      "ga": 4,
+      "gd": -3,
+      "pts": 3,
+      "qualified": false,
+      "eliminated": false,
+      "thirdLocked": true
     },
     {
       "overall_rank": 7,

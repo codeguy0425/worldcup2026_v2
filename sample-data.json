@@ -1171,7 +1171,27 @@
       "group": "C",
       "groundId": "miami",
       "num": 17,
-      "stage": "group"
+      "stage": "group",
+      "score1": 0,
+      "score2": 3,
+      "goals": [
+        {
+          "minute": 7,
+          "scorer": "Vinícius Júnior",
+          "teamId": "BRA"
+        },
+        {
+          "minute": 45,
+          "scorer": "Vinícius Júnior",
+          "teamId": "BRA",
+          "stoppageTime": 3
+        },
+        {
+          "minute": 60,
+          "scorer": "Matheus Cunha",
+          "teamId": "BRA"
+        }
+      ]
     },
     {
       "id": 18,
@@ -1184,7 +1204,43 @@
       "group": "C",
       "groundId": "atlanta",
       "num": 18,
-      "stage": "group"
+      "stage": "group",
+      "score1": 4,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 10,
+          "scorer": "Yassine Bounou",
+          "teamId": "HAI",
+          "ownGoal": true
+        },
+        {
+          "minute": 39,
+          "scorer": "Achraf Hakimi",
+          "teamId": "MAR"
+        },
+        {
+          "minute": 43,
+          "scorer": "Wilson Isidor",
+          "teamId": "HAI"
+        },
+        {
+          "minute": 45,
+          "scorer": "Ismael Saibari",
+          "teamId": "MAR",
+          "stoppageTime": 1
+        },
+        {
+          "minute": 78,
+          "scorer": "Soufiane Rahimi",
+          "teamId": "MAR"
+        },
+        {
+          "minute": 89,
+          "scorer": "Gessime Yassine",
+          "teamId": "MAR"
+        }
+      ]
     },
     {
       "id": 19,
