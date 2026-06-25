@@ -6,11 +6,11 @@
         "round": "Round of 32",
         "date": "2026-06-28",
         "timeUtc": "19:00",
-        "team1Id": "2A",
+        "team1Id": "RSA",
         "team2Id": "CAN",
         "team1Original": "2A",
         "team2Original": "2B",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": true,
         "groundId": "los_angeles"
       },

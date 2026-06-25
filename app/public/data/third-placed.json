@@ -56,6 +56,24 @@
     },
     {
       "overall_rank": 4,
+      "group": "A",
+      "teamId": "KOR",
+      "team": "South Korea",
+      "flag": "🇰🇷",
+      "played": 3,
+      "won": 1,
+      "drawn": 0,
+      "lost": 2,
+      "gf": 2,
+      "ga": 3,
+      "gd": -1,
+      "pts": 3,
+      "qualified": false,
+      "eliminated": false,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 5,
       "group": "J",
       "teamId": "ALG",
       "team": "Algeria",
@@ -73,7 +91,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 5,
+      "overall_rank": 6,
       "group": "D",
       "teamId": "PAR",
       "team": "Paraguay",
@@ -91,7 +109,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 6,
+      "overall_rank": 7,
       "group": "C",
       "teamId": "SCO",
       "team": "Scotland",
@@ -109,7 +127,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 7,
+      "overall_rank": 8,
       "group": "H",
       "teamId": "CPV",
       "team": "Cape Verde",
@@ -127,7 +145,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 8,
+      "overall_rank": 9,
       "group": "G",
       "teamId": "BEL",
       "team": "Belgium",
@@ -140,24 +158,6 @@
       "ga": 1,
       "gd": 0,
       "pts": 2,
-      "qualified": false,
-      "eliminated": false,
-      "thirdLocked": false
-    },
-    {
-      "overall_rank": 9,
-      "group": "A",
-      "teamId": "CZE",
-      "team": "Czech Republic",
-      "flag": "🇨🇿",
-      "played": 2,
-      "won": 0,
-      "drawn": 1,
-      "lost": 1,
-      "gf": 2,
-      "ga": 3,
-      "gd": -1,
-      "pts": 1,
       "qualified": false,
       "eliminated": false,
       "thirdLocked": false

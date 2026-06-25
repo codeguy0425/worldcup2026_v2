@@ -819,7 +819,27 @@
       "group": "A",
       "groundId": "mexico_city",
       "num": 5,
-      "stage": "group"
+      "stage": "group",
+      "score1": 0,
+      "score2": 3,
+      "goals": [
+        {
+          "minute": 55,
+          "scorer": "Mateo Chávez",
+          "teamId": "MEX"
+        },
+        {
+          "minute": 61,
+          "scorer": "Julián Quiñones",
+          "teamId": "MEX"
+        },
+        {
+          "minute": 90,
+          "scorer": "Álvaro Fidalgo",
+          "teamId": "MEX",
+          "stoppageTime": 4
+        }
+      ]
     },
     {
       "id": 6,
@@ -832,7 +852,16 @@
       "group": "A",
       "groundId": "monterrey",
       "num": 6,
-      "stage": "group"
+      "stage": "group",
+      "score1": 1,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 63,
+          "scorer": "Thapelo Maseko",
+          "teamId": "RSA"
+        }
+      ]
     },
     {
       "id": 7,
