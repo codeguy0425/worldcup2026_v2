@@ -2330,7 +2330,37 @@
       "group": "I",
       "groundId": "boston",
       "num": 53,
-      "stage": "group"
+      "stage": "group",
+      "score1": 1,
+      "score2": 4,
+      "goals": [
+        {
+          "minute": 7,
+          "scorer": "Ousmane Dembélé",
+          "teamId": "FRA"
+        },
+        {
+          "minute": 20,
+          "scorer": "Ousmane Dembélé",
+          "teamId": "FRA"
+        },
+        {
+          "minute": 21,
+          "scorer": "Thelo Aasgaard",
+          "teamId": "NOR"
+        },
+        {
+          "minute": 32,
+          "scorer": "Ousmane Dembélé",
+          "teamId": "FRA"
+        },
+        {
+          "minute": 90,
+          "scorer": "Désiré Doué",
+          "teamId": "FRA",
+          "stoppageTime": 4
+        }
+      ]
     },
     {
       "id": 54,
@@ -2343,7 +2373,36 @@
       "group": "I",
       "groundId": "toronto",
       "num": 54,
-      "stage": "group"
+      "stage": "group",
+      "score1": 5,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 4,
+          "scorer": "Habib Diarra",
+          "teamId": "SEN"
+        },
+        {
+          "minute": 56,
+          "scorer": "Ismaïla Sarr",
+          "teamId": "SEN"
+        },
+        {
+          "minute": 59,
+          "scorer": "Pape Gueye",
+          "teamId": "SEN"
+        },
+        {
+          "minute": 71,
+          "scorer": "Pape Gueye",
+          "teamId": "SEN"
+        },
+        {
+          "minute": 82,
+          "scorer": "Iliman Ndiaye",
+          "teamId": "SEN"
+        }
+      ]
     },
     {
       "id": 55,

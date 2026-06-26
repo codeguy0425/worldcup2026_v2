@@ -1630,7 +1630,37 @@
     "group": "I",
     "groundId": "boston",
     "num": 53,
-    "stage": "group"
+    "stage": "group",
+    "score1": 1,
+    "score2": 4,
+    "goals": [
+      {
+        "minute": 7,
+        "scorer": "Ousmane Dembélé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 20,
+        "scorer": "Ousmane Dembélé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 21,
+        "scorer": "Thelo Aasgaard",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 32,
+        "scorer": "Ousmane Dembélé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 90,
+        "scorer": "Désiré Doué",
+        "teamId": "FRA",
+        "stoppageTime": 4
+      }
+    ]
   },
   {
     "id": 54,
@@ -1643,7 +1673,36 @@
     "group": "I",
     "groundId": "toronto",
     "num": 54,
-    "stage": "group"
+    "stage": "group",
+    "score1": 5,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 4,
+        "scorer": "Habib Diarra",
+        "teamId": "SEN"
+      },
+      {
+        "minute": 56,
+        "scorer": "Ismaïla Sarr",
+        "teamId": "SEN"
+      },
+      {
+        "minute": 59,
+        "scorer": "Pape Gueye",
+        "teamId": "SEN"
+      },
+      {
+        "minute": 71,
+        "scorer": "Pape Gueye",
+        "teamId": "SEN"
+      },
+      {
+        "minute": 82,
+        "scorer": "Iliman Ndiaye",
+        "teamId": "SEN"
+      }
+    ]
   },
   {
     "id": 55,
@@ -2153,7 +2212,7 @@
     "date": "2026-06-30",
     "time": "05:00",
     "timeUtc": "21:00",
-    "team1Id": "1I",
+    "team1Id": "FRA",
     "team2Id": "3C/D/F/G/H",
     "group": "",
     "groundId": "new_york",
@@ -2167,7 +2226,7 @@
     "time": "01:00",
     "timeUtc": "17:00",
     "team1Id": "CIV",
-    "team2Id": "2I",
+    "team2Id": "NOR",
     "group": "",
     "groundId": "dallas",
     "num": 78,

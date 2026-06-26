@@ -58,11 +58,11 @@
         "round": "Round of 32",
         "date": "2026-06-30",
         "timeUtc": "21:00",
-        "team1Id": "1I",
+        "team1Id": "FRA",
         "team2Id": "3C/D/F/G/H",
         "team1Original": "1I",
         "team2Original": "3C/D/F/G/H",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "new_york"
       },
@@ -72,11 +72,11 @@
         "date": "2026-06-30",
         "timeUtc": "17:00",
         "team1Id": "CIV",
-        "team2Id": "2I",
+        "team2Id": "NOR",
         "team1Original": "2E",
         "team2Original": "2I",
         "team1Resolved": true,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "dallas"
       },
       {

@@ -74,6 +74,24 @@
     },
     {
       "overall_rank": 5,
+      "group": "I",
+      "teamId": "SEN",
+      "team": "Senegal",
+      "flag": "🇸🇳",
+      "played": 3,
+      "won": 1,
+      "drawn": 0,
+      "lost": 2,
+      "gf": 8,
+      "ga": 6,
+      "gd": 2,
+      "pts": 3,
+      "qualified": false,
+      "eliminated": false,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 6,
       "group": "L",
       "teamId": "CRO",
       "team": "Croatia",
@@ -91,7 +109,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 6,
+      "overall_rank": 7,
       "group": "A",
       "teamId": "KOR",
       "team": "South Korea",
@@ -109,7 +127,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 7,
+      "overall_rank": 8,
       "group": "J",
       "teamId": "ALG",
       "team": "Algeria",
@@ -127,7 +145,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 8,
+      "overall_rank": 9,
       "group": "C",
       "teamId": "SCO",
       "team": "Scotland",
@@ -145,7 +163,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 9,
+      "overall_rank": 10,
       "group": "H",
       "teamId": "CPV",
       "team": "Cape Verde",
@@ -163,7 +181,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 10,
+      "overall_rank": 11,
       "group": "G",
       "teamId": "BEL",
       "team": "Belgium",
@@ -181,7 +199,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 11,
+      "overall_rank": 12,
       "group": "K",
       "teamId": "COD",
       "team": "DR Congo",
@@ -194,24 +212,6 @@
       "ga": 2,
       "gd": -1,
       "pts": 1,
-      "qualified": false,
-      "eliminated": false,
-      "thirdLocked": false
-    },
-    {
-      "overall_rank": 12,
-      "group": "I",
-      "teamId": "SEN",
-      "team": "Senegal",
-      "flag": "🇸🇳",
-      "played": 2,
-      "won": 0,
-      "drawn": 0,
-      "lost": 2,
-      "gf": 3,
-      "ga": 6,
-      "gd": -3,
-      "pts": 0,
       "qualified": false,
       "eliminated": false,
       "thirdLocked": false
