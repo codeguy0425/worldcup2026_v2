@@ -103,7 +103,7 @@ export function BracketPage() {
       }}>
         <div style={{
           display: 'flex', gap: `${GAP_PX}px`,
-          minWidth: '740px',
+          minWidth: '1000px',
         }}>
           {KNOCKOUT_ROUNDS.map((phase, ci) => {
             const s = slots[phase] || []
@@ -113,7 +113,7 @@ export function BracketPage() {
             return (
               <div key={phase} style={{
                 display: 'flex', flexDirection: 'column',
-                flex: 1, minWidth: '140px',
+                flex: 1, minWidth: '170px',
               }}>
                 <div style={{
                   fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 600,
@@ -165,7 +165,7 @@ export function BracketPage() {
                         </span>
                         <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                           <span style={{ fontSize: '12px' }}>{t1d.flag}</span>
-                          <span style={{ marginLeft: '1px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '44px', display: 'inline-block', verticalAlign: 'middle' }}>{t1d.name}</span>
+                          <span style={{ marginLeft: '1px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '70px', display: 'inline-block', verticalAlign: 'middle' }}>{t1d.name}</span>
                         </span>
                         <span style={{
                           fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center',
@@ -174,7 +174,7 @@ export function BracketPage() {
                           {hasScore ? `${m.score1}–${m.score2}` : 'v'}
                         </span>
                         <span style={{ flex: 1, overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '44px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>
+                          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '70px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>
                           <span style={{ marginLeft: '1px', fontSize: '12px' }}>{t2d.flag}</span>
                         </span>
                       </Link>
