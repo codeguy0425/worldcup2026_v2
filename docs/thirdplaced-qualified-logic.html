@@ -138,6 +138,64 @@ tr.eliminated td{background:rgba(251,113,133,.04)}
   </div>
 </div>
 
+<!-- Locked explanation -->
+<div class="section">
+  <div class="section-title">
+    <span>thirdLocked — what 🔒 means</span>
+    <span class="tag tag-example">data</span>
+  </div>
+
+  <div class="state-row" style="grid-template-columns:1fr 1fr">
+    <div class="card" style="margin:0">
+      <h3><span style="color:#22d3ee">🔒 thirdLocked: true</span></h3>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:10px">
+        Team is <strong style="color:#e2e8f0">confirmed as finishing 3rd</strong> in their group.
+        Position is final — no remaining matches can change it.
+      </p>
+      <div style="background:rgba(30,41,59,.5);border-radius:8px;padding:12px;font-size:12px;font-family:'JetBrains Mono',monospace;line-height:1.8">
+        <span style="color:#34d399">maxPts</span> = pts + <span style="color:#fbbf24">0</span><br>
+        <span style="color:#64748b">// Points, GD, GF are ALL final</span><br>
+        <span style="color:#64748b">// Can be compared directly via tiebreakers</span>
+      </div>
+      <div style="margin-top:10px;font-size:12px">
+        <span style="color:#64748b">Happens when:</span><br>
+        <span style="color:#94a3b8">• Group is complete (all 4 teams played 3 matches)</span><br>
+        <span style="color:#94a3b8">• Team mathematically locked into 3rd even with matches left</span>
+      </div>
+    </div>
+    <div class="card" style="margin:0">
+      <h3><span style="color:#fbbf24">⏳ thirdLocked: false</span></h3>
+      <p style="font-size:13px;color:#94a3b8;line-height:1.6;margin-bottom:10px">
+        Team is <strong style="color:#e2e8f0">provisionally 3rd</strong> but not confirmed.
+        Remaining matches in their group could change their position or points.
+      </p>
+      <div style="background:rgba(30,41,59,.5);border-radius:8px;padding:12px;font-size:12px;font-family:'JetBrains Mono',monospace;line-height:1.8">
+        <span style="color:#34d399">maxPts</span> = pts + <span style="color:#fbbf24">3</span><br>
+        <span style="color:#64748b">// GD, GF could improve — conservative approach:</span><br>
+        <span style="color:#fb7185">// Always count as threat when tied on points!</span>
+      </div>
+      <div style="margin-top:10px;font-size:12px">
+        <span style="color:#64748b">Impact on algorithm:</span><br>
+        <span style="color:#94a3b8">• Can't use tiebreakers (stats might change)</span><br>
+        <span style="color:#94a3b8">• Always counted as threat if maxPts ≥ your pts</span>
+      </div>
+    </div>
+  </div>
+
+  <table style="margin-top:16px">
+    <tr><th>Team</th><th>Pts</th><th>GD</th><th>GF</th><th>Locked?</th><th>maxPts</th><th>Why?</th></tr>
+    <tr>
+      <td>🇸🇪 SWE (F)</td><td>4</td><td>0</td><td>7</td><td style="color:#34d399">🔒 yes</td><td>4</td><td>Group F complete</td>
+    </tr>
+    <tr>
+      <td>🇭🇷 CRO (L)</td><td>3</td><td>-1</td><td>3</td><td style="color:#fbbf24">⏳ no</td><td>6</td><td>1 match left, could win</td>
+    </tr>
+    <tr>
+      <td>🇰🇷 KOR (A)</td><td>3</td><td>-1</td><td>2</td><td style="color:#34d399">🔒 yes</td><td>3</td><td>Group A complete</td>
+    </tr>
+  </table>
+</div>
+
 <!-- Qualified — How it works -->
 <div class="section">
   <div class="section-title">
