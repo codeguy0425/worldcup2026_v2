@@ -2,6 +2,24 @@
   "rankings": [
     {
       "overall_rank": 1,
+      "group": "E",
+      "teamId": "ECU",
+      "team": "Ecuador",
+      "flag": "🇪🇨",
+      "played": 3,
+      "won": 1,
+      "drawn": 1,
+      "lost": 1,
+      "gf": 2,
+      "ga": 2,
+      "gd": 0,
+      "pts": 4,
+      "qualified": false,
+      "eliminated": false,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 2,
       "group": "B",
       "teamId": "BIH",
       "team": "Bosnia & Herzegovina",
@@ -19,7 +37,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 2,
+      "overall_rank": 3,
       "group": "F",
       "teamId": "SWE",
       "team": "Sweden",
@@ -37,7 +55,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 3,
+      "overall_rank": 4,
       "group": "L",
       "teamId": "CRO",
       "team": "Croatia",
@@ -55,7 +73,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 4,
+      "overall_rank": 5,
       "group": "A",
       "teamId": "KOR",
       "team": "South Korea",
@@ -73,7 +91,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 5,
+      "overall_rank": 6,
       "group": "J",
       "teamId": "ALG",
       "team": "Algeria",
@@ -91,7 +109,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 6,
+      "overall_rank": 7,
       "group": "D",
       "teamId": "PAR",
       "team": "Paraguay",
@@ -109,7 +127,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 7,
+      "overall_rank": 8,
       "group": "C",
       "teamId": "SCO",
       "team": "Scotland",
@@ -127,7 +145,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 8,
+      "overall_rank": 9,
       "group": "H",
       "teamId": "CPV",
       "team": "Cape Verde",
@@ -145,7 +163,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 9,
+      "overall_rank": 10,
       "group": "G",
       "teamId": "BEL",
       "team": "Belgium",
@@ -163,7 +181,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 10,
+      "overall_rank": 11,
       "group": "K",
       "teamId": "COD",
       "team": "DR Congo",
@@ -174,24 +192,6 @@
       "lost": 1,
       "gf": 1,
       "ga": 2,
-      "gd": -1,
-      "pts": 1,
-      "qualified": false,
-      "eliminated": false,
-      "thirdLocked": false
-    },
-    {
-      "overall_rank": 11,
-      "group": "E",
-      "teamId": "ECU",
-      "team": "Ecuador",
-      "flag": "🇪🇨",
-      "played": 2,
-      "won": 0,
-      "drawn": 1,
-      "lost": 1,
-      "gf": 0,
-      "ga": 1,
       "gd": -1,
       "pts": 1,
       "qualified": false,

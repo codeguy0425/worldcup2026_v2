@@ -71,11 +71,11 @@
         "round": "Round of 32",
         "date": "2026-06-30",
         "timeUtc": "17:00",
-        "team1Id": "2E",
+        "team1Id": "CIV",
         "team2Id": "2I",
         "team1Original": "2E",
         "team2Original": "2I",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "dallas"
       },
