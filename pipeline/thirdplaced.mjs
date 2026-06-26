@@ -57,8 +57,15 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
   // qualified: ≤ 7 other teams can still reach >= my pts (can't be pushed out)
   //   Uses tiebreakers for locked teams — a team tied on pts but behind on
   //   GD/GF (with no remaining matches) can never surpass, so not a threat.
-  // eliminated: 8+ other teams are definitively ahead (their worst > my best)
-  //   i.e. other team's current pts (lose remaining) > my max possible pts
+  // eliminated for locked teams (rank > 8): the third-placed threshold can
+  //   only get tougher, never easier, because:
+  //   (a) Locked teams ahead are frozen — can't be displaced
+  //   (b) Unlocked teams ahead, even if replaced by 1st/2nd/4th, are replaced
+  //       by someone with ≥ pts (inner-group rank guarantees it)
+  //   (c) Teams behind can only push this team further down
+  //   So a locked team at rank > 8 can never reach top 8.
+  // eliminated for unlocked teams: 8+ teams whose current pts already exceed
+  //   this team's max possible pts (their worst > my best)
   entries.forEach((e, i) => {
     e.overall_rank = i + 1
     const threats = entries.filter(o => {
@@ -76,13 +83,17 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     }).length
     e.qualified = threats < 8
 
-    const myMax = e.pts + (e.thirdLocked ? 0 : 3)
-    const definitivelyAhead = entries.filter(o => {
-      if (o === e) return false
-      // Other team's minimum = current pts (losing remaining adds 0)
-      return o.pts > myMax
-    }).length
-    e.eliminated = definitivelyAhead >= 8
+    // Locked teams: rank > 8 → eliminated (threshold only gets tougher)
+    if (e.thirdLocked) {
+      e.eliminated = e.overall_rank > 8
+    } else {
+      const myMax = e.pts + 3
+      const definitivelyAhead = entries.filter(o => {
+        if (o === e) return false
+        return o.pts > myMax
+      }).length
+      e.eliminated = definitivelyAhead >= 8
+    }
   })
 
   return entries

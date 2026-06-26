@@ -159,7 +159,7 @@
       "gd": -3,
       "pts": 3,
       "qualified": false,
-      "eliminated": false,
+      "eliminated": true,
       "thirdLocked": true
     },
     {
