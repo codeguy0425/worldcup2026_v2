@@ -13,6 +13,8 @@ const groupLabels = ['A','B','C','D','E','F','G','H','I','J','K','L']
 function GroupTable({ group }: { group: string }) {
   const { t } = useLang()
   const { data } = useJson<{ standings: Standing[]; remaining: number }>(`/data/groups/${group}.json`)
+  const { data: thirdData } = useJson<{ rankings: any[] }>('/data/third-placed.json')
+  const thirdMap = new Map((thirdData?.rankings ?? []).map((r: any) => [r.teamId, r]))
   if (!data) return null
 
   const { standings } = data
@@ -59,6 +61,12 @@ function GroupTable({ group }: { group: string }) {
                     <span style={{ marginLeft: '3px', fontSize: '7px', padding: '1px 3px', borderRadius: '2px', background: 'var(--badge-advance)', color: '#fff', fontWeight: 600 }}>A</span>
                   )}
                   {s.status === 'eliminated' && (
+                    <span style={{ marginLeft: '3px', fontSize: '7px', padding: '1px 3px', borderRadius: '2px', background: 'var(--badge-eliminate)', color: '#fff', fontWeight: 600 }}>E</span>
+                  )}
+                  {s.rank === 3 && thirdMap.get(s.teamId)?.qualified && (
+                    <span style={{ marginLeft: '3px', fontSize: '7px', padding: '1px 3px', borderRadius: '2px', background: 'var(--badge-advance)', color: '#fff', fontWeight: 600 }}>A</span>
+                  )}
+                  {s.rank === 3 && thirdMap.get(s.teamId)?.eliminated && (
                     <span style={{ marginLeft: '3px', fontSize: '7px', padding: '1px 3px', borderRadius: '2px', background: 'var(--badge-eliminate)', color: '#fff', fontWeight: 600 }}>E</span>
                   )}
                 </td>
