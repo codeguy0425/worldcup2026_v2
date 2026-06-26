@@ -6,7 +6,7 @@ interface ThirdEntry {
   overall_rank: number; group: string; teamId: string; team: string
   flag?: string; played: number; won: number; drawn: number; lost: number
   gf: number; ga: number; gd: number; pts: number
-  qualified: boolean; thirdLocked?: boolean
+  qualified: boolean; eliminated: boolean; thirdLocked?: boolean
 }
 
 export function ThirdPlacedPage() {
@@ -61,6 +61,8 @@ export function ThirdPlacedPage() {
                     <td style={{ padding: '8px 6px', textAlign: 'center', fontSize: '16px' }}>{e.flag || ''}</td>
                     <td style={{ padding: '8px 6px', fontWeight: 500 }}>
                       <Link to={`/team/${e.teamId}`} style={{ color: 'inherit', textDecoration: 'none' }}>{e.team}</Link>
+                      {e.qualified && <span style={{ marginLeft: '4px', fontSize: '8px', padding: '1px 4px', borderRadius: '2px', background: 'var(--badge-advance)', color: '#fff', fontWeight: 600 }}>A</span>}
+                      {e.eliminated && <span style={{ marginLeft: '4px', fontSize: '8px', padding: '1px 4px', borderRadius: '2px', background: 'var(--badge-eliminate)', color: '#fff', fontWeight: 600 }}>E</span>}
                     </td>
                     <td style={{ padding: '8px 6px', textAlign: 'center' }}>{e.played}</td>
                     <td style={{ padding: '8px 6px', textAlign: 'center', color: 'var(--text-muted)' }}>{e.won}</td>
