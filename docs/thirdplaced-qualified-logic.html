@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WC2026 — Third-Placed Qualification Logic</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020617;color:#e2e8f0;font-family:'Inter',sans-serif;overflow-x:hidden}
+.container{max-width:1100px;margin:0 auto;padding:40px 24px 80px}
+
+/* Header */
+header{text-align:center;margin-bottom:48px}
+header h1{font-size:28px;font-weight:700;background:linear-gradient(135deg,#22d3ee,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+header p{color:#94a3b8;font-size:14px;font-family:'JetBrains Mono',monospace}
+header .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#34d399;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Sections */
+.section{margin-bottom:36px}
+.section-title{font-size:18px;font-weight:600;color:#22d3ee;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-title .tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:2px 8px;border-radius:4px;font-weight:500}
+.tag-algo{background:rgba(76,29,149,0.3);color:#a78bfa;border:1px solid rgba(167,139,250,.3)}
+.tag-example{background:rgba(8,51,68,0.3);color:#22d3ee;border:1px solid rgba(34,211,238,.3)}
+.tag-code{background:rgba(6,78,59,0.3);color:#34d399;border:1px solid rgba(52,211,153,.3)}
+.tag-fix{background:rgba(251,191,36,.15);color:#fbbf24;border:1px solid rgba(251,191,36,.3)}
+
+/* State cards */
+.state-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px}
+.state-card{border-radius:12px;padding:20px;text-align:center}
+.state-card h3{font-size:15px;font-weight:600;margin-bottom:6px}
+.state-card p{font-size:12px;color:#94a3b8;line-height:1.5;font-family:'JetBrains Mono',monospace}
+.state-card.qualified{background:rgba(52,211,153,.08);border:1.5px solid #34d399}
+.state-card.qualified h3{color:#34d399}
+.state-card.pending{background:rgba(251,191,36,.06);border:1.5px solid #fbbf24}
+.state-card.pending h3{color:#fbbf24}
+.state-card.eliminated{background:rgba(251,113,133,.08);border:1.5px solid #fb7185}
+.state-card.eliminated h3{color:#fb7185}
+
+/* Flow diagram */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding:16px;background:rgba(15,23,42,.5);border-radius:12px;border:1px solid #1e293b}
+.flow-box{padding:10px 16px;border-radius:8px;font-size:12px;font-weight:500;font-family:'JetBrains Mono',monospace;text-align:center;min-width:80px}
+.flow-box.input{background:rgba(8,51,68,.4);border:1.5px solid #22d3ee;color:#22d3ee}
+.flow-box.step{background:rgba(6,78,59,.3);border:1.5px solid #34d399;color:#34d399}
+.flow-box.output{background:rgba(76,29,149,.3);border:1.5px solid #a78bfa;color:#a78bfa}
+.flow-box.decision{background:rgba(120,53,15,.3);border:1.5px solid #fbbf24;color:#fbbf24}
+.flow-arrow{color:#475569;font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace}
+
+/* Cards */
+.card{background:rgba(15,23,42,.6);border:1px solid #1e293b;border-radius:12px;padding:20px;margin-bottom:16px}
+.card.full{grid-column:1/-1}
+.card h3{font-size:14px;font-weight:600;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h3 .badge{font-size:10px;padding:1px 7px;border-radius:3px;font-weight:500}
+.badge-green{background:rgba(52,211,153,.15);color:#34d399}
+.badge-cyan{background:rgba(34,211,238,.15);color:#22d3ee}
+.badge-violet{background:rgba(167,139,250,.15);color:#a78bfa}
+.badge-amber{background:rgba(251,191,36,.15);color:#fbbf24}
+.badge-rose{background:rgba(251,113,133,.15);color:#fb7185}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:12px;font-family:'JetBrains Mono',monospace}
+th{text-align:left;padding:7px 10px;border-bottom:1px solid #1e293b;color:#64748b;font-weight:500;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+td{padding:7px 10px;border-bottom:1px solid rgba(30,41,59,.5);color:#cbd5e1}
+tr:hover td{background:rgba(30,41,59,.3)}
+tr.qualified td{background:rgba(52,211,153,.04)}
+tr.eliminated td{background:rgba(251,113,133,.04)}
+
+/* Code blocks */
+.code{background:rgba(0,0,0,.4);border:1px solid #1e293b;border-radius:8px;padding:14px 16px;font-size:12px;font-family:'JetBrains Mono',monospace;line-height:1.7;color:#94a3b8;overflow-x:auto;white-space:pre;margin-top:10px}
+.code .kw{color:#22d3ee}
+.code .fn{color:#34d399}
+.code .str{color:#a78bfa}
+.code .cm{color:#475569;font-style:italic}
+.code .num{color:#fbbf24}
+.code .hl{background:rgba(34,211,238,.06);display:block}
+.code .hl2{background:rgba(52,211,153,.08);display:block}
+.code .hl3{background:rgba(251,191,36,.08);display:block}
+.code .del{color:#fb7185}
+.code .add{color:#34d399}
+
+/* Legend */
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;padding:12px 16px;background:rgba(15,23,42,.4);border-radius:8px;font-size:11px}
+.legend-item{display:flex;align-items:center;gap:6px;color:#94a3b8}
+.legend-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid}
+.legend-dot.green{background:rgba(52,211,153,.2);border-color:#34d399}
+.legend-dot.amber{background:rgba(251,191,36,.2);border-color:#fbbf24}
+.legend-dot.rose{background:rgba(251,113,133,.2);border-color:#fb7185}
+
+/* Comparison side-by-side */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.compare .card{padding:16px;margin:0}
+.compare .card h4{font-size:12px;font-weight:600;margin-bottom:10px;font-family:'JetBrains Mono',monospace}
+.compare .card del{color:#fb7185}
+.compare .card ins{color:#34d399;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<header>
+  <h1>Third-Placed Qualification Logic</h1>
+  <p><span class="dot"></span> pipeline/thirdplaced.mjs · computeThirdPlaced()</p>
+</header>
+
+<!-- Three States -->
+<div class="section">
+  <div class="section-title">
+    <span>Three States</span>
+    <span class="tag tag-algo">algorithm</span>
+  </div>
+  <div class="state-row">
+    <div class="state-card qualified">
+      <h3>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#34d399" stroke-width="1.5"/><path d="M4.5 7L6.5 9L9.5 5" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Qualified
+      </h3>
+      <p><span class="num">qualified: true</span></p>
+      <p>≤ 7 threats<br>Guaranteed top-8</p>
+    </div>
+    <div class="state-card pending">
+      <h3>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#fbbf24" stroke-width="1.5"/><path d="M7 4.5V7L8.5 8.5" stroke="#fbbf24" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Pending
+      </h3>
+      <p><span class="num">qualified: false</span><br><span class="num">eliminated: false</span></p>
+      <p>Fate depends on<br>remaining results</p>
+    </div>
+    <div class="state-card eliminated">
+      <h3>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="#fb7185" stroke-width="1.5"/><path d="M5 5L9 9M9 5L5 9" stroke="#fb7185" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Eliminated
+      </h3>
+      <p><span class="num">eliminated: true</span></p>
+      <p>≥ 8 definitively ahead<br>Cannot reach top-8</p>
+    </div>
+  </div>
+</div>
+
+<!-- Qualified — How it works -->
+<div class="section">
+  <div class="section-title">
+    <span>qualified — threat counting</span>
+    <span class="tag tag-algo">algorithm</span>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-cyan">condition</span> <code>qualified = threats < 8</code></h3>
+    <p style="font-size:13px;color:#94a3b8;margin-bottom:12px;line-height:1.6">
+      A threat is another third-placed team that <strong style="color:#e2e8f0">could mathematically finish ahead</strong> of you.
+    </p>
+    <div class="code"><span class="cm">// For each opponent 'o' against target 'e':</span>
+const maxPts = o.pts + (o.thirdLocked ? 0 : 3)
+
+<span class="hl">if (maxPts &gt; e.pts)      <span class="cm">→ threat</span></span>
+<span class="hl3">if (maxPts &lt; e.pts)      <span class="cm">→ safe (cannot reach)</span></span>
+
+<span class="cm">// maxPts === e.pts — tied on points:</span>
+<span class="hl2">if (o.thirdLocked) {</span>
+<span class="hl2">  return isAheadOnTiebreakers(o, e)  <span class="cm">← fix: actual tiebreaker check</span></span>
+<span class="hl2">}</span>
+<span class="hl">return true  <span class="cm">← not locked: could improve GD/GF, count as threat</span></span></div>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3><span class="badge badge-violet">tiebreaker</span> <code>isAheadOnTiebreakers(a, b)</code></h3>
+    <div class="code">function isAheadOnTiebreakers(a, b) {
+  <span class="cm">// Pts → GD → GF → Fair Play → drawing of lots (teamId)</span>
+  const cmp = b.pts - a.pts || b.gd - a.gd || b.gf - a.gf
+  if (cmp !== 0) return cmp &lt; 0
+  const fpA = fairPlayScores[a.teamId] ?? 0
+  const fpB = fairPlayScores[b.teamId] ?? 0
+  if (fpA !== fpB) return fpA &gt; fpB
+  return a.teamId &lt; b.teamId
+}</div>
+  </div>
+</div>
+
+<!-- Eliminated — How it works -->
+<div class="section">
+  <div class="section-title">
+    <span>eliminated — definitive check</span>
+    <span class="tag tag-algo">algorithm</span>
+  </div>
+
+  <div class="card">
+    <h3><span class="badge badge-rose">condition</span> <code>eliminated = definitivelyAhead >= 8</code></h3>
+    <p style="font-size:13px;color:#94a3b8;margin-bottom:12px;line-height:1.6">
+      A team is <strong style="color:#fb7185">definitively ahead</strong> if their <strong style="color:#e2e8f0">current points</strong> (worst case — lose all remaining)
+      already exceed your <strong style="color:#e2e8f0">maximum possible points</strong> (best case — win all remaining).
+    </p>
+    <div class="code">const myMax = e.pts + (e.thirdLocked ? 0 : 3)
+const definitivelyAhead = entries.filter(o => {
+  if (o === e) return false
+  <span class="hl2">return o.pts &gt; myMax  <span class="cm">// Their floor > your ceiling</span></span>
+}).length
+e.eliminated = definitivelyAhead &gt;= 8</div>
+    <div class="code" style="margin-top:8px"><span class="cm">// Example: SEN (0pts, max=3)</span>
+<span class="cm">// Teams with current pts > 3:</span>
+<span class="cm">//   SWE(4), ECU(4), BIH(4), PAR(4) = 4</span>
+<span class="cm">//   4 < 8 → NOT eliminated</span></div>
+  </div>
+</div>
+
+<!-- The Fix Example -->
+<div class="section">
+  <div class="section-title">
+    <span>Real Example: Sweden fix (25 Jun 2026)</span>
+    <span class="tag tag-fix">fixed</span>
+  </div>
+
+  <div class="flow" style="justify-content:center">
+    <span class="flow-box input">SWE (F)</span>
+    <span class="flow-arrow">→</span>
+    <span class="flow-box step">4 pts</span>
+    <span class="flow-arrow">→</span>
+    <span class="flow-box output">GD 0</span>
+    <span class="flow-arrow">→</span>
+    <span class="flow-box output">GF 7</span>
+    <span class="flow-arrow">→</span>
+    <span class="flow-box input" style="background:rgba(52,211,153,.3);border-color:#34d399;color:#34d399">✅ Qualified</span>
+  </div>
+
+  <div class="compare">
+    <div class="card">
+      <h4><del>Old Logic (points only)</del></h4>
+      <div class="code" style="margin:0;font-size:11px"><span class="del">return maxPts &gt;= e.pts</span></div>
+      <table style="margin-top:8px;font-size:11px">
+        <tr><th>Team</th><th>Pts</th><th>GD</th><th>Threat?</th></tr>
+        <tr><td>🇪🇨 ECU</td><td>4</td><td>0</td><td style="color:#fb7185">✅ (4≥4)</td></tr>
+        <tr><td>🇧🇦 BIH</td><td>4</td><td>-1</td><td style="color:#fb7185">✅ (4≥4)</td></tr>
+        <tr><td>🇵🇾 PAR</td><td>4</td><td>-2</td><td style="color:#fb7185">✅ (4≥4)</td></tr>
+        <tr><td>🇭🇷 CRO</td><td>3</td><td>-1</td><td style="color:#fb7185">✅ (max 6)</td></tr>
+        <tr><td>🇩🇿 ALG</td><td>3</td><td>-2</td><td style="color:#fb7185">✅ (max 6)</td></tr>
+        <tr><td>🇨🇻 CPV</td><td>2</td><td>0</td><td style="color:#fb7185">✅ (max 5)</td></tr>
+        <tr><td>🇧🇪 BEL</td><td>2</td><td>0</td><td style="color:#fb7185">✅ (max 5)</td></tr>
+        <tr><td>🇨🇩 COD</td><td>1</td><td>-1</td><td style="color:#fb7185">✅ (max 4)</td></tr>
+      </table>
+      <p style="margin-top:8px;font-size:12px;color:#fb7185;font-weight:600">8 threats → NOT qualified ❌</p>
+    </div>
+    <div class="card">
+      <h4><ins>New Logic (tiebreaker-aware)</ins></h4>
+      <div class="code" style="margin:0;font-size:11px"><span class="add">isAheadOnTiebreakers(o, e)  // for locked teams</span></div>
+      <table style="margin-top:8px;font-size:11px">
+        <tr><th>Team</th><th>Pts</th><th>GD</th><th>GF</th><th>Beats SWE?</th></tr>
+        <tr><td>🇪🇨 ECU</td><td>4</td><td>0</td><td>2</td><td style="color:#34d399">❌ GF 7&gt;2</td></tr>
+        <tr><td>🇧🇦 BIH</td><td>4</td><td>-1</td><td>5</td><td style="color:#34d399">❌ GD 0&gt;-1</td></tr>
+        <tr><td>🇵🇾 PAR</td><td>4</td><td>-2</td><td>2</td><td style="color:#34d399">❌ GD 0&gt;-2</td></tr>
+        <tr><td>🇭🇷 CRO</td><td>3</td><td>-1</td><td>3</td><td style="color:#fb7185">✅ could win → 6pts</td></tr>
+        <tr><td>🇩🇿 ALG</td><td>3</td><td>-2</td><td>2</td><td style="color:#fb7185">✅ could win → 6pts</td></tr>
+        <tr><td>🇨🇻 CPV</td><td>2</td><td>0</td><td>2</td><td style="color:#fb7185">✅ could win → 5pts</td></tr>
+        <tr><td>🇧🇪 BEL</td><td>2</td><td>0</td><td>1</td><td style="color:#fb7185">✅ could win → 5pts</td></tr>
+        <tr><td>🇨🇩 COD</td><td>1</td><td>-1</td><td>1</td><td style="color:#fb7185">✅ could tie/improve</td></tr>
+      </table>
+      <p style="margin-top:8px;font-size:12px;color:#34d399;font-weight:600">5 real threats → QUALIFIED ✅</p>
+    </div>
+  </div>
+</div>
+
+<!-- Current Snapshot -->
+<div class="section">
+  <div class="section-title">
+    <span>Current Snapshot (25 Jun 2026)</span>
+    <span class="tag tag-example">live</span>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr>
+        <th>#</th><th>Team</th><th>Pts</th><th>GD</th><th>GF</th><th>Locked</th><th>Threats</th><th>Status</th>
+      </tr>
+      <tr class="qualified">
+        <td>1</td><td>🇸🇪 SWE (F)</td><td>4</td><td>0</td><td>7</td><td>🔒</td><td>5</td><td><span style="color:#34d399">✅ Qualified</span></td>
+      </tr>
+      <tr class="qualified">
+        <td>2</td><td>🇪🇨 ECU (E)</td><td>4</td><td>0</td><td>2</td><td>🔒</td><td>6</td><td><span style="color:#34d399">✅ Qualified</span></td>
+      </tr>
+      <tr class="qualified">
+        <td>3</td><td>🇧🇦 BIH (B)</td><td>4</td><td>-1</td><td>5</td><td>🔒</td><td>7</td><td><span style="color:#34d399">✅ Qualified</span></td>
+      </tr>
+      <tr>
+        <td>4</td><td>🇵🇾 PAR (D)</td><td>4</td><td>-2</td><td>2</td><td>🔒</td><td>8</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>5</td><td>🇭🇷 CRO (L)</td><td>3</td><td>-1</td><td>3</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>6</td><td>🇰🇷 KOR (A)</td><td>3</td><td>-1</td><td>2</td><td>🔒</td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>7</td><td>🇩🇿 ALG (J)</td><td>3</td><td>-2</td><td>2</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>8</td><td>🏴 SCO (C)</td><td>3</td><td>-3</td><td>1</td><td>🔒</td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>9</td><td>🇨🇻 CPV (H)</td><td>2</td><td>0</td><td>2</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>10</td><td>🇧🇪 BEL (G)</td><td>2</td><td>0</td><td>1</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>11</td><td>🇨🇩 COD (K)</td><td>1</td><td>-1</td><td>1</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+      <tr>
+        <td>12</td><td>🇸🇳 SEN (I)</td><td>0</td><td>-3</td><td>3</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- Legend -->
+<div class="legend">
+  <span class="legend-item"><span class="legend-dot green"></span> Qualified</span>
+  <span class="legend-item"><span class="legend-dot amber"></span> Pending</span>
+  <span class="legend-item"><span class="legend-dot rose"></span> Eliminated</span>
+</div>
+
+</div>
+</body>
+</html>
