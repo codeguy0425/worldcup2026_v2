@@ -57,15 +57,12 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
   // qualified: ≤ 7 other teams can still reach >= my pts (can't be pushed out)
   //   Uses tiebreakers for locked teams — a team tied on pts but behind on
   //   GD/GF (with no remaining matches) can never surpass, so not a threat.
-  // eliminated for locked teams (rank > 8): the third-placed threshold can
-  //   only get tougher, never easier, because:
-  //   (a) Locked teams ahead are frozen — can't be displaced
-  //   (b) Unlocked teams ahead, even if replaced by 1st/2nd/4th, are replaced
-  //       by someone with ≥ pts (inner-group rank guarantees it)
-  //   (c) Teams behind can only push this team further down
-  //   So a locked team at rank > 8 can never reach top 8.
-  // eliminated for unlocked teams: 8+ teams whose current pts already exceed
-  //   this team's max possible pts (their worst > my best)
+  // eliminated: 8+ teams are guaranteed to finish ahead
+  //   "Guaranteed ahead" — no possible result can change it:
+  //     • o.pts > e.pts (even if o loses, their minimum > e's maximum)
+  //     • o.pts === e.pts AND o.thirdLocked AND ahead on tiebreakers (frozen)
+  //   Teams at same pts but unlocked are NOT guaranteed — they could worsen
+  //   their GD/GF on the final matchday and fall behind on tiebreakers.
   entries.forEach((e, i) => {
     e.overall_rank = i + 1
     const threats = entries.filter(o => {
@@ -83,17 +80,13 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     }).length
     e.qualified = threats < 8
 
-    // Locked teams: rank > 8 → eliminated (threshold only gets tougher)
-    if (e.thirdLocked) {
-      e.eliminated = e.overall_rank > 8
-    } else {
-      const myMax = e.pts + 3
-      const definitivelyAhead = entries.filter(o => {
-        if (o === e) return false
-        return o.pts > myMax
-      }).length
-      e.eliminated = definitivelyAhead >= 8
-    }
+    const guaranteedAhead = entries.filter(o => {
+      if (o === e) return false
+      if (o.pts > e.pts) return true
+      if (o.pts === e.pts && o.thirdLocked) return isAheadOnTiebreakers(o, e)
+      return false
+    }).length
+    e.eliminated = guaranteedAhead >= 8
   })
 
   return entries
