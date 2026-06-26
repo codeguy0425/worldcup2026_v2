@@ -14,7 +14,7 @@
       "ga": 7,
       "gd": 0,
       "pts": 4,
-      "qualified": false,
+      "qualified": true,
       "eliminated": false,
       "thirdLocked": true
     },
@@ -32,7 +32,7 @@
       "ga": 2,
       "gd": 0,
       "pts": 4,
-      "qualified": false,
+      "qualified": true,
       "eliminated": false,
       "thirdLocked": true
     },
@@ -50,7 +50,7 @@
       "ga": 6,
       "gd": -1,
       "pts": 4,
-      "qualified": false,
+      "qualified": true,
       "eliminated": false,
       "thirdLocked": true
     },

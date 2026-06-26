@@ -42,8 +42,21 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     return a.teamId < b.teamId ? -1 : 1
   })
 
+  // Helper: returns true if 'a' beats 'b' on the full FIFA third-placed tiebreaker chain
+  // (Pts → GD → GF → Fair Play → drawing of lots / teamId)
+  function isAheadOnTiebreakers(a, b) {
+    const cmp = b.pts - a.pts || b.gd - a.gd || b.gf - a.gf
+    if (cmp !== 0) return cmp < 0
+    const fpA = fairPlayScores[a.teamId] ?? 0
+    const fpB = fairPlayScores[b.teamId] ?? 0
+    if (fpA !== fpB) return fpA > fpB
+    return a.teamId < b.teamId
+  }
+
   // Assign ranks and determine mathematical qualification / elimination
   // qualified: ≤ 7 other teams can still reach >= my pts (can't be pushed out)
+  //   Uses tiebreakers for locked teams — a team tied on pts but behind on
+  //   GD/GF (with no remaining matches) can never surpass, so not a threat.
   // eliminated: 8+ other teams are definitively ahead (their worst > my best)
   //   i.e. other team's current pts (lose remaining) > my max possible pts
   entries.forEach((e, i) => {
@@ -51,7 +64,15 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     const threats = entries.filter(o => {
       if (o === e) return false
       const maxPts = o.pts + (o.thirdLocked ? 0 : 3)
-      return maxPts >= e.pts
+      if (maxPts > e.pts) return true
+      if (maxPts < e.pts) return false
+      // Same max pts — can this opponent actually beat 'e' on tiebreakers?
+      if (o.thirdLocked) {
+        // Locked: use actual tiebreakers (GD/GF/FP are final)
+        return isAheadOnTiebreakers(o, e)
+      }
+      // Not locked: could improve GD/GF in remaining match → conservative: count as threat
+      return true
     }).length
     e.qualified = threats < 8
 
