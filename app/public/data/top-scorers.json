@@ -36,13 +36,22 @@
     "rank": 4
   },
   {
+    "scorer": "Brian Brobbey",
+    "teamId": "NED",
+    "teamName": "Netherlands",
+    "flag": "🇳🇱",
+    "goals": 3,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Deniz Undav",
     "teamId": "GER",
     "teamName": "Germany",
     "flag": "🇩🇪",
     "goals": 3,
     "penalties": 0,
-    "rank": 5
+    "rank": 6
   },
   {
     "scorer": "Ismael Saibari",
@@ -51,7 +60,7 @@
     "flag": "🇲🇦",
     "goals": 3,
     "penalties": 0,
-    "rank": 6
+    "rank": 7
   },
   {
     "scorer": "Johan Manzambi",
@@ -60,7 +69,7 @@
     "flag": "🇨🇭",
     "goals": 3,
     "penalties": 0,
-    "rank": 7
+    "rank": 8
   },
   {
     "scorer": "Jonathan David",
@@ -69,7 +78,7 @@
     "flag": "🇨🇦",
     "goals": 3,
     "penalties": 0,
-    "rank": 8
+    "rank": 9
   },
   {
     "scorer": "Matheus Cunha",
@@ -78,7 +87,16 @@
     "flag": "🇧🇷",
     "goals": 3,
     "penalties": 0,
-    "rank": 9
+    "rank": 10
+  },
+  {
+    "scorer": "Anthony Elanga",
+    "teamId": "SWE",
+    "teamName": "Sweden",
+    "flag": "🇸🇪",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 11
   },
   {
     "scorer": "Ayase Ueda",
@@ -87,16 +105,7 @@
     "flag": "🇯🇵",
     "goals": 2,
     "penalties": 0,
-    "rank": 10
-  },
-  {
-    "scorer": "Brian Brobbey",
-    "teamId": "NED",
-    "teamName": "Netherlands",
-    "flag": "🇳🇱",
-    "goals": 2,
-    "penalties": 0,
-    "rank": 11
+    "rank": 12
   },
   {
     "scorer": "Cody Gakpo",
@@ -105,7 +114,7 @@
     "flag": "🇳🇱",
     "goals": 2,
     "penalties": 0,
-    "rank": 12
+    "rank": 13
   },
   {
     "scorer": "Cristiano Ronaldo",
@@ -114,7 +123,7 @@
     "flag": "🇵🇹",
     "goals": 2,
     "penalties": 0,
-    "rank": 13
+    "rank": 14
   },
   {
     "scorer": "Crysencio Summerville",
@@ -123,7 +132,7 @@
     "flag": "🇳🇱",
     "goals": 2,
     "penalties": 0,
-    "rank": 14
+    "rank": 15
   },
   {
     "scorer": "Cyle Larin",
@@ -132,7 +141,7 @@
     "flag": "🇨🇦",
     "goals": 2,
     "penalties": 0,
-    "rank": 15
+    "rank": 16
   },
   {
     "scorer": "Daichi Kamada",
@@ -141,7 +150,7 @@
     "flag": "🇯🇵",
     "goals": 2,
     "penalties": 0,
-    "rank": 16
+    "rank": 17
   },
   {
     "scorer": "Daniel Muñoz",
@@ -150,7 +159,7 @@
     "flag": "🇨🇴",
     "goals": 2,
     "penalties": 0,
-    "rank": 17
+    "rank": 18
   },
   {
     "scorer": "Elijah Just",
@@ -159,7 +168,7 @@
     "flag": "🇳🇿",
     "goals": 2,
     "penalties": 0,
-    "rank": 18
+    "rank": 19
   },
   {
     "scorer": "Ermin Mahmic",
@@ -168,7 +177,7 @@
     "flag": "🇧🇦",
     "goals": 2,
     "penalties": 0,
-    "rank": 19
+    "rank": 20
   },
   {
     "scorer": "Folarin Balogun",
@@ -177,7 +186,7 @@
     "flag": "🇺🇸",
     "goals": 2,
     "penalties": 0,
-    "rank": 20
+    "rank": 21
   },
   {
     "scorer": "Harry Kane",
@@ -186,7 +195,7 @@
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "goals": 2,
     "penalties": 1,
-    "rank": 21
+    "rank": 22
   },
   {
     "scorer": "Ismaïla Sarr",
@@ -195,7 +204,7 @@
     "flag": "🇸🇳",
     "goals": 2,
     "penalties": 0,
-    "rank": 22
+    "rank": 23
   },
   {
     "scorer": "Julián Quiñones",
@@ -204,7 +213,7 @@
     "flag": "🇲🇽",
     "goals": 2,
     "penalties": 0,
-    "rank": 23
+    "rank": 24
   },
   {
     "scorer": "Kai Havertz",
@@ -213,7 +222,7 @@
     "flag": "🇩🇪",
     "goals": 2,
     "penalties": 1,
-    "rank": 24
+    "rank": 25
   },
   {
     "scorer": "Maxi Araújo",
@@ -222,7 +231,7 @@
     "flag": "🇺🇾",
     "goals": 2,
     "penalties": 0,
-    "rank": 25
+    "rank": 26
   },
   {
     "scorer": "Mikel Oyarzabal",
@@ -231,7 +240,7 @@
     "flag": "🇪🇸",
     "goals": 2,
     "penalties": 0,
-    "rank": 26
+    "rank": 27
   },
   {
     "scorer": "Nicolas Pépé",
@@ -240,7 +249,7 @@
     "flag": "🇨🇮",
     "goals": 2,
     "penalties": 0,
-    "rank": 27
+    "rank": 28
   },
   {
     "scorer": "Rubén Vargas",
@@ -249,7 +258,7 @@
     "flag": "🇨🇭",
     "goals": 2,
     "penalties": 0,
-    "rank": 28
+    "rank": 29
   },
   {
     "scorer": "Yasin Ayari",
@@ -258,7 +267,7 @@
     "flag": "🇸🇪",
     "goals": 2,
     "penalties": 0,
-    "rank": 29
+    "rank": 30
   },
   {
     "scorer": "Abbosbek Fayzullaev",
@@ -267,7 +276,7 @@
     "flag": "🇺🇿",
     "goals": 1,
     "penalties": 0,
-    "rank": 30
+    "rank": 31
   },
   {
     "scorer": "Abdulelah Al-Amri",
@@ -276,7 +285,7 @@
     "flag": "🇸🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 31
+    "rank": 32
   },
   {
     "scorer": "Achraf Hakimi",
@@ -285,7 +294,7 @@
     "flag": "🇲🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 32
+    "rank": 33
   },
   {
     "scorer": "Agustín Cano",
@@ -294,7 +303,7 @@
     "flag": "🇺🇾",
     "goals": 1,
     "penalties": 0,
-    "rank": 33
+    "rank": 34
   },
   {
     "scorer": "Alex Freeman",
@@ -303,7 +312,7 @@
     "flag": "🇺🇸",
     "goals": 1,
     "penalties": 0,
-    "rank": 34
+    "rank": 35
   },
   {
     "scorer": "Alexander Isak",
@@ -312,7 +321,7 @@
     "flag": "🇸🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 35
+    "rank": 36
   },
   {
     "scorer": "Ali Olwan",
@@ -321,7 +330,7 @@
     "flag": "🇯🇴",
     "goals": 1,
     "penalties": 0,
-    "rank": 36
+    "rank": 37
   },
   {
     "scorer": "Álvaro Fidalgo",
@@ -330,7 +339,7 @@
     "flag": "🇲🇽",
     "goals": 1,
     "penalties": 0,
-    "rank": 37
+    "rank": 38
   },
   {
     "scorer": "Amad Diallo",
@@ -339,7 +348,7 @@
     "flag": "🇨🇮",
     "goals": 1,
     "penalties": 0,
-    "rank": 38
+    "rank": 39
   },
   {
     "scorer": "Amine Gouiri",
@@ -348,7 +357,7 @@
     "flag": "🇩🇿",
     "goals": 1,
     "penalties": 0,
-    "rank": 39
+    "rank": 40
   },
   {
     "scorer": "Ante Budimir",
@@ -357,16 +366,25 @@
     "flag": "🇭🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 40
+    "rank": 41
   },
   {
-    "scorer": "Anthony Elanga",
-    "teamId": "SWE",
-    "teamName": "Sweden",
-    "flag": "🇸🇪",
+    "scorer": "Arda Güler",
+    "teamId": "TUR",
+    "teamName": "Turkey",
+    "flag": "🇹🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 41
+    "rank": 42
+  },
+  {
+    "scorer": "Auston Trusty",
+    "teamId": "USA",
+    "teamName": "USA",
+    "flag": "🇺🇸",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 43
   },
   {
     "scorer": "Aymen Hussein",
@@ -375,7 +393,16 @@
     "flag": "🇮🇶",
     "goals": 1,
     "penalties": 0,
-    "rank": 42
+    "rank": 44
+  },
+  {
+    "scorer": "Baris Alper Yilmaz",
+    "teamId": "TUR",
+    "teamName": "Turkey",
+    "flag": "🇹🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 45
   },
   {
     "scorer": "Bradley Barcola",
@@ -384,7 +411,7 @@
     "flag": "🇫🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 43
+    "rank": 46
   },
   {
     "scorer": "Breel Embolo",
@@ -393,7 +420,7 @@
     "flag": "🇨🇭",
     "goals": 1,
     "penalties": 1,
-    "rank": 44
+    "rank": 47
   },
   {
     "scorer": "Caleb Yirenkyi",
@@ -402,7 +429,7 @@
     "flag": "🇬🇭",
     "goals": 1,
     "penalties": 0,
-    "rank": 45
+    "rank": 48
   },
   {
     "scorer": "Connor Metcalfe",
@@ -411,7 +438,16 @@
     "flag": "🇦🇺",
     "goals": 1,
     "penalties": 0,
-    "rank": 46
+    "rank": 49
+  },
+  {
+    "scorer": "Daizen Maeda",
+    "teamId": "JPN",
+    "teamName": "Japan",
+    "flag": "🇯🇵",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 50
   },
   {
     "scorer": "Emam Ashour",
@@ -420,7 +456,7 @@
     "flag": "🇪🇬",
     "goals": 1,
     "penalties": 0,
-    "rank": 47
+    "rank": 51
   },
   {
     "scorer": "Felix Nmecha",
@@ -429,7 +465,7 @@
     "flag": "🇩🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 48
+    "rank": 52
   },
   {
     "scorer": "Finn Surman",
@@ -438,7 +474,7 @@
     "flag": "🇳🇿",
     "goals": 1,
     "penalties": 0,
-    "rank": 49
+    "rank": 53
   },
   {
     "scorer": "Franck Kessié",
@@ -447,7 +483,7 @@
     "flag": "🇨🇮",
     "goals": 1,
     "penalties": 0,
-    "rank": 50
+    "rank": 54
   },
   {
     "scorer": "Gessime Yassine",
@@ -456,7 +492,7 @@
     "flag": "🇲🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 51
+    "rank": 55
   },
   {
     "scorer": "Giovanni Reyna",
@@ -465,7 +501,7 @@
     "flag": "🇺🇸",
     "goals": 1,
     "penalties": 0,
-    "rank": 52
+    "rank": 56
   },
   {
     "scorer": "Gonzalo Plata",
@@ -474,7 +510,7 @@
     "flag": "🇪🇨",
     "goals": 1,
     "penalties": 0,
-    "rank": 53
+    "rank": 57
   },
   {
     "scorer": "Granit Xhaka",
@@ -483,7 +519,7 @@
     "flag": "🇨🇭",
     "goals": 1,
     "penalties": 1,
-    "rank": 54
+    "rank": 58
   },
   {
     "scorer": "Hassan Al-Haydos",
@@ -492,7 +528,16 @@
     "flag": "🇶🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 55
+    "rank": 59
+  },
+  {
+    "scorer": "Hazem Mastouri",
+    "teamId": "TUN",
+    "teamName": "Tunisia",
+    "flag": "🇹🇳",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 60
   },
   {
     "scorer": "Hélio Varela",
@@ -501,7 +546,7 @@
     "flag": "🇨🇻",
     "goals": 1,
     "penalties": 0,
-    "rank": 56
+    "rank": 61
   },
   {
     "scorer": "Hwang In-Beom",
@@ -510,7 +555,7 @@
     "flag": "🇰🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 57
+    "rank": 62
   },
   {
     "scorer": "Ibrahim Mbaye",
@@ -519,7 +564,7 @@
     "flag": "🇸🇳",
     "goals": 1,
     "penalties": 0,
-    "rank": 58
+    "rank": 63
   },
   {
     "scorer": "Jamal Musiala",
@@ -528,7 +573,7 @@
     "flag": "🇩🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 59
+    "rank": 64
   },
   {
     "scorer": "Jáminton Campaz",
@@ -537,7 +582,16 @@
     "flag": "🇨🇴",
     "goals": 1,
     "penalties": 0,
-    "rank": 60
+    "rank": 65
+  },
+  {
+    "scorer": "Jan Paul van Hecke",
+    "teamId": "NED",
+    "teamName": "Netherlands",
+    "flag": "🇳🇱",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 66
   },
   {
     "scorer": "João Neves",
@@ -546,7 +600,7 @@
     "flag": "🇵🇹",
     "goals": 1,
     "penalties": 0,
-    "rank": 61
+    "rank": 67
   },
   {
     "scorer": "John McGinn",
@@ -555,7 +609,7 @@
     "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
     "goals": 1,
     "penalties": 0,
-    "rank": 62
+    "rank": 68
   },
   {
     "scorer": "Jovo Lukić",
@@ -564,7 +618,7 @@
     "flag": "🇧🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 63
+    "rank": 69
   },
   {
     "scorer": "Jude Bellingham",
@@ -573,7 +627,7 @@
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "goals": 1,
     "penalties": 0,
-    "rank": 64
+    "rank": 70
   },
   {
     "scorer": "Junya Ito",
@@ -582,7 +636,16 @@
     "flag": "🇯🇵",
     "goals": 1,
     "penalties": 0,
-    "rank": 65
+    "rank": 71
+  },
+  {
+    "scorer": "Kaan Ayhan",
+    "teamId": "TUR",
+    "teamName": "Turkey",
+    "flag": "🇹🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 72
   },
   {
     "scorer": "Keito Nakamura",
@@ -591,7 +654,7 @@
     "flag": "🇯🇵",
     "goals": 1,
     "penalties": 0,
-    "rank": 66
+    "rank": 73
   },
   {
     "scorer": "Kerim Alajbegovic",
@@ -600,7 +663,7 @@
     "flag": "🇧🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 67
+    "rank": 74
   },
   {
     "scorer": "Kevin Pina",
@@ -609,7 +672,7 @@
     "flag": "🇨🇻",
     "goals": 1,
     "penalties": 0,
-    "rank": 68
+    "rank": 75
   },
   {
     "scorer": "Ladislav Krejcí",
@@ -618,7 +681,7 @@
     "flag": "🇨🇿",
     "goals": 1,
     "penalties": 0,
-    "rank": 69
+    "rank": 76
   },
   {
     "scorer": "Lamine Yamal",
@@ -627,7 +690,7 @@
     "flag": "🇪🇸",
     "goals": 1,
     "penalties": 0,
-    "rank": 70
+    "rank": 77
   },
   {
     "scorer": "Leo Østigard",
@@ -636,7 +699,7 @@
     "flag": "🇳🇴",
     "goals": 1,
     "penalties": 0,
-    "rank": 71
+    "rank": 78
   },
   {
     "scorer": "Leroy Sané",
@@ -645,7 +708,7 @@
     "flag": "🇩🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 72
+    "rank": 79
   },
   {
     "scorer": "Livano Comenencia",
@@ -654,7 +717,7 @@
     "flag": "🇨🇼",
     "goals": 1,
     "penalties": 0,
-    "rank": 73
+    "rank": 80
   },
   {
     "scorer": "Luis Díaz",
@@ -663,7 +726,7 @@
     "flag": "🇨🇴",
     "goals": 1,
     "penalties": 0,
-    "rank": 74
+    "rank": 81
   },
   {
     "scorer": "Luis Romo",
@@ -672,7 +735,7 @@
     "flag": "🇲🇽",
     "goals": 1,
     "penalties": 0,
-    "rank": 75
+    "rank": 82
   },
   {
     "scorer": "Marcus Holmgren Pedersen",
@@ -681,7 +744,7 @@
     "flag": "🇳🇴",
     "goals": 1,
     "penalties": 0,
-    "rank": 76
+    "rank": 83
   },
   {
     "scorer": "Marcus Rashford",
@@ -690,7 +753,7 @@
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "goals": 1,
     "penalties": 0,
-    "rank": 77
+    "rank": 84
   },
   {
     "scorer": "Marko Arnautovic",
@@ -699,7 +762,7 @@
     "flag": "🇦🇹",
     "goals": 1,
     "penalties": 1,
-    "rank": 78
+    "rank": 85
   },
   {
     "scorer": "Martin Baturina",
@@ -708,7 +771,7 @@
     "flag": "🇭🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 79
+    "rank": 86
   },
   {
     "scorer": "Mateo Chávez",
@@ -717,7 +780,7 @@
     "flag": "🇲🇽",
     "goals": 1,
     "penalties": 0,
-    "rank": 80
+    "rank": 87
   },
   {
     "scorer": "Matías Galarza",
@@ -726,7 +789,7 @@
     "flag": "🇵🇾",
     "goals": 1,
     "penalties": 0,
-    "rank": 81
+    "rank": 88
   },
   {
     "scorer": "Mattias Svanberg",
@@ -735,7 +798,7 @@
     "flag": "🇸🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 82
+    "rank": 89
   },
   {
     "scorer": "Mauricio",
@@ -744,7 +807,7 @@
     "flag": "🇵🇾",
     "goals": 1,
     "penalties": 0,
-    "rank": 83
+    "rank": 90
   },
   {
     "scorer": "Michal Sadílek",
@@ -753,7 +816,7 @@
     "flag": "🇨🇿",
     "goals": 1,
     "penalties": 0,
-    "rank": 84
+    "rank": 91
   },
   {
     "scorer": "Mohamed Salah",
@@ -762,7 +825,7 @@
     "flag": "🇪🇬",
     "goals": 1,
     "penalties": 0,
-    "rank": 85
+    "rank": 92
   },
   {
     "scorer": "Mohammad Mohebbi",
@@ -771,7 +834,7 @@
     "flag": "🇮🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 86
+    "rank": 93
   },
   {
     "scorer": "Mostafa Zico",
@@ -780,7 +843,7 @@
     "flag": "🇪🇬",
     "goals": 1,
     "penalties": 0,
-    "rank": 87
+    "rank": 94
   },
   {
     "scorer": "Nadhir Benbouali",
@@ -789,7 +852,7 @@
     "flag": "🇩🇿",
     "goals": 1,
     "penalties": 0,
-    "rank": 88
+    "rank": 95
   },
   {
     "scorer": "Nathan Saliba",
@@ -798,7 +861,7 @@
     "flag": "🇨🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 89
+    "rank": 96
   },
   {
     "scorer": "Nathaniel Brown",
@@ -807,7 +870,7 @@
     "flag": "🇩🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 90
+    "rank": 97
   },
   {
     "scorer": "Nestory Irankunda",
@@ -816,7 +879,7 @@
     "flag": "🇦🇺",
     "goals": 1,
     "penalties": 0,
-    "rank": 91
+    "rank": 98
   },
   {
     "scorer": "Nico Schlotterbeck",
@@ -825,7 +888,7 @@
     "flag": "🇩🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 92
+    "rank": 99
   },
   {
     "scorer": "Nilson Angulo",
@@ -834,7 +897,7 @@
     "flag": "🇪🇨",
     "goals": 1,
     "penalties": 0,
-    "rank": 93
+    "rank": 100
   },
   {
     "scorer": "Nizar Al-Rashdan",
@@ -843,7 +906,7 @@
     "flag": "🇯🇴",
     "goals": 1,
     "penalties": 0,
-    "rank": 94
+    "rank": 101
   },
   {
     "scorer": "Nuno Mendes",
@@ -852,7 +915,7 @@
     "flag": "🇵🇹",
     "goals": 1,
     "penalties": 0,
-    "rank": 95
+    "rank": 102
   },
   {
     "scorer": "Oh Hyeon-Gyu",
@@ -861,7 +924,7 @@
     "flag": "🇰🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 96
+    "rank": 103
   },
   {
     "scorer": "Omar Rekik",
@@ -870,7 +933,7 @@
     "flag": "🇹🇳",
     "goals": 1,
     "penalties": 0,
-    "rank": 97
+    "rank": 104
   },
   {
     "scorer": "Ousmane Dembélé",
@@ -879,7 +942,7 @@
     "flag": "🇫🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 98
+    "rank": 105
   },
   {
     "scorer": "Petar Musa",
@@ -888,7 +951,7 @@
     "flag": "🇭🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 99
+    "rank": 106
   },
   {
     "scorer": "Promise David",
@@ -897,7 +960,7 @@
     "flag": "🇨🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 100
+    "rank": 107
   },
   {
     "scorer": "Rafael Leão",
@@ -906,7 +969,7 @@
     "flag": "🇵🇹",
     "goals": 1,
     "penalties": 0,
-    "rank": 101
+    "rank": 108
   },
   {
     "scorer": "Ramin Rezaeian",
@@ -915,7 +978,7 @@
     "flag": "🇮🇷",
     "goals": 1,
     "penalties": 0,
-    "rank": 102
+    "rank": 109
   },
   {
     "scorer": "Raúl Jiménez",
@@ -924,7 +987,7 @@
     "flag": "🇲🇽",
     "goals": 1,
     "penalties": 0,
-    "rank": 103
+    "rank": 110
   },
   {
     "scorer": "Romano Schmid",
@@ -933,7 +996,16 @@
     "flag": "🇦🇹",
     "goals": 1,
     "penalties": 0,
-    "rank": 104
+    "rank": 111
+  },
+  {
+    "scorer": "Sebastian Berhalter",
+    "teamId": "USA",
+    "teamName": "USA",
+    "flag": "🇺🇸",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 112
   },
   {
     "scorer": "Soufiane Rahimi",
@@ -942,7 +1014,7 @@
     "flag": "🇲🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 105
+    "rank": 113
   },
   {
     "scorer": "Teboho Mokoena",
@@ -951,7 +1023,7 @@
     "flag": "🇿🇦",
     "goals": 1,
     "penalties": 1,
-    "rank": 106
+    "rank": 114
   },
   {
     "scorer": "Thapelo Maseko",
@@ -960,7 +1032,7 @@
     "flag": "🇿🇦",
     "goals": 1,
     "penalties": 0,
-    "rank": 107
+    "rank": 115
   },
   {
     "scorer": "Trézéguet",
@@ -969,7 +1041,7 @@
     "flag": "🇪🇬",
     "goals": 1,
     "penalties": 0,
-    "rank": 108
+    "rank": 116
   },
   {
     "scorer": "Viktor Gyökeres",
@@ -978,7 +1050,7 @@
     "flag": "🇸🇪",
     "goals": 1,
     "penalties": 0,
-    "rank": 109
+    "rank": 117
   },
   {
     "scorer": "Virgil van Dijk",
@@ -987,7 +1059,7 @@
     "flag": "🇳🇱",
     "goals": 1,
     "penalties": 0,
-    "rank": 110
+    "rank": 118
   },
   {
     "scorer": "Wilson Isidor",
@@ -996,7 +1068,7 @@
     "flag": "🇭🇹",
     "goals": 1,
     "penalties": 0,
-    "rank": 111
+    "rank": 119
   },
   {
     "scorer": "Yoane Wissa",
@@ -1005,6 +1077,6 @@
     "flag": "🇨🇩",
     "goals": 1,
     "penalties": 0,
-    "rank": 112
+    "rank": 120
   }
 ]

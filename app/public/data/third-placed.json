@@ -2,6 +2,24 @@
   "rankings": [
     {
       "overall_rank": 1,
+      "group": "F",
+      "teamId": "SWE",
+      "team": "Sweden",
+      "flag": "🇸🇪",
+      "played": 3,
+      "won": 1,
+      "drawn": 1,
+      "lost": 1,
+      "gf": 7,
+      "ga": 7,
+      "gd": 0,
+      "pts": 4,
+      "qualified": false,
+      "eliminated": false,
+      "thirdLocked": true
+    },
+    {
+      "overall_rank": 2,
       "group": "E",
       "teamId": "ECU",
       "team": "Ecuador",
@@ -19,7 +37,7 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 2,
+      "overall_rank": 3,
       "group": "B",
       "teamId": "BIH",
       "team": "Bosnia & Herzegovina",
@@ -37,25 +55,25 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 3,
-      "group": "F",
-      "teamId": "SWE",
-      "team": "Sweden",
-      "flag": "🇸🇪",
-      "played": 2,
+      "overall_rank": 4,
+      "group": "D",
+      "teamId": "PAR",
+      "team": "Paraguay",
+      "flag": "🇵🇾",
+      "played": 3,
       "won": 1,
-      "drawn": 0,
+      "drawn": 1,
       "lost": 1,
-      "gf": 6,
-      "ga": 6,
-      "gd": 0,
-      "pts": 3,
+      "gf": 2,
+      "ga": 4,
+      "gd": -2,
+      "pts": 4,
       "qualified": false,
       "eliminated": false,
-      "thirdLocked": false
+      "thirdLocked": true
     },
     {
-      "overall_rank": 4,
+      "overall_rank": 5,
       "group": "L",
       "teamId": "CRO",
       "team": "Croatia",
@@ -73,7 +91,7 @@
       "thirdLocked": false
     },
     {
-      "overall_rank": 5,
+      "overall_rank": 6,
       "group": "A",
       "teamId": "KOR",
       "team": "South Korea",
@@ -91,29 +109,11 @@
       "thirdLocked": true
     },
     {
-      "overall_rank": 6,
+      "overall_rank": 7,
       "group": "J",
       "teamId": "ALG",
       "team": "Algeria",
       "flag": "🇩🇿",
-      "played": 2,
-      "won": 1,
-      "drawn": 0,
-      "lost": 1,
-      "gf": 2,
-      "ga": 4,
-      "gd": -2,
-      "pts": 3,
-      "qualified": false,
-      "eliminated": false,
-      "thirdLocked": false
-    },
-    {
-      "overall_rank": 7,
-      "group": "D",
-      "teamId": "PAR",
-      "team": "Paraguay",
-      "flag": "🇵🇾",
       "played": 2,
       "won": 1,
       "drawn": 0,
