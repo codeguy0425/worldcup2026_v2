@@ -69,8 +69,8 @@ export function TeamPage() {
 
   if (team && groupData && bracketData) {
     const st = groupData.standings.find(s => s.teamId === team.id)
-    if (st && st.status !== 'eliminated') {
-      // Group result step
+    if (st) {
+      // Group result step (show for ALL teams)
       pathSteps.push({
         round: 'group',
         label: st.rank === 1 ? `Group ${team.group} 1st` :
@@ -80,46 +80,55 @@ export function TeamPage() {
       })
     }
 
-    // Trace bracket path
-    let currentId = team.id  // team's actual ID (e.g. "FRA")
-    let currentOriginal = `1${team.group}`  // group seed (e.g. "1I" for group winner)
-    if (st && st.rank === 2) currentOriginal = `2${team.group}`
-    else if (st && st.rank === 3) currentOriginal = `3${team.group}`
-
-    const roundOrder: (keyof typeof roundLabels)[] = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
-    for (const rn of roundOrder) {
-      const matches = bracketData.rounds[rn] || []
-      // Find match where this team appears (via currentId or currentOriginal)
-      const bm = matches.find(m =>
-        m.team1Id === currentId || m.team2Id === currentId ||
-        m.team1Original === currentOriginal || m.team2Original === currentOriginal
-      )
-      if (!bm) break
-
-      const isT1 = bm.team1Id === currentId || bm.team1Original === currentOriginal
-      const oppId = isT1 ? bm.team2Id : bm.team1Id
-      const oppTeam = teamMap.get(oppId)
-      const hasScore = bm.score1 !== undefined
-      const teamScore = isT1 ? bm.score1 : bm.score2
-      const oppScore = isT1 ? bm.score2 : bm.score1
-      const won = hasScore ? (teamScore! > oppScore!) : null
-
+    if (st && st.status === 'eliminated') {
+      // Eliminated — show "Not qualified" and stop
       pathSteps.push({
-        round: rn,
-        label: roundLabels[rn]?.short || rn.toUpperCase(),
-        oppId: oppId,
-        oppName: oppTeam?.name || oppId,
-        oppFlag: oppTeam?.flag || '',
-        score: hasScore ? `${teamScore}–${oppScore}` : 'vs',
-        won,
+        round: 'exit',
+        label: 'Not qualified',
+        oppId: '', oppName: '', oppFlag: '', score: '', won: false,
       })
+    } else if (st) {
+      // Trace bracket path for teams that advanced
+      let currentId = team.id
+      let currentOriginal = `1${team.group}`
+      if (st.rank === 2) currentOriginal = `2${team.group}`
+      else if (st.rank === 3) currentOriginal = `3${team.group}`
 
-      // If lost or no result yet, stop
-      if (won === false) break
+      const roundOrder: (keyof typeof roundLabels)[] = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
+      for (const rn of roundOrder) {
+        const matches = bracketData.rounds[rn] || []
+        // Find match where this team appears (via currentId or currentOriginal)
+        const bm = matches.find(m =>
+          m.team1Id === currentId || m.team2Id === currentId ||
+          m.team1Original === currentOriginal || m.team2Original === currentOriginal
+        )
+        if (!bm) break
 
-      // Advance to next round: winner becomes W{matchId}
-      currentId = `W${bm.matchId}`
-      currentOriginal = ''
+        const isT1 = bm.team1Id === currentId || bm.team1Original === currentOriginal
+        const oppId = isT1 ? bm.team2Id : bm.team1Id
+        const oppTeam = teamMap.get(oppId)
+        const hasScore = bm.score1 !== undefined
+        const teamScore = isT1 ? bm.score1 : bm.score2
+        const oppScore = isT1 ? bm.score2 : bm.score1
+        const won = hasScore ? (teamScore! > oppScore!) : null
+
+        pathSteps.push({
+          round: rn,
+          label: roundLabels[rn]?.short || rn.toUpperCase(),
+          oppId: oppId,
+          oppName: oppTeam?.name || oppId,
+          oppFlag: oppTeam?.flag || '',
+          score: hasScore ? `${teamScore}–${oppScore}` : 'vs',
+          won,
+        })
+
+        // If lost or no result yet, stop
+        if (won === false) break
+
+        // Advance to next round: winner becomes W{matchId}
+        currentId = `W${bm.matchId}`
+        currentOriginal = ''
+      }
     }
   }
 
@@ -230,6 +239,11 @@ export function TeamPage() {
                       /* Group step: show record */
                       <span style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
                         {step.detail}
+                      </span>
+                    ) : step.round === 'exit' ? (
+                      /* Exit step: eliminated */
+                      <span style={{ color: '#fb7185', fontSize: '11px', fontWeight: 600 }}>
+                        ❌ Not qualified
                       </span>
                     ) : (
                       /* Bracket step: opponent + score */
