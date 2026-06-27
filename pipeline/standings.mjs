@@ -119,11 +119,24 @@ export function computeStandings(groupLetter, allMatches, teamsMap) {
         }
 
         const tp = fp[tid]
-        // Count teams definitely ahead using full tiebreaker chain
+        // Count teams potentially ahead using tiebreakers
+        // H2H is definitive (already played). Overall GD/GF can still change
+        // on the final matchday, so when H2H is perfectly tied, either team
+        // could finish ahead — count the opponent as potentially ahead.
         const aheadd = teamIds.filter(o => {
           if (o === tid) return false
           if (fp[o] > tp) return true
-          if (fp[o] === tp) return isAheadOnTiebreakers(o, tid, h2hPts, h2hGd, h2hGf, standing)
+          if (fp[o] === tp) {
+            const hPts = (h2hPts[o][tid] || 0) - (h2hPts[tid][o] || 0)
+            if (hPts !== 0) return hPts > 0
+            const hGd = (h2hGd[o][tid] || 0) - (h2hGd[tid][o] || 0)
+            if (hGd !== 0) return hGd > 0
+            const hGf = (h2hGf[o][tid] || 0) - (h2hGf[tid][o] || 0)
+            if (hGf !== 0) return hGf > 0
+            // H2H fully tied — GD/GF could change in remaining matches
+            // Conservative: count as potentially ahead
+            return true
+          }
           return false
         }).length
 
