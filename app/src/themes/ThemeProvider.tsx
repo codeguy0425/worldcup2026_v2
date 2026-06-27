@@ -55,11 +55,7 @@ function applyTheme(theme: ThemeTokens) {
 const STORAGE_KEY = 'wc2026-theme'
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [themeName, setThemeName] = useState<ThemeName>(() => {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved && saved in themes) return saved as ThemeName
-    return 'sport'
-  })
+  const [themeName, setThemeName] = useState<ThemeName>('dark')
 
   const theme = themes[themeName]
   const themeNames = Object.keys(themes) as ThemeName[]

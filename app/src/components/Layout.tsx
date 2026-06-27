@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { ThemeSwitcher } from './ThemeSwitcher'
 import { useLang } from '../hooks/LangProvider'
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -41,7 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           }}>
             {t.lang}
           </button>
-          <ThemeSwitcher />
+          {/* spacer */}
         </div>
       </nav>
 
