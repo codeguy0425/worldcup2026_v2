@@ -249,7 +249,6 @@ export function TeamPage() {
                       /* Bracket step: opponent + score */
                       <>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1 }}>
-                          <span style={{ color: '#64748b', fontSize: '10px' }}>vs</span>
                           <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
                             {step.oppFlag && <span style={{ fontSize: '13px' }}>{step.oppFlag}</span>}
                             <span style={{
