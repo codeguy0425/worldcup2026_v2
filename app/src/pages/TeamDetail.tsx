@@ -96,6 +96,8 @@ export function TeamPage() {
           m.team1Id === currentId || m.team2Id === currentId ||
           m.team1Original === currentOriginal || m.team2Original === currentOriginal
         )
+        // SF winner: skip third-place round (they're in the final)
+        if (!bm && rn === 'third') continue
         if (!bm) break
 
         const isT1 = bm.team1Id === currentId || bm.team1Original === currentOriginal
@@ -116,12 +118,21 @@ export function TeamPage() {
           won,
         })
 
-        // If lost or no result yet, stop
+        // SF loser continues to third-place match
+        if (won === false && rn === 'sf') {
+          currentId = `L${bm.matchId}`
+          currentOriginal = ''
+          continue
+        }
+        // Lost in any other round → eliminated
         if (won === false) break
 
-        // Advance to next round: winner becomes W{matchId}
+        // Advance winner to next round
         currentId = `W${bm.matchId}`
         currentOriginal = ''
+
+        // After third-place or final, no more rounds
+        if (rn === 'third' || rn === 'final') break
       }
     }
   }
