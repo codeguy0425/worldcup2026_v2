@@ -62,6 +62,7 @@ export function SchedulePage() {
     { key: 'r16', label: 'R16' },
     { key: 'qf', label: 'QF' },
     { key: 'sf', label: 'SF' },
+    { key: 'third', label: '3rd' },
     { key: 'final', label: 'Final' },
     { key: 'viutv', label: '📺 ViuTV' },
   ]
