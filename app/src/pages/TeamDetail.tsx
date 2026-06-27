@@ -120,7 +120,7 @@ export function TeamPage() {
           oppId: oppId,
           oppName: oppTeam?.name || oppId,
           oppFlag: oppTeam?.flag || '',
-          score: hasScore ? `${teamScore}–${oppScore}` : 'vs',
+          score: hasScore ? `${teamScore}–${oppScore}` : '?–?',
           won,
         })
 
