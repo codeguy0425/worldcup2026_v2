@@ -94,13 +94,14 @@ export function TeamPage() {
                 letterSpacing: '0.4px', textTransform: 'uppercase',
                 color: 'var(--accent)', marginBottom: '8px',
               }}>
-                Group {groupData.group}
+                <Link to={`/group/${groupData.group}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>
+                  Group {groupData.group} ↗
+                </Link>
               </h3>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr>
                     <th style={stadTh}>#</th>
-                    <th style={stadTh}></th>
                     <th style={{...stadTh, textAlign:'left'}}>Team</th>
                     <th style={stadTh}>P</th>
                     <th style={stadTh}>W</th>
@@ -119,8 +120,14 @@ export function TeamPage() {
                       fontWeight: s.teamId === team?.id ? 600 : 400,
                     }}>
                       <td style={stadTd}>{s.rank}</td>
-                      <td style={stadTd}>{s.flag}</td>
-                      <td style={{...stadTd, textAlign:'left', color: s.teamId === team?.id ? 'var(--accent)' : undefined}}>{s.team}</td>
+                      <td style={{...stadTd, textAlign:'left'}}>
+                        <Link to={`/team/${s.teamId}`} style={{
+                          color: s.teamId === team?.id ? 'var(--accent)' : 'var(--text)',
+                          textDecoration: 'none', fontWeight: s.teamId === team?.id ? 600 : 400,
+                        }}>
+                          {s.flag} {s.team}
+                        </Link>
+                      </td>
                       <td style={stadTd}>{s.played}</td>
                       <td style={stadTd}>{s.won}</td>
                       <td style={stadTd}>{s.drawn}</td>
