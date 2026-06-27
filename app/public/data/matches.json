@@ -2200,7 +2200,21 @@
     "group": "L",
     "groundId": "new_york",
     "num": 71,
-    "stage": "group"
+    "stage": "group",
+    "score1": 0,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 62,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG"
+      },
+      {
+        "minute": 67,
+        "scorer": "Harry Kane",
+        "teamId": "ENG"
+      }
+    ]
   },
   {
     "id": 72,
