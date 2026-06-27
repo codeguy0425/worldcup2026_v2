@@ -83,9 +83,10 @@ export function TeamPage() {
     if (st && st.status === 'eliminated') {
       // Eliminated — show "Not qualified" and stop
       pathSteps.push({
-        round: 'exit',
-        label: 'Not qualified',
+        round: 'r32',
+        label: 'R32',
         oppId: '', oppName: '', oppFlag: '', score: '', won: false,
+        detail: 'Not qualified',
       })
     } else if (st) {
       // Trace bracket path for teams that advanced
@@ -240,10 +241,9 @@ export function TeamPage() {
                       <span style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
                         {step.detail}
                       </span>
-                    ) : step.round === 'exit' ? (
-                      /* Exit step: eliminated */
+                    ) : step.detail === 'Not qualified' ? (
                       <span style={{ color: '#fb7185', fontSize: '11px', fontWeight: 600 }}>
-                        ❌ Not qualified
+                        Not qualified
                       </span>
                     ) : (
                       /* Bracket step: opponent + score */
