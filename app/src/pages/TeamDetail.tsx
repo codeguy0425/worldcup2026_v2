@@ -20,6 +20,24 @@ interface StandingRow {
 
 interface GroupData { group: string; standings: StandingRow[] }
 
+interface BracketMatch {
+  matchId: number; round: string; date: string; timeUtc?: string
+  team1Id: string; team2Id: string; team1Original: string; team2Original: string
+  team1Resolved: boolean; team2Resolved: boolean; groundId?: string
+  score1?: number; score2?: number
+}
+
+interface BracketData { rounds: Record<string, BracketMatch[]> }
+
+const roundLabels: Record<string, { short: string, full: string }> = {
+  r32: { short: 'R32', full: 'Round of 32' },
+  r16: { short: 'R16', full: 'Round of 16' },
+  qf: { short: 'QF', full: 'Quarter-final' },
+  sf: { short: 'SF', full: 'Semi-final' },
+  third: { short: '3rd', full: 'Third place' },
+  final: { short: 'Final', full: 'Final' },
+}
+
 export function TeamPage() {
   const { id } = useParams()
   const { t } = useLang()
@@ -43,6 +61,67 @@ export function TeamPage() {
 
   const groupPath = team?.group ? `/data/groups/${team.group}.json` : ''
   const { data: groupData } = useJson<GroupData>(groupPath)
+  const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
+
+  // ─── Tournament path ───
+  interface PathStep { round: string; label: string; oppId: string; oppName: string; oppFlag: string; score: string; won: boolean | null; detail?: string }
+  const pathSteps: PathStep[] = []
+
+  if (team && groupData && bracketData) {
+    const st = groupData.standings.find(s => s.teamId === team.id)
+    if (st && st.status !== 'eliminated') {
+      // Group result step
+      pathSteps.push({
+        round: 'group',
+        label: st.rank === 1 ? `Group ${team.group} 1st` :
+                st.rank === 2 ? `Group ${team.group} 2nd` : `Group ${team.group} 3rd`,
+        oppId: '', oppName: '', oppFlag: '', score: '', won: null,
+        detail: `${st.pts}pts · ${st.won}W ${st.drawn}D ${st.lost}L`,
+      })
+    }
+
+    // Trace bracket path
+    let currentId = team.id  // team's actual ID (e.g. "FRA")
+    let currentOriginal = `1${team.group}`  // group seed (e.g. "1I" for group winner)
+    if (st && st.rank === 2) currentOriginal = `2${team.group}`
+    else if (st && st.rank === 3) currentOriginal = `3${team.group}`
+
+    const roundOrder: (keyof typeof roundLabels)[] = ['r32', 'r16', 'qf', 'sf', 'third', 'final']
+    for (const rn of roundOrder) {
+      const matches = bracketData.rounds[rn] || []
+      // Find match where this team appears (via currentId or currentOriginal)
+      const bm = matches.find(m =>
+        m.team1Id === currentId || m.team2Id === currentId ||
+        m.team1Original === currentOriginal || m.team2Original === currentOriginal
+      )
+      if (!bm) break
+
+      const isT1 = bm.team1Id === currentId || bm.team1Original === currentOriginal
+      const oppId = isT1 ? bm.team2Id : bm.team1Id
+      const oppTeam = teamMap.get(oppId)
+      const hasScore = bm.score1 !== undefined
+      const teamScore = isT1 ? bm.score1 : bm.score2
+      const oppScore = isT1 ? bm.score2 : bm.score1
+      const won = hasScore ? (teamScore! > oppScore!) : null
+
+      pathSteps.push({
+        round: rn,
+        label: roundLabels[rn]?.short || rn.toUpperCase(),
+        oppId: oppId,
+        oppName: oppTeam?.name || oppId,
+        oppFlag: oppTeam?.flag || '',
+        score: hasScore ? `${teamScore}–${oppScore}` : 'vs',
+        won,
+      })
+
+      // If lost or no result yet, stop
+      if (won === false) break
+
+      // Advance to next round: winner becomes W{matchId}
+      currentId = `W${bm.matchId}`
+      currentOriginal = ''
+    }
+  }
 
   // Aggregate goal scorers for this team
   const scorers: Record<string, number> = {}
@@ -96,6 +175,64 @@ export function TeamPage() {
               </div>
             </div>
           </div>
+
+          {/* Tournament path */}
+          {pathSteps.length > 0 && (
+            <div style={{
+              background: 'var(--surface)', border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-md)', padding: '10px 14px', marginBottom: '20px',
+              overflowX: 'auto',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', minWidth: 'max-content' }}>
+                {pathSteps.map((step, i) => (
+                  <span key={step.round} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    {i > 0 && (
+                      <span style={{ color: step.won === false ? '#fb7185' : '#22d3ee', fontSize: '13px', fontWeight: 700, margin: '0 2px' }}>
+                        {step.won === false ? '✕' : '→'}
+                      </span>
+                    )}
+                    <span style={{
+                      display: 'flex', alignItems: 'center', gap: '4px',
+                      padding: '3px 8px', borderRadius: '6px', fontSize: '11px',
+                      background: step.won === false ? 'rgba(251,113,133,.1)' :
+                                  step.round === 'group' ? 'rgba(34,211,238,.08)' :
+                                  step.won === true ? 'rgba(52,211,153,.08)' :
+                                  'rgba(30,41,59,.5)',
+                      border: `1px solid ${step.won === false ? 'rgba(251,113,133,.3)' :
+                                            step.round === 'group' ? 'rgba(34,211,238,.2)' :
+                                            step.won === true ? 'rgba(52,211,153,.2)' :
+                                            'rgba(30,41,59,.5)'}`,
+                    }}>
+                      <span style={{ fontWeight: 600, color: 'var(--accent)', whiteSpace: 'nowrap' }}>{step.label}</span>
+                      {step.round === 'group' ? (
+                        <span style={{ color: 'var(--text-muted)', fontSize: '10px' }}>{step.detail}</span>
+                      ) : (
+                        <>
+                          <span style={{ color: 'var(--text-muted)' }}>vs</span>
+                          <span style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                            {step.oppFlag && <span>{step.oppFlag}</span>}
+                            <span style={{
+                              color: step.won === false ? '#fb7185' : 'var(--text)',
+                              fontWeight: step.won === true ? 600 : 400,
+                              whiteSpace: 'nowrap',
+                            }}>
+                              {step.oppName}
+                            </span>
+                          </span>
+                          <span style={{
+                            fontWeight: 700, fontSize: '12px',
+                            color: step.won === true ? '#34d399' : step.won === false ? '#fb7185' : 'var(--text-muted)',
+                          }}>
+                            {step.score}
+                          </span>
+                        </>
+                      )}
+                    </span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Group standings */}
           {groupData && (
