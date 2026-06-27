@@ -58,7 +58,8 @@
       "form": "LLW",
       "maxPts": 3,
       "confirmedFirst": false,
-      "confirmedSecond": false
+      "confirmedSecond": false,
+      "status": "advanced"
     },
     {
       "rank": 4,

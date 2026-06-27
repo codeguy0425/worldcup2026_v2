@@ -72,7 +72,8 @@ export function TeamPage() {
       })
     }
 
-    if (st && st.status === 'eliminated') {
+    const isEliminated = st?.status === 'eliminated'
+    if (st && isEliminated) {
       // Eliminated — show "Not qualified" and stop
       pathSteps.push({
         round: 'r32',

@@ -27,9 +27,7 @@ export function GroupPage() {
   const { data: matchData } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
-  const { data: thirdData } = useJson<{ rankings: any[] }>('/data/third-placed.json')
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
-  const thirdMap = new Map((thirdData?.rankings ?? []).map((r: any) => [r.teamId, r]))
 
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
 
@@ -66,8 +64,6 @@ export function GroupPage() {
                     <Link to={`/team/${s.teamId}`} style={{ fontWeight: 500, color: 'inherit', textDecoration: 'none' }}>{s.team}</Link>
                     {s.status === 'advanced' && <span style={{ marginLeft: '4px', fontSize: '8px', padding: '1px 4px', borderRadius: '2px', background: 'var(--badge-advance)', color: '#fff', fontWeight: 600 }}>A</span>}
                     {s.status === 'eliminated' && <span style={{ marginLeft: '4px', fontSize: '8px', padding: '1px 4px', borderRadius: '2px', background: 'var(--badge-eliminate)', color: '#fff', fontWeight: 600 }}>E</span>}
-                    {s.rank === 3 && thirdMap.get(s.teamId)?.qualified && <span style={{ marginLeft: '4px', fontSize: '8px', padding: '1px 4px', borderRadius: '2px', background: 'var(--badge-advance)', color: '#fff', fontWeight: 600 }}>A</span>}
-                    {s.rank === 3 && thirdMap.get(s.teamId)?.eliminated && <span style={{ marginLeft: '4px', fontSize: '8px', padding: '1px 4px', borderRadius: '2px', background: 'var(--badge-eliminate)', color: '#fff', fontWeight: 600 }}>E</span>}
                   </td>
                   <td style={{ padding: '8px 6px', textAlign: 'center' }}>{s.played}</td>
                   <td style={{ padding: '8px 6px', textAlign: 'center', color: 'var(--text-muted)' }}>{s.won}</td>

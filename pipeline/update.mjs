@@ -79,6 +79,19 @@ function main() {
   writeJSON(resolve(DATA_DIR, 'third-placed.json'), { rankings: thirdEntries, qualifyingCount: 8, totalGroups: 12 })
   console.log(`   ✅ third-placed.json — ${thirdEntries.length} entries`)
 
+  // 5b. Patch rank 3 status back into group files from third-placed results
+  for (const entry of thirdEntries) {
+    const gp = resolve(DATA_DIR, 'groups', `${entry.group}.json`)
+    const groupData = loadJSON(gp)
+    const rank3 = groupData.standings.find(s => s.rank === 3 && s.teamId === entry.teamId)
+    if (rank3) {
+      if (entry.qualified) rank3.status = 'advanced'
+      else if (entry.eliminated) rank3.status = 'eliminated'
+      writeJSON(gp, groupData)
+    }
+  }
+  console.log(`   ✅ groups/ (A–L) — rank 3 status patched from third-placed`)
+
   // 6. Bracket
   const bracket = computeBracket(matches, teamsMap, groupLabels, fairPlayScores)
   writeJSON(resolve(DATA_DIR, 'bracket.json'), bracket)

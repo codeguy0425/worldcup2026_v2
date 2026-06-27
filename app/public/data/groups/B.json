@@ -58,7 +58,8 @@
       "form": "DLW",
       "maxPts": 4,
       "confirmedFirst": false,
-      "confirmedSecond": false
+      "confirmedSecond": false,
+      "status": "advanced"
     },
     {
       "rank": 4,

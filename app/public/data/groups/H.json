@@ -58,7 +58,8 @@
       "form": "DDL",
       "maxPts": 2,
       "confirmedFirst": false,
-      "confirmedSecond": false
+      "confirmedSecond": false,
+      "status": "eliminated"
     },
     {
       "rank": 4,
