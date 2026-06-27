@@ -11,6 +11,15 @@ interface Match {
   goals?: { minute: number; scorer: string; teamId: string }[]; timeUtc?: string
 }
 
+interface StandingRow {
+  rank: number; teamId: string; team: string; flag: string
+  played: number; won: number; drawn: number; lost: number
+  gf: number; ga: number; gd: number; pts: number
+  status?: string
+}
+
+interface GroupData { group: string; standings: StandingRow[] }
+
 export function TeamPage() {
   const { id } = useParams()
   const { t } = useLang()
@@ -31,6 +40,12 @@ export function TeamPage() {
     if (m.score1 === undefined) return sum
     return sum + (m.team1Id === id ? (m.score2 ?? 0) : (m.score1 ?? 0))
   }, 0)
+
+  const groupPath = team?.group ? `/data/groups/${team.group}.json` : ''
+  const { data: groupData } = useJson<GroupData>(groupPath)
+
+  const stadTh: React.CSSProperties = { textAlign: 'left', padding: '4px 6px', borderBottom: '1px solid var(--border)', color: '#64748b', fontWeight: 500, fontSize: '9px', textTransform: 'uppercase', letterSpacing: '0.3px', fontFamily: 'var(--font-mono)' }
+  const stadTd: React.CSSProperties = { padding: '4px 6px', borderBottom: '1px solid rgba(30,41,59,.5)', color: '#cbd5e1', fontSize: '11px', fontFamily: 'var(--font-mono)' }
 
   return (
     <div>
@@ -67,6 +82,59 @@ export function TeamPage() {
               </div>
             </div>
           </div>
+
+          {/* Group standings */}
+          {groupData && (
+            <div style={{
+              background: 'var(--surface)', border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-md)', padding: '12px 14px', marginBottom: '20px',
+            }}>
+              <h3 style={{
+                fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 600,
+                letterSpacing: '0.4px', textTransform: 'uppercase',
+                color: 'var(--accent)', marginBottom: '8px',
+              }}>
+                Group {groupData.group}
+              </h3>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr>
+                    <th style={stadTh}>#</th>
+                    <th style={stadTh}></th>
+                    <th style={{...stadTh, textAlign:'left'}}>Team</th>
+                    <th style={stadTh}>P</th>
+                    <th style={stadTh}>W</th>
+                    <th style={stadTh}>D</th>
+                    <th style={stadTh}>L</th>
+                    <th style={stadTh}>GF</th>
+                    <th style={stadTh}>GA</th>
+                    <th style={stadTh}>GD</th>
+                    <th style={stadTh}>Pts</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {groupData.standings.map(s => (
+                    <tr key={s.teamId} style={{
+                      background: s.teamId === team?.id ? 'rgba(34,211,238,.08)' : undefined,
+                      fontWeight: s.teamId === team?.id ? 600 : 400,
+                    }}>
+                      <td style={stadTd}>{s.rank}</td>
+                      <td style={stadTd}>{s.flag}</td>
+                      <td style={{...stadTd, textAlign:'left', color: s.teamId === team?.id ? 'var(--accent)' : undefined}}>{s.team}</td>
+                      <td style={stadTd}>{s.played}</td>
+                      <td style={stadTd}>{s.won}</td>
+                      <td style={stadTd}>{s.drawn}</td>
+                      <td style={stadTd}>{s.lost}</td>
+                      <td style={stadTd}>{s.gf}</td>
+                      <td style={stadTd}>{s.ga}</td>
+                      <td style={stadTd}>{s.gd > 0 ? '+' : ''}{s.gd}</td>
+                      <td style={{...stadTd, color: s.teamId === team?.id ? 'var(--accent)' : 'var(--text)', fontWeight: s.teamId === team?.id ? 700 : 500}}>{s.pts}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
 
           {/* Matches */}
           <h3 style={{
