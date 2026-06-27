@@ -44,6 +44,20 @@ export function TeamPage() {
   const groupPath = team?.group ? `/data/groups/${team.group}.json` : ''
   const { data: groupData } = useJson<GroupData>(groupPath)
 
+  // Aggregate goal scorers for this team
+  const scorers: Record<string, number> = {}
+  teamMatches.forEach(m => {
+    if (!m.goals) return
+    m.goals.forEach(g => {
+      if (g.teamId === id) {
+        scorers[g.scorer] = (scorers[g.scorer] || 0) + 1
+      }
+    })
+  })
+  const scorerList = Object.entries(scorers)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([name, goals]) => ({ name, goals }))
+
   const stadTh: React.CSSProperties = { textAlign: 'left', padding: '4px 6px', borderBottom: '1px solid var(--border)', color: '#64748b', fontWeight: 500, fontSize: '9px', textTransform: 'uppercase', letterSpacing: '0.3px', fontFamily: 'var(--font-mono)' }
   const stadTd: React.CSSProperties = { padding: '4px 6px', borderBottom: '1px solid rgba(30,41,59,.5)', color: '#cbd5e1', fontSize: '11px', fontFamily: 'var(--font-mono)' }
 
@@ -136,6 +150,40 @@ export function TeamPage() {
                       <td style={stadTd}>{s.ga}</td>
                       <td style={stadTd}>{s.gd > 0 ? '+' : ''}{s.gd}</td>
                       <td style={{...stadTd, color: s.teamId === team?.id ? 'var(--accent)' : 'var(--text)', fontWeight: s.teamId === team?.id ? 700 : 500}}>{s.pts}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {/* Goal scorers */}
+          {scorerList.length > 0 && (
+            <div style={{
+              background: 'var(--surface)', border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-md)', padding: '12px 14px', marginBottom: '20px',
+            }}>
+              <h3 style={{
+                fontFamily: 'var(--font-mono)', fontSize: '10px', fontWeight: 600,
+                letterSpacing: '0.4px', textTransform: 'uppercase',
+                color: 'var(--accent)', marginBottom: '8px',
+              }}>
+                ⚽ {team.flag} Goalscorers
+              </h3>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr>
+                    <th style={stadTh}>#</th>
+                    <th style={{...stadTh, textAlign:'left'}}>Player</th>
+                    <th style={stadTh}>Goals</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {scorerList.map((s, i) => (
+                    <tr key={s.name}>
+                      <td style={stadTd}>{i + 1}</td>
+                      <td style={{...stadTd, textAlign:'left'}}>{s.name}</td>
+                      <td style={{...stadTd, fontWeight: 600, color: 'var(--accent)'}}>{s.goals}</td>
                     </tr>
                   ))}
                 </tbody>
