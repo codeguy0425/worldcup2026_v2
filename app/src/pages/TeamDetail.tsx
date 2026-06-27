@@ -180,57 +180,85 @@ export function TeamPage() {
           {pathSteps.length > 0 && (
             <div style={{
               background: 'var(--surface)', border: '1px solid var(--border)',
-              borderRadius: 'var(--radius-md)', padding: '10px 14px', marginBottom: '20px',
-              overflowX: 'auto',
+              borderRadius: 'var(--radius-md)', padding: '14px',
+              marginBottom: '20px',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', minWidth: 'max-content' }}>
-                {pathSteps.map((step, i) => (
-                  <span key={step.round} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    {i > 0 && (
-                      <span style={{ color: step.won === false ? '#fb7185' : '#22d3ee', fontSize: '13px', fontWeight: 700, margin: '0 2px' }}>
-                        {step.won === false ? '✕' : '→'}
-                      </span>
-                    )}
+              {pathSteps.map((step, i) => (
+                <span key={step.round} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  {/* Connector line between steps */}
+                  {i > 0 && (
                     <span style={{
-                      display: 'flex', alignItems: 'center', gap: '4px',
-                      padding: '3px 8px', borderRadius: '6px', fontSize: '11px',
-                      background: step.won === false ? 'rgba(251,113,133,.1)' :
-                                  step.round === 'group' ? 'rgba(34,211,238,.08)' :
-                                  step.won === true ? 'rgba(52,211,153,.08)' :
-                                  'rgba(30,41,59,.5)',
-                      border: `1px solid ${step.won === false ? 'rgba(251,113,133,.3)' :
-                                            step.round === 'group' ? 'rgba(34,211,238,.2)' :
-                                            step.won === true ? 'rgba(52,211,153,.2)' :
-                                            'rgba(30,41,59,.5)'}`,
+                      width: '2px', height: '14px',
+                      background: step.won === false ? 'rgba(251,113,133,.4)' : 'rgba(34,211,238,.4)',
+                      display: 'block',
+                    }} />
+                  )}
+
+                  {/* Step card */}
+                  <span style={{
+                    display: 'flex', alignItems: 'center', gap: '8px',
+                    padding: '8px 14px', borderRadius: '8px', fontSize: '12px', width: '100%',
+                    boxSizing: 'border-box',
+                    background: step.won === false ? 'rgba(251,113,133,.08)' :
+                                step.round === 'group' ? 'rgba(34,211,238,.06)' :
+                                step.won === true ? 'rgba(52,211,153,.06)' :
+                                'rgba(30,41,59,.3)',
+                    border: `1px solid ${step.won === false ? 'rgba(251,113,133,.25)' :
+                                          step.round === 'group' ? 'rgba(34,211,238,.15)' :
+                                          step.won === true ? 'rgba(52,211,153,.2)' :
+                                          'rgba(30,41,59,.4)'}`,
+                  }}>
+                    {/* Round badge */}
+                    <span style={{
+                      fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 700,
+                      letterSpacing: '0.5px', textTransform: 'uppercase',
+                      padding: '2px 6px', borderRadius: '4px', minWidth: '28px',
+                      textAlign: 'center', whiteSpace: 'nowrap',
+                      background: step.round === 'group' ? 'rgba(34,211,238,.15)' :
+                                  step.won === false ? 'rgba(251,113,133,.15)' :
+                                  step.won === true ? 'rgba(52,211,153,.15)' :
+                                  'rgba(100,116,139,.15)',
+                      color: step.round === 'group' ? '#22d3ee' :
+                             step.won === false ? '#fb7185' :
+                             step.won === true ? '#34d399' :
+                             '#94a3b8',
                     }}>
-                      <span style={{ fontWeight: 600, color: 'var(--accent)', whiteSpace: 'nowrap' }}>{step.label}</span>
-                      {step.round === 'group' ? (
-                        <span style={{ color: 'var(--text-muted)', fontSize: '10px' }}>{step.detail}</span>
-                      ) : (
-                        <>
-                          <span style={{ color: 'var(--text-muted)' }}>vs</span>
-                          <span style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '2px' }}>
-                            {step.oppFlag && <span>{step.oppFlag}</span>}
+                      {step.label}
+                    </span>
+
+                    {step.round === 'group' ? (
+                      /* Group step: show record */
+                      <span style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+                        {step.detail}
+                      </span>
+                    ) : (
+                      /* Bracket step: opponent + score */
+                      <>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1 }}>
+                          <span style={{ color: '#64748b', fontSize: '10px' }}>vs</span>
+                          <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                            {step.oppFlag && <span style={{ fontSize: '13px' }}>{step.oppFlag}</span>}
                             <span style={{
                               color: step.won === false ? '#fb7185' : 'var(--text)',
                               fontWeight: step.won === true ? 600 : 400,
-                              whiteSpace: 'nowrap',
+                              fontSize: '12px',
                             }}>
                               {step.oppName}
                             </span>
                           </span>
-                          <span style={{
-                            fontWeight: 700, fontSize: '12px',
-                            color: step.won === true ? '#34d399' : step.won === false ? '#fb7185' : 'var(--text-muted)',
-                          }}>
-                            {step.score}
-                          </span>
-                        </>
-                      )}
-                    </span>
+                        </span>
+                        <span style={{
+                          fontWeight: 700, fontSize: '13px', fontFamily: 'var(--font-mono)',
+                          color: step.won === true ? '#34d399' :
+                                 step.won === false ? '#fb7185' : 'var(--text-muted)',
+                        }}>
+                          {step.score}
+                        </span>
+                      </>
+                    )}
                   </span>
-                ))}
-              </div>
+                </span>
+              ))}
             </div>
           )}
 
