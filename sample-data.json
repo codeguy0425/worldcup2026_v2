@@ -2002,7 +2002,21 @@
       "group": "G",
       "groundId": "seattle",
       "num": 41,
-      "stage": "group"
+      "stage": "group",
+      "score1": 1,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 5,
+          "scorer": "Mahmoud Saber",
+          "teamId": "EGY"
+        },
+        {
+          "minute": 14,
+          "scorer": "Ramin Rezaeian",
+          "teamId": "IRN"
+        }
+      ]
     },
     {
       "id": 42,
@@ -2015,7 +2029,42 @@
       "group": "G",
       "groundId": "vancouver",
       "num": 42,
-      "stage": "group"
+      "stage": "group",
+      "score1": 1,
+      "score2": 5,
+      "goals": [
+        {
+          "minute": 28,
+          "scorer": "Leandro Trossard",
+          "teamId": "BEL"
+        },
+        {
+          "minute": 50,
+          "scorer": "Leandro Trossard",
+          "teamId": "BEL"
+        },
+        {
+          "minute": 66,
+          "scorer": "Kevin De Bruyne",
+          "teamId": "BEL"
+        },
+        {
+          "minute": 84,
+          "scorer": "Elijah Just",
+          "teamId": "NZL"
+        },
+        {
+          "minute": 86,
+          "scorer": "Romelu Lukaku",
+          "teamId": "BEL"
+        },
+        {
+          "minute": 90,
+          "scorer": "Alexis Saelemaekers",
+          "teamId": "BEL",
+          "stoppageTime": 4
+        }
+      ]
     },
     {
       "id": 43,
@@ -2146,7 +2195,10 @@
       "group": "H",
       "groundId": "houston",
       "num": 47,
-      "stage": "group"
+      "stage": "group",
+      "score1": 0,
+      "score2": 0,
+      "goals": []
     },
     {
       "id": 48,
@@ -2159,7 +2211,16 @@
       "group": "H",
       "groundId": "guadalajara",
       "num": 48,
-      "stage": "group"
+      "stage": "group",
+      "score1": 0,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 42,
+          "scorer": "Álex Baena",
+          "teamId": "ESP"
+        }
+      ]
     },
     {
       "id": 49,
