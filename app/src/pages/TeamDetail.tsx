@@ -74,7 +74,8 @@ export function TeamPage() {
       pathSteps.push({
         round: 'group',
         label: st.rank === 1 ? `Group ${team.group} 1st` :
-                st.rank === 2 ? `Group ${team.group} 2nd` : `Group ${team.group} 3rd`,
+                st.rank === 2 ? `Group ${team.group} 2nd` :
+                st.rank === 3 ? `Group ${team.group} 3rd` : `Group ${team.group} 4th`,
         oppId: '', oppName: '', oppFlag: '', score: '', won: null,
         detail: `${st.pts}pts · ${st.won}W ${st.drawn}D ${st.lost}L`,
       })
