@@ -50,15 +50,6 @@ export function TeamPage() {
     .filter(m => m.team1Id === id || m.team2Id === id)
     .sort((a, b) => a.id - b.id)
 
-  const goalsFor = teamMatches.reduce((sum, m) => {
-    if (m.score1 === undefined) return sum
-    return sum + (m.team1Id === id ? (m.score1 ?? 0) : (m.score2 ?? 0))
-  }, 0)
-  const goalsAgainst = teamMatches.reduce((sum, m) => {
-    if (m.score1 === undefined) return sum
-    return sum + (m.team1Id === id ? (m.score2 ?? 0) : (m.score1 ?? 0))
-  }, 0)
-
   const groupPath = team?.group ? `/data/groups/${team.group}.json` : ''
   const { data: groupData } = useJson<GroupData>(groupPath)
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
@@ -175,14 +166,6 @@ export function TeamPage() {
               </h1>
               <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                 {team.nameZh} · Group {team.group} · {team.continent} · FIFA #{team.ranking}
-              </div>
-            </div>
-            <div style={{ marginLeft: 'auto', textAlign: 'right' }}>
-              <div style={{ fontWeight: 700, fontSize: '20px', color: 'var(--accent)' }}>
-                {goalsFor - goalsAgainst > 0 ? '+' : ''}{goalsFor - goalsAgainst}
-              </div>
-              <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
-                {goalsFor} GF · {goalsAgainst} GA
               </div>
             </div>
           </div>
