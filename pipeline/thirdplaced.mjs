@@ -80,12 +80,19 @@ export function computeThirdPlaced(allMatches, teamsMap, groupLabels, fairPlaySc
     }).length
     e.qualified = threats < 8
 
-    const guaranteedAhead = entries.filter(o => {
-      if (o === e) return false
-      if (o.pts > e.pts) return true
-      if (o.pts === e.pts && o.thirdLocked) return isAheadOnTiebreakers(o, e)
-      return false
-    }).length
+    // Locked: guaranteed ahead = pts > e.pts, or same pts + locked + ahead on TB
+    // Unlocked: guaranteed ahead = pts > e.pts + 3 (their minimum > my max)
+    const guaranteedAhead = e.thirdLocked
+      ? entries.filter(o => {
+          if (o === e) return false
+          if (o.pts > e.pts) return true
+          if (o.pts === e.pts && o.thirdLocked) return isAheadOnTiebreakers(o, e)
+          return false
+        }).length
+      : entries.filter(o => {
+          if (o === e) return false
+          return o.pts > e.pts + 3
+        }).length
     e.eliminated = guaranteedAhead >= 8
   })
 

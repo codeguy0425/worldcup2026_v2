@@ -177,7 +177,7 @@
       "gd": 0,
       "pts": 2,
       "qualified": false,
-      "eliminated": true,
+      "eliminated": false,
       "thirdLocked": false
     },
     {
@@ -195,7 +195,7 @@
       "gd": 0,
       "pts": 2,
       "qualified": false,
-      "eliminated": true,
+      "eliminated": false,
       "thirdLocked": false
     },
     {
@@ -213,7 +213,7 @@
       "gd": -1,
       "pts": 1,
       "qualified": false,
-      "eliminated": true,
+      "eliminated": false,
       "thirdLocked": false
     }
   ],
