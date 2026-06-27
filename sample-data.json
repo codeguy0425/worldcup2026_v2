@@ -2927,7 +2927,26 @@
       "group": "L",
       "groundId": "philadelphia",
       "num": 72,
-      "stage": "group"
+      "stage": "group",
+      "score1": 2,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 31,
+          "scorer": "Petar Sucic",
+          "teamId": "CRO"
+        },
+        {
+          "minute": 73,
+          "scorer": "Derrick Luckassen",
+          "teamId": "GHA"
+        },
+        {
+          "minute": 83,
+          "scorer": "Nikola Vlasic",
+          "teamId": "CRO"
+        }
+      ]
     },
     {
       "id": 73,

@@ -97,11 +97,11 @@
         "round": "Round of 32",
         "date": "2026-07-01",
         "timeUtc": "16:00",
-        "team1Id": "1L",
+        "team1Id": "ENG",
         "team2Id": "3E/H/I/J/K",
         "team1Original": "1L",
         "team2Original": "3E/H/I/J/K",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "atlanta"
       },
@@ -137,11 +137,11 @@
         "date": "2026-07-02",
         "timeUtc": "23:00",
         "team1Id": "2K",
-        "team2Id": "2L",
+        "team2Id": "CRO",
         "team1Original": "2K",
         "team2Original": "2L",
         "team1Resolved": false,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "toronto"
       },
       {

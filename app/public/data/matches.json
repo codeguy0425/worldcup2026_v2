@@ -2227,7 +2227,26 @@
     "group": "L",
     "groundId": "philadelphia",
     "num": 72,
-    "stage": "group"
+    "stage": "group",
+    "score1": 2,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 31,
+        "scorer": "Petar Sucic",
+        "teamId": "CRO"
+      },
+      {
+        "minute": 73,
+        "scorer": "Derrick Luckassen",
+        "teamId": "GHA"
+      },
+      {
+        "minute": 83,
+        "scorer": "Nikola Vlasic",
+        "teamId": "CRO"
+      }
+    ]
   },
   {
     "id": 73,
@@ -2326,7 +2345,7 @@
     "date": "2026-07-01",
     "time": "00:00",
     "timeUtc": "16:00",
-    "team1Id": "1L",
+    "team1Id": "ENG",
     "team2Id": "3E/H/I/J/K",
     "group": "",
     "groundId": "atlanta",
@@ -2366,7 +2385,7 @@
     "time": "07:00",
     "timeUtc": "23:00",
     "team1Id": "2K",
-    "team2Id": "2L",
+    "team2Id": "CRO",
     "group": "",
     "groundId": "toronto",
     "num": 83,
