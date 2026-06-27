@@ -79,9 +79,9 @@ export function TeamPage() {
         round: 'r32',
         label: 'R32',
         oppId: '', oppName: '', oppFlag: '', score: '', won: false,
-        detail: 'Not qualified',
+        detail: '❌ Not qualified',
       })
-    } else if (st) {
+    } else if (st && st.rank <= 3) {
       // Trace bracket path for teams that advanced
       let currentId = team.id
       let currentOriginal = `1${team.group}`
