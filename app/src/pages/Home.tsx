@@ -54,6 +54,13 @@ export function HomePage() {
 
   return (
     <div>
+      {/* Banner */}
+      <img src="/banner.png" alt="World Cup 2026" style={{
+        width: '100%', maxWidth: '500px', height: 'auto',
+        display: 'block', margin: '0 auto 16px auto',
+        borderRadius: 'var(--radius-md)',
+      }} />
+
       {/* Phase banner */}
       <div style={{
         background: 'var(--accent)', color: '#fff', borderRadius: 'var(--radius-md)',
