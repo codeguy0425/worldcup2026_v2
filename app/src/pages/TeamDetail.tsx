@@ -94,7 +94,7 @@ export function TeamPage() {
                 letterSpacing: '0.4px', textTransform: 'uppercase',
                 color: 'var(--accent)', marginBottom: '8px',
               }}>
-                <Link to={`/group/${groupData.group}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>
+                <Link to={`/groups/${groupData.group}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>
                   Group {groupData.group} ↗
                 </Link>
               </h3>
