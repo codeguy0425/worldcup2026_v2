@@ -238,26 +238,39 @@ const maxPts = o.pts + (o.thirdLocked ? 0 : 3)
 <!-- Eliminated — How it works -->
 <div class="section">
   <div class="section-title">
-    <span>eliminated — definitive check</span>
+    <span>eliminated — guaranteed ahead check</span>
     <span class="tag tag-algo">algorithm</span>
   </div>
 
   <div class="card">
-    <h3><span class="badge badge-rose">condition</span> <code>eliminated = definitivelyAhead >= 8</code></h3>
+    <h3><span class="badge badge-rose">condition</span> <code>eliminated = guaranteedAhead >= 8</code></h3>
     <p style="font-size:13px;color:#94a3b8;margin-bottom:12px;line-height:1.6">
-      A team is <strong style="color:#fb7185">definitively ahead</strong> if their <strong style="color:#e2e8f0">current points</strong> (worst case — lose all remaining)
-      already exceed your <strong style="color:#e2e8f0">maximum possible points</strong> (best case — win all remaining).
+      A team is <strong style="color:#e2e8f0">guaranteed ahead</strong> if <strong style="color:#fb7185">no possible result</strong> can make them finish behind you.
+      The check differs based on whether <strong style="color:#e2e8f0">you</strong> are locked:
     </p>
-    <div class="code">const myMax = e.pts + (e.thirdLocked ? 0 : 3)
-const definitivelyAhead = entries.filter(o => {
-  if (o === e) return false
-  <span class="hl2">return o.pts &gt; myMax  <span class="cm">// Their floor > your ceiling</span></span>
-}).length
-e.eliminated = definitivelyAhead &gt;= 8</div>
-    <div class="code" style="margin-top:8px"><span class="cm">// Example: SEN (0pts, max=3)</span>
-<span class="cm">// Teams with current pts > 3:</span>
-<span class="cm">//   SWE(4), ECU(4), BIH(4), PAR(4) = 4</span>
-<span class="cm">//   4 < 8 → NOT eliminated</span></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:rgba(15,23,42,.5);border:1px solid #1e293b;border-radius:8px;padding:14px">
+        <h4 style="font-size:12px;font-weight:600;color:#22d3ee;margin-bottom:8px">🔒 Locked (you)</h4>
+        <div class="code" style="margin:0;font-size:11px"><span class="cm">// o is guaranteed ahead if:</span>
+o.pts &gt; e.pts
+<span class="cm">// OR same pts, locked, ahead on TB</span>
+o.pts === e.pts &amp;&amp; o.thirdLocked
+  &amp;&amp; isAheadOnTiebreakers(o, e)</div>
+        <p style="margin-top:8px;font-size:11px;color:#94a3b8;line-height:1.5">
+          🧠 Same-pts unlocked teams (like CRO/ALG vs SCO) are NOT guaranteed — they could worsen GD/GF on final day and fall behind on tiebreakers.
+        </p>
+      </div>
+      <div style="background:rgba(15,23,42,.5);border:1px solid #1e293b;border-radius:8px;padding:14px">
+        <h4 style="font-size:12px;font-weight:600;color:#fbbf24;margin-bottom:8px">⏳ Unlocked (you)</h4>
+        <div class="code" style="margin:0;font-size:11px"><span class="cm">// o is guaranteed ahead only if</span>
+<span class="cm">// their minimum > your maximum:</span>
+o.pts &gt; e.pts + 3</div>
+        <p style="margin-top:8px;font-size:11px;color:#94a3b8;line-height:1.5">
+          🧠 Stricter because you could still improve. Teams with ≤ your max pts aren't guaranteed — they might still be catchable.
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -319,50 +332,50 @@ e.eliminated = definitivelyAhead &gt;= 8</div>
 <!-- Current Snapshot -->
 <div class="section">
   <div class="section-title">
-    <span>Current Snapshot (25 Jun 2026)</span>
+    <span>Current Snapshot (27 Jun 2026)</span>
     <span class="tag tag-example">live</span>
   </div>
 
   <div class="card">
     <table>
       <tr>
-        <th>#</th><th>Team</th><th>Pts</th><th>GD</th><th>GF</th><th>Locked</th><th>Threats</th><th>Status</th>
+        <th>#</th><th>Team</th><th>Pts</th><th>GD</th><th>GF</th><th>Locked</th><th>Status</th>
       </tr>
       <tr class="qualified">
-        <td>1</td><td>🇸🇪 SWE (F)</td><td>4</td><td>0</td><td>7</td><td>🔒</td><td>5</td><td><span style="color:#34d399">✅ Qualified</span></td>
+        <td>1</td><td>🇸🇪 SWE (F)</td><td>4</td><td>0</td><td>7</td><td>🔒</td><td><span style="color:#34d399">✅ Qualified</span></td>
       </tr>
       <tr class="qualified">
-        <td>2</td><td>🇪🇨 ECU (E)</td><td>4</td><td>0</td><td>2</td><td>🔒</td><td>6</td><td><span style="color:#34d399">✅ Qualified</span></td>
+        <td>2</td><td>🇪🇨 ECU (E)</td><td>4</td><td>0</td><td>2</td><td>🔒</td><td><span style="color:#34d399">✅ Qualified</span></td>
       </tr>
       <tr class="qualified">
-        <td>3</td><td>🇧🇦 BIH (B)</td><td>4</td><td>-1</td><td>5</td><td>🔒</td><td>7</td><td><span style="color:#34d399">✅ Qualified</span></td>
+        <td>3</td><td>🇧🇦 BIH (B)</td><td>4</td><td>-1</td><td>5</td><td>🔒</td><td><span style="color:#34d399">✅ Qualified</span></td>
       </tr>
       <tr>
-        <td>4</td><td>🇵🇾 PAR (D)</td><td>4</td><td>-2</td><td>2</td><td>🔒</td><td>8</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>4</td><td>🇵🇾 PAR (D)</td><td>4</td><td>-2</td><td>2</td><td>🔒</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>5</td><td>🇭🇷 CRO (L)</td><td>3</td><td>-1</td><td>3</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>5</td><td>🇸🇳 SEN (I)</td><td>3</td><td>2</td><td>8</td><td>🔒</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>6</td><td>🇰🇷 KOR (A)</td><td>3</td><td>-1</td><td>2</td><td>🔒</td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>6</td><td>🇭🇷 CRO (L)</td><td>3</td><td>-1</td><td>3</td><td></td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>7</td><td>🇩🇿 ALG (J)</td><td>3</td><td>-2</td><td>2</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>7</td><td>🇰🇷 KOR (A)</td><td>3</td><td>-1</td><td>2</td><td>🔒</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>8</td><td>🏴 SCO (C)</td><td>3</td><td>-3</td><td>1</td><td>🔒</td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>8</td><td>🇩🇿 ALG (J)</td><td>3</td><td>-2</td><td>2</td><td></td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>9</td><td>🇨🇻 CPV (H)</td><td>2</td><td>0</td><td>2</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>9</td><td>🏴󠁧󠁢󠁳󠁣󠁴󠁿 SCO (C)</td><td>3</td><td>-3</td><td>1</td><td>🔒</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>10</td><td>🇧🇪 BEL (G)</td><td>2</td><td>0</td><td>1</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>10</td><td>🇨🇻 CPV (H)</td><td>2</td><td>0</td><td>2</td><td></td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>11</td><td>🇨🇩 COD (K)</td><td>1</td><td>-1</td><td>1</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>11</td><td>🇧🇪 BEL (G)</td><td>2</td><td>0</td><td>1</td><td></td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
       <tr>
-        <td>12</td><td>🇸🇳 SEN (I)</td><td>0</td><td>-3</td><td>3</td><td></td><td>—</td><td><span style="color:#fbbf24">⏳ Pending</span></td>
+        <td>12</td><td>🇨🇩 COD (K)</td><td>1</td><td>-1</td><td>1</td><td></td><td><span style="color:#fbbf24">⏳ Pending</span></td>
       </tr>
     </table>
   </div>
