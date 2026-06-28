@@ -68,10 +68,13 @@ export function ScorersPage() {
           {t.scorers.desc.replace('{n}', String(scorers.length))}
         </p>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginTop: '8px' }}>
-          <button onClick={resetFilter} style={{ fontSize: '10px', padding: '2px 8px', background: !selectedGroup ? 'var(--accent)' : 'transparent', color: !selectedGroup ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.scorers.all || 'All'}</button>
-          {!selectedGroup ? groups.map(g => (
-            <button key={g} onClick={() => { setSelectedGroup(g); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedGroup === g ? 'var(--accent)' : 'transparent', color: selectedGroup === g ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>Group {g}</button>
-          )) : (
+          {!selectedGroup ? 
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '4px', width: '100%' }}>
+            <button onClick={resetFilter} style={{ fontSize: '10px', padding: '2px 8px', background: !selectedGroup ? 'var(--accent)' : 'transparent', color: !selectedGroup ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.scorers.all || 'All'}</button>
+            {groups.map(g => (
+              <button key={g} onClick={() => { setSelectedGroup(g); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedGroup === g ? 'var(--accent)' : 'transparent', color: selectedGroup === g ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>Group {g}</button>
+            ))}
+            </div>
             <>
               <button onClick={() => { setSelectedGroup(''); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: 'transparent', color: 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer', whiteSpace: 'nowrap' }}>← {t.scorers.all || 'All'}</button>
               <div style={{ width: '100%', display: 'flex', gap: '4px', overflowX: 'auto' }}>
