@@ -9,7 +9,23 @@ interface Scorer {
 export function ScorersPage() {
   const { t } = useLang()
   const { data: scorersRaw, loading } = useJson<Scorer[]>('/data/top-scorers.json')
+  const { data: squadData } = useJson<any>('/data/squads.json')
+  const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
   const scorers = scorersRaw ?? []
+
+  // Build name map: English name → Chinese name (match by position within team)
+  const nameMap = new Map<string, string>()
+  if (squadData && squadZhData) {
+    for (const [teamId, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
+      const zhPlayers = (squadZhData as any)[teamId] as any[] | undefined
+      if (!zhPlayers) continue
+      for (let i = 0; i < Math.min(enPlayers.length, zhPlayers.length); i++) {
+        nameMap.set(enPlayers[i].name, zhPlayers[i].name)
+      }
+    }
+  }
+
+  const lang = t.lang === 'En' ? 'zh' : 'en'
 
   return (
     <div>
@@ -46,6 +62,7 @@ export function ScorersPage() {
             <tbody>
               {scorers.map((s, i) => {
                 const medal = s.rank === 1 ? '🥇' : s.rank === 2 ? '🥈' : s.rank === 3 ? '🥉' : ''
+                const zhName = lang === 'zh' ? nameMap.get(s.scorer) : null
                 return (
                   <tr key={`${s.scorer}-${s.teamId}`} style={{
                     borderBottom: i < scorers.length - 1 ? '1px solid var(--border)' : 'none',
@@ -58,7 +75,9 @@ export function ScorersPage() {
                       {medal || s.rank}
                     </td>
                     <td style={{ padding: '5px 8px', textAlign: 'center', fontSize: '15px' }}>{s.flag}</td>
-                    <td style={{ padding: '5px 8px', fontWeight: s.goals >= 3 ? 600 : 400 }}>{s.scorer}</td>
+                    <td style={{ padding: '5px 8px', fontWeight: s.goals >= 3 ? 600 : 400 }}>
+                      {zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{s.scorer}</span></> : s.scorer}
+                    </td>
                     <td style={{ padding: '5px 8px', color: 'var(--text-muted)', fontSize: '11px' }}>{s.teamName}</td>
                     <td style={{
                       padding: '5px 8px', textAlign: 'center',
