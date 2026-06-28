@@ -947,6 +947,164 @@
       "club": "Slovan Liberec"
     }
   ],
+  "CUW": [
+    {
+      "no": 1,
+      "pos": "GK",
+      "name": "Eloy Room",
+      "club": "Miami FC"
+    },
+    {
+      "no": 2,
+      "pos": "DF",
+      "name": "Shurandy Sambo",
+      "club": "Sparta Rotterdam"
+    },
+    {
+      "no": 3,
+      "pos": "DF",
+      "name": "Juriën Gaari",
+      "club": "Abha"
+    },
+    {
+      "no": 4,
+      "pos": "DF",
+      "name": "Roshon van Eijma",
+      "club": "RKC Waalwijk"
+    },
+    {
+      "no": 5,
+      "pos": "DF",
+      "name": "Sherel Floranus",
+      "club": "PEC Zwolle"
+    },
+    {
+      "no": 6,
+      "pos": "MF",
+      "name": "Godfried Roemeratoe",
+      "club": "RKC Waalwijk"
+    },
+    {
+      "no": 7,
+      "pos": "MF",
+      "name": "Juninho Bacuna",
+      "club": "Volendam"
+    },
+    {
+      "no": 8,
+      "pos": "MF",
+      "name": "Livano Comenencia",
+      "club": "Zürich"
+    },
+    {
+      "no": 9,
+      "pos": "FW",
+      "name": "Jürgen Locadia",
+      "club": "Miami FC"
+    },
+    {
+      "no": 10,
+      "pos": "MF",
+      "name": "Leandro Bacuna",
+      "club": "Iğdır"
+    },
+    {
+      "no": 11,
+      "pos": "FW",
+      "name": "Jeremy Antonisse",
+      "club": "Kifisia"
+    },
+    {
+      "no": 12,
+      "pos": "FW",
+      "name": "Sontje Hansen",
+      "club": "Middlesbrough"
+    },
+    {
+      "no": 13,
+      "pos": "FW",
+      "name": "Tyrese Noslin",
+      "club": "Telstar"
+    },
+    {
+      "no": 14,
+      "pos": "FW",
+      "name": "Kenji Gorré",
+      "club": "Maccabi Haifa"
+    },
+    {
+      "no": 15,
+      "pos": "MF",
+      "name": "Ar'jany Martha",
+      "club": "Rotherham United"
+    },
+    {
+      "no": 16,
+      "pos": "FW",
+      "name": "Jearl Margaritha",
+      "club": "Beveren"
+    },
+    {
+      "no": 17,
+      "pos": "FW",
+      "name": "Brandley Kuwas",
+      "club": "Volendam"
+    },
+    {
+      "no": 18,
+      "pos": "DF",
+      "name": "Armando Obispo",
+      "club": "PSV Eindhoven"
+    },
+    {
+      "no": 19,
+      "pos": "FW",
+      "name": "Gervane Kastaneer",
+      "club": "Terengganu"
+    },
+    {
+      "no": 20,
+      "pos": "DF",
+      "name": "Joshua Brenet",
+      "club": "Kayserispor"
+    },
+    {
+      "no": 21,
+      "pos": "MF",
+      "name": "Tahith Chong",
+      "club": "Sheffield United"
+    },
+    {
+      "no": 22,
+      "pos": "MF",
+      "name": "Kevin Felida",
+      "club": "Den Bosch"
+    },
+    {
+      "no": 23,
+      "pos": "DF",
+      "name": "Riechedly Bazoer",
+      "club": "Konyaspor"
+    },
+    {
+      "no": 24,
+      "pos": "DF",
+      "name": "Deveron Fonville",
+      "club": "NEC"
+    },
+    {
+      "no": 25,
+      "pos": "GK",
+      "name": "Tyrick Bodak",
+      "club": "Telstar"
+    },
+    {
+      "no": 26,
+      "pos": "GK",
+      "name": "Trevor Doornbusch",
+      "club": "VVV-Venlo"
+    }
+  ],
   "QAT": [
     {
       "no": 1,

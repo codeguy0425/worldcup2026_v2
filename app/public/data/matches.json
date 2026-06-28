@@ -192,7 +192,8 @@
       {
         "minute": 21,
         "scorer": "Jovo Lukić",
-        "teamId": "BIH"
+        "teamId": "BIH",
+        "scorerNo": 25
       },
       {
         "minute": 78,
@@ -828,7 +829,8 @@
       {
         "minute": 21,
         "scorer": "Livano Comenencia",
-        "teamId": "CUW"
+        "teamId": "CUW",
+        "scorerNo": 8
       },
       {
         "minute": 38,

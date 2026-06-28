@@ -40,32 +40,38 @@ for (const [k, v] of Object.entries(TEAM_NAMES)) ID_TO_WIKI[v] = k
 function parseSquad(html, teamName) {
   // Find the table right after a heading like "<h3><span id="Mexico">"
   const escaped = teamName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const pattern = new RegExp(
+  // Try standard format: <h3><span id="Name">Name</span></h3>
+  let pattern = new RegExp(
     `<h[23][^>]*>\\s*(?:<span[^>]*id="[^"]*"[^>]*>)?\\s*${escaped}\\s*(?:</span>)?\\s*</h[23]>.*?` +
-    `(<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?</table>)`,
-    's'
+    `(<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?</table>)`, 's'
   )
-  const m = html.match(pattern)
-  if (!m) return null
+  let m = html.match(pattern)
+  if (m) return { players: parseTable(m[1]), order: m[0] }
+  // Try alternative: <h3 id="Name"><span id="encoded"></span>Name</h3>
+  pattern = new RegExp(
+    `<h[23][^>]+id="[^"]*"[^>]*>\\s*<span[^>]*id="[^"]*"[^>]*>\\s*</span>\\s*${escaped}\\s*</h[23]>.*?` +
+    `(<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?</table>)`, 's'
+  )
+  m = html.match(pattern)
+  if (m) return { players: parseTable(m[1]), order: m[0] }
+  return null
+}
 
-  const table = m[1]
+function parseTable(table) {
   const rows = [...table.matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)]
   const players = []
-
   for (const row of rows) {
     const cells = [...row[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)]
     if (cells.length < 7) continue
-    // cells: No., Pos., Player, DOB, Caps, Goals, Club
     const no = parseInt(cells[0][1].replace(/<[^>]+>/g, '').trim())
     const pos = cells[1][1].replace(/<[^>]+>/g, '').trim()
-    const name = cells[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/, '').replace(/\s*\(captain\)/g, '').trim()
+    const name = cells[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
     const club = cells[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
     if (isNaN(no) || !pos || !name) continue
     const posClean = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'')
     players.push({ no, pos: posClean, name, club })
   }
-
-  return players.length > 0 ? players : null
+  return players
 }
 function parseSquadByPosition(html, enOrder, enData) {
   // Extract ALL squad tables from ZH page
@@ -121,9 +127,9 @@ async function main() {
   let found = 0
 
   for (const [wikiName, teamId] of Object.entries(TEAM_NAMES)) {
-    const players = parseSquad(html, wikiName)
-    if (players) {
-      result[teamId] = players
+    const parsed = parseSquad(html, wikiName)
+    if (parsed) {
+      result[teamId] = parsed.players
       found++
     }
   }
