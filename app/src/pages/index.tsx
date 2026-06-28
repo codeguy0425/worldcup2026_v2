@@ -320,7 +320,7 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px', flex: '1 1 180px',
                 }}>
                   <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
-                    {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return hktDateLabel(sm.date, sm.timeUtc, lang2) })()}
+                    {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(sm.date, sm.timeUtc, lang2)} ${toHkt(sm.date, sm.timeUtc).time}` })()}
                   </span>
                   <span style={{ textAlign: 'right', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {st1?.flag} {st1?.name || sm.team1Id}
@@ -363,7 +363,7 @@ export function MatchPage() {
                     background: 'var(--surface)', border: '1px solid var(--border)',
                     textDecoration: 'none', color: 'inherit', fontSize: '11px',
                   }}>
-                    {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return hktDateLabel(hfm.date, hfm.timeUtc, lang2) })()}</span>}
+                    {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hfm.date, hfm.timeUtc, lang2)} ${toHkt(hfm.date, hfm.timeUtc).time}` })()}</span>}
                     <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{t.match.winner}</span>
                     <span>vs</span>
                     <span>{fOpp || 'TBD'}</span>
@@ -381,7 +381,7 @@ export function MatchPage() {
                     background: 'var(--surface)', border: '1px solid var(--border)',
                     textDecoration: 'none', color: 'inherit', fontSize: '11px',
                   }}>
-                    {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return hktDateLabel(htm.date, htm.timeUtc, lang2) })()}</span>}
+                    {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(htm.date, htm.timeUtc, lang2)} ${toHkt(htm.date, htm.timeUtc).time}` })()}</span>}
                     <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{t.match.loser}</span>
                     <span>vs</span>
                     <span>{tOpp || 'TBD'}</span>
@@ -415,7 +415,7 @@ export function MatchPage() {
             }}>
               {hm && (
                 <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
-                  {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return hktDateLabel(hm.date, hm.timeUtc, lang2) })()}
+                  {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hm.date, hm.timeUtc, lang2)} ${toHkt(hm.date, hm.timeUtc).time}` })()}
                 </span>
               )}
               <span style={{ fontWeight: 600, fontSize: '10px' }}>
