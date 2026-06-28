@@ -86,7 +86,7 @@ export function ScorersPage() {
               })}
               </div>
             </>
-          )}
+          }
         </div>
       </div>
 
