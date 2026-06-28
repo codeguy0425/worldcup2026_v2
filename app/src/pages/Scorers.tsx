@@ -44,19 +44,18 @@ export function ScorersPage() {
   }
 
   const lang = t.lang === 'En' ? 'zh' : 'en'
-  const [filterLevel, setFilterLevel] = useState<'all'|'group'|'team'>('all')
   const [selectedGroup, setSelectedGroup] = useState('')
   const [selectedTeam, setSelectedTeam] = useState('')
   const teamToGroup = new Map<string, string>()
-  teamsData?.teams.forEach(t => teamToGroup.set(t.id, t.group))
-  const groups = [...new Set(scorers.map(s => teamToGroup.get(s.teamId)).filter(Boolean))].sort()
+  teamsData?.teams.forEach((t: any) => teamToGroup.set(t.id, t.group))
+  const groups = [...new Set(scorers.map(s => teamToGroup.get(s.teamId)).filter((x): x is string => !!x))].sort()
   const teamsInGroup = selectedGroup ? [...new Set(scorers.filter(s => teamToGroup.get(s.teamId) === selectedGroup).map(s => s.teamId))].sort() : []
   let filtered = scorers
   if (selectedTeam) filtered = filtered.filter(s => s.teamId === selectedTeam)
   else if (selectedGroup) filtered = filtered.filter(s => teamToGroup.get(s.teamId) === selectedGroup)
 
   function resetFilter() {
-    setFilterLevel('all'); setSelectedGroup(''); setSelectedTeam('')
+    setSelectedGroup(''); setSelectedTeam('')
   }
 
   return (
@@ -71,14 +70,14 @@ export function ScorersPage() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginTop: '8px' }}>
           <button onClick={resetFilter} style={{ fontSize: '10px', padding: '2px 8px', background: !selectedGroup ? 'var(--accent)' : 'transparent', color: !selectedGroup ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.scorers.all || 'All'}</button>
           {!selectedGroup ? groups.map(g => (
-            <button key={g} onClick={() => { setSelectedGroup(g); setSelectedTeam(''); setFilterLevel('group') }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedGroup === g ? 'var(--accent)' : 'transparent', color: selectedGroup === g ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>Group {g}</button>
+            <button key={g} onClick={() => { setSelectedGroup(g); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedGroup === g ? 'var(--accent)' : 'transparent', color: selectedGroup === g ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>Group {g}</button>
           )) : (
             <>
-              <button onClick={() => { setSelectedGroup(''); setSelectedTeam(''); setFilterLevel('all') }} style={{ fontSize: '10px', padding: '2px 8px', background: 'transparent', color: 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>← {t.scorers.all || 'All'}</button>
+              <button onClick={() => { setSelectedGroup(''); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: 'transparent', color: 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>← {t.scorers.all || 'All'}</button>
               {teamsInGroup.map(tid => {
                 const tm = teamMap.get(tid);
                 return (
-                  <button key={tid} onClick={() => { setSelectedTeam(tid); setFilterLevel('team') }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedTeam === tid ? 'var(--accent)' : 'transparent', color: selectedTeam === tid ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{tm ? tm.flag + ' ' + tm.name : tid}</button>
+                  <button key={tid} onClick={() => { setSelectedTeam(tid) }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedTeam === tid ? 'var(--accent)' : 'transparent', color: selectedTeam === tid ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{tm ? tm.flag + ' ' + tm.name : tid}</button>
                 );
               })}
             </>
