@@ -361,8 +361,8 @@ export function MatchPage() {
         )}
         {nextRoundInfo && nextRoundInfo.type === 'sf' && (
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-            <div><span style={{ fontWeight: 600, color: '#34d399' }}>Winner</span> → {nextRoundInfo.winner}</div>
-            <div><span style={{ fontWeight: 600, color: '#fb7185' }}>Loser</span> → {nextRoundInfo.loser}</div>
+            <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winner}</div>
+            <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loser}</div>
           </div>
         )}
 
