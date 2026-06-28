@@ -611,7 +611,7 @@ export function MatchPage() {
 
         {stadium && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)', fontSize: '12px', color: 'var(--text-muted)' }}>
-            🏟️ <Link to="/stadiums" style={{ color: 'var(--accent)', textDecoration: 'none' }}>{stadium.name}</Link>
+            🏟️ <Link to={`/stadiums#${stadium.id}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>{stadium.name}</Link>
             <span style={{ marginLeft: '8px' }}>{stadium.city}, {stadium.country}</span>
           </div>
         )}

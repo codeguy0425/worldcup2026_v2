@@ -1,7 +1,7 @@
 import { useJson } from '../hooks/useJson'
 import { useLang } from '../hooks/LangProvider'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
 import { fmtScore } from '../pages/index'
 
@@ -52,8 +52,25 @@ export function StadiumsPage() {
   const matches = matchData ?? []
   const teamMap = new Map<string, { name: string; flag: string }>()
   teamData?.teams.forEach(tm => teamMap.set(tm.id, tm))
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({})
   const lang = t.lang === 'En' ? 'zh' : 'en'
+  const scrollRefs = useRef<Record<string, HTMLDivElement | null>>({})
+
+  // Read hash on mount
+  const [expanded, setExpanded] = useState<Record<string, boolean>>(() => {
+    const h = window.location.hash.replace('#', '')
+    return h ? { [h]: true } : {}
+  })
+  const hashRef = useRef(window.location.hash.replace('#', ''))
+
+  // Scroll to stadium after data loads
+  useEffect(() => {
+    const target = hashRef.current
+    if (target && scrollRefs.current[target]) {
+      setTimeout(() => {
+        scrollRefs.current[target]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    }
+  }, [loading, stadiums])
 
   const matchMap: Record<string, Match[]> = {}
   for (const m of matches) {
@@ -80,7 +97,7 @@ export function StadiumsPage() {
           {stadiums.map(s => {
             const sm = matchMap[s.id] || []
             return (
-              <div key={s.id} style={{ borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+              <div key={s.id} ref={el => { scrollRefs.current[s.id] = el }} style={{ borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)', overflow: 'hidden' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '14px 16px' }}>
                   <div style={{ width: '40px', height: '40px', borderRadius: 'var(--radius-sm)', background: 'var(--surface-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', flexShrink: 0 }}>🏟️</div>
                   <div style={{ flex: 1, minWidth: 0 }}>
