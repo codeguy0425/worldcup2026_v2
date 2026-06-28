@@ -3,7 +3,7 @@ import { useLang } from '../hooks/LangProvider'
 
 interface Scorer {
   rank: number; scorer: string; teamId: string
-  teamName: string; flag: string; goals: number; penalties: number
+  teamName: string; flag: string; goals: number; penalties: number; scorerNo?: number
 }
 
 export function ScorersPage() {
@@ -13,15 +13,17 @@ export function ScorersPage() {
   const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
   const scorers = scorersRaw ?? []
 
-  // Build name map: English name → Chinese name (match by position within team)
+  // Build name map: teamId + scorerNo → Chinese name
   const nameMap = new Map<string, string>()
   if (squadData && squadZhData) {
     for (const [teamId, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
       const zhPlayers = (squadZhData as any)[teamId] as any[] | undefined
       if (!zhPlayers) continue
-      for (let i = 0; i < Math.min(enPlayers.length, zhPlayers.length); i++) {
-        nameMap.set(enPlayers[i].name, zhPlayers[i].name)
-        nameMap.set(enPlayers[i].name.toLowerCase(), zhPlayers[i].name)
+      const zhByNo: Record<number, any> = {}
+      zhPlayers.forEach(p => zhByNo[p.no] = p)
+      for (const ep of enPlayers) {
+        const zhP = zhByNo[ep.no]
+        if (zhP) nameMap.set(teamId + ':' + ep.no, zhP.name)
       }
     }
   }
@@ -63,7 +65,7 @@ export function ScorersPage() {
             <tbody>
               {scorers.map((s, i) => {
                 const medal = s.rank === 1 ? '🥇' : s.rank === 2 ? '🥈' : s.rank === 3 ? '🥉' : ''
-                const zhName = lang === 'zh' ? (nameMap.get(s.scorer) || nameMap.get(s.scorer.toLowerCase())) : null
+                const zhName = lang === 'zh' ? (nameMap.get(s.teamId + ':' + s.scorerNo) || nameMap.get(s.teamId + ':' + s.scorer.toLowerCase())) : null
                 return (
                   <tr key={`${s.scorer}-${s.teamId}`} style={{
                     borderBottom: i < scorers.length - 1 ? '1px solid var(--border)' : 'none',

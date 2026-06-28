@@ -59,16 +59,21 @@ export function TeamPage() {
   const activeSquad = t.lang === 'En' ? squadZhData : squadData
   const [squadSort, setSquadSort] = useState<'no'|'pos'>('no')
 
-  // Build name map for goalscorers: EN name → ZH name
+  // Build name map for goalscorers: EN name → ZH name (by shirt number or name)
   const scorerNameMap = new Map<string, string>()
   if (squadData && squadZhData) {
     for (const [tid, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
       const zhPlayers = (squadZhData as any)[tid] as any[] | undefined
       if (!zhPlayers) continue
-      for (let i = 0; i < Math.min(enPlayers.length, zhPlayers.length); i++) {
-        // Store both original and lowercase versions for fuzzy matching
-        scorerNameMap.set(enPlayers[i].name, zhPlayers[i].name)
-        scorerNameMap.set(enPlayers[i].name.toLowerCase(), zhPlayers[i].name)
+      // Map by shirt number within team
+      const zhByNo: Record<number, any> = {}
+      zhPlayers.forEach(p => zhByNo[p.no] = p)
+      for (const ep of enPlayers) {
+        const zhP = zhByNo[ep.no]
+        if (zhP) {
+          scorerNameMap.set(tid + ':' + ep.no, zhP.name)
+          scorerNameMap.set(tid + ':' + ep.name.toLowerCase(), zhP.name)
+        }
       }
     }
   }
@@ -157,18 +162,20 @@ export function TeamPage() {
   }
 
   // Aggregate goal scorers for this team
-  const scorers: Record<string, number> = {}
+  const scorers: Record<string, { goals: number; scorerNo?: number }> = {}
   teamMatches.forEach(m => {
     if (!m.goals) return
     m.goals.forEach(g => {
       if (g.teamId === id) {
-        scorers[g.scorer] = (scorers[g.scorer] || 0) + 1
+        if (!scorers[g.scorer]) scorers[g.scorer] = { goals: 0, scorerNo: g.scorerNo }
+        scorers[g.scorer].goals++
+        if (g.scorerNo !== undefined) scorers[g.scorer].scorerNo = g.scorerNo
       }
     })
   })
   const scorerList = Object.entries(scorers)
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-    .map(([name, goals]) => ({ name, goals }))
+    .sort((a, b) => b[1].goals - a[1].goals || a[0].localeCompare(b[0]))
+    .map(([name, data]) => ({ name, goals: data.goals, scorerNo: data.scorerNo }))
 
   const stadTh: React.CSSProperties = { textAlign: 'left', padding: '4px 6px', borderBottom: '1px solid var(--border)', color: '#64748b', fontWeight: 500, fontSize: '9px', textTransform: 'uppercase', letterSpacing: '0.3px', fontFamily: 'var(--font-mono)' }
   const stadTd: React.CSSProperties = { padding: '4px 6px', borderBottom: '1px solid rgba(30,41,59,.5)', color: '#cbd5e1', fontSize: '11px', fontFamily: 'var(--font-mono)' }
@@ -378,7 +385,11 @@ export function TeamPage() {
                       <td style={{...stadTd, textAlign:'left'}}>
                         {(() => {
                           const lang = t.lang === 'En' ? 'zh' : 'en'
-                          const zhName = lang === 'zh' ? (scorerNameMap.get(s.name) || scorerNameMap.get(s.name.toLowerCase())) : null
+                          const zhName = lang === 'zh' ? (
+                            s.scorerNo !== undefined
+                              ? scorerNameMap.get((id || '') + ':' + s.scorerNo)
+                              : null
+                          ) : null
                           return zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name
                         })()}
                       </td>
