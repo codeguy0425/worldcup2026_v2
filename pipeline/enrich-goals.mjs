@@ -33,7 +33,8 @@ function lookupNo(teamId, scorerName) {
   const key = (teamId + ':' + scorerName).toLowerCase()
   const fromSquad = squadMap[teamId]?.[scorerName.toLowerCase()]
   if (fromSquad !== undefined) return fromSquad
-  if (overrideMap[key] !== undefined) return overrideMap[key]
+  const ov = overrideMap[key]
+  if (ov !== undefined && ov !== null) return ov
   return undefined
 }
 
