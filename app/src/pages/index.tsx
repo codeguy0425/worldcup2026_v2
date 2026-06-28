@@ -246,8 +246,8 @@ export function MatchPage() {
   })()
 
   // ─── 1. Team form ───
-  const form1 = hasScore && teamMap.has(m.team1Id) ? computeForm(m.team1Id, allMatches) : []
-  const form2 = hasScore && teamMap.has(m.team2Id) ? computeForm(m.team2Id, allMatches) : []
+  const form1 = teamMap.has(m.team1Id) ? computeForm(m.team1Id, allMatches) : []
+  const form2 = teamMap.has(m.team2Id) ? computeForm(m.team2Id, allMatches) : []
   const formColor = { 'W': '#34d399', 'D': '#fbbf24', 'L': '#fb7185' } as Record<string, string>
 
   // ─── 3. Bracket path context ───
