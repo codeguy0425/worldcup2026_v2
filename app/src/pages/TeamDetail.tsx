@@ -475,12 +475,11 @@ export function TeamPage() {
             const filtered = squadPosFilter ? sorted.filter((p: any) => p.pos === squadPosFilter) : sorted
             return (
               <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '14px', marginTop: '20px', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                  <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', margin: 0 }}>{t.table.squad}</h3>
+                <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '8px' }}>{t.table.squad}</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
                   <button onClick={() => setSquadSort('no')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'no' ? 'var(--accent)' : 'transparent', color: squadSort === 'no' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>#</button>
                   <button onClick={() => setSquadSort('pos')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'pos' ? 'var(--accent)' : 'transparent', color: squadSort === 'pos' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.table.pos}</button>
                   <button onClick={() => setSquadSort('name')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'name' ? 'var(--accent)' : 'transparent', color: squadSort === 'name' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>A-Z</button>
-                  <span style={{ flex: 1 }} />
                   {(() => {
                     const uniquePos = [...new Set((squadPlayers as any[]).map(p => p.pos))].sort()
                     return uniquePos.map(pos => {
