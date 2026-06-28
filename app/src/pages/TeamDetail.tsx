@@ -237,7 +237,7 @@ export function TeamPage() {
                       <span style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
                         {step.detail}
                       </span>
-                    ) : step.detail === 'Not qualified' ? (
+                    ) : step.detail?.includes('Not qualified') ? (
                       <span style={{ color: '#fb7185', fontSize: '11px', fontWeight: 600 }}>
                         Not qualified
                       </span>
