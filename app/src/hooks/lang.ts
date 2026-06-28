@@ -9,7 +9,7 @@ export const en = {
   stadiums: { title: 'Stadiums', desc: '16 venues across 3 host countries', capacity: 'Capacity' },
   schedule: { title: 'Schedule', desc: '{n} matches', all: 'All' },
   match: { back: '← Back to schedule', backBracket: '← Back to bracket', winner: 'Winner', loser: 'Loser' },
-  table: { rk: 'RK', team: 'Team', p: 'P', w: 'W', d: 'D', l: 'L', gf: 'GF', ga: 'GA', gd: 'GD', pts: 'Pts', player: 'Player', goals: 'Goals', pen: 'Pen', group: 'Group' },
+  table: { rk: 'RK', team: 'Team', p: 'P', w: 'W', d: 'D', l: 'L', gf: 'GF', ga: 'GA', gd: 'GD', pts: 'Pts', player: 'Player', goals: 'Goals', pen: 'Pen', group: 'Group', squad: 'Squad', pos: 'Pos', club: 'Club' },
   round: { md: (n: number) => `Matchday ${n}`, r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final', sf: 'Semi-final', third: 'Match for third place', final: 'Final' },
   lang: '中',
 }
@@ -25,7 +25,7 @@ export const zh = {
   stadiums: { title: '球場', desc: '3 個主辦國共 16 個球場', capacity: '容量' },
   schedule: { title: '賽程', desc: '{n} 場比賽', all: '全部' },
   match: { back: '← 返回賽程', backBracket: '← 返回淘汰賽', winner: '勝方', loser: '敗方' },
-  table: { rk: '排名', team: '球隊', p: '賽', w: '勝', d: '和', l: '負', gf: '入球', ga: '失球', gd: '球差', pts: '積分', player: '球員', goals: '入球', pen: '十二碼', group: '組別' },
+  table: { rk: '排名', team: '球隊', p: '賽', w: '勝', d: '和', l: '負', gf: '入球', ga: '失球', gd: '球差', pts: '積分', player: '球員', goals: '入球', pen: '十二碼', group: '組別', pos: '位置', club: '球會', squad: '球員名單' },
   round: { md: (n: number) => `比賽日 ${n}`, r32: '32強', r16: '16強', qf: '半準決賽', sf: '準決賽', third: '季軍戰', final: '決賽' },
   lang: 'En',
 }

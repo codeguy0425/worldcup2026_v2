@@ -53,6 +53,7 @@ export function TeamPage() {
   const groupPath = team?.group ? `/data/groups/${team.group}.json` : ''
   const { data: groupData } = useJson<GroupData>(groupPath)
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
+  const { data: squadData } = useJson<any>('/data/squads.json')
 
   // ─── Tournament path ───
   interface PathStep { round: string; label: string; oppId: string; oppName: string; oppFlag: string; score: string; won: boolean | null; detail?: string }
@@ -419,6 +420,40 @@ export function TeamPage() {
               })}
             </div>
           )}
+
+          {/* Squad */}
+          {squadData && (() => {
+            const squadPlayers = squadData[team?.id || '']
+            if (!squadPlayers || squadPlayers.length === 0) return null
+            return (
+              <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '14px', marginBottom: '20px' }}>
+                <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '10px' }}>{t.table.squad || 'Squad'}</h3>
+                <div className="table-wrap">
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '11px' }}>
+                    <thead>
+                      <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                        <th style={{ padding: '4px 6px', textAlign: 'center', color: 'var(--text-muted)', fontWeight: 500, fontSize: '9px' }}>#</th>
+                        <th style={{ padding: '4px 6px', textAlign: 'center', color: 'var(--text-muted)', fontWeight: 500, fontSize: '9px' }}>{t.table.pos || 'Pos'}</th>
+                        <th style={{ padding: '4px 6px', textAlign: 'left', color: 'var(--text-muted)', fontWeight: 500, fontSize: '9px' }}>{t.table.player}</th>
+                        <th style={{ padding: '4px 6px', textAlign: 'left', color: 'var(--text-muted)', fontWeight: 500, fontSize: '9px' }}>{t.table.club || 'Club'}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {squadPlayers.map((p: any, i: number) => (
+                        <tr key={i} style={{ borderBottom: i < squadPlayers.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                          <td style={{ padding: '3px 6px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)' }}>{p.no}</td>
+                          <td style={{ padding: '3px 6px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)' }}>{p.pos}</td>
+                          <td style={{ padding: '3px 6px', fontWeight: 500 }}>{p.name}</td>
+                          <td style={{ padding: '3px 6px', color: 'var(--text-muted)', fontSize: '10px' }}>{p.club}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )
+          })()}
+
         </>
       )}
     </div>
