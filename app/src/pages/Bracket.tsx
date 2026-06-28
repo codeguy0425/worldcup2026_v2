@@ -191,7 +191,7 @@ export function BracketPage() {
             <div style={{
               fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 600,
               letterSpacing: '0.4px', textTransform: 'uppercase',
-              color: 'var(--text-muted)', marginBottom: '6px',
+              color: 'var(--accent)', marginBottom: '6px',
             }}>
               {t.round.third}
             </div>
