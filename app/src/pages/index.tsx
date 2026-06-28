@@ -385,7 +385,7 @@ export function MatchPage() {
 
         {/* Team vs Team + score */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px' }}>
-          <div style={{ textAlign: 'right' }}>
+          <div style={{ textAlign: 'right', flex: 1 }}>
             {!teamMap.has(m.team1Id) ? (
               <span style={{ fontSize: '36px', lineHeight: 1.2 }}>{t1?.flag || ''}</span>
             ) : (
@@ -413,7 +413,7 @@ export function MatchPage() {
           <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px' }}>
             {hasScore ? fmtScore(m) : 'vs'}
           </div>
-          <div style={{ textAlign: 'left' }}>
+          <div style={{ textAlign: 'left', flex: 1 }}>
             {!teamMap.has(m.team2Id) ? (
               <span style={{ fontSize: '36px', lineHeight: 1.2 }}>{t2?.flag || ''}</span>
             ) : (
