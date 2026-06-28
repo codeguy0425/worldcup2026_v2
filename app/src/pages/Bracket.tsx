@@ -18,10 +18,8 @@ const ROUND_LABELS: Record<string, string> = {
   r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final',
   sf: 'Semi-final', third: 'Third place', final: 'Final',
 }
-// ─── Tree constants ───
-const TOTAL_ROWS = 16
-const TREE_STEP: Record<string, number> = { r32: 1, r16: 2, qf: 4, sf: 8, final: 16 }
 const KNOCKOUT_ROUNDS = ['r32', 'r16', 'qf', 'sf', 'final']
+const TREE_ROWS: Record<string, number> = { r32: 16, r16: 8, qf: 4, sf: 2, final: 1 }
 const GAP_PX = 14
 
 function teamDisplay(m: BracketMatch, side: 1|2, teamMap: Map<string,any>, groupsComplete: Record<string,boolean>) {
@@ -58,10 +56,11 @@ export function BracketPage() {
 
   const rounds = bracket?.rounds ?? {}
 
-  // Build slot arrays: each round uses a uniform 16-row grid so connector lines align
+  // Build slot arrays: each round has TREE_ROWS[phase] slots, matches placed every N slots
   function buildSlots(phase: string, all: BracketMatch[]) {
-    const step = TREE_STEP[phase] || 1
-    const out: (BracketMatch|null)[] = new Array(TOTAL_ROWS).fill(null)
+    const total = TREE_ROWS[phase] || 0
+    const out: (BracketMatch|null)[] = new Array(total).fill(null)
+    const step = all.length > 0 ? total / all.length : 1
     for (let i = 0; i < all.length; i++) out[Math.round(i * step)] = all[i]
     return out
   }
@@ -101,7 +100,7 @@ export function BracketPage() {
         }}>
           {KNOCKOUT_ROUNDS.map((phase, ci) => {
             const s = slots[phase] || []
-            const step = TREE_STEP[phase] || 1
+            const rows = TREE_ROWS[phase] || 1
             const isLast = ci === KNOCKOUT_ROUNDS.length - 1
 
             return (
@@ -121,7 +120,7 @@ export function BracketPage() {
 
                 <div style={{
                   display: 'grid',
-                  gridTemplateRows: `repeat(${TOTAL_ROWS}, 1fr)`,
+                  gridTemplateRows: `repeat(${rows}, 1fr)`,
                   flex: 1, gap: '2px',
                 }}>
                   {s.map((m, ri) => {
@@ -131,8 +130,8 @@ export function BracketPage() {
                     const t2d = teamDisplay(m, 2, teamMap, groupsComplete)
                     const hasScore = m.score1 !== undefined
                     const faded = t1d.faded || t2d.faded
-                    // Connector class: pairs determined by step size
-                    const isSecondOfPair = (ri % (step * 2)) >= (step > 1 ? step : 1)
+                    // Connector class: even-indexed matches are tops of pairs, odd are bottoms
+                    const isSecondOfPair = ri % 2 === 1
 
                     return (
                       <Link
