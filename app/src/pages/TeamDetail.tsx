@@ -9,7 +9,7 @@ interface Team { id: string; name: string; nameZh: string; group: string; rankin
 interface Match {
   id: number; round: string; date: string; time: string; stage: string
   team1Id: string; team2Id: string; score1?: number; score2?: number; group?: string
-  goals?: { minute: number; scorer: string; teamId: string; scorerNo?: number }[]; timeUtc?: string
+  goals?: { minute: number; scorer: string; teamId: string; scorerNo?: number; ownGoal?: boolean }[]; timeUtc?: string
 }
 
 interface StandingRow {
