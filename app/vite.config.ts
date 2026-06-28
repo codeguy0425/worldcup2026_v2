@@ -37,6 +37,7 @@ export default defineConfig({
         clientsClaim: true,
         // Don't precache data files — always fetch fresh
         globPatterns: ['**/*.{js,css,html,svg,png,ico,woff2}'],
+        maximumFileSizeToCacheInBytes: 3000000,
         // Network-first for JSON data so live scores are always fresh
         runtimeCaching: [
           {
