@@ -112,7 +112,7 @@ function parseSquadByPosition(html, enOrder, enData) {
 
 async function main() {
   console.log('📋 Fetching EN squads from Wikipedia...')
-  const resp = await fetch(WIKI_URL)
+  const resp = await fetch(WIKI_URL, { headers: { 'User-Agent': 'WC2026App/1.0' } })
   const html = await resp.text()
   console.log(`   Downloaded ${html.length} bytes`)
 
@@ -128,12 +128,12 @@ async function main() {
   }
 
   const enOrder = [
-    // ZH page order (group order): A组 → B组 → C组 → D组 → E组 → F组 → G组 → H组 → I组 → J组 → K组 → L组
+    // ZH page order (group A→L, by standing: 1st, 2nd, 3rd, 4th)
     'MEX','RSA','KOR','CZE',           // Group A
-    'BIH','CAN','QAT','SUI',           // Group B
+    'SUI','CAN','BIH','QAT',           // Group B
     'BRA','MAR','SCO','HAI',           // Group C
     'USA','AUS','PAR','TUR',           // Group D
-    'CUW','GER','CIV','ECU',           // Group E
+    'GER','CIV','ECU','CUW',           // Group E
     'NED','JPN','SWE','TUN',           // Group F
     'BEL','EGY','IRN','NZL',           // Group G
     'ESP','CPV','URU','KSA',           // Group H
@@ -150,7 +150,7 @@ async function main() {
 
   console.log('\n📋 Fetching ZH squads from Wikipedia...')
   try {
-    const resp2 = await fetch(WIKI_ZH_URL)
+    const resp2 = await fetch(WIKI_ZH_URL, { headers: { 'Accept-Language': 'zh-Hant,zh-TW;q=0.9,zh;q=0.5' } })
     const html2 = await resp2.text()
     console.log(`   Downloaded ${html2.length} bytes`)
     const resultZh = parseSquadByPosition(html2, enOrder, result)
