@@ -261,7 +261,7 @@ export function MatchPage() {
     }
 
     // R32 / R16 / QF → next round
-    const nextRoundOrder = ['r32', 'r16', 'qf']
+    const nextRoundOrder = ['r32', 'r16', 'qf', 'sf']
     const idx = nextRoundOrder.indexOf(m.stage)
     if (idx < 0) return null
     const nextRn = nextRoundOrder[idx + 1]
