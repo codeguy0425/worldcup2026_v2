@@ -35,6 +35,18 @@ export function shortHktLabel(date: string, timeUtc: string | undefined, lang: '
   return `${names[dayOfWeek(h.date)]} ${h.date.slice(5)}`
 }
 
+const MONTH_NAMES_EN = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+
+/** Format date for home/match page: English "Sun 28 June", Chinese "6月28日(日)" */
+export function hktDateLabel(date: string, timeUtc: string | undefined, lang: 'en'|'zh'): string {
+  const h = toHkt(date, timeUtc)
+  const m = parseInt(h.date.slice(5, 7))
+  const d = parseInt(h.date.slice(8))
+  const wd = dayOfWeek(h.date)
+  if (lang === 'zh') return `${m}月${d}日(${DAY_NAMES_ZH[wd]})`
+  return `${DAY_NAMES_EN[wd]} ${d} ${MONTH_NAMES_EN[m - 1]}`
+}
+
 /** Format a short HKT date for display (MM-DD) */
 export function shortHkt(date: string, timeUtc?: string): string {
   return toHkt(date, timeUtc).date.slice(5)
