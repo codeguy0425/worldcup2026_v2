@@ -73,13 +73,15 @@ export function ScorersPage() {
             <button key={g} onClick={() => { setSelectedGroup(g); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedGroup === g ? 'var(--accent)' : 'transparent', color: selectedGroup === g ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>Group {g}</button>
           )) : (
             <>
-              <button onClick={() => { setSelectedGroup(''); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: 'transparent', color: 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>← {t.scorers.all || 'All'}</button>
+              <button onClick={() => { setSelectedGroup(''); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: 'transparent', color: 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer', whiteSpace: 'nowrap' }}>← {t.scorers.all || 'All'}</button>
+              <div style={{ display: 'flex', gap: '4px', overflowX: 'auto', flexShrink: 0 }}>
               {teamsInGroup.map(tid => {
                 const tm = teamMap.get(tid);
                 return (
                   <button key={tid} onClick={() => { setSelectedTeam(tid) }} style={{ fontSize: '10px', padding: '2px 8px', background: selectedTeam === tid ? 'var(--accent)' : 'transparent', color: selectedTeam === tid ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{tm ? tm.flag + ' ' + tm.name : tid}</button>
                 );
               })}
+              </div>
             </>
           )}
         </div>
