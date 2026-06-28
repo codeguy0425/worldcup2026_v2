@@ -2,7 +2,7 @@ import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
 import { toHkt } from '../hooks/hkTime'
 import { useLang } from '../hooks/LangProvider'
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 
 interface BracketMatch {
   matchId: number; round: string; date: string
@@ -45,13 +45,6 @@ export function BracketPage() {
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
   const scrollRef = useRef<HTMLDivElement>(null)
-
-  // Scroll to final on desktop
-  useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollLeft = scrollRef.current.scrollWidth
-    }
-  }, [])
 
   const groupsComplete: Record<string, boolean> = {}
   if (matches) {
