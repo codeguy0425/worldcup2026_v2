@@ -43,7 +43,7 @@ export function TeamPage() {
   const { id } = useParams()
   const { t } = useLang()
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
-  const { data: matches, loading } = useJson<Match[]>('/data/matches.json')
+  const { data: matches, loading } = useJson<Match[]>('/data/matches.json?v=2')
 
   const team = teamData?.teams.find(t => t.id === id)
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
@@ -54,8 +54,8 @@ export function TeamPage() {
   const groupPath = team?.group ? `/data/groups/${team.group}.json` : ''
   const { data: groupData } = useJson<GroupData>(groupPath)
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
-  const { data: squadData } = useJson<any>('/data/squads.json')
-  const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
+  const { data: squadData } = useJson<any>('/data/squads.json?v=2')
+  const { data: squadZhData } = useJson<any>('/data/squads-zh.json?v=2')
   const activeSquad = t.lang === 'En' ? squadZhData : squadData
   const [squadSort, setSquadSort] = useState<'no'|'pos'>('no')
   const [squadPosFilter, setSquadPosFilter] = useState<string>('')

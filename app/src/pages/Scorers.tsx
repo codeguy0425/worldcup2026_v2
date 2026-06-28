@@ -9,8 +9,8 @@ interface Scorer {
 export function ScorersPage() {
   const { t } = useLang()
   const { data: scorersRaw, loading } = useJson<Scorer[]>('/data/top-scorers.json')
-  const { data: squadData } = useJson<any>('/data/squads.json')
-  const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
+  const { data: squadData } = useJson<any>('/data/squads.json?v=2')
+  const { data: squadZhData } = useJson<any>('/data/squads-zh.json?v=2')
   const scorers = scorersRaw ?? []
 
   // Build name map: teamId + scorerNo → Chinese name
