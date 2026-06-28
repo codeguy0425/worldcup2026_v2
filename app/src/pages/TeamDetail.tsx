@@ -56,6 +56,7 @@ export function TeamPage() {
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: squadData } = useJson<any>('/data/squads.json?v=2')
   const { data: squadZhData } = useJson<any>('/data/squads-zh.json?v=2')
+  const { data: overrideData } = useJson<any>('/data/scorer-no-override.json')
   const activeSquad = t.lang === 'En' ? squadZhData : squadData
   const [squadSort, setSquadSort] = useState<'no'|'pos'|'name'>('no')
   const [squadPosFilter, setSquadPosFilter] = useState<string>('')
@@ -66,7 +67,6 @@ export function TeamPage() {
     for (const [tid, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
       const zhPlayers = (squadZhData as any)[tid] as any[] | undefined
       if (!zhPlayers) continue
-      // Map by shirt number within team
       const zhByNo: Record<number, any> = {}
       zhPlayers.forEach(p => zhByNo[p.no] = p)
       for (const ep of enPlayers) {
@@ -76,6 +76,14 @@ export function TeamPage() {
           scorerNameMap.set(tid + ':' + ep.name.toLowerCase(), zhP.name)
         }
       }
+    }
+  }
+
+  // Apply manual override shirt numbers
+  const overrideMap = new Map<string, number>()
+  if (overrideData) {
+    for (const [key, no] of Object.entries(overrideData) as [string, any][]) {
+      if (no !== null) overrideMap.set(key.toLowerCase(), no as number)
     }
   }
 
@@ -389,7 +397,7 @@ export function TeamPage() {
                           const zhName = lang === 'zh' ? (
                             s.scorerNo !== undefined
                               ? scorerNameMap.get((id || '') + ':' + s.scorerNo)
-                              : null
+                              : scorerNameMap.get((id || '') + ':' + overrideMap.get((id || '').toLowerCase() + ':' + s.name.toLowerCase()))
                           ) : null
                           return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name}{s.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{s.scorerNo}</span> : ''}</>
                         })()}

@@ -11,6 +11,7 @@ export function ScorersPage() {
   const { data: scorersRaw, loading } = useJson<Scorer[]>('/data/top-scorers.json')
   const { data: squadData } = useJson<any>('/data/squads.json?v=2')
   const { data: squadZhData } = useJson<any>('/data/squads-zh.json?v=2')
+  const { data: overrideData } = useJson<any>('/data/scorer-no-override.json')
   const scorers = scorersRaw ?? []
 
   // Build name map: teamId + scorerNo → Chinese name
@@ -25,6 +26,12 @@ export function ScorersPage() {
         const zhP = zhByNo[ep.no]
         if (zhP) nameMap.set(teamId + ':' + ep.no, zhP.name)
       }
+    }
+  }
+  const overrideMap = new Map<string, number>()
+  if (overrideData) {
+    for (const [key, no] of Object.entries(overrideData) as [string, any][]) {
+      if (no !== null) overrideMap.set(key.toLowerCase(), no as number)
     }
   }
 
@@ -65,7 +72,7 @@ export function ScorersPage() {
             <tbody>
               {scorers.map((s, i) => {
                 const medal = s.rank === 1 ? '🥇' : s.rank === 2 ? '🥈' : s.rank === 3 ? '🥉' : ''
-                const zhName = lang === 'zh' ? (nameMap.get(s.teamId + ':' + s.scorerNo) || nameMap.get(s.teamId + ':' + s.scorer.toLowerCase())) : null
+                const zhName = lang === 'zh' ? (nameMap.get(s.teamId + ':' + s.scorerNo) || nameMap.get(s.teamId + ':' + (overrideMap.get(s.teamId.toLowerCase() + ':' + s.scorer.toLowerCase()) || s.scorer.toLowerCase()))) : null
                 return (
                   <tr key={`${s.scorer}-${s.teamId}`} style={{
                     borderBottom: i < scorers.length - 1 ? '1px solid var(--border)' : 'none',
