@@ -121,7 +121,7 @@ export function BracketPage() {
                 <div style={{
                   display: 'grid',
                   gridTemplateRows: `repeat(${rows}, 1fr)`,
-                  flex: 1, gap: '2px',
+                  flex: 1, gap: '2px', alignItems: 'center',
                 }}>
                   {s.map((m, ri) => {
                     if (!m) return <div key={ri} style={{ minHeight: '38px' }} />
