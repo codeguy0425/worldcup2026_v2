@@ -62,7 +62,7 @@ interface Match {
 }
 
 interface GoalEvent {
-  minute: number; scorer: string; teamId: string
+  minute: number; scorer: string; teamId: string; scorerNo?: number
   ownGoal?: boolean; penalty?: boolean; stoppageTime?: number
 }
 
