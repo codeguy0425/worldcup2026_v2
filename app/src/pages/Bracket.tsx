@@ -196,17 +196,33 @@ export function BracketPage() {
               {t.round.third}
             </div>
             <Link to={`/match/${m.matchId}`} style={{
-              display: 'flex', alignItems: 'center', gap: '8px',
-              padding: '6px 12px', borderRadius: 'var(--radius-sm)',
+              display: 'flex', alignItems: 'center', gap: '3px',
+              padding: '4px 6px', borderRadius: 'var(--radius-sm)',
               background: 'var(--surface)', border: '1px solid var(--border)',
-              textDecoration: 'none', color: 'inherit', fontSize: '12px',
-              maxWidth: '300px',
+              textDecoration: 'none', color: 'inherit', fontSize: '10px',
+              minHeight: '36px', maxWidth: '300px',
             }}>
-              <span style={{ flex: 1, textAlign: 'right' }}>{t1d.flag} {t1d.name}</span>
-              <span style={{ fontWeight: 700, color: hasScore ? 'var(--text)' : 'var(--text-muted)' }}>
+              <span style={{
+                fontFamily: 'var(--font-mono)', fontSize: '7px',
+                color: 'var(--text-muted)', minWidth: '30px',
+                whiteSpace: 'nowrap',
+              }}>
+                {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)}` })()}
+              </span>
+              <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <span style={{ fontSize: '12px' }}>{t1d.flag}</span>
+                <span style={{ marginLeft: '1px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100px', display: 'inline-block', verticalAlign: 'middle' }}>{t1d.name}</span>
+              </span>
+              <span style={{
+                fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center',
+                color: hasScore ? 'var(--text)' : 'var(--text-muted)',
+              }}>
                 {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
               </span>
-              <span style={{ flex: 1 }}>{t2d.name} {t2d.flag}</span>
+              <span style={{ flex: 1, overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>
+                <span style={{ marginLeft: '1px', fontSize: '12px' }}>{t2d.flag}</span>
+              </span>
             </Link>
           </div>
         )
