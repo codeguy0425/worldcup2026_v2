@@ -23,6 +23,14 @@ function trRound(r: string, t: any): string {
   return m[r] || r
 }
 
+/** Format score with penalty shootout if applicable */
+export function fmtScore(m: { score1?: number; score2?: number; penalty1?: number; penalty2?: number }): string {
+  if (m.score1 === undefined) return 'vs'
+  const s = `${m.score1}–${m.score2}`
+  if (m.penalty1 !== undefined) return `${s} (${m.penalty1}–${m.penalty2} pens)`
+  return s
+}
+
 // Compute last N results for a team
 function computeForm(teamId: string, allMatches: Match[]): ('W'|'D'|'L')[] {
   const played = allMatches
@@ -176,7 +184,7 @@ export function SchedulePage() {
                       fontWeight: 700, fontSize: '14px', minWidth: '32px', textAlign: 'center',
                       color: hasScore ? 'var(--text)' : 'var(--text-muted)',
                     }}>
-                      {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
+                      {hasScore ? fmtScore(m) : 'vs'}
                     </span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, minWidth: 0 }}>
                       <span style={{ fontWeight: 500, fontSize: '12px', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '80px' }}>{t2?.name || m.team2Id}</span>
@@ -326,7 +334,7 @@ export function MatchPage() {
                     {st1?.flag} {st1?.name || sm.team1Id}
                   </span>
                   <span style={{ fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center', color: sh ? 'var(--text)' : 'var(--text-muted)' }}>
-                    {sh ? `${sm.score1}–${sm.score2}` : 'vs'}
+                    {sh ? fmtScore(sm) : 'vs'}
                   </span>
                   <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {st2?.name || sm.team2Id} {st2?.flag}
@@ -374,7 +382,7 @@ export function MatchPage() {
             )}
           </div>
           <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px' }}>
-            {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
+            {hasScore ? fmtScore(m) : 'vs'}
           </div>
           <div style={{ textAlign: 'left' }}>
             {!teamMap.has(m.team2Id) ? (

@@ -1,6 +1,7 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
 import { toHkt } from '../hooks/hkTime'
+import { fmtScore } from '../pages/index'
 import { useLang } from '../hooks/LangProvider'
 import { useRef } from 'react'
 
@@ -166,7 +167,7 @@ export function BracketPage() {
                           fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center',
                           color: hasScore ? 'var(--text)' : 'var(--text-muted)',
                         }}>
-                          {hasScore ? `${m.score1}–${m.score2}` : 'v'}
+                          {hasScore ? fmtScore(m) : 'v'}
                         </span>
                         <span style={{ flex: 1, overflow: 'hidden', whiteSpace: 'nowrap' }}>
                           <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '70px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>
@@ -219,7 +220,7 @@ export function BracketPage() {
                 fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center',
                 color: hasScore ? 'var(--text)' : 'var(--text-muted)',
               }}>
-                {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
+                {hasScore ? fmtScore(m) : 'vs'}
               </span>
               <span style={{ flex: 1, overflow: 'hidden', whiteSpace: 'nowrap' }}>
                 <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '100px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>

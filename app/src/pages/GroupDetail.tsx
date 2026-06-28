@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
+import { fmtScore } from '../pages/index'
 import { useLang } from '../hooks/LangProvider'
 
 interface Standing {
@@ -100,7 +101,7 @@ export function GroupPage() {
                 {t1?.flag || ''} {t1?.name || m.team1Id}
               </span>
               <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center', color: hasScore ? 'var(--text)' : 'var(--text-muted)' }}>
-                {hasScore ? `${m.score1}–${m.score2}` : 'vs'}
+                  {hasScore ? fmtScore(m) : 'vs'}
               </span>
               <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {t2?.flag || ''} {t2?.name || m.team2Id}
