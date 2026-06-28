@@ -86,7 +86,7 @@ export function GroupsPage() {
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
-        <h1 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '2px' }}>{t.groups.title}</h1>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.groups.title}</h1>
         <p style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
           {t.groups.desc}
         </p>

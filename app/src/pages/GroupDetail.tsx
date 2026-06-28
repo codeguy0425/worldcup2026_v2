@@ -40,7 +40,7 @@ export function GroupPage() {
     <div>
       <Link to="/groups" style={{ fontSize: '12px', color: 'var(--accent)', marginBottom: '16px', display: 'inline-block' }}>{t.groups.backAll}</Link>
 
-      <h1 style={{ fontSize: '22px', fontWeight: 700, marginBottom: '16px' }}>
+      <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
         {groupNames[g] || `Group ${g}`}
       </h1>
 
