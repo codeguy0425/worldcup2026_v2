@@ -57,6 +57,8 @@ const MATRIX_ENTRIES = [
   { key: 'DEFGHIJL', assign: { '1A':'3E', '1B':'3G', '1D':'3J', '1E':'3D', '1G':'3H', '1I':'3F', '1K':'3L', '1L':'3I' } },
   // Row 9: excluded={A,B,C,L}  qualifying={D,E,F,G,H,I,J,K}
   { key: 'DEFGHIJK', assign: { '1A':'3E', '1B':'3G', '1D':'3J', '1E':'3D', '1G':'3H', '1I':'3F', '1K':'3I', '1L':'3K' } },
+  // Row 10: excluded={A,C,G,H}  qualifying={B,D,E,F,I,J,K,L}
+  { key: 'BDEFIJKL', assign: { '1A':'3E', '1B':'3J', '1D':'3B', '1E':'3D', '1G':'3I', '1I':'3F', '1K':'3L', '1L':'3K' } },
   // ═══ ADD ROWS 10–495 HERE ═══
 ]
 
