@@ -88,7 +88,7 @@ function parseSquadByPosition(html, teamOrder) {
       const name = c[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
       const club = c[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
       if (isNaN(no) || !pos || !name) continue
-      const posClean2 = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'')
+      const posClean2 = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'').replace(/门将/g,'門將').replace(/后卫/g,'後衛').replace(/守门员/g,'門將')
       players.push({ no, pos: posClean2, name, club })
     }
     if (players.length > 0 && ti < teamIds.length) {
