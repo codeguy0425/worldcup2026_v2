@@ -203,6 +203,9 @@ export function MatchPage() {
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const curMatch = (matches ?? []).find(m => m.id === Number(id))
+  const gpPath = curMatch?.group ? `/data/groups/${curMatch.group}.json` : ''
+  const { data: groupData } = useJson<any>(gpPath)
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
   const allMatches = matches ?? []
@@ -328,6 +331,43 @@ export function MatchPage() {
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
             <span style={{ fontWeight: 600 }}>Winner → {nextRoundInfo.round}</span>
             <span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
+          </div>
+        )}
+
+        {/* 2. Group standings mini-table */}
+        {m.group && groupData && (
+          <div style={{ marginTop: '18px', paddingTop: '14px', borderTop: '1px solid var(--border)' }}>
+            <Link to={`/groups/${m.group}`} style={{
+              fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 600,
+              letterSpacing: '0.4px', textTransform: 'uppercase',
+              color: 'var(--accent)', textDecoration: 'none', marginBottom: '8px', display: 'inline-block',
+            }}>Group {m.group} · Standings</Link>
+            <div style={{ display: 'grid', gridTemplateColumns: '24px 1fr 28px 28px 28px', gap: '2px 6px', fontSize: '11px', fontFamily: 'var(--font-mono)', alignItems: 'center' }}>
+              <span style={{ color: 'var(--text-muted)', fontSize: '9px' }}>RK</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '9px', textAlign: 'left' }}>{t.table.team}</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '9px', textAlign: 'center' }}>{t.table.p}</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '9px', textAlign: 'center' }}>{t.table.gd}</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '9px', textAlign: 'center' }}>{t.table.pts}</span>
+              {(groupData.standings || []).map((s: any) => {
+                const isT1 = s.teamId === m.team1Id
+                const isT2 = s.teamId === m.team2Id
+                return (<span key={s.teamId} style={{ display: 'contents' }}>
+                  <span style={{ color: isT1 || isT2 ? (isT1 ? '#22d3ee' : '#f472b6') : 'var(--text-muted)', fontWeight: isT1 || isT2 ? 700 : 400 }}>{s.rank}</span>
+                    <span style={{
+                      textAlign: 'left', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                      color: isT1 || isT2 ? (isT1 ? '#22d3ee' : '#f472b6') : 'var(--text)',
+                      fontWeight: isT1 || isT2 ? 700 : 400,
+                      background: isT1 || isT2 ? (isT1 ? 'rgba(34,211,238,.08)' : 'rgba(244,114,182,.08)') : 'transparent',
+                      borderRadius: '2px', padding: '1px 3px',
+                    }}>
+                      {s.flag} {s.team}
+                    </span>
+                    <span style={{ textAlign: 'center', color: isT1 || isT2 ? 'var(--text)' : 'var(--text-muted)' }}>{s.played}</span>
+                    <span style={{ textAlign: 'center', color: isT1 || isT2 ? 'var(--text)' : 'var(--text-muted)' }}>{s.gd > 0 ? `+${s.gd}` : s.gd}</span>
+                    <span style={{ textAlign: 'center', fontWeight: 700, color: isT1 || isT2 ? 'var(--text)' : 'var(--text-muted)' }}>{s.pts}</span>
+                  </span>)
+              })}
+            </div>
           </div>
         )}
 
