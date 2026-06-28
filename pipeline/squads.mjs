@@ -150,7 +150,7 @@ async function main() {
 
   console.log('\n📋 Fetching ZH squads from Wikipedia...')
   try {
-    const resp2 = await fetch(WIKI_ZH_URL, { headers: { 'Accept-Language': 'zh-Hant,zh-TW;q=0.9,zh;q=0.5' } })
+    const resp2 = await fetch(WIKI_ZH_URL, { headers: { 'Accept-Language': 'zh-HK,zh-Hant-HK;q=0.9,zh-TW;q=0.5' } })
     const html2 = await resp2.text()
     console.log(`   Downloaded ${html2.length} bytes`)
     const resultZh = parseSquadByPosition(html2, enOrder, result)
