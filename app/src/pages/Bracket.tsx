@@ -167,7 +167,7 @@ export function BracketPage() {
                           fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center',
                           color: hasScore ? 'var(--text)' : 'var(--text-muted)',
                         }}>
-                          {hasScore ? fmtScore(m) : 'v'}
+                          {hasScore ? fmtScore(m) : 'vs'}
                         </span>
                         <span style={{ flex: 1, overflow: 'hidden', whiteSpace: 'nowrap' }}>
                           <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '70px', display: 'inline-block', verticalAlign: 'middle' }}>{t2d.name}</span>
