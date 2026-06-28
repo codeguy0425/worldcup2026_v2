@@ -66,19 +66,16 @@ function parseSquad(html, teamName) {
 
   return players.length > 0 ? players : null
 }
-
-function parseSquadByPosition(html, teamOrder) {
+function parseSquadByPosition(html, enOrder, enData) {
+  // Extract ALL squad tables from ZH page
   const tables = [...html.matchAll(/<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?<\/table>/gs)]
-  const teamIds = Object.values(TEAM_NAMES)
-  const result = {}
-  let ti = 0
+  const zhTables = []
   for (const t of tables) {
     const rows = [...t[0].matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)]
     if (rows.length < 2) continue
     const cells = [...rows[1][1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)]
     if (cells.length < 7) continue
-    const firstNo = parseInt(cells[0][1].replace(/<[^>]+>/g, '').trim())
-    if (isNaN(firstNo)) continue
+    if (isNaN(parseInt(cells[0][1].replace(/<[^>]+>/g, '').trim()))) continue
     const players = []
     for (const row of rows) {
       const c = [...row[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)]
@@ -88,12 +85,27 @@ function parseSquadByPosition(html, teamOrder) {
       const name = c[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
       const club = c[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
       if (isNaN(no) || !pos || !name) continue
-      const posClean2 = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'').replace(/门将/g,'門將').replace(/后卫/g,'後衛').replace(/守门员/g,'門將')
-      players.push({ no, pos: posClean2, name, club })
+      const posClean = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'').replace(/门将/g,'門將').replace(/后卫/g,'後衛').replace(/守门员/g,'門將')
+      players.push({ no, pos: posClean, name, club })
     }
-    if (players.length > 0 && ti < teamIds.length) {
-      result[teamIds[ti++]] = players
+    if (players.length > 0) zhTables.push(players)
+  }
+  // Match each EN team to the best ZH table by shirt number overlap
+  // Since all teams use 1-26, exact match doesn't help. Use position + sample check
+  const used = new Set()
+  const result = {}
+  for (let ti = 0; ti < enOrder.length; ti++) {
+    const teamId = enOrder[ti]
+    const enPlayers = enData[teamId]
+    if (!enPlayers) continue
+    // Find the NEXT unassigned ZH table
+    let zhIdx = -1
+    for (let i = 0; i < zhTables.length; i++) {
+      if (!used.has(i)) { zhIdx = i; break }
     }
+    if (zhIdx < 0) break
+    result[teamId] = zhTables[zhIdx]
+    used.add(zhIdx)
   }
   return result
 }
@@ -115,6 +127,22 @@ async function main() {
     }
   }
 
+  const enOrder = [
+    // ZH page order (group order): A组 → B组 → C组 → D组 → E组 → F组 → G组 → H组 → I组 → J组 → K组 → L组
+    'MEX','RSA','KOR','CZE',           // Group A
+    'BIH','CAN','QAT','SUI',           // Group B
+    'BRA','MAR','SCO','HAI',           // Group C
+    'USA','AUS','PAR','TUR',           // Group D
+    'CUW','GER','CIV','ECU',           // Group E
+    'NED','JPN','SWE','TUN',           // Group F
+    'BEL','EGY','IRN','NZL',           // Group G
+    'ESP','CPV','URU','KSA',           // Group H
+    'FRA','NOR','SEN','IRQ',           // Group I
+    'ARG','AUT','ALG','JOR',           // Group J
+    'COL','POR','COD','UZB',           // Group K
+    'ENG','CRO','GHA','PAN',           // Group L
+  ]
+
   const outPath = resolve(DATA_DIR, 'squads.json')
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, JSON.stringify(result, null, 2), 'utf-8')
@@ -125,7 +153,7 @@ async function main() {
     const resp2 = await fetch(WIKI_ZH_URL)
     const html2 = await resp2.text()
     console.log(`   Downloaded ${html2.length} bytes`)
-    const resultZh = parseSquadByPosition(html2, TEAM_NAMES)
+    const resultZh = parseSquadByPosition(html2, enOrder, result)
     const foundZh = Object.keys(resultZh).length
     const outZhPath = resolve(DATA_DIR, 'squads-zh.json')
     writeFileSync(outZhPath, JSON.stringify(resultZh, null, 2), 'utf-8')
