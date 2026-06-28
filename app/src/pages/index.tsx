@@ -226,6 +226,17 @@ export function MatchPage() {
   const hasScore = m.score1 !== undefined
   const isBracketMatch = bracketStages.has(m.stage)
 
+  // ─── Parent matches (for knockout, show the matches that led here) ───
+  const parentMatches = (() => {
+    if (!isBracketMatch || m.stage === 'r32' || !allMatches.length) return null
+    const p1 = m.team1Id.match(/^([WL])(\d+)$/)
+    const p2 = m.team2Id.match(/^([WL])(\d+)$/)
+    if (!p1 && !p2) return null
+    const src1 = p1 ? allMatches.find(x => x.id === Number(p1[2])) : null
+    const src2 = p2 ? allMatches.find(x => x.id === Number(p2[2])) : null
+    return { src1, src2 }
+  })()
+
   // ─── 1. Team form ───
   const form1 = hasScore && teamMap.has(m.team1Id) ? computeForm(m.team1Id, allMatches) : []
   const form2 = hasScore && teamMap.has(m.team2Id) ? computeForm(m.team2Id, allMatches) : []
@@ -289,6 +300,44 @@ export function MatchPage() {
         <Link to="/schedule" style={{ fontSize: '12px', color: 'var(--accent)' }}>{t.match.back}</Link>
         {isBracketMatch && <Link to="/bracket" style={{ fontSize: '12px', color: 'var(--accent)' }}>{t.match.backBracket}</Link>}
       </div>
+
+      {/* Parent matches that produced this knockout match */}
+      {parentMatches && (parentMatches.src1 || parentMatches.src2) && (
+        <div style={{ marginBottom: '12px', fontSize: '11px' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+            {(t.round as any)[({r16:'r32',qf:'r16',sf:'qf',third:'sf',final:'sf'})[m.stage] || 'r32'] || 'Previous'} → {trRound(m.round, t)}
+          </div>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            {([parentMatches.src1, parentMatches.src2].filter((x): x is Match => !!x)).map(sm => {
+              const st1 = teamMap.get(sm.team1Id)
+              const st2 = teamMap.get(sm.team2Id)
+              const sh = sm.score1 !== undefined
+              return (
+                <Link key={sm.id} to={`/match/${sm.id}`} style={{
+                  display: 'flex', alignItems: 'center', gap: '4px',
+                  padding: '5px 10px', borderRadius: 'var(--radius-sm)',
+                  background: 'var(--surface)', border: '1px solid var(--border)',
+                  textDecoration: 'none', color: 'inherit', fontSize: '11px', flex: '1 1 180px',
+                }}>
+                  <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
+                    {(() => { const h = toHkt(sm.date, sm.timeUtc); return h.date.slice(5) })()}
+                  </span>
+                  <span style={{ textAlign: 'right', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {st1?.flag} {st1?.name || sm.team1Id}
+                  </span>
+                  <span style={{ fontWeight: 700, fontSize: '11px', minWidth: '18px', textAlign: 'center', color: sh ? 'var(--text)' : 'var(--text-muted)' }}>
+                    {sh ? `${sm.score1}–${sm.score2}` : 'vs'}
+                  </span>
+                  <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {st2?.name || sm.team2Id} {st2?.flag}
+                  </span>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
       <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px', position: 'relative', display: 'inline-block' }}>
           {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
