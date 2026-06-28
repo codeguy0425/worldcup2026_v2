@@ -442,17 +442,77 @@ export function MatchPage() {
         )}
 
         {/* Bracket path context */}
-        {nextRoundInfo && nextRoundInfo.type === 'single' && (
-          <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
-            <span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.round}<span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
-          </div>
-        )}
-        {nextRoundInfo && nextRoundInfo.type === 'sf' && (
-          <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-            <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}{nextRoundInfo.winnerOpp ? ` vs ${nextRoundInfo.winnerOpp}` : ''}</div>
-            <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}{nextRoundInfo.loserOpp ? ` vs ${nextRoundInfo.loserOpp}` : ''}</div>
-          </div>
-        )}
+        {nextRoundInfo && nextRoundInfo.type === 'single' && (() => {
+          const wId = `W${m.id}`
+          const nextRn: string = ({r32:'r16',r16:'qf',qf:'sf',sf:'final'})[m.stage] || ''
+          const nextMs = bracketData?.rounds[nextRn] || []
+          const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+          const isT1 = nm?.team1Id === wId
+          const oppId = nm ? (isT1 ? nm.team2Id : nm.team1Id) : ''
+          const oppTeam = oppId ? teamMap.get(oppId) : null
+          const hm = nm ? allMatches.find(x => x.id === nm.matchId) : null
+          return (
+            <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
+              <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{t.match.winner} → {nextRoundInfo.round}</div>
+              {nm && (
+                <Link to={`/match/${nm.matchId}`} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  padding: '5px 10px', borderRadius: 'var(--radius-sm)',
+                  background: 'var(--surface)', border: '1px solid var(--border)',
+                  textDecoration: 'none', color: 'inherit', fontSize: '11px',
+                }}>
+                  {hm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hm.date, hm.timeUtc, lang2)} ${toHkt(hm.date, hm.timeUtc).time}` })()}</span>}
+                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{t.match.winner}</span>
+                  <span>vs</span>
+                  <span>{oppTeam ? `${oppTeam.flag} ${oppTeam.name}` : oppId}</span>
+                </Link>
+              )}
+            </div>
+          )
+        })()}
+        {nextRoundInfo && nextRoundInfo.type === 'sf' && bracketData && (() => {
+          const wId = `W${m.id}`, lId = `L${m.id}`
+          const finalMs = bracketData.rounds['final'] || []
+          const thirdMs = bracketData.rounds['third'] || []
+          const fm = finalMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+          const tm = thirdMs.find((n: BracketMatch) => n.team1Id === lId || n.team2Id === lId)
+          const fOpp = fm ? (() => { const isT1 = fm.team1Id === wId; const o = teamMap.get(isT1 ? fm.team2Id : fm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? fm.team2Id : fm.team1Id) })() : null
+          const tOpp = tm ? (() => { const isT1 = tm.team1Id === lId; const o = teamMap.get(isT1 ? tm.team2Id : tm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? tm.team2Id : tm.team1Id) })() : null
+          const hfm = allMatches.find(x => x.id === fm?.matchId)
+          const htm = allMatches.find(x => x.id === tm?.matchId)
+          return (
+            <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
+              <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}{nextRoundInfo.winnerOpp ? ` vs ${nextRoundInfo.winnerOpp}` : ''}</div>
+              {fm && (
+                <Link to={`/match/${fm.matchId}`} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  padding: '5px 10px', borderRadius: 'var(--radius-sm)',
+                  background: 'var(--surface)', border: '1px solid var(--border)',
+                  textDecoration: 'none', color: 'inherit', fontSize: '11px', marginBottom: '4px',
+                }}>
+                  {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hfm.date, hfm.timeUtc, lang2)} ${toHkt(hfm.date, hfm.timeUtc).time}` })()}</span>}
+                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{t.match.winner}</span>
+                  <span>vs</span>
+                  <span>{fOpp || 'TBD'}</span>
+                </Link>
+              )}
+              <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}{nextRoundInfo.loserOpp ? ` vs ${nextRoundInfo.loserOpp}` : ''}</div>
+              {tm && (
+                <Link to={`/match/${tm.matchId}`} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                  padding: '5px 10px', borderRadius: 'var(--radius-sm)',
+                  background: 'var(--surface)', border: '1px solid var(--border)',
+                  textDecoration: 'none', color: 'inherit', fontSize: '11px',
+                }}>
+                  {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(htm.date, htm.timeUtc, lang2)} ${toHkt(htm.date, htm.timeUtc).time}` })()}</span>}
+                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{t.match.loser}</span>
+                  <span>vs</span>
+                  <span>{tOpp || 'TBD'}</span>
+                </Link>
+              )}
+            </div>
+          )
+        })()}
 
         {/* 2. Group standings mini-table */}
         {m.group && groupData && (
@@ -554,95 +614,6 @@ export function MatchPage() {
           </div>
         )}
 
-      {/* Next bracket match */}
-      {nextRoundInfo && bracketData && m.stage === 'sf' && (() => {
-        const wId = `W${m.id}`, lId = `L${m.id}`
-        const finalMs = bracketData.rounds['final'] || []
-        const thirdMs = bracketData.rounds['third'] || []
-        const fm = finalMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
-        const tm = thirdMs.find((n: BracketMatch) => n.team1Id === lId || n.team2Id === lId)
-        const fOpp = fm ? (() => { const isT1 = fm.team1Id === wId; const o = teamMap.get(isT1 ? fm.team2Id : fm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? fm.team2Id : fm.team1Id) })() : null
-        const tOpp = tm ? (() => { const isT1 = tm.team1Id === lId; const o = teamMap.get(isT1 ? tm.team2Id : tm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? tm.team2Id : tm.team1Id) })() : null
-        const hfm = allMatches.find(x => x.id === fm?.matchId)
-        const htm = allMatches.find(x => x.id === tm?.matchId)
-        return (
-          <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)', fontSize: '11px' }}>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              {fm && (
-                <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>
-                    {t.match.winner} → {t.round.final}
-                  </div>
-                  <Link to={`/match/${fm.matchId}`} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '4px',
-                    padding: '5px 10px', borderRadius: 'var(--radius-sm)',
-                    background: 'var(--surface)', border: '1px solid var(--border)',
-                    textDecoration: 'none', color: 'inherit', fontSize: '11px',
-                  }}>
-                    {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hfm.date, hfm.timeUtc, lang2)} ${toHkt(hfm.date, hfm.timeUtc).time}` })()}</span>}
-                    <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{t.match.winner}</span>
-                    <span>vs</span>
-                    <span>{fOpp || 'TBD'}</span>
-                  </Link>
-                </div>
-              )}
-              {tm && (
-                <div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>
-                    {t.match.loser} → {t.round.third}
-                  </div>
-                  <Link to={`/match/${tm.matchId}`} style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '4px',
-                    padding: '5px 10px', borderRadius: 'var(--radius-sm)',
-                    background: 'var(--surface)', border: '1px solid var(--border)',
-                    textDecoration: 'none', color: 'inherit', fontSize: '11px',
-                  }}>
-                    {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(htm.date, htm.timeUtc, lang2)} ${toHkt(htm.date, htm.timeUtc).time}` })()}</span>}
-                    <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{t.match.loser}</span>
-                    <span>vs</span>
-                    <span>{tOpp || 'TBD'}</span>
-                  </Link>
-                </div>
-              )}
-            </div>
-          </div>
-        )
-      })()}
-      {nextRoundInfo && bracketData && m.stage !== 'sf' && (() => {
-        const wId = `W${m.id}`
-        const nextRn: string = ({r32:'r16',r16:'qf',qf:'sf'})[m.stage] || ''
-        const nextMs = bracketData.rounds[nextRn] || []
-        const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
-        if (!nm || !nextRn) return null
-        const isT1 = nm.team1Id === wId
-        const oppId = isT1 ? nm.team2Id : nm.team1Id
-        const oppTeam = teamMap.get(oppId)
-        const hm = allMatches.find(x => x.id === nm.matchId)
-        return (
-          <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)', fontSize: '11px' }}>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>
-              {t.match.winner} → {(t.round as any)[nextRn] || nextRn.toUpperCase()}
-            </div>
-            <Link to={`/match/${nm.matchId}`} style={{
-              display: 'inline-flex', alignItems: 'center', gap: '4px',
-              padding: '5px 10px', borderRadius: 'var(--radius-sm)',
-              background: 'var(--surface)', border: '1px solid var(--border)',
-              textDecoration: 'none', color: 'inherit', fontSize: '11px',
-            }}>
-              {hm && (
-                <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
-                  {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hm.date, hm.timeUtc, lang2)} ${toHkt(hm.date, hm.timeUtc).time}` })()}
-                </span>
-              )}
-              <span style={{ fontWeight: 600, fontSize: '10px' }}>
-                {t.match.winner}
-              </span>
-              <span>vs</span>
-              <span>{oppTeam ? `${oppTeam.flag} ${oppTeam.name}` : oppId}</span>
-            </Link>
-          </div>
-        )
-      })()}
       </div>
     </div>
   )
