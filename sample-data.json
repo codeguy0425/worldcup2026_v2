@@ -2608,7 +2608,43 @@
       "group": "J",
       "groundId": "kansas_city",
       "num": 59,
-      "stage": "group"
+      "stage": "group",
+      "score1": 3,
+      "score2": 3,
+      "goals": [
+        {
+          "minute": 28,
+          "scorer": "Marko Arnautovic",
+          "teamId": "AUT"
+        },
+        {
+          "minute": 45,
+          "scorer": "Rafik Belghali",
+          "teamId": "ALG"
+        },
+        {
+          "minute": 55,
+          "scorer": "Marcel Sabitzer",
+          "teamId": "AUT"
+        },
+        {
+          "minute": 60,
+          "scorer": "Riyad Mahrez",
+          "teamId": "ALG"
+        },
+        {
+          "minute": 90,
+          "scorer": "Riyad Mahrez",
+          "teamId": "ALG",
+          "stoppageTime": 3
+        },
+        {
+          "minute": 90,
+          "scorer": "Sasa Kalajdzic",
+          "teamId": "AUT",
+          "stoppageTime": 6
+        }
+      ]
     },
     {
       "id": 60,
@@ -2621,7 +2657,32 @@
       "group": "J",
       "groundId": "dallas",
       "num": 60,
-      "stage": "group"
+      "stage": "group",
+      "score1": 1,
+      "score2": 3,
+      "goals": [
+        {
+          "minute": 19,
+          "scorer": "Giovani Lo Celso",
+          "teamId": "ARG"
+        },
+        {
+          "minute": 31,
+          "scorer": "Lautaro Martínez",
+          "teamId": "ARG",
+          "penalty": true
+        },
+        {
+          "minute": 55,
+          "scorer": "Mousa Al-Tamari",
+          "teamId": "JOR"
+        },
+        {
+          "minute": 80,
+          "scorer": "Lionel Messi",
+          "teamId": "ARG"
+        }
+      ]
     },
     {
       "id": 61,
@@ -2765,7 +2826,10 @@
       "group": "K",
       "groundId": "miami",
       "num": 65,
-      "stage": "group"
+      "stage": "group",
+      "score1": 0,
+      "score2": 0,
+      "goals": []
     },
     {
       "id": 66,
@@ -2778,7 +2842,33 @@
       "group": "K",
       "groundId": "atlanta",
       "num": 66,
-      "stage": "group"
+      "stage": "group",
+      "score1": 3,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 10,
+          "scorer": "Eldor Shomurodov",
+          "teamId": "UZB"
+        },
+        {
+          "minute": 68,
+          "scorer": "Yoane Wissa",
+          "teamId": "COD",
+          "penalty": true
+        },
+        {
+          "minute": 78,
+          "scorer": "Fiston Mayele",
+          "teamId": "COD"
+        },
+        {
+          "minute": 90,
+          "scorer": "Yoane Wissa",
+          "teamId": "COD",
+          "stoppageTime": 1
+        }
+      ]
     },
     {
       "id": 67,

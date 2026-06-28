@@ -1908,7 +1908,43 @@
     "group": "J",
     "groundId": "kansas_city",
     "num": 59,
-    "stage": "group"
+    "stage": "group",
+    "score1": 3,
+    "score2": 3,
+    "goals": [
+      {
+        "minute": 28,
+        "scorer": "Marko Arnautovic",
+        "teamId": "AUT"
+      },
+      {
+        "minute": 45,
+        "scorer": "Rafik Belghali",
+        "teamId": "ALG"
+      },
+      {
+        "minute": 55,
+        "scorer": "Marcel Sabitzer",
+        "teamId": "AUT"
+      },
+      {
+        "minute": 60,
+        "scorer": "Riyad Mahrez",
+        "teamId": "ALG"
+      },
+      {
+        "minute": 90,
+        "scorer": "Riyad Mahrez",
+        "teamId": "ALG",
+        "stoppageTime": 3
+      },
+      {
+        "minute": 90,
+        "scorer": "Sasa Kalajdzic",
+        "teamId": "AUT",
+        "stoppageTime": 6
+      }
+    ]
   },
   {
     "id": 60,
@@ -1921,7 +1957,32 @@
     "group": "J",
     "groundId": "dallas",
     "num": 60,
-    "stage": "group"
+    "stage": "group",
+    "score1": 1,
+    "score2": 3,
+    "goals": [
+      {
+        "minute": 19,
+        "scorer": "Giovani Lo Celso",
+        "teamId": "ARG"
+      },
+      {
+        "minute": 31,
+        "scorer": "Lautaro Martínez",
+        "teamId": "ARG",
+        "penalty": true
+      },
+      {
+        "minute": 55,
+        "scorer": "Mousa Al-Tamari",
+        "teamId": "JOR"
+      },
+      {
+        "minute": 80,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG"
+      }
+    ]
   },
   {
     "id": 61,
@@ -2065,7 +2126,10 @@
     "group": "K",
     "groundId": "miami",
     "num": 65,
-    "stage": "group"
+    "stage": "group",
+    "score1": 0,
+    "score2": 0,
+    "goals": []
   },
   {
     "id": 66,
@@ -2078,7 +2142,33 @@
     "group": "K",
     "groundId": "atlanta",
     "num": 66,
-    "stage": "group"
+    "stage": "group",
+    "score1": 3,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 10,
+        "scorer": "Eldor Shomurodov",
+        "teamId": "UZB"
+      },
+      {
+        "minute": 68,
+        "scorer": "Yoane Wissa",
+        "teamId": "COD",
+        "penalty": true
+      },
+      {
+        "minute": 78,
+        "scorer": "Fiston Mayele",
+        "teamId": "COD"
+      },
+      {
+        "minute": 90,
+        "scorer": "Yoane Wissa",
+        "teamId": "COD",
+        "stoppageTime": 1
+      }
+    ]
   },
   {
     "id": 67,
@@ -2268,7 +2358,7 @@
     "time": "04:30",
     "timeUtc": "20:30",
     "team1Id": "GER",
-    "team2Id": "3A/B/C/D/F",
+    "team2Id": "SWE",
     "group": "",
     "groundId": "boston",
     "num": 74,
@@ -2307,7 +2397,7 @@
     "time": "05:00",
     "timeUtc": "21:00",
     "team1Id": "FRA",
-    "team2Id": "3C/D/F/G/H",
+    "team2Id": "SWE",
     "group": "",
     "groundId": "new_york",
     "num": 77,
@@ -2333,7 +2423,7 @@
     "time": "09:00",
     "timeUtc": "01:00",
     "team1Id": "MEX",
-    "team2Id": "3C/E/F/H/I",
+    "team2Id": "SWE",
     "group": "",
     "groundId": "mexico_city",
     "num": 79,
@@ -2346,7 +2436,7 @@
     "time": "00:00",
     "timeUtc": "16:00",
     "team1Id": "ENG",
-    "team2Id": "3E/H/I/J/K",
+    "team2Id": "COD",
     "group": "",
     "groundId": "atlanta",
     "num": 80,
@@ -2359,7 +2449,7 @@
     "time": "08:00",
     "timeUtc": "00:00",
     "team1Id": "USA",
-    "team2Id": "3B/E/F/I/J",
+    "team2Id": "SWE",
     "group": "",
     "groundId": "san_francisco",
     "num": 81,
@@ -2372,7 +2462,7 @@
     "time": "04:00",
     "timeUtc": "20:00",
     "team1Id": "BEL",
-    "team2Id": "3A/E/H/I/J",
+    "team2Id": "ECU",
     "group": "",
     "groundId": "seattle",
     "num": 82,
@@ -2384,7 +2474,7 @@
     "date": "2026-07-02",
     "time": "07:00",
     "timeUtc": "23:00",
-    "team1Id": "2K",
+    "team1Id": "POR",
     "team2Id": "CRO",
     "group": "",
     "groundId": "toronto",
@@ -2398,7 +2488,7 @@
     "time": "03:00",
     "timeUtc": "19:00",
     "team1Id": "ESP",
-    "team2Id": "2J",
+    "team2Id": "AUT",
     "group": "",
     "groundId": "los_angeles",
     "num": 84,
@@ -2411,7 +2501,7 @@
     "time": "11:00",
     "timeUtc": "03:00",
     "team1Id": "SUI",
-    "team2Id": "3E/F/G/I/J",
+    "team2Id": "SWE",
     "group": "",
     "groundId": "vancouver",
     "num": 85,
@@ -2436,8 +2526,8 @@
     "date": "2026-07-04",
     "time": "09:30",
     "timeUtc": "01:30",
-    "team1Id": "1K",
-    "team2Id": "3D/E/I/J/L",
+    "team1Id": "COL",
+    "team2Id": "GHA",
     "group": "",
     "groundId": "kansas_city",
     "num": 87,

@@ -1,6 +1,6 @@
 {
-  "phase": "group",
-  "groupComplete": false,
+  "phase": "r32",
+  "groupComplete": true,
   "allComplete": false,
   "generatedAt": "2026-06-28"
 }

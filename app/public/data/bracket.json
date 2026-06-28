@@ -20,11 +20,11 @@
         "date": "2026-06-29",
         "timeUtc": "20:30",
         "team1Id": "GER",
-        "team2Id": "3A/B/C/D/F",
+        "team2Id": "SWE",
         "team1Original": "GER",
         "team2Original": "3A/B/C/D/F",
         "team1Resolved": false,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "boston"
       },
       {
@@ -59,11 +59,11 @@
         "date": "2026-06-30",
         "timeUtc": "21:00",
         "team1Id": "FRA",
-        "team2Id": "3C/D/F/G/H",
+        "team2Id": "SWE",
         "team1Original": "1I",
         "team2Original": "3C/D/F/G/H",
         "team1Resolved": true,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "new_york"
       },
       {
@@ -85,11 +85,11 @@
         "date": "2026-07-01",
         "timeUtc": "01:00",
         "team1Id": "MEX",
-        "team2Id": "3C/E/F/H/I",
+        "team2Id": "SWE",
         "team1Original": "MEX",
         "team2Original": "3C/E/F/H/I",
         "team1Resolved": false,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "mexico_city"
       },
       {
@@ -98,11 +98,11 @@
         "date": "2026-07-01",
         "timeUtc": "16:00",
         "team1Id": "ENG",
-        "team2Id": "3E/H/I/J/K",
+        "team2Id": "COD",
         "team1Original": "1L",
         "team2Original": "3E/H/I/J/K",
         "team1Resolved": true,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "atlanta"
       },
       {
@@ -111,11 +111,11 @@
         "date": "2026-07-02",
         "timeUtc": "00:00",
         "team1Id": "USA",
-        "team2Id": "3B/E/F/I/J",
+        "team2Id": "SWE",
         "team1Original": "USA",
         "team2Original": "3B/E/F/I/J",
         "team1Resolved": false,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "san_francisco"
       },
       {
@@ -124,11 +124,11 @@
         "date": "2026-07-01",
         "timeUtc": "20:00",
         "team1Id": "BEL",
-        "team2Id": "3A/E/H/I/J",
+        "team2Id": "ECU",
         "team1Original": "1G",
         "team2Original": "3A/E/H/I/J",
         "team1Resolved": true,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "seattle"
       },
       {
@@ -136,11 +136,11 @@
         "round": "Round of 32",
         "date": "2026-07-02",
         "timeUtc": "23:00",
-        "team1Id": "2K",
+        "team1Id": "POR",
         "team2Id": "CRO",
         "team1Original": "2K",
         "team2Original": "2L",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": true,
         "groundId": "toronto"
       },
@@ -150,11 +150,11 @@
         "date": "2026-07-02",
         "timeUtc": "19:00",
         "team1Id": "ESP",
-        "team2Id": "2J",
+        "team2Id": "AUT",
         "team1Original": "1H",
         "team2Original": "2J",
         "team1Resolved": true,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "los_angeles"
       },
       {
@@ -163,11 +163,11 @@
         "date": "2026-07-03",
         "timeUtc": "03:00",
         "team1Id": "SUI",
-        "team2Id": "3E/F/G/I/J",
+        "team2Id": "SWE",
         "team1Original": "1B",
         "team2Original": "3E/F/G/I/J",
         "team1Resolved": true,
-        "team2Resolved": false,
+        "team2Resolved": true,
         "groundId": "vancouver"
       },
       {
@@ -188,12 +188,12 @@
         "round": "Round of 32",
         "date": "2026-07-04",
         "timeUtc": "01:30",
-        "team1Id": "1K",
-        "team2Id": "3D/E/I/J/L",
+        "team1Id": "COL",
+        "team2Id": "GHA",
         "team1Original": "1K",
         "team2Original": "3D/E/I/J/L",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "groundId": "kansas_city"
       },
       {

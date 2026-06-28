@@ -58,7 +58,8 @@
       "form": "WLL",
       "maxPts": 3,
       "confirmedFirst": false,
-      "confirmedSecond": false
+      "confirmedSecond": false,
+      "status": "eliminated"
     },
     {
       "rank": 4,
