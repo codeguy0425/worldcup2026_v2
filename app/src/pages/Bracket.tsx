@@ -115,7 +115,7 @@ export function BracketPage() {
                   padding: '6px 0', borderBottom: '1px solid var(--border)',
                   marginBottom: '4px',
                 }}>
-                  {ROUND_LABELS[phase]}
+                  {(t.round as any)[phase] || ROUND_LABELS[phase]}
                 </div>
 
                 <div style={{
