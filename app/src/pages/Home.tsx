@@ -53,7 +53,7 @@ export function HomePage() {
     })
     .slice(0, 6)
 
-  const bannerVer = 2 // bump to bust cache
+  const bannerVer = 3 // bump to bust cache
 
   return (
     <div>
