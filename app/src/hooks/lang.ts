@@ -9,7 +9,7 @@ export const en = {
   stadiums: { title: 'Stadiums', desc: '16 venues across 3 host countries', capacity: 'Capacity' },
   schedule: { title: 'Schedule', desc: '{n} matches', all: 'All' },
   match: { back: '← Back to schedule', backBracket: '← Back to bracket', winner: 'Winner', loser: 'Loser' },
-  team: { goalscorers: 'Goalscorers' },
+  team: { goalscorers: '入球球員', coach: '領隊' },
   table: { rk: 'RK', team: 'Team', p: 'P', w: 'W', d: 'D', l: 'L', gf: 'GF', ga: 'GA', gd: 'GD', pts: 'Pts', player: 'Player', goals: 'Goals', pen: 'Pen', group: 'Group', squad: 'Squad', pos: 'Pos', club: 'Club' },
   round: { md: (n: number) => `Matchday ${n}`, r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final', sf: 'Semi-final', third: 'Match for third place', final: 'Final' },
   lang: '中',

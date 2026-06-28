@@ -46,15 +46,22 @@ function parseSquad(html, teamName) {
     `(<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?</table>)`, 's'
   )
   let m = html.match(pattern)
-  if (m) return { players: parseTable(m[1]), order: m[0] }
+  const coach = extractCoach(m ? m[0] : "")
+  if (m) return { players: parseTable(m[1]), order: m[0], coach }
   // Try alternative: <h3 id="Name"><span id="encoded"></span>Name</h3>
   pattern = new RegExp(
     `<h[23][^>]+id="[^"]*"[^>]*>\\s*<span[^>]*id="[^"]*"[^>]*>\\s*</span>\\s*${escaped}\\s*</h[23]>.*?` +
     `(<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?</table>)`, 's'
   )
   m = html.match(pattern)
-  if (m) return { players: parseTable(m[1]), order: m[0] }
+  if (m) return { players: parseTable(m[1]), order: m[0], coach: extractCoach(m[0]) }
   return null
+}
+
+function extractCoach(section) {
+  const cm = section.match(/Coach:\s*((?:.(?!<\/p>))*.)/s)
+  if (!cm) return null
+  return cm[1].replace(/<[^>]+>/g, '').replace(/\s*\(captain\)\s*/i, '').trim() || null
 }
 
 function parseTable(table) {
@@ -130,12 +137,14 @@ async function main() {
   console.log(`   Downloaded ${html.length} bytes`)
 
   const result = {}
+  const coaches = {}
   let found = 0
 
   for (const [wikiName, teamId] of Object.entries(TEAM_NAMES)) {
     const parsed = parseSquad(html, wikiName)
     if (parsed) {
       result[teamId] = parsed.players
+      if (parsed.coach) coaches[teamId] = parsed.coach
       found++
     }
   }
@@ -159,6 +168,8 @@ async function main() {
   const outPath = resolve(DATA_DIR, 'squads.json')
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, JSON.stringify(result, null, 2), 'utf-8')
+  writeFileSync(resolve(DATA_DIR, 'coaches.json'), JSON.stringify(coaches, null, 2), 'utf-8')
+  console.log(`✅ coaches.json — ${Object.keys(coaches).length} teams`)
   console.log(`✅ squads.json — ${found}/${Object.keys(TEAM_NAMES).length} teams, ${Object.values(result).reduce((a,b) => a+b.length, 0)} players total`)
 
   console.log('\n📋 Fetching ZH squads from Wikipedia...')
