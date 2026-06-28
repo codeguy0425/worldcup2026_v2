@@ -222,6 +222,23 @@ export function MatchPage() {
   const stadiumMap = new Map<string, StadiumInfo>()
   stadiumData?.stadiums.forEach(s => stadiumMap.set(s.id, s))
 
+  // Load squad data for scorer name translation
+  const { data: squadData } = useJson<any>('/data/squads.json')
+  const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
+  const scorerNameMap = new Map<string, string>()
+  if (squadData && squadZhData) {
+    for (const [tid, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
+      const zhPlayers = (squadZhData as any)[tid] as any[] | undefined
+      if (!zhPlayers) continue
+      const zhByNo: Record<number, any> = {}
+      zhPlayers.forEach(p => zhByNo[p.no] = p)
+      for (const ep of enPlayers) {
+        const zhP = zhByNo[ep.no]
+        if (zhP) scorerNameMap.set(tid + ':' + ep.no, zhP.name)
+      }
+    }
+  }
+
   const bracketStages = new Set(['r32', 'r16', 'qf', 'sf', 'third', 'final'])
 
   if (loading) return <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
@@ -571,7 +588,7 @@ export function MatchPage() {
                     background: g.ownGoal ? (g.teamId !== m.team1Id ? '#22d3ee' : '#f472b6') : (g.teamId === m.team1Id ? '#22d3ee' : '#f472b6'),
                     border: '2px solid rgba(15,23,42,.6)',
                     zIndex: 2,
-                  }} title={`${g.scorer} ${g.minute}'`} />
+                  }} title={`${(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; if (lang2 === 'zh' && g.scorerNo !== undefined) { const n = scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo); if (n) return n; } return g.scorer; })()} ${g.minute}'`} />
                 )
               })}
               {/* Minute labels */}
@@ -589,7 +606,7 @@ export function MatchPage() {
                 {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team2Id : g.teamId === m.team1Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
                     <span style={{ color: '#22d3ee', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
-                    <span style={{ color: 'var(--text)' }}> {g.scorer}</span>
+                    <span style={{ color: 'var(--text)' }}> {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh' && g.scorerNo !== undefined) { const n = scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo); if (n) return n; } return g.scorer; })()}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}> (og)</span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}> (P)</span>}
                   </div>
@@ -598,7 +615,7 @@ export function MatchPage() {
               <div style={{ textAlign: 'right' }}>
                 {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team1Id : g.teamId === m.team2Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
-                    <span style={{ color: 'var(--text)' }}>{g.scorer} </span>
+                    <span style={{ color: 'var(--text)' }}>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh' && g.scorerNo !== undefined) { const n = scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo); if (n) return n + ' '; } return g.scorer + ' '; })()}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}>(og) </span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}>(P) </span>}
                     <span style={{ color: '#f472b6', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
