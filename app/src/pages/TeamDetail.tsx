@@ -57,7 +57,7 @@ export function TeamPage() {
   const { data: squadData } = useJson<any>('/data/squads.json?v=2')
   const { data: squadZhData } = useJson<any>('/data/squads-zh.json?v=2')
   const activeSquad = t.lang === 'En' ? squadZhData : squadData
-  const [squadSort, setSquadSort] = useState<'no'|'pos'>('no')
+  const [squadSort, setSquadSort] = useState<'no'|'pos'|'name'>('no')
   const [squadPosFilter, setSquadPosFilter] = useState<string>('')
 
   // Build name map for goalscorers: EN name → ZH name (by shirt number or name)
@@ -463,6 +463,7 @@ export function TeamPage() {
             if (!squadPlayers || squadPlayers.length === 0) return null
             const sorted = [...(squadPlayers as any[])]
             if (squadSort === 'pos') sorted.sort((a: any, b: any) => a.pos.localeCompare(b.pos) || a.no - b.no)
+            if (squadSort === 'name') sorted.sort((a: any, b: any) => a.name.localeCompare(b.name) || a.no - b.no)
             const filtered = squadPosFilter ? sorted.filter((p: any) => p.pos === squadPosFilter) : sorted
             return (
               <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '14px', marginTop: '20px', marginBottom: '20px' }}>
@@ -470,6 +471,7 @@ export function TeamPage() {
                   <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', margin: 0 }}>{t.table.squad}</h3>
                   <button onClick={() => setSquadSort('no')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'no' ? 'var(--accent)' : 'transparent', color: squadSort === 'no' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>#</button>
                   <button onClick={() => setSquadSort('pos')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'pos' ? 'var(--accent)' : 'transparent', color: squadSort === 'pos' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.table.pos}</button>
+                  <button onClick={() => setSquadSort('name')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'name' ? 'var(--accent)' : 'transparent', color: squadSort === 'name' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>A-Z</button>
                   <span style={{ flex: 1 }} />
                   {(() => {
                     const uniquePos = [...new Set((squadPlayers as any[]).map(p => p.pos))].sort()
