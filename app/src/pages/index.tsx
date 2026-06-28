@@ -11,7 +11,7 @@ export { GroupPage } from './GroupDetail'
 import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useJson } from '../hooks/useJson'
-import { toHkt } from '../hooks/hkTime'
+import { toHkt, shortHktLabel } from '../hooks/hkTime'
 import { useLang } from '../hooks/LangProvider'
 
 // ─── Shared helpers ───
@@ -320,7 +320,7 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px', flex: '1 1 180px',
                 }}>
                   <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
-                    {(() => { const h = toHkt(sm.date, sm.timeUtc); return h.date.slice(5) })()}
+                    {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return shortHktLabel(sm.date, sm.timeUtc, lang2) })()}
                   </span>
                   <span style={{ textAlign: 'right', flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {st1?.flag} {st1?.name || sm.team1Id}
@@ -363,7 +363,7 @@ export function MatchPage() {
                     background: 'var(--surface)', border: '1px solid var(--border)',
                     textDecoration: 'none', color: 'inherit', fontSize: '11px',
                   }}>
-                    {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const h = toHkt(hfm.date, hfm.timeUtc); return h.date.slice(5) })()}</span>}
+                    {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return shortHktLabel(hfm.date, hfm.timeUtc, lang2) })()}</span>}
                     <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{t.match.winner}</span>
                     <span>vs</span>
                     <span>{fOpp || 'TBD'}</span>
@@ -381,7 +381,7 @@ export function MatchPage() {
                     background: 'var(--surface)', border: '1px solid var(--border)',
                     textDecoration: 'none', color: 'inherit', fontSize: '11px',
                   }}>
-                    {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const h = toHkt(htm.date, htm.timeUtc); return h.date.slice(5) })()}</span>}
+                    {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return shortHktLabel(htm.date, htm.timeUtc, lang2) })()}</span>}
                     <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{t.match.loser}</span>
                     <span>vs</span>
                     <span>{tOpp || 'TBD'}</span>
@@ -415,7 +415,7 @@ export function MatchPage() {
             }}>
               {hm && (
                 <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
-                  {(() => { const h = toHkt(hm.date, hm.timeUtc); return h.date.slice(5) })()}
+                  {(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return shortHktLabel(hm.date, hm.timeUtc, lang2) })()}
                 </span>
               )}
               <span style={{ fontWeight: 600, fontSize: '10px' }}>
@@ -433,7 +433,7 @@ export function MatchPage() {
           {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
         </p>
         <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
-          {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} · ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}
+          {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${shortHktLabel(m.date, m.timeUtc, lang)} ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}
         </p>
 
         {/* Team vs Team + score */}
