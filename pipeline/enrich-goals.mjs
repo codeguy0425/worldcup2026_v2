@@ -26,7 +26,8 @@ for (const [teamId, players] of Object.entries(squads)) {
 // Load override file
 let overrideMap = {}
 try {
-  overrideMap = JSON.parse(readFileSync(resolve(DATA_DIR, 'scorer-no-override.json'), 'utf-8'))
+  const raw = JSON.parse(readFileSync(resolve(DATA_DIR, 'scorer-no-override.json'), 'utf-8'))
+  for (const [k, v] of Object.entries(raw)) { overrideMap[k.toLowerCase()] = v }
 } catch {}
 
 function lookupNo(teamId, scorerName) {
@@ -42,7 +43,9 @@ let enriched = 0, notFound = 0
 for (const m of matches) {
   if (!m.goals) continue
   for (const g of m.goals) {
-    const no = lookupNo(g.teamId, g.scorer)
+    // For own goals, teamId = team that conceded; player is on the opposite team
+    const playerTeam = g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId
+    const no = lookupNo(playerTeam, g.scorer)
     if (no !== undefined) {
       g.scorerNo = no
       enriched++
