@@ -568,7 +568,7 @@ export function MatchPage() {
                   <span key={i} style={{
                     position: 'absolute', left: `${pct}%`, top: '50%', transform: 'translate(-50%, -50%)',
                     width: '12px', height: '12px', borderRadius: '50%',
-                    background: g.teamId === m.team1Id ? '#22d3ee' : '#f472b6',
+                    background: g.ownGoal ? (g.teamId !== m.team1Id ? '#22d3ee' : '#f472b6') : (g.teamId === m.team1Id ? '#22d3ee' : '#f472b6'),
                     border: '2px solid rgba(15,23,42,.6)',
                     zIndex: 2,
                   }} title={`${g.scorer} ${g.minute}'`} />
@@ -586,7 +586,7 @@ export function MatchPage() {
             {/* Goal list below timeline */}
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginTop: '20px' }}>
               <div style={{ textAlign: 'left' }}>
-                {m.goals!.filter(g => g.teamId === m.team1Id).map((g, i) => (
+                {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team2Id : g.teamId === m.team1Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
                     <span style={{ color: '#22d3ee', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
                     <span style={{ color: 'var(--text)' }}> {g.scorer}</span>
@@ -596,7 +596,7 @@ export function MatchPage() {
                 ))}
               </div>
               <div style={{ textAlign: 'right' }}>
-                {m.goals!.filter(g => g.teamId === m.team2Id).map((g, i) => (
+                {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team1Id : g.teamId === m.team2Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
                     <span style={{ color: 'var(--text)' }}>{g.scorer} </span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}>(og) </span>}
