@@ -77,7 +77,7 @@ export function ScorersPage() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
             <thead>
               <tr style={{ borderBottom: '2px solid var(--border)' }}>
-                {['RK','','Player','Team','Goals','Pen'].map(h => (
+                {['RK','Player','Team','Goals','Pen'].map(h => (
                   <th key={h} style={{
                     padding: '8px 8px', textAlign: h === 'Player' || h === 'Team' ? 'left' : 'center',
                     fontFamily: 'var(--font-mono)', fontSize: '9px', fontWeight: 500,
@@ -101,13 +101,12 @@ export function ScorersPage() {
                     }}>
                       {medal || s.rank}
                     </td>
-                    <td style={{ padding: '5px 8px', textAlign: 'center', fontSize: '15px' }}>
-                      <Link to={`/team/${s.teamId}`} style={{ textDecoration: 'none' }}>{s.flag}</Link>
-                    </td>
                     <td style={{ padding: '5px 8px', fontWeight: s.goals >= 3 ? 600 : 400 }}>
                       {(() => { const overrideNo = overrideMap.get(s.teamId.toLowerCase() + ':' + s.scorer.toLowerCase()); const no = s.scorerNo !== undefined ? s.scorerNo : overrideNo; return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{s.scorer}</span></> : s.scorer}{no !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{no}</span> : ''}</>; })()}
                     </td>
-                    <td style={{ padding: '5px 8px', color: 'var(--text-muted)', fontSize: '11px' }}>{s.teamName}</td>
+                    <td style={{ padding: '5px 8px', color: 'var(--text-muted)', fontSize: '11px' }}>
+                      <Link to={`/team/${s.teamId}`} style={{ textDecoration: 'none', color: 'inherit' }}><span style={{ fontSize: '16px', verticalAlign: 'middle', marginRight: '4px' }}>{s.flag}</span>{s.teamName}</Link>
+                    </td>
                     <td style={{
                       padding: '5px 8px', textAlign: 'center',
                       fontWeight: 700, fontSize: '14px',
