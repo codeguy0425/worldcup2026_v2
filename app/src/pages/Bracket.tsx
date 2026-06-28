@@ -76,8 +76,8 @@ export function BracketPage() {
       <style>{`
         .btr-slot{position:relative}
         .btr-slot::after{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:2px;background:var(--border);pointer-events:none}
-        .btr-slot.even::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:500px;border-top:2px solid var(--border);border-right:2px solid var(--border);border-radius:0 3px 0 0;background:transparent;pointer-events:none}
-        .btr-slot.odd::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;bottom:50%;width:${GAP_PX}px;height:500px;border-bottom:2px solid var(--border);border-right:2px solid var(--border);border-radius:0 0 3px 0;background:transparent;pointer-events:none}
+        .btr-slot.even::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:var(--btr-cl,100px);border-top:2px solid var(--border);border-right:2px solid var(--border);border-radius:0 3px 0 0;background:transparent;pointer-events:none}
+        .btr-slot.odd::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;bottom:50%;width:${GAP_PX}px;height:var(--btr-cl,100px);border-bottom:2px solid var(--border);border-right:2px solid var(--border);border-radius:0 0 3px 0;background:transparent;pointer-events:none}
         .btr-slot.last::after,.btr-slot.last::before{display:none}
       `}</style>
 
@@ -132,6 +132,7 @@ export function BracketPage() {
                     const faded = t1d.faded || t2d.faded
                     // Connector class: even-indexed matches are tops of pairs, odd are bottoms
                     const isSecondOfPair = ri % 2 === 1
+                    const cLen = isLast ? 0 : Math.max(10, 300 / rows - 3)
 
                     return (
                       <Link
@@ -145,8 +146,9 @@ export function BracketPage() {
                           textDecoration: 'none', color: 'inherit', fontSize: '10px',
                           opacity: faded ? 0.5 : 1,
                           minHeight: '36px', alignSelf: 'center',
+                          '--btr-cl': `${cLen}px`,
                           transition: 'border-color .15s',
-                        }}
+                        } as React.CSSProperties}
                       >
                         <span style={{
                           fontFamily: 'var(--font-mono)', fontSize: '7px',
