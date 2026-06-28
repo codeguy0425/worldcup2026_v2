@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
-import { shortHkt } from '../hooks/hkTime'
+import { toHkt, hktDateLabel } from '../hooks/hkTime'
 import { useLang } from '../hooks/LangProvider'
 
 interface Team { id: string; name: string; nameZh: string; group: string; ranking: number; continent: string; flag: string }
@@ -400,7 +400,7 @@ export function TeamPage() {
                       background: !hasScore ? 'var(--border)' : won ? 'var(--success)' : drew ? 'var(--text-muted)' : 'var(--danger)',
                     }} />
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '36px' }}>
-                      {shortHkt(m.date, m.timeUtc)}
+                      {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}
                     </span>
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', minWidth: '28px' }}>
                       {m.stage === 'group' ? `G${m.group}` : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || m.stage.toUpperCase()}

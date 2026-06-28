@@ -11,7 +11,7 @@ export { GroupPage } from './GroupDetail'
 import { useParams, Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useJson } from '../hooks/useJson'
-import { toHkt, shortHktLabel } from '../hooks/hkTime'
+import { toHkt, shortHktLabel, hktDateLabel } from '../hooks/hkTime'
 import { useLang } from '../hooks/LangProvider'
 
 // ─── Shared helpers ───
@@ -165,7 +165,7 @@ export function SchedulePage() {
                     textDecoration: 'none', color: 'inherit', fontSize: '13px',
                   }}>
                     <span style={{ fontSize: '10px', color: 'var(--text-muted)', minWidth: '52px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}>
-                      <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} ${h.time}` })()}</span>
+                      <span>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}</span>
                       {viutvIds.has(m.id) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-16px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
                     </span>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>

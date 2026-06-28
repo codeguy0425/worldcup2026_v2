@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
-import { shortHkt } from '../hooks/hkTime'
+import { toHkt, hktDateLabel } from '../hooks/hkTime'
 import { useLang } from '../hooks/LangProvider'
 
 interface Standing {
@@ -95,7 +95,7 @@ export function GroupPage() {
               borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)',
               textDecoration: 'none', color: 'inherit', fontSize: '12px',
             }}>
-              <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{shortHkt(m.date, m.timeUtc)}</span>{viutvIds.has(m.id) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
+              <span style={{ color: 'var(--text-muted)', minWidth: '24px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-14px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
               <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 {t1?.flag || ''} {t1?.name || m.team1Id}
               </span>
