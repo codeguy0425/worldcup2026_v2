@@ -264,13 +264,15 @@ export function MatchPage() {
       const thirdMatch = thirdMs.find((n: BracketMatch) => n.team1Id === lId || n.team2Id === lId)
       const fOpp = finalMatch ? (() => {
         const isT1 = finalMatch.team1Id === wId
-        const o = teamMap.get(isT1 ? finalMatch.team2Id : finalMatch.team1Id)
-        return o ? `${o.flag} ${o.name}` : (isT1 ? finalMatch.team2Id : finalMatch.team1Id)
+        const oppId = isT1 ? finalMatch.team2Id : finalMatch.team1Id
+        const o = teamMap.get(oppId)
+        return o ? `${o.flag} ${o.name}` : null
       })() : null
       const tOpp = thirdMatch ? (() => {
         const isT1 = thirdMatch.team1Id === lId
-        const o = teamMap.get(isT1 ? thirdMatch.team2Id : thirdMatch.team1Id)
-        return o ? `${o.flag} ${o.name}` : (isT1 ? thirdMatch.team2Id : thirdMatch.team1Id)
+        const oppId = isT1 ? thirdMatch.team2Id : thirdMatch.team1Id
+        const o = teamMap.get(oppId)
+        return o ? `${o.flag} ${o.name}` : null
       })() : null
       return {
         type: 'sf',
