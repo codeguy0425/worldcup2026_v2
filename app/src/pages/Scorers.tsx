@@ -88,7 +88,6 @@ export function ScorersPage() {
             </thead>
             <tbody>
               {filtered.map((s, i) => {
-                const medal = s.rank === 1 ? '🥇' : s.rank === 2 ? '🥈' : s.rank === 3 ? '🥉' : ''
                 const zhName = lang === 'zh' ? (nameMap.get(s.teamId + ':' + s.scorerNo) || nameMap.get(s.teamId + ':' + (overrideMap.get(s.teamId.toLowerCase() + ':' + s.scorer.toLowerCase()) || s.scorer.toLowerCase()))) : null
                 return (
                   <tr key={`${s.scorer}-${s.teamId}`} style={{
@@ -96,10 +95,9 @@ export function ScorersPage() {
                   }}>
                     <td style={{
                       padding: '5px 8px', textAlign: 'center',
-                      fontWeight: s.rank <= 3 ? 700 : 400,
-                      fontSize: s.rank <= 3 ? '13px' : '11px',
+                      fontWeight: 400, fontSize: '11px',
                     }}>
-                      {medal || s.rank}
+                      {s.rank}
                     </td>
                     <td style={{ padding: '5px 8px', fontWeight: s.goals >= 3 ? 600 : 400 }}>
                       {(() => { const overrideNo = overrideMap.get(s.teamId.toLowerCase() + ':' + s.scorer.toLowerCase()); const no = s.scorerNo !== undefined ? s.scorerNo : overrideNo; return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{s.scorer}</span></> : s.scorer}{no !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{no}</span> : ''}</>; })()}
