@@ -403,6 +403,36 @@ export function MatchPage() {
           </div>
         </div>
 
+        {/* Penalty shootout */}
+        {(m as any).penalty1 !== undefined && (
+          <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
+            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Penalty Shootout</h4>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '0' }}>
+              <table style={{ borderCollapse: 'collapse', fontSize: '11px' }}>
+                <thead>
+                  <tr>
+                    <th style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)', fontWeight: 500, fontSize: '10px' }}>Team</th>
+                    <th style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)', fontWeight: 500, fontSize: '10px', textAlign: 'center' }}>Pens</th>
+                    <th style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)', fontWeight: 500, fontSize: '10px', textAlign: 'center' }}>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)' }}>{t1?.flag} {t1?.name || m.team1Id}</td>
+                    <td style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontWeight: 700 }}>{(m as any).penalty1}</td>
+                    <td style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontWeight: 700, color: (m as any).penalty1 > (m as any).penalty2 ? '#34d399' : 'var(--text-muted)' }}>{(m as any).penalty1 + (m.score1 ?? 0)}</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '4px 8px' }}>{t2?.flag} {t2?.name || m.team2Id}</td>
+                    <td style={{ padding: '4px 8px', textAlign: 'center', fontWeight: 700 }}>{(m as any).penalty2}</td>
+                    <td style={{ padding: '4px 8px', textAlign: 'center', fontWeight: 700, color: (m as any).penalty2 > (m as any).penalty1 ? '#34d399' : 'var(--text-muted)' }}>{(m as any).penalty2 + (m.score2 ?? 0)}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
         {/* Bracket path context */}
         {nextRoundInfo && nextRoundInfo.type === 'single' && (
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
