@@ -140,11 +140,11 @@ export function BracketPage() {
                         className={`btr-slot${isLast ? ' last' : ''}${isSecondOfPair ? ' odd' : ' even'}`}
                         style={{
                           display: 'flex', alignItems: 'center', gap: '3px',
-                          padding: '3px 5px', borderRadius: 'var(--radius-sm)',
+                          padding: '4px 6px', borderRadius: 'var(--radius-sm)',
                           background: 'var(--surface)', border: '1px solid var(--border)',
-                          textDecoration: 'none', color: 'inherit', fontSize: '9px',
+                          textDecoration: 'none', color: 'inherit', fontSize: '10px',
                           opacity: faded ? 0.5 : 1,
-                          minHeight: '30px',
+                          minHeight: '36px', alignSelf: 'center',
                           transition: 'border-color .15s',
                         }}
                       >
