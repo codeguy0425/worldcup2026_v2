@@ -433,7 +433,7 @@ export function MatchPage() {
           {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
         </p>
         <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
-          {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${shortHktLabel(m.date, m.timeUtc, lang)} ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}
+          {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}
         </p>
 
         {/* Team vs Team + score */}
