@@ -26,6 +26,9 @@ export function computeTopScorers(matches, teamsMap) {
   }
 
   const sorted = Object.values(goals).sort((a, b) => b.goals - a.goals || a.scorer.localeCompare(b.scorer))
-  sorted.forEach((s, i) => s.rank = i + 1)
+  sorted.forEach((s, i) => {
+    if (i > 0 && s.goals === sorted[i - 1].goals) s.rank = sorted[i - 1].rank
+    else s.rank = i + 1
+  })
   return sorted
 }
