@@ -479,7 +479,7 @@ export function TeamPage() {
                 <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '8px' }}>{t.table.squad}</h3>
                 {coachData && coachData[(team?.id || '')] && <p style={{ fontSize: '11px', color: 'var(--text-muted)', margin: '0 0 8px' }}>👤 {t.team.coach || 'Coach'}: {coachData[(team?.id || '')]}</p>}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
-                  <button onClick={() => setSquadSort('no')}
+                  <button onClick={() => setSquadSort('no')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'no' ? 'var(--accent)' : 'transparent', color: squadSort === 'no' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>#</button>
                   <button onClick={() => setSquadSort('pos')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'pos' ? 'var(--accent)' : 'transparent', color: squadSort === 'pos' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.table.pos}</button>
                   <button onClick={() => setSquadSort('name')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'name' ? 'var(--accent)' : 'transparent', color: squadSort === 'name' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>A-Z</button>
                   {(() => {
