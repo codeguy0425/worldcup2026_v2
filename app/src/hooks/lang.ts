@@ -1,6 +1,6 @@
 export const en = {
   nav: { schedule: 'Schedule', teams: 'Teams', groups: 'Groups', thirdPlace: '3rd Place', scorers: 'Scorers', bracket: 'Bracket', stadiums: 'Stadiums' },
-  home: { phaseGroup: 'Group stage — {played}/{total} played', latest: 'Latest Results', upcoming: 'Upcoming', noResults: 'No matches played yet' },
+  home: { phaseGroup: 'Group stage — {played}/{total} played', phaseKnockout: (p: string) => `${p} underway`, latest: 'Latest Results', upcoming: 'Upcoming', noResults: 'No matches played yet' },
   teams: { title: 'Teams', desc: '48 teams · 12 groups · 6 confederations', byGroup: 'By Group', byName: 'By Name', byContinent: 'By Continent', allAZ: 'All Teams (A–Z)', backAll: '← All teams', notFound: 'Team not found' },
   groups: { title: 'Groups', desc: '12 groups · top 2 + best 8 third advance', backAll: '← All groups' },
   third: { title: 'Third-Placed', desc: 'Best 8 of 12 third-placed teams advance to R32', top8: '✅ Top 8 advance', sortBy: 'Sorted by: Pts → GD → GF' },
@@ -16,7 +16,7 @@ export const en = {
 
 export const zh = {
   nav: { schedule: '賽程', teams: '球隊', groups: '分組', thirdPlace: '第三名', scorers: '射手榜', bracket: '淘汰賽', stadiums: '球場' },
-  home: { phaseGroup: '分組賽 — {played}/{total} 已賽', latest: '最新賽果', upcoming: '即將舉行', noResults: '暫無比賽' },
+  home: { phaseGroup: '分組賽 — {played}/{total} 已賽', phaseKnockout: (p: string) => `🏁 ${p} 進行中`, latest: '最新賽果', upcoming: '即將舉行', noResults: '暫無比賽' },
   teams: { title: '球隊', desc: '48 隊 · 12 組 · 6 洲份', byGroup: '按組別', byName: '按名稱', byContinent: '按洲份', allAZ: '全部球隊 (A–Z)', backAll: '← 所有隊伍', notFound: '找不到球隊' },
   groups: { title: '分組', desc: '12 組 · 首兩名 + 最佳第三名 8 隊晉級', backAll: '← 所有組別' },
   third: { title: '第三名', desc: '12 組第三名中最佳 8 隊晉級 32 強', top8: '✅ top 8 進級', sortBy: '排序：積分 → 球差 → 入球' },

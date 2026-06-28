@@ -72,7 +72,7 @@ export function HomePage() {
         <span>
           {phase?.phase === 'ended' ? '🏆 Tournament ended' :
            phase?.phase === 'group' ? `⚽ ${t.home.phaseGroup.replace('{played}', String(played.length)).replace('{total}', String(total))}` :
-           `🏁 ${(phase?.phase || '').toUpperCase()} underway`}
+           t.home.phaseKnockout((t.round as any)[phase?.phase || ''] || (phase?.phase || '').toUpperCase())}
         </span>
       </div>
 
