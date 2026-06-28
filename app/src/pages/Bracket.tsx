@@ -76,8 +76,8 @@ export function BracketPage() {
       <style>{`
         .btr-slot{position:relative}
         .btr-slot::after{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:2px;background:var(--border);pointer-events:none}
-        .btr-slot.even::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;bottom:50%;width:${GAP_PX}px;height:calc(50% + 1px);border-right:2px solid var(--border);border-top:2px solid var(--border);border-radius:0 3px 0 0;background:transparent;pointer-events:none}
-        .btr-slot.odd::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:calc(50% + 1px);border-right:2px solid var(--border);border-bottom:2px solid var(--border);border-radius:0 0 3px 0;background:transparent;pointer-events:none}
+        .btr-slot.even::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;top:50%;width:${GAP_PX}px;height:500px;border-top:2px solid var(--border);border-right:2px solid var(--border);border-radius:0 3px 0 0;background:transparent;pointer-events:none}
+        .btr-slot.odd::before{content:'';position:absolute;z-index:1;right:-${GAP_PX}px;bottom:50%;width:${GAP_PX}px;height:500px;border-bottom:2px solid var(--border);border-right:2px solid var(--border);border-radius:0 0 3px 0;background:transparent;pointer-events:none}
         .btr-slot.last::after,.btr-slot.last::before{display:none}
       `}</style>
 
