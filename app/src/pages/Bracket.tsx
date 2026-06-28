@@ -1,6 +1,6 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
-import { toHkt } from '../hooks/hkTime'
+import { toHkt, hktDateLabel } from '../hooks/hkTime'
 import { fmtScore } from '../pages/index'
 import { useLang } from '../hooks/LangProvider'
 import { useRef } from 'react'
@@ -153,10 +153,10 @@ export function BracketPage() {
                       >
                         <span style={{
                           fontFamily: 'var(--font-mono)', fontSize: '7px',
-                          color: 'var(--text-muted)', minWidth: '30px',
+                          color: 'var(--text-muted)', minWidth: '60px',
                           whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '1px', position: 'relative',
                         }}>
-                          <span>{(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)}` })()}</span>
+                          <span>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}</span>
                           {viutvIds.has(m.matchId) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-12px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1, fontSize: '8px' }}>📺</span>}
                         </span>
                         <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', whiteSpace: 'nowrap' }}>
@@ -210,7 +210,7 @@ export function BracketPage() {
                 color: 'var(--text-muted)', minWidth: '30px',
                 whiteSpace: 'nowrap',
               }}>
-                {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date.slice(5)}` })()}
+                {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}
               </span>
               <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                 <span style={{ fontSize: '12px' }}>{t1d.flag}</span>
