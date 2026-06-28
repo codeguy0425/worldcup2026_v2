@@ -132,7 +132,7 @@ export function BracketPage() {
                     const hasScore = m.score1 !== undefined
                     const faded = t1d.faded || t2d.faded
                     // Connector class: pairs determined by step size
-                    const isSecondOfPair = step > 1 && (ri % (step * 2) >= step)
+                    const isSecondOfPair = (ri % (step * 2)) >= (step > 1 ? step : 1)
 
                     return (
                       <Link
