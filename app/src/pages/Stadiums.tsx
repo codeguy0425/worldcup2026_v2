@@ -1,6 +1,7 @@
 import { useJson } from '../hooks/useJson'
 import { useLang } from '../hooks/LangProvider'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
 import { fmtScore } from '../pages/index'
 
@@ -14,6 +15,34 @@ interface Match {
   stage: string; group?: string
 }
 
+function MatchRow({ m, teamMap, lang }: { m: Match; teamMap: Map<string, { name: string; flag: string }>; lang: 'en'|'zh' }) {
+  const t1 = teamMap.get(m.team1Id)
+  const t2 = teamMap.get(m.team2Id)
+  const h = toHkt(m.date, m.timeUtc)
+  return (
+    <Link key={m.id} to={`/match/${m.id}`} style={{
+      display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 0',
+      textDecoration: 'none', color: 'inherit',
+    }}>
+      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', minWidth: '42px' }}>
+        {hktDateLabel(m.date, m.timeUtc, lang)} {h.time}
+      </span>
+      <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        {t1?.flag} {t1?.name || m.team1Id}
+      </span>
+      <span style={{ fontWeight: 700, fontSize: '11px', minWidth: '16px', textAlign: 'center' }}>
+        {m.score1 !== undefined ? fmtScore(m) : 'vs'}
+      </span>
+      <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+        {t2?.name || m.team2Id} {t2?.flag}
+      </span>
+      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '20px', textAlign: 'right' }}>
+        {m.stage === 'group' ? m.group || '' : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}
+      </span>
+    </Link>
+  )
+}
+
 export function StadiumsPage() {
   const { t } = useLang()
   const { data, loading } = useJson<{ stadiums: Stadium[] }>('/data/stadiums.json')
@@ -23,8 +52,9 @@ export function StadiumsPage() {
   const matches = matchData ?? []
   const teamMap = new Map<string, { name: string; flag: string }>()
   teamData?.teams.forEach(tm => teamMap.set(tm.id, tm))
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({})
+  const lang = t.lang === 'En' ? 'zh' : 'en'
 
-  // Group matches by stadium
   const matchMap: Record<string, Match[]> = {}
   for (const m of matches) {
     if (!m.groundId) continue
@@ -39,12 +69,8 @@ export function StadiumsPage() {
   return (
     <div>
       <div style={{ position: 'sticky', top: '48px', zIndex: 50, background: 'var(--bg)', padding: 'var(--space-lg) 0 12px', marginTop: 'calc(-1 * var(--space-lg))' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>
-          {t.stadiums.title}
-        </h1>
-        <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          {t.stadiums.desc}
-        </p>
+        <h1 style={{ fontSize: '24px', fontWeight: 'var(--weight-display)', marginBottom: '4px' }}>{t.stadiums.title}</h1>
+        <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>{t.stadiums.desc}</p>
       </div>
 
       {loading ? (
@@ -52,76 +78,38 @@ export function StadiumsPage() {
       ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {stadiums.map(s => {
-            const stadiumMatches = matchMap[s.id] || []
+            const sm = matchMap[s.id] || []
             return (
-            <div key={s.id} style={{
-              borderRadius: 'var(--radius-sm)',
-              background: 'var(--surface)', border: '1px solid var(--border)',
-              overflow: 'hidden',
-            }}>
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: '16px',
-                padding: '14px 16px',
-              }}>
-                <div style={{
-                  width: '40px', height: '40px', borderRadius: 'var(--radius-sm)',
-                  background: 'var(--surface-alt)', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center',
-                  fontSize: '20px', flexShrink: 0,
-                }}>
-                  🏟️
-                </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '2px' }}>{s.name}</div>
-                  <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                    {countryFlags[s.country] || ''} {s.city}, {s.country}
+              <div key={s.id} style={{ borderRadius: 'var(--radius-sm)', background: 'var(--surface)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '14px 16px' }}>
+                  <div style={{ width: '40px', height: '40px', borderRadius: 'var(--radius-sm)', background: 'var(--surface-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '20px', flexShrink: 0 }}>🏟️</div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '2px' }}>{s.name}</div>
+                    <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>{countryFlags[s.country] || ''} {s.city}, {s.country}</div>
+                  </div>
+                  <div style={{ textAlign: 'right', flexShrink: 0 }}>
+                    <div style={{ fontWeight: 700, fontSize: '16px', color: 'var(--accent)' }}>{s.capacity.toLocaleString()}</div>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>{t.stadiums.capacity}</div>
                   </div>
                 </div>
-                <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                  <div style={{ fontWeight: 700, fontSize: '16px', color: 'var(--accent)' }}>
-                    {s.capacity.toLocaleString()}
+                {sm.length > 0 && (
+                  <div style={{ borderTop: '1px solid var(--border)' }}>
+                    <div onClick={() => setExpanded(p => ({ ...p, [s.id]: !p[s.id] }))} style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', padding: '8px 12px', fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase', userSelect: 'none' }}>
+                      <span style={{ fontSize: '8px', transition: 'transform .15s', transform: expanded[s.id] ? 'rotate(90deg)' : undefined }}>&#9654;</span>
+                      {sm.length} match{sm.length > 1 ? 'es' : ''}
+                    </div>
+                    {expanded[s.id] && (
+                      <div style={{ padding: '0 12px 8px', fontSize: '11px' }}>
+                        {sm.sort((a, b) => a.date.localeCompare(b.date) || a.id - b.id).map(m => (
+                          <MatchRow key={m.id} m={m} teamMap={teamMap} lang={lang} />
+                        ))}
+                      </div>
+                    )}
                   </div>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
-                    {t.stadiums.capacity}
-                  </div>
-                </div>
+                )}
               </div>
-              {stadiumMatches.length > 0 && (
-                <div style={{ borderTop: '1px solid var(--border)', padding: '8px 12px', fontSize: '11px' }}>
-                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase' }}>
-                    {stadiumMatches.length} match{stadiumMatches.length > 1 ? 'es' : ''}
-                  </div>
-                  {stadiumMatches.sort((a, b) => a.date.localeCompare(b.date) || a.id - b.id).map(m => {
-                    const t1 = teamMap.get(m.team1Id)
-                    const t2 = teamMap.get(m.team2Id)
-                    const lang = t.lang === 'En' ? 'zh' : 'en'
-                    return (
-                      <Link key={m.id} to={`/match/${m.id}`} style={{
-                        display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 0',
-                        textDecoration: 'none', color: 'inherit',
-                      }}>
-                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', minWidth: '42px' }}>
-                          {(() => { const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}
-                        </span>
-                        <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                          {t1?.flag} {t1?.name || m.team1Id}
-                        </span>
-                        <span style={{ fontWeight: 700, fontSize: '11px', minWidth: '16px', textAlign: 'center' }}>
-                          {m.score1 !== undefined ? fmtScore(m) : 'vs'}
-                        </span>
-                        <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                          {t2?.name || m.team2Id} {t2?.flag}
-                        </span>
-                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', minWidth: '20px', textAlign: 'right' }}>
-                          {m.stage === 'group' ? m.group || '' : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}
-                        </span>
-                      </Link>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
-          )})}
+            )
+          })}
         </div>
       )}
     </div>
