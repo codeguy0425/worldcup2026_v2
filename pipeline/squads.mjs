@@ -65,11 +65,14 @@ function parseTable(table) {
     if (cells.length < 7) continue
     const no = parseInt(cells[0][1].replace(/<[^>]+>/g, '').trim())
     const pos = cells[1][1].replace(/<[^>]+>/g, '').trim()
-    const name = cells[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
+    const nameRaw = cells[2][1].replace(/<[^>]+>/g, '').trim()
+    const captain = /（隊長）/.test(nameRaw) || /\(captain\)/i.test(nameRaw)
+    const viceCaptain = /（副隊長）/.test(nameRaw) || /\(vice.captain\)/i.test(nameRaw)
+    const name = nameRaw.replace(/\s*[（(](?:隊長|副隊長|captain|vice.?captain)[）)]\s*/gi, '').trim()
     const club = cells[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
     if (isNaN(no) || !pos || !name) continue
     const posClean = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'')
-    players.push({ no, pos: posClean, name, club })
+    players.push({ no, pos: posClean, name, club, captain, viceCaptain })
   }
   return players
 }
@@ -89,11 +92,14 @@ function parseSquadByPosition(html, enOrder, enData) {
       if (c.length < 7) continue
       const no = parseInt(c[0][1].replace(/<[^>]+>/g, '').trim())
       const pos = c[1][1].replace(/<[^>]+>/g, '').trim()
-      const name = c[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
+      const nameRaw = c[2][1].replace(/<[^>]+>/g, '').trim()
+      const captain = /（隊長）/.test(nameRaw) || /\(captain\)/i.test(nameRaw)
+      const viceCaptain = /（副隊長）/.test(nameRaw) || /\(vice.captain\)/i.test(nameRaw)
+      const name = nameRaw.replace(/\s*[（(](?:隊長|副隊長|captain|vice.?captain)[）)]\s*/gi, '').trim()
       const club = c[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
       if (isNaN(no) || !pos || !name) continue
       const posClean = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'').replace(/门将/g,'門將').replace(/后卫/g,'後衛').replace(/守门员/g,'門將')
-      players.push({ no, pos: posClean, name, club })
+      players.push({ no, pos: posClean, name, club, captain, viceCaptain })
     }
     if (players.length > 0) zhTables.push(players)
   }

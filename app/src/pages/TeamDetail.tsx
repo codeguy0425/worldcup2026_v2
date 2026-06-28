@@ -506,7 +506,7 @@ export function TeamPage() {
                         <tr key={i} style={{ borderBottom: i < filtered.length - 1 ? '1px solid var(--border)' : 'none' }}>
                           <td style={{ padding: '3px 6px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)' }}>{p.no}</td>
                           <td style={{ padding: '3px 6px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)' }}>{p.pos}</td>
-                          <td style={{ padding: '3px 6px', fontWeight: 500 }}>{p.name}</td>
+                          <td style={{ padding: '3px 6px', fontWeight: 500 }}>{p.name}{p.captain ? <span style={{ color: 'var(--accent)', fontWeight: 700, marginLeft: '3px' }}>(C)</span> : p.viceCaptain ? <span style={{ color: 'var(--text-muted)', fontSize: '9px', marginLeft: '3px' }}>(VC)</span> : ''}</td>
                           <td style={{ padding: '3px 6px', color: 'var(--text-muted)', fontSize: '10px' }}>{p.club}</td>
                         </tr>
                       ))}
