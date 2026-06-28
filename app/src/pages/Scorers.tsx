@@ -89,7 +89,7 @@ export function ScorersPage() {
                     </td>
                     <td style={{ padding: '5px 8px', textAlign: 'center', fontSize: '15px' }}>{s.flag}</td>
                     <td style={{ padding: '5px 8px', fontWeight: s.goals >= 3 ? 600 : 400 }}>
-                      {zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{s.scorer}</span></> : s.scorer}
+                      {(() => { const overrideNo = overrideMap.get(s.teamId.toLowerCase() + ':' + s.scorer.toLowerCase()); const no = s.scorerNo !== undefined ? s.scorerNo : overrideNo; return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{s.scorer}</span></> : s.scorer}{no !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{no}</span> : ''}</>; })()}
                     </td>
                     <td style={{ padding: '5px 8px', color: 'var(--text-muted)', fontSize: '11px' }}>{s.teamName}</td>
                     <td style={{
