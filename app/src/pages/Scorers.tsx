@@ -21,6 +21,7 @@ export function ScorersPage() {
       if (!zhPlayers) continue
       for (let i = 0; i < Math.min(enPlayers.length, zhPlayers.length); i++) {
         nameMap.set(enPlayers[i].name, zhPlayers[i].name)
+        nameMap.set(enPlayers[i].name.toLowerCase(), zhPlayers[i].name)
       }
     }
   }
@@ -62,7 +63,7 @@ export function ScorersPage() {
             <tbody>
               {scorers.map((s, i) => {
                 const medal = s.rank === 1 ? '🥇' : s.rank === 2 ? '🥈' : s.rank === 3 ? '🥉' : ''
-                const zhName = lang === 'zh' ? nameMap.get(s.scorer) : null
+                const zhName = lang === 'zh' ? (nameMap.get(s.scorer) || nameMap.get(s.scorer.toLowerCase())) : null
                 return (
                   <tr key={`${s.scorer}-${s.teamId}`} style={{
                     borderBottom: i < scorers.length - 1 ? '1px solid var(--border)' : 'none',

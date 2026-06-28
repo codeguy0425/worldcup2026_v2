@@ -66,7 +66,9 @@ export function TeamPage() {
       const zhPlayers = (squadZhData as any)[tid] as any[] | undefined
       if (!zhPlayers) continue
       for (let i = 0; i < Math.min(enPlayers.length, zhPlayers.length); i++) {
+        // Store both original and lowercase versions for fuzzy matching
         scorerNameMap.set(enPlayers[i].name, zhPlayers[i].name)
+        scorerNameMap.set(enPlayers[i].name.toLowerCase(), zhPlayers[i].name)
       }
     }
   }
@@ -376,7 +378,7 @@ export function TeamPage() {
                       <td style={{...stadTd, textAlign:'left'}}>
                         {(() => {
                           const lang = t.lang === 'En' ? 'zh' : 'en'
-                          const zhName = lang === 'zh' ? scorerNameMap.get(s.name) : null
+                          const zhName = lang === 'zh' ? (scorerNameMap.get(s.name) || scorerNameMap.get(s.name.toLowerCase())) : null
                           return zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name
                         })()}
                       </td>
