@@ -255,8 +255,10 @@ export function MatchPage() {
       })() : null
       return {
         type: 'sf',
-        winner: fOpp ? `Winner → Final vs ${fOpp}` : 'Winner → Final',
-        loser: tOpp ? `Third place vs ${tOpp}` : 'Third place',
+        winnerRound: t.round.final,
+        winnerOpp: fOpp,
+        loserRound: t.round.third,
+        loserOpp: tOpp,
       }
     }
 
@@ -361,8 +363,8 @@ export function MatchPage() {
         )}
         {nextRoundInfo && nextRoundInfo.type === 'sf' && (
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-            <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winner}</div>
-            <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loser}</div>
+            <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}{nextRoundInfo.winnerOpp ? ` vs ${nextRoundInfo.winnerOpp}` : ''}</div>
+            <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}{nextRoundInfo.loserOpp ? ` vs ${nextRoundInfo.loserOpp}` : ''}</div>
           </div>
         )}
 
