@@ -74,7 +74,7 @@ export function ScorersPage() {
           )) : (
             <>
               <button onClick={() => { setSelectedGroup(''); setSelectedTeam('') }} style={{ fontSize: '10px', padding: '2px 8px', background: 'transparent', color: 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer', whiteSpace: 'nowrap' }}>← {t.scorers.all || 'All'}</button>
-              <div style={{ display: 'flex', gap: '4px', overflowX: 'auto', flexShrink: 0 }}>
+              <div style={{ width: '100%', display: 'flex', gap: '4px', overflowX: 'auto' }}>
               {teamsInGroup.map(tid => {
                 const tm = teamMap.get(tid);
                 return (
