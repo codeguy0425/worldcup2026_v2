@@ -60,7 +60,8 @@ function parseSquad(html, teamName) {
     const name = cells[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/, '').replace(/\s*\(captain\)/g, '').trim()
     const club = cells[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
     if (isNaN(no) || !pos || !name) continue
-    players.push({ no, pos, name, club })
+    const posClean = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'')
+    players.push({ no, pos: posClean, name, club })
   }
 
   return players.length > 0 ? players : null
@@ -87,7 +88,8 @@ function parseSquadByPosition(html, teamOrder) {
       const name = c[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
       const club = c[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
       if (isNaN(no) || !pos || !name) continue
-      players.push({ no, pos, name, club })
+      const posClean2 = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'')
+      players.push({ no, pos: posClean2, name, club })
     }
     if (players.length > 0 && ti < teamIds.length) {
       result[teamIds[ti++]] = players
