@@ -345,14 +345,14 @@ export function TeamPage() {
                 letterSpacing: '0.4px', textTransform: 'uppercase',
                 color: 'var(--accent)', marginBottom: '8px',
               }}>
-                ⚽ {team.flag} Goalscorers
+                ⚽ {team.flag} {t.team.goalscorers}
               </h3>
               <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr>
                     <th style={stadTh}>#</th>
-                    <th style={{...stadTh, textAlign:'left'}}>Player</th>
-                    <th style={stadTh}>Goals</th>
+                    <th style={{...stadTh, textAlign:'left'}}>{t.table.player}</th>
+                    <th style={stadTh}>{t.table.goals}</th>
                   </tr>
                 </thead>
                 <tbody>
