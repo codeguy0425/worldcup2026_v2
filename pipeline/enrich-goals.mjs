@@ -23,23 +23,48 @@ for (const [teamId, players] of Object.entries(squads)) {
   }
 }
 
+// Load override file
+let overrideMap = {}
+try {
+  overrideMap = JSON.parse(readFileSync(resolve(DATA_DIR, 'scorer-no-override.json'), 'utf-8'))
+} catch {}
+
+function lookupNo(teamId, scorerName) {
+  const key = (teamId + ':' + scorerName).toLowerCase()
+  const fromSquad = squadMap[teamId]?.[scorerName.toLowerCase()]
+  if (fromSquad !== undefined) return fromSquad
+  if (overrideMap[key] !== undefined) return overrideMap[key]
+  return undefined
+}
+
 let enriched = 0, notFound = 0
 for (const m of matches) {
   if (!m.goals) continue
   for (const g of m.goals) {
-    const teamNoMap = squadMap[g.teamId]
-    if (teamNoMap) {
-      const no = teamNoMap[g.scorer.toLowerCase()]
-      if (no !== undefined) {
-        g.scorerNo = no
-        enriched++
-      } else {
-        notFound++
-      }
+    const no = lookupNo(g.teamId, g.scorer)
+    if (no !== undefined) {
+      g.scorerNo = no
+      enriched++
+    } else {
+      notFound++
     }
   }
 }
 
 const outPath = resolve(DATA_DIR, 'matches.json')
 writeFileSync(outPath, JSON.stringify(matches, null, 2), 'utf-8')
-console.log(`✅ Goals enriched: ${enriched} matched, ${notFound} not found in squad data`)
+console.log(`✅ matches.json — ${enriched} goals with shirt numbers, ${notFound} still missing`)
+
+// Also patch top-scorers.json
+const topScorers = JSON.parse(readFileSync(resolve(DATA_DIR, 'top-scorers.json'), 'utf-8'))
+let tsPatched = 0
+for (const s of topScorers) {
+  if (s.scorerNo !== undefined) continue
+  const no = lookupNo(s.teamId, s.scorer)
+  if (no !== undefined) {
+    s.scorerNo = no
+    tsPatched++
+  }
+}
+writeFileSync(resolve(DATA_DIR, 'top-scorers.json'), JSON.stringify(topScorers, null, 2), 'utf-8')
+console.log(`✅ top-scorers.json — ${tsPatched} entries patched with shirt numbers`)
