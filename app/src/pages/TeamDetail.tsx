@@ -399,7 +399,7 @@ export function TeamPage() {
                               ? scorerNameMap.get((id || '') + ':' + s.scorerNo)
                               : scorerNameMap.get((id || '') + ':' + overrideMap.get((id || '').toLowerCase() + ':' + s.name.toLowerCase()))
                           ) : null
-                          return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name}{s.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{s.scorerNo}</span> : ''}</>
+                          return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name}{(() => { const overrideNo = overrideMap.get((id || '').toLowerCase() + ':' + s.name.toLowerCase()); const no = s.scorerNo !== undefined ? s.scorerNo : overrideNo; return no !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{no}</span> : ''; })()}</>
                         })()}
                       </td>
                       <td style={{...stadTd, fontWeight: 600, color: 'var(--accent)'}}>{s.goals}</td>
