@@ -23,7 +23,28 @@ function trRound(r: string, t: any): string {
   return m[r] || r
 }
 
-// ─── Schedule Page ───
+// Compute last N results for a team
+function computeForm(teamId: string, allMatches: Match[]): ('W'|'D'|'L')[] {
+  const played = allMatches
+    .filter(m => (m.team1Id === teamId || m.team2Id === teamId) && m.score1 !== undefined && m.stage !== 'third')
+    .sort((a, b) => {
+      const da = a.date + 'T' + (a.timeUtc || a.time || '00:00') + ':00Z'
+      const db = b.date + 'T' + (b.timeUtc || b.time || '00:00') + ':00Z'
+      return db.localeCompare(da) // newest first
+    })
+    .slice(0, 5)
+    .reverse() // chronological for display
+  return played.map(m => {
+    if (m.team1Id === teamId) {
+      if (m.score1! > m.score2!) return 'W'
+      if (m.score1! < m.score2!) return 'L'
+      return 'D'
+    }
+    if (m.score2! > m.score1!) return 'W'
+    if (m.score2! < m.score1!) return 'L'
+    return 'D'
+  })
+}
 
 interface Match {
   id: number; round: string; date: string; time: string
@@ -39,6 +60,17 @@ interface GoalEvent {
 
 interface Team { id: string; name: string; flag: string }
 interface StadiumInfo { id: string; name: string; city: string; country: string }
+
+interface BracketData { rounds: Record<string, BracketMatch[]> }
+interface BracketMatch {
+  matchId: number; round: string; date: string
+  team1Id: string; team2Id: string
+  team1Original?: string; team2Original?: string
+  team1Resolved?: boolean; team2Resolved?: boolean
+  groundId?: string; score1?: number; score2?: number
+}
+
+// ─── Schedule Page ───
 
 export function SchedulePage() {
   const { t } = useLang()
@@ -169,9 +201,11 @@ export function MatchPage() {
   const { data: matches, loading } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
+  const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
 
+  const allMatches = matches ?? []
   const teamMap = new Map<string, Team>()
   teamData?.teams.forEach(t => teamMap.set(t.id, t))
   const stadiumMap = new Map<string, StadiumInfo>()
@@ -180,7 +214,7 @@ export function MatchPage() {
   const bracketStages = new Set(['r32', 'r16', 'qf', 'sf', 'third', 'final'])
 
   if (loading) return <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
-  const m = matches?.find(m => m.id === Number(id))
+  const m = allMatches.find(m => m.id === Number(id))
   if (!m) return <p style={{ color: 'var(--text-muted)' }}>Match not found</p>
 
   const t1 = teamMap.get(m.team1Id)
@@ -188,6 +222,35 @@ export function MatchPage() {
   const stadium = m.groundId ? stadiumMap.get(m.groundId) : null
   const hasScore = m.score1 !== undefined
   const isBracketMatch = bracketStages.has(m.stage)
+
+  // ─── 1. Team form ───
+  const form1 = hasScore && teamMap.has(m.team1Id) ? computeForm(m.team1Id, allMatches) : []
+  const form2 = hasScore && teamMap.has(m.team2Id) ? computeForm(m.team2Id, allMatches) : []
+  const formColor = { 'W': '#34d399', 'D': '#fbbf24', 'L': '#fb7185' } as Record<string, string>
+
+  // ─── 3. Bracket path context ───
+  const nextRoundInfo = (() => {
+    if (!isBracketMatch || m.stage === 'third' || m.stage === 'final' || !bracketData) return null
+    const nextRoundOrder = ['r32', 'r16', 'qf', 'sf']
+    const idx = nextRoundOrder.indexOf(m.stage)
+    if (idx < 0 || idx >= nextRoundOrder.length - 1) return null
+    const nextRn = nextRoundOrder[idx + 1]
+    const nextMs = bracketData.rounds[nextRn] || []
+    const wId = `W${m.id}`
+    const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+    if (!nm) return null
+    const isT1 = nm.team1Id === wId
+    const oppId = isT1 ? nm.team2Id : nm.team1Id
+    const oppTeam = teamMap.get(oppId)
+    const oppName = oppTeam?.name || oppId
+    const oppFlag = oppTeam?.flag || ''
+    const roundLabel: Record<string, string> = { r16: 'R16', qf: 'QF', sf: 'SF' }
+    return { round: roundLabel[nextRn] || nextRn.toUpperCase(), label: nextRn, opp: `${oppFlag} ${oppName}` }
+  })()
+
+  // ─── 4. Goal timeline ───
+  const hasGoals = hasScore && m.goals && m.goals.length > 0
+  const lastMinute = hasGoals ? Math.max(...m.goals!.map(g => g.minute + (g.stoppageTime || 0)), 90) : 90
 
   return (
     <div>
@@ -202,6 +265,8 @@ export function MatchPage() {
         <p style={{ fontSize: '12px', color: 'var(--text-muted)', marginBottom: '16px' }}>
           {(() => { const h = toHkt(m.date, m.timeUtc); return `${h.date} · ${h.time} HKT` })()}{m.group ? ` · Group ${m.group}` : ''}
         </p>
+
+        {/* Team vs Team + score */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px' }}>
           <div style={{ textAlign: 'right' }}>
             {!teamMap.has(m.team1Id) ? (
@@ -214,6 +279,18 @@ export function MatchPage() {
               <span style={{ fontWeight: 600, fontSize: '16px', color: 'var(--text-muted)' }}>{t1?.name || m.team1Id}</span>
             ) : (
               <Link to={`/team/${m.team1Id}`} style={{ fontWeight: 600, fontSize: '16px', color: 'inherit', textDecoration: 'none' }}>{t1?.name || m.team1Id}</Link>
+            )}
+            {/* Form bar */}
+            {form1.length > 0 && (
+              <div style={{ display: 'flex', gap: '3px', justifyContent: 'flex-end', marginTop: '6px' }}>
+                {form1.map((r, i) => (
+                  <span key={i} style={{
+                    display: 'inline-block', width: '16px', height: '16px', lineHeight: '16px',
+                    borderRadius: '3px', fontSize: '9px', fontWeight: 700, textAlign: 'center',
+                    background: formColor[r], color: '#0f172a',
+                  }}>{r}</span>
+                ))}
+              </div>
             )}
           </div>
           <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px' }}>
@@ -231,25 +308,85 @@ export function MatchPage() {
             ) : (
               <Link to={`/team/${m.team2Id}`} style={{ fontWeight: 600, fontSize: '16px', color: 'inherit', textDecoration: 'none' }}>{t2?.name || m.team2Id}</Link>
             )}
+            {/* Form bar */}
+            {form2.length > 0 && (
+              <div style={{ display: 'flex', gap: '3px', justifyContent: 'flex-start', marginTop: '6px' }}>
+                {form2.map((r, i) => (
+                  <span key={i} style={{
+                    display: 'inline-block', width: '16px', height: '16px', lineHeight: '16px',
+                    borderRadius: '3px', fontSize: '9px', fontWeight: 700, textAlign: 'center',
+                    background: formColor[r], color: '#0f172a',
+                  }}>{r}</span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
-        {hasScore && m.goals && m.goals.length > 0 && (
-          <div style={{ marginTop: '20px' }}>
-            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>{t.table.goals}</h4>
-            {m.goals.map((g, i) => {
-              const side = g.teamId === m.team1Id ? 'left' : 'right'
-              return (
-                <div key={i} style={{ display: 'flex', justifyContent: side === 'left' ? 'flex-start' : 'flex-end', fontSize: '13px', marginBottom: '4px' }}>
-                  <span>
-                    {g.ownGoal ? `${g.scorer} (og) ` : `${g.scorer} `}
-                    {g.penalty ? '(P) ' : ''}
-                    <span style={{ color: 'var(--text-muted)' }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
-                  </span>
-                </div>
-              )
-            })}
+
+        {/* Bracket path context */}
+        {nextRoundInfo && (
+          <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
+            <span style={{ fontWeight: 600 }}>Winner → {nextRoundInfo.round}</span>
+            <span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
           </div>
         )}
+
+        {/* Goal timeline */}
+        {hasGoals && (
+          <div style={{ marginTop: '20px', padding: '0 4px' }}>
+            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px' }}>{t.table.goals}</h4>
+            {/* Timeline bar */}
+            <div style={{ position: 'relative', height: '32px', background: 'rgba(30,41,59,.3)', borderRadius: '4px', marginBottom: '8px', overflow: 'visible' }}>
+              {/* HT marker */}
+              <div style={{ position: 'absolute', left: '50%', top: '-2px', bottom: '-2px', width: '1px', background: 'rgba(148,163,184,.3)' }} />
+              {/* Goal dots */}
+              {m.goals!.map((g, i) => {
+                const pct = Math.min((g.minute + (g.stoppageTime || 0)) / lastMinute * 100, 98)
+                return (
+                  <span key={i} style={{
+                    position: 'absolute', left: `${pct}%`, top: '50%', transform: 'translate(-50%, -50%)',
+                    width: '12px', height: '12px', borderRadius: '50%',
+                    background: g.teamId === m.team1Id ? '#22d3ee' : '#f472b6',
+                    border: '2px solid rgba(15,23,42,.6)',
+                    zIndex: 2,
+                  }} title={`${g.scorer} ${g.minute}'`} />
+                )
+              })}
+              {/* Minute labels */}
+              {[0, 15, 30, 45, 60, 75, 90].map(mn => (
+                <span key={mn} style={{
+                  position: 'absolute', left: `${(mn / lastMinute) * 100}%`, bottom: '-16px',
+                  transform: 'translateX(-50%)', fontSize: '8px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)',
+                }}>{mn}'</span>
+              ))}
+              <span style={{ position: 'absolute', left: '50%', bottom: '-16px', transform: 'translateX(-50%)', fontSize: '8px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>HT</span>
+            </div>
+            {/* Goal list below timeline */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginTop: '20px' }}>
+              <div style={{ textAlign: 'left' }}>
+                {m.goals!.filter(g => g.teamId === m.team1Id).map((g, i) => (
+                  <div key={i} style={{ marginBottom: '3px' }}>
+                    <span style={{ color: '#22d3ee', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
+                    <span style={{ color: 'var(--text)' }}> {g.scorer}</span>
+                    {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}> (og)</span>}
+                    {g.penalty && <span style={{ color: 'var(--text-muted)' }}> (P)</span>}
+                  </div>
+                ))}
+              </div>
+              <div style={{ textAlign: 'right' }}>
+                {m.goals!.filter(g => g.teamId === m.team2Id).map((g, i) => (
+                  <div key={i} style={{ marginBottom: '3px' }}>
+                    <span style={{ color: 'var(--text)' }}>{g.scorer} </span>
+                    {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}>(og) </span>}
+                    {g.penalty && <span style={{ color: 'var(--text-muted)' }}>(P) </span>}
+                    <span style={{ color: '#f472b6', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {stadium && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)', fontSize: '12px', color: 'var(--text-muted)' }}>
             🏟️ <Link to="/stadiums" style={{ color: 'var(--accent)', textDecoration: 'none' }}>{stadium.name}</Link>
