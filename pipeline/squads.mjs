@@ -16,6 +16,7 @@ const WIKI_ZH_URL = 'https://zh.wikipedia.org/wiki/2026%E5%B9%B4%E5%9C%8B%E9%9A%
 const TEAM_NAMES = {
   'Mexico': 'MEX', 'South Africa': 'RSA', 'South Korea': 'KOR',
   'Czech Republic': 'CZE', 'Canada': 'CAN',
+  'Bosnia and Herzegovina': 'BIH', 'Curaçao': 'CUW',
   'Qatar': 'QAT', 'Switzerland': 'SUI', 'Brazil': 'BRA',
   'Morocco': 'MAR', 'Haiti': 'HAI', 'Scotland': 'SCO',
   'United States': 'USA', 'Paraguay': 'PAR', 'Australia': 'AUS',

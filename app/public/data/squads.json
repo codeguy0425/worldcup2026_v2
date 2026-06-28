@@ -789,6 +789,164 @@
       "club": "Austin FC"
     }
   ],
+  "BIH": [
+    {
+      "no": 1,
+      "pos": "GK",
+      "name": "Nikola Vasilj",
+      "club": "FC St. Pauli"
+    },
+    {
+      "no": 2,
+      "pos": "DF",
+      "name": "Nihad Mujakić",
+      "club": "Gaziantep"
+    },
+    {
+      "no": 3,
+      "pos": "DF",
+      "name": "Dennis Hadžikadunić",
+      "club": "Sampdoria"
+    },
+    {
+      "no": 4,
+      "pos": "DF",
+      "name": "Tarik Muharemović",
+      "club": "Sassuolo"
+    },
+    {
+      "no": 5,
+      "pos": "DF",
+      "name": "Sead Kolašinac",
+      "club": "Atalanta"
+    },
+    {
+      "no": 6,
+      "pos": "MF",
+      "name": "Benjamin Tahirović",
+      "club": "Brøndby"
+    },
+    {
+      "no": 7,
+      "pos": "DF",
+      "name": "Amar Dedić",
+      "club": "Benfica"
+    },
+    {
+      "no": 8,
+      "pos": "MF",
+      "name": "Armin Gigović",
+      "club": "Young Boys"
+    },
+    {
+      "no": 9,
+      "pos": "FW",
+      "name": "Samed Baždar",
+      "club": "Jagiellonia Białystok"
+    },
+    {
+      "no": 10,
+      "pos": "FW",
+      "name": "Ermedin Demirović",
+      "club": "VfB Stuttgart"
+    },
+    {
+      "no": 11,
+      "pos": "FW",
+      "name": "Edin Džeko",
+      "club": "Schalke 04"
+    },
+    {
+      "no": 12,
+      "pos": "GK",
+      "name": "Mladen Jurkas",
+      "club": "Borac Banja Luka"
+    },
+    {
+      "no": 13,
+      "pos": "MF",
+      "name": "Ivan Bašić",
+      "club": "Astana"
+    },
+    {
+      "no": 14,
+      "pos": "MF",
+      "name": "Ivan Šunjić",
+      "club": "Pafos"
+    },
+    {
+      "no": 15,
+      "pos": "MF",
+      "name": "Amar Memić",
+      "club": "Viktoria Plzeň"
+    },
+    {
+      "no": 16,
+      "pos": "MF",
+      "name": "Amir Hadžiahmetović",
+      "club": "Hull City"
+    },
+    {
+      "no": 17,
+      "pos": "MF",
+      "name": "Dženis Burnić",
+      "club": "Karlsruher SC"
+    },
+    {
+      "no": 18,
+      "pos": "DF",
+      "name": "Nikola Katić",
+      "club": "Schalke 04"
+    },
+    {
+      "no": 19,
+      "pos": "FW",
+      "name": "Kerim Alajbegović",
+      "club": "Red Bull Salzburg"
+    },
+    {
+      "no": 20,
+      "pos": "FW",
+      "name": "Esmir Bajraktarević",
+      "club": "PSV Eindhoven"
+    },
+    {
+      "no": 21,
+      "pos": "DF",
+      "name": "Stjepan Radeljić",
+      "club": "Rijeka"
+    },
+    {
+      "no": 22,
+      "pos": "GK",
+      "name": "Martin Zlomislić",
+      "club": "Rijeka"
+    },
+    {
+      "no": 23,
+      "pos": "FW",
+      "name": "Haris Tabaković",
+      "club": "Borussia Mönchengladbach"
+    },
+    {
+      "no": 24,
+      "pos": "DF",
+      "name": "Arjan Malić",
+      "club": "Sturm Graz"
+    },
+    {
+      "no": 25,
+      "pos": "FW",
+      "name": "Jovo Lukić",
+      "club": "Universitatea Cluj"
+    },
+    {
+      "no": 26,
+      "pos": "MF",
+      "name": "Ermin Mahmić",
+      "club": "Slovan Liberec"
+    }
+  ],
   "QAT": [
     {
       "no": 1,
