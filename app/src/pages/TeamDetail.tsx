@@ -166,7 +166,7 @@ export function TeamPage() {
   teamMatches.forEach(m => {
     if (!m.goals) return
     m.goals.forEach(g => {
-      if (g.teamId === id) {
+      if (g.teamId === id && !g.ownGoal) {
         if (!scorers[g.scorer]) scorers[g.scorer] = { goals: 0, scorerNo: g.scorerNo }
         scorers[g.scorer].goals++
         if (g.scorerNo !== undefined) scorers[g.scorer].scorerNo = g.scorerNo
