@@ -10,6 +10,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = resolve(__dirname, '..')
 const DATA_DIR = resolve(ROOT, 'app/public/data')
 const WIKI_URL = 'https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads'
+const WIKI_ZH_URL = 'https://zh.wikipedia.org/wiki/2026%E5%B9%B4%E5%9C%8B%E9%9A%9B%E8%B6%B3%E5%8D%94%E4%B8%96%E7%95%8C%E7%9B%83%E5%8F%82%E8%B5%9B%E7%90%83%E5%91%98%E5%90%8D%E5%96%AE'
 
 // Map Wikipedia team names → our team IDs
 const TEAM_NAMES = {
@@ -65,8 +66,38 @@ function parseSquad(html, teamName) {
   return players.length > 0 ? players : null
 }
 
+function parseSquadByPosition(html, teamOrder) {
+  const tables = [...html.matchAll(/<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?<\/table>/gs)]
+  const teamIds = Object.values(TEAM_NAMES)
+  const result = {}
+  let ti = 0
+  for (const t of tables) {
+    const rows = [...t[0].matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)]
+    if (rows.length < 2) continue
+    const cells = [...rows[1][1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)]
+    if (cells.length < 7) continue
+    const firstNo = parseInt(cells[0][1].replace(/<[^>]+>/g, '').trim())
+    if (isNaN(firstNo)) continue
+    const players = []
+    for (const row of rows) {
+      const c = [...row[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)]
+      if (c.length < 7) continue
+      const no = parseInt(c[0][1].replace(/<[^>]+>/g, '').trim())
+      const pos = c[1][1].replace(/<[^>]+>/g, '').trim()
+      const name = c[2][1].replace(/<[^>]+>/g, '').trim().replace(/\s*\(captain\)\s*$/i, '').replace(/\s*\(captain\)/gi, '').trim()
+      const club = c[6][1].replace(/<[^>]+>/g, '').trim().replace(/\[[^\]]*\]/g, '').trim()
+      if (isNaN(no) || !pos || !name) continue
+      players.push({ no, pos, name, club })
+    }
+    if (players.length > 0 && ti < teamIds.length) {
+      result[teamIds[ti++]] = players
+    }
+  }
+  return result
+}
+
 async function main() {
-  console.log('📋 Fetching squads from Wikipedia...')
+  console.log('📋 Fetching EN squads from Wikipedia...')
   const resp = await fetch(WIKI_URL)
   const html = await resp.text()
   console.log(`   Downloaded ${html.length} bytes`)
@@ -79,16 +110,27 @@ async function main() {
     if (players) {
       result[teamId] = players
       found++
-      console.log(`   ✅ ${wikiName} (${teamId}) — ${players.length} players`)
-    } else {
-      console.log(`   ❌ ${wikiName} (${teamId}) — not found`)
     }
   }
 
   const outPath = resolve(DATA_DIR, 'squads.json')
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, JSON.stringify(result, null, 2), 'utf-8')
-  console.log(`\n✅ squads.json — ${found}/${Object.keys(TEAM_NAMES).length} teams, ${Object.values(result).reduce((a,b) => a+b.length, 0)} players total`)
+  console.log(`✅ squads.json — ${found}/${Object.keys(TEAM_NAMES).length} teams, ${Object.values(result).reduce((a,b) => a+b.length, 0)} players total`)
+
+  console.log('\n📋 Fetching ZH squads from Wikipedia...')
+  try {
+    const resp2 = await fetch(WIKI_ZH_URL)
+    const html2 = await resp2.text()
+    console.log(`   Downloaded ${html2.length} bytes`)
+    const resultZh = parseSquadByPosition(html2, TEAM_NAMES)
+    const foundZh = Object.keys(resultZh).length
+    const outZhPath = resolve(DATA_DIR, 'squads-zh.json')
+    writeFileSync(outZhPath, JSON.stringify(resultZh, null, 2), 'utf-8')
+    console.log(`✅ squads-zh.json — ${foundZh}/${Object.keys(TEAM_NAMES).length} teams, ${Object.values(resultZh).reduce((a,b) => a+b.length, 0)} players total`)
+  } catch(e) {
+    console.log('   ❌ Failed:', e.message)
+  }
 }
 
 main().catch(err => { console.error(err); process.exit(1) })

@@ -54,6 +54,8 @@ export function TeamPage() {
   const { data: groupData } = useJson<GroupData>(groupPath)
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: squadData } = useJson<any>('/data/squads.json')
+  const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
+  const activeSquad = t.lang === 'En' ? squadZhData : squadData
 
   // ─── Tournament path ───
   interface PathStep { round: string; label: string; oppId: string; oppName: string; oppFlag: string; score: string; won: boolean | null; detail?: string }
@@ -422,8 +424,8 @@ export function TeamPage() {
           )}
 
           {/* Squad */}
-          {squadData && (() => {
-            const squadPlayers = squadData[team?.id || '']
+          {activeSquad && (() => {
+            const squadPlayers = activeSquad[team?.id || '']
             if (!squadPlayers || squadPlayers.length === 0) return null
             return (
               <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '14px', marginBottom: '20px' }}>
