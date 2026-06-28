@@ -276,7 +276,7 @@ export function MatchPage() {
     const oppName = oppTeam?.name || oppId
     const oppFlag = oppTeam?.flag || ''
     const roundLabel: Record<string, string> = { r16: 'R16', qf: 'QF' }
-    return { type: 'single', round: roundLabel[nextRn] || nextRn.toUpperCase(), opp: `${oppFlag} ${oppName}` }
+    return { type: 'single', round: (t.round as any)[nextRn] || roundLabel[nextRn] || nextRn.toUpperCase(), opp: `${oppFlag} ${oppName}` }
   })()
 
   // ─── 4. Goal timeline ───
@@ -357,8 +357,7 @@ export function MatchPage() {
         {/* Bracket path context */}
         {nextRoundInfo && nextRoundInfo.type === 'single' && (
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
-            <span style={{ fontWeight: 600 }}>{t.match.winner} → {nextRoundInfo.round}</span>
-            <span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
+            <span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.round}<span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
           </div>
         )}
         {nextRoundInfo && nextRoundInfo.type === 'sf' && (
