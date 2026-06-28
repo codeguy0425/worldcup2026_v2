@@ -1,13 +1,13 @@
 import { useJson } from '../hooks/useJson'
 import { Link } from 'react-router-dom'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
-import { fmtScore } from '../pages/index'
+import { fmtScore, computeForm } from '../pages/index'
 import { useLang } from '../hooks/LangProvider'
 
 interface Match {
   id: number; round: string; date: string; stage: string
   team1Id: string; team2Id: string; group?: string
-  score1?: number; score2?: number; timeUtc?: string; time?: string
+  score1?: number; score2?: number; timeUtc?: string; time: string
 }
 interface Team { id: string; name: string; flag: string }
 
@@ -117,9 +117,17 @@ export function HomePage() {
               }}>
                 <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', color: 'var(--text-muted)', fontWeight: 600, minWidth: '18px', textAlign: 'center', letterSpacing: '0.2px' }}>{m.stage === 'group' ? m.group : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}</span>
-                <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
+                <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {t1?.flag || ''}
+                  <span style={{ display: 'inline-flex', gap: '1px', marginRight: '2px', verticalAlign: 'middle' }}>{computeForm(m.team1Id, matches).slice(-3).map((r: 'W'|'D'|'L') => <span key={r} style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '1px', background: r === 'W' ? '#34d399' : r === 'D' ? '#fbbf24' : '#fb7185' }} />)}</span>
+                  {t1?.name || m.team1Id}
+                </span>
                 <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center' }}>{fmtScore(m)}</span>
-                <span style={{ flex: 1 }}>{t2?.name || m.team2Id} {t2?.flag || ''}</span>
+                <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {t2?.name || m.team2Id}
+                  <span style={{ display: 'inline-flex', gap: '1px', marginLeft: '2px', verticalAlign: 'middle' }}>{computeForm(m.team2Id, matches).slice(-3).map((r: 'W'|'D'|'L') => <span key={r} style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '1px', background: r === 'W' ? '#34d399' : r === 'D' ? '#fbbf24' : '#fb7185' }} />)}</span>
+                  {t2?.flag || ''}
+                </span>
               </Link>
             )
           })}
@@ -141,9 +149,17 @@ export function HomePage() {
               }}>
                 <span style={{ color: 'var(--text-muted)', minWidth: '42px', fontSize: '9px', display: 'flex', alignItems: 'center', gap: '2px', position: 'relative' }}><span>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; const h = toHkt(m.date, m.timeUtc); return `${hktDateLabel(m.date, m.timeUtc, lang)} ${h.time}` })()}</span>{viutvIds.has(m.id) && <span style={{ position: 'absolute', right: '-30px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}</span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', color: 'var(--text-muted)', fontWeight: 600, minWidth: '18px', textAlign: 'center', letterSpacing: '0.2px' }}>{m.stage === 'group' ? m.group : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}</span>
-                <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
+                <span style={{ flex: 1, textAlign: 'right', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {t1?.flag || ''}
+                  <span style={{ display: 'inline-flex', gap: '1px', marginRight: '2px', verticalAlign: 'middle' }}>{computeForm(m.team1Id, matches).slice(-3).map((r: 'W'|'D'|'L') => <span key={r} style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '1px', background: r === 'W' ? '#34d399' : r === 'D' ? '#fbbf24' : '#fb7185' }} />)}</span>
+                  {t1?.name || m.team1Id}
+                </span>
                 <span style={{ fontWeight: 400, fontSize: '10px', minWidth: '22px', textAlign: 'center', color: 'var(--text-muted)' }}>vs</span>
-                <span style={{ flex: 1 }}>{t2?.name || m.team2Id} {t2?.flag || ''}</span>
+                <span style={{ flex: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {t2?.name || m.team2Id}
+                  <span style={{ display: 'inline-flex', gap: '1px', marginLeft: '2px', verticalAlign: 'middle' }}>{computeForm(m.team2Id, matches).slice(-3).map((r: 'W'|'D'|'L') => <span key={r} style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '1px', background: r === 'W' ? '#34d399' : r === 'D' ? '#fbbf24' : '#fb7185' }} />)}</span>
+                  {t2?.flag || ''}
+                </span>
               </Link>
             )
           })}

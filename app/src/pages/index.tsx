@@ -32,7 +32,7 @@ export function fmtScore(m: { score1?: number; score2?: number; penalty1?: numbe
 }
 
 // Compute last N results for a team
-function computeForm(teamId: string, allMatches: Match[]): ('W'|'D'|'L')[] {
+export function computeForm(teamId: string, allMatches: Match[]): ('W'|'D'|'L')[] {
   const played = allMatches
     .filter(m => (m.team1Id === teamId || m.team2Id === teamId) && m.score1 !== undefined && m.stage !== 'third')
     .sort((a, b) => {
