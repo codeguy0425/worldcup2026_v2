@@ -609,7 +609,7 @@ export function MatchPage() {
                 {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team2Id : g.teamId === m.team1Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
                     <span style={{ color: '#22d3ee', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
-                    <span style={{ color: 'var(--text)' }}> {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorer.toLowerCase()); if (n) return n; } return g.scorer; })()}</span>
+                    <span style={{ color: 'var(--text)' }}> {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorer.toLowerCase()); if (n) return n; } return g.scorer; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> #{g.scorerNo}</span> : ''}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}> (og)</span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}> (P)</span>}
                   </div>
@@ -618,7 +618,7 @@ export function MatchPage() {
               <div style={{ textAlign: 'right' }}>
                 {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team1Id : g.teamId === m.team2Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
-                    <span style={{ color: 'var(--text)' }}>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorer.toLowerCase()); if (n) return n + ' '; } return g.scorer + ' '; })()}</span>
+                    <span style={{ color: 'var(--text)' }}>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorer.toLowerCase()); if (n) return n + ' '; } return g.scorer + ' '; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>#{g.scorerNo} </span> : ''}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}>(og) </span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}>(P) </span>}
                     <span style={{ color: '#f472b6', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>

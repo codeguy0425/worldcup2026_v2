@@ -391,7 +391,7 @@ export function TeamPage() {
                               ? scorerNameMap.get((id || '') + ':' + s.scorerNo)
                               : null
                           ) : null
-                          return zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name
+                          return <>{zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name}{s.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{s.scorerNo}</span> : ''}</>
                         })()}
                       </td>
                       <td style={{...stadTd, fontWeight: 600, color: 'var(--accent)'}}>{s.goals}</td>
