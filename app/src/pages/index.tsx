@@ -234,12 +234,38 @@ export function MatchPage() {
   // ─── 3. Bracket path context ───
   const nextRoundInfo = (() => {
     if (!isBracketMatch || m.stage === 'third' || m.stage === 'final' || !bracketData) return null
-    const nextRoundOrder = ['r32', 'r16', 'qf', 'sf']
+    const wId = `W${m.id}`
+    const lId = `L${m.id}`
+
+    // SF → Final (winner) + Third place (loser)
+    if (m.stage === 'sf') {
+      const finalMs = bracketData.rounds['final'] || []
+      const finalMatch = finalMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+      const thirdMs = bracketData.rounds['third'] || []
+      const thirdMatch = thirdMs.find((n: BracketMatch) => n.team1Id === lId || n.team2Id === lId)
+      const fOpp = finalMatch ? (() => {
+        const isT1 = finalMatch.team1Id === wId
+        const o = teamMap.get(isT1 ? finalMatch.team2Id : finalMatch.team1Id)
+        return o ? `${o.flag} ${o.name}` : (isT1 ? finalMatch.team2Id : finalMatch.team1Id)
+      })() : null
+      const tOpp = thirdMatch ? (() => {
+        const isT1 = thirdMatch.team1Id === lId
+        const o = teamMap.get(isT1 ? thirdMatch.team2Id : thirdMatch.team1Id)
+        return o ? `${o.flag} ${o.name}` : (isT1 ? thirdMatch.team2Id : thirdMatch.team1Id)
+      })() : null
+      return {
+        type: 'sf',
+        winner: fOpp ? `Winner → Final vs ${fOpp}` : 'Winner → Final',
+        loser: tOpp ? `Third place vs ${tOpp}` : 'Third place',
+      }
+    }
+
+    // R32 / R16 / QF → next round
+    const nextRoundOrder = ['r32', 'r16', 'qf']
     const idx = nextRoundOrder.indexOf(m.stage)
-    if (idx < 0 || idx >= nextRoundOrder.length - 1) return null
+    if (idx < 0) return null
     const nextRn = nextRoundOrder[idx + 1]
     const nextMs = bracketData.rounds[nextRn] || []
-    const wId = `W${m.id}`
     const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
     if (!nm) return null
     const isT1 = nm.team1Id === wId
@@ -247,8 +273,8 @@ export function MatchPage() {
     const oppTeam = teamMap.get(oppId)
     const oppName = oppTeam?.name || oppId
     const oppFlag = oppTeam?.flag || ''
-    const roundLabel: Record<string, string> = { r16: 'R16', qf: 'QF', sf: 'SF' }
-    return { round: roundLabel[nextRn] || nextRn.toUpperCase(), label: nextRn, opp: `${oppFlag} ${oppName}` }
+    const roundLabel: Record<string, string> = { r16: 'R16', qf: 'QF' }
+    return { type: 'single', round: roundLabel[nextRn] || nextRn.toUpperCase(), opp: `${oppFlag} ${oppName}` }
   })()
 
   // ─── 4. Goal timeline ───
@@ -327,10 +353,16 @@ export function MatchPage() {
         </div>
 
         {/* Bracket path context */}
-        {nextRoundInfo && (
+        {nextRoundInfo && nextRoundInfo.type === 'single' && (
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
             <span style={{ fontWeight: 600 }}>Winner → {nextRoundInfo.round}</span>
             <span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
+          </div>
+        )}
+        {nextRoundInfo && nextRoundInfo.type === 'sf' && (
+          <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
+            <div><span style={{ fontWeight: 600, color: '#34d399' }}>Winner</span> → {nextRoundInfo.winner}</div>
+            <div><span style={{ fontWeight: 600, color: '#fb7185' }}>Loser</span> → {nextRoundInfo.loser}</div>
           </div>
         )}
 
