@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
+import { useState } from 'react'
 import { useLang } from '../hooks/LangProvider'
 
 interface Team { id: string; name: string; nameZh: string; group: string; ranking: number; continent: string; flag: string }
@@ -56,6 +57,19 @@ export function TeamPage() {
   const { data: squadData } = useJson<any>('/data/squads.json')
   const { data: squadZhData } = useJson<any>('/data/squads-zh.json')
   const activeSquad = t.lang === 'En' ? squadZhData : squadData
+  const [squadSort, setSquadSort] = useState<'no'|'pos'>('no')
+
+  // Build name map for goalscorers: EN name → ZH name
+  const scorerNameMap = new Map<string, string>()
+  if (squadData && squadZhData) {
+    for (const [tid, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
+      const zhPlayers = (squadZhData as any)[tid] as any[] | undefined
+      if (!zhPlayers) continue
+      for (let i = 0; i < Math.min(enPlayers.length, zhPlayers.length); i++) {
+        scorerNameMap.set(enPlayers[i].name, zhPlayers[i].name)
+      }
+    }
+  }
 
   // ─── Tournament path ───
   interface PathStep { round: string; label: string; oppId: string; oppName: string; oppFlag: string; score: string; won: boolean | null; detail?: string }
@@ -359,7 +373,13 @@ export function TeamPage() {
                   {scorerList.map((s, i) => (
                     <tr key={s.name}>
                       <td style={stadTd}>{i + 1}</td>
-                      <td style={{...stadTd, textAlign:'left'}}>{s.name}</td>
+                      <td style={{...stadTd, textAlign:'left'}}>
+                        {(() => {
+                          const lang = t.lang === 'En' ? 'zh' : 'en'
+                          const zhName = lang === 'zh' ? scorerNameMap.get(s.name) : null
+                          return zhName ? <><span lang="zh">{zhName}</span><br /><span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{s.name}</span></> : s.name
+                        })()}
+                      </td>
                       <td style={{...stadTd, fontWeight: 600, color: 'var(--accent)'}}>{s.goals}</td>
                     </tr>
                   ))}
@@ -427,9 +447,15 @@ export function TeamPage() {
           {activeSquad && (() => {
             const squadPlayers = activeSquad[team?.id || '']
             if (!squadPlayers || squadPlayers.length === 0) return null
+            const sorted = [...(squadPlayers as any[])]
+            if (squadSort === 'pos') sorted.sort((a: any, b: any) => a.pos.localeCompare(b.pos) || a.no - b.no)
             return (
-              <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '14px', marginBottom: '20px' }}>
-                <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '10px' }}>{t.table.squad || 'Squad'}</h3>
+              <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-md)', padding: '14px', marginTop: '20px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                  <h3 style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.4px', textTransform: 'uppercase', color: 'var(--accent)', margin: 0 }}>{t.table.squad}</h3>
+                  <button onClick={() => setSquadSort('no')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'no' ? 'var(--accent)' : 'transparent', color: squadSort === 'no' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>#</button>
+                  <button onClick={() => setSquadSort('pos')} style={{ fontSize: '9px', padding: '2px 6px', background: squadSort === 'pos' ? 'var(--accent)' : 'transparent', color: squadSort === 'pos' ? '#fff' : 'var(--text-muted)', border: '1px solid var(--border)', borderRadius: '4px', cursor: 'pointer' }}>{t.table.pos}</button>
+                </div>
                 <div className="table-wrap">
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '11px' }}>
                     <thead>
@@ -441,8 +467,8 @@ export function TeamPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      {squadPlayers.map((p: any, i: number) => (
-                        <tr key={i} style={{ borderBottom: i < squadPlayers.length - 1 ? '1px solid var(--border)' : 'none' }}>
+                      {sorted.map((p: any, i: number) => (
+                        <tr key={i} style={{ borderBottom: i < sorted.length - 1 ? '1px solid var(--border)' : 'none' }}>
                           <td style={{ padding: '3px 6px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)' }}>{p.no}</td>
                           <td style={{ padding: '3px 6px', textAlign: 'center', fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)' }}>{p.pos}</td>
                           <td style={{ padding: '3px 6px', fontWeight: 500 }}>{p.name}</td>
