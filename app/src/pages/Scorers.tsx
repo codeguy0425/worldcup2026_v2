@@ -24,7 +24,10 @@ export function ScorersPage() {
       zhPlayers.forEach(p => zhByNo[p.no] = p)
       for (const ep of enPlayers) {
         const zhP = zhByNo[ep.no]
-        if (zhP) nameMap.set(teamId + ':' + ep.no, zhP.name)
+        if (zhP) {
+          nameMap.set(teamId + ':' + ep.no, zhP.name)
+          nameMap.set(teamId + ':' + ep.name.toLowerCase(), zhP.name)
+        }
       }
     }
   }
