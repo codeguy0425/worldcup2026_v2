@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineups, Cards &amp; Subs — Integration Plan · WC2026</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-2: #334155;
+    --border: #334155;
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --green: #34d399;
+    --pink: #f472b6;
+    --yellow: #fbbf24;
+    --orange: #fb923c;
+    --red: #fb7185;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-mono: ui-monospace, 'Cascadia Code', 'JetBrains Mono', 'Fira Code', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    padding: 40px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1 { font-size: 28px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.02em; }
+  h1 .sub { font-weight: 400; font-size: 14px; color: var(--text-muted); display: block; margin-top: 2px; letter-spacing: 0; }
+  h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 36px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: -0.01em;
+  }
+  h2 .step { color: var(--accent); font-size: 13px; margin-right: 6px; font-weight: 600; }
+  h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: var(--green);
+  }
+  p, li { font-size: 14px; color: var(--text); }
+  p { margin-bottom: 10px; }
+  ul, ol { padding-left: 22px; margin-bottom: 14px; }
+  li { margin-bottom: 4px; }
+  li > ul, li > ol { margin-top: 4px; margin-bottom: 4px; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  strong { color: #f1f5f9; }
+  code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: var(--surface-2);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: #facc15;
+  }
+  pre {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: #1a2332;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin-bottom: 14px;
+    line-height: 1.5;
+    tab-size: 2;
+  }
+  pre .comment { color: #64748b; }
+  pre .keyword { color: #38bdf8; }
+  pre .string { color: #a5d6ff; }
+  pre .type { color: #f472b6; }
+  pre .num { color: #facc15; }
+  pre .tag { color: #f472b6; }
+
+  .callout {
+    background: rgba(56, 189, 248, .08);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 14px;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .callout strong { color: var(--accent); }
+  .callout.warn {
+    background: rgba(251, 191, 36, .08);
+    border-left-color: var(--yellow);
+  }
+  .callout.warn strong { color: var(--yellow); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+  th, td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  .tag-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .tag-green { background: rgba(52, 211, 153, .15); color: var(--green); }
+  .tag-yellow { background: rgba(251, 191, 36, .15); color: var(--yellow); }
+  .tag-orange { background: rgba(251, 146, 60, .15); color: var(--orange); }
+  .tag-red { background: rgba(251, 113, 133, .15); color: var(--red); }
+  .tag-blue { background: rgba(56, 189, 248, .15); color: var(--accent); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .summary-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+  .summary-card .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: .3px; }
+  .summary-card .value { font-size: 18px; font-weight: 700; margin-top: 2px; }
+
+  /* dark table styling */
+  .td-mono { font-family: var(--font-mono); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>
+  Lineups, Cards &amp; Substitutions
+  <span class="sub">Integration Plan — Phase 1 · WC2026 Redesign</span>
+</h1>
+
+<p style="font-size:15px;color:var(--text-muted);margin-bottom:24px;">
+  This document analyses the current data landscape and lays out a phased approach
+  for displaying starting XIs, bookings, and substitutions on the match page and beyond.
+  No code has been changed — this is a planning document only.
+</p>
+
+<!-- ───── Current Data Sources ───── -->
+
+<h2>1. Current Data Sources</h2>
+
+<table>
+<thead>
+<tr><th>Source</th><th>Goals</th><th>Lineups</th><th>Cards</th><th>Subs</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="https://github.com/openfootball/worldcup.json">openfootball <code>worldcup.json</code></a></td>
+  <td>✅</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td>❌</td>
+  <td class="td-mono">Only goals<sub>1</sub> + goals<sub>2</sub> arrays with minute + scorer name</td>
+</tr>
+<tr>
+  <td>Wikipedia — dedicated match report pages<br><small>(e.g. <a href="https://en.wikipedia.org/wiki/Tunisia_v_Japan_(2026_FIFA_World_Cup)">Tunisia v Japan</a>)</small></td>
+  <td>✅</td>
+  <td>✅</td>
+  <td><span class="tag-badge tag-yellow">Aggregate</span></td>
+  <td>✅</td>
+  <td>Starting XI with pos + shirt no + captain; subs with minute; card <em>counts</em> per team only (not per player)</td>
+</tr>
+<tr>
+  <td>FIFA tactical PDFs<br><small>(linked from Wikipedia)</small></td>
+  <td>—</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>✅</td>
+  <td>Complete match data incl. formation and per-player bookings. Published for every match on <code style="font-size:11px">fdp.fifa.org</code></td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout">
+  <strong>Key finding:</strong> Only <strong>1 match report page</strong> exists on Wikipedia for the 2026 tournament so far
+  (Tunisia v Japan). Most matches have no dedicated article yet. The FIFA tactical PDFs are published for
+  every match but require PDF parsing.
+</div>
+
+<!-- ───── Proposed Data Model ───── -->
+
+<h2>2. Proposed Data Model</h2>
+
+<p>Extend the <code>Match</code> interface with three new optional arrays.
+  All new fields sit <strong>inline</strong> in <code>matches.json</code> — the match page
+  already fetches it, so no extra <code>useJson</code> calls needed.</p>
+
+<pre>
+<span class="comment">// ——— New interfaces ———</span>
+
+interface <span class="type">TeamLineup</span> {
+  teamId: <span class="type">string</span>
+  formation?: <span class="type">string</span>         <span class="comment">// e.g. "4-3-3", "3-4-2-1"</span>
+  startingXI:  <span class="type">PlayerInLineup</span>[]  <span class="comment">// 11 starters</span>
+  substitutes: <span class="type">PlayerInLineup</span>[]  <span class="comment">// bench (up to 15)</span>
+}
+
+interface <span class="type">PlayerInLineup</span> {
+  no:       <span class="type">number</span>   <span class="comment">// shirt number</span>
+  pos:      <span class="type">string</span>   <span class="comment">// GK / DF / MF / FW or specific (CB, CM, CF…)</span>
+  name:     <span class="type">string</span>
+  captain?: <span class="type">boolean</span>
+}
+
+interface <span class="type">BookingEvent</span> {
+  minute:        <span class="type">number</span>
+  stoppageTime?: <span class="type">number</span>
+  teamId:        <span class="type">string</span>
+  player:        <span class="type">string</span>
+  card:          <span class="type">'yellow'</span> | <span class="type">'red'</span> | <span class="type">'second-yellow'</span>
+}
+
+interface <span class="type">SubEvent</span> {
+  minute:        <span class="type">number</span>
+  stoppageTime?: <span class="type">number</span>
+  teamId:        <span class="type">string</span>
+  off:  { no: <span class="type">number</span>; name: <span class="type">string</span> }
+  on:   { no: <span class="type">number</span>; name: <span class="type">string</span> }
+}
+</pre>
+
+<p>These get added to the existing <code>Match</code> interface as optional fields:</p>
+
+<pre>
+interface <span class="type">Match</span> {
+  <span class="comment">// … existing fields …</span>
+  goals?:          <span class="type">GoalEvent</span>[]
+  <span class="tag-green">lineups?:</span>        <span class="type">TeamLineup</span>[]
+  <span class="tag-green">bookings?:</span>       <span class="type">BookingEvent</span>[]
+  <span class="tag-green">substitutions?:</span>  <span class="type">SubEvent</span>[]
+}
+</pre>
+
+<div class="callout warn">
+  <strong>Card detail limitation:</strong> The Wikipedia statistics section only provides <em>aggregate counts</em>
+  per team (yellow: 0, red: 0). Per-player booking data requires scraping FIFA's tactical PDFs.
+  The plan supports both — aggregate cards can be shown as team totals,
+  per-player as detailed events when available.
+</div>
+
+<!-- ───── Data Population Strategies ───── -->
+
+<h2>3. Data Population — Three Paths</h2>
+
+<table>
+<thead>
+<tr><th>Path</th><th>Effort</th><th>Coverage</th><th>Detail</th><th>Maintenance</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Wikipedia scraper</strong><br><small><code>pipeline/enrich-lineups.mjs</code></small></td>
+  <td><span class="tag-badge tag-orange">3-4 days</span></td>
+  <td><span class="tag-badge tag-yellow">Partial</span></td>
+  <td>Good (XI + subs + aggregate cards)</td>
+  <td>Low — auto-recovers when articles appear</td>
+</tr>
+<tr>
+  <td><strong>FIFA PDF parser</strong><br><small>download + extract tactical PDF</small></td>
+  <td><span class="tag-badge tag-red">5-7 days</span></td>
+  <td><span class="tag-badge tag-green">Full</span></td>
+  <td>Best (includes formation, per-player cards)</td>
+  <td>Medium — PDF format may shift</td>
+</tr>
+<tr>
+  <td><strong>Manual override</strong><br><small><code>match-events-override.json</code></small></td>
+  <td><span class="tag-badge tag-green">1 day</span></td>
+  <td><span class="tag-badge tag-red">Manual per match</span></td>
+  <td>As authored</td>
+  <td>High — manual effort per match</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Recommended Start: Wikipedia Scraper + Manual Override</h3>
+
+<p>Begin with a Wikipedia-based enrichment script (similar to <code>enrich-goals.mjs</code>),
+  covering the matches that <em>do</em> have articles. Use a manual override file for the rest.
+  The PDF parser can be added later when more coverage is needed.</p>
+
+<div class="callout">
+  <strong>Wikipedia article URL pattern:</strong>
+  <code>https://en.wikipedia.org/wiki/{Team1}_v_{Team2}_({year}_FIFA_World_Cup)</code><br>
+  The scraper tries this convention and falls back gracefully when the article doesn't exist (HTTP 404).
+</div>
+
+<h4>Scraper pseudo-flow</h4>
+
+<pre>
+<span class="keyword">for each</span> match M <span class="keyword">in</span> matches:
+  <span class="keyword">if</span> M has no score → <span class="keyword">skip</span> (not played yet)
+  article = fetch(PAGE_URL(M.team1, M.team2))
+  <span class="keyword">if</span> article is 404 → <span class="keyword">continue</span> (no data available)
+
+  <span class="comment">// Parse the "Details" section (section index 9)</span>
+  details = article.getSection(<span class="string">"Details"</span>)
+
+  <span class="comment">// Extract starting XI + bench for each team</span>
+  <span class="comment">// Wikipedia HTML uses rows of: pos | shirt | player(sub-icon)(c)</span>
+  M.lineups = extractLineups(details, M.team1Id, M.team2Id)
+
+  <span class="comment">// Extract substitutions ("Substitutions:" row)</span>
+  M.substitutions = extractSubstitutions(details, M.team1Id, M.team2Id)
+
+  <span class="comment">// Extract aggregate card counts from the "Statistics" section</span>
+  stats = article.getSection(<span class="string">"Statistics"</span>)
+  M.bookings = extractCardCounts(stats, M.team1Id, M.team2Id)
+
+  <span class="comment">// Patch matches.json in-place (same pattern as enrich-goals.mjs)</span>
+</pre>
+
+<h4>Pipeline integration</h4>
+
+<p>In <code>update.mjs</code>, the <code>cleanMatches</code> function needs to pass through the new fields:</p>
+
+<pre>
+<span class="keyword">const</span> entry = { id, round, date, time, timeUtc, team1Id, team2Id, group,
+                groundId, num, stage }
+<span class="keyword">if</span> (m.score1 !== <span class="keyword">undefined</span>) { entry.score1 = m.score1; entry.score2 = m.score2 }
+<span class="keyword">if</span> (m.goals) entry.goals = m.goals
+<span class="tag-green">if (m.lineups) entry.lineups = m.lineups</span>
+<span class="tag-green">if (m.bookings) entry.bookings = m.bookings</span>
+<span class="tag-green">if (m.substitutions) entry.substitutions = m.substitutions</span>
+</pre>
+
+<p>The deploy workflow (<code>deploy.yml</code>) adds a new step after enrichment:</p>
+
+<pre>
+- <span class="keyword">run</span>: node pipeline/squads.mjs        <span class="comment"># refresh squad data</span>
+- <span class="keyword">run</span>: node pipeline/enrich-goals.mjs   <span class="comment"># existing — adds scorerNo</span>
+- <span class="tag-green">run: node pipeline/enrich-lineups.mjs</span> <span class="comment"># new — adds lineups/cards/subs</span>
+</pre>
+
+<div class="callout warn">
+  <strong>Order matters:</strong> The enrichment scripts must run <em>after</em> <code>update.mjs</code> (which regenerates
+  <code>matches.json</code> from source). This is already the pattern for <code>enrich-goals.mjs</code>.
+</div>
+
+<!-- ───── Frontend UI ───── -->
+
+<h2>4. Frontend Display — MatchPage</h2>
+
+<p>Three new collapsible sections below the goal timeline in
+  <code>app/src/pages/index.tsx</code> (MatchPage component). Each section
+  only renders when data exists, so matches without enrichment show nothing new.</p>
+
+<h3>4.1 — Starting XI</h3>
+
+<p><span class="tag-badge tag-blue">New</span>
+   Presented as two columns below the team info card, before the penalty shootout / bracket path section.</p>
+
+<pre>
+<span class="comment">// ─── 5. Starting XIs ───</span>
+{m.lineups && m.lineups.length === <span class="num">2</span> && (
+  &lt;div style={{ marginTop: <span class="string">'20px'</span>, paddingTop: <span class="string">'14px'</span>,
+              borderTop: <span class="string">'1px solid var(--border)'</span> }}&gt;
+    &lt;h4&gt;Starting XIs&lt;/h4&gt;
+    &lt;div style={{ display: <span class="string">'grid'</span>, gridTemplateColumns: <span class="string">'1fr 1fr'</span>, gap: <span class="string">'12px'</span> }}&gt;
+      {m.lineups.map(team => (
+        &lt;div&gt;
+          &lt;div style={{ fontSize: <span class="string">'10px'</span>, color: <span class="string">'var(--text-muted)'</span>,
+                      fontFamily: <span class="string">'var(--font-mono)'</span>, marginBottom: <span class="string">'6px'</span> }}&gt;
+            {team.formation ? `${team.formation} · ` : ''}{team.startingXI.length} starters
+          &lt;/div&gt;
+          {team.startingXI.map(p => (
+            &lt;div key={p.no}&gt;
+              &lt;span style={{ fontFamily: <span class="string">'var(--font-mono)'</span>,
+                          fontSize: <span class="string">'11px'</span>, color: <span class="string">'var(--text-muted)'</span>,
+                          width: <span class="string">'24px'</span>, display: <span class="string">'inline-block'</span> }}&gt;
+                #{p.no}
+              &lt;/span&gt;
+              &lt;span style={{ fontSize: <span class="string">'11px'</span>, color: <span class="string">'var(--text)'</span> }}&gt;
+                {p.pos} {p.name}{p.captain ? ' (C)' : ''}
+              &lt;/span&gt;
+            &lt;/div&gt;
+          ))}
+        &lt;/div&gt;
+      ))}
+    &lt;/div&gt;
+    <span class="comment">{/* bench */}</span>
+  &lt;/div&gt;
+)}
+</pre>
+
+<p><strong>Mockup of expected output:</strong></p>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:14px;">
+  <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px;margin-bottom:10px;">Starting XIs</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div>
+      <div style="font-size:10px;color:var(--text-muted);font-family:var(--font-mono);margin-bottom:6px;">4-3-3 · 11 starters</div>
+      <div><span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:24px;display:inline-block;">#1</span> GK Name</div>
+      <div><span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:24px;display:inline-block;">#2</span> DF Name</div>
+      <div><span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:24px;display:inline-block;">#3</span> DF Name</div>
+      <div><span style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:24px;display:inline-block;">#4</span> DF Name (C)</div>
+      <div style="font-size:10px;color:var(--text-muted);margin-top:8px;border-top:1px solid var(--border);padding-top:6px;">Subs: #12 Player, #13 Player …</div>
+    </div>
+    <div>
+      <div style="font-size:10px;color:var(--text-muted);font-family:var(--font-mono);margin-bottom:6px;">3-4-2-1 · 11 starters</div>
+      … same layout mirrored …
+    </div>
+  </div>
+</div>
+
+<h3>4.2 — Substitutions</h3>
+
+<p><span class="tag-badge tag-blue">New</span>
+   A timeline of substitution events, grouped by team, showing minute + who came off/on.</p>
+
+<pre>
+<span class="comment">// ─── 6. Substitutions ───</span>
+{m.substitutions && m.substitutions.length > <span class="num">0</span> && (
+  &lt;div&gt;
+    &lt;h4&gt;Substitutions&lt;/h4&gt;
+    {m.substitutions.map((sub, i) => (
+      &lt;div key={i} style={{ fontSize: <span class="string">'11px'</span>, marginBottom: <span class="string">'3px'</span> }}&gt;
+        &lt;span style={{ fontFamily: <span class="string">'var(--font-mono)'</span>,
+                    color: <span class="string">'var(--accent)'</span>, fontWeight: <span class="num">600</span> }}&gt;
+          {sub.minute}'
+        &lt;/span&gt;
+        &lt;span style={{ color: <span class="string">'#fb7185'</span> }}&gt; ← {sub.off.name} &lt;/span&gt;
+        &lt;span style={{ color: <span class="string">'#34d399'</span> }}&gt; → {sub.on.name}&lt;/span&gt;
+      &lt;/div&gt;
+    ))}
+  &lt;/div&gt;
+)}
+</pre>
+
+<h3>4.3 — Bookings (Cards)</h3>
+
+<p><span class="tag-badge tag-blue">New</span>
+   Per-player bookings if available, or aggregate counts per team as fallback.</p>
+
+<pre>
+<span class="comment">// ─── 7. Bookings ───</span>
+{m.bookings && m.bookings.length > <span class="num">0</span> && (
+  &lt;div&gt;
+    &lt;h4&gt;Cards&lt;/h4&gt;
+    {m.bookings.map((b, i) => (
+      &lt;div key={i} style={{ fontSize: <span class="string">'11px'</span>, marginBottom: <span class="string">'3px'</span> }}&gt;
+        &lt;span&gt;{b.card === <span class="string">'yellow'</span> ? '🟨' : b.card === <span class="string">'red'</span> ? '🟥' : '🟨🟥'}&lt;/span&gt;
+        &lt;span style={{ fontFamily: <span class="string">'var(--font-mono)'</span>,
+                    color: <span class="string">'var(--text-muted)'</span> }}&gt;
+          {b.minute}'
+        &lt;/span&gt;
+        &lt;span&gt; {b.player}&lt;/span&gt;
+      &lt;/div&gt;
+    ))}
+  &lt;/div&gt;
+)}
+</pre>
+
+<h3>4.4 — Aggregate Card Display (Fallback)</h3>
+
+<p>When per-player data isn't available (Wikipedia only gives counts), show a simpler table:</p>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:14px;width:300px;">
+  <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px;">Cards</div>
+  <table style="font-size:12px;margin-bottom:0;">
+    <tr><th></th><th style="text-align:center;">🟨</th><th style="text-align:center;">🟥</th></tr>
+    <tr><td>🇲🇽 Mexico</td><td style="text-align:center;">2</td><td style="text-align:center;">0</td></tr>
+    <tr><td style="border-bottom:none;">🇿🇦 South Africa</td><td style="text-align:center;border-bottom:none;">3</td><td style="text-align:center;border-bottom:none;">0</td></tr>
+  </table>
+</div>
+
+<!-- ───── Pages Affected ───── -->
+
+<h2>5. Pages Affected Summary</h2>
+
+<table>
+<thead>
+<tr><th>Page</th><th>Component</th><th>Impact</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>MatchPage</strong></td>
+  <td><code>index.tsx</code></td>
+  <td><span class="tag-badge tag-orange">Major</span> — 3 new sections added below goal timeline</td>
+</tr>
+<tr>
+  <td><strong>TeamDetail</strong></td>
+  <td><code>TeamDetail.tsx</code></td>
+  <td><span class="tag-badge tag-yellow">Minor</span> — optionally show per-match card/subs data in match list</td>
+</tr>
+<tr>
+  <td><strong>SchedulePage</strong></td>
+  <td><code>index.tsx</code></td>
+  <td><span class="tag-badge tag-green">None</span> — only expanded view</td>
+</tr>
+<tr>
+  <td><strong>Groups / Bracket / Scorers</strong></td>
+  <td>Various</td>
+  <td><span class="tag-badge tag-green">None</span></td>
+</tr>
+</tbody>
+</table>
+
+<!-- ───── Implementation Order ───── -->
+
+<h2>6. Implementation Order</h2>
+
+<ol>
+  <li>
+    <strong>Extend the TypeScript interfaces</strong> in <code>index.tsx</code> and <code>TeamDetail.tsx</code>
+    — add <code>TeamLineup</code>, <code>BookingEvent</code>, <code>SubEvent</code> to the <code>Match</code> interface.
+  </li>
+  <li>
+    <strong>Update <code>update.mjs</code> cleanMatches</strong> — add pass-through for the three new fields
+    so they survive pipeline regeneration.
+  </li>
+  <li>
+    <strong>Build <code>enrich-lineups.mjs</code></strong> — Wikipedia scraper:
+    <ul>
+      <li>Fetch article by convention URL</li>
+      <li>Parse "Details" section HTML for starting XI + subs</li>
+      <li>Parse "Statistics" section for aggregate card counts</li>
+      <li>Patch <code>matches.json</code> in-place (same pattern as <code>enrich-goals.mjs</code>)</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Update <code>deploy.yml</code></strong> — add the enrichment step after <code>enrich-goals.mjs</code>.
+  </li>
+  <li>
+    <strong>Build the MatchPage UI</strong> — add Starting XI, substitutions, and cards sections.
+  </li>
+  <li>
+    <strong>Manual override file</strong> — create <code>match-events-override.json</code> for matches
+    the scraper can't reach.
+  </li>
+  <li>
+    <strong>(Future) FIFA PDF parser</strong> — per-player booking data + formation info for all matches.
+  </li>
+</ol>
+
+<hr>
+
+<h2>7. Open Questions</h2>
+
+<ol>
+  <li>
+    <strong>Data source priority:</strong> Start with the Wikipedia scraper (automated, partial coverage)
+    or build the manual override system first (full control, manual effort)?
+  </li>
+  <li>
+    <strong>Card granularity:</strong> Wikipedia only has aggregate counts per team, not per-player.
+    Ok to start with aggregate card counts (🟨 2 - 🟨 3 per team) until FIFA PDF parsing is added?
+  </li>
+  <li>
+    <strong>Formation:</strong> Only available in the FIFA tactical PDFs. Worth the PDF parsing effort,
+    or skip it and just show a plain XI list without formation badges?
+  </li>
+  <li>
+    <strong>Bench display:</strong> Show all bench players (up to 15) collapsed under a "Subs" line,
+    or only show those who actually played (i.e. those mentioned in sub events)?
+  </li>
+  <li>
+    <strong>Lang/i18n:</strong> Player names from Wikipedia are in English. The squad data has Chinese names
+    keyed by shirt number — should the lineup display use the same EN→ZH translation logic as goalscorers?
+  </li>
+</ol>
+
+</body>
+</html>

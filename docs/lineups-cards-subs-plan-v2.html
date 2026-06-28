@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineups, Cards &amp; Subs — Integration Plan · WC2026</title>
+<style>
+  :root {
+    /* ─── Tokens derived from docs/DESIGN.md ─── */
+    --ink: #000000;
+    --body: #999999;
+    --hairline: #ebebeb;
+    --canvas: #ffffff;
+    --canvas-dark: #010120;
+    --surface-dark-soft: #313641;
+    --on-dark: #ffffff;
+    --accent-orange: #fc4c02;
+    --accent-magenta: #ef2cc1;
+    --accent-periwinkle: #bdbbff;
+    --accent-mint: #c8f6f9;
+    --accent-mint-soft: rgba(200, 246, 249, 0.08);
+    --accent-orange-soft: rgba(252, 76, 2, 0.08);
+    --gradient-brand: linear-gradient(90deg, #fc4c02, #ef2cc1, #bdbbff);
+
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, monospace;
+
+    --rounded-sm: 4px;
+    --rounded-md: 8px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-2xl: 24px;
+    --spacing-3xl: 32px;
+    --spacing-4xl: 44px;
+    --spacing-5xl: 48px;
+    --spacing-section: 80px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ─── Surface bands ─── */
+  body {
+    font-family: var(--font-sans);
+    background: var(--canvas);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .band-dark {
+    background: var(--canvas-dark);
+    color: var(--on-dark);
+    padding: var(--spacing-section) var(--spacing-3xl);
+  }
+  .band-light {
+    background: var(--canvas);
+    color: var(--ink);
+    padding: var(--spacing-section) var(--spacing-3xl);
+  }
+  .band-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+  }
+
+  /* ─── Typography ─── */
+  h1 {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: var(--spacing-sm);
+  }
+  h1 .sub {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--body);
+    letter-spacing: 0;
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.55px;
+    font-weight: 500;
+  }
+  h1 .sub span { color: var(--accent-orange); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 11px;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+    color: var(--body);
+    margin-bottom: var(--spacing-lg);
+  }
+  .eyebrow-on-dark {
+    color: var(--accent-periwinkle);
+  }
+  .eyebrow-accent {
+    color: var(--accent-orange);
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: var(--spacing-lg);
+  }
+  .dark-band h2 { color: var(--on-dark); }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  h4 {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  p { font-size: 16px; line-height: 1.5; margin-bottom: var(--spacing-lg); }
+  .dark-band p { color: rgba(255,255,255,.78); }
+
+  /* ─── Links ─── */
+  a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--hairline);
+    transition: text-decoration-color .15s;
+  }
+  a:hover { text-decoration-color: var(--ink); }
+  .dark-band a {
+    color: var(--accent-periwinkle);
+    text-decoration-color: var(--surface-dark-soft);
+  }
+  .dark-band a:hover { text-decoration-color: var(--accent-periwinkle); }
+
+  /* ─── Lists ─── */
+  ul, ol { padding-left: var(--spacing-2xl); margin-bottom: var(--spacing-lg); }
+  li { font-size: 16px; line-height: 1.5; margin-bottom: var(--spacing-sm); }
+  li ul, li ol { margin-top: var(--spacing-sm); }
+
+  /* ─── Code ─── */
+  code, .code {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: rgba(0,0,0,.04);
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+  .dark-band code {
+    background: var(--surface-dark-soft);
+    color: #e2e8f0;
+  }
+  pre {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    background: rgba(0,0,0,.03);
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-sm);
+    padding: var(--spacing-xl) var(--spacing-2xl);
+    overflow-x: auto;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+    tab-size: 2;
+  }
+  .dark-band pre {
+    background: rgba(0,0,0,.25);
+    border-color: var(--surface-dark-soft);
+  }
+  pre .comment { color: var(--body); }
+  pre .keyword { color: #2563eb; }
+  pre .string { color: #059669; }
+  pre .type { color: #d946ef; }
+  pre .num { color: #d97706; }
+  pre .tag-add { color: var(--accent-orange); }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: var(--spacing-2xl);
+  }
+  th {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
+    color: var(--body);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--hairline);
+    text-align: left;
+  }
+  td {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--hairline);
+    vertical-align: top;
+  }
+  tr:last-child td { border-bottom: none; }
+  td:first-child { font-weight: 500; }
+  .dark-band th { color: var(--accent-periwinkle); border-bottom-color: var(--surface-dark-soft); }
+  .dark-band td { border-bottom-color: var(--surface-dark-soft); }
+
+  /* ─── Tabs / Status badges ─── */
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.05px;
+    padding: 2px 8px;
+    border-radius: var(--rounded-sm);
+    border: 1px solid transparent;
+  }
+  .badge-green {
+    background: rgba(52,211,153,.12);
+    color: #059669;
+    border-color: rgba(52,211,153,.25);
+  }
+  .badge-yellow {
+    background: rgba(251,191,36,.12);
+    color: #b45309;
+    border-color: rgba(251,191,36,.25);
+  }
+  .badge-orange {
+    background: var(--accent-orange-soft);
+    color: var(--accent-orange);
+    border-color: rgba(252,76,2,.2);
+  }
+  .badge-blue {
+    background: rgba(56,189,248,.1);
+    color: #0369a1;
+    border-color: rgba(56,189,248,.2);
+  }
+  .badge-mint {
+    background: var(--accent-mint-soft);
+    color: #0e7490;
+    border-color: rgba(200,246,249,.3);
+  }
+
+  /* ─── Brand gradient separator ─── */
+  .gradient-rule {
+    height: 2px;
+    background: var(--gradient-brand);
+    border: none;
+    margin: var(--spacing-5xl) auto;
+    max-width: 200px;
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    border: 1px solid var(--hairline);
+    border-radius: var(--rounded-sm);
+    padding: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+  .card-mock {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .card-mock .shirt { font-family: var(--font-mono); color: var(--body); width: 28px; display: inline-block; }
+  .card-mock .pos  { font-family: var(--font-mono); font-size: 11px; color: var(--body); }
+  .card-mock .cap  { font-family: var(--font-mono); font-size: 10px; color: var(--accent-orange); }
+  .dark-band .card {
+    border-color: var(--surface-dark-soft);
+    background: rgba(0,0,0,.15);
+  }
+
+  /* ─── Column layouts ─── */
+  .col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+  }
+  .col-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 32px; }
+    .band-dark, .band-light { padding: var(--spacing-5xl) var(--spacing-lg); }
+    .col-2, .col-3 { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Callout block ─── */
+  .callout {
+    border-left: 2px solid var(--hairline);
+    padding: var(--spacing-lg) var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    font-size: 14px;
+    color: var(--body);
+    background: rgba(0,0,0,.015);
+  }
+  .callout strong { color: var(--ink); }
+  .dark-band .callout {
+    border-left-color: var(--surface-dark-soft);
+    background: rgba(255,255,255,.02);
+  }
+  .dark-band .callout strong { color: var(--on-dark); }
+  .callout-orange {
+    border-left-color: var(--accent-orange);
+  }
+
+  /* ─── Odd/even row tint for inline mockups ─── */
+  .mock-row { padding: 2px 0; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO BAND ═══════════ -->
+<section class="band-dark">
+<div class="band-inner">
+  <p class="eyebrow eyebrow-on-dark">Enhancement Proposal · Phase 1</p>
+  <h1>
+    Lineups, Cards &amp; Substitutions
+    <span class="sub"><span>WC2026</span> Redesign — Integration Strategy</span>
+  </h1>
+  <p style="font-size:18px;max-width:680px;color:rgba(255,255,255,.7);margin-bottom:0;">
+    A phased approach for displaying starting XIs, bookings, and substitutions on the match page — 
+    covering data sourcing, pipeline integration, frontend UI, and the design decisions 
+    that govern each layer.
+  </p>
+</div>
+</section>
+
+<!-- ═══════════ BAND 1 — Current Landscape ═══════════ -->
+<section class="band-light">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-accent">Data Audit</p>
+<h2>1. Current Data Landscape</h2>
+
+<p>
+  Three potential data sources exist, each with a different level of 
+  completeness. Understanding their coverage determines the implementation 
+  strategy.
+</p>
+
+<table>
+<thead>
+<tr>
+  <th>Source</th>
+  <th>Lineups</th>
+  <th>Cards</th>
+  <th>Subs</th>
+  <th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="https://github.com/openfootball/worldcup.json">openfootball <code>worldcup.json</code></a></td>
+  <td><span class="badge badge-yellow">—</span></td>
+  <td><span class="badge badge-yellow">—</span></td>
+  <td><span class="badge badge-yellow">—</span></td>
+  <td>104 matches — goals only</td>
+</tr>
+<tr>
+  <td><a href="https://en.wikipedia.org/wiki/Tunisia_v_Japan_(2026_FIFA_World_Cup)">Wikipedia match reports</a></td>
+  <td><span class="badge badge-green">✅</span></td>
+  <td><span class="badge badge-yellow">Aggregate</span></td>
+  <td><span class="badge badge-green">✅</span></td>
+  <td>1 article exists; many more will appear after matches</td>
+</tr>
+<tr>
+  <td><a href="https://fdp.fifa.org">FIFA tactical PDFs</a></td>
+  <td><span class="badge badge-green">✅</span></td>
+  <td><span class="badge badge-green">✅</span></td>
+  <td><span class="badge badge-green">✅</span></td>
+  <td>Published for every match — includes formation + per-player cards</td>
+</tr>
+</tbody>
+</table>
+
+<div class="callout">
+  <strong>Key finding.</strong> Only one match-report article exists on Wikipedia so far (Tunisia v Japan). 
+  The openfootball JSON — the pipeline's primary source — carries goals only. 
+  FIFA publishes a tactical-lineup PDF for every match, but the format requires 
+  a PDF extraction step.
+</div>
+
+</div>
+</section>
+
+<!-- ═══════════ BAND 2 — Data Model ═══════════ -->
+<section class="band-dark">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-on-dark">Type Contract</p>
+<h2>2. Data Model</h2>
+
+<p>
+  Three new interfaces extend the <code>Match</code> type. All fields sit 
+  <strong>inline</strong> in <code>matches.json</code> — the match page already 
+  fetches it, so no additional <code>useJson</code> calls are introduced.
+</p>
+
+<pre>
+<span class="comment">// ——— New interfaces added to index.tsx ———</span>
+
+interface <span class="type">TeamLineup</span> {
+  teamId: <span class="type">string</span>
+  formation?: <span class="type">string</span>         <span class="comment">// "4-3-3", "3-4-2-1"</span>
+  startingXI:  <span class="type">PlayerInLineup</span>[]  <span class="comment">// 11 starters</span>
+  substitutes: <span class="type">PlayerInLineup</span>[]  <span class="comment">// bench (up to 15)</span>
+}
+
+interface <span class="type">PlayerInLineup</span> {
+  no:       <span class="type">number</span>
+  pos:      <span class="type">string</span>   <span class="comment">// GK / DF / MF / FW or specific (CB, CM, CF)</span>
+  name:     <span class="type">string</span>
+  captain?: <span class="type">boolean</span>
+}
+
+interface <span class="type">BookingEvent</span> {
+  minute:        <span class="type">number</span>
+  stoppageTime?: <span class="type">number</span>
+  teamId:        <span class="type">string</span>
+  player:        <span class="type">string</span>
+  card:          <span class="type">'yellow'</span> | <span class="type">'red'</span> | <span class="type">'second-yellow'</span>
+}
+
+interface <span class="type">SubEvent</span> {
+  minute:        <span class="type">number</span>
+  stoppageTime?: <span class="type">number</span>
+  teamId:        <span class="type">string</span>
+  off:  { no: <span class="type">number</span>; name: <span class="type">string</span> }
+  on:   { no: <span class="type">number</span>; name: <span class="type">string</span> }
+}
+</pre>
+
+<pre>
+<span class="comment">// ——— Updated Match interface ———</span>
+
+interface <span class="type">Match</span> {
+  <span class="comment">// … existing fields …</span>
+  goals?:          <span class="type">GoalEvent</span>[]
+  <span class="tag-add">lineups?:</span>        <span class="type">TeamLineup</span>[]    <span class="comment">// new</span>
+  <span class="tag-add">bookings?:</span>       <span class="type">BookingEvent</span>[]  <span class="comment">// new</span>
+  <span class="tag-add">substitutions?:</span>  <span class="type">SubEvent</span>[]     <span class="comment">// new</span>
+}
+</pre>
+
+<div class="callout">
+  <strong>Card granularity.</strong> Wikipedia provides per-team aggregate counts only 
+  (🟨 2 – 🟨 3). Per-player booking data requires FIFA's PDFs. The model supports 
+  both: per-player events for detailed display, and a fallback aggregate view 
+  for Wikipedia-sourced data.
+</div>
+
+</div>
+</section>
+
+<!-- ═══════════ BAND 3 — Data Population ═══════════ -->
+<section class="band-light">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-accent">Pipeline</p>
+<h2>3. Data Population — Three Paths</h2>
+
+<div class="col-3" style="margin-bottom:var(--spacing-3xl);">
+  <div class="card">
+    <p class="eyebrow" style="margin-bottom:var(--spacing-sm);">Path A</p>
+    <h4>Wikipedia Scraper</h4>
+    <p style="font-size:14px;margin-bottom:var(--spacing-sm);">
+      <code>pipeline/enrich-lineups.mjs</code> — fetches each match's Wikipedia 
+      article, parses the Details section for XIs + subs, and the Statistics 
+      section for aggregate card counts.
+    </p>
+    <p style="font-size:13px;color:var(--body);">
+      <span class="badge badge-orange">3-4 days</span>
+      <span class="badge badge-yellow" style="margin-left:4px;">Partial coverage</span>
+    </p>
+  </div>
+  <div class="card">
+    <p class="eyebrow" style="margin-bottom:var(--spacing-sm);">Path B</p>
+    <h4>FIFA PDF Parser</h4>
+    <p style="font-size:14px;margin-bottom:var(--spacing-sm);">
+      Downloads each tactical lineup PDF from <code>fdp.fifa.org</code>, 
+      extracts formation, per-player bookings, and full subs. Gold standard, 
+      but format may shift.
+    </p>
+    <p style="font-size:13px;color:var(--body);">
+      <span class="badge badge-orange">5-7 days</span>
+      <span class="badge badge-green" style="margin-left:4px;">Full coverage</span>
+    </p>
+  </div>
+  <div class="card">
+    <p class="eyebrow" style="margin-bottom:var(--spacing-sm);">Path C</p>
+    <h4>Manual Override</h4>
+    <p style="font-size:14px;margin-bottom:var(--spacing-sm);">
+      <code>match-events-override.json</code> — hand-written JSON for matches 
+      no automated source covers. Same pattern as the existing 
+      <code>scorer-no-override.json</code>.
+    </p>
+    <p style="font-size:13px;color:var(--body);">
+      <span class="badge badge-green" style="border-color:transparent;">1 day</span>
+      <span class="badge badge-orange" style="margin-left:4px;">Manual per match</span>
+    </p>
+  </div>
+</div>
+
+<h3>Recommended start: Wikipedia scraper + manual override</h3>
+<p>
+  Begin with the automated scraper covering matches that have articles. Use a 
+  manual override file for the remainder. The FIFA PDF parser can be added as 
+  a second phase when full coverage is needed. The Wikipedia article URL follows 
+  a predictable convention:
+</p>
+<pre>
+https://en.wikipedia.org/wiki/{Team1}_v_{Team2}_({year}_FIFA_World_Cup)
+</pre>
+
+<h4>Scraper flow</h4>
+<pre>
+<span class="keyword">for each</span> match M <span class="keyword">in</span> matches:
+  <span class="keyword">if</span> M has no score → <span class="keyword">skip</span>
+  article = fetch(PAGE_URL(M.team1, M.team2))
+  <span class="keyword">if</span> article is 404 → <span class="keyword">continue</span>
+
+  <span class="comment">// Parse "Details" section (index 9)</span>
+  details = article.getSection(<span class="string">"Details"</span>)
+  M.lineups = extractLineups(details, M.team1Id, M.team2Id)
+  M.substitutions = extractSubs(details, M.team1Id, M.team2Id)
+
+  <span class="comment">// Parse "Statistics" section for card counts</span>
+  stats = article.getSection(<span class="string">"Statistics"</span>)
+  M.bookings = extractCards(stats, M.team1Id, M.team2Id)
+
+  <span class="comment">// Patch matches.json in-place</span>
+  patchFile(M)
+</pre>
+
+<h4>Pipeline integration</h4>
+<p>
+  The <code>cleanMatches</code> function in <code>update.mjs</code> gains 
+  three new pass-through fields:
+</p>
+<pre>
+<span class="keyword">const</span> entry = { id, round, date, time, timeUtc, team1Id, team2Id, group,
+                groundId, num, stage }
+<span class="keyword">if</span> (m.score1 !== <span class="keyword">undefined</span>) { entry.score1 = m.score1; entry.score2 = m.score2 }
+<span class="keyword">if</span> (m.goals) entry.goals = m.goals
+<span class="tag-add">if (m.lineups) entry.lineups = m.lineups</span>
+<span class="tag-add">if (m.bookings) entry.bookings = m.bookings</span>
+<span class="tag-add">if (m.substitutions) entry.substitutions = m.substitutions</span>
+</pre>
+
+<p>Deploy workflow (<code>deploy.yml</code>) — the new step runs after goal enrichment:</p>
+<pre>
+- <span class="keyword">run</span>: node pipeline/squads.mjs
+- <span class="keyword">run</span>: node pipeline/enrich-goals.mjs
+- <span class="tag-add">run: node pipeline/enrich-lineups.mjs</span>  <span class="comment">// new</span>
+</pre>
+
+<div class="callout callout-orange">
+  <strong>Order constraint.</strong> Enrichment scripts must run <em>after</em> 
+  <code>update.mjs</code>, which regenerates <code>matches.json</code> from 
+  source. This follows the established pattern for <code>enrich-goals.mjs</code>.
+</div>
+
+</div>
+</section>
+
+<div class="band-inner"><hr class="gradient-rule"></div>
+
+<!-- ═══════════ BAND 4 — Frontend UI ═══════════ -->
+<section class="band-dark">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-on-dark">Display</p>
+<h2>4. Frontend — MatchPage</h2>
+
+<p>
+  Three new collapsible sections sit below the goal timeline in 
+  <code>app/src/pages/index.tsx</code>. Each section renders only when 
+  data exists — matches without enrichment show no change.
+</p>
+
+<h3>4.1 Starting XIs</h3>
+
+<div class="col-2" style="margin-bottom:var(--spacing-2xl);">
+  <div>
+    <p style="font-size:14px;margin-bottom:var(--spacing-sm);">
+      A two-column grid below the team info card. Each column shows the 11 
+      starters with shirt number, position abbreviation, player name, and 
+      captain badge. Formation badge sits above each column when available.
+    </p>
+  </div>
+  <div class="card card-mock" style="font-size:13px;">
+    <div class="eyebrow eyebrow-on-dark" style="margin-bottom:var(--spacing-sm);">Starting XIs</div>
+    <div class="col-2" style="gap:var(--spacing-lg);">
+      <div>
+        <div style="font-size:10px;font-family:var(--font-mono);color:var(--body);margin-bottom:var(--spacing-sm);">
+          <span class="badge badge-mint" style="font-size:9px;">4-3-3</span> · 11 starters
+        </div>
+        <div class="mock-row"><span class="shirt">#1</span><span class="pos">GK</span> Name</div>
+        <div class="mock-row"><span class="shirt">#2</span><span class="pos">DF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#3</span><span class="pos">DF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#4</span><span class="pos">DF</span> Name <span class="cap">(C)</span></div>
+        <div class="mock-row"><span class="shirt">#5</span><span class="pos">MF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#6</span><span class="pos">MF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#7</span><span class="pos">MF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#8</span><span class="pos">FW</span> Name</div>
+        <div style="margin-top:var(--spacing-sm);padding-top:var(--spacing-sm);border-top:1px solid var(--surface-dark-soft);font-size:11px;color:var(--body);font-family:var(--font-mono);">
+          Subs: #12 Player · #13 Player · #14 Player
+        </div>
+      </div>
+      <div>
+        <div style="font-size:10px;font-family:var(--font-mono);color:var(--body);margin-bottom:var(--spacing-sm);">
+          <span class="badge badge-mint" style="font-size:9px;">3-4-2-1</span> · 11 starters
+        </div>
+        <div class="mock-row"><span class="shirt">#1</span><span class="pos">GK</span> Name</div>
+        <div class="mock-row"><span class="shirt">#3</span><span class="pos">DF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#4</span><span class="pos">DF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#5</span><span class="pos">DF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#22</span><span class="pos">MF</span> Name</div>
+        <div class="mock-row"><span class="shirt">#7</span><span class="pos">MF</span> Name</div>
+        <div style="margin-top:var(--spacing-sm);padding-top:var(--spacing-sm);border-top:1px solid var(--surface-dark-soft);font-size:11px;color:var(--body);font-family:var(--font-mono);">
+          Subs: #6 Player · #9 Player · #11 Player
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>4.2 Substitutions</h3>
+
+<div class="col-2" style="margin-bottom:var(--spacing-2xl);">
+  <div>
+    <p style="font-size:14px;margin-bottom:var(--spacing-sm);">
+      A timeline of substitution events grouped by team. Each row shows the 
+      minute, the player coming off (in red), and the player coming on (in green).
+    </p>
+  </div>
+  <div class="card card-mock">
+    <div class="eyebrow eyebrow-on-dark" style="margin-bottom:var(--spacing-sm);">Substitutions</div>
+    <div><span style="font-family:var(--font-mono);color:#f87171;font-weight:500;">46'</span> <span style="color:#f87171;">← DF Player</span> <span style="color:#34d399;">→ MF Player</span></div>
+    <div><span style="font-family:var(--font-mono);color:#f87171;font-weight:500;">64'</span> <span style="color:#f87171;">← FW Player</span> <span style="color:#34d399;">→ FW Player</span></div>
+    <div><span style="font-family:var(--font-mono);color:#f87171;font-weight:500;">78'</span> <span style="color:#f87171;">← DF Player</span> <span style="color:#34d399;">→ DF Player</span></div>
+    <div style="margin-top:var(--spacing-sm);padding-top:var(--spacing-sm);border-top:1px solid var(--surface-dark-soft);font-size:11px;color:var(--body);">
+      Used: 3 of 5
+    </div>
+  </div>
+</div>
+
+<h3>4.3 Cards</h3>
+
+<div class="col-2" style="margin-bottom:var(--spacing-2xl);">
+  <div>
+    <p style="font-size:14px;margin-bottom:var(--spacing-sm);">
+      Per-player bookings when available, or per-team aggregate counts as 
+      fallback. Two display modes supported by the same data model.
+    </p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-lg);">
+    <div class="card card-mock">
+      <div class="eyebrow eyebrow-on-dark" style="margin-bottom:var(--spacing-sm);">Cards</div>
+      <div>🟨 <span style="font-family:var(--font-mono);color:var(--body);">46'</span> Player Name</div>
+      <div>🟨 <span style="font-family:var(--font-mono);color:var(--body);">67'</span> Player Name</div>
+      <div style="margin-top:var(--spacing-sm);padding-top:var(--spacing-sm);border-top:1px solid var(--surface-dark-soft);font-size:11px;color:var(--body);">
+        Per-player · from FIFA PDF
+      </div>
+    </div>
+    <div class="card card-mock">
+      <div class="eyebrow eyebrow-on-dark" style="margin-bottom:var(--spacing-sm);">Cards</div>
+      <table style="font-size:12px;margin-bottom:0;">
+        <tr><th style="padding:2px 6px;font-size:9px;"></th><th style="padding:2px 6px;text-align:center;font-size:9px;">🟨</th><th style="padding:2px 6px;text-align:center;font-size:9px;">🟥</th></tr>
+        <tr><td style="padding:2px 6px;">🇲🇽 Mexico</td><td style="padding:2px 6px;text-align:center;">2</td><td style="padding:2px 6px;text-align:center;">0</td></tr>
+        <tr><td style="padding:2px 6px;border-bottom:none;">🇿🇦 South Africa</td><td style="padding:2px 6px;text-align:center;border-bottom:none;">3</td><td style="padding:2px 6px;text-align:center;border-bottom:none;">0</td></tr>
+      </table>
+      <div style="margin-top:var(--spacing-sm);padding-top:var(--spacing-sm);border-top:1px solid var(--surface-dark-soft);font-size:11px;color:var(--body);">
+        Aggregate · from Wikipedia
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- ═══════════ BAND 5 — Implementation ═══════════ -->
+<section class="band-light">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-accent">Plan</p>
+<h2>5. Implementation Order</h2>
+
+<table>
+<thead>
+<tr><th>Step</th><th>What</th><th>Files</th><th>Depends on</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Extend TypeScript interfaces</td>
+  <td><code>index.tsx</code>, <code>TeamDetail.tsx</code></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Add pass-through in <code>cleanMatches</code></td>
+  <td><code>pipeline/update.mjs</code></td>
+  <td>—</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Build Wikipedia scraper</td>
+  <td><code>pipeline/enrich-lineups.mjs</code></td>
+  <td>Steps 1-2</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Add enrichment step to deploy workflow</td>
+  <td><code>.github/workflows/deploy.yml</code></td>
+  <td>Step 3</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Build MatchPage UI (XIs, subs, cards)</td>
+  <td><code>app/src/pages/index.tsx</code></td>
+  <td>Step 1</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Create manual override file</td>
+  <td><code>app/public/data/match-events-override.json</code></td>
+  <td>Step 2</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>FIFA PDF parser (future)</td>
+  <td><code>pipeline/enrich-lineups-pdf.mjs</code></td>
+  <td>Steps 1-2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
+
+<!-- ═══════════ BAND 6 — Pages Affected ═══════════ -->
+<section class="band-dark">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-on-dark">Scope</p>
+<h2>6. Pages Affected</h2>
+
+<table>
+<thead>
+<tr><th>Page</th><th>Component</th><th>Impact</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td>MatchPage</td>
+  <td><code>index.tsx</code></td>
+  <td><span class="badge badge-orange">3 new sections</span> below goal timeline</td>
+</tr>
+<tr>
+  <td>TeamDetail</td>
+  <td><code>TeamDetail.tsx</code></td>
+  <td><span class="badge badge-yellow">Optional</span> per-match card/subs in match list</td>
+</tr>
+<tr>
+  <td>SchedulePage</td>
+  <td><code>index.tsx</code></td>
+  <td><span class="badge badge-green">None</span></td>
+</tr>
+<tr>
+  <td>Groups, Bracket, Scorers, Stadiums</td>
+  <td>Various</td>
+  <td><span class="badge badge-green">None</span></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</section>
+
+<!-- ═══════════ BAND 7 — Open Questions ═══════════ -->
+<section class="band-light">
+<div class="band-inner">
+
+<p class="eyebrow eyebrow-accent">Decisions</p>
+<h2>7. Open Questions</h2>
+
+<ol style="font-size:16px;">
+  <li>
+    <strong>Data source priority.</strong> Start with the Wikipedia scraper 
+    (automated, partial coverage) or build the manual override system first 
+    (full control, manual effort)?
+  </li>
+  <li>
+    <strong>Card granularity.</strong> Wikipedia only has aggregate counts 
+    per team, not per-player. Acceptable to start with aggregate card counts 
+    (🟨 2 – 🟨 3 per team) until FIFA PDF parsing is added?
+  </li>
+  <li>
+    <strong>Formation display.</strong> Only available in FIFA tactical PDFs. 
+    Worth the PDF parsing effort, or skip formation badges and show a plain 
+    XI list?
+  </li>
+  <li>
+    <strong>Bench display.</strong> Show all bench players (up to 15) collapsed 
+    under a "Subs" line, or only show those who actually played (i.e., 
+    mentioned in sub events)?
+  </li>
+  <li>
+    <strong>Chinese name translation.</strong> The squad data has Chinese names 
+    keyed by shirt number. Should the lineup display use the same EN → ZH 
+    translation logic as goalscorers?
+  </li>
+</ol>
+
+</div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<section class="band-dark" style="padding-top:var(--spacing-5xl);padding-bottom:var(--spacing-5xl);">
+<div class="band-inner" style="text-align:center;">
+  <hr class="gradient-rule" style="margin:0 auto var(--spacing-2xl);">
+  <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.55px;text-transform:uppercase;color:var(--body);margin-bottom:0;">
+    WC2026 Redesign · 29 Jun 2026 · docs/lineups-cards-subs-plan-v2.html
+  </p>
+</div>
+</section>
+
+</body>
+</html>
