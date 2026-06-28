@@ -355,7 +355,7 @@ export function MatchPage() {
         {/* Bracket path context */}
         {nextRoundInfo && nextRoundInfo.type === 'single' && (
           <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
-            <span style={{ fontWeight: 600 }}>Winner → {nextRoundInfo.round}</span>
+            <span style={{ fontWeight: 600 }}>{t.match.winner} → {nextRoundInfo.round}</span>
             <span style={{ marginLeft: '6px' }}>vs {nextRoundInfo.opp}</span>
           </div>
         )}
