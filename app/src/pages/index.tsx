@@ -338,6 +338,43 @@ export function MatchPage() {
         </div>
       )}
 
+      {/* Next bracket match (for knockout matches that have a next round) */}
+      {nextRoundInfo && bracketData && (() => {
+        const wId = `W${m.id}`
+        const nextRn: string = ({r32:'r16',r16:'qf',qf:'sf',sf:'final'})[m.stage] || ''
+        const nextMs = bracketData.rounds[nextRn] || []
+        const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+        if (!nm || !nextRn) return null
+        const isT1 = nm.team1Id === wId
+        const oppId = isT1 ? nm.team2Id : nm.team1Id
+        const oppTeam = teamMap.get(oppId)
+        const hm = allMatches.find(x => x.id === nm.matchId)
+        return (
+          <div style={{ marginBottom: '12px', fontSize: '11px' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '6px', textTransform: 'uppercase', letterSpacing: '0.3px' }}>
+              {t.match.winner} → {(t.round as any)[nextRn] || nextRn.toUpperCase()}
+            </div>
+            <Link to={`/match/${nm.matchId}`} style={{
+              display: 'inline-flex', alignItems: 'center', gap: '4px',
+              padding: '5px 10px', borderRadius: 'var(--radius-sm)',
+              background: 'var(--surface)', border: '1px solid var(--border)',
+              textDecoration: 'none', color: 'inherit', fontSize: '11px',
+            }}>
+              {hm && (
+                <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>
+                  {(() => { const h = toHkt(hm.date, hm.timeUtc); return h.date.slice(5) })()}
+                </span>
+              )}
+              <span style={{ fontWeight: 600, fontSize: '10px' }}>
+                {t.match.winner}
+              </span>
+              <span>vs</span>
+              <span>{oppTeam ? `${oppTeam.flag} ${oppTeam.name}` : oppId}</span>
+            </Link>
+          </div>
+        )
+      })()}
+
       <div style={{ background: 'var(--surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', padding: '24px', textAlign: 'center' }}>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '4px', position: 'relative', display: 'inline-block' }}>
           {trRound(m.round, t)} {viutvIds.has(Number(id)) && <span title="ViuTV 免費直播" style={{ position: 'absolute', right: '-18px', top: '50%', transform: 'translateY(-50%)', lineHeight: 1 }}>📺</span>}
