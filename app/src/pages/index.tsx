@@ -67,6 +67,32 @@ interface GoalEvent {
   ownGoal?: boolean; penalty?: boolean; stoppageTime?: number
 }
 
+// ─── Match Detail (override) types ───
+
+interface LineupSlot {
+  no: number; pos?: 'GK'|'DF'|'MF'|'FW'; name: string; captain?: boolean
+}
+
+interface TeamDetail {
+  teamId: string; formation: string; coach: string
+  startingXI: LineupSlot[]; substitutes: LineupSlot[]
+}
+
+interface SubstitutionEvent {
+  minute: number; stoppageTime?: number; teamId: string
+  off: { no: number; name: string }; on: { no: number; name: string }
+}
+
+interface CardEvent {
+  minute: number; stoppageTime?: number; teamId: string
+  player: { no: number; name: string }; card: 'yellow'|'red'
+}
+
+interface MatchDetail {
+  team1: TeamDetail; team2: TeamDetail
+  substitutions?: SubstitutionEvent[]; cards?: CardEvent[]
+}
+
 interface Team { id: string; name: string; flag: string }
 interface StadiumInfo { id: string; name: string; city: string; country: string }
 
@@ -212,6 +238,7 @@ export function MatchPage() {
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
+  const { data: rawDetail } = useJson<Record<string, MatchDetail>>('/data/match-detail.json')
   const curMatch = (matches ?? []).find(m => m.id === Number(id))
   const gpPath = curMatch?.group ? `/data/groups/${curMatch.group}.json` : ''
   const { data: groupData } = useJson<any>(gpPath)
@@ -251,6 +278,9 @@ export function MatchPage() {
   }
 
   const bracketStages = new Set(['r32', 'r16', 'qf', 'sf', 'third', 'final'])
+
+  // Match detail override (lineup / subs / cards)
+  const detail = (rawDetail && curMatch) ? rawDetail[String(curMatch.id)] : null
 
   if (loading) return <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
   const m = allMatches.find(m => m.id === Number(id))
@@ -636,6 +666,125 @@ export function MatchPage() {
             </div>
           </div>
         )}
+
+        {/* ─── Lineup / Subs / Cards (from match-detail override) ─── */}
+        {detail && (() => {
+          const posLabel: Record<string, string> = { GK: 'GK', DF: 'DF', MF: 'MF', FW: 'FW' }
+          const posOrder = ['GK', 'DF', 'MF', 'FW']
+          // Map substitution time per player number so we can annotate bench
+          const subOnMap = new Map<string, string>()
+          if (detail.substitutions) {
+            for (const s of detail.substitutions) {
+              const key = s.teamId + ':' + s.on.no
+              const label = s.stoppageTime ? `${s.minute}+${s.stoppageTime}'` : `${s.minute}'`
+              subOnMap.set(key, label)
+            }
+          }
+          const cardIcon: Record<string, string> = { yellow: '🟡', red: '🔴' }
+
+          function renderTeamSide(td: TeamDetail, side: 'left'|'right') {
+            const isLeft = side === 'left'
+            return (
+              <div key={td.teamId} style={{ fontSize: '11px', lineHeight: 1.7 }}>
+                <div style={{ fontWeight: 600, marginBottom: '4px', textAlign: isLeft ? 'left' : 'right' }}>
+                  {isLeft && (teamMap.get(td.teamId)?.flag || '')} {teamMap.get(td.teamId)?.name || td.teamId}{!isLeft && ' ' + (teamMap.get(td.teamId)?.flag || '')}
+                </div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)', marginBottom: '8px', textAlign: isLeft ? 'left' : 'right' }}>
+                  {td.formation}
+                </div>
+                {posOrder.map(pos => {
+                  const ps = td.startingXI.filter(p => p.pos === pos)
+                  if (!ps.length) return null
+                  return (
+                    <div key={pos} style={{ marginBottom: '4px' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', letterSpacing: '0.3px' }}>{posLabel[pos]}</span>
+                      {ps.map(p => (
+                        <div key={p.no} style={{ textAlign: isLeft ? 'left' : 'right' }}>
+                          <span style={{ color: 'var(--text-muted)', fontSize: '10px', fontFamily: 'var(--font-mono)' }}>{p.no}</span>
+                          {' '}{p.name}{p.captain ? <span style={{ fontSize: '9px', color: 'var(--accent)' }}> (C)</span> : ''}
+                        </div>
+                      ))}
+                    </div>
+                  )
+                })}
+                {td.substitutes.length > 0 && (
+                  <>
+                    <div style={{ marginTop: '8px', paddingTop: '6px', borderTop: '1px solid var(--border)', fontFamily: 'var(--font-mono)', fontSize: '8px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.3px', textAlign: isLeft ? 'left' : 'right' }}>
+                      {td.substitutes.length} Subs
+                    </div>
+                    <div style={{ textAlign: isLeft ? 'left' : 'right' }}>
+                      {td.substitutes.map(p => {
+                        const t = subOnMap.get(td.teamId + ':' + p.no)
+                        return (
+                          <div key={p.no}>
+                            <span style={{ color: 'var(--text-muted)', fontSize: '10px', fontFamily: 'var(--font-mono)' }}>{p.no}</span>
+                            {' '}{p.name}
+                            {t && <span style={{ color: '#34d399', fontSize: '9px' }}> ↑{t}</span>}
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </>
+                )}
+                <div style={{ marginTop: '6px', fontSize: '10px', color: 'var(--text-muted)', textAlign: isLeft ? 'left' : 'right' }}>
+                  Coach: {td.coach}
+                </div>
+              </div>
+            )
+          }
+
+          return (
+            <div style={{ marginTop: '20px', paddingTop: '14px', borderTop: '1px solid var(--border)' }}>
+              <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '12px' }}>LINE UP</h4>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                {renderTeamSide(detail.team1, 'left')}
+                {renderTeamSide(detail.team2, 'right')}
+              </div>
+
+              {/* Substitution timeline */}
+              {detail.substitutions && detail.substitutions.length > 0 && (
+                <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--border)', fontSize: '11px' }}>
+                  <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>Substitutions</h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                    {detail.substitutions.map((s, i) => {
+                      const t = s.stoppageTime ? `${s.minute}+${s.stoppageTime}` : `${s.minute}`
+                      const team = teamMap.get(s.teamId)
+                      return (
+                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--accent)', minWidth: '36px' }}>{t}'</span>
+                          <span style={{ color: 'var(--text-muted)', fontSize: '9px' }}>↓{s.off.name}</span>
+                          <span style={{ color: 'var(--text-muted)' }}>→</span>
+                          <span style={{ fontWeight: 500 }}>{s.on.name}</span>
+                          <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{team?.flag || ''} {team?.name || s.teamId}</span>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Cards */}
+              {detail.cards && detail.cards.length > 0 && (
+                <div style={{ marginTop: '12px', paddingTop: '10px', borderTop: '1px solid var(--border)', fontSize: '11px' }}>
+                  <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>Cards</h4>
+                  {detail.cards.map((c, i) => {
+                    const t = c.stoppageTime ? `${c.minute}+${c.stoppageTime}` : `${c.minute}`
+                    const team = teamMap.get(c.teamId)
+                    return (
+                      <div key={i} style={{ marginBottom: '3px' }}>
+                        <span>{cardIcon[c.card] || '🟨'}</span>
+                        {' '}<span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--accent)' }}>{t}'</span>
+                        {' '}<span style={{ fontWeight: 500 }}>{c.player.name}</span>
+                        <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> #{c.player.no}</span>
+                        <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> {team?.flag || ''} {team?.name || c.teamId}</span>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
+            </div>
+          )
+        })()}
 
         {stadium && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)', fontSize: '12px', color: 'var(--text-muted)' }}>
