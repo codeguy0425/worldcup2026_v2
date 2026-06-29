@@ -238,7 +238,7 @@ export function MatchPage() {
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
-  const { data: rawDetail } = useJson<Record<string, MatchDetail>>('/data/match-detail.json')
+  const { data: rawDetail } = useJson<Record<string, MatchDetail>>('/data/match-detail.json?v=2')
   const curMatch = (matches ?? []).find(m => m.id === Number(id))
   const gpPath = curMatch?.group ? `/data/groups/${curMatch.group}.json` : ''
   const { data: groupData } = useJson<any>(gpPath)
