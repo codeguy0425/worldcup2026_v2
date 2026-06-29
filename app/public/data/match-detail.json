@@ -205,6 +205,26 @@
     },
     "substitutions": [
       {
+        "minute": 56,
+        "teamId": "RSA",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 8
+        }
+      },
+      {
+        "minute": 61,
+        "teamId": "RSA",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 10
+        }
+      },
+      {
         "minute": 66,
         "teamId": "MEX",
         "off": {
@@ -245,36 +265,6 @@
         }
       },
       {
-        "minute": 79,
-        "teamId": "MEX",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
-        "minute": 56,
-        "teamId": "RSA",
-        "off": {
-          "no": 5
-        },
-        "on": {
-          "no": 8
-        }
-      },
-      {
-        "minute": 61,
-        "teamId": "RSA",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
         "minute": 76,
         "teamId": "RSA",
         "off": {
@@ -292,6 +282,16 @@
         },
         "on": {
           "no": 25
+        }
+      },
+      {
+        "minute": 79,
+        "teamId": "MEX",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 21
         }
       }
     ],
@@ -550,6 +550,36 @@
         }
       },
       {
+        "minute": 63,
+        "teamId": "CZE",
+        "off": {
+          "no": 15
+        },
+        "on": {
+          "no": 9
+        }
+      },
+      {
+        "minute": 63,
+        "teamId": "CZE",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 63,
+        "teamId": "CZE",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
         "minute": 69,
         "teamId": "KOR",
         "off": {
@@ -587,36 +617,6 @@
         },
         "on": {
           "no": 16
-        }
-      },
-      {
-        "minute": 63,
-        "teamId": "CZE",
-        "off": {
-          "no": 15
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 63,
-        "teamId": "CZE",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 63,
-        "teamId": "CZE",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 18
         }
       },
       {
@@ -1130,56 +1130,6 @@
     },
     "substitutions": [
       {
-        "minute": 71,
-        "teamId": "MEX",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
-        "minute": 71,
-        "teamId": "MEX",
-        "off": {
-          "no": 26
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 80,
-        "teamId": "MEX",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
-        "minute": 80,
-        "teamId": "MEX",
-        "off": {
-          "no": 25
-        },
-        "on": {
-          "no": 15
-        }
-      },
-      {
-        "minute": 84,
-        "teamId": "MEX",
-        "off": {
-          "no": 16
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
         "minute": 57,
         "teamId": "KOR",
         "off": {
@@ -1197,6 +1147,26 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "MEX",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "MEX",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 17
         }
       },
       {
@@ -1227,6 +1197,36 @@
         },
         "on": {
           "no": 9
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "MEX",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "MEX",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 15
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "MEX",
+        "off": {
+          "no": 16
+        },
+        "on": {
+          "no": 21
         }
       }
     ],
@@ -1457,46 +1457,6 @@
         }
       },
       {
-        "minute": 64,
-        "teamId": "CZE",
-        "off": {
-          "no": 3
-        },
-        "on": {
-          "no": 22
-        }
-      },
-      {
-        "minute": 64,
-        "teamId": "CZE",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "CZE",
-        "off": {
-          "no": 12
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "CZE",
-        "off": {
-          "no": 22
-        },
-        "on": {
-          "no": 24
-        }
-      },
-      {
         "minute": 63,
         "teamId": "MEX",
         "off": {
@@ -1514,6 +1474,26 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "CZE",
+        "off": {
+          "no": 3
+        },
+        "on": {
+          "no": 22
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "CZE",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 10
         }
       },
       {
@@ -1544,6 +1524,26 @@
         },
         "on": {
           "no": 23
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "CZE",
+        "off": {
+          "no": 12
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "CZE",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 24
         }
       }
     ],
@@ -1763,26 +1763,6 @@
         }
       },
       {
-        "minute": 75,
-        "teamId": "RSA",
-        "off": {
-          "no": 12
-        },
-        "on": {
-          "no": 15
-        }
-      },
-      {
-        "minute": 80,
-        "teamId": "RSA",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 23
-        }
-      },
-      {
         "minute": 65,
         "teamId": "KOR",
         "off": {
@@ -1800,6 +1780,26 @@
         },
         "on": {
           "no": 9
+        }
+      },
+      {
+        "minute": 75,
+        "teamId": "RSA",
+        "off": {
+          "no": 12
+        },
+        "on": {
+          "no": 15
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "RSA",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 23
         }
       }
     ],
@@ -2053,27 +2053,6 @@
         }
       },
       {
-        "minute": 76,
-        "teamId": "CAN",
-        "off": {
-          "no": 12
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "CAN",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 21
-        },
-        "stoppageTime": 1
-      },
-      {
         "minute": 61,
         "teamId": "BIH",
         "off": {
@@ -2114,6 +2093,16 @@
         }
       },
       {
+        "minute": 76,
+        "teamId": "CAN",
+        "off": {
+          "no": 12
+        },
+        "on": {
+          "no": 9
+        }
+      },
+      {
         "minute": 83,
         "teamId": "BIH",
         "off": {
@@ -2122,6 +2111,17 @@
         "on": {
           "no": 17
         }
+      },
+      {
+        "minute": 90,
+        "teamId": "CAN",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 21
+        },
+        "stoppageTime": 1
       }
     ],
     "cards": [
@@ -2398,26 +2398,6 @@
         }
       },
       {
-        "minute": 78,
-        "teamId": "QAT",
-        "off": {
-          "no": 23
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "QAT",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
         "minute": 65,
         "teamId": "SUI",
         "off": {
@@ -2438,6 +2418,16 @@
         }
       },
       {
+        "minute": 78,
+        "teamId": "QAT",
+        "off": {
+          "no": 23
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
         "minute": 79,
         "teamId": "SUI",
         "off": {
@@ -2445,6 +2435,16 @@
         },
         "on": {
           "no": 23
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "QAT",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 10
         }
       },
       {
@@ -2693,6 +2693,26 @@
     },
     "substitutions": [
       {
+        "minute": 63,
+        "teamId": "BIH",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 13
+        }
+      },
+      {
+        "minute": 63,
+        "teamId": "BIH",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 20
+        }
+      },
+      {
         "minute": 72,
         "teamId": "SUI",
         "off": {
@@ -2723,46 +2743,6 @@
         }
       },
       {
-        "minute": 86,
-        "teamId": "SUI",
-        "off": {
-          "no": 3
-        },
-        "on": {
-          "no": 25
-        }
-      },
-      {
-        "minute": 89,
-        "teamId": "SUI",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
-        "minute": 63,
-        "teamId": "BIH",
-        "off": {
-          "no": 6
-        },
-        "on": {
-          "no": 13
-        }
-      },
-      {
-        "minute": 63,
-        "teamId": "BIH",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 20
-        }
-      },
-      {
         "minute": 85,
         "teamId": "BIH",
         "off": {
@@ -2780,6 +2760,26 @@
         },
         "on": {
           "no": 25
+        }
+      },
+      {
+        "minute": 86,
+        "teamId": "SUI",
+        "off": {
+          "no": 3
+        },
+        "on": {
+          "no": 25
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "SUI",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 26
         }
       },
       {
@@ -3038,6 +3038,16 @@
     },
     "substitutions": [
       {
+        "minute": 40,
+        "teamId": "QAT",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 3
+        }
+      },
+      {
         "minute": 45,
         "teamId": "CAN",
         "off": {
@@ -3048,6 +3058,16 @@
         }
       },
       {
+        "minute": 45,
+        "teamId": "QAT",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 20
+        }
+      },
+      {
         "minute": 56,
         "teamId": "CAN",
         "off": {
@@ -3055,6 +3075,16 @@
         },
         "on": {
           "no": 11
+        }
+      },
+      {
+        "minute": 59,
+        "teamId": "QAT",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 7
         }
       },
       {
@@ -3075,36 +3105,6 @@
         },
         "on": {
           "no": 19
-        }
-      },
-      {
-        "minute": 40,
-        "teamId": "QAT",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 45,
-        "teamId": "QAT",
-        "off": {
-          "no": 26
-        },
-        "on": {
-          "no": 20
-        }
-      },
-      {
-        "minute": 59,
-        "teamId": "QAT",
-        "off": {
-          "no": 25
-        },
-        "on": {
-          "no": 7
         }
       },
       {
@@ -3368,16 +3368,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "CAN",
-        "off": {
-          "no": 14
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
         "minute": 74,
         "teamId": "SUI",
         "off": {
@@ -3405,6 +3395,16 @@
         },
         "on": {
           "no": 22
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "CAN",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 19
         }
       },
       {
@@ -3647,6 +3647,16 @@
     },
     "substitutions": [
       {
+        "minute": 55,
+        "teamId": "QAT",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
         "minute": 63,
         "teamId": "BIH",
         "off": {
@@ -3664,26 +3674,6 @@
         },
         "on": {
           "no": 26
-        }
-      },
-      {
-        "minute": 82,
-        "teamId": "BIH",
-        "off": {
-          "no": 19
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 55,
-        "teamId": "QAT",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 17
         }
       },
       {
@@ -3714,6 +3704,16 @@
         },
         "on": {
           "no": 7
+        }
+      },
+      {
+        "minute": 82,
+        "teamId": "BIH",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 17
         }
       }
     ],
@@ -3959,16 +3959,6 @@
         }
       },
       {
-        "minute": 80,
-        "teamId": "BRA",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 2
-        }
-      },
-      {
         "minute": 64,
         "teamId": "MAR",
         "off": {
@@ -3986,6 +3976,16 @@
         },
         "on": {
           "no": 21
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "BRA",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 2
         }
       },
       {
@@ -4259,16 +4259,6 @@
         }
       },
       {
-        "minute": 85,
-        "teamId": "HAI",
-        "off": {
-          "no": 15
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
         "minute": 75,
         "teamId": "SCO",
         "off": {
@@ -4316,6 +4306,16 @@
         },
         "on": {
           "no": 23
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "HAI",
+        "off": {
+          "no": 15
+        },
+        "on": {
+          "no": 19
         }
       }
     ],
@@ -4585,26 +4585,6 @@
         }
       },
       {
-        "minute": 88,
-        "teamId": "SCO",
-        "off": {
-          "no": 22
-        },
-        "on": {
-          "no": 24
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "SCO",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 14
-        }
-      },
-      {
         "minute": 83,
         "teamId": "MAR",
         "off": {
@@ -4632,6 +4612,26 @@
         },
         "on": {
           "no": 21
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "SCO",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 24
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "SCO",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 14
         }
       },
       {
@@ -4879,26 +4879,6 @@
         }
       },
       {
-        "minute": 64,
-        "teamId": "BRA",
-        "off": {
-          "no": 22
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
-        "minute": 81,
-        "teamId": "BRA",
-        "off": {
-          "no": 2
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
         "minute": 45,
         "teamId": "HAI",
         "off": {
@@ -4919,6 +4899,16 @@
         }
       },
       {
+        "minute": 64,
+        "teamId": "BRA",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
         "minute": 71,
         "teamId": "HAI",
         "off": {
@@ -4926,6 +4916,16 @@
         },
         "on": {
           "no": 19
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "BRA",
+        "off": {
+          "no": 2
+        },
+        "on": {
+          "no": 18
         }
       },
       {
@@ -5188,38 +5188,6 @@
         }
       },
       {
-        "minute": 81,
-        "teamId": "SCO",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "SCO",
-        "off": {
-          "no": 25
-        },
-        "on": {
-          "no": 8
-        },
-        "stoppageTime": 1
-      },
-      {
-        "minute": 90,
-        "teamId": "SCO",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 18
-        },
-        "stoppageTime": 1
-      },
-      {
         "minute": 66,
         "teamId": "BRA",
         "off": {
@@ -5250,6 +5218,16 @@
         }
       },
       {
+        "minute": 81,
+        "teamId": "SCO",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
         "minute": 82,
         "teamId": "BRA",
         "off": {
@@ -5258,6 +5236,28 @@
         "on": {
           "no": 19
         }
+      },
+      {
+        "minute": 90,
+        "teamId": "SCO",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 8
+        },
+        "stoppageTime": 1
+      },
+      {
+        "minute": 90,
+        "teamId": "SCO",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 18
+        },
+        "stoppageTime": 1
       }
     ],
     "cards": [
@@ -5488,6 +5488,26 @@
     },
     "substitutions": [
       {
+        "minute": 67,
+        "teamId": "HAI",
+        "off": {
+          "no": 15
+        },
+        "on": {
+          "no": 9
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "HAI",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
         "minute": 70,
         "teamId": "MAR",
         "off": {
@@ -5518,46 +5538,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "MAR",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 15
-        }
-      },
-      {
-        "minute": 83,
-        "teamId": "MAR",
-        "off": {
-          "no": 26
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 67,
-        "teamId": "HAI",
-        "off": {
-          "no": 15
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 67,
-        "teamId": "HAI",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
         "minute": 80,
         "teamId": "HAI",
         "off": {
@@ -5575,6 +5555,26 @@
         },
         "on": {
           "no": 25
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "MAR",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 15
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "MAR",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 3
         }
       },
       {
@@ -5816,6 +5816,16 @@
     },
     "substitutions": [
       {
+        "minute": 62,
+        "teamId": "PAR",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
         "minute": 72,
         "teamId": "USA",
         "off": {
@@ -5833,26 +5843,6 @@
         },
         "on": {
           "no": 9
-        }
-      },
-      {
-        "minute": 82,
-        "teamId": "USA",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 62,
-        "teamId": "PAR",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 18
         }
       },
       {
@@ -5883,6 +5873,16 @@
         },
         "on": {
           "no": 17
+        }
+      },
+      {
+        "minute": 82,
+        "teamId": "USA",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 7
         }
       }
     ],
@@ -6148,6 +6148,16 @@
         }
       },
       {
+        "minute": 62,
+        "teamId": "TUR",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
         "minute": 74,
         "teamId": "AUS",
         "off": {
@@ -6168,36 +6178,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "AUS",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 22
-        }
-      },
-      {
-        "minute": 83,
-        "teamId": "AUS",
-        "off": {
-          "no": 5
-        },
-        "on": {
-          "no": 16
-        }
-      },
-      {
-        "minute": 62,
-        "teamId": "TUR",
-        "off": {
-          "no": 6
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
         "minute": 80,
         "teamId": "TUR",
         "off": {
@@ -6215,6 +6195,26 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "AUS",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 22
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "AUS",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 16
         }
       },
       {
@@ -6437,6 +6437,16 @@
     },
     "substitutions": [
       {
+        "minute": 61,
+        "teamId": "AUS",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 20
+        }
+      },
+      {
         "minute": 74,
         "teamId": "USA",
         "off": {
@@ -6444,6 +6454,16 @@
         },
         "on": {
           "no": 14
+        }
+      },
+      {
+        "minute": 78,
+        "teamId": "AUS",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 22
         }
       },
       {
@@ -6487,26 +6507,6 @@
           "no": 7
         },
         "stoppageTime": 6
-      },
-      {
-        "minute": 61,
-        "teamId": "AUS",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 20
-        }
-      },
-      {
-        "minute": 78,
-        "teamId": "AUS",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 22
-        }
       }
     ],
     "cards": [
@@ -6789,26 +6789,6 @@
         }
       },
       {
-        "minute": 71,
-        "teamId": "TUR",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 13
-        }
-      },
-      {
-        "minute": 86,
-        "teamId": "TUR",
-        "off": {
-          "no": 14
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
         "minute": 67,
         "teamId": "PAR",
         "off": {
@@ -6819,6 +6799,16 @@
         }
       },
       {
+        "minute": 71,
+        "teamId": "TUR",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 13
+        }
+      },
+      {
         "minute": 81,
         "teamId": "PAR",
         "off": {
@@ -6826,6 +6816,16 @@
         },
         "on": {
           "no": 26
+        }
+      },
+      {
+        "minute": 86,
+        "teamId": "TUR",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 6
         }
       },
       {
@@ -7092,58 +7092,6 @@
     },
     "substitutions": [
       {
-        "minute": 84,
-        "teamId": "TUR",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
-        "minute": 84,
-        "teamId": "TUR",
-        "off": {
-          "no": 2
-        },
-        "on": {
-          "no": 4
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "TUR",
-        "off": {
-          "no": 6
-        },
-        "on": {
-          "no": 22
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "TUR",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 18
-        },
-        "stoppageTime": 1
-      },
-      {
-        "minute": 90,
-        "teamId": "TUR",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 17
-        },
-        "stoppageTime": 1
-      },
-      {
         "minute": 58,
         "teamId": "USA",
         "off": {
@@ -7184,6 +7132,26 @@
         }
       },
       {
+        "minute": 84,
+        "teamId": "TUR",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "TUR",
+        "off": {
+          "no": 2
+        },
+        "on": {
+          "no": 4
+        }
+      },
+      {
         "minute": 86,
         "teamId": "USA",
         "off": {
@@ -7192,6 +7160,38 @@
         "on": {
           "no": 17
         }
+      },
+      {
+        "minute": 88,
+        "teamId": "TUR",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 22
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "TUR",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 18
+        },
+        "stoppageTime": 1
+      },
+      {
+        "minute": 90,
+        "teamId": "TUR",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 17
+        },
+        "stoppageTime": 1
       }
     ],
     "cards": [
@@ -7707,6 +7707,16 @@
         }
       },
       {
+        "minute": 65,
+        "teamId": "CUW",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 16
+        }
+      },
+      {
         "minute": 72,
         "teamId": "GER",
         "off": {
@@ -7737,26 +7747,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "GER",
-        "off": {
-          "no": 6
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 65,
-        "teamId": "CUW",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 16
-        }
-      },
-      {
         "minute": 82,
         "teamId": "CUW",
         "off": {
@@ -7764,6 +7754,16 @@
         },
         "on": {
           "no": 19
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "GER",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 3
         }
       }
     ],
@@ -7990,36 +7990,6 @@
         }
       },
       {
-        "minute": 77,
-        "teamId": "CIV",
-        "off": {
-          "no": 6
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
-        "minute": 77,
-        "teamId": "CIV",
-        "off": {
-          "no": 19
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
-        "minute": 89,
-        "teamId": "CIV",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
         "minute": 56,
         "teamId": "ECU",
         "off": {
@@ -8051,12 +8021,42 @@
       },
       {
         "minute": 77,
+        "teamId": "CIV",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 77,
+        "teamId": "CIV",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
+        "minute": 77,
         "teamId": "ECU",
         "off": {
           "no": 13
         },
         "on": {
           "no": 11
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "CIV",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 7
         }
       }
     ],
@@ -8326,16 +8326,6 @@
         }
       },
       {
-        "minute": 85,
-        "teamId": "GER",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 8
-        }
-      },
-      {
         "minute": 75,
         "teamId": "CIV",
         "off": {
@@ -8373,6 +8363,16 @@
         },
         "on": {
           "no": 17
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "GER",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 8
         }
       },
       {
@@ -8599,26 +8599,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "ECU",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 89,
-        "teamId": "ECU",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 16
-        }
-      },
-      {
         "minute": 75,
         "teamId": "CUW",
         "off": {
@@ -8650,6 +8630,16 @@
       },
       {
         "minute": 83,
+        "teamId": "ECU",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 83,
         "teamId": "CUW",
         "off": {
           "no": 8
@@ -8666,6 +8656,16 @@
         },
         "on": {
           "no": 19
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "ECU",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 16
         }
       }
     ],
@@ -8931,46 +8931,6 @@
         }
       },
       {
-        "minute": 77,
-        "teamId": "CUW",
-        "off": {
-          "no": 3
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 77,
-        "teamId": "CUW",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 13
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "CUW",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 2
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "CUW",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
         "minute": 67,
         "teamId": "CIV",
         "off": {
@@ -9002,12 +8962,52 @@
       },
       {
         "minute": 77,
+        "teamId": "CUW",
+        "off": {
+          "no": 3
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 77,
+        "teamId": "CUW",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 13
+        }
+      },
+      {
+        "minute": 77,
         "teamId": "CIV",
         "off": {
           "no": 8
         },
         "on": {
           "no": 4
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "CUW",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 2
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "CUW",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 17
         }
       }
     ],
@@ -9233,56 +9233,6 @@
     },
     "substitutions": [
       {
-        "minute": 64,
-        "teamId": "ECU",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 64,
-        "teamId": "ECU",
-        "off": {
-          "no": 13
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
-        "minute": 71,
-        "teamId": "ECU",
-        "off": {
-          "no": 3
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "ECU",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 16
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "ECU",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 2
-        }
-      },
-      {
         "minute": 60,
         "teamId": "GER",
         "off": {
@@ -9304,12 +9254,42 @@
       },
       {
         "minute": 64,
+        "teamId": "ECU",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "ECU",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
+        "minute": 64,
         "teamId": "GER",
         "off": {
           "no": 23
         },
         "on": {
           "no": 14
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "ECU",
+        "off": {
+          "no": 3
+        },
+        "on": {
+          "no": 7
         }
       },
       {
@@ -9320,6 +9300,26 @@
         },
         "on": {
           "no": 13
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "ECU",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 16
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "ECU",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 2
         }
       }
     ],
@@ -9559,6 +9559,16 @@
     },
     "substitutions": [
       {
+        "minute": 66,
+        "teamId": "JPN",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 14
+        }
+      },
+      {
         "minute": 70,
         "teamId": "NED",
         "off": {
@@ -9589,36 +9599,6 @@
         }
       },
       {
-        "minute": 81,
-        "teamId": "NED",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 5
-        }
-      },
-      {
-        "minute": 84,
-        "teamId": "NED",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 66,
-        "teamId": "JPN",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 14
-        }
-      },
-      {
         "minute": 75,
         "teamId": "JPN",
         "off": {
@@ -9646,6 +9626,26 @@
         },
         "on": {
           "no": 2
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "NED",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 5
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "NED",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 19
         }
       },
       {
@@ -9907,36 +9907,6 @@
         }
       },
       {
-        "minute": 84,
-        "teamId": "SWE",
-        "off": {
-          "no": 16
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "SWE",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "SWE",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 8
-        }
-      },
-      {
         "minute": 72,
         "teamId": "TUN",
         "off": {
@@ -9968,6 +9938,16 @@
       },
       {
         "minute": 84,
+        "teamId": "SWE",
+        "off": {
+          "no": 16
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 84,
         "teamId": "TUN",
         "off": {
           "no": 25
@@ -9984,6 +9964,26 @@
         },
         "on": {
           "no": 11
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "SWE",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "SWE",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 8
         }
       }
     ],
@@ -10196,46 +10196,6 @@
     },
     "substitutions": [
       {
-        "minute": 59,
-        "teamId": "NED",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 20
-        }
-      },
-      {
-        "minute": 59,
-        "teamId": "NED",
-        "off": {
-          "no": 14
-        },
-        "on": {
-          "no": 16
-        }
-      },
-      {
-        "minute": 72,
-        "teamId": "NED",
-        "off": {
-          "no": 19
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "NED",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
         "minute": 55,
         "teamId": "SWE",
         "off": {
@@ -10266,6 +10226,36 @@
         }
       },
       {
+        "minute": 59,
+        "teamId": "NED",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 20
+        }
+      },
+      {
+        "minute": 59,
+        "teamId": "NED",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 16
+        }
+      },
+      {
+        "minute": 72,
+        "teamId": "NED",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 10
+        }
+      },
+      {
         "minute": 79,
         "teamId": "SWE",
         "off": {
@@ -10273,6 +10263,16 @@
         },
         "on": {
           "no": 26
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "NED",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 17
         }
       },
       {
@@ -10519,26 +10519,6 @@
         }
       },
       {
-        "minute": 90,
-        "teamId": "TUN",
-        "off": {
-          "no": 2
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "TUN",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 13
-        }
-      },
-      {
         "minute": 74,
         "teamId": "JPN",
         "off": {
@@ -10586,6 +10566,26 @@
         },
         "on": {
           "no": 9
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "TUN",
+        "off": {
+          "no": 2
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "TUN",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 13
         }
       }
     ],
@@ -10789,6 +10789,16 @@
     },
     "substitutions": [
       {
+        "minute": 37,
+        "teamId": "SWE",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
         "minute": 39,
         "teamId": "JPN",
         "off": {
@@ -10836,16 +10846,6 @@
         },
         "on": {
           "no": 16
-        }
-      },
-      {
-        "minute": 37,
-        "teamId": "SWE",
-        "off": {
-          "no": 4
-        },
-        "on": {
-          "no": 7
         }
       },
       {
@@ -11141,26 +11141,6 @@
         }
       },
       {
-        "minute": 75,
-        "teamId": "TUN",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "TUN",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
         "minute": 72,
         "teamId": "NED",
         "off": {
@@ -11191,6 +11171,16 @@
         }
       },
       {
+        "minute": 75,
+        "teamId": "TUN",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
         "minute": 77,
         "teamId": "NED",
         "off": {
@@ -11208,6 +11198,16 @@
         },
         "on": {
           "no": 17
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "TUN",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 26
         }
       }
     ],
@@ -11441,26 +11441,6 @@
         }
       },
       {
-        "minute": 85,
-        "teamId": "BEL",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 20
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "BEL",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
         "minute": 71,
         "teamId": "EGY",
         "off": {
@@ -11488,6 +11468,26 @@
         },
         "on": {
           "no": 9
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "BEL",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 20
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "BEL",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 26
         }
       },
       {
@@ -11764,16 +11764,6 @@
         }
       },
       {
-        "minute": 80,
-        "teamId": "IRN",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
         "minute": 68,
         "teamId": "NZL",
         "off": {
@@ -11801,6 +11791,16 @@
         },
         "on": {
           "no": 24
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "IRN",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 18
         }
       },
       {
@@ -12062,26 +12062,6 @@
         }
       },
       {
-        "minute": 73,
-        "teamId": "BEL",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "BEL",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
         "minute": 66,
         "teamId": "IRN",
         "off": {
@@ -12102,6 +12082,16 @@
         }
       },
       {
+        "minute": 73,
+        "teamId": "BEL",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 3
+        }
+      },
+      {
         "minute": 79,
         "teamId": "IRN",
         "off": {
@@ -12119,6 +12109,16 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "BEL",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 26
         }
       }
     ],
@@ -12350,6 +12350,16 @@
     },
     "substitutions": [
       {
+        "minute": 41,
+        "teamId": "EGY",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 5
+        }
+      },
+      {
         "minute": 66,
         "teamId": "NZL",
         "off": {
@@ -12377,36 +12387,6 @@
         },
         "on": {
           "no": 23
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "NZL",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "NZL",
-        "off": {
-          "no": 2
-        },
-        "on": {
-          "no": 4
-        }
-      },
-      {
-        "minute": 41,
-        "teamId": "EGY",
-        "off": {
-          "no": 14
-        },
-        "on": {
-          "no": 5
         }
       },
       {
@@ -12447,6 +12427,26 @@
         },
         "on": {
           "no": 25
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "NZL",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 3
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "NZL",
+        "off": {
+          "no": 2
+        },
+        "on": {
+          "no": 4
         }
       },
       {
@@ -12703,16 +12703,6 @@
         }
       },
       {
-        "minute": 76,
-        "teamId": "EGY",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
         "minute": 67,
         "teamId": "IRN",
         "off": {
@@ -12720,6 +12710,16 @@
         },
         "on": {
           "no": 20
+        }
+      },
+      {
+        "minute": 76,
+        "teamId": "EGY",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 9
         }
       },
       {
@@ -12988,6 +12988,16 @@
     },
     "substitutions": [
       {
+        "minute": 56,
+        "teamId": "BEL",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
         "minute": 64,
         "teamId": "NZL",
         "off": {
@@ -13008,26 +13018,6 @@
         }
       },
       {
-        "minute": 79,
-        "teamId": "NZL",
-        "off": {
-          "no": 13
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 56,
-        "teamId": "BEL",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
         "minute": 72,
         "teamId": "BEL",
         "off": {
@@ -13045,6 +13035,16 @@
         },
         "on": {
           "no": 24
+        }
+      },
+      {
+        "minute": 79,
+        "teamId": "NZL",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 3
         }
       },
       {
@@ -13288,46 +13288,6 @@
     },
     "substitutions": [
       {
-        "minute": 71,
-        "teamId": "ESP",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
-        "minute": 71,
-        "teamId": "ESP",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 81,
-        "teamId": "ESP",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "ESP",
-        "off": {
-          "no": 16
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
         "minute": 61,
         "teamId": "CPV",
         "off": {
@@ -13358,6 +13318,26 @@
         }
       },
       {
+        "minute": 71,
+        "teamId": "ESP",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 6
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "ESP",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
         "minute": 76,
         "teamId": "CPV",
         "off": {
@@ -13375,6 +13355,26 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "ESP",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 10
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "ESP",
+        "off": {
+          "no": 16
+        },
+        "on": {
+          "no": 17
         }
       }
     ],
@@ -13602,6 +13602,16 @@
         }
       },
       {
+        "minute": 72,
+        "teamId": "URU",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
         "minute": 81,
         "teamId": "KSA",
         "off": {
@@ -13609,6 +13619,26 @@
         },
         "on": {
           "no": 13
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "URU",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "URU",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 19
         }
       },
       {
@@ -13643,36 +13673,6 @@
           "no": 3
         },
         "stoppageTime": 2
-      },
-      {
-        "minute": 72,
-        "teamId": "URU",
-        "off": {
-          "no": 5
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 81,
-        "teamId": "URU",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "URU",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 19
-        }
       }
     ],
     "cards": [
@@ -13887,6 +13887,26 @@
     },
     "substitutions": [
       {
+        "minute": 60,
+        "teamId": "KSA",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
+        "minute": 60,
+        "teamId": "KSA",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
         "minute": 61,
         "teamId": "ESP",
         "off": {
@@ -13914,26 +13934,6 @@
         },
         "on": {
           "no": 8
-        }
-      },
-      {
-        "minute": 60,
-        "teamId": "KSA",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
-        "minute": 60,
-        "teamId": "KSA",
-        "off": {
-          "no": 4
-        },
-        "on": {
-          "no": 18
         }
       },
       {
@@ -14161,36 +14161,6 @@
     },
     "substitutions": [
       {
-        "minute": 70,
-        "teamId": "URU",
-        "off": {
-          "no": 5
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 70,
-        "teamId": "URU",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 81,
-        "teamId": "URU",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
         "minute": 58,
         "teamId": "CPV",
         "off": {
@@ -14212,6 +14182,26 @@
       },
       {
         "minute": 70,
+        "teamId": "URU",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 70,
+        "teamId": "URU",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 9
+        }
+      },
+      {
+        "minute": 70,
         "teamId": "CPV",
         "off": {
           "no": 6
@@ -14228,6 +14218,16 @@
         },
         "on": {
           "no": 16
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "URU",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 18
         }
       }
     ],
@@ -14461,6 +14461,16 @@
     },
     "substitutions": [
       {
+        "minute": 33,
+        "teamId": "KSA",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 3
+        }
+      },
+      {
         "minute": 61,
         "teamId": "CPV",
         "off": {
@@ -14478,6 +14488,26 @@
         },
         "on": {
           "no": 21
+        }
+      },
+      {
+        "minute": 65,
+        "teamId": "KSA",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 65,
+        "teamId": "KSA",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 26
         }
       },
       {
@@ -14501,6 +14531,16 @@
         }
       },
       {
+        "minute": 82,
+        "teamId": "KSA",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 24
+        }
+      },
+      {
         "minute": 90,
         "teamId": "CPV",
         "off": {
@@ -14510,46 +14550,6 @@
           "no": 22
         },
         "stoppageTime": 4
-      },
-      {
-        "minute": 33,
-        "teamId": "KSA",
-        "off": {
-          "no": 5
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
-        "minute": 65,
-        "teamId": "KSA",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 65,
-        "teamId": "KSA",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 26
-        }
-      },
-      {
-        "minute": 82,
-        "teamId": "KSA",
-        "off": {
-          "no": 13
-        },
-        "on": {
-          "no": 24
-        }
       }
     ],
     "cards": [
@@ -14808,16 +14808,6 @@
         }
       },
       {
-        "minute": 70,
-        "teamId": "URU",
-        "off": {
-          "no": 25
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
         "minute": 60,
         "teamId": "ESP",
         "off": {
@@ -14845,6 +14835,16 @@
         },
         "on": {
           "no": 11
+        }
+      },
+      {
+        "minute": 70,
+        "teamId": "URU",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 18
         }
       },
       {
@@ -15112,26 +15112,6 @@
     },
     "substitutions": [
       {
-        "minute": 80,
-        "teamId": "FRA",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 12
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "FRA",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 24
-        }
-      },
-      {
         "minute": 75,
         "teamId": "SEN",
         "off": {
@@ -15152,6 +15132,16 @@
         }
       },
       {
+        "minute": 80,
+        "teamId": "FRA",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 12
+        }
+      },
+      {
         "minute": 83,
         "teamId": "SEN",
         "off": {
@@ -15169,6 +15159,16 @@
         },
         "on": {
           "no": 13
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "FRA",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 24
         }
       },
       {
@@ -15425,16 +15425,6 @@
         }
       },
       {
-        "minute": 78,
-        "teamId": "IRQ",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
         "minute": 73,
         "teamId": "NOR",
         "off": {
@@ -15472,6 +15462,16 @@
         },
         "on": {
           "no": 22
+        }
+      },
+      {
+        "minute": 78,
+        "teamId": "IRQ",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 10
         }
       },
       {
@@ -15697,6 +15697,36 @@
     },
     "substitutions": [
       {
+        "minute": 26,
+        "teamId": "IRQ",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 9
+        }
+      },
+      {
+        "minute": 60,
+        "teamId": "IRQ",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 2
+        }
+      },
+      {
+        "minute": 60,
+        "teamId": "IRQ",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
         "minute": 68,
         "teamId": "FRA",
         "off": {
@@ -15714,6 +15744,26 @@
         },
         "on": {
           "no": 24
+        }
+      },
+      {
+        "minute": 68,
+        "teamId": "IRQ",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
+        "minute": 68,
+        "teamId": "IRQ",
+        "off": {
+          "no": 16
+        },
+        "on": {
+          "no": 20
         }
       },
       {
@@ -15746,56 +15796,6 @@
           "no": 9
         },
         "stoppageTime": 1
-      },
-      {
-        "minute": 26,
-        "teamId": "IRQ",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 60,
-        "teamId": "IRQ",
-        "off": {
-          "no": 4
-        },
-        "on": {
-          "no": 2
-        }
-      },
-      {
-        "minute": 60,
-        "teamId": "IRQ",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 68,
-        "teamId": "IRQ",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
-        "minute": 68,
-        "teamId": "IRQ",
-        "off": {
-          "no": 16
-        },
-        "on": {
-          "no": 20
-        }
       }
     ],
     "cards": [
@@ -16020,36 +16020,6 @@
         }
       },
       {
-        "minute": 71,
-        "teamId": "NOR",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
-        "minute": 84,
-        "teamId": "NOR",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 4
-        }
-      },
-      {
-        "minute": 84,
-        "teamId": "NOR",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 22
-        }
-      },
-      {
         "minute": 54,
         "teamId": "SEN",
         "off": {
@@ -16090,6 +16060,16 @@
         }
       },
       {
+        "minute": 71,
+        "teamId": "NOR",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
         "minute": 72,
         "teamId": "SEN",
         "off": {
@@ -16097,6 +16077,26 @@
         },
         "on": {
           "no": 17
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "NOR",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 4
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "NOR",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 22
         }
       }
     ],
@@ -16303,36 +16303,6 @@
     },
     "substitutions": [
       {
-        "minute": 66,
-        "teamId": "NOR",
-        "off": {
-          "no": 25
-        },
-        "on": {
-          "no": 24
-        }
-      },
-      {
-        "minute": 83,
-        "teamId": "NOR",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 23
-        }
-      },
-      {
-        "minute": 83,
-        "teamId": "NOR",
-        "off": {
-          "no": 22
-        },
-        "on": {
-          "no": 20
-        }
-      },
-      {
         "minute": 65,
         "teamId": "FRA",
         "off": {
@@ -16353,6 +16323,16 @@
         }
       },
       {
+        "minute": 66,
+        "teamId": "NOR",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 24
+        }
+      },
+      {
         "minute": 76,
         "teamId": "FRA",
         "off": {
@@ -16360,6 +16340,26 @@
         },
         "on": {
           "no": 15
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "NOR",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 23
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "NOR",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 20
         }
       },
       {
@@ -16600,6 +16600,16 @@
     },
     "substitutions": [
       {
+        "minute": 16,
+        "teamId": "IRQ",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 6
+        }
+      },
+      {
         "minute": 56,
         "teamId": "SEN",
         "off": {
@@ -16630,36 +16640,6 @@
         }
       },
       {
-        "minute": 58,
-        "teamId": "SEN",
-        "off": {
-          "no": 4
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
-        "minute": 81,
-        "teamId": "SEN",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 16,
-        "teamId": "IRQ",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
         "minute": 57,
         "teamId": "IRQ",
         "off": {
@@ -16680,6 +16660,16 @@
         }
       },
       {
+        "minute": 58,
+        "teamId": "SEN",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 6
+        }
+      },
+      {
         "minute": 67,
         "teamId": "IRQ",
         "off": {
@@ -16687,6 +16677,16 @@
         },
         "on": {
           "no": 19
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "SEN",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 7
         }
       }
     ],
@@ -16954,26 +16954,6 @@
         }
       },
       {
-        "minute": 80,
-        "teamId": "ARG",
-        "off": {
-          "no": 13
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 80,
-        "teamId": "ARG",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 18
-        }
-      },
-      {
         "minute": 64,
         "teamId": "ALG",
         "off": {
@@ -16998,6 +16978,26 @@
         "teamId": "ALG",
         "off": {
           "no": 9
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "ARG",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "ARG",
+        "off": {
+          "no": 10
         },
         "on": {
           "no": 18
@@ -17257,16 +17257,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "AUT",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
         "minute": 72,
         "teamId": "JOR",
         "off": {
@@ -17294,6 +17284,16 @@
         },
         "on": {
           "no": 13
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "AUT",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 21
         }
       },
       {
@@ -17559,26 +17559,6 @@
         }
       },
       {
-        "minute": 82,
-        "teamId": "ARG",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 5
-        }
-      },
-      {
-        "minute": 82,
-        "teamId": "ARG",
-        "off": {
-          "no": 25
-        },
-        "on": {
-          "no": 3
-        }
-      },
-      {
         "minute": 67,
         "teamId": "AUT",
         "off": {
@@ -17616,6 +17596,26 @@
         },
         "on": {
           "no": 21
+        }
+      },
+      {
+        "minute": 82,
+        "teamId": "ARG",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 5
+        }
+      },
+      {
+        "minute": 82,
+        "teamId": "ARG",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 3
         }
       },
       {
@@ -17872,6 +17872,16 @@
         }
       },
       {
+        "minute": 76,
+        "teamId": "ALG",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
         "minute": 84,
         "teamId": "JOR",
         "off": {
@@ -17889,6 +17899,26 @@
         },
         "on": {
           "no": 2
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "ALG",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 5
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "ALG",
+        "off": {
+          "no": 15
+        },
+        "on": {
+          "no": 13
         }
       },
       {
@@ -17912,36 +17942,6 @@
           "no": 17
         },
         "stoppageTime": 1
-      },
-      {
-        "minute": 76,
-        "teamId": "ALG",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "ALG",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 5
-        }
-      },
-      {
-        "minute": 85,
-        "teamId": "ALG",
-        "off": {
-          "no": 15
-        },
-        "on": {
-          "no": 13
-        }
       }
     ],
     "cards": [
@@ -18161,6 +18161,16 @@
     },
     "substitutions": [
       {
+        "minute": 62,
+        "teamId": "AUT",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 3
+        }
+      },
+      {
         "minute": 71,
         "teamId": "ALG",
         "off": {
@@ -18200,16 +18210,6 @@
           "no": 25
         },
         "stoppageTime": 4
-      },
-      {
-        "minute": 62,
-        "teamId": "AUT",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 3
-        }
       },
       {
         "minute": 90,
@@ -18435,36 +18435,6 @@
     },
     "substitutions": [
       {
-        "minute": 76,
-        "teamId": "JOR",
-        "off": {
-          "no": 21
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "JOR",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "JOR",
-        "off": {
-          "no": 4
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
         "minute": 60,
         "teamId": "ARG",
         "off": {
@@ -18505,6 +18475,16 @@
         }
       },
       {
+        "minute": 76,
+        "teamId": "JOR",
+        "off": {
+          "no": 21
+        },
+        "on": {
+          "no": 6
+        }
+      },
+      {
         "minute": 82,
         "teamId": "ARG",
         "off": {
@@ -18512,6 +18492,26 @@
         },
         "on": {
           "no": 21
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "JOR",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "JOR",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 17
         }
       }
     ],
@@ -18743,6 +18743,16 @@
     },
     "substitutions": [
       {
+        "minute": 57,
+        "teamId": "COD",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 14
+        }
+      },
+      {
         "minute": 72,
         "teamId": "POR",
         "off": {
@@ -18763,26 +18773,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "POR",
-        "off": {
-          "no": 23
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 57,
-        "teamId": "COD",
-        "off": {
-          "no": 6
-        },
-        "on": {
-          "no": 14
-        }
-      },
-      {
         "minute": 74,
         "teamId": "COD",
         "off": {
@@ -18800,6 +18790,16 @@
         },
         "on": {
           "no": 12
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "POR",
+        "off": {
+          "no": 23
+        },
+        "on": {
+          "no": 9
         }
       },
       {
@@ -19059,6 +19059,16 @@
     },
     "substitutions": [
       {
+        "minute": 72,
+        "teamId": "COL",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
         "minute": 77,
         "teamId": "UZB",
         "off": {
@@ -19076,27 +19086,6 @@
         },
         "on": {
           "no": 20
-        }
-      },
-      {
-        "minute": 90,
-        "teamId": "UZB",
-        "off": {
-          "no": 14
-        },
-        "on": {
-          "no": 21
-        },
-        "stoppageTime": 3
-      },
-      {
-        "minute": 72,
-        "teamId": "COL",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 21
         }
       },
       {
@@ -19118,6 +19107,17 @@
         "on": {
           "no": 6
         }
+      },
+      {
+        "minute": 90,
+        "teamId": "UZB",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 21
+        },
+        "stoppageTime": 3
       },
       {
         "minute": 90,
@@ -19372,6 +19372,16 @@
         }
       },
       {
+        "minute": 73,
+        "teamId": "UZB",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
         "minute": 76,
         "teamId": "POR",
         "off": {
@@ -19389,16 +19399,6 @@
         },
         "on": {
           "no": 17
-        }
-      },
-      {
-        "minute": 73,
-        "teamId": "UZB",
-        "off": {
-          "no": 22
-        },
-        "on": {
-          "no": 21
         }
       },
       {
@@ -19644,6 +19644,16 @@
     },
     "substitutions": [
       {
+        "minute": 57,
+        "teamId": "COD",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 23
+        }
+      },
+      {
         "minute": 58,
         "teamId": "COL",
         "off": {
@@ -19664,26 +19674,6 @@
         }
       },
       {
-        "minute": 77,
-        "teamId": "COL",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
-        "minute": 57,
-        "teamId": "COD",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 23
-        }
-      },
-      {
         "minute": 71,
         "teamId": "COD",
         "off": {
@@ -19701,6 +19691,16 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 77,
+        "teamId": "COL",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 6
         }
       },
       {
@@ -19962,6 +19962,26 @@
         }
       },
       {
+        "minute": 70,
+        "teamId": "POR",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 70,
+        "teamId": "POR",
+        "off": {
+          "no": 23
+        },
+        "on": {
+          "no": 24
+        }
+      },
+      {
         "minute": 76,
         "teamId": "COL",
         "off": {
@@ -19989,26 +20009,6 @@
         },
         "on": {
           "no": 2
-        }
-      },
-      {
-        "minute": 70,
-        "teamId": "POR",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 70,
-        "teamId": "POR",
-        "off": {
-          "no": 23
-        },
-        "on": {
-          "no": 24
         }
       },
       {
@@ -20245,6 +20245,26 @@
         }
       },
       {
+        "minute": 58,
+        "teamId": "UZB",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 9
+        }
+      },
+      {
+        "minute": 58,
+        "teamId": "UZB",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
         "minute": 72,
         "teamId": "COD",
         "off": {
@@ -20275,36 +20295,6 @@
         }
       },
       {
-        "minute": 83,
-        "teamId": "COD",
-        "off": {
-          "no": 26
-        },
-        "on": {
-          "no": 12
-        }
-      },
-      {
-        "minute": 58,
-        "teamId": "UZB",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 9
-        }
-      },
-      {
-        "minute": 58,
-        "teamId": "UZB",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
         "minute": 73,
         "teamId": "UZB",
         "off": {
@@ -20332,6 +20322,16 @@
         },
         "on": {
           "no": 21
+        }
+      },
+      {
+        "minute": 83,
+        "teamId": "COD",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 12
         }
       }
     ],
@@ -20576,56 +20576,6 @@
     },
     "substitutions": [
       {
-        "minute": 72,
-        "teamId": "ENG",
-        "off": {
-          "no": 4
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 72,
-        "teamId": "ENG",
-        "off": {
-          "no": 20
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 72,
-        "teamId": "ENG",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 11
-        }
-      },
-      {
-        "minute": 79,
-        "teamId": "ENG",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 25
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "ENG",
-        "off": {
-          "no": 5
-        },
-        "on": {
-          "no": 6
-        }
-      },
-      {
         "minute": 58,
         "teamId": "CRO",
         "off": {
@@ -20656,6 +20606,36 @@
         }
       },
       {
+        "minute": 72,
+        "teamId": "ENG",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 72,
+        "teamId": "ENG",
+        "off": {
+          "no": 20
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 72,
+        "teamId": "ENG",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
         "minute": 78,
         "teamId": "CRO",
         "off": {
@@ -20673,6 +20653,26 @@
         },
         "on": {
           "no": 13
+        }
+      },
+      {
+        "minute": 79,
+        "teamId": "ENG",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 25
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "ENG",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 6
         }
       }
     ],
@@ -20896,26 +20896,6 @@
         }
       },
       {
-        "minute": 78,
-        "teamId": "GHA",
-        "off": {
-          "no": 15
-        },
-        "on": {
-          "no": 8
-        }
-      },
-      {
-        "minute": 87,
-        "teamId": "GHA",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 25
-        }
-      },
-      {
         "minute": 63,
         "teamId": "PAN",
         "off": {
@@ -20943,6 +20923,26 @@
         },
         "on": {
           "no": 10
+        }
+      },
+      {
+        "minute": 78,
+        "teamId": "GHA",
+        "off": {
+          "no": 15
+        },
+        "on": {
+          "no": 8
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "GHA",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 25
         }
       },
       {
@@ -21204,6 +21204,26 @@
         }
       },
       {
+        "minute": 66,
+        "teamId": "GHA",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 66,
+        "teamId": "GHA",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 25
+        }
+      },
+      {
         "minute": 74,
         "teamId": "ENG",
         "off": {
@@ -21231,26 +21251,6 @@
         },
         "on": {
           "no": 11
-        }
-      },
-      {
-        "minute": 66,
-        "teamId": "GHA",
-        "off": {
-          "no": 19
-        },
-        "on": {
-          "no": 7
-        }
-      },
-      {
-        "minute": 66,
-        "teamId": "GHA",
-        "off": {
-          "no": 9
-        },
-        "on": {
-          "no": 25
         }
       },
       {
@@ -21495,6 +21495,26 @@
     },
     "substitutions": [
       {
+        "minute": 72,
+        "teamId": "CRO",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 72,
+        "teamId": "CRO",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
         "minute": 77,
         "teamId": "PAN",
         "off": {
@@ -21502,6 +21522,16 @@
         },
         "on": {
           "no": 18
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "CRO",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 15
         }
       },
       {
@@ -21532,36 +21562,6 @@
         },
         "on": {
           "no": 9
-        }
-      },
-      {
-        "minute": 72,
-        "teamId": "CRO",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 17
-        }
-      },
-      {
-        "minute": 72,
-        "teamId": "CRO",
-        "off": {
-          "no": 24
-        },
-        "on": {
-          "no": 21
-        }
-      },
-      {
-        "minute": 81,
-        "teamId": "CRO",
-        "off": {
-          "no": 10
-        },
-        "on": {
-          "no": 15
         }
       }
     ],
@@ -21782,46 +21782,6 @@
     },
     "substitutions": [
       {
-        "minute": 71,
-        "teamId": "PAN",
-        "off": {
-          "no": 11
-        },
-        "on": {
-          "no": 10
-        }
-      },
-      {
-        "minute": 71,
-        "teamId": "PAN",
-        "off": {
-          "no": 7
-        },
-        "on": {
-          "no": 24
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "PAN",
-        "off": {
-          "no": 14
-        },
-        "on": {
-          "no": 19
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "PAN",
-        "off": {
-          "no": 26
-        },
-        "on": {
-          "no": 15
-        }
-      },
-      {
         "minute": 63,
         "teamId": "ENG",
         "off": {
@@ -21839,6 +21799,26 @@
         },
         "on": {
           "no": 20
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "PAN",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 10
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "PAN",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 24
         }
       },
       {
@@ -21869,6 +21849,26 @@
         },
         "on": {
           "no": 19
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "PAN",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "PAN",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 15
         }
       }
     ],
@@ -22110,36 +22110,6 @@
         }
       },
       {
-        "minute": 78,
-        "teamId": "CRO",
-        "off": {
-          "no": 8
-        },
-        "on": {
-          "no": 15
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "CRO",
-        "off": {
-          "no": 16
-        },
-        "on": {
-          "no": 24
-        }
-      },
-      {
-        "minute": 88,
-        "teamId": "CRO",
-        "off": {
-          "no": 13
-        },
-        "on": {
-          "no": 4
-        }
-      },
-      {
         "minute": 71,
         "teamId": "GHA",
         "off": {
@@ -22160,6 +22130,16 @@
         }
       },
       {
+        "minute": 78,
+        "teamId": "CRO",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 15
+        }
+      },
+      {
         "minute": 85,
         "teamId": "GHA",
         "off": {
@@ -22167,6 +22147,26 @@
         },
         "on": {
           "no": 3
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "CRO",
+        "off": {
+          "no": 16
+        },
+        "on": {
+          "no": 24
+        }
+      },
+      {
+        "minute": 88,
+        "teamId": "CRO",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 4
         }
       }
     ],
@@ -22674,28 +22674,6 @@
         }
       },
       {
-        "minute": 90,
-        "teamId": "BRA",
-        "off": {
-          "no": 17
-        },
-        "on": {
-          "no": 2
-        },
-        "stoppageTime": 1
-      },
-      {
-        "minute": 90,
-        "teamId": "BRA",
-        "off": {
-          "no": 18
-        },
-        "on": {
-          "no": 10
-        },
-        "stoppageTime": 7
-      },
-      {
         "minute": 66,
         "teamId": "JPN",
         "off": {
@@ -22734,6 +22712,28 @@
         "on": {
           "no": 15
         }
+      },
+      {
+        "minute": 90,
+        "teamId": "BRA",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 2
+        },
+        "stoppageTime": 1
+      },
+      {
+        "minute": 90,
+        "teamId": "BRA",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 10
+        },
+        "stoppageTime": 7
       },
       {
         "minute": 90,

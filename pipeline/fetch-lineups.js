@@ -113,6 +113,8 @@ async function processMatch(matchId, fifaUrl) {
     cards.push({ minute, teamId: awayCode, player: { no: player?.ShirtNumber || 0 }, card: cardType });
   }
   
+  subs.sort((a, b) => (a.minute - b.minute) || ((a.stoppageTime || 0) - (b.stoppageTime || 0)));
+    
   return {
     team1: {
       teamId: homeCode,
