@@ -1,7 +1,7 @@
 export const en = {
   nav: { schedule: 'Schedule', teams: 'Teams', groups: 'Groups', thirdPlace: '3rd Place', scorers: 'Scorers', bracket: 'Bracket', stadiums: 'Stadiums' },
   home: { phaseGroup: 'Group stage — {played}/{total} played', phaseKnockout: (p: string) => `${p} underway`, latest: 'Latest Results', upcoming: 'Upcoming', noResults: 'No matches played yet' },
-  teams: { title: 'Teams', desc: '48 teams · 12 groups · 6 confederations', byGroup: 'By Group', byName: 'By Name', byContinent: 'By Continent', allAZ: 'All Teams (A–Z)', backAll: '← All teams', notFound: 'Team not found' },
+  teams: { title: 'Teams', desc: '48 teams · 12 groups · 6 confederations', byGroup: 'By Group', byName: 'By Name', byContinent: 'By Continent', allAZ: 'All Teams (A–Z)', backAll: '← All teams', notFound: 'Team not found', finalResult: 'Final' },
   groups: { title: 'Groups', desc: '12 groups · top 2 + best 8 third advance', backAll: '← All groups' },
   third: { title: 'Third-Placed', desc: 'Best 8 of 12 third-placed teams advance to R32', top8: '✅ Top 8 advance', sortBy: 'Sorted by: Pts → GD → GF' },
   scorers: { title: 'Top Scorers', desc: '{n} players scored', all: 'All' },
@@ -11,14 +11,14 @@ export const en = {
   match: { back: '← Back to schedule', backBracket: '← Back to bracket', winner: 'Winner', loser: 'Loser' },
   team: { goalscorers: 'Goalscorers', coach: 'Coach' },
   table: { rk: 'RK', team: 'Team', p: 'P', w: 'W', d: 'D', l: 'L', gf: 'GF', ga: 'GA', gd: 'GD', pts: 'Pts', player: 'Player', goals: 'Goals', pen: 'Pen', group: 'Group', squad: 'Squad', pos: 'Pos', club: 'Club' },
-  round: { md: (n: number) => `Matchday ${n}`, r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final', sf: 'Semi-final', third: 'Match for third place', final: 'Final' },
+  round: { md: (n: number) => `Matchday ${n}`, r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final', sf: 'Semi-final', third: 'Match for third place', final: 'Final', groupStage: 'Group Stage', fourthPlace: '4th Place', thirdPlace: '3rd Place', runnerUp: 'Runner-up', champion: 'Champion' },
   lang: '中',
 }
 
 export const zh = {
   nav: { schedule: '賽程', teams: '球隊', groups: '分組', thirdPlace: '第三名', scorers: '射手榜', bracket: '淘汰賽', stadiums: '球場' },
   home: { phaseGroup: '分組賽 — {played}/{total} 已賽', phaseKnockout: (p: string) => `🏁 ${p} 進行中`, latest: '最新賽果', upcoming: '即將舉行', noResults: '暫無比賽' },
-  teams: { title: '球隊', desc: '48 隊 · 12 組 · 6 洲份', byGroup: '按組別', byName: '按名稱', byContinent: '按洲份', allAZ: '全部球隊 (A–Z)', backAll: '← 所有隊伍', notFound: '找不到球隊' },
+  teams: { title: '球隊', desc: '48 隊 · 12 組 · 6 大洲', byGroup: '按組別', byName: '按名稱', byContinent: '按洲份', allAZ: '所有球隊', backAll: '← 所有球隊', notFound: '找不到球隊', finalResult: '最終成績' },
   groups: { title: '分組', desc: '12 組 · 首兩名 + 最佳第三名 8 隊晉級', backAll: '← 所有組別' },
   third: { title: '第三名', desc: '12 組第三名中最佳 8 隊晉級 32 強', top8: '✅ top 8 進級', sortBy: '排序：積分 → 球差 → 入球' },
   scorers: { title: '射手榜', desc: '{n} 位球員取得入球', all: '全部' },
@@ -28,6 +28,6 @@ export const zh = {
   match: { back: '← 返回賽程', backBracket: '← 返回淘汰賽', winner: '勝方', loser: '敗方' },
   team: { goalscorers: '入球球員', coach: '領隊' },
   table: { rk: '排名', team: '球隊', p: '賽', w: '勝', d: '和', l: '負', gf: '入球', ga: '失球', gd: '球差', pts: '積分', player: '球員', goals: '入球', pen: '十二碼', group: '組別', pos: '位置', club: '球會', squad: '球員名單' },
-  round: { md: (n: number) => `比賽日 ${n}`, r32: '32強', r16: '16強', qf: '半準決賽', sf: '準決賽', third: '季軍戰', final: '決賽' },
+  round: { md: (n: number) => `比賽日 ${n}`, r32: '32強', r16: '16強', qf: '半準決賽', sf: '準決賽', third: '季軍戰', final: '決賽', groupStage: '分組賽', fourthPlace: '第4名', thirdPlace: '季軍', runnerUp: '亞軍', champion: '冠軍' },
   lang: 'En',
 }

@@ -171,6 +171,22 @@ export function TeamPage() {
     }
   }
 
+  // Determine final result for header display
+  const finalResult = (() => {
+    const last = pathSteps[pathSteps.length - 1]
+    if (!last || pathSteps.length <= 1) return null
+    // Group elimination
+    if (last.detail?.includes('Not qualified')) return 'groupStage'
+    // Tournament completed
+    if (last.round === 'final') return last.won ? 'champion' : 'runnerUp'
+    if (last.round === 'third') return last.won ? 'thirdPlace' : 'fourthPlace'
+    // Eliminated in a knockout round (SF loser continues, so only r32/r16/qf)
+    if (last.won === false && last.round !== 'sf') return last.round
+    // Still playing
+    return null
+  })()
+  const finalResultLabel = finalResult ? (t.round as any)[finalResult] || finalResult : null
+
   // Aggregate goal scorers for this team
   const scorers: Record<string, { goals: number; scorerNo?: number }> = {}
   teamMatches.forEach(m => {
@@ -215,6 +231,11 @@ export function TeamPage() {
               <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                 {team.nameZh} · Group {team.group} · {team.continent} · FIFA #{team.ranking}
               </div>
+              {finalResultLabel && (
+                <div style={{ fontSize: '12px', color: 'var(--accent)', marginTop: '4px' }}>
+                  {t.teams.finalResult}：{finalResultLabel}
+                </div>
+              )}
             </div>
           </div>
 
