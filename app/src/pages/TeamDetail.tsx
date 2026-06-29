@@ -178,8 +178,10 @@ export function TeamPage() {
     // Group elimination
     if (last.detail?.includes('Not qualified')) return 'groupStage'
     // Tournament completed
-    if (last.round === 'final') return last.won ? 'champion' : 'runnerUp'
-    if (last.round === 'third') return last.won ? 'thirdPlace' : 'fourthPlace'
+    if (last.round === 'final' && last.won === true) return 'champion'
+    if (last.round === 'final' && last.won === false) return 'runnerUp'
+    if (last.round === 'third' && last.won === true) return 'thirdPlace'
+    if (last.round === 'third' && last.won === false) return 'fourthPlace'
     // Eliminated in a knockout round (SF loser continues, so only r32/r16/qf)
     if (last.won === false && last.round !== 'sf') return last.round
     // Still playing
