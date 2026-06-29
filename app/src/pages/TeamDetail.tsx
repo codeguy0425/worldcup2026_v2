@@ -128,13 +128,14 @@ export function TeamPage() {
         // Find match where this team appears (via currentId or currentOriginal)
         const bm = matches.find(m =>
           m.team1Id === currentId || m.team2Id === currentId ||
-          m.team1Original === currentOriginal || m.team2Original === currentOriginal
+          m.team1Original === currentOriginal || m.team2Original === currentOriginal ||
+          m.team1Original === currentId || m.team2Original === currentId
         )
         // SF winner: skip third-place round (they're in the final)
         if (!bm && rn === 'third') continue
         if (!bm) break
 
-        const isT1 = bm.team1Id === currentId || bm.team1Original === currentOriginal
+        const isT1 = bm.team1Id === currentId || bm.team1Original === currentOriginal || bm.team1Original === currentId
         const oppId = isT1 ? bm.team2Id : bm.team1Id
         const oppTeam = teamMap.get(oppId)
         const hasScore = bm.score1 !== undefined
