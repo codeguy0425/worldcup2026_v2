@@ -252,26 +252,18 @@ export function MatchPage() {
   const stadiumMap = new Map<string, StadiumInfo>()
   stadiumData?.stadiums.forEach(s => stadiumMap.set(s.id, s))
 
-  // Load squad data for scorer name translation
-  const { data: squadData } = useJson<any>('/data/squads.json?v=2')
-  const { data: squadZhData } = useJson<any>('/data/squads-zh.json?v=2')
+  // Load squad data per-team for lineup display (only 2 teams needed)
+  const enPath1 = curMatch ? `/data/squads/${curMatch.team1Id}.json` : ''
+  const enPath2 = curMatch ? `/data/squads/${curMatch.team2Id}.json` : ''
+  const zhPath1 = curMatch ? `/data/squads/${curMatch.team1Id}-zh.json` : ''
+  const zhPath2 = curMatch ? `/data/squads/${curMatch.team2Id}-zh.json` : ''
+  const enMap1 = useJson<any[]>(enPath1)
+  const enMap2 = useJson<any[]>(enPath2)
+  const zhMap1 = useJson<any[]>(zhPath1)
+  const zhMap2 = useJson<any[]>(zhPath2)
+  const { data: scorerNameData } = useJson<Record<string, string>>('/data/scorer-names.json')
+  const scorerNameMap = new Map(Object.entries(scorerNameData ?? {}))
   const { data: overrideData } = useJson<any>('/data/scorer-no-override.json')
-  const scorerNameMap = new Map<string, string>()
-  if (squadData && squadZhData) {
-    for (const [tid, enPlayers] of Object.entries(squadData) as [string, any[]][]) {
-      const zhPlayers = (squadZhData as any)[tid] as any[] | undefined
-      if (!zhPlayers) continue
-      const zhByNo: Record<number, any> = {}
-      zhPlayers.forEach(p => zhByNo[p.no] = p)
-      for (const ep of enPlayers) {
-        const zhP = zhByNo[ep.no]
-        if (zhP) {
-          scorerNameMap.set(tid + ':' + ep.no, zhP.name)
-          scorerNameMap.set(tid + ':' + ep.name.toLowerCase(), zhP.name)
-        }
-      }
-    }
-  }
   const overrideMap = new Map<string, number>()
   if (overrideData) {
     for (const [key, no] of Object.entries(overrideData) as [string, any][]) {
@@ -281,18 +273,18 @@ export function MatchPage() {
 
   const bracketStages = new Set(['r32', 'r16', 'qf', 'sf', 'third', 'final'])
 
-  // Player name lookup by shirt number from squad data (for lineup display)
+  // Player name lookup by shirt number from per-team squad data (for lineup display)
   const enPlayerMap = new Map<string, string>()
   const zhPlayerMap = new Map<string, string>()
-  if (squadData) {
-    for (const [tid, players] of Object.entries(squadData) as [string, any[]][]) {
-      for (const p of players) enPlayerMap.set(tid + ':' + p.no, p.name)
-    }
-  }
-  if (squadZhData) {
-    for (const [tid, players] of Object.entries(squadZhData) as [string, any[]][]) {
-      for (const p of players) zhPlayerMap.set(tid + ':' + p.no, p.name)
-    }
+  const team1En = enMap1.data
+  const team2En = enMap2.data
+  const team1Zh = zhMap1.data
+  const team2Zh = zhMap2.data
+  if (curMatch) {
+    if (team1En) for (const p of team1En) enPlayerMap.set(curMatch.team1Id + ':' + p.no, p.name)
+    if (team2En) for (const p of team2En) enPlayerMap.set(curMatch.team2Id + ':' + p.no, p.name)
+    if (team1Zh) for (const p of team1Zh) zhPlayerMap.set(curMatch.team1Id + ':' + p.no, p.name)
+    if (team2Zh) for (const p of team2Zh) zhPlayerMap.set(curMatch.team2Id + ':' + p.no, p.name)
   }
 
   if (loading) return <p style={{ color: 'var(--text-muted)' }}>Loading...</p>
