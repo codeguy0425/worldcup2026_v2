@@ -238,7 +238,9 @@ export function MatchPage() {
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
-  const { data: rawDetail } = useJson<Record<string, MatchDetail>>('/data/match-detail.json?v=2')
+  // Match detail override (lineup / subs / cards) — per-match file
+  const detailPath = id ? `/data/match-detail/${id}.json` : ''
+  const { data: detail } = useJson<MatchDetail | null>(detailPath)
   const curMatch = (matches ?? []).find(m => m.id === Number(id))
   const gpPath = curMatch?.group ? `/data/groups/${curMatch.group}.json` : ''
   const { data: groupData } = useJson<any>(gpPath)
@@ -278,9 +280,6 @@ export function MatchPage() {
   }
 
   const bracketStages = new Set(['r32', 'r16', 'qf', 'sf', 'third', 'final'])
-
-  // Match detail override (lineup / subs / cards)
-  const detail = (rawDetail && curMatch) ? rawDetail[String(curMatch.id)] : null
 
   // Player name lookup by shirt number from squad data (for lineup display)
   const enPlayerMap = new Map<string, string>()
