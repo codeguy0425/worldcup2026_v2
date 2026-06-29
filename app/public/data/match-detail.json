@@ -4,32 +4,23 @@
       "teamId": "RSA",
       "formation": "4-2-3-1",
       "startingXI": [
-        { "no": 1, "pos": "GK", "name": "Ronwen Williams", "captain": true },
-        { "no": 6, "pos": "DF", "name": "Aubrey Modiba" },
-        { "no": 14, "pos": "DF", "name": "Mbekezeli Mbokazi" },
-        { "no": 20, "pos": "DF", "name": "Khuliso Mudau" },
-        { "no": 21, "pos": "DF", "name": "Ime Okon" },
-        { "no": 4, "pos": "MF", "name": "Teboho Mokoena" },
-        { "no": 13, "pos": "MF", "name": "Sphephelo Sithole" },
-        { "no": 7, "pos": "FW", "name": "Oswin Appollis" },
-        { "no": 10, "pos": "FW", "name": "Relebohile Mofokeng" },
-        { "no": 5, "pos": "MF", "name": "Thalente Mbatha" },
-        { "no": 8, "pos": "FW", "name": "Tshepang Moremi" }
+        { "no": 1, "pos": "GK", "captain": true },
+        { "no": 6, "pos": "DF" },
+        { "no": 14, "pos": "DF" },
+        { "no": 20, "pos": "DF" },
+        { "no": 21, "pos": "DF" },
+        { "no": 4, "pos": "MF" },
+        { "no": 13, "pos": "MF" },
+        { "no": 7, "pos": "FW" },
+        { "no": 10, "pos": "FW" },
+        { "no": 5, "pos": "MF" },
+        { "no": 8, "pos": "FW" }
       ],
       "substitutes": [
-        { "no": 16, "name": "Sipho Chaine" },
-        { "no": 22, "name": "Ricardo Goss" },
-        { "no": 2, "name": "Thabang Matuludi" },
-        { "no": 3, "name": "Khulumani Ndamane" },
-        { "no": 18, "name": "Samukele Kabini" },
-        { "no": 19, "name": "Nkosinathi Sibisi" },
-        { "no": 24, "name": "Olwethu Makhanya" },
-        { "no": 26, "name": "Bradley Cross" },
-        { "no": 23, "name": "Jayden Adams" },
-        { "no": 9, "name": "Lyle Foster" },
-        { "no": 25, "name": "Kamogelo Sebelebele" },
-        { "no": 17, "name": "Evidence Makgopa" },
-        { "no": 15, "name": "Iqraam Rayners" }
+        { "no": 16 }, { "no": 22 }, { "no": 2 }, { "no": 3 },
+        { "no": 18 }, { "no": 19 }, { "no": 24 }, { "no": 26 },
+        { "no": 23 }, { "no": 9 }, { "no": 25 },
+        { "no": 17 }, { "no": 15 }
       ],
       "coach": "Hugo Broos"
     },
@@ -37,46 +28,37 @@
       "teamId": "CAN",
       "formation": "4-4-2",
       "startingXI": [
-        { "no": 16, "pos": "GK", "name": "Maxime Crepeau" },
-        { "no": 2, "pos": "DF", "name": "Alistair Johnston" },
-        { "no": 13, "pos": "DF", "name": "Derek Cornelius" },
-        { "no": 15, "pos": "DF", "name": "Moise Bombito" },
-        { "no": 4, "pos": "DF", "name": "Luc De Fougerolles" },
-        { "no": 22, "pos": "DF", "name": "Richie Laryea" },
-        { "no": 7, "pos": "MF", "name": "Stephen Eustaquio", "captain": true },
-        { "no": 11, "pos": "MF", "name": "Liam Millar" },
-        { "no": 14, "pos": "MF", "name": "Jacob Shaffelburg" },
-        { "no": 25, "pos": "MF", "name": "Nathan Saliba" },
-        { "no": 23, "pos": "MF", "name": "Niko Sigur" },
-        { "no": 10, "pos": "FW", "name": "Jonathan David" },
-        { "no": 12, "pos": "FW", "name": "Tani Oluwaseyi" }
+        { "no": 16, "pos": "GK" },
+        { "no": 2, "pos": "DF" },
+        { "no": 13, "pos": "DF" },
+        { "no": 15, "pos": "DF" },
+        { "no": 4, "pos": "DF" },
+        { "no": 22, "pos": "DF" },
+        { "no": 7, "pos": "MF", "captain": true },
+        { "no": 11, "pos": "MF" },
+        { "no": 14, "pos": "MF" },
+        { "no": 25, "pos": "MF" },
+        { "no": 23, "pos": "MF" },
+        { "no": 10, "pos": "FW" },
+        { "no": 12, "pos": "FW" }
       ],
       "substitutes": [
-        { "no": 1, "name": "Dayne St. Clair" },
-        { "no": 18, "name": "Owen Goodman" },
-        { "no": 3, "name": "Alfie Jones" },
-        { "no": 5, "name": "Joel Waterman" },
-        { "no": 6, "name": "Mathieu Choiniere" },
-        { "no": 21, "name": "Jonathan Osorio" },
-        { "no": 9, "name": "Cyle Larin" },
-        { "no": 20, "name": "Ali Ahmed" },
-        { "no": 26, "name": "Jayden Nelson" },
-        { "no": 24, "name": "Promise David" },
-        { "no": 17, "name": "Tajon Buchanan" },
-        { "no": 19, "name": "Alphonso Davies" }
+        { "no": 1 }, { "no": 18 }, { "no": 3 }, { "no": 5 },
+        { "no": 6 }, { "no": 21 }, { "no": 9 }, { "no": 20 },
+        { "no": 26 }, { "no": 24 }, { "no": 17 }, { "no": 19 }
       ],
       "coach": "Jesse Marsch"
     },
     "substitutions": [
-      { "minute": 45, "teamId": "RSA", "off": { "no": 5, "name": "Thalente Mbatha" }, "on": { "no": 17, "name": "Evidence Makgopa" } },
-      { "minute": 59, "teamId": "CAN", "off": { "no": 4, "name": "Luc De Fougerolles" }, "on": { "no": 23, "name": "Niko Sigur" } },
-      { "minute": 70, "teamId": "CAN", "off": { "no": 14, "name": "Jacob Shaffelburg" }, "on": { "no": 24, "name": "Promise David" } },
-      { "minute": 75, "teamId": "CAN", "off": { "no": 19, "name": "Alphonso Davies" }, "on": { "no": 17, "name": "Tajon Buchanan" } },
-      { "minute": 86, "teamId": "RSA", "off": { "no": 8, "name": "Tshepang Moremi" }, "on": { "no": 15, "name": "Iqraam Rayners" } }
+      { "minute": 45, "teamId": "RSA", "off": { "no": 5 }, "on": { "no": 17 } },
+      { "minute": 59, "teamId": "CAN", "off": { "no": 4 }, "on": { "no": 23 } },
+      { "minute": 70, "teamId": "CAN", "off": { "no": 14 }, "on": { "no": 24 } },
+      { "minute": 75, "teamId": "CAN", "off": { "no": 19 }, "on": { "no": 17 } },
+      { "minute": 86, "teamId": "RSA", "off": { "no": 8 }, "on": { "no": 15 } }
     ],
     "cards": [
-      { "minute": 59, "teamId": "CAN", "player": { "no": 23, "name": "Niko Sigur" }, "card": "yellow" },
-      { "minute": 75, "teamId": "CAN", "player": { "no": 19, "name": "Alphonso Davies" }, "card": "yellow" }
+      { "minute": 59, "teamId": "CAN", "player": { "no": 23 }, "card": "yellow" },
+      { "minute": 75, "teamId": "CAN", "player": { "no": 19 }, "card": "yellow" }
     ]
   }
 }
