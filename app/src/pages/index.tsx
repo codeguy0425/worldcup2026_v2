@@ -316,9 +316,9 @@ export function MatchPage() {
     if (idx < 0) return null
     const nextRn = nextRoundOrder[idx + 1]
     const nextMs = bracketData.rounds[nextRn] || []
-    const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+    const nm = nextMs.find((n: BracketMatch) => n.team1Original === wId || n.team2Original === wId)
     if (!nm) return null
-    const isT1 = nm.team1Id === wId
+    const isT1 = nm.team1Original === wId
     const oppId = isT1 ? nm.team2Id : nm.team1Id
     const oppTeam = teamMap.get(oppId)
     const oppName = oppTeam?.name || oppId
@@ -475,8 +475,8 @@ export function MatchPage() {
           const wId = `W${m.id}`
           const nextRn: string = ({r32:'r16',r16:'qf',qf:'sf',sf:'final'})[m.stage] || ''
           const nextMs = bracketData?.rounds[nextRn] || []
-          const nm = nextMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
-          const isT1 = nm?.team1Id === wId
+          const nm = nextMs.find((n: BracketMatch) => n.team1Original === wId || n.team2Original === wId)
+          const isT1 = nm?.team1Original === wId
           const oppId = nm ? (isT1 ? nm.team2Id : nm.team1Id) : ''
           const oppTeam = oppId ? teamMap.get(oppId) : null
           const hm = nm ? allMatches.find(x => x.id === nm.matchId) : null
@@ -503,10 +503,10 @@ export function MatchPage() {
           const wId = `W${m.id}`, lId = `L${m.id}`
           const finalMs = bracketData.rounds['final'] || []
           const thirdMs = bracketData.rounds['third'] || []
-          const fm = finalMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
-          const tm = thirdMs.find((n: BracketMatch) => n.team1Id === lId || n.team2Id === lId)
-          const fOpp = fm ? (() => { const isT1 = fm.team1Id === wId; const o = teamMap.get(isT1 ? fm.team2Id : fm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? fm.team2Id : fm.team1Id) })() : null
-          const tOpp = tm ? (() => { const isT1 = tm.team1Id === lId; const o = teamMap.get(isT1 ? tm.team2Id : tm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? tm.team2Id : tm.team1Id) })() : null
+          const fm = finalMs.find((n: BracketMatch) => n.team1Original === wId || n.team2Original === wId)
+          const tm = thirdMs.find((n: BracketMatch) => n.team1Original === lId || n.team2Original === lId)
+          const fOpp = fm ? (() => { const isT1 = fm.team1Original === wId; const o = teamMap.get(isT1 ? fm.team2Id : fm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? fm.team2Id : fm.team1Id) })() : null
+          const tOpp = tm ? (() => { const isT1 = tm.team1Original === lId; const o = teamMap.get(isT1 ? tm.team2Id : tm.team1Id); return o ? `${o.flag} ${o.name}` : (isT1 ? tm.team2Id : tm.team1Id) })() : null
           const hfm = allMatches.find(x => x.id === fm?.matchId)
           const htm = allMatches.find(x => x.id === tm?.matchId)
           return (

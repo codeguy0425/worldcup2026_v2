@@ -99,6 +99,18 @@ function main() {
   const totalBracket = Object.values(bracket.rounds).reduce((s, m) => s + m.length, 0)
   console.log(`   ✅ bracket.json — ${totalBracket} matches across ${Object.keys(bracket.rounds).length} rounds`)
 
+  // ── 6b. Build per-match team resolution map for goal teamId resolution ──
+  // Maps original placeholders (e.g. "2B", "W73") → resolved team IDs (e.g. "CAN")
+  const teamResolveMap = {}
+  for (const ms of Object.values(bracket.rounds)) {
+    for (const bm of ms) {
+      const map = {}
+      map[bm.team1Original] = bm.team1Id
+      map[bm.team2Original] = bm.team2Id
+      teamResolveMap[bm.matchId] = map
+    }
+  }
+
   // 7. Apply bracket resolution back to matches (so Schedule/MatchPage show real names)
   const resolvedMap = {}
   for (const ms of Object.values(bracket.rounds)) {
@@ -113,6 +125,15 @@ function main() {
       cm.team1Id = r.team1Id
       cm.team2Id = r.team2Id
       resolved++
+    }
+    // Resolve goal teamIds using bracket resolution map
+    if (cm.goals) {
+      const tMap = teamResolveMap[cm.id] || {}
+      for (const g of cm.goals) {
+        if (tMap[g.teamId] && tMap[g.teamId] !== g.teamId) {
+          g.teamId = tMap[g.teamId]
+        }
+      }
     }
   }
   writeJSON(resolve(DATA_DIR, 'matches.json'), cleanMatches)

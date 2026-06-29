@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
 import { fmtScore } from '../pages/index'
 import { useLang } from '../hooks/LangProvider'
-import { useRef } from 'react'
 
 interface BracketMatch {
   matchId: number; round: string; date: string
@@ -22,6 +21,16 @@ const ROUND_LABELS: Record<string, string> = {
 const KNOCKOUT_ROUNDS = ['r32', 'r16', 'qf', 'sf', 'final']
 const TREE_ROWS: Record<string, number> = { r32: 16, r16: 8, qf: 4, sf: 2, final: 1 }
 const GAP_PX = 14
+
+// Pre-defined display order per round — matches the bracket tree topology top-to-bottom.
+// Derived from following W{id}/L{id} references through the knockout tree.
+const MATCH_SEQUENCE: Record<string, number[]> = {
+  r32: [73,75,74,77,76,78,79,80,83,84,81,82,86,88,85,87],
+  r16: [90,89,91,92,93,94,95,96],
+  qf:  [97,99,98,100],
+  sf:  [101,102],
+  final: [104],
+}
 
 function teamDisplay(m: BracketMatch, side: 1|2, teamMap: Map<string,any>, groupsComplete: Record<string,boolean>) {
   const id = side === 1 ? m.team1Id : m.team2Id
@@ -45,7 +54,6 @@ export function BracketPage() {
   const { data: viutvData } = useJson<{ matchId: number }[]>('/data/viutv.json')
   const viutvIds = new Set((viutvData ?? []).map((v: any) => v.matchId))
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
-  const scrollRef = useRef<HTMLDivElement>(null)
 
   const groupsComplete: Record<string, boolean> = {}
   if (matches) {
@@ -69,7 +77,12 @@ export function BracketPage() {
   const slots: Record<string, (BracketMatch|null)[]> = {}
   for (const ph of KNOCKOUT_ROUNDS) {
     const ms = rounds[ph] ?? []
-    slots[ph] = buildSlots(ph, [...ms].sort((a, b) => a.matchId - b.matchId))
+    const seq = MATCH_SEQUENCE[ph] ?? []
+    slots[ph] = buildSlots(ph, [...ms].sort((a, b) => {
+      const ia = seq.indexOf(a.matchId)
+      const ib = seq.indexOf(b.matchId)
+      return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib)
+    }))
   }
 
   return (
@@ -90,7 +103,7 @@ export function BracketPage() {
       </div>
 
       {/* ─── Tree ─── */}
-      <div ref={scrollRef} style={{
+      <div style={{
         overflowX: 'auto', overflowY: 'hidden',
         paddingBottom: '10px',
         WebkitOverflowScrolling: 'touch',
