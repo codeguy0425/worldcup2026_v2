@@ -1,75 +1,101 @@
 {
-  "73": {
-    "team1": {
-      "teamId": "RSA",
-      "formation": "4-2-3-1",
-      "startingXI": [
-        { "no": 1, "pos": "GK", "captain": true },
-        { "no": 6, "pos": "DF" }, { "no": 14, "pos": "DF" },
-        { "no": 20, "pos": "DF" }, { "no": 21, "pos": "DF" },
-        { "no": 4, "pos": "MF" }, { "no": 13, "pos": "MF" },
-        { "no": 5, "pos": "MF" },
-        { "no": 7, "pos": "FW" }, { "no": 10, "pos": "FW" },
-        { "no": 8, "pos": "FW" }
-      ],
-      "substitutes": [
-        { "no": 16 }, { "no": 22 }, { "no": 2 }, { "no": 3 },
-        { "no": 18 }, { "no": 19 }, { "no": 24 }, { "no": 26 },
-        { "no": 23 }, { "no": 9 }, { "no": 25 },
-        { "no": 17 }, { "no": 15 }
-      ],
-      "coach": "Hugo Broos"
-    },
-    "team2": {
-      "teamId": "CAN",
-      "formation": "4-4-2",
-      "startingXI": [
-        { "no": 16, "pos": "GK" },
-        { "no": 2, "pos": "DF" }, { "no": 13, "pos": "DF" },
-        { "no": 15, "pos": "DF" }, { "no": 4, "pos": "DF" },
-        { "no": 22, "pos": "DF" },
-        { "no": 7, "pos": "MF", "captain": true },
-        { "no": 11, "pos": "MF" }, { "no": 14, "pos": "MF" },
-        { "no": 25, "pos": "MF" }, { "no": 19, "pos": "MF" },
-        { "no": 10, "pos": "FW" }, { "no": 12, "pos": "FW" }
-      ],
-      "substitutes": [
-        { "no": 1 }, { "no": 18 }, { "no": 3 }, { "no": 5 },
-        { "no": 6 }, { "no": 21 }, { "no": 9 }, { "no": 20 },
-        { "no": 26 }, { "no": 24 }, { "no": 17 }, { "no": 23 }
-      ],
-      "coach": "Jesse Marsch"
-    },
-    "substitutions": [
-      { "minute": 45, "teamId": "RSA", "off": { "no": 5 }, "on": { "no": 17 } },
-      { "minute": 59, "teamId": "CAN", "off": { "no": 4 }, "on": { "no": 23 } },
-      { "minute": 70, "teamId": "CAN", "off": { "no": 14 }, "on": { "no": 24 } },
-      { "minute": 75, "teamId": "CAN", "off": { "no": 19 }, "on": { "no": 17 } },
-      { "minute": 86, "teamId": "RSA", "off": { "no": 8 }, "on": { "no": 15 } }
-    ],
-    "cards": [
-      { "minute": 59, "teamId": "CAN", "player": { "no": 23 }, "card": "yellow" },
-      { "minute": 75, "teamId": "CAN", "player": { "no": 19 }, "card": "yellow" }
-    ]
-  },
   "13": {
     "team1": {
       "teamId": "BRA",
       "formation": "4-4-2",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 3, "pos": "DF", "captain": true },
-        { "no": 4, "pos": "DF" }, { "no": 16, "pos": "DF" },
-        { "no": 24, "pos": "DF" }, { "no": 13, "pos": "MF" },
-        { "no": 5, "pos": "MF" }, { "no": 8, "pos": "MF" },
-        { "no": 20, "pos": "MF" }, { "no": 9, "pos": "FW" },
-        { "no": 18, "pos": "MF" }, { "no": 7, "pos": "FW" },
-        { "no": 11, "pos": "FW" }, { "no": 25, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 24,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "MF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 18,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        },
+        {
+          "no": 25,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 23 }, { "no": 6 }, { "no": 14 },
-        { "no": 15 }, { "no": 2 }, { "no": 17 }, { "no": 19 },
-        { "no": 21 }, { "no": 22 }, { "no": 26 }
+        {
+          "no": 12
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 26
+        }
       ],
       "coach": "Carlo Ancelotti"
     },
@@ -77,36 +103,202 @@
       "teamId": "MAR",
       "formation": "4-2-3-1",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 2, "pos": "DF", "captain": true },
-        { "no": 3, "pos": "DF" }, { "no": 26, "pos": "DF" },
-        { "no": 14, "pos": "DF" }, { "no": 18, "pos": "DF" },
-        { "no": 6, "pos": "MF" }, { "no": 8, "pos": "MF" },
-        { "no": 15, "pos": "MF" }, { "no": 11, "pos": "MF" },
-        { "no": 23, "pos": "MF" }, { "no": 24, "pos": "MF" },
-        { "no": 9, "pos": "MF" },
-        { "no": 10, "pos": "FW" }, { "no": 7, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 14,
+          "pos": "DF"
+        },
+        {
+          "no": 18,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 15,
+          "pos": "MF"
+        },
+        {
+          "no": 11,
+          "pos": "MF"
+        },
+        {
+          "no": 24,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 22 }, { "no": 5 }, { "no": 13 },
-        { "no": 19 }, { "no": 25 }, { "no": 4 }, { "no": 16 },
-        { "no": 17 }, { "no": 20 }, { "no": 21 }
+        {
+          "no": 4
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 25
+        }
       ],
       "coach": "Mohamed Ouahbi"
     },
     "substitutions": [
-      { "minute": 45, "teamId": "BRA", "off": { "no": 13 }, "on": { "no": 17 } },
-      { "minute": 61, "teamId": "BRA", "off": { "no": 9 }, "on": { "no": 21 } },
-      { "minute": 80, "teamId": "BRA", "off": { "no": 18 }, "on": { "no": 2 } },
-      { "minute": 64, "teamId": "MAR", "off": { "no": 15 }, "on": { "no": 7 } },
-      { "minute": 64, "teamId": "MAR", "off": { "no": 11 }, "on": { "no": 21 } },
-      { "minute": 80, "teamId": "MAR", "off": { "no": 26 }, "on": { "no": 17 } },
-      { "minute": 80, "teamId": "MAR", "off": { "no": 24 }, "on": { "no": 20 } },
-      { "minute": 89, "teamId": "MAR", "off": { "no": 9 }, "on": { "no": 23 } }
+      {
+        "minute": 45,
+        "teamId": "BRA",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 61,
+        "teamId": "BRA",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "BRA",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 2
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "MAR",
+        "off": {
+          "no": 15
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "MAR",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "MAR",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "MAR",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 20
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "MAR",
+        "off": {
+          "no": 9
+        },
+        "on": {
+          "no": 23
+        }
+      }
     ],
     "cards": [
-      { "minute": 45, "teamId": "BRA", "player": { "no": 24 }, "card": "yellow" },
-      { "minute": 62, "teamId": "BRA", "player": { "no": 17 }, "card": "yellow" }
+      {
+        "minute": 45,
+        "teamId": "BRA",
+        "player": {
+          "no": 24
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 62,
+        "teamId": "BRA",
+        "player": {
+          "no": 17
+        },
+        "card": "yellow"
+      }
     ]
   },
   "16": {
@@ -114,20 +306,98 @@
       "teamId": "BRA",
       "formation": "4-3-3",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 3, "pos": "DF", "captain": true },
-        { "no": 4, "pos": "DF" }, { "no": 13, "pos": "DF" },
-        { "no": 16, "pos": "DF" },
-        { "no": 5, "pos": "MF" }, { "no": 8, "pos": "MF" },
-        { "no": 2, "pos": "MF" }, { "no": 20, "pos": "MF" },
-        { "no": 22, "pos": "MF" }, { "no": 26, "pos": "FW" },
-        { "no": 7, "pos": "FW" }, { "no": 9, "pos": "FW" },
-        { "no": 11, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 2,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 22,
+          "pos": "MF"
+        },
+        {
+          "no": 26,
+          "pos": "FW"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 23 }, { "no": 6 }, { "no": 14 },
-        { "no": 15 }, { "no": 24 }, { "no": 17 }, { "no": 18 },
-        { "no": 19 }, { "no": 21 }, { "no": 25 }
+        {
+          "no": 12
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 25
+        }
       ],
       "coach": "Carlo Ancelotti"
     },
@@ -135,37 +405,210 @@
       "teamId": "HAI",
       "formation": "5-4-1",
       "startingXI": [
-        { "no": 1, "pos": "GK", "captain": true },
-        { "no": 2, "pos": "DF" }, { "no": 25, "pos": "DF" },
-        { "no": 4, "pos": "DF" }, { "no": 5, "pos": "DF" },
-        { "no": 8, "pos": "DF" }, { "no": 22, "pos": "DF" },
-        { "no": 10, "pos": "MF" }, { "no": 7, "pos": "MF" },
-        { "no": 17, "pos": "MF" },
-        { "no": 15, "pos": "FW" }, { "no": 16, "pos": "FW" },
-        { "no": 20, "pos": "FW" }, { "no": 21, "pos": "FW" },
-        { "no": 11, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK",
+          "captain": true
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 25,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 8,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF"
+        },
+        {
+          "no": 10,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 17,
+          "pos": "MF"
+        },
+        {
+          "no": 15,
+          "pos": "FW"
+        },
+        {
+          "no": 16,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        },
+        {
+          "no": 21,
+          "pos": "FW"
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 23 }, { "no": 3 }, { "no": 13 },
-        { "no": 14 }, { "no": 24 }, { "no": 6 }, { "no": 26 },
-        { "no": 9 }, { "no": 18 }, { "no": 19 }
+        {
+          "no": 12
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        }
       ],
       "coach": "Sébastien Migné"
     },
     "substitutions": [
-      { "minute": 40, "teamId": "BRA", "off": { "no": 26 }, "on": { "no": 19 } },
-      { "minute": 64, "teamId": "BRA", "off": { "no": 22 }, "on": { "no": 21 } },
-      { "minute": 81, "teamId": "BRA", "off": { "no": 2 }, "on": { "no": 18 } },
-      { "minute": 45, "teamId": "HAI", "off": { "no": 25 }, "on": { "no": 18 } },
-      { "minute": 62, "teamId": "HAI", "off": { "no": 11 }, "on": { "no": 26 } },
-      { "minute": 71, "teamId": "HAI", "off": { "no": 16 }, "on": { "no": 19 } },
-      { "minute": 81, "teamId": "HAI", "off": { "no": 7 }, "on": { "no": 9 } }
+      {
+        "minute": 40,
+        "teamId": "BRA",
+        "off": {
+          "no": 26
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "BRA",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "BRA",
+        "off": {
+          "no": 2
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 45,
+        "teamId": "HAI",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 62,
+        "teamId": "HAI",
+        "off": {
+          "no": 11
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "HAI",
+        "off": {
+          "no": 16
+        },
+        "on": {
+          "no": 19
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "HAI",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 9
+        }
+      }
     ],
     "cards": [
-      { "minute": 40, "teamId": "BRA", "player": { "no": 26 }, "card": "yellow" },
-      { "minute": 35, "teamId": "HAI", "player": { "no": 25 }, "card": "yellow" },
-      { "minute": 63, "teamId": "HAI", "player": { "no": 11 }, "card": "yellow" },
-      { "minute": 79, "teamId": "HAI", "player": { "no": 17 }, "card": "yellow" }
+      {
+        "minute": 40,
+        "teamId": "BRA",
+        "player": {
+          "no": 26
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 35,
+        "teamId": "HAI",
+        "player": {
+          "no": 25
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 63,
+        "teamId": "HAI",
+        "player": {
+          "no": 11
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 79,
+        "teamId": "HAI",
+        "player": {
+          "no": 17
+        },
+        "card": "yellow"
+      }
     ]
   },
   "17": {
@@ -173,21 +616,102 @@
       "teamId": "SCO",
       "formation": "4-2-3-1",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 3, "pos": "DF", "captain": true },
-        { "no": 6, "pos": "DF" }, { "no": 13, "pos": "DF" },
-        { "no": 22, "pos": "DF" }, { "no": 24, "pos": "DF" },
-        { "no": 26, "pos": "DF" },
-        { "no": 4, "pos": "MF" }, { "no": 7, "pos": "MF" },
-        { "no": 25, "pos": "MF" }, { "no": 19, "pos": "MF" },
-        { "no": 23, "pos": "MF" },
-        { "no": 17, "pos": "FW" }, { "no": 11, "pos": "FW" },
-        { "no": 20, "pos": "FW" }, { "no": 10, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF"
+        },
+        {
+          "no": 24,
+          "pos": "DF"
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 25,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "MF"
+        },
+        {
+          "no": 23,
+          "pos": "MF"
+        },
+        {
+          "no": 17,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 21 }, { "no": 2 }, { "no": 5 },
-        { "no": 15 }, { "no": 16 }, { "no": 8 }, { "no": 9 },
-        { "no": 14 }, { "no": 18 }
+        {
+          "no": 2
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 21
+        }
       ],
       "coach": "Steve Clarke"
     },
@@ -195,37 +719,472 @@
       "teamId": "BRA",
       "formation": "4-3-3",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 3, "pos": "DF", "captain": true },
-        { "no": 4, "pos": "DF" }, { "no": 13, "pos": "DF" },
-        { "no": 16, "pos": "DF" }, { "no": 6, "pos": "DF" },
-        { "no": 5, "pos": "MF" }, { "no": 17, "pos": "MF" },
-        { "no": 8, "pos": "MF" }, { "no": 20, "pos": "MF" },
-        { "no": 10, "pos": "FW" },
-        { "no": 7, "pos": "FW" }, { "no": 9, "pos": "FW" },
-        { "no": 26, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 17,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 23 }, { "no": 14 }, { "no": 15 },
-        { "no": 24 }, { "no": 2 }, { "no": 18 }, { "no": 19 },
-        { "no": 21 }, { "no": 22 }, { "no": 25 }
+        {
+          "no": 2
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 26
+        }
       ],
       "coach": "Carlo Ancelotti"
     },
     "substitutions": [
-      { "minute": 45, "teamId": "SCO", "off": { "no": 6 }, "on": { "no": 5 } },
-      { "minute": 81, "teamId": "SCO", "off": { "no": 24 }, "on": { "no": 11 } },
-      { "minute": 90, "teamId": "SCO", "off": { "no": 25 }, "on": { "no": 8 }, "stoppageTime": 1 },
-      { "minute": 90, "teamId": "SCO", "off": { "no": 10 }, "on": { "no": 18 }, "stoppageTime": 1 },
-      { "minute": 66, "teamId": "BRA", "off": { "no": 17 }, "on": { "no": 22 } },
-      { "minute": 66, "teamId": "BRA", "off": { "no": 10 }, "on": { "no": 26 } },
-      { "minute": 76, "teamId": "BRA", "off": { "no": 10 }, "on": { "no": 18 } },
-      { "minute": 82, "teamId": "BRA", "off": { "no": 6 }, "on": { "no": 19 } }
+      {
+        "minute": 45,
+        "teamId": "SCO",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 5
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "SCO",
+        "off": {
+          "no": 24
+        },
+        "on": {
+          "no": 11
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "SCO",
+        "off": {
+          "no": 25
+        },
+        "on": {
+          "no": 8
+        },
+        "stoppageTime": 1
+      },
+      {
+        "minute": 90,
+        "teamId": "SCO",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 18
+        },
+        "stoppageTime": 1
+      },
+      {
+        "minute": 66,
+        "teamId": "BRA",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 22
+        }
+      },
+      {
+        "minute": 66,
+        "teamId": "BRA",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
+        "minute": 76,
+        "teamId": "BRA",
+        "off": {
+          "no": 10
+        },
+        "on": {
+          "no": 18
+        }
+      },
+      {
+        "minute": 82,
+        "teamId": "BRA",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 19
+        }
+      }
     ],
     "cards": [
-      { "minute": 55, "teamId": "SCO", "player": { "no": 13 }, "card": "yellow" },
-      { "minute": 62, "teamId": "BRA", "player": { "no": 17 }, "card": "yellow" },
-      { "minute": 89, "teamId": "BRA", "player": { "no": 20 }, "card": "yellow" }
+      {
+        "minute": 55,
+        "teamId": "SCO",
+        "player": {
+          "no": 13
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 62,
+        "teamId": "BRA",
+        "player": {
+          "no": 17
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 89,
+        "teamId": "BRA",
+        "player": {
+          "no": 20
+        },
+        "card": "yellow"
+      }
+    ]
+  },
+  "73": {
+    "team1": {
+      "teamId": "RSA",
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK",
+          "captain": true
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 14,
+          "pos": "DF"
+        },
+        {
+          "no": 20,
+          "pos": "DF"
+        },
+        {
+          "no": 21,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 13,
+          "pos": "MF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 8,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 16
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 15
+        }
+      ],
+      "coach": "Hugo Broos"
+    },
+    "team2": {
+      "teamId": "CAN",
+      "formation": "4-4-2",
+      "startingXI": [
+        {
+          "no": 16,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 15,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF"
+        },
+        {
+          "no": 7,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 11,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 25,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 12,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 23
+        }
+      ],
+      "coach": "Jesse Marsch"
+    },
+    "substitutions": [
+      {
+        "minute": 45,
+        "teamId": "RSA",
+        "off": {
+          "no": 5
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 59,
+        "teamId": "CAN",
+        "off": {
+          "no": 4
+        },
+        "on": {
+          "no": 23
+        }
+      },
+      {
+        "minute": 70,
+        "teamId": "CAN",
+        "off": {
+          "no": 14
+        },
+        "on": {
+          "no": 24
+        }
+      },
+      {
+        "minute": 75,
+        "teamId": "CAN",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 17
+        }
+      },
+      {
+        "minute": 86,
+        "teamId": "RSA",
+        "off": {
+          "no": 8
+        },
+        "on": {
+          "no": 15
+        }
+      }
+    ],
+    "cards": [
+      {
+        "minute": 59,
+        "teamId": "CAN",
+        "player": {
+          "no": 23
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 75,
+        "teamId": "CAN",
+        "player": {
+          "no": 19
+        },
+        "card": "yellow"
+      }
     ]
   },
   "76": {
@@ -233,20 +1192,98 @@
       "teamId": "BRA",
       "formation": "4-1-2-3",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 3, "pos": "DF", "captain": true },
-        { "no": 4, "pos": "DF" }, { "no": 13, "pos": "DF" },
-        { "no": 16, "pos": "DF" },
-        { "no": 5, "pos": "MF" }, { "no": 17, "pos": "MF" },
-        { "no": 8, "pos": "MF" }, { "no": 18, "pos": "MF" },
-        { "no": 20, "pos": "MF" }, { "no": 19, "pos": "FW" },
-        { "no": 7, "pos": "FW" }, { "no": 9, "pos": "FW" },
-        { "no": 22, "pos": "FW" }, { "no": 26, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 17,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 18,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "FW"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 22,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 23 }, { "no": 6 }, { "no": 14 },
-        { "no": 15 }, { "no": 24 }, { "no": 2 }, { "no": 10 },
-        { "no": 21 }, { "no": 25 }
+        {
+          "no": 2
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 26
+        }
       ],
       "coach": "Carlo Ancelotti"
     },
@@ -254,39 +1291,222 @@
       "teamId": "JPN",
       "formation": "3-4-3",
       "startingXI": [
-        { "no": 1, "pos": "GK" },
-        { "no": 3, "pos": "DF" }, { "no": 21, "pos": "DF" },
-        { "no": 22, "pos": "DF" },
-        { "no": 10, "pos": "MF", "captain": true },
-        { "no": 2, "pos": "MF" }, { "no": 11, "pos": "MF" },
-        { "no": 19, "pos": "MF" }, { "no": 13, "pos": "MF" },
-        { "no": 25, "pos": "MF" }, { "no": 14, "pos": "MF" },
-        { "no": 6, "pos": "MF" }, { "no": 15, "pos": "MF" },
-        { "no": 7, "pos": "MF" }, { "no": 24, "pos": "MF" },
-        { "no": 18, "pos": "FW" }
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 21,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF"
+        },
+        {
+          "no": 10,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 2,
+          "pos": "MF"
+        },
+        {
+          "no": 11,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "MF"
+        },
+        {
+          "no": 13,
+          "pos": "MF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 24,
+          "pos": "MF"
+        },
+        {
+          "no": 18,
+          "pos": "FW"
+        }
       ],
       "substitutes": [
-        { "no": 12 }, { "no": 23 }, { "no": 4 }, { "no": 5 },
-        { "no": 16 }, { "no": 20 }, { "no": 8 }, { "no": 17 },
-        { "no": 9 }, { "no": 26 }
+        {
+          "no": 4
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 26
+        }
       ],
       "coach": "Hajime Moriyasu"
     },
     "substitutions": [
-      { "minute": 45, "teamId": "BRA", "off": { "no": 19 }, "on": { "no": 26 } },
-      { "minute": 65, "teamId": "BRA", "off": { "no": 22 }, "on": { "no": 21 } },
-      { "minute": 90, "teamId": "BRA", "off": { "no": 17 }, "on": { "no": 2 }, "stoppageTime": 1 },
-      { "minute": 90, "teamId": "BRA", "off": { "no": 18 }, "on": { "no": 10 }, "stoppageTime": 7 },
-      { "minute": 66, "teamId": "JPN", "off": { "no": 2 }, "on": { "no": 25 } },
-      { "minute": 66, "teamId": "JPN", "off": { "no": 13 }, "on": { "no": 7 } },
-      { "minute": 78, "teamId": "JPN", "off": { "no": 6 }, "on": { "no": 14 } },
-      { "minute": 78, "teamId": "JPN", "off": { "no": 7 }, "on": { "no": 15 } },
-      { "minute": 90, "teamId": "JPN", "off": { "no": 19 }, "on": { "no": 9 }, "stoppageTime": 7 }
+      {
+        "minute": 45,
+        "teamId": "BRA",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 26
+        }
+      },
+      {
+        "minute": 65,
+        "teamId": "BRA",
+        "off": {
+          "no": 22
+        },
+        "on": {
+          "no": 21
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "BRA",
+        "off": {
+          "no": 17
+        },
+        "on": {
+          "no": 2
+        },
+        "stoppageTime": 1
+      },
+      {
+        "minute": 90,
+        "teamId": "BRA",
+        "off": {
+          "no": 18
+        },
+        "on": {
+          "no": 10
+        },
+        "stoppageTime": 7
+      },
+      {
+        "minute": 66,
+        "teamId": "JPN",
+        "off": {
+          "no": 2
+        },
+        "on": {
+          "no": 25
+        }
+      },
+      {
+        "minute": 66,
+        "teamId": "JPN",
+        "off": {
+          "no": 13
+        },
+        "on": {
+          "no": 7
+        }
+      },
+      {
+        "minute": 78,
+        "teamId": "JPN",
+        "off": {
+          "no": 6
+        },
+        "on": {
+          "no": 14
+        }
+      },
+      {
+        "minute": 78,
+        "teamId": "JPN",
+        "off": {
+          "no": 7
+        },
+        "on": {
+          "no": 15
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "JPN",
+        "off": {
+          "no": 19
+        },
+        "on": {
+          "no": 9
+        },
+        "stoppageTime": 7
+      }
     ],
     "cards": [
-      { "minute": 35, "teamId": "BRA", "player": { "no": 16 }, "card": "yellow" },
-      { "minute": 70, "teamId": "BRA", "player": { "no": 17 }, "card": "yellow" },
-      { "minute": 55, "teamId": "JPN", "player": { "no": 3 }, "card": "yellow" }
+      {
+        "minute": 35,
+        "teamId": "BRA",
+        "player": {
+          "no": 16
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 70,
+        "teamId": "BRA",
+        "player": {
+          "no": 17
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 55,
+        "teamId": "JPN",
+        "player": {
+          "no": 3
+        },
+        "card": "yellow"
+      }
     ]
   }
 }
