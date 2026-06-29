@@ -264,8 +264,8 @@ export function MatchPage() {
   // ─── Parent matches (for knockout, show the matches that led here) ───
   const parentMatches = (() => {
     if (!isBracketMatch || m.stage === 'r32' || !allMatches.length) return null
-    const p1 = m.team1Id.match(/^([WL])(\d+)$/)
-    const p2 = m.team2Id.match(/^([WL])(\d+)$/)
+    const p1 = m.team1Id.match(/^([WL])(\d+)$/) || m.team1Original?.match(/^([WL])(\d+)$/)
+    const p2 = m.team2Id.match(/^([WL])(\d+)$/) || m.team2Original?.match(/^([WL])(\d+)$/)
     if (!p1 && !p2) return null
     const src1 = p1 ? allMatches.find(x => x.id === Number(p1[2])) : null
     const src2 = p2 ? allMatches.find(x => x.id === Number(p2[2])) : null
