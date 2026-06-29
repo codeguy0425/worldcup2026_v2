@@ -59,6 +59,7 @@ interface Match {
   team1Id: string; team2Id: string; group?: string
   score1?: number; score2?: number; stage: string; groundId?: string
   goals?: GoalEvent[]; timeUtc?: string
+  team1Original?: string; team2Original?: string
 }
 
 interface GoalEvent {
