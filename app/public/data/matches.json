@@ -17,14 +17,12 @@
       {
         "minute": 9,
         "scorer": "Julián Quiñones",
-        "teamId": "MEX",
-        "scorerNo": 16
+        "teamId": "MEX"
       },
       {
         "minute": 67,
         "scorer": "Raúl Jiménez",
-        "teamId": "MEX",
-        "scorerNo": 9
+        "teamId": "MEX"
       }
     ]
   },
@@ -46,20 +44,17 @@
       {
         "minute": 59,
         "scorer": "Ladislav Krejcí",
-        "teamId": "CZE",
-        "scorerNo": 7
+        "teamId": "CZE"
       },
       {
         "minute": 67,
         "scorer": "Hwang In-Beom",
-        "teamId": "KOR",
-        "scorerNo": 6
+        "teamId": "KOR"
       },
       {
         "minute": 80,
         "scorer": "Oh Hyeon-Gyu",
-        "teamId": "KOR",
-        "scorerNo": 18
+        "teamId": "KOR"
       }
     ]
   },
@@ -81,15 +76,13 @@
       {
         "minute": 6,
         "scorer": "Michal Sadílek",
-        "teamId": "CZE",
-        "scorerNo": 18
+        "teamId": "CZE"
       },
       {
         "minute": 83,
         "scorer": "Teboho Mokoena",
         "teamId": "RSA",
-        "penalty": true,
-        "scorerNo": 4
+        "penalty": true
       }
     ]
   },
@@ -111,8 +104,7 @@
       {
         "minute": 50,
         "scorer": "Luis Romo",
-        "teamId": "MEX",
-        "scorerNo": 7
+        "teamId": "MEX"
       }
     ]
   },
@@ -134,21 +126,18 @@
       {
         "minute": 55,
         "scorer": "Mateo Chávez",
-        "teamId": "MEX",
-        "scorerNo": 20
+        "teamId": "MEX"
       },
       {
         "minute": 61,
         "scorer": "Julián Quiñones",
-        "teamId": "MEX",
-        "scorerNo": 16
+        "teamId": "MEX"
       },
       {
         "minute": 90,
         "scorer": "Álvaro Fidalgo",
         "teamId": "MEX",
-        "stoppageTime": 4,
-        "scorerNo": 8
+        "stoppageTime": 4
       }
     ]
   },
@@ -170,8 +159,7 @@
       {
         "minute": 63,
         "scorer": "Thapelo Maseko",
-        "teamId": "RSA",
-        "scorerNo": 12
+        "teamId": "RSA"
       }
     ]
   },
@@ -193,14 +181,12 @@
       {
         "minute": 21,
         "scorer": "Jovo Lukić",
-        "teamId": "BIH",
-        "scorerNo": 25
+        "teamId": "BIH"
       },
       {
         "minute": 78,
         "scorer": "Cyle Larin",
-        "teamId": "CAN",
-        "scorerNo": 9
+        "teamId": "CAN"
       }
     ]
   },
@@ -223,16 +209,14 @@
         "minute": 17,
         "scorer": "Breel Embolo",
         "teamId": "SUI",
-        "penalty": true,
-        "scorerNo": 7
+        "penalty": true
       },
       {
         "minute": 90,
         "scorer": "Miro Muheim",
         "teamId": "QAT",
         "ownGoal": true,
-        "stoppageTime": 4,
-        "scorerNo": 2
+        "stoppageTime": 4
       }
     ]
   },
@@ -254,35 +238,30 @@
       {
         "minute": 74,
         "scorer": "Johan Manzambi",
-        "teamId": "SUI",
-        "scorerNo": 9
+        "teamId": "SUI"
       },
       {
         "minute": 84,
         "scorer": "Rubén Vargas",
-        "teamId": "SUI",
-        "scorerNo": 17
+        "teamId": "SUI"
       },
       {
         "minute": 90,
         "scorer": "Johan Manzambi",
-        "teamId": "SUI",
-        "scorerNo": 9
+        "teamId": "SUI"
       },
       {
         "minute": 90,
         "scorer": "Ermin Mahmic",
         "teamId": "BIH",
-        "stoppageTime": 3,
-        "scorerNo": 26
+        "stoppageTime": 3
       },
       {
         "minute": 90,
         "scorer": "Granit Xhaka",
         "teamId": "SUI",
         "penalty": true,
-        "stoppageTime": 7,
-        "scorerNo": 10
+        "stoppageTime": 7
       }
     ]
   },
@@ -304,41 +283,35 @@
       {
         "minute": 16,
         "scorer": "Cyle Larin",
-        "teamId": "CAN",
-        "scorerNo": 9
+        "teamId": "CAN"
       },
       {
         "minute": 29,
         "scorer": "Jonathan David",
-        "teamId": "CAN",
-        "scorerNo": 10
+        "teamId": "CAN"
       },
       {
         "minute": 45,
         "scorer": "Jonathan David",
         "teamId": "CAN",
-        "stoppageTime": 3,
-        "scorerNo": 10
+        "stoppageTime": 3
       },
       {
         "minute": 64,
         "scorer": "Nathan Saliba",
-        "teamId": "CAN",
-        "scorerNo": 25
+        "teamId": "CAN"
       },
       {
         "minute": 75,
         "scorer": "Mohamed Manai",
         "teamId": "CAN",
-        "ownGoal": true,
-        "scorerNo": 26
+        "ownGoal": true
       },
       {
         "minute": 90,
         "scorer": "Jonathan David",
         "teamId": "CAN",
-        "stoppageTime": 2,
-        "scorerNo": 10
+        "stoppageTime": 2
       }
     ]
   },
@@ -360,20 +333,17 @@
       {
         "minute": 46,
         "scorer": "Rubén Vargas",
-        "teamId": "SUI",
-        "scorerNo": 17
+        "teamId": "SUI"
       },
       {
         "minute": 57,
         "scorer": "Johan Manzambi",
-        "teamId": "SUI",
-        "scorerNo": 9
+        "teamId": "SUI"
       },
       {
         "minute": 76,
         "scorer": "Promise David",
-        "teamId": "CAN",
-        "scorerNo": 24
+        "teamId": "CAN"
       }
     ]
   },
@@ -395,27 +365,23 @@
       {
         "minute": 29,
         "scorer": "Kerim Alajbegovic",
-        "teamId": "BIH",
-        "scorerNo": 19
+        "teamId": "BIH"
       },
       {
         "minute": 34,
         "scorer": "Mahmoud Abunada",
         "teamId": "BIH",
-        "ownGoal": true,
-        "scorerNo": 1
+        "ownGoal": true
       },
       {
         "minute": 42,
         "scorer": "Hassan Al-Haydos",
-        "teamId": "QAT",
-        "scorerNo": 10
+        "teamId": "QAT"
       },
       {
         "minute": 80,
         "scorer": "Ermin Mahmic",
-        "teamId": "BIH",
-        "scorerNo": 26
+        "teamId": "BIH"
       }
     ]
   },
@@ -437,14 +403,12 @@
       {
         "minute": 21,
         "scorer": "Ismael Saibari",
-        "teamId": "MAR",
-        "scorerNo": 11
+        "teamId": "MAR"
       },
       {
         "minute": 32,
         "scorer": "Vinícius Júnior",
-        "teamId": "BRA",
-        "scorerNo": 7
+        "teamId": "BRA"
       }
     ]
   },
@@ -466,8 +430,7 @@
       {
         "minute": 28,
         "scorer": "John McGinn",
-        "teamId": "SCO",
-        "scorerNo": 7
+        "teamId": "SCO"
       }
     ]
   },
@@ -489,8 +452,7 @@
       {
         "minute": 2,
         "scorer": "Ismael Saibari",
-        "teamId": "MAR",
-        "scorerNo": 11
+        "teamId": "MAR"
       }
     ]
   },
@@ -512,21 +474,18 @@
       {
         "minute": 23,
         "scorer": "Matheus Cunha",
-        "teamId": "BRA",
-        "scorerNo": 9
+        "teamId": "BRA"
       },
       {
         "minute": 36,
         "scorer": "Matheus Cunha",
-        "teamId": "BRA",
-        "scorerNo": 9
+        "teamId": "BRA"
       },
       {
         "minute": 45,
         "scorer": "Vinícius Júnior",
         "teamId": "BRA",
-        "stoppageTime": 3,
-        "scorerNo": 7
+        "stoppageTime": 3
       }
     ]
   },
@@ -548,21 +507,18 @@
       {
         "minute": 7,
         "scorer": "Vinícius Júnior",
-        "teamId": "BRA",
-        "scorerNo": 7
+        "teamId": "BRA"
       },
       {
         "minute": 45,
         "scorer": "Vinícius Júnior",
         "teamId": "BRA",
-        "stoppageTime": 3,
-        "scorerNo": 7
+        "stoppageTime": 3
       },
       {
         "minute": 60,
         "scorer": "Matheus Cunha",
-        "teamId": "BRA",
-        "scorerNo": 9
+        "teamId": "BRA"
       }
     ]
   },
@@ -585,39 +541,33 @@
         "minute": 10,
         "scorer": "Yassine Bounou",
         "teamId": "HAI",
-        "ownGoal": true,
-        "scorerNo": 1
+        "ownGoal": true
       },
       {
         "minute": 39,
         "scorer": "Achraf Hakimi",
-        "teamId": "MAR",
-        "scorerNo": 2
+        "teamId": "MAR"
       },
       {
         "minute": 43,
         "scorer": "Wilson Isidor",
-        "teamId": "HAI",
-        "scorerNo": 18
+        "teamId": "HAI"
       },
       {
         "minute": 45,
         "scorer": "Ismael Saibari",
         "teamId": "MAR",
-        "stoppageTime": 1,
-        "scorerNo": 11
+        "stoppageTime": 1
       },
       {
         "minute": 78,
         "scorer": "Soufiane Rahimi",
-        "teamId": "MAR",
-        "scorerNo": 9
+        "teamId": "MAR"
       },
       {
         "minute": 89,
         "scorer": "Gessime Yassine",
-        "teamId": "MAR",
-        "scorerNo": 16
+        "teamId": "MAR"
       }
     ]
   },
@@ -640,34 +590,29 @@
         "minute": 7,
         "scorer": "Damian Bobadilla",
         "teamId": "USA",
-        "ownGoal": true,
-        "scorerNo": 16
+        "ownGoal": true
       },
       {
         "minute": 31,
         "scorer": "Folarin Balogun",
-        "teamId": "USA",
-        "scorerNo": 20
+        "teamId": "USA"
       },
       {
         "minute": 45,
         "scorer": "Folarin Balogun",
         "teamId": "USA",
-        "stoppageTime": 5,
-        "scorerNo": 20
+        "stoppageTime": 5
       },
       {
         "minute": 73,
         "scorer": "Mauricio",
-        "teamId": "PAR",
-        "scorerNo": 11
+        "teamId": "PAR"
       },
       {
         "minute": 90,
         "scorer": "Giovanni Reyna",
         "teamId": "USA",
-        "stoppageTime": 8,
-        "scorerNo": 7
+        "stoppageTime": 8
       }
     ]
   },
@@ -689,14 +634,12 @@
       {
         "minute": 27,
         "scorer": "Nestory Irankunda",
-        "teamId": "AUS",
-        "scorerNo": 17
+        "teamId": "AUS"
       },
       {
         "minute": 75,
         "scorer": "Connor Metcalfe",
-        "teamId": "AUS",
-        "scorerNo": 8
+        "teamId": "AUS"
       }
     ]
   },
@@ -719,14 +662,12 @@
         "minute": 11,
         "scorer": "Cameron Burgess",
         "teamId": "USA",
-        "ownGoal": true,
-        "scorerNo": 21
+        "ownGoal": true
       },
       {
         "minute": 43,
         "scorer": "Alex Freeman",
-        "teamId": "USA",
-        "scorerNo": 16
+        "teamId": "USA"
       }
     ]
   },
@@ -748,8 +689,7 @@
       {
         "minute": 2,
         "scorer": "Matías Galarza",
-        "teamId": "PAR",
-        "scorerNo": 23
+        "teamId": "PAR"
       }
     ]
   },
@@ -771,33 +711,28 @@
       {
         "minute": 3,
         "scorer": "Auston Trusty",
-        "teamId": "USA",
-        "scorerNo": 6
+        "teamId": "USA"
       },
       {
         "minute": 10,
         "scorer": "Arda Güler",
-        "teamId": "TUR",
-        "scorerNo": 8
+        "teamId": "TUR"
       },
       {
         "minute": 31,
         "scorer": "Baris Alper Yilmaz",
-        "teamId": "TUR",
-        "scorerNo": 21
+        "teamId": "TUR"
       },
       {
         "minute": 49,
         "scorer": "Sebastian Berhalter",
-        "teamId": "USA",
-        "scorerNo": 14
+        "teamId": "USA"
       },
       {
         "minute": 90,
         "scorer": "Kaan Ayhan",
         "teamId": "TUR",
-        "stoppageTime": 8,
-        "scorerNo": 22
+        "stoppageTime": 8
       }
     ]
   },
@@ -835,52 +770,44 @@
       {
         "minute": 6,
         "scorer": "Felix Nmecha",
-        "teamId": "GER",
-        "scorerNo": 23
+        "teamId": "GER"
       },
       {
         "minute": 21,
         "scorer": "Livano Comenencia",
-        "teamId": "CUW",
-        "scorerNo": 8
+        "teamId": "CUW"
       },
       {
         "minute": 38,
         "scorer": "Nico Schlotterbeck",
-        "teamId": "GER",
-        "scorerNo": 15
+        "teamId": "GER"
       },
       {
         "minute": 45,
         "scorer": "Kai Havertz",
         "teamId": "GER",
         "penalty": true,
-        "stoppageTime": 5,
-        "scorerNo": 7
+        "stoppageTime": 5
       },
       {
         "minute": 47,
         "scorer": "Jamal Musiala",
-        "teamId": "GER",
-        "scorerNo": 10
+        "teamId": "GER"
       },
       {
         "minute": 68,
         "scorer": "Nathaniel Brown",
-        "teamId": "GER",
-        "scorerNo": 18
+        "teamId": "GER"
       },
       {
         "minute": 78,
         "scorer": "Deniz Undav",
-        "teamId": "GER",
-        "scorerNo": 26
+        "teamId": "GER"
       },
       {
         "minute": 88,
         "scorer": "Kai Havertz",
-        "teamId": "GER",
-        "scorerNo": 7
+        "teamId": "GER"
       }
     ]
   },
@@ -902,8 +829,7 @@
       {
         "minute": 90,
         "scorer": "Amad Diallo",
-        "teamId": "CIV",
-        "scorerNo": 15
+        "teamId": "CIV"
       }
     ]
   },
@@ -925,21 +851,18 @@
       {
         "minute": 30,
         "scorer": "Franck Kessié",
-        "teamId": "CIV",
-        "scorerNo": 8
+        "teamId": "CIV"
       },
       {
         "minute": 68,
         "scorer": "Deniz Undav",
-        "teamId": "GER",
-        "scorerNo": 26
+        "teamId": "GER"
       },
       {
         "minute": 90,
         "scorer": "Deniz Undav",
         "teamId": "GER",
-        "stoppageTime": 4,
-        "scorerNo": 26
+        "stoppageTime": 4
       }
     ]
   },
@@ -976,14 +899,12 @@
       {
         "minute": 7,
         "scorer": "Nicolas Pépé",
-        "teamId": "CIV",
-        "scorerNo": 19
+        "teamId": "CIV"
       },
       {
         "minute": 64,
         "scorer": "Nicolas Pépé",
-        "teamId": "CIV",
-        "scorerNo": 19
+        "teamId": "CIV"
       }
     ]
   },
@@ -1005,20 +926,17 @@
       {
         "minute": 2,
         "scorer": "Leroy Sané",
-        "teamId": "GER",
-        "scorerNo": 19
+        "teamId": "GER"
       },
       {
         "minute": 9,
         "scorer": "Nilson Angulo",
-        "teamId": "ECU",
-        "scorerNo": 20
+        "teamId": "ECU"
       },
       {
         "minute": 77,
         "scorer": "Gonzalo Plata",
-        "teamId": "ECU",
-        "scorerNo": 19
+        "teamId": "ECU"
       }
     ]
   },
@@ -1040,26 +958,22 @@
       {
         "minute": 51,
         "scorer": "Virgil van Dijk",
-        "teamId": "NED",
-        "scorerNo": 4
+        "teamId": "NED"
       },
       {
         "minute": 57,
         "scorer": "Keito Nakamura",
-        "teamId": "JPN",
-        "scorerNo": 13
+        "teamId": "JPN"
       },
       {
         "minute": 64,
         "scorer": "Crysencio Summerville",
-        "teamId": "NED",
-        "scorerNo": 24
+        "teamId": "NED"
       },
       {
         "minute": 88,
         "scorer": "Daichi Kamada",
-        "teamId": "JPN",
-        "scorerNo": 15
+        "teamId": "JPN"
       }
     ]
   },
@@ -1081,39 +995,33 @@
       {
         "minute": 7,
         "scorer": "Yasin Ayari",
-        "teamId": "SWE",
-        "scorerNo": 18
+        "teamId": "SWE"
       },
       {
         "minute": 30,
         "scorer": "Alexander Isak",
-        "teamId": "SWE",
-        "scorerNo": 9
+        "teamId": "SWE"
       },
       {
         "minute": 43,
         "scorer": "Omar Rekik",
-        "teamId": "TUN",
-        "scorerNo": 4
+        "teamId": "TUN"
       },
       {
         "minute": 59,
         "scorer": "Viktor Gyökeres",
-        "teamId": "SWE",
-        "scorerNo": 17
+        "teamId": "SWE"
       },
       {
         "minute": 84,
         "scorer": "Mattias Svanberg",
-        "teamId": "SWE",
-        "scorerNo": 19
+        "teamId": "SWE"
       },
       {
         "minute": 90,
         "scorer": "Yasin Ayari",
         "teamId": "SWE",
-        "stoppageTime": 6,
-        "scorerNo": 18
+        "stoppageTime": 6
       }
     ]
   },
@@ -1135,38 +1043,32 @@
       {
         "minute": 5,
         "scorer": "Brian Brobbey",
-        "teamId": "NED",
-        "scorerNo": 19
+        "teamId": "NED"
       },
       {
         "minute": 17,
         "scorer": "Brian Brobbey",
-        "teamId": "NED",
-        "scorerNo": 19
+        "teamId": "NED"
       },
       {
         "minute": 47,
         "scorer": "Cody Gakpo",
-        "teamId": "NED",
-        "scorerNo": 11
+        "teamId": "NED"
       },
       {
         "minute": 54,
         "scorer": "Cody Gakpo",
-        "teamId": "NED",
-        "scorerNo": 11
+        "teamId": "NED"
       },
       {
         "minute": 59,
         "scorer": "Anthony Elanga",
-        "teamId": "SWE",
-        "scorerNo": 11
+        "teamId": "SWE"
       },
       {
         "minute": 89,
         "scorer": "Crysencio Summerville",
-        "teamId": "NED",
-        "scorerNo": 24
+        "teamId": "NED"
       }
     ]
   },
@@ -1188,26 +1090,22 @@
       {
         "minute": 4,
         "scorer": "Daichi Kamada",
-        "teamId": "JPN",
-        "scorerNo": 15
+        "teamId": "JPN"
       },
       {
         "minute": 31,
         "scorer": "Ayase Ueda",
-        "teamId": "JPN",
-        "scorerNo": 18
+        "teamId": "JPN"
       },
       {
         "minute": 69,
         "scorer": "Junya Ito",
-        "teamId": "JPN",
-        "scorerNo": 14
+        "teamId": "JPN"
       },
       {
         "minute": 83,
         "scorer": "Ayase Ueda",
-        "teamId": "JPN",
-        "scorerNo": 18
+        "teamId": "JPN"
       }
     ]
   },
@@ -1229,14 +1127,12 @@
       {
         "minute": 56,
         "scorer": "Daizen Maeda",
-        "teamId": "JPN",
-        "scorerNo": 11
+        "teamId": "JPN"
       },
       {
         "minute": 62,
         "scorer": "Anthony Elanga",
-        "teamId": "SWE",
-        "scorerNo": 11
+        "teamId": "SWE"
       }
     ]
   },
@@ -1259,26 +1155,22 @@
         "minute": 3,
         "scorer": "Ellyes Skhiri",
         "teamId": "NED",
-        "ownGoal": true,
-        "scorerNo": 17
+        "ownGoal": true
       },
       {
         "minute": 7,
         "scorer": "Brian Brobbey",
-        "teamId": "NED",
-        "scorerNo": 19
+        "teamId": "NED"
       },
       {
         "minute": 54,
         "scorer": "Hazem Mastouri",
-        "teamId": "TUN",
-        "scorerNo": 9
+        "teamId": "TUN"
       },
       {
         "minute": 62,
         "scorer": "Jan Paul van Hecke",
-        "teamId": "NED",
-        "scorerNo": 6
+        "teamId": "NED"
       }
     ]
   },
@@ -1300,15 +1192,13 @@
       {
         "minute": 19,
         "scorer": "Emam Ashour",
-        "teamId": "EGY",
-        "scorerNo": 8
+        "teamId": "EGY"
       },
       {
         "minute": 66,
         "scorer": "Mohamed Hany",
         "teamId": "BEL",
-        "ownGoal": true,
-        "scorerNo": 3
+        "ownGoal": true
       }
     ]
   },
@@ -1330,26 +1220,22 @@
       {
         "minute": 7,
         "scorer": "Elijah Just",
-        "teamId": "NZL",
-        "scorerNo": 11
+        "teamId": "NZL"
       },
       {
         "minute": 32,
         "scorer": "Ramin Rezaeian",
-        "teamId": "IRN",
-        "scorerNo": 23
+        "teamId": "IRN"
       },
       {
         "minute": 54,
         "scorer": "Elijah Just",
-        "teamId": "NZL",
-        "scorerNo": 11
+        "teamId": "NZL"
       },
       {
         "minute": 64,
         "scorer": "Mohammad Mohebbi",
-        "teamId": "IRN",
-        "scorerNo": 8
+        "teamId": "IRN"
       }
     ]
   },
@@ -1386,26 +1272,22 @@
       {
         "minute": 15,
         "scorer": "Finn Surman",
-        "teamId": "NZL",
-        "scorerNo": 16
+        "teamId": "NZL"
       },
       {
         "minute": 58,
         "scorer": "Mostafa Zico",
-        "teamId": "EGY",
-        "scorerNo": 11
+        "teamId": "EGY"
       },
       {
         "minute": 67,
         "scorer": "Mohamed Salah",
-        "teamId": "EGY",
-        "scorerNo": 10
+        "teamId": "EGY"
       },
       {
         "minute": 82,
         "scorer": "Trézéguet",
-        "teamId": "EGY",
-        "scorerNo": 7
+        "teamId": "EGY"
       }
     ]
   },
@@ -1427,14 +1309,12 @@
       {
         "minute": 5,
         "scorer": "Mahmoud Saber",
-        "teamId": "EGY",
-        "scorerNo": 21
+        "teamId": "EGY"
       },
       {
         "minute": 14,
         "scorer": "Ramin Rezaeian",
-        "teamId": "IRN",
-        "scorerNo": 23
+        "teamId": "IRN"
       }
     ]
   },
@@ -1456,39 +1336,33 @@
       {
         "minute": 28,
         "scorer": "Leandro Trossard",
-        "teamId": "BEL",
-        "scorerNo": 10
+        "teamId": "BEL"
       },
       {
         "minute": 50,
         "scorer": "Leandro Trossard",
-        "teamId": "BEL",
-        "scorerNo": 10
+        "teamId": "BEL"
       },
       {
         "minute": 66,
         "scorer": "Kevin De Bruyne",
-        "teamId": "BEL",
-        "scorerNo": 7
+        "teamId": "BEL"
       },
       {
         "minute": 84,
         "scorer": "Elijah Just",
-        "teamId": "NZL",
-        "scorerNo": 11
+        "teamId": "NZL"
       },
       {
         "minute": 86,
         "scorer": "Romelu Lukaku",
-        "teamId": "BEL",
-        "scorerNo": 9
+        "teamId": "BEL"
       },
       {
         "minute": 90,
         "scorer": "Alexis Saelemaekers",
         "teamId": "BEL",
-        "stoppageTime": 4,
-        "scorerNo": 22
+        "stoppageTime": 4
       }
     ]
   },
@@ -1525,14 +1399,12 @@
       {
         "minute": 41,
         "scorer": "Abdulelah Al-Amri",
-        "teamId": "KSA",
-        "scorerNo": 4
+        "teamId": "KSA"
       },
       {
         "minute": 80,
         "scorer": "Maxi Araújo",
-        "teamId": "URU",
-        "scorerNo": 20
+        "teamId": "URU"
       }
     ]
   },
@@ -1554,27 +1426,23 @@
       {
         "minute": 10,
         "scorer": "Lamine Yamal",
-        "teamId": "ESP",
-        "scorerNo": 19
+        "teamId": "ESP"
       },
       {
         "minute": 21,
         "scorer": "Mikel Oyarzabal",
-        "teamId": "ESP",
-        "scorerNo": 21
+        "teamId": "ESP"
       },
       {
         "minute": 24,
         "scorer": "Mikel Oyarzabal",
-        "teamId": "ESP",
-        "scorerNo": 21
+        "teamId": "ESP"
       },
       {
         "minute": 49,
         "scorer": "Hassan Al-Tambakti",
         "teamId": "ESP",
-        "ownGoal": true,
-        "scorerNo": 5
+        "ownGoal": true
       }
     ]
   },
@@ -1596,27 +1464,23 @@
       {
         "minute": 21,
         "scorer": "Kevin Pina",
-        "teamId": "CPV",
-        "scorerNo": 6
+        "teamId": "CPV"
       },
       {
         "minute": 44,
         "scorer": "Maxi Araújo",
-        "teamId": "URU",
-        "scorerNo": 20
+        "teamId": "URU"
       },
       {
         "minute": 45,
         "scorer": "Agustín Cano",
         "teamId": "URU",
-        "stoppageTime": 6,
-        "scorerNo": 14
+        "stoppageTime": 6
       },
       {
         "minute": 61,
         "scorer": "Hélio Varela",
-        "teamId": "CPV",
-        "scorerNo": 26
+        "teamId": "CPV"
       }
     ]
   },
@@ -1654,8 +1518,7 @@
       {
         "minute": 42,
         "scorer": "Álex Baena",
-        "teamId": "ESP",
-        "scorerNo": 15
+        "teamId": "ESP"
       }
     ]
   },
@@ -1677,28 +1540,24 @@
       {
         "minute": 66,
         "scorer": "Kylian Mbappé",
-        "teamId": "FRA",
-        "scorerNo": 10
+        "teamId": "FRA"
       },
       {
         "minute": 82,
         "scorer": "Bradley Barcola",
-        "teamId": "FRA",
-        "scorerNo": 12
+        "teamId": "FRA"
       },
       {
         "minute": 90,
         "scorer": "Ibrahim Mbaye",
         "teamId": "SEN",
-        "stoppageTime": 5,
-        "scorerNo": 20
+        "stoppageTime": 5
       },
       {
         "minute": 90,
         "scorer": "Kylian Mbappé",
         "teamId": "FRA",
-        "stoppageTime": 6,
-        "scorerNo": 10
+        "stoppageTime": 6
       }
     ]
   },
@@ -1720,34 +1579,29 @@
       {
         "minute": 29,
         "scorer": "Erling Haaland",
-        "teamId": "NOR",
-        "scorerNo": 9
+        "teamId": "NOR"
       },
       {
         "minute": 39,
         "scorer": "Aymen Hussein",
-        "teamId": "IRQ",
-        "scorerNo": 18
+        "teamId": "IRQ"
       },
       {
         "minute": 43,
         "scorer": "Erling Haaland",
-        "teamId": "NOR",
-        "scorerNo": 9
+        "teamId": "NOR"
       },
       {
         "minute": 76,
         "scorer": "Leo Østigard",
-        "teamId": "NOR",
-        "scorerNo": 4
+        "teamId": "NOR"
       },
       {
         "minute": 90,
         "scorer": "Aymen Hussein",
         "teamId": "NOR",
         "ownGoal": true,
-        "stoppageTime": 6,
-        "scorerNo": 18
+        "stoppageTime": 6
       }
     ]
   },
@@ -1769,20 +1623,17 @@
       {
         "minute": 14,
         "scorer": "Kylian Mbappé",
-        "teamId": "FRA",
-        "scorerNo": 10
+        "teamId": "FRA"
       },
       {
         "minute": 54,
         "scorer": "Kylian Mbappé",
-        "teamId": "FRA",
-        "scorerNo": 10
+        "teamId": "FRA"
       },
       {
         "minute": 66,
         "scorer": "Ousmane Dembélé",
-        "teamId": "FRA",
-        "scorerNo": 7
+        "teamId": "FRA"
       }
     ]
   },
@@ -1804,33 +1655,28 @@
       {
         "minute": 43,
         "scorer": "Marcus Holmgren Pedersen",
-        "teamId": "NOR",
-        "scorerNo": 16
+        "teamId": "NOR"
       },
       {
         "minute": 48,
         "scorer": "Erling Haaland",
-        "teamId": "NOR",
-        "scorerNo": 9
+        "teamId": "NOR"
       },
       {
         "minute": 53,
         "scorer": "Ismaïla Sarr",
-        "teamId": "SEN",
-        "scorerNo": 18
+        "teamId": "SEN"
       },
       {
         "minute": 58,
         "scorer": "Erling Haaland",
-        "teamId": "NOR",
-        "scorerNo": 9
+        "teamId": "NOR"
       },
       {
         "minute": 90,
         "scorer": "Ismaïla Sarr",
         "teamId": "SEN",
-        "stoppageTime": 3,
-        "scorerNo": 18
+        "stoppageTime": 3
       }
     ]
   },
@@ -1852,33 +1698,28 @@
       {
         "minute": 7,
         "scorer": "Ousmane Dembélé",
-        "teamId": "FRA",
-        "scorerNo": 7
+        "teamId": "FRA"
       },
       {
         "minute": 20,
         "scorer": "Ousmane Dembélé",
-        "teamId": "FRA",
-        "scorerNo": 7
+        "teamId": "FRA"
       },
       {
         "minute": 21,
         "scorer": "Thelo Aasgaard",
-        "teamId": "NOR",
-        "scorerNo": 19
+        "teamId": "NOR"
       },
       {
         "minute": 32,
         "scorer": "Ousmane Dembélé",
-        "teamId": "FRA",
-        "scorerNo": 7
+        "teamId": "FRA"
       },
       {
         "minute": 90,
         "scorer": "Désiré Doué",
         "teamId": "FRA",
-        "stoppageTime": 4,
-        "scorerNo": 20
+        "stoppageTime": 4
       }
     ]
   },
@@ -1900,32 +1741,27 @@
       {
         "minute": 4,
         "scorer": "Habib Diarra",
-        "teamId": "SEN",
-        "scorerNo": 21
+        "teamId": "SEN"
       },
       {
         "minute": 56,
         "scorer": "Ismaïla Sarr",
-        "teamId": "SEN",
-        "scorerNo": 18
+        "teamId": "SEN"
       },
       {
         "minute": 59,
         "scorer": "Pape Gueye",
-        "teamId": "SEN",
-        "scorerNo": 26
+        "teamId": "SEN"
       },
       {
         "minute": 71,
         "scorer": "Pape Gueye",
-        "teamId": "SEN",
-        "scorerNo": 26
+        "teamId": "SEN"
       },
       {
         "minute": 82,
         "scorer": "Iliman Ndiaye",
-        "teamId": "SEN",
-        "scorerNo": 13
+        "teamId": "SEN"
       }
     ]
   },
@@ -1947,20 +1783,17 @@
       {
         "minute": 17,
         "scorer": "Lionel Messi",
-        "teamId": "ARG",
-        "scorerNo": 10
+        "teamId": "ARG"
       },
       {
         "minute": 60,
         "scorer": "Lionel Messi",
-        "teamId": "ARG",
-        "scorerNo": 10
+        "teamId": "ARG"
       },
       {
         "minute": 76,
         "scorer": "Lionel Messi",
-        "teamId": "ARG",
-        "scorerNo": 10
+        "teamId": "ARG"
       }
     ]
   },
@@ -1982,29 +1815,25 @@
       {
         "minute": 21,
         "scorer": "Romano Schmid",
-        "teamId": "AUT",
-        "scorerNo": 18
+        "teamId": "AUT"
       },
       {
         "minute": 50,
         "scorer": "Ali Olwan",
-        "teamId": "JOR",
-        "scorerNo": 9
+        "teamId": "JOR"
       },
       {
         "minute": 76,
         "scorer": "Yazan Al-Arab",
         "teamId": "AUT",
-        "ownGoal": true,
-        "scorerNo": 5
+        "ownGoal": true
       },
       {
         "minute": 90,
         "scorer": "Marko Arnautovic",
         "teamId": "AUT",
         "penalty": true,
-        "stoppageTime": 12,
-        "scorerNo": 7
+        "stoppageTime": 12
       }
     ]
   },
@@ -2026,15 +1855,13 @@
       {
         "minute": 38,
         "scorer": "Lionel Messi",
-        "teamId": "ARG",
-        "scorerNo": 10
+        "teamId": "ARG"
       },
       {
         "minute": 90,
         "scorer": "Lionel Messi",
         "teamId": "ARG",
-        "stoppageTime": 5,
-        "scorerNo": 10
+        "stoppageTime": 5
       }
     ]
   },
@@ -2056,20 +1883,17 @@
       {
         "minute": 36,
         "scorer": "Nizar Al-Rashdan",
-        "teamId": "JOR",
-        "scorerNo": 21
+        "teamId": "JOR"
       },
       {
         "minute": 69,
         "scorer": "Nadhir Benbouali",
-        "teamId": "ALG",
-        "scorerNo": 12
+        "teamId": "ALG"
       },
       {
         "minute": 82,
         "scorer": "Amine Gouiri",
-        "teamId": "ALG",
-        "scorerNo": 9
+        "teamId": "ALG"
       }
     ]
   },
@@ -2091,40 +1915,34 @@
       {
         "minute": 28,
         "scorer": "Marko Arnautovic",
-        "teamId": "AUT",
-        "scorerNo": 7
+        "teamId": "AUT"
       },
       {
         "minute": 45,
         "scorer": "Rafik Belghali",
-        "teamId": "ALG",
-        "scorerNo": 17
+        "teamId": "ALG"
       },
       {
         "minute": 55,
         "scorer": "Marcel Sabitzer",
-        "teamId": "AUT",
-        "scorerNo": 9
+        "teamId": "AUT"
       },
       {
         "minute": 60,
         "scorer": "Riyad Mahrez",
-        "teamId": "ALG",
-        "scorerNo": 7
+        "teamId": "ALG"
       },
       {
         "minute": 90,
         "scorer": "Riyad Mahrez",
         "teamId": "ALG",
-        "stoppageTime": 3,
-        "scorerNo": 7
+        "stoppageTime": 3
       },
       {
         "minute": 90,
         "scorer": "Sasa Kalajdzic",
         "teamId": "AUT",
-        "stoppageTime": 6,
-        "scorerNo": 14
+        "stoppageTime": 6
       }
     ]
   },
@@ -2146,27 +1964,23 @@
       {
         "minute": 19,
         "scorer": "Giovani Lo Celso",
-        "teamId": "ARG",
-        "scorerNo": 11
+        "teamId": "ARG"
       },
       {
         "minute": 31,
         "scorer": "Lautaro Martínez",
         "teamId": "ARG",
-        "penalty": true,
-        "scorerNo": 22
+        "penalty": true
       },
       {
         "minute": 55,
         "scorer": "Mousa Al-Tamari",
-        "teamId": "JOR",
-        "scorerNo": 10
+        "teamId": "JOR"
       },
       {
         "minute": 80,
         "scorer": "Lionel Messi",
-        "teamId": "ARG",
-        "scorerNo": 10
+        "teamId": "ARG"
       }
     ]
   },
@@ -2188,15 +2002,13 @@
       {
         "minute": 6,
         "scorer": "João Neves",
-        "teamId": "POR",
-        "scorerNo": 15
+        "teamId": "POR"
       },
       {
         "minute": 45,
         "scorer": "Yoane Wissa",
         "teamId": "COD",
-        "stoppageTime": 5,
-        "scorerNo": 20
+        "stoppageTime": 5
       }
     ]
   },
@@ -2218,27 +2030,23 @@
       {
         "minute": 40,
         "scorer": "Daniel Muñoz",
-        "teamId": "COL",
-        "scorerNo": 2
+        "teamId": "COL"
       },
       {
         "minute": 60,
         "scorer": "Abbosbek Fayzullaev",
-        "teamId": "UZB",
-        "scorerNo": 22
+        "teamId": "UZB"
       },
       {
         "minute": 65,
         "scorer": "Luis Díaz",
-        "teamId": "COL",
-        "scorerNo": 7
+        "teamId": "COL"
       },
       {
         "minute": 90,
         "scorer": "Jáminton Campaz",
         "teamId": "COL",
-        "stoppageTime": 9,
-        "scorerNo": 21
+        "stoppageTime": 9
       }
     ]
   },
@@ -2260,33 +2068,28 @@
       {
         "minute": 6,
         "scorer": "Cristiano Ronaldo",
-        "teamId": "POR",
-        "scorerNo": 7
+        "teamId": "POR"
       },
       {
         "minute": 17,
         "scorer": "Nuno Mendes",
-        "teamId": "POR",
-        "scorerNo": 25
+        "teamId": "POR"
       },
       {
         "minute": 39,
         "scorer": "Cristiano Ronaldo",
-        "teamId": "POR",
-        "scorerNo": 7
+        "teamId": "POR"
       },
       {
         "minute": 60,
         "scorer": "Abduvohid Nematov",
         "teamId": "POR",
-        "ownGoal": true,
-        "scorerNo": 12
+        "ownGoal": true
       },
       {
         "minute": 87,
         "scorer": "Rafael Leão",
-        "teamId": "POR",
-        "scorerNo": 17
+        "teamId": "POR"
       }
     ]
   },
@@ -2308,8 +2111,7 @@
       {
         "minute": 76,
         "scorer": "Daniel Muñoz",
-        "teamId": "COL",
-        "scorerNo": 2
+        "teamId": "COL"
       }
     ]
   },
@@ -2347,28 +2149,24 @@
       {
         "minute": 10,
         "scorer": "Eldor Shomurodov",
-        "teamId": "UZB",
-        "scorerNo": 14
+        "teamId": "UZB"
       },
       {
         "minute": 68,
         "scorer": "Yoane Wissa",
         "teamId": "COD",
-        "penalty": true,
-        "scorerNo": 20
+        "penalty": true
       },
       {
         "minute": 78,
         "scorer": "Fiston Mayele",
-        "teamId": "COD",
-        "scorerNo": 19
+        "teamId": "COD"
       },
       {
         "minute": 90,
         "scorer": "Yoane Wissa",
         "teamId": "COD",
-        "stoppageTime": 1,
-        "scorerNo": 20
+        "stoppageTime": 1
       }
     ]
   },
@@ -2391,39 +2189,33 @@
         "minute": 12,
         "scorer": "Harry Kane",
         "teamId": "ENG",
-        "penalty": true,
-        "scorerNo": 9
+        "penalty": true
       },
       {
         "minute": 36,
         "scorer": "Martin Baturina",
-        "teamId": "CRO",
-        "scorerNo": 16
+        "teamId": "CRO"
       },
       {
         "minute": 42,
         "scorer": "Harry Kane",
-        "teamId": "ENG",
-        "scorerNo": 9
+        "teamId": "ENG"
       },
       {
         "minute": 45,
         "scorer": "Petar Musa",
         "teamId": "CRO",
-        "stoppageTime": 5,
-        "scorerNo": 26
+        "stoppageTime": 5
       },
       {
         "minute": 47,
         "scorer": "Jude Bellingham",
-        "teamId": "ENG",
-        "scorerNo": 10
+        "teamId": "ENG"
       },
       {
         "minute": 85,
         "scorer": "Marcus Rashford",
-        "teamId": "ENG",
-        "scorerNo": 11
+        "teamId": "ENG"
       }
     ]
   },
@@ -2446,8 +2238,7 @@
         "minute": 90,
         "scorer": "Caleb Yirenkyi",
         "teamId": "GHA",
-        "stoppageTime": 5,
-        "scorerNo": 3
+        "stoppageTime": 5
       }
     ]
   },
@@ -2484,8 +2275,7 @@
       {
         "minute": 54,
         "scorer": "Ante Budimir",
-        "teamId": "CRO",
-        "scorerNo": 11
+        "teamId": "CRO"
       }
     ]
   },
@@ -2507,14 +2297,12 @@
       {
         "minute": 62,
         "scorer": "Jude Bellingham",
-        "teamId": "ENG",
-        "scorerNo": 10
+        "teamId": "ENG"
       },
       {
         "minute": 67,
         "scorer": "Harry Kane",
-        "teamId": "ENG",
-        "scorerNo": 9
+        "teamId": "ENG"
       }
     ]
   },
@@ -2536,20 +2324,17 @@
       {
         "minute": 31,
         "scorer": "Petar Sucic",
-        "teamId": "CRO",
-        "scorerNo": 17
+        "teamId": "CRO"
       },
       {
         "minute": 73,
         "scorer": "Derrick Luckassen",
-        "teamId": "GHA",
-        "scorerNo": 23
+        "teamId": "GHA"
       },
       {
         "minute": 83,
         "scorer": "Nikola Vlasic",
-        "teamId": "CRO",
-        "scorerNo": 13
+        "teamId": "CRO"
       }
     ]
   },
@@ -2572,8 +2357,7 @@
         "minute": 90,
         "scorer": "Stephan Eustáquio",
         "teamId": "CAN",
-        "stoppageTime": 2,
-        "scorerNo": 7
+        "stoppageTime": 2
       }
     ],
     "team1Original": "2A",
