@@ -25,9 +25,9 @@ const GAP_PX = 14
 // Pre-defined display order per round — matches the bracket tree topology top-to-bottom.
 // Derived from following W{id}/L{id} references through the knockout tree.
 const MATCH_SEQUENCE: Record<string, number[]> = {
-  r32: [73,75,74,77,76,78,79,80,83,84,81,82,86,88,85,87],
-  r16: [90,89,91,92,93,94,95,96],
-  qf:  [97,99,98,100],
+  r32: [73,75,74,77,83,84,81,82,76,78,79,80,86,88,85,87],
+  r16: [90,89,93,94,91,92,95,96],
+  qf:  [97,98,99,100],
   sf:  [101,102],
   final: [104],
 }
