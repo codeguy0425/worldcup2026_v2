@@ -2359,7 +2359,9 @@
         "teamId": "CAN",
         "stoppageTime": 2
       }
-    ]
+    ],
+    "team1Original": "2A",
+    "team2Original": "2B"
   },
   {
     "id": 74,
@@ -2372,7 +2374,9 @@
     "group": "",
     "groundId": "boston",
     "num": 74,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "GER",
+    "team2Original": "3A/B/C/D/F"
   },
   {
     "id": 75,
@@ -2385,7 +2389,9 @@
     "group": "",
     "groundId": "monterrey",
     "num": 75,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1F",
+    "team2Original": "2C"
   },
   {
     "id": 76,
@@ -2398,7 +2404,9 @@
     "group": "",
     "groundId": "houston",
     "num": 76,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1C",
+    "team2Original": "2F"
   },
   {
     "id": 77,
@@ -2411,7 +2419,9 @@
     "group": "",
     "groundId": "new_york",
     "num": 77,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1I",
+    "team2Original": "3C/D/F/G/H"
   },
   {
     "id": 78,
@@ -2424,7 +2434,9 @@
     "group": "",
     "groundId": "dallas",
     "num": 78,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "2E",
+    "team2Original": "2I"
   },
   {
     "id": 79,
@@ -2437,7 +2449,9 @@
     "group": "",
     "groundId": "mexico_city",
     "num": 79,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "MEX",
+    "team2Original": "3C/E/F/H/I"
   },
   {
     "id": 80,
@@ -2450,7 +2464,9 @@
     "group": "",
     "groundId": "atlanta",
     "num": 80,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1L",
+    "team2Original": "3E/H/I/J/K"
   },
   {
     "id": 81,
@@ -2463,7 +2479,9 @@
     "group": "",
     "groundId": "san_francisco",
     "num": 81,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "USA",
+    "team2Original": "3B/E/F/I/J"
   },
   {
     "id": 82,
@@ -2476,7 +2494,9 @@
     "group": "",
     "groundId": "seattle",
     "num": 82,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1G",
+    "team2Original": "3A/E/H/I/J"
   },
   {
     "id": 83,
@@ -2489,7 +2509,9 @@
     "group": "",
     "groundId": "toronto",
     "num": 83,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "2K",
+    "team2Original": "2L"
   },
   {
     "id": 84,
@@ -2502,7 +2524,9 @@
     "group": "",
     "groundId": "los_angeles",
     "num": 84,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1H",
+    "team2Original": "2J"
   },
   {
     "id": 85,
@@ -2515,7 +2539,9 @@
     "group": "",
     "groundId": "vancouver",
     "num": 85,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1B",
+    "team2Original": "3E/F/G/I/J"
   },
   {
     "id": 86,
@@ -2528,7 +2554,9 @@
     "group": "",
     "groundId": "miami",
     "num": 86,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1J",
+    "team2Original": "2H"
   },
   {
     "id": 87,
@@ -2541,7 +2569,9 @@
     "group": "",
     "groundId": "kansas_city",
     "num": 87,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "1K",
+    "team2Original": "3D/E/I/J/L"
   },
   {
     "id": 88,
@@ -2554,7 +2584,9 @@
     "group": "",
     "groundId": "dallas",
     "num": 88,
-    "stage": "r32"
+    "stage": "r32",
+    "team1Original": "2D",
+    "team2Original": "2G"
   },
   {
     "id": 89,
@@ -2580,7 +2612,9 @@
     "group": "",
     "groundId": "houston",
     "num": 90,
-    "stage": "r16"
+    "stage": "r16",
+    "team1Original": "W73",
+    "team2Original": "W75"
   },
   {
     "id": 91,

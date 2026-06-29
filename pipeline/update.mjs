@@ -122,6 +122,8 @@ function main() {
   for (const cm of cleanMatches) {
     const r = resolvedMap[cm.id]
     if (r && (r.team1Id !== cm.team1Id || r.team2Id !== cm.team2Id)) {
+      cm.team1Original = cm.team1Id
+      cm.team2Original = cm.team2Id
       cm.team1Id = r.team1Id
       cm.team2Id = r.team2Id
       resolved++
