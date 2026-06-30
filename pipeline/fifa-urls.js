@@ -81,6 +81,10 @@ const urlMap = {
   70: 'https://www.fifa.com/en/match-centre/match/17/285023/289273/400021511',  // PAN vs CRO
   71: 'https://www.fifa.com/en/match-centre/match/17/285023/289273/400021508',  // PAN vs ENG
   72: 'https://www.fifa.com/en/match-centre/match/17/285023/289273/400021509',  // CRO vs GHA
+  // R32
+  73: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021518',  // RSA vs CAN
+  74: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021513',  // GER vs PAR
+  76: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021516',  // BRA vs JPN
 };
 
 module.exports = { urlMap };

@@ -481,25 +481,27 @@ export function MatchPage() {
         {(m as any).penalty1 !== undefined && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
             <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Penalty Shootout</h4>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', fontSize: '13px', fontFamily: 'var(--font-mono)' }}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ marginBottom: '4px', fontSize: '11px', color: 'var(--text-muted)' }}>{t1?.flag} {t1?.name || m.team1Id}</div>
-                <div>
-                  {((m.penaltySequence?.[m.team1Id] || '').split('').map((c: string, i: number) => (
-                    <span key={i} style={{ color: c === 'Y' ? '#34d399' : '#fb7185', fontWeight: 700, fontSize: '15px' }}>{c}</span>
-                  )))}
-                  <span style={{ color: 'var(--text-muted)', marginLeft: '4px' }}>({(m as any).penalty1})</span>
-                </div>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ marginBottom: '4px', fontSize: '11px', color: 'var(--text-muted)' }}>{t2?.flag} {t2?.name || m.team2Id}</div>
-                <div>
-                  {((m.penaltySequence?.[m.team2Id] || '').split('').map((c: string, i: number) => (
-                    <span key={i} style={{ color: c === 'Y' ? '#34d399' : '#fb7185', fontWeight: 700, fontSize: '15px' }}>{c}</span>
-                  )))}
-                  <span style={{ color: 'var(--text-muted)', marginLeft: '4px' }}>({(m as any).penalty2})</span>
-                </div>
-              </div>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <table style={{ borderCollapse: 'collapse', fontSize: '12px' }}>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: '4px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap' }}>{t1?.flag} {t1?.name || m.team1Id}</td>
+                    <td style={{ padding: '4px 6px', letterSpacing: '3px' }}>
+                      {((m.penaltySequence?.[m.team1Id] || '').split('').map((c: string, i: number) => (
+                        <span key={i} style={{ display: 'inline-block', width: '14px', height: '14px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185', marginRight: '2px', verticalAlign: 'middle' }} />
+                      )))}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '4px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap' }}>{t2?.flag} {t2?.name || m.team2Id}</td>
+                    <td style={{ padding: '4px 6px', letterSpacing: '3px' }}>
+                      {((m.penaltySequence?.[m.team2Id] || '').split('').map((c: string, i: number) => (
+                        <span key={i} style={{ display: 'inline-block', width: '14px', height: '14px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185', marginRight: '2px', verticalAlign: 'middle' }} />
+                      )))}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         )}
