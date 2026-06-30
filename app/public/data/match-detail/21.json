@@ -1,1 +1,329 @@
-{"team1":{"teamId":"USA","formation":"3-5-2","startingXI":[{"no":24,"pos":"GK"},{"no":2,"pos":"DF"},{"no":3,"pos":"DF"},{"no":5,"pos":"DF"},{"no":13,"pos":"DF","captain":true},{"no":16,"pos":"DF"},{"no":4,"pos":"MF"},{"no":8,"pos":"MF"},{"no":17,"pos":"MF"},{"no":9,"pos":"FW"},{"no":20,"pos":"FW"}],"substitutes":[{"no":1},{"no":25},{"no":6},{"no":12},{"no":18},{"no":22},{"no":23},{"no":7},{"no":14},{"no":15},{"no":11},{"no":19},{"no":21},{"no":26}],"coach":"Mauricio POCHETTINO"},"team2":{"teamId":"AUS","formation":"5-4-1","startingXI":[{"no":18,"pos":"GK"},{"no":3,"pos":"DF"},{"no":4,"pos":"DF"},{"no":5,"pos":"DF"},{"no":19,"pos":"DF","captain":true},{"no":21,"pos":"DF"},{"no":13,"pos":"MF"},{"no":24,"pos":"MF"},{"no":7,"pos":"FW"},{"no":9,"pos":"FW"},{"no":23,"pos":"FW"}],"substitutes":[{"no":1},{"no":12},{"no":2},{"no":6},{"no":15},{"no":16},{"no":25},{"no":8},{"no":14},{"no":22},{"no":10},{"no":11},{"no":17},{"no":20},{"no":26}],"coach":"Tony POPOVIC"},"substitutions":[{"minute":61,"teamId":"AUS","off":{"no":7},"on":{"no":20}},{"minute":74,"teamId":"USA","off":{"no":9},"on":{"no":14}},{"minute":78,"teamId":"AUS","off":{"no":24},"on":{"no":22}},{"minute":80,"teamId":"USA","off":{"no":2},"on":{"no":23}},{"minute":80,"teamId":"USA","off":{"no":5},"on":{"no":6}},{"minute":90,"teamId":"USA","off":{"no":20},"on":{"no":19},"stoppageTime":6},{"minute":90,"teamId":"USA","off":{"no":8},"on":{"no":7},"stoppageTime":6}],"cards":[{"minute":56,"teamId":"USA","player":{"no":5},"card":"red"},{"minute":89,"teamId":"USA","player":{"no":20},"card":"red"},{"minute":90,"teamId":"USA","player":{"no":3},"card":"red"},{"minute":16,"teamId":"AUS","player":{"no":5},"card":"red"},{"minute":32,"teamId":"AUS","player":{"no":3},"card":"red"},{"minute":89,"teamId":"AUS","player":{"no":4},"card":"red"},{"minute":89,"teamId":"AUS","player":{"no":19},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "USA",
+    "formation": "3-5-2",
+    "startingXI": [
+      {
+        "no": 24,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 17,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Mauricio POCHETTINO"
+  },
+  "team2": {
+    "teamId": "AUS",
+    "formation": "5-4-1",
+    "startingXI": [
+      {
+        "no": 18,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 23,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Tony POPOVIC"
+  },
+  "substitutions": [
+    {
+      "minute": 61,
+      "teamId": "AUS",
+      "off": {
+        "no": 7
+      },
+      "on": {
+        "no": 20
+      }
+    },
+    {
+      "minute": 74,
+      "teamId": "USA",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 14
+      }
+    },
+    {
+      "minute": 78,
+      "teamId": "AUS",
+      "off": {
+        "no": 24
+      },
+      "on": {
+        "no": 22
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "USA",
+      "off": {
+        "no": 2
+      },
+      "on": {
+        "no": 23
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "USA",
+      "off": {
+        "no": 5
+      },
+      "on": {
+        "no": 6
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "USA",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 19
+      },
+      "stoppageTime": 6
+    },
+    {
+      "minute": 90,
+      "teamId": "USA",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 7
+      },
+      "stoppageTime": 6
+    }
+  ],
+  "cards": [
+    {
+      "minute": 56,
+      "teamId": "USA",
+      "player": {
+        "no": 5
+      },
+      "card": "red"
+    },
+    {
+      "minute": 89,
+      "teamId": "USA",
+      "player": {
+        "no": 20
+      },
+      "card": "red"
+    },
+    {
+      "minute": 90,
+      "teamId": "USA",
+      "player": {
+        "no": 3
+      },
+      "card": "red"
+    },
+    {
+      "minute": 16,
+      "teamId": "AUS",
+      "player": {
+        "no": 5
+      },
+      "card": "red"
+    },
+    {
+      "minute": 32,
+      "teamId": "AUS",
+      "player": {
+        "no": 3
+      },
+      "card": "red"
+    },
+    {
+      "minute": 89,
+      "teamId": "AUS",
+      "player": {
+        "no": 4
+      },
+      "card": "red"
+    },
+    {
+      "minute": 89,
+      "teamId": "AUS",
+      "player": {
+        "no": 19
+      },
+      "card": "red"
+    }
+  ]
+}

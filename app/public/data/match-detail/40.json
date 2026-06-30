@@ -1,1 +1,339 @@
-{"team1":{"teamId":"NZL","formation":"4-4-2","startingXI":[{"no":1,"pos":"GK"},{"no":2,"pos":"DF"},{"no":5,"pos":"DF"},{"no":13,"pos":"DF"},{"no":16,"pos":"DF"},{"no":6,"pos":"MF"},{"no":8,"pos":"MF"},{"no":10,"pos":"MF"},{"no":11,"pos":"MF"},{"no":20,"pos":"MF"},{"no":9,"pos":"FW","captain":true}],"substitutes":[{"no":12},{"no":22},{"no":3},{"no":4},{"no":15},{"no":24},{"no":26},{"no":14},{"no":19},{"no":23},{"no":25},{"no":7},{"no":17},{"no":18},{"no":21}],"coach":"Darren BAZELEY"},"team2":{"teamId":"EGY","formation":"4-2-3-1","startingXI":[{"no":23,"pos":"GK"},{"no":2,"pos":"DF"},{"no":3,"pos":"DF"},{"no":13,"pos":"DF"},{"no":8,"pos":"MF"},{"no":11,"pos":"MF"},{"no":14,"pos":"MF"},{"no":17,"pos":"MF"},{"no":19,"pos":"MF"},{"no":10,"pos":"FW","captain":true},{"no":22,"pos":"FW"}],"substitutes":[{"no":1},{"no":16},{"no":26},{"no":4},{"no":5},{"no":6},{"no":15},{"no":24},{"no":18},{"no":21},{"no":7},{"no":9},{"no":12},{"no":20},{"no":25}],"coach":"HOSSAM HASSAN"},"substitutions":[{"minute":41,"teamId":"EGY","off":{"no":14},"on":{"no":5}},{"minute":66,"teamId":"NZL","off":{"no":20},"on":{"no":19}},{"minute":76,"teamId":"NZL","off":{"no":13},"on":{"no":21}},{"minute":76,"teamId":"NZL","off":{"no":10},"on":{"no":23}},{"minute":76,"teamId":"EGY","off":{"no":22},"on":{"no":7}},{"minute":76,"teamId":"EGY","off":{"no":11},"on":{"no":9}},{"minute":84,"teamId":"EGY","off":{"no":10},"on":{"no":4}},{"minute":84,"teamId":"EGY","off":{"no":8},"on":{"no":25}},{"minute":85,"teamId":"NZL","off":{"no":11},"on":{"no":3}},{"minute":85,"teamId":"NZL","off":{"no":2},"on":{"no":4}},{"minute":90,"teamId":"EGY","off":{"no":4},"on":{"no":6},"stoppageTime":9}],"cards":[{"minute":20,"teamId":"NZL","player":{"no":10},"card":"red"},{"minute":34,"teamId":"NZL","player":{"no":20},"card":"red"},{"minute":17,"teamId":"EGY","player":{"no":17},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "NZL",
+    "formation": "4-4-2",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW",
+        "captain": true
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Darren BAZELEY"
+  },
+  "team2": {
+    "teamId": "EGY",
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 17,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 22,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      }
+    ],
+    "coach": "HOSSAM HASSAN"
+  },
+  "substitutions": [
+    {
+      "minute": 41,
+      "teamId": "EGY",
+      "off": {
+        "no": 14
+      },
+      "on": {
+        "no": 5
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "NZL",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 19
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "NZL",
+      "off": {
+        "no": 13
+      },
+      "on": {
+        "no": 21
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "NZL",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 23
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "EGY",
+      "off": {
+        "no": 22
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "EGY",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 9
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "EGY",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 4
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "EGY",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 25
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "NZL",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 3
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "NZL",
+      "off": {
+        "no": 2
+      },
+      "on": {
+        "no": 4
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "EGY",
+      "off": {
+        "no": 4
+      },
+      "on": {
+        "no": 6
+      },
+      "stoppageTime": 9
+    }
+  ],
+  "cards": [
+    {
+      "minute": 20,
+      "teamId": "NZL",
+      "player": {
+        "no": 10
+      },
+      "card": "red"
+    },
+    {
+      "minute": 34,
+      "teamId": "NZL",
+      "player": {
+        "no": 20
+      },
+      "card": "red"
+    },
+    {
+      "minute": 17,
+      "teamId": "EGY",
+      "player": {
+        "no": 17
+      },
+      "card": "red"
+    }
+  ]
+}

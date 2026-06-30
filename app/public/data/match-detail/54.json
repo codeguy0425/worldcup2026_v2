@@ -1,1 +1,331 @@
-{"team1":{"teamId":"SEN","formation":"4-1-2-3","startingXI":[{"no":23,"pos":"GK"},{"no":4,"pos":"DF"},{"no":14,"pos":"DF"},{"no":15,"pos":"DF"},{"no":19,"pos":"DF"},{"no":5,"pos":"MF","captain":true},{"no":8,"pos":"MF"},{"no":21,"pos":"MF"},{"no":10,"pos":"FW"},{"no":18,"pos":"FW"},{"no":20,"pos":"FW"}],"substitutes":[{"no":1},{"no":2},{"no":3},{"no":24},{"no":25},{"no":6},{"no":17},{"no":22},{"no":26},{"no":7},{"no":9},{"no":11},{"no":12},{"no":13}],"coach":"Pape THIAW"},"team2":{"teamId":"IRQ","formation":"4-4-2","startingXI":[{"no":22,"pos":"GK"},{"no":2,"pos":"DF"},{"no":5,"pos":"DF"},{"no":23,"pos":"DF"},{"no":26,"pos":"DF"},{"no":8,"pos":"MF","captain":true},{"no":14,"pos":"MF"},{"no":16,"pos":"MF"},{"no":9,"pos":"FW"},{"no":11,"pos":"FW"},{"no":17,"pos":"FW"}],"substitutes":[{"no":1},{"no":12},{"no":3},{"no":4},{"no":6},{"no":15},{"no":25},{"no":7},{"no":19},{"no":20},{"no":24},{"no":10},{"no":13},{"no":18},{"no":21}],"coach":"Graham ARNOLD"},"substitutions":[{"minute":16,"teamId":"IRQ","off":{"no":11},"on":{"no":6}},{"minute":56,"teamId":"SEN","off":{"no":8},"on":{"no":11}},{"minute":56,"teamId":"SEN","off":{"no":21},"on":{"no":26}},{"minute":56,"teamId":"SEN","off":{"no":20},"on":{"no":13}},{"minute":57,"teamId":"IRQ","off":{"no":17},"on":{"no":15}},{"minute":57,"teamId":"IRQ","off":{"no":9},"on":{"no":13}},{"minute":58,"teamId":"SEN","off":{"no":4},"on":{"no":6}},{"minute":67,"teamId":"IRQ","off":{"no":14},"on":{"no":19}},{"minute":81,"teamId":"SEN","off":{"no":18},"on":{"no":7}}],"cards":[{"minute":18,"teamId":"SEN","player":{"no":4},"card":"red"},{"minute":81,"teamId":"SEN","player":{"no":26},"card":"red"},{"minute":13,"teamId":"IRQ","player":{"no":2},"card":"red"},{"minute":75,"teamId":"IRQ","player":{"no":16},"card":"red"},{"minute":90,"teamId":"IRQ","player":{"no":23},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "SEN",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 18,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      }
+    ],
+    "coach": "Pape THIAW"
+  },
+  "team2": {
+    "teamId": "IRQ",
+    "formation": "4-4-2",
+    "startingXI": [
+      {
+        "no": 22,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 16,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Graham ARNOLD"
+  },
+  "substitutions": [
+    {
+      "minute": 16,
+      "teamId": "IRQ",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 6
+      }
+    },
+    {
+      "minute": 56,
+      "teamId": "SEN",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 56,
+      "teamId": "SEN",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 56,
+      "teamId": "SEN",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 13
+      }
+    },
+    {
+      "minute": 57,
+      "teamId": "IRQ",
+      "off": {
+        "no": 17
+      },
+      "on": {
+        "no": 15
+      }
+    },
+    {
+      "minute": 57,
+      "teamId": "IRQ",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 13
+      }
+    },
+    {
+      "minute": 58,
+      "teamId": "SEN",
+      "off": {
+        "no": 4
+      },
+      "on": {
+        "no": 6
+      }
+    },
+    {
+      "minute": 67,
+      "teamId": "IRQ",
+      "off": {
+        "no": 14
+      },
+      "on": {
+        "no": 19
+      }
+    },
+    {
+      "minute": 81,
+      "teamId": "SEN",
+      "off": {
+        "no": 18
+      },
+      "on": {
+        "no": 7
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 18,
+      "teamId": "SEN",
+      "player": {
+        "no": 4
+      },
+      "card": "red"
+    },
+    {
+      "minute": 81,
+      "teamId": "SEN",
+      "player": {
+        "no": 26
+      },
+      "card": "red"
+    },
+    {
+      "minute": 13,
+      "teamId": "IRQ",
+      "player": {
+        "no": 2
+      },
+      "card": "red"
+    },
+    {
+      "minute": 75,
+      "teamId": "IRQ",
+      "player": {
+        "no": 16
+      },
+      "card": "red"
+    },
+    {
+      "minute": 90,
+      "teamId": "IRQ",
+      "player": {
+        "no": 23
+      },
+      "card": "red"
+    }
+  ]
+}

@@ -1,1 +1,281 @@
-{"team1":{"teamId":"BIH","formation":"4-4-2","startingXI":[{"no":1,"pos":"GK"},{"no":5,"pos":"DF"},{"no":18,"pos":"DF"},{"no":21,"pos":"DF"},{"no":24,"pos":"DF"},{"no":13,"pos":"MF"},{"no":14,"pos":"MF"},{"no":10,"pos":"FW"},{"no":11,"pos":"FW","captain":true},{"no":19,"pos":"FW"},{"no":20,"pos":"FW"}],"substitutes":[{"no":12},{"no":22},{"no":2},{"no":3},{"no":7},{"no":6},{"no":8},{"no":15},{"no":16},{"no":17},{"no":26},{"no":9},{"no":23},{"no":25}],"coach":"Sergej BARBAREZ"},"team2":{"teamId":"QAT","formation":"4-1-2-3","startingXI":[{"no":1,"pos":"GK"},{"no":2,"pos":"DF"},{"no":4,"pos":"DF"},{"no":5,"pos":"DF"},{"no":16,"pos":"DF"},{"no":18,"pos":"DF"},{"no":12,"pos":"MF"},{"no":20,"pos":"MF"},{"no":8,"pos":"FW"},{"no":10,"pos":"FW","captain":true},{"no":11,"pos":"FW"}],"substitutes":[{"no":21},{"no":22},{"no":3},{"no":13},{"no":25},{"no":6},{"no":17},{"no":7},{"no":9},{"no":15},{"no":19},{"no":24},{"no":26}],"coach":"Julen LOPETEGUI"},"substitutions":[{"minute":55,"teamId":"QAT","off":{"no":10},"on":{"no":17}},{"minute":63,"teamId":"BIH","off":{"no":18},"on":{"no":3}},{"minute":63,"teamId":"BIH","off":{"no":11},"on":{"no":26}},{"minute":72,"teamId":"QAT","off":{"no":12},"on":{"no":19}},{"minute":79,"teamId":"QAT","off":{"no":20},"on":{"no":26}},{"minute":79,"teamId":"QAT","off":{"no":8},"on":{"no":7}},{"minute":82,"teamId":"BIH","off":{"no":19},"on":{"no":17}}],"cards":[{"minute":82,"teamId":"BIH","player":{"no":26},"card":"red"},{"minute":78,"teamId":"QAT","player":{"no":20},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "BIH",
+    "formation": "4-4-2",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 18,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 24,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 25
+      }
+    ],
+    "coach": "Sergej BARBAREZ"
+  },
+  "team2": {
+    "teamId": "QAT",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 18,
+        "pos": "DF"
+      },
+      {
+        "no": 12,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "FW"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Julen LOPETEGUI"
+  },
+  "substitutions": [
+    {
+      "minute": 55,
+      "teamId": "QAT",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 17
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "BIH",
+      "off": {
+        "no": 18
+      },
+      "on": {
+        "no": 3
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "BIH",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 72,
+      "teamId": "QAT",
+      "off": {
+        "no": 12
+      },
+      "on": {
+        "no": 19
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "QAT",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "QAT",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "BIH",
+      "off": {
+        "no": 19
+      },
+      "on": {
+        "no": 17
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 82,
+      "teamId": "BIH",
+      "player": {
+        "no": 26
+      },
+      "card": "red"
+    },
+    {
+      "minute": 78,
+      "teamId": "QAT",
+      "player": {
+        "no": 20
+      },
+      "card": "red"
+    }
+  ]
+}

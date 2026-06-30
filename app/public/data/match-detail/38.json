@@ -1,1 +1,291 @@
-{"team1":{"teamId":"IRN","formation":"4-3-3","startingXI":[{"no":1,"pos":"GK"},{"no":4,"pos":"DF"},{"no":5,"pos":"DF"},{"no":17,"pos":"DF"},{"no":19,"pos":"DF"},{"no":23,"pos":"DF"},{"no":6,"pos":"MF"},{"no":8,"pos":"MF"},{"no":14,"pos":"MF"},{"no":9,"pos":"FW","captain":true},{"no":20,"pos":"FW"}],"substitutes":[{"no":12},{"no":22},{"no":2},{"no":3},{"no":13},{"no":25},{"no":7},{"no":15},{"no":16},{"no":21},{"no":26},{"no":10},{"no":11},{"no":18},{"no":24}],"coach":"Amir GHALEHNOY"},"team2":{"teamId":"NZL","formation":"4-4-2","startingXI":[{"no":1,"pos":"GK"},{"no":2,"pos":"DF"},{"no":5,"pos":"DF"},{"no":13,"pos":"DF"},{"no":16,"pos":"DF"},{"no":6,"pos":"MF"},{"no":8,"pos":"MF"},{"no":10,"pos":"MF"},{"no":11,"pos":"MF"},{"no":20,"pos":"MF"},{"no":9,"pos":"FW","captain":true}],"substitutes":[{"no":12},{"no":22},{"no":3},{"no":4},{"no":15},{"no":24},{"no":26},{"no":14},{"no":19},{"no":23},{"no":25},{"no":17},{"no":18},{"no":21}],"coach":"Darren BAZELEY"},"substitutions":[{"minute":53,"teamId":"IRN","off":{"no":20},"on":{"no":11}},{"minute":65,"teamId":"IRN","off":{"no":14},"on":{"no":3}},{"minute":68,"teamId":"NZL","off":{"no":20},"on":{"no":23}},{"minute":68,"teamId":"NZL","off":{"no":13},"on":{"no":19}},{"minute":77,"teamId":"NZL","off":{"no":2},"on":{"no":24}},{"minute":80,"teamId":"IRN","off":{"no":9},"on":{"no":18}},{"minute":90,"teamId":"NZL","off":{"no":10},"on":{"no":21},"stoppageTime":2},{"minute":90,"teamId":"NZL","off":{"no":8},"on":{"no":4},"stoppageTime":2}],"cards":[{"minute":89,"teamId":"IRN","player":{"no":3},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "IRN",
+    "formation": "4-3-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      }
+    ],
+    "coach": "Amir GHALEHNOY"
+  },
+  "team2": {
+    "teamId": "NZL",
+    "formation": "4-4-2",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW",
+        "captain": true
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Darren BAZELEY"
+  },
+  "substitutions": [
+    {
+      "minute": 53,
+      "teamId": "IRN",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 65,
+      "teamId": "IRN",
+      "off": {
+        "no": 14
+      },
+      "on": {
+        "no": 3
+      }
+    },
+    {
+      "minute": 68,
+      "teamId": "NZL",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 23
+      }
+    },
+    {
+      "minute": 68,
+      "teamId": "NZL",
+      "off": {
+        "no": 13
+      },
+      "on": {
+        "no": 19
+      }
+    },
+    {
+      "minute": 77,
+      "teamId": "NZL",
+      "off": {
+        "no": 2
+      },
+      "on": {
+        "no": 24
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "IRN",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 18
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "NZL",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 21
+      },
+      "stoppageTime": 2
+    },
+    {
+      "minute": 90,
+      "teamId": "NZL",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 4
+      },
+      "stoppageTime": 2
+    }
+  ],
+  "cards": [
+    {
+      "minute": 89,
+      "teamId": "IRN",
+      "player": {
+        "no": 3
+      },
+      "card": "red"
+    }
+  ]
+}

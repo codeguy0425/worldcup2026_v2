@@ -1,1 +1,293 @@
-{"team1":{"teamId":"NOR","formation":"4-1-2-3","startingXI":[{"no":1,"pos":"GK"},{"no":3,"pos":"DF"},{"no":5,"pos":"DF"},{"no":17,"pos":"DF"},{"no":8,"pos":"MF"},{"no":10,"pos":"MF","captain":true},{"no":14,"pos":"MF"},{"no":7,"pos":"FW"},{"no":9,"pos":"FW"},{"no":20,"pos":"FW"},{"no":26,"pos":"FW"}],"substitutes":[{"no":12},{"no":13},{"no":4},{"no":15},{"no":16},{"no":24},{"no":25},{"no":2},{"no":6},{"no":18},{"no":19},{"no":21},{"no":22},{"no":23},{"no":11}],"coach":"Stale SOLBAKKEN"},"team2":{"teamId":"SEN","formation":"4-3-3","startingXI":[{"no":16,"pos":"GK"},{"no":3,"pos":"DF","captain":true},{"no":15,"pos":"DF"},{"no":19,"pos":"DF"},{"no":25,"pos":"DF"},{"no":5,"pos":"MF"},{"no":8,"pos":"MF"},{"no":26,"pos":"MF"},{"no":10,"pos":"FW"},{"no":11,"pos":"FW"},{"no":18,"pos":"FW"}],"substitutes":[{"no":1},{"no":23},{"no":2},{"no":4},{"no":14},{"no":24},{"no":6},{"no":17},{"no":21},{"no":22},{"no":7},{"no":9},{"no":12},{"no":13},{"no":20}],"coach":"Pape THIAW"},"substitutions":[{"minute":13,"teamId":"NOR","off":{"no":26},"on":{"no":16}},{"minute":54,"teamId":"SEN","off":{"no":26},"on":{"no":20}},{"minute":54,"teamId":"SEN","off":{"no":25},"on":{"no":14}},{"minute":63,"teamId":"SEN","off":{"no":16},"on":{"no":23}},{"minute":63,"teamId":"SEN","off":{"no":8},"on":{"no":6}},{"minute":71,"teamId":"NOR","off":{"no":20},"on":{"no":21}},{"minute":72,"teamId":"SEN","off":{"no":3},"on":{"no":17}},{"minute":84,"teamId":"NOR","off":{"no":17},"on":{"no":4}},{"minute":84,"teamId":"NOR","off":{"no":7},"on":{"no":22}}],"cards":[]}
+{
+  "team1": {
+    "teamId": "NOR",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      },
+      {
+        "no": 26,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 11
+      }
+    ],
+    "coach": "Stale SOLBAKKEN"
+  },
+  "team2": {
+    "teamId": "SEN",
+    "formation": "4-3-3",
+    "startingXI": [
+      {
+        "no": 16,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 26,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 18,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 20
+      }
+    ],
+    "coach": "Pape THIAW"
+  },
+  "substitutions": [
+    {
+      "minute": 13,
+      "teamId": "NOR",
+      "off": {
+        "no": 26
+      },
+      "on": {
+        "no": 16
+      }
+    },
+    {
+      "minute": 54,
+      "teamId": "SEN",
+      "off": {
+        "no": 26
+      },
+      "on": {
+        "no": 20
+      }
+    },
+    {
+      "minute": 54,
+      "teamId": "SEN",
+      "off": {
+        "no": 25
+      },
+      "on": {
+        "no": 14
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "SEN",
+      "off": {
+        "no": 16
+      },
+      "on": {
+        "no": 23
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "SEN",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 6
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "NOR",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 21
+      }
+    },
+    {
+      "minute": 72,
+      "teamId": "SEN",
+      "off": {
+        "no": 3
+      },
+      "on": {
+        "no": 17
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "NOR",
+      "off": {
+        "no": 17
+      },
+      "on": {
+        "no": 4
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "NOR",
+      "off": {
+        "no": 7
+      },
+      "on": {
+        "no": 22
+      }
+    }
+  ],
+  "cards": []
+}

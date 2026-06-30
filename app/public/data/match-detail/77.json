@@ -194,6 +194,127 @@
     ],
     "coach": "Graham POTTER"
   },
-  "substitutions": [],
+  "substitutions": [
+    {
+      "minute": 65,
+      "teamId": "SWE",
+      "off": {
+        "no": 24,
+        "name": "Elliot STROUD"
+      },
+      "on": {
+        "no": 26,
+        "name": "Taha ALI"
+      }
+    },
+    {
+      "minute": 65,
+      "teamId": "SWE",
+      "off": {
+        "no": 7,
+        "name": "Lucas BERGVALL"
+      },
+      "on": {
+        "no": 22,
+        "name": "Besfort ZENELI"
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "FRA",
+      "off": {
+        "no": 7,
+        "name": "Ousmane DEMBELE"
+      },
+      "on": {
+        "no": 20,
+        "name": "Desire DOUE"
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "FRA",
+      "off": {
+        "no": 5,
+        "name": "Jules KOUNDE"
+      },
+      "on": {
+        "no": 2,
+        "name": "Malo GUSTO"
+      }
+    },
+    {
+      "minute": 78,
+      "teamId": "FRA",
+      "off": {
+        "no": 3,
+        "name": "Lucas DIGNE"
+      },
+      "on": {
+        "no": 19,
+        "name": "Theo HERNANDEZ"
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "SWE",
+      "off": {
+        "no": 8,
+        "name": "Daniel SVENSSON"
+      },
+      "on": {
+        "no": 19,
+        "name": "Mattias SVANBERG"
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "SWE",
+      "off": {
+        "no": 18,
+        "name": "Yasin AYARI"
+      },
+      "on": {
+        "no": 10,
+        "name": "Benjamin NYGREN"
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "FRA",
+      "off": {
+        "no": 10,
+        "name": "Kylian MBAPPE"
+      },
+      "on": {
+        "no": 22,
+        "name": "Jean-Philippe MATETA"
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "FRA",
+      "off": {
+        "no": 11,
+        "name": "Michael OLISE"
+      },
+      "on": {
+        "no": 24,
+        "name": "Rayan CHERKI"
+      }
+    },
+    {
+      "minute": 89,
+      "teamId": "SWE",
+      "off": {
+        "no": 9,
+        "name": "Alexander ISAK"
+      },
+      "on": {
+        "no": 25,
+        "name": "Gustaf NILSSON"
+      }
+    }
+  ],
   "cards": []
 }

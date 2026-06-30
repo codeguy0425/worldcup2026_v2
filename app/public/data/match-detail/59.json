@@ -1,1 +1,271 @@
-{"team1":{"teamId":"ALG","formation":"4-2-3-1","startingXI":[{"no":16,"pos":"GK"},{"no":2,"pos":"DF"},{"no":13,"pos":"DF"},{"no":17,"pos":"DF"},{"no":21,"pos":"DF"},{"no":8,"pos":"MF"},{"no":10,"pos":"MF"},{"no":19,"pos":"MF"},{"no":22,"pos":"MF"},{"no":7,"pos":"FW","captain":true},{"no":9,"pos":"FW"}],"substitutes":[{"no":1},{"no":23},{"no":3},{"no":4},{"no":5},{"no":15},{"no":26},{"no":6},{"no":14},{"no":24},{"no":11},{"no":12},{"no":20},{"no":25}],"coach":"Vladimir PETKOVIC"},"team2":{"teamId":"AUT","formation":"4-2-3-1","startingXI":[{"no":1,"pos":"GK"},{"no":5,"pos":"DF"},{"no":8,"pos":"DF","captain":true},{"no":15,"pos":"DF"},{"no":16,"pos":"DF"},{"no":4,"pos":"MF"},{"no":6,"pos":"MF"},{"no":9,"pos":"MF"},{"no":18,"pos":"MF"},{"no":20,"pos":"MF"},{"no":7,"pos":"FW"}],"substitutes":[{"no":12},{"no":13},{"no":2},{"no":3},{"no":23},{"no":25},{"no":10},{"no":17},{"no":19},{"no":22},{"no":24},{"no":26},{"no":11},{"no":14},{"no":21}],"coach":"Ralf RANGNICK"},"substitutions":[{"minute":62,"teamId":"AUT","off":{"no":8},"on":{"no":3}},{"minute":71,"teamId":"ALG","off":{"no":13},"on":{"no":15}},{"minute":71,"teamId":"ALG","off":{"no":9},"on":{"no":5}},{"minute":71,"teamId":"ALG","off":{"no":17},"on":{"no":26}},{"minute":90,"teamId":"ALG","off":{"no":8},"on":{"no":25},"stoppageTime":4},{"minute":90,"teamId":"AUT","off":{"no":16},"on":{"no":14},"stoppageTime":5}],"cards":[{"minute":11,"teamId":"AUT","player":{"no":7},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "ALG",
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 16,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      }
+    ],
+    "coach": "Vladimir PETKOVIC"
+  },
+  "team2": {
+    "teamId": "AUT",
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "MF"
+      },
+      {
+        "no": 18,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Ralf RANGNICK"
+  },
+  "substitutions": [
+    {
+      "minute": 62,
+      "teamId": "AUT",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 3
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "ALG",
+      "off": {
+        "no": 13
+      },
+      "on": {
+        "no": 15
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "ALG",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 5
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "ALG",
+      "off": {
+        "no": 17
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "ALG",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 25
+      },
+      "stoppageTime": 4
+    },
+    {
+      "minute": 90,
+      "teamId": "AUT",
+      "off": {
+        "no": 16
+      },
+      "on": {
+        "no": 14
+      },
+      "stoppageTime": 5
+    }
+  ],
+  "cards": [
+    {
+      "minute": 11,
+      "teamId": "AUT",
+      "player": {
+        "no": 7
+      },
+      "card": "red"
+    }
+  ]
+}

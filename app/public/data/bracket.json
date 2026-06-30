@@ -76,6 +76,8 @@
         "team2Original": "3C/D/F/G/H",
         "team1Resolved": true,
         "team2Resolved": true,
+        "score1": 3,
+        "score2": 0,
         "groundId": "new_york"
       },
       {
@@ -231,7 +233,7 @@
         "date": "2026-07-04",
         "timeUtc": "21:00",
         "team1Id": "PAR",
-        "team2Id": "W77",
+        "team2Id": "FRA",
         "team1Original": "W74",
         "team2Original": "W77",
         "team1Resolved": false,

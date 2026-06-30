@@ -1,1 +1,316 @@
-{"team1":{"teamId":"NED","formation":"4-3-3","startingXI":[{"no":1,"pos":"GK"},{"no":4,"pos":"DF","captain":true},{"no":6,"pos":"DF"},{"no":15,"pos":"DF"},{"no":22,"pos":"DF"},{"no":8,"pos":"MF"},{"no":14,"pos":"MF"},{"no":21,"pos":"MF"},{"no":11,"pos":"FW"},{"no":18,"pos":"FW"},{"no":19,"pos":"FW"}],"substitutes":[{"no":13},{"no":23},{"no":2},{"no":5},{"no":12},{"no":25},{"no":3},{"no":7},{"no":16},{"no":20},{"no":9},{"no":10},{"no":17},{"no":24}],"coach":"Ronald KOEMAN"},"team2":{"teamId":"SWE","formation":"3-5-2","startingXI":[{"no":23,"pos":"GK"},{"no":2,"pos":"DF"},{"no":3,"pos":"DF","captain":true},{"no":4,"pos":"DF"},{"no":5,"pos":"DF"},{"no":21,"pos":"DF"},{"no":10,"pos":"MF"},{"no":16,"pos":"MF"},{"no":18,"pos":"MF"},{"no":9,"pos":"FW"},{"no":17,"pos":"FW"}],"substitutes":[{"no":1},{"no":12},{"no":6},{"no":8},{"no":14},{"no":15},{"no":20},{"no":24},{"no":7},{"no":13},{"no":19},{"no":22},{"no":11},{"no":25},{"no":26}],"coach":"Graham POTTER"},"substitutions":[{"minute":55,"teamId":"SWE","off":{"no":21},"on":{"no":11}},{"minute":55,"teamId":"SWE","off":{"no":16},"on":{"no":22}},{"minute":55,"teamId":"SWE","off":{"no":10},"on":{"no":7}},{"minute":59,"teamId":"NED","off":{"no":21},"on":{"no":20}},{"minute":59,"teamId":"NED","off":{"no":14},"on":{"no":16}},{"minute":72,"teamId":"NED","off":{"no":19},"on":{"no":10}},{"minute":79,"teamId":"SWE","off":{"no":18},"on":{"no":26}},{"minute":90,"teamId":"NED","off":{"no":11},"on":{"no":17}},{"minute":90,"teamId":"SWE","off":{"no":5},"on":{"no":24},"stoppageTime":3}],"cards":[{"minute":53,"teamId":"SWE","player":{"no":5},"card":"red"},{"minute":75,"teamId":"SWE","player":{"no":18},"card":"red"},{"minute":80,"teamId":"SWE","player":{"no":7},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "NED",
+    "formation": "4-3-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 18,
+        "pos": "FW"
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 13
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 24
+      }
+    ],
+    "coach": "Ronald KOEMAN"
+  },
+  "team2": {
+    "teamId": "SWE",
+    "formation": "3-5-2",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 16,
+        "pos": "MF"
+      },
+      {
+        "no": 18,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Graham POTTER"
+  },
+  "substitutions": [
+    {
+      "minute": 55,
+      "teamId": "SWE",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 55,
+      "teamId": "SWE",
+      "off": {
+        "no": 16
+      },
+      "on": {
+        "no": 22
+      }
+    },
+    {
+      "minute": 55,
+      "teamId": "SWE",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 59,
+      "teamId": "NED",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 20
+      }
+    },
+    {
+      "minute": 59,
+      "teamId": "NED",
+      "off": {
+        "no": 14
+      },
+      "on": {
+        "no": 16
+      }
+    },
+    {
+      "minute": 72,
+      "teamId": "NED",
+      "off": {
+        "no": 19
+      },
+      "on": {
+        "no": 10
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "SWE",
+      "off": {
+        "no": 18
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "NED",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 17
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "SWE",
+      "off": {
+        "no": 5
+      },
+      "on": {
+        "no": 24
+      },
+      "stoppageTime": 3
+    }
+  ],
+  "cards": [
+    {
+      "minute": 53,
+      "teamId": "SWE",
+      "player": {
+        "no": 5
+      },
+      "card": "red"
+    },
+    {
+      "minute": 75,
+      "teamId": "SWE",
+      "player": {
+        "no": 18
+      },
+      "card": "red"
+    },
+    {
+      "minute": 80,
+      "teamId": "SWE",
+      "player": {
+        "no": 7
+      },
+      "card": "red"
+    }
+  ]
+}

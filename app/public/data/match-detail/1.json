@@ -1,1 +1,340 @@
-{"team1":{"teamId":"MEX","formation":"4-1-2-3","startingXI":[{"no":1,"pos":"GK"},{"no":3,"pos":"DF","captain":true},{"no":5,"pos":"DF"},{"no":15,"pos":"DF"},{"no":23,"pos":"DF"},{"no":6,"pos":"MF"},{"no":4,"pos":"MF"},{"no":8,"pos":"MF"},{"no":19,"pos":"MF"},{"no":24,"pos":"MF"},{"no":9,"pos":"FW"},{"no":14,"pos":"FW"},{"no":16,"pos":"FW"},{"no":10,"pos":"FW"},{"no":25,"pos":"FW"}],"substitutes":[{"no":12},{"no":13},{"no":2},{"no":20},{"no":7},{"no":17},{"no":18},{"no":11},{"no":21},{"no":22}],"coach":"Javier Aguirre"},"team2":{"teamId":"RSA","formation":"5-3-2","startingXI":[{"no":1,"pos":"GK","captain":true},{"no":6,"pos":"DF"},{"no":7,"pos":"FW"},{"no":14,"pos":"DF"},{"no":19,"pos":"DF"},{"no":20,"pos":"DF"},{"no":21,"pos":"DF"},{"no":4,"pos":"MF"},{"no":13,"pos":"MF"},{"no":23,"pos":"MF"},{"no":11,"pos":"MF"},{"no":9,"pos":"FW"},{"no":5,"pos":"MF"},{"no":15,"pos":"FW"},{"no":17,"pos":"FW"}],"substitutes":[{"no":16},{"no":22},{"no":2},{"no":3},{"no":18},{"no":24},{"no":26},{"no":8},{"no":10},{"no":12},{"no":25}],"coach":"Hugo Broos"},"substitutions":[{"minute":56,"teamId":"RSA","off":{"no":5},"on":{"no":8}},{"minute":61,"teamId":"RSA","off":{"no":11},"on":{"no":10}},{"minute":66,"teamId":"MEX","off":{"no":19},"on":{"no":20}},{"minute":66,"teamId":"MEX","off":{"no":24},"on":{"no":7}},{"minute":76,"teamId":"MEX","off":{"no":4},"on":{"no":2}},{"minute":76,"teamId":"MEX","off":{"no":14},"on":{"no":11}},{"minute":76,"teamId":"RSA","off":{"no":7},"on":{"no":12}},{"minute":76,"teamId":"RSA","off":{"no":17},"on":{"no":25}},{"minute":79,"teamId":"MEX","off":{"no":10},"on":{"no":21}}],"cards":[{"minute":9,"teamId":"MEX","player":{"no":16},"card":"yellow"},{"minute":49,"teamId":"RSA","player":{"no":13},"card":"yellow"},{"minute":67,"teamId":"MEX","player":{"no":9},"card":"yellow"},{"minute":84,"teamId":"RSA","player":{"no":11},"card":"yellow"},{"minute":90,"teamId":"MEX","player":{"no":3},"card":"yellow","stoppageTime":2}]}
+{
+  "team1": {
+    "teamId": "MEX",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 14,
+        "pos": "FW"
+      },
+      {
+        "no": 16,
+        "pos": "FW"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 25,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      }
+    ],
+    "coach": "Javier Aguirre"
+  },
+  "team2": {
+    "teamId": "RSA",
+    "formation": "5-3-2",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK",
+        "captain": true
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF"
+      },
+      {
+        "no": 20,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 13,
+        "pos": "MF"
+      },
+      {
+        "no": 23,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 5,
+        "pos": "MF"
+      },
+      {
+        "no": 15,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 16
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 25
+      }
+    ],
+    "coach": "Hugo Broos"
+  },
+  "substitutions": [
+    {
+      "minute": 56,
+      "teamId": "RSA",
+      "off": {
+        "no": 5
+      },
+      "on": {
+        "no": 8
+      }
+    },
+    {
+      "minute": 61,
+      "teamId": "RSA",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 10
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "MEX",
+      "off": {
+        "no": 19
+      },
+      "on": {
+        "no": 20
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "MEX",
+      "off": {
+        "no": 24
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "MEX",
+      "off": {
+        "no": 4
+      },
+      "on": {
+        "no": 2
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "MEX",
+      "off": {
+        "no": 14
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "RSA",
+      "off": {
+        "no": 7
+      },
+      "on": {
+        "no": 12
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "RSA",
+      "off": {
+        "no": 17
+      },
+      "on": {
+        "no": 25
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "MEX",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 21
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 9,
+      "teamId": "MEX",
+      "player": {
+        "no": 16
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 49,
+      "teamId": "RSA",
+      "player": {
+        "no": 13
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 67,
+      "teamId": "MEX",
+      "player": {
+        "no": 9
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 84,
+      "teamId": "RSA",
+      "player": {
+        "no": 11
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 90,
+      "teamId": "MEX",
+      "player": {
+        "no": 3
+      },
+      "card": "yellow",
+      "stoppageTime": 2
+    }
+  ]
+}

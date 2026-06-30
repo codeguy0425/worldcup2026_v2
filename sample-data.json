@@ -3294,7 +3294,26 @@
       "group": "",
       "groundId": "new_york",
       "num": 77,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 3,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 45,
+          "scorer": "Kylian Mbappé",
+          "teamId": "1I"
+        },
+        {
+          "minute": 53,
+          "scorer": "Bradley Barcola",
+          "teamId": "1I"
+        },
+        {
+          "minute": 74,
+          "scorer": "Kylian Mbappé",
+          "teamId": "1I"
+        }
+      ]
     },
     {
       "id": 78,

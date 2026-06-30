@@ -1,1 +1,324 @@
-{"team1":{"teamId":"URU","formation":"4-1-2-3","startingXI":[{"no":23,"pos":"GK"},{"no":3,"pos":"DF"},{"no":13,"pos":"DF"},{"no":16,"pos":"DF"},{"no":5,"pos":"MF"},{"no":6,"pos":"MF"},{"no":8,"pos":"MF","captain":true},{"no":14,"pos":"MF"},{"no":20,"pos":"MF"},{"no":25,"pos":"MF"},{"no":9,"pos":"FW"}],"substitutes":[{"no":1},{"no":12},{"no":2},{"no":4},{"no":17},{"no":24},{"no":7},{"no":10},{"no":15},{"no":22},{"no":26},{"no":11},{"no":18},{"no":19},{"no":21}],"coach":"Marcelo BIELSA"},"team2":{"teamId":"ESP","formation":"4-1-2-3","startingXI":[{"no":23,"pos":"GK"},{"no":5,"pos":"DF"},{"no":14,"pos":"DF"},{"no":22,"pos":"DF"},{"no":24,"pos":"DF"},{"no":6,"pos":"MF"},{"no":15,"pos":"MF"},{"no":16,"pos":"MF","captain":true},{"no":20,"pos":"MF"},{"no":19,"pos":"FW"},{"no":21,"pos":"FW"}],"substitutes":[{"no":1},{"no":13},{"no":2},{"no":3},{"no":4},{"no":12},{"no":8},{"no":9},{"no":18},{"no":7},{"no":10},{"no":11},{"no":17},{"no":25},{"no":26}],"coach":"Luis DE LA FUENTE"},"substitutions":[{"minute":45,"teamId":"URU","off":{"no":5},"on":{"no":7}},{"minute":56,"teamId":"URU","off":{"no":8},"on":{"no":21}},{"minute":60,"teamId":"ESP","off":{"no":20},"on":{"no":8}},{"minute":60,"teamId":"ESP","off":{"no":6},"on":{"no":10}},{"minute":66,"teamId":"ESP","off":{"no":15},"on":{"no":11}},{"minute":70,"teamId":"URU","off":{"no":25},"on":{"no":18}},{"minute":76,"teamId":"ESP","off":{"no":21},"on":{"no":17}},{"minute":76,"teamId":"ESP","off":{"no":19},"on":{"no":7}}],"cards":[{"minute":54,"teamId":"URU","player":{"no":25},"card":"red"},{"minute":58,"teamId":"URU","player":{"no":13},"card":"red"},{"minute":90,"teamId":"URU","player":{"no":7},"card":"red"},{"minute":90,"teamId":"URU","player":{"no":14},"card":"red"},{"minute":46,"teamId":"ESP","player":{"no":15},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "URU",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "MF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 25,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Marcelo BIELSA"
+  },
+  "team2": {
+    "teamId": "ESP",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF"
+      },
+      {
+        "no": 24,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 15,
+        "pos": "MF"
+      },
+      {
+        "no": 16,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      },
+      {
+        "no": 21,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Luis DE LA FUENTE"
+  },
+  "substitutions": [
+    {
+      "minute": 45,
+      "teamId": "URU",
+      "off": {
+        "no": 5
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 56,
+      "teamId": "URU",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 21
+      }
+    },
+    {
+      "minute": 60,
+      "teamId": "ESP",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 8
+      }
+    },
+    {
+      "minute": 60,
+      "teamId": "ESP",
+      "off": {
+        "no": 6
+      },
+      "on": {
+        "no": 10
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "ESP",
+      "off": {
+        "no": 15
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 70,
+      "teamId": "URU",
+      "off": {
+        "no": 25
+      },
+      "on": {
+        "no": 18
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "ESP",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 17
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "ESP",
+      "off": {
+        "no": 19
+      },
+      "on": {
+        "no": 7
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 54,
+      "teamId": "URU",
+      "player": {
+        "no": 25
+      },
+      "card": "red"
+    },
+    {
+      "minute": 58,
+      "teamId": "URU",
+      "player": {
+        "no": 13
+      },
+      "card": "red"
+    },
+    {
+      "minute": 90,
+      "teamId": "URU",
+      "player": {
+        "no": 7
+      },
+      "card": "red"
+    },
+    {
+      "minute": 90,
+      "teamId": "URU",
+      "player": {
+        "no": 14
+      },
+      "card": "red"
+    },
+    {
+      "minute": 46,
+      "teamId": "ESP",
+      "player": {
+        "no": 15
+      },
+      "card": "red"
+    }
+  ]
+}

@@ -1,1 +1,325 @@
-{"team1":{"teamId":"JPN","formation":"3-4-3","startingXI":[{"no":1,"pos":"GK"},{"no":2,"pos":"DF"},{"no":4,"pos":"DF","captain":true},{"no":20,"pos":"DF"},{"no":21,"pos":"DF"},{"no":7,"pos":"MF"},{"no":10,"pos":"MF"},{"no":11,"pos":"MF"},{"no":13,"pos":"MF"},{"no":15,"pos":"MF"},{"no":18,"pos":"FW"}],"substitutes":[{"no":12},{"no":23},{"no":3},{"no":5},{"no":16},{"no":22},{"no":25},{"no":14},{"no":17},{"no":24},{"no":6},{"no":9},{"no":19},{"no":26}],"coach":"Hajime MORIYASU"},"team2":{"teamId":"SWE","formation":"3-4-3","startingXI":[{"no":1,"pos":"GK"},{"no":2,"pos":"DF"},{"no":3,"pos":"DF","captain":true},{"no":4,"pos":"DF"},{"no":5,"pos":"DF"},{"no":21,"pos":"DF"},{"no":24,"pos":"DF"},{"no":18,"pos":"MF"},{"no":9,"pos":"FW"},{"no":11,"pos":"FW"},{"no":17,"pos":"FW"}],"substitutes":[{"no":12},{"no":23},{"no":6},{"no":8},{"no":14},{"no":15},{"no":20},{"no":7},{"no":10},{"no":13},{"no":16},{"no":19},{"no":22},{"no":25},{"no":26}],"coach":"Graham POTTER"},"substitutions":[{"minute":37,"teamId":"SWE","off":{"no":4},"on":{"no":7}},{"minute":39,"teamId":"JPN","off":{"no":4},"on":{"no":3}},{"minute":66,"teamId":"JPN","off":{"no":18},"on":{"no":19}},{"minute":66,"teamId":"JPN","off":{"no":10},"on":{"no":14}},{"minute":75,"teamId":"JPN","off":{"no":13},"on":{"no":5}},{"minute":75,"teamId":"JPN","off":{"no":20},"on":{"no":16}},{"minute":75,"teamId":"SWE","off":{"no":21},"on":{"no":8}},{"minute":75,"teamId":"SWE","off":{"no":24},"on":{"no":13}},{"minute":87,"teamId":"SWE","off":{"no":3},"on":{"no":15}},{"minute":87,"teamId":"SWE","off":{"no":5},"on":{"no":10}}],"cards":[{"minute":77,"teamId":"JPN","player":{"no":3},"card":"red"},{"minute":32,"teamId":"SWE","player":{"no":4},"card":"red"},{"minute":84,"teamId":"SWE","player":{"no":17},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "JPN",
+    "formation": "3-4-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 20,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 13,
+        "pos": "MF"
+      },
+      {
+        "no": 15,
+        "pos": "MF"
+      },
+      {
+        "no": 18,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Hajime MORIYASU"
+  },
+  "team2": {
+    "teamId": "SWE",
+    "formation": "3-4-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 24,
+        "pos": "DF"
+      },
+      {
+        "no": 18,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Graham POTTER"
+  },
+  "substitutions": [
+    {
+      "minute": 37,
+      "teamId": "SWE",
+      "off": {
+        "no": 4
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 39,
+      "teamId": "JPN",
+      "off": {
+        "no": 4
+      },
+      "on": {
+        "no": 3
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "JPN",
+      "off": {
+        "no": 18
+      },
+      "on": {
+        "no": 19
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "JPN",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 14
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "JPN",
+      "off": {
+        "no": 13
+      },
+      "on": {
+        "no": 5
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "JPN",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 16
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "SWE",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 8
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "SWE",
+      "off": {
+        "no": 24
+      },
+      "on": {
+        "no": 13
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "SWE",
+      "off": {
+        "no": 3
+      },
+      "on": {
+        "no": 15
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "SWE",
+      "off": {
+        "no": 5
+      },
+      "on": {
+        "no": 10
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 77,
+      "teamId": "JPN",
+      "player": {
+        "no": 3
+      },
+      "card": "red"
+    },
+    {
+      "minute": 32,
+      "teamId": "SWE",
+      "player": {
+        "no": 4
+      },
+      "card": "red"
+    },
+    {
+      "minute": 84,
+      "teamId": "SWE",
+      "player": {
+        "no": 17
+      },
+      "card": "red"
+    }
+  ]
+}

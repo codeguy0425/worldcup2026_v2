@@ -2826,6 +2826,28 @@
     "groundId": "new_york",
     "num": 77,
     "stage": "r32",
+    "score1": 3,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 45,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA",
+        "scorerNo": 10
+      },
+      {
+        "minute": 53,
+        "scorer": "Bradley Barcola",
+        "teamId": "FRA",
+        "scorerNo": 12
+      },
+      {
+        "minute": 74,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA",
+        "scorerNo": 10
+      }
+    ],
     "team1Original": "1I",
     "team2Original": "3C/D/F/G/H"
   },
@@ -3023,7 +3045,7 @@
     "time": "05:00",
     "timeUtc": "21:00",
     "team1Id": "PAR",
-    "team2Id": "W77",
+    "team2Id": "FRA",
     "group": "",
     "groundId": "philadelphia",
     "num": 89,

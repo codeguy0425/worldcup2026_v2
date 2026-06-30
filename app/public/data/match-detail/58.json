@@ -1,1 +1,299 @@
-{"team1":{"teamId":"JOR","formation":"3-4-3","startingXI":[{"no":1,"pos":"GK"},{"no":3,"pos":"DF"},{"no":4,"pos":"DF"},{"no":5,"pos":"DF"},{"no":23,"pos":"DF","captain":true},{"no":8,"pos":"MF"},{"no":20,"pos":"MF"},{"no":21,"pos":"MF"},{"no":9,"pos":"FW"},{"no":10,"pos":"FW"},{"no":13,"pos":"FW"}],"substitutes":[{"no":12},{"no":22},{"no":2},{"no":16},{"no":17},{"no":19},{"no":26},{"no":6},{"no":14},{"no":15},{"no":18},{"no":25},{"no":7},{"no":11},{"no":24}],"coach":"Jamal SELLAMI"},"team2":{"teamId":"ALG","formation":"4-2-1-3","startingXI":[{"no":23,"pos":"GK"},{"no":2,"pos":"DF"},{"no":15,"pos":"DF"},{"no":17,"pos":"DF"},{"no":21,"pos":"DF"},{"no":6,"pos":"MF"},{"no":10,"pos":"MF"},{"no":14,"pos":"MF"},{"no":22,"pos":"MF"},{"no":7,"pos":"FW","captain":true},{"no":9,"pos":"FW"}],"substitutes":[{"no":1},{"no":16},{"no":3},{"no":4},{"no":5},{"no":13},{"no":26},{"no":8},{"no":19},{"no":24},{"no":11},{"no":12},{"no":20},{"no":25}],"coach":"Vladimir PETKOVIC"},"substitutions":[{"minute":76,"teamId":"JOR","off":{"no":13},"on":{"no":11}},{"minute":76,"teamId":"ALG","off":{"no":7},"on":{"no":11}},{"minute":84,"teamId":"JOR","off":{"no":10},"on":{"no":24}},{"minute":84,"teamId":"JOR","off":{"no":20},"on":{"no":2}},{"minute":85,"teamId":"ALG","off":{"no":9},"on":{"no":5}},{"minute":85,"teamId":"ALG","off":{"no":15},"on":{"no":13}},{"minute":90,"teamId":"JOR","off":{"no":9},"on":{"no":7},"stoppageTime":1},{"minute":90,"teamId":"JOR","off":{"no":4},"on":{"no":17},"stoppageTime":1}],"cards":[{"minute":64,"teamId":"JOR","player":{"no":4},"card":"red"},{"minute":44,"teamId":"ALG","player":{"no":6},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "JOR",
+    "formation": "3-4-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 13,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 24
+      }
+    ],
+    "coach": "Jamal SELLAMI"
+  },
+  "team2": {
+    "teamId": "ALG",
+    "formation": "4-2-1-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      }
+    ],
+    "coach": "Vladimir PETKOVIC"
+  },
+  "substitutions": [
+    {
+      "minute": 76,
+      "teamId": "JOR",
+      "off": {
+        "no": 13
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "ALG",
+      "off": {
+        "no": 7
+      },
+      "on": {
+        "no": 11
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "JOR",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 24
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "JOR",
+      "off": {
+        "no": 20
+      },
+      "on": {
+        "no": 2
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "ALG",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 5
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "ALG",
+      "off": {
+        "no": 15
+      },
+      "on": {
+        "no": 13
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "JOR",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 7
+      },
+      "stoppageTime": 1
+    },
+    {
+      "minute": 90,
+      "teamId": "JOR",
+      "off": {
+        "no": 4
+      },
+      "on": {
+        "no": 17
+      },
+      "stoppageTime": 1
+    }
+  ],
+  "cards": [
+    {
+      "minute": 64,
+      "teamId": "JOR",
+      "player": {
+        "no": 4
+      },
+      "card": "red"
+    },
+    {
+      "minute": 44,
+      "teamId": "ALG",
+      "player": {
+        "no": 6
+      },
+      "card": "red"
+    }
+  ]
+}

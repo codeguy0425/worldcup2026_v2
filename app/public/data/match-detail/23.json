@@ -1,1 +1,311 @@
-{"team1":{"teamId":"TUR","formation":"3-4-3","startingXI":[{"no":23,"pos":"GK"},{"no":2,"pos":"DF","captain":true},{"no":13,"pos":"DF"},{"no":14,"pos":"DF"},{"no":15,"pos":"DF"},{"no":5,"pos":"MF"},{"no":6,"pos":"MF"},{"no":8,"pos":"FW"},{"no":11,"pos":"FW"},{"no":21,"pos":"FW"},{"no":24,"pos":"FW"}],"substitutes":[{"no":1},{"no":12},{"no":3},{"no":4},{"no":18},{"no":20},{"no":25},{"no":10},{"no":16},{"no":22},{"no":7},{"no":9},{"no":17},{"no":19},{"no":26}],"coach":"Vincenzo MONTELLA"},"team2":{"teamId":"USA","formation":"4-1-2-3","startingXI":[{"no":1,"pos":"GK"},{"no":6,"pos":"DF"},{"no":12,"pos":"DF"},{"no":22,"pos":"DF"},{"no":23,"pos":"DF"},{"no":7,"pos":"MF"},{"no":8,"pos":"MF","captain":true},{"no":14,"pos":"MF"},{"no":9,"pos":"FW"},{"no":11,"pos":"FW"},{"no":21,"pos":"FW"}],"substitutes":[{"no":24},{"no":25},{"no":2},{"no":3},{"no":5},{"no":13},{"no":16},{"no":18},{"no":4},{"no":17},{"no":10},{"no":19},{"no":20},{"no":26}],"coach":"Mauricio POCHETTINO"},"substitutions":[{"minute":58,"teamId":"USA","off":{"no":21},"on":{"no":10}},{"minute":76,"teamId":"USA","off":{"no":7},"on":{"no":2}},{"minute":76,"teamId":"USA","off":{"no":11},"on":{"no":26}},{"minute":76,"teamId":"USA","off":{"no":23},"on":{"no":16}},{"minute":84,"teamId":"TUR","off":{"no":11},"on":{"no":26}},{"minute":84,"teamId":"TUR","off":{"no":2},"on":{"no":4}},{"minute":86,"teamId":"USA","off":{"no":8},"on":{"no":17}},{"minute":88,"teamId":"TUR","off":{"no":6},"on":{"no":22}},{"minute":90,"teamId":"TUR","off":{"no":24},"on":{"no":18},"stoppageTime":1},{"minute":90,"teamId":"TUR","off":{"no":21},"on":{"no":17},"stoppageTime":1}],"cards":[{"minute":19,"teamId":"USA","player":{"no":14},"card":"red"}]}
+{
+  "team1": {
+    "teamId": "TUR",
+    "formation": "3-4-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "MF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 21,
+        "pos": "FW"
+      },
+      {
+        "no": 24,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Vincenzo MONTELLA"
+  },
+  "team2": {
+    "teamId": "USA",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 12,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 21,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Mauricio POCHETTINO"
+  },
+  "substitutions": [
+    {
+      "minute": 58,
+      "teamId": "USA",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 10
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "USA",
+      "off": {
+        "no": 7
+      },
+      "on": {
+        "no": 2
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "USA",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "USA",
+      "off": {
+        "no": 23
+      },
+      "on": {
+        "no": 16
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "TUR",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 26
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "TUR",
+      "off": {
+        "no": 2
+      },
+      "on": {
+        "no": 4
+      }
+    },
+    {
+      "minute": 86,
+      "teamId": "USA",
+      "off": {
+        "no": 8
+      },
+      "on": {
+        "no": 17
+      }
+    },
+    {
+      "minute": 88,
+      "teamId": "TUR",
+      "off": {
+        "no": 6
+      },
+      "on": {
+        "no": 22
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "TUR",
+      "off": {
+        "no": 24
+      },
+      "on": {
+        "no": 18
+      },
+      "stoppageTime": 1
+    },
+    {
+      "minute": 90,
+      "teamId": "TUR",
+      "off": {
+        "no": 21
+      },
+      "on": {
+        "no": 17
+      },
+      "stoppageTime": 1
+    }
+  ],
+  "cards": [
+    {
+      "minute": 19,
+      "teamId": "USA",
+      "player": {
+        "no": 14
+      },
+      "card": "red"
+    }
+  ]
+}

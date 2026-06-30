@@ -1,1 +1,293 @@
-{"team1":{"teamId":"ARG","formation":"4-3-3","startingXI":[{"no":23,"pos":"GK"},{"no":4,"pos":"DF"},{"no":6,"pos":"DF"},{"no":13,"pos":"DF"},{"no":25,"pos":"DF"},{"no":7,"pos":"MF"},{"no":20,"pos":"MF"},{"no":24,"pos":"MF"},{"no":10,"pos":"FW","captain":true},{"no":16,"pos":"FW"},{"no":22,"pos":"FW"}],"substitutes":[{"no":1},{"no":12},{"no":3},{"no":19},{"no":26},{"no":2},{"no":5},{"no":8},{"no":11},{"no":14},{"no":15},{"no":9},{"no":17},{"no":18},{"no":21}],"coach":"Lionel SCALONI"},"team2":{"teamId":"ALG","formation":"4-3-3","startingXI":[{"no":23,"pos":"GK"},{"no":2,"pos":"DF","captain":true},{"no":15,"pos":"DF"},{"no":17,"pos":"DF"},{"no":21,"pos":"DF"},{"no":10,"pos":"MF"},{"no":14,"pos":"MF"},{"no":19,"pos":"MF"},{"no":22,"pos":"MF"},{"no":9,"pos":"FW"},{"no":11,"pos":"FW"}],"substitutes":[{"no":1},{"no":16},{"no":3},{"no":4},{"no":5},{"no":13},{"no":26},{"no":6},{"no":8},{"no":24},{"no":7},{"no":12},{"no":18},{"no":20},{"no":25}],"coach":"Vladimir PETKOVIC"},"substitutions":[{"minute":55,"teamId":"ARG","off":{"no":22},"on":{"no":9}},{"minute":55,"teamId":"ARG","off":{"no":16},"on":{"no":15}},{"minute":64,"teamId":"ALG","off":{"no":14},"on":{"no":8}},{"minute":64,"teamId":"ALG","off":{"no":11},"on":{"no":7}},{"minute":64,"teamId":"ALG","off":{"no":9},"on":{"no":18}},{"minute":80,"teamId":"ARG","off":{"no":13},"on":{"no":19}},{"minute":80,"teamId":"ARG","off":{"no":10},"on":{"no":18}},{"minute":82,"teamId":"ALG","off":{"no":19},"on":{"no":6}},{"minute":82,"teamId":"ALG","off":{"no":22},"on":{"no":20}}],"cards":[]}
+{
+  "team1": {
+    "teamId": "ARG",
+    "formation": "4-3-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 16,
+        "pos": "FW"
+      },
+      {
+        "no": 22,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Lionel SCALONI"
+  },
+  "team2": {
+    "teamId": "ALG",
+    "formation": "4-3-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      }
+    ],
+    "coach": "Vladimir PETKOVIC"
+  },
+  "substitutions": [
+    {
+      "minute": 55,
+      "teamId": "ARG",
+      "off": {
+        "no": 22
+      },
+      "on": {
+        "no": 9
+      }
+    },
+    {
+      "minute": 55,
+      "teamId": "ARG",
+      "off": {
+        "no": 16
+      },
+      "on": {
+        "no": 15
+      }
+    },
+    {
+      "minute": 64,
+      "teamId": "ALG",
+      "off": {
+        "no": 14
+      },
+      "on": {
+        "no": 8
+      }
+    },
+    {
+      "minute": 64,
+      "teamId": "ALG",
+      "off": {
+        "no": 11
+      },
+      "on": {
+        "no": 7
+      }
+    },
+    {
+      "minute": 64,
+      "teamId": "ALG",
+      "off": {
+        "no": 9
+      },
+      "on": {
+        "no": 18
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "ARG",
+      "off": {
+        "no": 13
+      },
+      "on": {
+        "no": 19
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "ARG",
+      "off": {
+        "no": 10
+      },
+      "on": {
+        "no": 18
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "ALG",
+      "off": {
+        "no": 19
+      },
+      "on": {
+        "no": 6
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "ALG",
+      "off": {
+        "no": 22
+      },
+      "on": {
+        "no": 20
+      }
+    }
+  ],
+  "cards": []
+}

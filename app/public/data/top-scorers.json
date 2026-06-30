@@ -280,6 +280,15 @@
     "scorerNo": 16
   },
   {
+    "scorer": "Kylian Mbappé",
+    "teamId": "1I",
+    "teamName": "1I",
+    "flag": "",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 4
+  },
+  {
     "scorer": "Leandro Trossard",
     "teamId": "BEL",
     "teamName": "Belgium",
@@ -576,6 +585,15 @@
     "penalties": 0,
     "rank": 5,
     "scorerNo": 12
+  },
+  {
+    "scorer": "Bradley Barcola",
+    "teamId": "1I",
+    "teamName": "1I",
+    "flag": "",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
   },
   {
     "scorer": "Breel Embolo",
