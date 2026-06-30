@@ -2379,6 +2379,10 @@
     "score2": 1,
     "penalty1": 3,
     "penalty2": 4,
+    "penaltySequence": {
+      "GER": "NYYNYN",
+      "PAR": "YYYNNY"
+    },
     "goals": [
       {
         "minute": 42,

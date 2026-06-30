@@ -60,6 +60,7 @@ interface Match {
   score1?: number; score2?: number; stage: string; groundId?: string
   goals?: GoalEvent[]; timeUtc?: string
   team1Original?: string; team2Original?: string
+  penaltySequence?: Record<string, string>
 }
 
 interface GoalEvent {
@@ -480,28 +481,25 @@ export function MatchPage() {
         {(m as any).penalty1 !== undefined && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
             <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Penalty Shootout</h4>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '0' }}>
-              <table style={{ borderCollapse: 'collapse', fontSize: '11px' }}>
-                <thead>
-                  <tr>
-                    <th style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)', fontWeight: 500, fontSize: '10px' }}>Team</th>
-                    <th style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)', fontWeight: 500, fontSize: '10px', textAlign: 'center' }}>Pens</th>
-                    <th style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', color: 'var(--text-muted)', fontWeight: 500, fontSize: '10px', textAlign: 'center' }}>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)' }}>{t1?.flag} {t1?.name || m.team1Id}</td>
-                    <td style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontWeight: 700 }}>{(m as any).penalty1}</td>
-                    <td style={{ padding: '4px 8px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontWeight: 700, color: (m as any).penalty1 > (m as any).penalty2 ? '#34d399' : 'var(--text-muted)' }}>{(m as any).penalty1 + (m.score1 ?? 0)}</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '4px 8px' }}>{t2?.flag} {t2?.name || m.team2Id}</td>
-                    <td style={{ padding: '4px 8px', textAlign: 'center', fontWeight: 700 }}>{(m as any).penalty2}</td>
-                    <td style={{ padding: '4px 8px', textAlign: 'center', fontWeight: 700, color: (m as any).penalty2 > (m as any).penalty1 ? '#34d399' : 'var(--text-muted)' }}>{(m as any).penalty2 + (m.score2 ?? 0)}</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', fontSize: '13px', fontFamily: 'var(--font-mono)' }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ marginBottom: '4px', fontSize: '11px', color: 'var(--text-muted)' }}>{t1?.flag} {t1?.name || m.team1Id}</div>
+                <div>
+                  {((m.penaltySequence?.[m.team1Id] || '').split('').map((c: string, i: number) => (
+                    <span key={i} style={{ color: c === 'Y' ? '#34d399' : '#fb7185', fontWeight: 700, fontSize: '15px' }}>{c}</span>
+                  )))}
+                  <span style={{ color: 'var(--text-muted)', marginLeft: '4px' }}>({(m as any).penalty1})</span>
+                </div>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ marginBottom: '4px', fontSize: '11px', color: 'var(--text-muted)' }}>{t2?.flag} {t2?.name || m.team2Id}</div>
+                <div>
+                  {((m.penaltySequence?.[m.team2Id] || '').split('').map((c: string, i: number) => (
+                    <span key={i} style={{ color: c === 'Y' ? '#34d399' : '#fb7185', fontWeight: 700, fontSize: '15px' }}>{c}</span>
+                  )))}
+                  <span style={{ color: 'var(--text-muted)', marginLeft: '4px' }}>({(m as any).penalty2})</span>
+                </div>
+              </div>
             </div>
           </div>
         )}

@@ -63,6 +63,7 @@ function main() {
     const entry = { id: m.id, round: m.round, date: m.date, time: m.time, timeUtc: m.timeUtc, team1Id: m.team1Id, team2Id: m.team2Id, group: m.group || '', groundId: m.groundId, num: m.num, stage: m.stage }
     if (m.score1 !== undefined) { entry.score1 = m.score1; entry.score2 = m.score2 }
     if (m.penalty1 !== undefined) { entry.penalty1 = m.penalty1; entry.penalty2 = m.penalty2 }
+    if (m.penaltySequence) entry.penaltySequence = m.penaltySequence
     if (m.goals) entry.goals = m.goals
     return entry
   })
