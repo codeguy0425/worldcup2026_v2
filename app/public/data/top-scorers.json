@@ -589,6 +589,15 @@
     "rank": 5
   },
   {
+    "scorer": "Cody Gakpo",
+    "teamId": "1F",
+    "teamName": "1F",
+    "flag": "",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Connor Metcalfe",
     "teamId": "AUS",
     "teamName": "Australia",
@@ -816,6 +825,15 @@
     "penalties": 0,
     "rank": 5,
     "scorerNo": 13
+  },
+  {
+    "scorer": "Issa Diop",
+    "teamId": "2C",
+    "teamName": "2C",
+    "flag": "",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
   },
   {
     "scorer": "Jamal Musiala",

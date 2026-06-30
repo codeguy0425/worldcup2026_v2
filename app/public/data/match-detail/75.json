@@ -1,0 +1,347 @@
+{
+  "team1": {
+    "teamId": "NED",
+    "formation": "3-4-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      },
+      {
+        "no": 24,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 13
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      }
+    ],
+    "coach": "Ronald KOEMAN"
+  },
+  "team2": {
+    "teamId": "MAR",
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 18,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 23,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Mohamed OUAHBI"
+  },
+  "substitutions": [
+    {
+      "minute": 71,
+      "teamId": "NED",
+      "off": {
+        "no": 5,
+        "name": "Nathan AKE"
+      },
+      "on": {
+        "no": 20,
+        "name": "Teun KOOPMEINERS"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "NED",
+      "off": {
+        "no": 19,
+        "name": "Brian BROBBEY"
+      },
+      "on": {
+        "no": 9,
+        "name": "Wout WEGHORST"
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "MAR",
+      "off": {
+        "no": 18,
+        "name": "Chadi RIAD"
+      },
+      "on": {
+        "no": 26,
+        "name": "Anass SALAH EDDINE"
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "MAR",
+      "off": {
+        "no": 10,
+        "name": "Brahim DIAZ"
+      },
+      "on": {
+        "no": 16,
+        "name": "Gessime YASSINE"
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "MAR",
+      "off": {
+        "no": 6,
+        "name": "Ayyoub BOUADDI"
+      },
+      "on": {
+        "no": 15,
+        "name": "Samir EL MOURABET"
+      }
+    },
+    {
+      "minute": 86,
+      "teamId": "NED",
+      "off": {
+        "no": 8,
+        "name": "Ryan GRAVENBERCH"
+      },
+      "on": {
+        "no": 26,
+        "name": "Quinten TIMBER"
+      }
+    },
+    {
+      "minute": 86,
+      "teamId": "NED",
+      "off": {
+        "no": 15,
+        "name": "Micky VAN DE VEN"
+      },
+      "on": {
+        "no": 25,
+        "name": "Jorrel HATO"
+      }
+    },
+    {
+      "minute": 86,
+      "teamId": "MAR",
+      "off": {
+        "no": 8,
+        "name": "Azzedine OUNAHI"
+      },
+      "on": {
+        "no": 9,
+        "name": "Soufiane RAHIMI"
+      }
+    },
+    {
+      "minute": 86,
+      "teamId": "MAR",
+      "off": {
+        "no": 23,
+        "name": "Bilal EL KHANNOUSS"
+      },
+      "on": {
+        "no": 7,
+        "name": "Chemsdine TALBI"
+      }
+    },
+    {
+      "minute": 110,
+      "teamId": "NED",
+      "off": {
+        "no": 21,
+        "name": "Frenkie DE JONG"
+      },
+      "on": {
+        "no": 3,
+        "name": "Marten DE ROON"
+      }
+    },
+    {
+      "minute": 113,
+      "teamId": "NED",
+      "off": {
+        "no": 11,
+        "name": "Cody GAKPO"
+      },
+      "on": {
+        "no": 7,
+        "name": "Justin KLUIVERT"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 47,
+      "teamId": "MAR",
+      "player": {
+        "no": 14,
+        "name": "Issa DIOP"
+      },
+      "card": "yellow"
+    }
+  ],
+  "penalty1": 2,
+  "penalty2": 3
+}

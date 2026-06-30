@@ -3083,20 +3083,68 @@
       },
       "penaltyShootout": {
         "GER": [
-          {"player": "Havertz", "no": 7, "scored": false},
-          {"player": "Kimmich", "no": 6, "scored": true},
-          {"player": "Musiala", "no": 10, "scored": true},
-          {"player": "Woltemade", "no": 11, "scored": false},
-          {"player": "Amiri", "no": 20, "scored": true},
-          {"player": "Tah", "no": 4, "scored": false}
+          {
+            "player": "Havertz",
+            "no": 7,
+            "scored": false
+          },
+          {
+            "player": "Kimmich",
+            "no": 6,
+            "scored": true
+          },
+          {
+            "player": "Musiala",
+            "no": 10,
+            "scored": true
+          },
+          {
+            "player": "Woltemade",
+            "no": 11,
+            "scored": false
+          },
+          {
+            "player": "Amiri",
+            "no": 20,
+            "scored": true
+          },
+          {
+            "player": "Tah",
+            "no": 4,
+            "scored": false
+          }
         ],
         "PAR": [
-          {"player": "Maurício", "no": 11, "scored": true},
-          {"player": "G. Gómez", "no": 15, "scored": true},
-          {"player": "Galarza", "no": 23, "scored": true},
-          {"player": "Sanabria", "no": 9, "scored": false},
-          {"player": "Balbuena", "no": 5, "scored": false},
-          {"player": "Canale", "no": 13, "scored": true}
+          {
+            "player": "Maurício",
+            "no": 11,
+            "scored": true
+          },
+          {
+            "player": "G. Gómez",
+            "no": 15,
+            "scored": true
+          },
+          {
+            "player": "Galarza",
+            "no": 23,
+            "scored": true
+          },
+          {
+            "player": "Sanabria",
+            "no": 9,
+            "scored": false
+          },
+          {
+            "player": "Balbuena",
+            "no": 5,
+            "scored": false
+          },
+          {
+            "player": "Canale",
+            "no": 13,
+            "scored": true
+          }
         ]
       },
       "goals": [
@@ -3123,7 +3171,24 @@
       "group": "",
       "groundId": "monterrey",
       "num": 75,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 1,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 72,
+          "scorer": "Cody Gakpo",
+          "teamId": "1F"
+        },
+        {
+          "minute": 90,
+          "scorer": "Issa Diop",
+          "teamId": "2C",
+          "stoppageTime": 1
+        }
+      ],
+      "penalty1": 2,
+      "penalty2": 3
     },
     {
       "id": 76,

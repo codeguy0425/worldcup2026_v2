@@ -2694,6 +2694,25 @@
     "groundId": "monterrey",
     "num": 75,
     "stage": "r32",
+    "score1": 1,
+    "score2": 1,
+    "penalty1": 2,
+    "penalty2": 3,
+    "goals": [
+      {
+        "minute": 72,
+        "scorer": "Cody Gakpo",
+        "teamId": "NED",
+        "scorerNo": 11
+      },
+      {
+        "minute": 90,
+        "scorer": "Issa Diop",
+        "teamId": "MAR",
+        "stoppageTime": 1,
+        "scorerNo": 14
+      }
+    ],
     "team1Original": "1F",
     "team2Original": "2C"
   },
@@ -2936,7 +2955,7 @@
     "time": "01:00",
     "timeUtc": "17:00",
     "team1Id": "CAN",
-    "team2Id": "W75",
+    "team2Id": "MAR",
     "group": "",
     "groundId": "houston",
     "num": 90,
