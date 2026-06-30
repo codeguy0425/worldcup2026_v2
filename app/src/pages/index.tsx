@@ -43,13 +43,23 @@ export function computeForm(teamId: string, allMatches: Match[]): ('W'|'D'|'L')[
     .slice(0, 5)
     .reverse() // chronological for display
   return played.map(m => {
+    const pm = m as any
+    const penWon = (teamId: string) =>
+      pm.penalty1 !== undefined && (
+        (pm.team1Id === teamId && pm.penalty1 > pm.penalty2) ||
+        (pm.team2Id === teamId && pm.penalty2 > pm.penalty1)
+      )
     if (m.team1Id === teamId) {
       if (m.score1! > m.score2!) return 'W'
       if (m.score1! < m.score2!) return 'L'
+      if (penWon(teamId)) return 'W'
+      if (pm.penalty1 !== undefined) return 'L'
       return 'D'
     }
     if (m.score2! > m.score1!) return 'W'
     if (m.score2! < m.score1!) return 'L'
+    if (penWon(teamId)) return 'W'
+    if (pm.penalty1 !== undefined) return 'L'
     return 'D'
   })
 }
