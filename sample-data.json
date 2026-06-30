@@ -3188,7 +3188,9 @@
         }
       ],
       "penalty1": 2,
-      "penalty2": 3
+      "penalty2": 3,
+      "penaltySequence": {"NED": "YNYNN", "MAR": "NYYNY"},
+      "penaltyShootout": {"NED": [{"player": "Koopmeiners", "no": 20, "scored": true}, {"player": "Kluivert", "no": 7, "scored": false}, {"player": "Weghorst", "no": 9, "scored": true}, {"player": "Timber", "no": 26, "scored": false}, {"player": "Summerville", "no": 24, "scored": false}], "MAR": [{"player": "El Aynaoui", "no": 24, "scored": false}, {"player": "Rahimi", "no": 9, "scored": true}, {"player": "Talbi", "no": 7, "scored": true}, {"player": "Hakimi", "no": 2, "scored": false}, {"player": "Saibari", "no": 11, "scored": true}]}
     },
     {
       "id": 76,
