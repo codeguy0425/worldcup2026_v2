@@ -147,6 +147,13 @@ export function TeamPage() {
           (teamScore === oppScore && (bm as any).penalty1 !== undefined &&
             (isT1 ? (bm as any).penalty1 > (bm as any).penalty2 : (bm as any).penalty2 > (bm as any).penalty1))
         ) : null
+        // Flip score display so tracked team always appears first
+        const pathScore = hasScore ? (
+          isT1 ? fmtScore(bm as any) : fmtScore({
+            score1: bm.score2, score2: bm.score1,
+            penalty1: (bm as any).penalty2, penalty2: (bm as any).penalty1,
+          } as any)
+        ) : '?–?'
 
         pathSteps.push({
           round: rn,
@@ -154,7 +161,7 @@ export function TeamPage() {
           oppId: oppId,
           oppName: oppTeam?.name || oppId,
           oppFlag: oppTeam?.flag || '',
-          score: hasScore ? fmtScore(bm as any) : '?–?',
+          score: pathScore,
           won,
         })
 
@@ -486,7 +493,10 @@ export function TeamPage() {
                       <span>{team?.flag || ''}</span><b>{team?.name}</b>
                     </span>
                     <span style={{ fontWeight: 700, fontSize: '14px', minWidth: '28px', textAlign: 'center' }}>
-                      {hasScore ? fmtScore(m as any) : 'vs'}
+                      {hasScore ? (isHome ? fmtScore(m as any) : fmtScore({
+                        score1: m.score2, score2: m.score1,
+                        penalty1: (m as any).penalty2, penalty2: (m as any).penalty1,
+                      } as any)) : 'vs'}
                     </span>
                     <span style={{ flex: 1 }}>
                       {opponent?.name || oppId} <span>{opponent?.flag || ''}</span>
