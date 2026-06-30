@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "ENG",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Thomas Tuchel"
+  },
+  "team2": {
+    "teamId": "COD",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Sébastien Desabre"
+  },
+  "substitutions": [],
+  "cards": []
+}

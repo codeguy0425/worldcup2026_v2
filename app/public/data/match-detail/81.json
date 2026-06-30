@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "USA",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Mauricio POCHETTINO"
+  },
+  "team2": {
+    "teamId": "BIH",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Sergej BARBAREZ"
+  },
+  "substitutions": [],
+  "cards": []
+}

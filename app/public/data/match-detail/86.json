@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "ARG",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Lionel SCALONI"
+  },
+  "team2": {
+    "teamId": "CPV",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Pedro Leitão Brito"
+  },
+  "substitutions": [],
+  "cards": []
+}

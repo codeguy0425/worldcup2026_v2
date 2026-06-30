@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "POR",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Roberto Martínez Montoliú"
+  },
+  "team2": {
+    "teamId": "CRO",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Zlatko Dalić"
+  },
+  "substitutions": [],
+  "cards": []
+}

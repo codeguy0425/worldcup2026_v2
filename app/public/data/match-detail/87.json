@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "COL",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Néstor Gabriel Lorenzo"
+  },
+  "team2": {
+    "teamId": "GHA",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Carlos QUEIROZ"
+  },
+  "substitutions": [],
+  "cards": []
+}

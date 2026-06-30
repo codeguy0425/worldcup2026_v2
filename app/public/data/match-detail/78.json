@@ -1,0 +1,311 @@
+{
+  "team1": {
+    "teamId": "CIV",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 20,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 18,
+        "pos": "MF"
+      },
+      {
+        "no": 26,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 16
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 24
+      }
+    ],
+    "coach": "Emerse FAE"
+  },
+  "team2": {
+    "teamId": "NOR",
+    "formation": "4-2-1-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Ståle Solbakken"
+  },
+  "substitutions": [
+    {
+      "minute": 60,
+      "teamId": "CIV",
+      "off": {
+        "no": 26,
+        "name": "Christ Inao OULAI"
+      },
+      "on": {
+        "no": 15,
+        "name": "Amad DIALLO"
+      }
+    },
+    {
+      "minute": 60,
+      "teamId": "CIV",
+      "off": {
+        "no": 9,
+        "name": "Ange-Yoan BONNY"
+      },
+      "on": {
+        "no": 12,
+        "name": "Elye WAHI"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "NOR",
+      "off": {
+        "no": 20,
+        "name": "Antonio NUSA"
+      },
+      "on": {
+        "no": 21,
+        "name": "Andreas SCHJELDERUP"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "NOR",
+      "off": {
+        "no": 7,
+        "name": "Alexander SORLOTH"
+      },
+      "on": {
+        "no": 22,
+        "name": "Oscar BOBB"
+      }
+    },
+    {
+      "minute": 83,
+      "teamId": "NOR",
+      "off": {
+        "no": 16,
+        "name": "Marcus HOLMGREN PEDERSEN"
+      },
+      "on": {
+        "no": 14,
+        "name": "Fredrik AURSNES"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "CIV",
+      "off": {
+        "no": 19,
+        "name": "Nicolas PEPE"
+      },
+      "on": {
+        "no": 14,
+        "name": "Oumar DIAKITE"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "CIV",
+      "off": {
+        "no": 11,
+        "name": "Yan DIOMANDE"
+      },
+      "on": {
+        "no": 22,
+        "name": "Evann GUESSAND"
+      },
+      "stoppageTime": 3
+    },
+    {
+      "minute": 90,
+      "teamId": "CIV",
+      "off": {
+        "no": 3,
+        "name": "Ghislain KONAN"
+      },
+      "on": {
+        "no": 24,
+        "name": "Bazoumana TOURE"
+      },
+      "stoppageTime": 3
+    }
+  ],
+  "cards": [
+    {
+      "minute": 45,
+      "teamId": "NOR",
+      "player": {
+        "no": 20,
+        "name": "Antonio NUSA"
+      },
+      "card": "yellow"
+    }
+  ]
+}
