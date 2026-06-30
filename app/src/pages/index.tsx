@@ -448,8 +448,15 @@ export function MatchPage() {
               </div>
             )}
           </div>
-          <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px' }}>
-            {hasScore ? fmtScore(m) : 'vs'}
+          <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px', textAlign: 'center' }}>
+            {(m as any).penalty1 !== undefined ? (
+              <>
+                <div>{m.score1}–{m.score2}</div>
+                <div style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-muted)', marginTop: '2px' }}>Pen: {(m as any).penalty1}–{(m as any).penalty2}</div>
+              </>
+            ) : (
+              hasScore ? fmtScore(m) : 'vs'
+            )}
           </div>
           <div style={{ textAlign: 'left', flex: 1 }}>
             {!teamMap.has(m.team2Id) ? (
