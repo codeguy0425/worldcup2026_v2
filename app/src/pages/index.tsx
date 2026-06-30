@@ -654,52 +654,23 @@ export function MatchPage() {
           </div>
         )}
 
-        {/* Penalty kickers text list */}
-        {(m as any).penaltyShootout && (
-          <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid var(--border)', fontSize: '11px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              {[m.team1Id, m.team2Id].map(tid => {
-                const team = teamMap.get(tid)
-                const kicks = (m as any).penaltyShootout?.[tid] || []
-                return (
-                  <div key={tid} style={{ textAlign: tid === m.team1Id ? 'left' : 'right' }}>
-                    <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginBottom: '2px' }}>{team?.flag} {team?.name || tid}</div>
-                    <div style={{ fontSize: '11px', lineHeight: 1.6 }}>
-                      {kicks.map((k: {player: string; scored: boolean}, i: number) => (
-                        <span key={i}>
-                          {i > 0 && <span style={{ color: 'var(--text-muted)' }}> · </span>}
-                          <span style={{ color: k.scored ? '#34d399' : '#fb7185' }}>{k.player}{k.scored ? '✓' : '✗'}</span>
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* Penalty shootout visual */}
+        {/* Penalty shootout */}
         {(m as any).penalty1 !== undefined && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
             <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center' }}>{t.match.penaltyShootout}</h4>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <table style={{ borderCollapse: 'collapse', fontSize: '12px' }}>
+              <table style={{ borderCollapse: 'collapse' }}>
                 <tbody>
                   {[m.team1Id, m.team2Id].map(tid => {
                     const team = teamMap.get(tid)
-                    const kicks = (m as any).penaltyShootout?.[tid] || []
                     const seq = (m.penaltySequence?.[tid] || '').split('')
                     return (
                       <tr key={tid}>
                         <td style={{ padding: '3px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap', fontSize: '11px' }}>{team?.flag} {team?.name || tid}</td>
                         <td style={{ padding: '3px 6px' }}>
-                          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                          <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
                             {seq.map((c: string, i: number) => (
-                              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
-                                <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
-                                {kicks[i] && <span style={{ fontSize: '8px', color: 'var(--text-muted)', maxWidth: '50px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{kicks[i].player}</span>}
-                              </div>
+                              <span key={i} style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
                             ))}
                           </div>
                         </td>
@@ -708,6 +679,22 @@ export function MatchPage() {
                   })}
                 </tbody>
               </table>
+            </div>
+            {/* Vertical name list per team in sequence */}
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginTop: '8px', fontSize: '10px' }}>
+              {[m.team1Id, m.team2Id].map(tid => {
+                const kicks = (m as any).penaltyShootout?.[tid] || []
+                return (
+                  <div key={tid} style={{ textAlign: 'left' }}>
+                    {kicks.map((k: {player: string; scored: boolean}, i: number) => (
+                      <div key={i} style={{ lineHeight: 1.8 }}>
+                        <span style={{ color: k.scored ? '#34d399' : '#fb7185', fontWeight: 600 }}>{k.scored ? '✓' : '✗'}</span>
+                        <span style={{ color: 'var(--text)', marginLeft: '4px' }}>{k.player}</span>
+                      </div>
+                    ))}
+                  </div>
+                )
+              })}
             </div>
           </div>
         )}
