@@ -3075,6 +3075,8 @@
       "stage": "r32",
       "score1": 1,
       "score2": 1,
+      "penalty1": 3,
+      "penalty2": 4,
       "goals": [
         {
           "minute": 42,

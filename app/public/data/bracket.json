@@ -29,7 +29,9 @@
         "team2Resolved": true,
         "score1": 1,
         "score2": 1,
-        "groundId": "boston"
+        "groundId": "boston",
+        "penalty1": 3,
+        "penalty2": 4
       },
       {
         "matchId": 75,
