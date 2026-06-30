@@ -27,7 +27,7 @@ function trRound(r: string, t: any): string {
 export function fmtScore(m: { score1?: number; score2?: number; penalty1?: number; penalty2?: number }): string {
   if (m.score1 === undefined) return 'vs'
   const s = `${m.score1}–${m.score2}`
-  if (m.penalty1 !== undefined) return `${s} (${m.penalty1}–${m.penalty2} pens)`
+  if (m.penalty1 !== undefined) return `(${m.penalty1}) ${s} (${m.penalty2})`
   return s
 }
 
