@@ -41,6 +41,17 @@ function getCoach(team) {
   return name;
 }
 
+function syncPerMatchFiles(matchDetail) {
+  const dir = './app/public/data/match-detail';
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  let count = 0;
+  for (const [mid, data] of Object.entries(matchDetail)) {
+    fs.writeFileSync(`${dir}/${mid}.json`, JSON.stringify(data, null, 2));
+    count++;
+  }
+  console.log(`  → Synced ${count} per-match files`);
+}
+
 function fetchJSON(url) {
   return new Promise((resolve, reject) => {
     let d = '';
@@ -187,6 +198,7 @@ async function main() {
     
     console.log(`\nDone! Added ${added}, skipped ${skipped}, failed ${failed}. Total: ${Object.keys(matchDetail).length}`);
     fs.writeFileSync('./app/public/data/match-detail.json', JSON.stringify(matchDetail, null, 2));
+    syncPerMatchFiles(matchDetail);
     
   } else if (target) {
     const fifaUrl = urlMap[target];
@@ -197,6 +209,7 @@ async function main() {
     const entry = await processMatch(target, fifaUrl);
     matchDetail[target] = entry;
     fs.writeFileSync('./app/public/data/match-detail.json', JSON.stringify(matchDetail, null, 2));
+    syncPerMatchFiles(matchDetail);
     console.log(`Added match ${target}: ${entry.team1.teamId} vs ${entry.team2.teamId}`);
     console.log(`  Starters: ${entry.team1.startingXI.length} vs ${entry.team2.startingXI.length}`);
     console.log(`  Subs events: ${entry.substitutions.length}, Cards: ${entry.cards.length}`);
