@@ -84,11 +84,19 @@ function parseTable(table) {
   return players
 }
 function parseSquadByPosition(html, enOrder, enData) {
-  // Extract ALL squad tables from ZH page
-  const tables = [...html.matchAll(/<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>.*?<\/table>/gs)]
+  // Extract squad tables from ZH page paired with their <h3> heading
+  // Regex: h3 heading followed by wikitable
+  const sectionPattern = /<h[23][^>]*>.*?<\/h[23]>[\s\S]*?(?:<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>[\s\S]*?<\/table>)/g
+  const sections = [...html.matchAll(sectionPattern)]
   const zhTables = []
-  for (const t of tables) {
-    const rows = [...t[0].matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)]
+  for (const sec of sections) {
+    const full = sec[0]
+    // Extract heading text from h3 (ZH wiki: <h3 id="墨西哥"><span id="..."></span>墨西哥</h3>)
+    const headingMatch = full.match(/<h[23][^>]*>.*?<\/span>\s*([^<>\s][^<>]{0,20}?)\s*<\/h[23]>/)
+    const headingText = headingMatch ? headingMatch[1].trim() : ''
+    const tableHtml = full.match(/(<table[^>]*class="[^"]*wikitable[^"]*"[^>]*>[\s\S]*?<\/table>)/)
+    if (!tableHtml) continue
+    const rows = [...tableHtml[1].matchAll(/<tr[^>]*>(.*?)<\/tr>/gs)]
     if (rows.length < 2) continue
     const cells = [...rows[1][1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)]
     if (cells.length < 7) continue
@@ -108,24 +116,50 @@ function parseSquadByPosition(html, enOrder, enData) {
       const posClean = ({'1':'GK','2':'DF','3':'MF','4':'FW'})[pos[0]] || pos.replace(/^\d+/,'').replace(/门将/g,'門將').replace(/后卫/g,'後衛').replace(/守门员/g,'門將')
       players.push({ no, pos: posClean, name, club, captain, viceCaptain })
     }
-    if (players.length > 0) zhTables.push(players)
+    if (players.length > 0) zhTables.push({ heading: headingText, players })
   }
-  // Match each EN team to the best ZH table by shirt number overlap
-  // Since all teams use 1-26, exact match doesn't help. Use position + sample check
-  const used = new Set()
+
+  // Map Chinese team headings to EN team IDs
+  const HEADING_MAP = {
+    '墨西哥': 'MEX', '南非': 'RSA', '韓國': 'KOR', '捷克': 'CZE',
+    '加拿大': 'CAN', '波黑': 'BIH', '卡塔爾': 'QAT', '瑞士': 'SUI',
+    '巴西': 'BRA', '摩洛哥': 'MAR', '海地': 'HAI', '蘇格蘭': 'SCO',
+    '美國': 'USA', '巴拉圭': 'PAR', '澳洲': 'AUS', '土耳其': 'TUR',
+    '德國': 'GER', '科特迪瓦': 'CIV', '厄瓜多爾': 'ECU', '庫拉索': 'CUW',
+    '荷蘭': 'NED', '日本': 'JPN', '瑞典': 'SWE', '突尼斯': 'TUN',
+    '比利時': 'BEL', '埃及': 'EGY', '伊朗': 'IRN', '新西蘭': 'NZL',
+    '西班牙': 'ESP', '佛得角': 'CPV', '烏拉圭': 'URU', '沙特阿拉伯': 'KSA',
+    '法國': 'FRA', '挪威': 'NOR', '塞內加爾': 'SEN', '伊拉克': 'IRQ',
+    '阿根廷': 'ARG', '奧地利': 'AUT', '阿爾及利亞': 'ALG', '約旦': 'JOR',
+    '哥倫比亞': 'COL', '葡萄牙': 'POR', '民主剛果': 'COD', '烏茲別克斯坦': 'UZB',
+    '英格蘭': 'ENG', '克羅地亞': 'CRO', '加納': 'GHA', '巴拿馬': 'PAN',
+  }
+
   const result = {}
+  const usedTeams = new Set()
+  const usedHeadings = new Set()
+
+  // First pass: match ZH tables by heading
+  for (const zh of zhTables) {
+    const teamId = HEADING_MAP[zh.heading]
+    if (teamId && !usedTeams.has(teamId)) {
+      result[teamId] = zh.players
+      usedTeams.add(teamId)
+      usedHeadings.add(zh.heading)
+    }
+  }
+
+  // Second pass: assign remaining ZH tables to unmatched EN teams sequentially
+  const unmatched = zhTables.filter(zh => !usedHeadings.has(zh.heading))
+  let ui = 0
   for (let ti = 0; ti < enOrder.length; ti++) {
     const teamId = enOrder[ti]
+    if (result[teamId]) continue
     const enPlayers = enData[teamId]
     if (!enPlayers) continue
-    // Find the NEXT unassigned ZH table
-    let zhIdx = -1
-    for (let i = 0; i < zhTables.length; i++) {
-      if (!used.has(i)) { zhIdx = i; break }
-    }
-    if (zhIdx < 0) break
-    result[teamId] = zhTables[zhIdx]
-    used.add(zhIdx)
+    if (ui >= unmatched.length) break
+    result[teamId] = unmatched[ui].players
+    ui++
   }
   return result
 }
@@ -150,7 +184,7 @@ async function main() {
   }
 
   const enOrder = [
-    // ZH page order (group A→L, by standing: 1st, 2nd, 3rd, 4th)
+    // ZH page order (group A->L, by standing: 1st, 2nd, 3rd, 4th)
     'MEX','RSA','KOR','CZE',           // Group A
     'SUI','CAN','BIH','QAT',           // Group B
     'BRA','MAR','SCO','HAI',           // Group C
