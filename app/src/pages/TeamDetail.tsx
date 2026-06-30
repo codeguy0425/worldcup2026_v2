@@ -318,6 +318,7 @@ export function TeamPage() {
                       <>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px', flex: 1 }}>
                           <span style={{ display: 'flex', alignItems: 'center', gap: '3px' }}>
+                            <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>vs</span>
                             {step.oppFlag && <span style={{ fontSize: '13px' }}>{step.oppFlag}</span>}
                             <span style={{
                               color: step.won === false ? '#fb7185' : 'var(--text)',
