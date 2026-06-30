@@ -117,6 +117,15 @@
     "rank": 3
   },
   {
+    "scorer": "Kai Havertz",
+    "teamId": "GER",
+    "teamName": "Germany",
+    "flag": "🇩🇪",
+    "goals": 3,
+    "penalties": 1,
+    "rank": 3
+  },
+  {
     "scorer": "Matheus Cunha",
     "teamId": "BRA",
     "teamName": "Brazil",
@@ -240,15 +249,6 @@
     "flag": "🇲🇽",
     "goals": 2,
     "penalties": 0,
-    "rank": 4
-  },
-  {
-    "scorer": "Kai Havertz",
-    "teamId": "GER",
-    "teamName": "Germany",
-    "flag": "🇩🇪",
-    "goals": 2,
-    "penalties": 1,
     "rank": 4
   },
   {
@@ -522,6 +522,15 @@
     "rank": 5
   },
   {
+    "scorer": "Casemiro",
+    "teamId": "1C",
+    "teamName": "1C",
+    "flag": "",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Connor Metcalfe",
     "teamId": "AUS",
     "teamName": "Australia",
@@ -607,6 +616,15 @@
     "teamId": "CIV",
     "teamName": "Ivory Coast",
     "flag": "🇨🇮",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
+    "scorer": "Gabriel Martinelli",
+    "teamId": "1C",
+    "teamName": "1C",
+    "flag": "",
     "goals": 1,
     "penalties": 0,
     "rank": 5
@@ -774,6 +792,15 @@
     "rank": 5
   },
   {
+    "scorer": "Julio Enciso",
+    "teamId": "3A/B/C/D/F",
+    "teamName": "3A/B/C/D/F",
+    "flag": "",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Junya Ito",
     "teamId": "JPN",
     "teamName": "Japan",
@@ -787,6 +814,15 @@
     "teamId": "TUR",
     "teamName": "Turkey",
     "flag": "🇹🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
+    "scorer": "Kaishu Sano",
+    "teamId": "2F",
+    "teamName": "2F",
+    "flag": "",
     "goals": 1,
     "penalties": 0,
     "rank": 5

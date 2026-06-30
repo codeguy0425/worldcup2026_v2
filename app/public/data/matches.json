@@ -2375,6 +2375,20 @@
     "groundId": "boston",
     "num": 74,
     "stage": "r32",
+    "score1": 1,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 42,
+        "scorer": "Julio Enciso",
+        "teamId": "PAR"
+      },
+      {
+        "minute": 54,
+        "scorer": "Kai Havertz",
+        "teamId": "GER"
+      }
+    ],
     "team1Original": "GER",
     "team2Original": "3A/B/C/D/F"
   },
@@ -2405,6 +2419,26 @@
     "groundId": "houston",
     "num": 76,
     "stage": "r32",
+    "score1": 2,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 29,
+        "scorer": "Kaishu Sano",
+        "teamId": "JPN"
+      },
+      {
+        "minute": 56,
+        "scorer": "Casemiro",
+        "teamId": "BRA"
+      },
+      {
+        "minute": 90,
+        "scorer": "Gabriel Martinelli",
+        "teamId": "BRA",
+        "stoppageTime": 5
+      }
+    ],
     "team1Original": "1C",
     "team2Original": "2F"
   },
@@ -2594,12 +2628,14 @@
     "date": "2026-07-04",
     "time": "05:00",
     "timeUtc": "21:00",
-    "team1Id": "W74",
+    "team1Id": "PAR",
     "team2Id": "W77",
     "group": "",
     "groundId": "philadelphia",
     "num": 89,
-    "stage": "r16"
+    "stage": "r16",
+    "team1Original": "W74",
+    "team2Original": "W77"
   },
   {
     "id": 90,
@@ -2622,12 +2658,14 @@
     "date": "2026-07-05",
     "time": "04:00",
     "timeUtc": "20:00",
-    "team1Id": "W76",
+    "team1Id": "BRA",
     "team2Id": "W78",
     "group": "",
     "groundId": "new_york",
     "num": 91,
-    "stage": "r16"
+    "stage": "r16",
+    "team1Original": "W76",
+    "team2Original": "W78"
   },
   {
     "id": 92,
