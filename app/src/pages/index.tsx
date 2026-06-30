@@ -448,7 +448,7 @@ export function MatchPage() {
               </div>
             )}
           </div>
-          <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '200px' }}>
+          <div style={{ fontSize: '32px', fontWeight: 700, minWidth: '80px' }}>
             {hasScore ? fmtScore(m) : 'vs'}
           </div>
           <div style={{ textAlign: 'left', flex: 1 }}>
