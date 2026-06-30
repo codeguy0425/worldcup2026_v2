@@ -706,7 +706,8 @@ export function MatchPage() {
                       return (
                         <div key={i} style={{ lineHeight: 1.8 }}>
                           <span style={{ color: k.scored ? '#34d399' : '#fb7185', fontWeight: 600 }}>{k.scored ? '✓' : '✗'}</span>
-                          <span style={{ color: 'var(--text)', marginLeft: '4px' }}>{pname}</span>
+                          {k.no && <span style={{ fontSize: '9px', color: 'var(--text-muted)', marginLeft: '4px' }}>#{k.no}</span>}
+                          <span style={{ color: 'var(--text)', marginLeft: '2px' }}>{pname}</span>
                         </div>
                       )
                     })}
@@ -810,9 +811,9 @@ export function MatchPage() {
                       return (
                         <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--accent)', minWidth: '36px' }}>{t}'</span>
-                          <span style={{ color: 'var(--text-muted)', fontSize: '9px' }}>↓{pn(s.teamId, s.off.no)}</span>
+                          <span style={{ color: 'var(--text-muted)', fontSize: '9px' }}>↓#{s.off.no} {pn(s.teamId, s.off.no)}</span>
                           <span style={{ color: 'var(--text-muted)' }}>→</span>
-                          <span style={{ fontWeight: 500 }}>{pn(s.teamId, s.on.no)}</span>
+                          <span style={{ fontWeight: 500 }}>#{s.on.no} {pn(s.teamId, s.on.no)}</span>
                           <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{team?.flag || ''} {team?.name || s.teamId}</span>
                         </div>
                       )
