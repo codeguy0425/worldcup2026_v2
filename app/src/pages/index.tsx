@@ -610,7 +610,7 @@ export function MatchPage() {
           <div style={{ marginTop: '20px', padding: '0 4px' }}>
             <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px' }}>{t.table.goals}</h4>
             {/* Timeline bar */}
-            <div style={{ position: 'relative', height: '32px', background: 'rgba(30,41,59,.3)', borderRadius: '4px', marginBottom: '8px', overflow: 'visible' }}>
+            <div style={{ position: 'relative', height: '32px', background: 'rgba(30,41,59,.3)', borderRadius: '4px', marginBottom: '36px', overflow: 'visible' }}>
               {/* HT marker */}
               <div style={{ position: 'absolute', left: '50%', top: '-2px', bottom: '-2px', width: '1px', background: 'rgba(148,163,184,.3)' }} />
               {/* Goal dots */}
@@ -627,13 +627,19 @@ export function MatchPage() {
                 )
               })}
               {/* Minute labels */}
-              {[0, 15, 30, 45, 60, 75, 90].map(mn => (
-                <span key={mn} style={{
-                  position: 'absolute', left: `${(mn / lastMinute) * 100}%`, bottom: '-16px',
-                  transform: 'translateX(-50%)', fontSize: '8px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)',
-                }}>{mn}'</span>
-              ))}
+              {(() => {
+                const minLabels = [0, 15, 30, 45, 60, 75, 90]
+                if (lastMinute > 90) minLabels.push(105)
+                if (lastMinute > 105) minLabels.push(120)
+                return minLabels.map(mn => (
+                  <span key={mn} style={{
+                    position: 'absolute', left: `${(mn / lastMinute) * 100}%`, bottom: '-16px',
+                    transform: 'translateX(-50%)', fontSize: '8px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)',
+                  }}>{mn}'</span>
+                ))
+              })()}
               <span style={{ position: 'absolute', left: '50%', bottom: '-16px', transform: 'translateX(-50%)', fontSize: '8px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>HT</span>
+              {lastMinute > 90 && <span style={{ position: 'absolute', left: `${(90 / lastMinute) * 100}%`, bottom: '-32px', transform: 'translateX(-50%)', fontSize: '7px', color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontWeight: 600 }}>ET</span>}
             </div>
             {/* Goal list below timeline */}
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginTop: '20px' }}>
@@ -644,6 +650,7 @@ export function MatchPage() {
                     <span style={{ color: 'var(--text)' }}> {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + (overrideMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId).toLowerCase() + ':' + g.scorer.toLowerCase()) || g.scorer.toLowerCase())); if (n) return n; } return g.scorer; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> #{g.scorerNo}</span> : ''}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}> (og)</span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}> (P)</span>}
+                    {g.minute > 90 && <span style={{ color: 'var(--accent)', fontSize: '9px' }}> (ET)</span>}
                   </div>
                 ))}
               </div>
@@ -653,6 +660,7 @@ export function MatchPage() {
                     <span style={{ color: 'var(--text)' }}>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + (overrideMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId).toLowerCase() + ':' + g.scorer.toLowerCase()) || g.scorer.toLowerCase())); if (n) return n + ' '; } return g.scorer + ' '; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>#{g.scorerNo} </span> : ''}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}>(og) </span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}>(P) </span>}
+                    {g.minute > 90 && <span style={{ color: 'var(--accent)', fontSize: '9px' }}>(ET) </span>}
                     <span style={{ color: '#f472b6', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
                   </div>
                 ))}
