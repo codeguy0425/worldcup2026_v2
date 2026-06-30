@@ -460,7 +460,9 @@ export function TeamPage() {
                 const hasScore = m.score1 !== undefined
                 const teamScore = isHome ? m.score1 : m.score2
                 const oppScore = isHome ? m.score2 : m.score1
-                const won = hasScore && (teamScore! > oppScore! || (teamScore === oppScore && (m as any).penalty1 !== undefined && ((isHome ? (m as any).penalty1 > (m as any).penalty2) : (m as any).penalty2 > (m as any).penalty1)))
+                const penWon = hasScore && teamScore === oppScore && (m as any).penalty1 !== undefined &&
+                  ((isHome && (m as any).penalty1 > (m as any).penalty2) || (!isHome && (m as any).penalty2 > (m as any).penalty1))
+                const won = hasScore && (teamScore! > oppScore! || penWon)
                 const drew = hasScore && teamScore === oppScore && (m as any).penalty1 === undefined
 
                 return (
