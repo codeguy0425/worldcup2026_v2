@@ -478,39 +478,6 @@ export function MatchPage() {
           </div>
         </div>
 
-        {/* Penalty shootout */}
-        {(m as any).penalty1 !== undefined && (
-          <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
-            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center' }}>{t.match.penaltyShootout}</h4>
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <table style={{ borderCollapse: 'collapse', fontSize: '12px' }}>
-                <tbody>
-                  {[m.team1Id, m.team2Id].map(tid => {
-                    const team = teamMap.get(tid)
-                    const kicks = (m as any).penaltyShootout?.[tid] || []
-                    const seq = (m.penaltySequence?.[tid] || '').split('')
-                    return (
-                      <tr key={tid}>
-                        <td style={{ padding: '3px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap', fontSize: '11px' }}>{team?.flag} {team?.name || tid}</td>
-                        <td style={{ padding: '3px 6px' }}>
-                          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                            {seq.map((c: string, i: number) => (
-                              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
-                                <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
-                                {kicks[i] && <span style={{ fontSize: '8px', color: 'var(--text-muted)', maxWidth: '50px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{kicks[i].player}</span>}
-                              </div>
-                            ))}
-                          </div>
-                        </td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
         {/* Bracket path context */}
         {nextRoundInfo && nextRoundInfo.type === 'single' && (() => {
           const wId = `W${m.id}`
@@ -683,6 +650,39 @@ export function MatchPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* Penalty shootout */}
+        {(m as any).penalty1 !== undefined && (
+          <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
+            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center' }}>{t.match.penaltyShootout}</h4>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <table style={{ borderCollapse: 'collapse', fontSize: '12px' }}>
+                <tbody>
+                  {[m.team1Id, m.team2Id].map(tid => {
+                    const team = teamMap.get(tid)
+                    const kicks = (m as any).penaltyShootout?.[tid] || []
+                    const seq = (m.penaltySequence?.[tid] || '').split('')
+                    return (
+                      <tr key={tid}>
+                        <td style={{ padding: '3px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap', fontSize: '11px' }}>{team?.flag} {team?.name || tid}</td>
+                        <td style={{ padding: '3px 6px' }}>
+                          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                            {seq.map((c: string, i: number) => (
+                              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
+                                <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
+                                {kicks[i] && <span style={{ fontSize: '8px', color: 'var(--text-muted)', maxWidth: '50px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{kicks[i].player}</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
             </div>
           </div>
         )}
