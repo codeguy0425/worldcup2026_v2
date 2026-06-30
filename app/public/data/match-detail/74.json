@@ -196,168 +196,160 @@
       "minute": 55,
       "teamId": "PAR",
       "off": {
-        "no": 21
+        "no": 21,
+        "name": "Gabriel AVALOS"
       },
       "on": {
-        "no": 24
+        "no": 24,
+        "name": "Gustavo CABALLERO"
       }
     },
     {
       "minute": 57,
       "teamId": "PAR",
       "off": {
-        "no": 19
+        "no": 19,
+        "name": "Julio ENCISO"
       },
       "on": {
-        "no": 11
+        "no": 11,
+        "name": "MAURICIO"
       }
     },
     {
       "minute": 63,
       "teamId": "GER",
       "off": {
-        "no": 26
+        "no": 26,
+        "name": "Deniz UNDAV"
       },
       "on": {
-        "no": 10
+        "no": 10,
+        "name": "Jamal MUSIALA"
       }
     },
     {
       "minute": 79,
       "teamId": "GER",
       "off": {
-        "no": 5
+        "no": 5,
+        "name": "Aleksandar PAVLOVIC"
       },
       "on": {
-        "no": 3
+        "no": 3,
+        "name": "Waldemar ANTON"
       }
     },
     {
       "minute": 88,
       "teamId": "GER",
       "off": {
-        "no": 19
+        "no": 19,
+        "name": "Leroy SANE"
       },
       "on": {
-        "no": 11
+        "no": 11,
+        "name": "Nick WOLTEMADE"
       }
     },
     {
       "minute": 99,
       "teamId": "PAR",
       "off": {
-        "no": 4
+        "no": 4,
+        "name": "Juan Jose CACERES"
       },
       "on": {
-        "no": 20
+        "no": 20,
+        "name": "Braian OJEDA"
       }
     },
     {
       "minute": 99,
       "teamId": "PAR",
       "off": {
-        "no": 16
+        "no": 16,
+        "name": "Damian BOBADILLA"
       },
       "on": {
-        "no": 9
+        "no": 9,
+        "name": "Antonio SANABRIA"
       }
     },
     {
       "minute": 110,
       "teamId": "GER",
       "off": {
-        "no": 2
+        "no": 2,
+        "name": "Antonio RUEDIGER"
       },
       "on": {
-        "no": 24
+        "no": 24,
+        "name": "Malick THIAW"
       }
     },
     {
       "minute": 110,
       "teamId": "GER",
       "off": {
-        "no": 17
+        "no": 17,
+        "name": "Florian WIRTZ"
       },
       "on": {
-        "no": 20
+        "no": 20,
+        "name": "Nadiem AMIRI"
       }
     },
     {
       "minute": 120,
       "teamId": "PAR",
       "off": {
-        "no": 6
+        "no": 6,
+        "name": "Junior ALONSO"
       },
       "on": {
-        "no": 5
+        "no": 5,
+        "name": "Fabian BALBUENA"
       },
       "stoppageTime": 2
     }
   ],
   "cards": [
     {
-      "minute": 105,
-      "teamId": "GER",
-      "player": {
-        "no": 0
-      },
-      "card": "red"
-    },
-    {
       "minute": 106,
       "teamId": "GER",
       "player": {
-        "no": 7
+        "no": 7,
+        "name": "Kai HAVERTZ"
       },
-      "card": "red"
+      "card": "yellow"
     },
     {
       "minute": 115,
       "teamId": "GER",
       "player": {
-        "no": 10
+        "no": 10,
+        "name": "Jamal MUSIALA"
       },
-      "card": "red"
-    },
-    {
-      "minute": 116,
-      "teamId": "GER",
-      "player": {
-        "no": 0
-      },
-      "card": "red"
+      "card": "yellow"
     },
     {
       "minute": 65,
       "teamId": "PAR",
       "player": {
-        "no": 14
+        "no": 14,
+        "name": "Andres CUBAS"
       },
-      "card": "red"
-    },
-    {
-      "minute": 105,
-      "teamId": "PAR",
-      "player": {
-        "no": 0
-      },
-      "card": "red"
+      "card": "yellow"
     },
     {
       "minute": 117,
       "teamId": "PAR",
       "player": {
-        "no": 0
+        "no": 23,
+        "name": "Matias GALARZA"
       },
-      "card": "red"
-    },
-    {
-      "minute": 117,
-      "teamId": "PAR",
-      "player": {
-        "no": 23
-      },
-      "card": "red"
+      "card": "yellow"
     }
   ]
 }

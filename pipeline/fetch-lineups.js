@@ -10,6 +10,17 @@ function mapPosition(pos) {
   return ['GK', 'DF', 'MF', 'FW'][pos] || 'MF';
 }
 
+function getPlayerName(p) {
+  return p?.ShortName?.[0]?.Description || p?.PlayerName?.[0]?.Description || '';
+}
+
+function getCardType(raw) {
+  if (raw === 1) return 'yellow';
+  if (raw === 2) return 'second-yellow';
+  if (raw === 3) return 'red';
+  return 'yellow'; // default to yellow
+}
+
 function cleanMinute(raw) {
   if (!raw || raw === '') return null;
   if (raw === 'HT') return 45;
@@ -26,7 +37,7 @@ function getStoppage(raw) {
 function getCoach(team) {
   const hc = (team.Coaches || []).find(c => c.Role === 0);
   if (!hc) return '';
-  const name = hc.Alias?.[0]?.Description || hc.Name?.[0]?.Description || '';
+  const name = hc.ShortName?.[0]?.Description || hc.Name?.[0]?.Description || '';
   return name;
 }
 
@@ -75,7 +86,7 @@ async function processMatch(matchId, fifaUrl) {
     if (!minute) continue;
     const pOff = homePlayers.find(p => p.IdPlayer === ev.IdPlayerOff);
     const pOn = homePlayers.find(p => p.IdPlayer === ev.IdPlayerOn);
-    const s = { minute, teamId: homeCode, off: { no: pOff?.ShirtNumber || 0 }, on: { no: pOn?.ShirtNumber || 0 } };
+    const s = { minute, teamId: homeCode, off: { no: pOff?.ShirtNumber || 0, name: getPlayerName(pOff) }, on: { no: pOn?.ShirtNumber || 0, name: getPlayerName(pOn) } };
     const st = getStoppage(ev.Minute);
     if (st) s.stoppageTime = st;
     subs.push(s);
@@ -86,7 +97,7 @@ async function processMatch(matchId, fifaUrl) {
     if (!minute) continue;
     const pOff = awayPlayers.find(p => p.IdPlayer === ev.IdPlayerOff);
     const pOn = awayPlayers.find(p => p.IdPlayer === ev.IdPlayerOn);
-    const s = { minute, teamId: awayCode, off: { no: pOff?.ShirtNumber || 0 }, on: { no: pOn?.ShirtNumber || 0 } };
+    const s = { minute, teamId: awayCode, off: { no: pOff?.ShirtNumber || 0, name: getPlayerName(pOff) }, on: { no: pOn?.ShirtNumber || 0, name: getPlayerName(pOn) } };
     const st = getStoppage(ev.Minute);
     if (st) s.stoppageTime = st;
     subs.push(s);
@@ -101,16 +112,19 @@ async function processMatch(matchId, fifaUrl) {
     const minute = cleanMinute(ev.Minute);
     if (!minute) continue;
     const player = homePlayers.find(p => p.IdPlayer === ev.IdPlayer);
-    const cardType = ev.CardType === 1 ? 'yellow' : ev.CardType === 2 ? 'second-yellow' : 'red';
-    cards.push({ minute, teamId: homeCode, player: { no: player?.ShirtNumber || 0 }, card: cardType });
+    if (!player && !ev.IdCoach) continue; // skip if no player or coach
+    if (!player) continue; // coach bookings only, skip player-less entries
+    const cardType = getCardType(ev.Card);
+    cards.push({ minute, teamId: homeCode, player: { no: player?.ShirtNumber || 0, name: getPlayerName(player) }, card: cardType });
   }
   
   for (const ev of awayBookings) {
     const minute = cleanMinute(ev.Minute);
     if (!minute) continue;
     const player = awayPlayers.find(p => p.IdPlayer === ev.IdPlayer);
-    const cardType = ev.CardType === 1 ? 'yellow' : ev.CardType === 2 ? 'second-yellow' : 'red';
-    cards.push({ minute, teamId: awayCode, player: { no: player?.ShirtNumber || 0 }, card: cardType });
+    if (!player) continue; // skip coach bookings
+    const cardType = getCardType(ev.Card);
+    cards.push({ minute, teamId: awayCode, player: { no: player?.ShirtNumber || 0, name: getPlayerName(player) }, card: cardType });
   }
   
   subs.sort((a, b) => (a.minute - b.minute) || ((a.stoppageTime || 0) - (b.stoppageTime || 0)));
