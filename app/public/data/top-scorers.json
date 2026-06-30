@@ -441,6 +441,15 @@
     "rank": 5
   },
   {
+    "scorer": "Amad Diallo",
+    "teamId": "2E",
+    "teamName": "2E",
+    "flag": "",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Amine Gouiri",
     "teamId": "ALG",
     "teamName": "Algeria",
@@ -454,6 +463,15 @@
     "teamId": "CRO",
     "teamName": "Croatia",
     "flag": "🇭🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
+    "scorer": "Antonio Nusa",
+    "teamId": "2I",
+    "teamName": "2I",
+    "flag": "",
     "goals": 1,
     "penalties": 0,
     "rank": 5
@@ -589,6 +607,15 @@
     "teamId": "EGY",
     "teamName": "Egypt",
     "flag": "🇪🇬",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
+    "scorer": "Erling Haaland",
+    "teamId": "2I",
+    "teamName": "2I",
+    "flag": "",
     "goals": 1,
     "penalties": 0,
     "rank": 5

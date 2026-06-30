@@ -3307,7 +3307,26 @@
       "group": "",
       "groundId": "dallas",
       "num": 78,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 1,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 39,
+          "scorer": "Antonio Nusa",
+          "teamId": "2I"
+        },
+        {
+          "minute": 74,
+          "scorer": "Amad Diallo",
+          "teamId": "2E"
+        },
+        {
+          "minute": 86,
+          "scorer": "Erling Haaland",
+          "teamId": "2I"
+        }
+      ]
     },
     {
       "id": 79,

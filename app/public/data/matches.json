@@ -2618,6 +2618,25 @@
     "groundId": "dallas",
     "num": 78,
     "stage": "r32",
+    "score1": 1,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 39,
+        "scorer": "Antonio Nusa",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 74,
+        "scorer": "Amad Diallo",
+        "teamId": "CIV"
+      },
+      {
+        "minute": 86,
+        "scorer": "Erling Haaland",
+        "teamId": "NOR"
+      }
+    ],
     "team1Original": "2E",
     "team2Original": "2I"
   },
@@ -2808,7 +2827,7 @@
     "time": "04:00",
     "timeUtc": "20:00",
     "team1Id": "BRA",
-    "team2Id": "W78",
+    "team2Id": "NOR",
     "group": "",
     "groundId": "new_york",
     "num": 91,
