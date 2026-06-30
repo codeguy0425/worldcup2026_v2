@@ -811,9 +811,10 @@ export function MatchPage() {
                       return (
                         <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--accent)', minWidth: '36px' }}>{t}'</span>
-                          <span style={{ color: 'var(--text-muted)', fontSize: '9px' }}>↓{pn(s.teamId, s.off.no)} #{s.off.no}</span>
+                          <span style={{ color: 'var(--text-muted)', fontSize: '9px' }}>↓{pn(s.teamId, s.off.no)} <span style={{ fontFamily: 'var(--font-mono)' }}>#{s.off.no}</span></span>
                           <span style={{ color: 'var(--text-muted)' }}>→</span>
-                          <span style={{ fontWeight: 500 }}>{pn(s.teamId, s.on.no)} #{s.on.no}</span>
+                          <span style={{ fontWeight: 500 }}>{pn(s.teamId, s.on.no)}</span>
+                          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '9px', color: 'var(--text-muted)' }}>#{s.on.no}</span>
                           <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>{team?.flag || ''} {team?.name || s.teamId}</span>
                         </div>
                       )
