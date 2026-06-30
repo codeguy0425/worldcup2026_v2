@@ -530,10 +530,10 @@ export function MatchPage() {
             return null
           })()
           const winnerTeam = winnerTeamId ? teamMap.get(winnerTeamId) : null
-          const winnerLabel = winnerTeam ? `${winnerTeam.flag} ${winnerTeam.name}` : t.match.winner
+          const winnerLabel = winnerTeam ? winnerTeam.name : t.match.winner
           return (
             <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
-              <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{winnerLabel} → {nextRoundInfo.round}</div>
+              <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{t.match.winner} → {nextRoundInfo.round}</div>
               {nm && (
                 <Link to={`/match/${nm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
