@@ -3081,6 +3081,24 @@
         "GER": "NYYNYN",
         "PAR": "YYYNNY"
       },
+      "penaltyShootout": {
+        "GER": [
+          {"player": "Havertz", "scored": false},
+          {"player": "Kimmich", "scored": true},
+          {"player": "Musiala", "scored": true},
+          {"player": "Woltemade", "scored": false},
+          {"player": "Amiri", "scored": true},
+          {"player": "Tah", "scored": false}
+        ],
+        "PAR": [
+          {"player": "Maurício", "scored": true},
+          {"player": "G. Gómez", "scored": true},
+          {"player": "Galarza", "scored": true},
+          {"player": "Sanabria", "scored": false},
+          {"player": "Balbuena", "scored": false},
+          {"player": "Canale", "scored": true}
+        ]
+      },
       "goals": [
         {
           "minute": 42,

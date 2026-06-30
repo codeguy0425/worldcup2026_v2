@@ -64,6 +64,7 @@ function main() {
     if (m.score1 !== undefined) { entry.score1 = m.score1; entry.score2 = m.score2 }
     if (m.penalty1 !== undefined) { entry.penalty1 = m.penalty1; entry.penalty2 = m.penalty2 }
     if (m.penaltySequence) entry.penaltySequence = m.penaltySequence
+    if (m.penaltyShootout) entry.penaltyShootout = m.penaltyShootout
     if (m.goals) entry.goals = m.goals
     return entry
   })

@@ -61,6 +61,7 @@ interface Match {
   goals?: GoalEvent[]; timeUtc?: string
   team1Original?: string; team2Original?: string
   penaltySequence?: Record<string, string>
+  penaltyShootout?: Record<string, {player: string; scored: boolean}[]>
 }
 
 interface GoalEvent {
@@ -480,26 +481,30 @@ export function MatchPage() {
         {/* Penalty shootout */}
         {(m as any).penalty1 !== undefined && (
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
-            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px', textAlign: 'center' }}>Penalty Shootout</h4>
+            <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center' }}>{t.match.penaltyShootout}</h4>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <table style={{ borderCollapse: 'collapse', fontSize: '12px' }}>
                 <tbody>
-                  <tr>
-                    <td style={{ padding: '4px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap' }}>{t1?.flag} {t1?.name || m.team1Id}</td>
-                    <td style={{ padding: '4px 6px', letterSpacing: '3px' }}>
-                      {((m.penaltySequence?.[m.team1Id] || '').split('').map((c: string, i: number) => (
-                        <span key={i} style={{ display: 'inline-block', width: '14px', height: '14px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185', marginRight: '2px', verticalAlign: 'middle' }} />
-                      )))}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '4px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap' }}>{t2?.flag} {t2?.name || m.team2Id}</td>
-                    <td style={{ padding: '4px 6px', letterSpacing: '3px' }}>
-                      {((m.penaltySequence?.[m.team2Id] || '').split('').map((c: string, i: number) => (
-                        <span key={i} style={{ display: 'inline-block', width: '14px', height: '14px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185', marginRight: '2px', verticalAlign: 'middle' }} />
-                      )))}
-                    </td>
-                  </tr>
+                  {[m.team1Id, m.team2Id].map(tid => {
+                    const team = teamMap.get(tid)
+                    const kicks = (m as any).penaltyShootout?.[tid] || []
+                    const seq = (m.penaltySequence?.[tid] || '').split('')
+                    return (
+                      <tr key={tid}>
+                        <td style={{ padding: '3px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap', fontSize: '11px' }}>{team?.flag} {team?.name || tid}</td>
+                        <td style={{ padding: '3px 6px' }}>
+                          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
+                            {seq.map((c: string, i: number) => (
+                              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1px' }}>
+                                <span style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
+                                {kicks[i] && <span style={{ fontSize: '8px', color: 'var(--text-muted)', maxWidth: '50px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{kicks[i].player}</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    )
+                  })}
                 </tbody>
               </table>
             </div>
@@ -516,9 +521,19 @@ export function MatchPage() {
           const oppId = nm ? (isT1 ? nm.team2Id : nm.team1Id) : ''
           const oppTeam = oppId ? teamMap.get(oppId) : null
           const hm = nm ? allMatches.find(x => x.id === nm.matchId) : null
+          // Compute actual winner of this match
+          const winnerTeamId = (() => {
+            if (!hasScore) return null
+            if (m.score1! > m.score2!) return m.team1Id
+            if (m.score2! > m.score1!) return m.team2Id
+            if ((m as any).penalty1 !== undefined) return (m as any).penalty1 > (m as any).penalty2 ? m.team1Id : m.team2Id
+            return null
+          })()
+          const winnerTeam = winnerTeamId ? teamMap.get(winnerTeamId) : null
+          const winnerLabel = winnerTeam ? `${winnerTeam.flag} ${winnerTeam.name}` : t.match.winner
           return (
             <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
-              <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{t.match.winner} → {nextRoundInfo.round}</div>
+              <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{winnerLabel} → {nextRoundInfo.round}</div>
               {nm && (
                 <Link to={`/match/${nm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
@@ -527,7 +542,7 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px',
                 }}>
                   {hm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hm.date, hm.timeUtc, lang2)} ${toHkt(hm.date, hm.timeUtc).time}` })()}</span>}
-                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{t.match.winner}</span>
+                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{winnerLabel}</span>
                   <span>vs</span>
                   <span>{oppTeam ? `${oppTeam.flag} ${oppTeam.name}` : oppId}</span>
                 </Link>
