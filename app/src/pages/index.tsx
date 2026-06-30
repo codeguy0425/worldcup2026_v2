@@ -686,12 +686,15 @@ export function MatchPage() {
                 const kicks = (m as any).penaltyShootout?.[tid] || []
                 return (
                   <div key={tid} style={{ textAlign: 'left' }}>
-                    {kicks.map((k: {player: string; scored: boolean}, i: number) => (
-                      <div key={i} style={{ lineHeight: 1.8 }}>
-                        <span style={{ color: k.scored ? '#34d399' : '#fb7185', fontWeight: 600 }}>{k.scored ? '✓' : '✗'}</span>
-                        <span style={{ color: 'var(--text)', marginLeft: '4px' }}>{k.player}</span>
-                      </div>
-                    ))}
+                    {kicks.map((k: {player: string; no?: number; scored: boolean}, i: number) => {
+                      const pname = k.no ? (() => { const n = t.lang === 'En' ? (zhPlayerMap.get(tid + ':' + k.no) || enPlayerMap.get(tid + ':' + k.no)) : enPlayerMap.get(tid + ':' + k.no); return n || k.player })() : k.player
+                      return (
+                        <div key={i} style={{ lineHeight: 1.8 }}>
+                          <span style={{ color: k.scored ? '#34d399' : '#fb7185', fontWeight: 600 }}>{k.scored ? '✓' : '✗'}</span>
+                          <span style={{ color: 'var(--text)', marginLeft: '4px' }}>{pname}</span>
+                        </div>
+                      )
+                    })}
                   </div>
                 )
               })}

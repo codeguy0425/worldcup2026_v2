@@ -3083,20 +3083,20 @@
       },
       "penaltyShootout": {
         "GER": [
-          {"player": "Havertz", "scored": false},
-          {"player": "Kimmich", "scored": true},
-          {"player": "Musiala", "scored": true},
-          {"player": "Woltemade", "scored": false},
-          {"player": "Amiri", "scored": true},
-          {"player": "Tah", "scored": false}
+          {"player": "Havertz", "no": 7, "scored": false},
+          {"player": "Kimmich", "no": 6, "scored": true},
+          {"player": "Musiala", "no": 10, "scored": true},
+          {"player": "Woltemade", "no": 11, "scored": false},
+          {"player": "Amiri", "no": 20, "scored": true},
+          {"player": "Tah", "no": 4, "scored": false}
         ],
         "PAR": [
-          {"player": "Maurício", "scored": true},
-          {"player": "G. Gómez", "scored": true},
-          {"player": "Galarza", "scored": true},
-          {"player": "Sanabria", "scored": false},
-          {"player": "Balbuena", "scored": false},
-          {"player": "Canale", "scored": true}
+          {"player": "Maurício", "no": 11, "scored": true},
+          {"player": "G. Gómez", "no": 15, "scored": true},
+          {"player": "Galarza", "no": 23, "scored": true},
+          {"player": "Sanabria", "no": 9, "scored": false},
+          {"player": "Balbuena", "no": 5, "scored": false},
+          {"player": "Canale", "no": 13, "scored": true}
         ]
       },
       "goals": [
