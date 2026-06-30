@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { useJson } from '../hooks/useJson'
 import { toHkt, hktDateLabel } from '../hooks/hkTime'
+import { fmtScore } from '../pages/index'
 import { useState } from 'react'
 import { useLang } from '../hooks/LangProvider'
 
@@ -141,7 +142,11 @@ export function TeamPage() {
         const hasScore = bm.score1 !== undefined
         const teamScore = isT1 ? bm.score1 : bm.score2
         const oppScore = isT1 ? bm.score2 : bm.score1
-        const won = hasScore ? (teamScore! > oppScore!) : null
+        const won = hasScore ? (
+          teamScore! > oppScore! ||
+          (teamScore === oppScore && (bm as any).penalty1 !== undefined &&
+            (isT1 ? (bm as any).penalty1 > (bm as any).penalty2 : (bm as any).penalty2 > (bm as any).penalty1))
+        ) : null
 
         pathSteps.push({
           round: rn,
@@ -149,7 +154,7 @@ export function TeamPage() {
           oppId: oppId,
           oppName: oppTeam?.name || oppId,
           oppFlag: oppTeam?.flag || '',
-          score: hasScore ? `${teamScore}–${oppScore}` : '?–?',
+          score: hasScore ? fmtScore(bm as any) : '?–?',
           won,
         })
 
@@ -455,8 +460,8 @@ export function TeamPage() {
                 const hasScore = m.score1 !== undefined
                 const teamScore = isHome ? m.score1 : m.score2
                 const oppScore = isHome ? m.score2 : m.score1
-                const won = hasScore && teamScore! > oppScore!
-                const drew = hasScore && teamScore === oppScore
+                const won = hasScore && (teamScore! > oppScore! || (teamScore === oppScore && (m as any).penalty1 !== undefined && ((isHome ? (m as any).penalty1 > (m as any).penalty2) : (m as any).penalty2 > (m as any).penalty1)))
+                const drew = hasScore && teamScore === oppScore && (m as any).penalty1 === undefined
 
                 return (
                   <Link key={m.id} to={`/match/${m.id}`} style={{
@@ -479,7 +484,7 @@ export function TeamPage() {
                       <span>{team?.flag || ''}</span><b>{team?.name}</b>
                     </span>
                     <span style={{ fontWeight: 700, fontSize: '14px', minWidth: '28px', textAlign: 'center' }}>
-                      {hasScore ? `${teamScore}–${oppScore}` : 'vs'}
+                      {hasScore ? fmtScore(m as any) : 'vs'}
                     </span>
                     <span style={{ flex: 1 }}>
                       {opponent?.name || oppId} <span>{opponent?.flag || ''}</span>

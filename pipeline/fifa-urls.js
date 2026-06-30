@@ -84,7 +84,20 @@ const urlMap = {
   // R32
   73: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021518',  // RSA vs CAN
   74: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021513',  // GER vs PAR
+  75: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021522',  // NED vs MAR
   76: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021516',  // BRA vs JPN
+  77: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021523',  // FRA vs SWE
+  78: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021514',  // CIV vs NOR
+  79: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021520',  // MEX vs ECU
+  80: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021512',  // ENG vs COD
+  81: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021524',  // USA vs BIH
+  82: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021525',  // BEL vs SEN
+  83: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021526',  // POR vs CRO
+  84: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021519',  // ESP vs AUT
+  85: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021527',  // SUI vs ALG
+  86: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021521',  // ARG vs CPV
+  87: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021517',  // COL vs GHA
+  88: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021515',  // AUS vs EGY
 };
 
 module.exports = { urlMap };
