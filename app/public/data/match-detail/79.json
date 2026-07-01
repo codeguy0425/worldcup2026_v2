@@ -1,18 +1,336 @@
 {
   "team1": {
     "teamId": "MEX",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 16,
+        "pos": "FW"
+      },
+      {
+        "no": 25,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      }
+    ],
     "coach": "Javier Aguirre Onaindía"
   },
   "team2": {
     "teamId": "ECU",
     "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 23,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 13,
+        "pos": "FW"
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 24
+      }
+    ],
     "coach": "Sebastián Andrés Beccacece"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 59,
+      "teamId": "MEX",
+      "off": {
+        "no": 19,
+        "name": "Gilberto MORA"
+      },
+      "on": {
+        "no": 26,
+        "name": "Brian GUTIERREZ"
+      }
+    },
+    {
+      "minute": 59,
+      "teamId": "ECU",
+      "off": {
+        "no": 13,
+        "name": "Enner VALENCIA"
+      },
+      "on": {
+        "no": 11,
+        "name": "Kevin RODRIGUEZ"
+      }
+    },
+    {
+      "minute": 73,
+      "teamId": "MEX",
+      "off": {
+        "no": 9,
+        "name": "Raul JIMENEZ"
+      },
+      "on": {
+        "no": 11,
+        "name": "Santiago GIMENEZ"
+      }
+    },
+    {
+      "minute": 73,
+      "teamId": "MEX",
+      "off": {
+        "no": 7,
+        "name": "Luis ROMO"
+      },
+      "on": {
+        "no": 18,
+        "name": "Obed VARGAS"
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "ECU",
+      "off": {
+        "no": 9,
+        "name": "John YEBOAH"
+      },
+      "on": {
+        "no": 16,
+        "name": "Jordy CAICEDO"
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "ECU",
+      "off": {
+        "no": 20,
+        "name": "Nilson ANGULO"
+      },
+      "on": {
+        "no": 10,
+        "name": "Kendry PAEZ"
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "MEX",
+      "off": {
+        "no": 16,
+        "name": "Julian QUINONES"
+      },
+      "on": {
+        "no": 17,
+        "name": "Orbelin PINEDA"
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "MEX",
+      "off": {
+        "no": 25,
+        "name": "Roberto ALVARADO"
+      },
+      "on": {
+        "no": 15,
+        "name": "Israel REYES"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 45,
+      "teamId": "ECU",
+      "player": {
+        "no": 21,
+        "name": "Alan FRANCO"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 90,
+      "teamId": "ECU",
+      "player": {
+        "no": 10,
+        "name": "Kendry PAEZ"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 90,
+      "teamId": "ECU",
+      "player": {
+        "no": 3,
+        "name": "Piero HINCAPIE"
+      },
+      "card": "second-yellow"
+    },
+    {
+      "minute": 90,
+      "teamId": "ECU",
+      "player": {
+        "no": 23,
+        "name": "Moises CAICEDO"
+      },
+      "card": "yellow"
+    }
+  ]
 }
