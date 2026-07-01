@@ -70,12 +70,6 @@ function main() {
   })
   console.log(`   ⏳ matches.json (${cleanMatches.length} matches raw)`)
 
-  // 4. Top scorers
-  const scorers = computeTopScorers(matches, teamsMap)
-  writeJSON(resolve(DATA_DIR, 'top-scorers.json'), scorers)
-  const top = scorers[0]
-  console.log(`   ✅ top-scorers.json — ${scorers.length} players (top: ${top ? top.scorer + ' ' + top.goals + 'g' : 'none'})`)
-
   // 5. Third-placed
   const fairPlayScores = loadJSON(resolve(ROOT, 'data', 'fairplay.json')).scores || {}
   const thirdEntries = computeThirdPlaced(matches, teamsMap, groupLabels, fairPlayScores)
@@ -142,6 +136,12 @@ function main() {
   }
   writeJSON(resolve(DATA_DIR, 'matches.json'), cleanMatches)
   console.log(`   ✅ matches.json — ${cleanMatches.length} matches (${resolved} placeholders resolved)`)
+
+  // 4. Top scorers (AFTER bracket resolution so goal teamIds are resolved)
+  const scorers = computeTopScorers(cleanMatches, teamsMap)
+  writeJSON(resolve(DATA_DIR, 'top-scorers.json'), scorers)
+  const top = scorers[0]
+  console.log(`   ✅ top-scorers.json — ${scorers.length} players (top: ${top ? top.scorer + ' ' + top.goals + 'g' : 'none'})`)
 
   // 8. Teams + Stadiums (pass-through from source)
   writeJSON(resolve(DATA_DIR, 'teams.json'), { teams: source.teams })
