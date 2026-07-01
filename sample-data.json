@@ -3358,7 +3358,22 @@
       "group": "",
       "groundId": "mexico_city",
       "num": 79,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 2,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 31,
+          "scorer": "Julián Quiñones",
+          "teamId": "MEX"
+        },
+        {
+          "minute": 45,
+          "scorer": "Raúl Jiménez",
+          "teamId": "MEX",
+          "stoppageTime": 1
+        }
+      ]
     },
     {
       "id": 80,

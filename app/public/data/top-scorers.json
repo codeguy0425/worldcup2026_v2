@@ -126,6 +126,15 @@
     "rank": 4
   },
   {
+    "scorer": "Julián Quiñones",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
+    "goals": 3,
+    "penalties": 0,
+    "rank": 4
+  },
+  {
     "scorer": "Kai Havertz",
     "teamId": "GER",
     "teamName": "Germany",
@@ -261,15 +270,6 @@
     "rank": 5
   },
   {
-    "scorer": "Julián Quiñones",
-    "teamId": "MEX",
-    "teamName": "Mexico",
-    "flag": "🇲🇽",
-    "goals": 2,
-    "penalties": 0,
-    "rank": 5
-  },
-  {
     "scorer": "Leandro Trossard",
     "teamId": "BEL",
     "teamName": "Belgium",
@@ -328,6 +328,15 @@
     "teamId": "IRN",
     "teamName": "Iran",
     "flag": "🇮🇷",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
+    "scorer": "Raúl Jiménez",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
     "goals": 2,
     "penalties": 0,
     "rank": 5
@@ -1219,15 +1228,6 @@
     "teamId": "ALG",
     "teamName": "Algeria",
     "flag": "🇩🇿",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 6
-  },
-  {
-    "scorer": "Raúl Jiménez",
-    "teamId": "MEX",
-    "teamName": "Mexico",
-    "flag": "🇲🇽",
     "goals": 1,
     "penalties": 0,
     "rank": 6

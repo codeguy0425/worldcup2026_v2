@@ -106,6 +106,8 @@
         "team2Original": "3C/E/F/H/I",
         "team1Resolved": false,
         "team2Resolved": true,
+        "score1": 2,
+        "score2": 0,
         "groundId": "mexico_city"
       },
       {
@@ -271,7 +273,7 @@
         "round": "Round of 16",
         "date": "2026-07-06",
         "timeUtc": "00:00",
-        "team1Id": "W79",
+        "team1Id": "MEX",
         "team2Id": "W80",
         "team1Original": "W79",
         "team2Original": "W80",

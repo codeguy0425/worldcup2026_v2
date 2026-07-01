@@ -2671,6 +2671,21 @@
     "groundId": "mexico_city",
     "num": 79,
     "stage": "r32",
+    "score1": 2,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 31,
+        "scorer": "Julián Quiñones",
+        "teamId": "MEX"
+      },
+      {
+        "minute": 45,
+        "scorer": "Raúl Jiménez",
+        "teamId": "MEX",
+        "stoppageTime": 1
+      }
+    ],
     "team1Original": "MEX",
     "team2Original": "3C/E/F/H/I"
   },
@@ -2860,12 +2875,14 @@
     "date": "2026-07-06",
     "time": "08:00",
     "timeUtc": "00:00",
-    "team1Id": "W79",
+    "team1Id": "MEX",
     "team2Id": "W80",
     "group": "",
     "groundId": "mexico_city",
     "num": 92,
-    "stage": "r16"
+    "stage": "r16",
+    "team1Original": "W79",
+    "team2Original": "W80"
   },
   {
     "id": 93,
