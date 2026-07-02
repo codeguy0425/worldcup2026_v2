@@ -3418,7 +3418,21 @@
       "group": "",
       "groundId": "san_francisco",
       "num": 81,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 2,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 45,
+          "scorer": "Folarin Balogun",
+          "teamId": "USA"
+        },
+        {
+          "minute": 82,
+          "scorer": "Malik Tillman",
+          "teamId": "USA"
+        }
+      ]
     },
     {
       "id": 82,
