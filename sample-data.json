@@ -3386,7 +3386,26 @@
       "group": "",
       "groundId": "atlanta",
       "num": 80,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 2,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 7,
+          "scorer": "Brian Cipenga",
+          "teamId": "3E/H/I/J/K"
+        },
+        {
+          "minute": 75,
+          "scorer": "Harry Kane",
+          "teamId": "1L"
+        },
+        {
+          "minute": 86,
+          "scorer": "Harry Kane",
+          "teamId": "1L"
+        }
+      ]
     },
     {
       "id": 81,
@@ -3412,7 +3431,38 @@
       "group": "",
       "groundId": "seattle",
       "num": 82,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 2,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 25,
+          "scorer": "Habib Diarra",
+          "teamId": "3A/E/H/I/J"
+        },
+        {
+          "minute": 51,
+          "scorer": "Ismaïla Sarr",
+          "teamId": "3A/E/H/I/J"
+        },
+        {
+          "minute": 86,
+          "scorer": "Romelu Lukaku",
+          "teamId": "1G"
+        },
+        {
+          "minute": 89,
+          "scorer": "Youri Tielemans",
+          "teamId": "1G"
+        },
+        {
+          "minute": 120,
+          "scorer": "Youri Tielemans",
+          "teamId": "1G",
+          "stoppageTime": 5,
+          "penalty": true
+        }
+      ]
     },
     {
       "id": 83,

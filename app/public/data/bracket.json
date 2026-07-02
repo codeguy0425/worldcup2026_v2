@@ -121,6 +121,8 @@
         "team2Original": "3E/H/I/J/K",
         "team1Resolved": true,
         "team2Resolved": true,
+        "score1": 2,
+        "score2": 1,
         "groundId": "atlanta"
       },
       {
@@ -147,6 +149,8 @@
         "team2Original": "3A/E/H/I/J",
         "team1Resolved": true,
         "team2Resolved": true,
+        "score1": 2,
+        "score2": 2,
         "groundId": "seattle"
       },
       {
@@ -274,7 +278,7 @@
         "date": "2026-07-06",
         "timeUtc": "00:00",
         "team1Id": "MEX",
-        "team2Id": "W80",
+        "team2Id": "ENG",
         "team1Original": "W79",
         "team2Original": "W80",
         "team1Resolved": false,
@@ -300,7 +304,7 @@
         "date": "2026-07-07",
         "timeUtc": "00:00",
         "team1Id": "W81",
-        "team2Id": "W82",
+        "team2Id": "SEN",
         "team1Original": "W81",
         "team2Original": "W82",
         "team1Resolved": false,
