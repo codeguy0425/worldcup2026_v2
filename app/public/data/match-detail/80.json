@@ -1,18 +1,331 @@
 {
   "team1": {
     "teamId": "ENG",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 13
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 22
+      }
+    ],
     "coach": "Thomas Tuchel"
   },
   "team2": {
     "teamId": "COD",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-4-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 16
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 23
+      }
+    ],
     "coach": "Sébastien Desabre"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 60,
+      "teamId": "ENG",
+      "off": {
+        "no": 20,
+        "name": "Noni MADUEKE"
+      },
+      "on": {
+        "no": 7,
+        "name": "Bukayo SAKA"
+      }
+    },
+    {
+      "minute": 60,
+      "teamId": "ENG",
+      "off": {
+        "no": 11,
+        "name": "Marcus RASHFORD"
+      },
+      "on": {
+        "no": 18,
+        "name": "Anthony GORDON"
+      }
+    },
+    {
+      "minute": 64,
+      "teamId": "COD",
+      "off": {
+        "no": 7,
+        "name": "Nathanael MBUKU"
+      },
+      "on": {
+        "no": 13,
+        "name": "Meschack ELIA"
+      }
+    },
+    {
+      "minute": 70,
+      "teamId": "ENG",
+      "off": {
+        "no": 25,
+        "name": "Djed SPENCE"
+      },
+      "on": {
+        "no": 21,
+        "name": "Eberechi EZE"
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "COD",
+      "off": {
+        "no": 9,
+        "name": "Brian CIPENGA"
+      },
+      "on": {
+        "no": 10,
+        "name": "Theo BONGONDA"
+      }
+    },
+    {
+      "minute": 76,
+      "teamId": "COD",
+      "off": {
+        "no": 6,
+        "name": "Ngalayel MUKAU"
+      },
+      "on": {
+        "no": 25,
+        "name": "Edo KAYEMBE"
+      }
+    },
+    {
+      "minute": 89,
+      "teamId": "COD",
+      "off": {
+        "no": 8,
+        "name": "Samuel MOUTOUSSAMY"
+      },
+      "on": {
+        "no": 19,
+        "name": "Fiston MAYELE"
+      }
+    },
+    {
+      "minute": 89,
+      "teamId": "COD",
+      "off": {
+        "no": 26,
+        "name": "Arthur MASUAKU"
+      },
+      "on": {
+        "no": 12,
+        "name": "Joris KAYEMBE"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "ENG",
+      "off": {
+        "no": 4,
+        "name": "Declan RICE"
+      },
+      "on": {
+        "no": 5,
+        "name": "John STONES"
+      },
+      "stoppageTime": 1
+    }
+  ],
+  "cards": [
+    {
+      "minute": 19,
+      "teamId": "ENG",
+      "player": {
+        "no": 10,
+        "name": "Jude BELLINGHAM"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 27,
+      "teamId": "COD",
+      "player": {
+        "no": 14,
+        "name": "Noah SADIKI"
+      },
+      "card": "yellow"
+    }
+  ]
 }

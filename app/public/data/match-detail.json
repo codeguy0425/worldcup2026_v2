@@ -24506,56 +24506,994 @@
   "80": {
     "team1": {
       "teamId": "ENG",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 25,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 13
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 22
+        }
+      ],
       "coach": "Thomas Tuchel"
     },
     "team2": {
       "teamId": "COD",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-4-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 16
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 23
+        }
+      ],
       "coach": "Sébastien Desabre"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 60,
+        "teamId": "ENG",
+        "off": {
+          "no": 20,
+          "name": "Noni MADUEKE"
+        },
+        "on": {
+          "no": 7,
+          "name": "Bukayo SAKA"
+        }
+      },
+      {
+        "minute": 60,
+        "teamId": "ENG",
+        "off": {
+          "no": 11,
+          "name": "Marcus RASHFORD"
+        },
+        "on": {
+          "no": 18,
+          "name": "Anthony GORDON"
+        }
+      },
+      {
+        "minute": 64,
+        "teamId": "COD",
+        "off": {
+          "no": 7,
+          "name": "Nathanael MBUKU"
+        },
+        "on": {
+          "no": 13,
+          "name": "Meschack ELIA"
+        }
+      },
+      {
+        "minute": 70,
+        "teamId": "ENG",
+        "off": {
+          "no": 25,
+          "name": "Djed SPENCE"
+        },
+        "on": {
+          "no": 21,
+          "name": "Eberechi EZE"
+        }
+      },
+      {
+        "minute": 76,
+        "teamId": "COD",
+        "off": {
+          "no": 9,
+          "name": "Brian CIPENGA"
+        },
+        "on": {
+          "no": 10,
+          "name": "Theo BONGONDA"
+        }
+      },
+      {
+        "minute": 76,
+        "teamId": "COD",
+        "off": {
+          "no": 6,
+          "name": "Ngalayel MUKAU"
+        },
+        "on": {
+          "no": 25,
+          "name": "Edo KAYEMBE"
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "COD",
+        "off": {
+          "no": 8,
+          "name": "Samuel MOUTOUSSAMY"
+        },
+        "on": {
+          "no": 19,
+          "name": "Fiston MAYELE"
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "COD",
+        "off": {
+          "no": 26,
+          "name": "Arthur MASUAKU"
+        },
+        "on": {
+          "no": 12,
+          "name": "Joris KAYEMBE"
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "ENG",
+        "off": {
+          "no": 4,
+          "name": "Declan RICE"
+        },
+        "on": {
+          "no": 5,
+          "name": "John STONES"
+        },
+        "stoppageTime": 1
+      }
+    ],
+    "cards": [
+      {
+        "minute": 19,
+        "teamId": "ENG",
+        "player": {
+          "no": 10,
+          "name": "Jude BELLINGHAM"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 27,
+        "teamId": "COD",
+        "player": {
+          "no": 14,
+          "name": "Noah SADIKI"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "81": {
     "team1": {
       "teamId": "USA",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "3-5-2",
+      "startingXI": [
+        {
+          "no": 24,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 17,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 26
+        }
+      ],
       "coach": "Mauricio POCHETTINO"
     },
     "team2": {
       "teamId": "BIH",
       "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 7,
+          "pos": "DF"
+        },
+        {
+          "no": 18,
+          "pos": "DF"
+        },
+        {
+          "no": 21,
+          "pos": "DF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 11,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 19,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 25
+        }
+      ],
       "coach": "Sergej BARBAREZ"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 51,
+        "teamId": "BIH",
+        "off": {
+          "no": 11,
+          "name": "Edin DZEKO"
+        },
+        "on": {
+          "no": 26,
+          "name": "Ermin MAHMIC"
+        }
+      },
+      {
+        "minute": 51,
+        "teamId": "BIH",
+        "off": {
+          "no": 8,
+          "name": "Armin GIGOVIC"
+        },
+        "on": {
+          "no": 20,
+          "name": "Esmir BAJRAKTAREVIC"
+        }
+      },
+      {
+        "minute": 51,
+        "teamId": "BIH",
+        "off": {
+          "no": 14,
+          "name": "Ivan SUNJIC"
+        },
+        "on": {
+          "no": 6,
+          "name": "Benjamin TAHIROVIC"
+        }
+      },
+      {
+        "minute": 75,
+        "teamId": "BIH",
+        "off": {
+          "no": 18,
+          "name": "Nikola KATIC"
+        },
+        "on": {
+          "no": 15,
+          "name": "Amar MEMIC"
+        }
+      },
+      {
+        "minute": 75,
+        "teamId": "BIH",
+        "off": {
+          "no": 5,
+          "name": "Sead KOLASINAC"
+        },
+        "on": {
+          "no": 23,
+          "name": "Haris TABAKOVIC"
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "USA",
+        "off": {
+          "no": 2,
+          "name": "Sergino DEST"
+        },
+        "on": {
+          "no": 14,
+          "name": "Sebastian BERHALTER"
+        }
+      },
+      {
+        "minute": 87,
+        "teamId": "USA",
+        "off": {
+          "no": 10,
+          "name": "Christian PULISIC"
+        },
+        "on": {
+          "no": 9,
+          "name": "Ricardo PEPI"
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "USA",
+        "off": {
+          "no": 8,
+          "name": "Weston McKENNIE"
+        },
+        "on": {
+          "no": 7,
+          "name": "Giovanni REYNA"
+        },
+        "stoppageTime": 5
+      }
+    ],
+    "cards": [
+      {
+        "minute": 64,
+        "teamId": "USA",
+        "player": {
+          "no": 20,
+          "name": "Folarin BALOGUN"
+        },
+        "card": "second-yellow"
+      },
+      {
+        "minute": 80,
+        "teamId": "BIH",
+        "player": {
+          "no": 21,
+          "name": "Stjepan RADELJIC"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "82": {
     "team1": {
       "teamId": "BEL",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 21,
+          "pos": "DF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        },
+        {
+          "no": 17,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 26
+        }
+      ],
       "coach": "Rudi Garcia"
     },
     "team2": {
       "teamId": "SEN",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-3-3",
+      "startingXI": [
+        {
+          "no": 23,
+          "pos": "GK"
+        },
+        {
+          "no": 14,
+          "pos": "DF"
+        },
+        {
+          "no": 15,
+          "pos": "DF"
+        },
+        {
+          "no": 19,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 21,
+          "pos": "MF"
+        },
+        {
+          "no": 26,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 13,
+          "pos": "FW"
+        },
+        {
+          "no": 18,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 20
+        }
+      ],
       "coach": "Pape THIAW"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 56,
+        "teamId": "BEL",
+        "off": {
+          "no": 11,
+          "name": "Jeremy DOKU"
+        },
+        "on": {
+          "no": 14,
+          "name": "Dodi LUKEBAKIO"
+        }
+      },
+      {
+        "minute": 56,
+        "teamId": "BEL",
+        "off": {
+          "no": 7,
+          "name": "Kevin DE BRUYNE"
+        },
+        "on": {
+          "no": 23,
+          "name": "Nicolas RASKIN"
+        }
+      },
+      {
+        "minute": 63,
+        "teamId": "BEL",
+        "off": {
+          "no": 20,
+          "name": "Hans VANAKEN"
+        },
+        "on": {
+          "no": 19,
+          "name": "Diego MOREIRA"
+        }
+      },
+      {
+        "minute": 66,
+        "teamId": "SEN",
+        "off": {
+          "no": 26,
+          "name": "Pape GUEYE"
+        },
+        "on": {
+          "no": 8,
+          "name": "Lamine CAMARA"
+        }
+      },
+      {
+        "minute": 73,
+        "teamId": "SEN",
+        "off": {
+          "no": 13,
+          "name": "Iliman NDIAYE"
+        },
+        "on": {
+          "no": 20,
+          "name": "Ibrahim MBAYE"
+        }
+      },
+      {
+        "minute": 73,
+        "teamId": "SEN",
+        "off": {
+          "no": 21,
+          "name": "Habib DIARRA"
+        },
+        "on": {
+          "no": 17,
+          "name": "Pape Matar SARR"
+        }
+      },
+      {
+        "minute": 78,
+        "teamId": "BEL",
+        "off": {
+          "no": 5,
+          "name": "Maxim DE CUYPER"
+        },
+        "on": {
+          "no": 15,
+          "name": "Thomas MEUNIER"
+        }
+      },
+      {
+        "minute": 93,
+        "teamId": "SEN",
+        "off": {
+          "no": 10,
+          "name": "Sadio MANE"
+        },
+        "on": {
+          "no": 11,
+          "name": "Nicolas JACKSON"
+        }
+      },
+      {
+        "minute": 93,
+        "teamId": "SEN",
+        "off": {
+          "no": 14,
+          "name": "Ismail JAKOBS"
+        },
+        "on": {
+          "no": 25,
+          "name": "El Hadji Malick DIOUF"
+        }
+      },
+      {
+        "minute": 95,
+        "teamId": "SEN",
+        "off": {
+          "no": 5,
+          "name": "Idrissa Gana GUEYE"
+        },
+        "on": {
+          "no": 22,
+          "name": "Bara Sapoko NDIAYE"
+        }
+      },
+      {
+        "minute": 109,
+        "teamId": "BEL",
+        "off": {
+          "no": 10,
+          "name": "Leandro TROSSARD"
+        },
+        "on": {
+          "no": 24,
+          "name": "Amadou ONANA"
+        }
+      }
+    ],
+    "cards": [
+      {
+        "minute": 64,
+        "teamId": "BEL",
+        "player": {
+          "no": 4,
+          "name": "Brandon MECHELE"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 67,
+        "teamId": "SEN",
+        "player": {
+          "no": 8,
+          "name": "Lamine CAMARA"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "83": {
     "team1": {

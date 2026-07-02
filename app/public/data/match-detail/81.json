@@ -1,18 +1,313 @@
 {
   "team1": {
     "teamId": "USA",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "3-5-2",
+    "startingXI": [
+      {
+        "no": 24,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 17,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Mauricio POCHETTINO"
   },
   "team2": {
     "teamId": "BIH",
     "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "DF"
+      },
+      {
+        "no": 18,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 19,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 25
+      }
+    ],
     "coach": "Sergej BARBAREZ"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 51,
+      "teamId": "BIH",
+      "off": {
+        "no": 11,
+        "name": "Edin DZEKO"
+      },
+      "on": {
+        "no": 26,
+        "name": "Ermin MAHMIC"
+      }
+    },
+    {
+      "minute": 51,
+      "teamId": "BIH",
+      "off": {
+        "no": 8,
+        "name": "Armin GIGOVIC"
+      },
+      "on": {
+        "no": 20,
+        "name": "Esmir BAJRAKTAREVIC"
+      }
+    },
+    {
+      "minute": 51,
+      "teamId": "BIH",
+      "off": {
+        "no": 14,
+        "name": "Ivan SUNJIC"
+      },
+      "on": {
+        "no": 6,
+        "name": "Benjamin TAHIROVIC"
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "BIH",
+      "off": {
+        "no": 18,
+        "name": "Nikola KATIC"
+      },
+      "on": {
+        "no": 15,
+        "name": "Amar MEMIC"
+      }
+    },
+    {
+      "minute": 75,
+      "teamId": "BIH",
+      "off": {
+        "no": 5,
+        "name": "Sead KOLASINAC"
+      },
+      "on": {
+        "no": 23,
+        "name": "Haris TABAKOVIC"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "USA",
+      "off": {
+        "no": 2,
+        "name": "Sergino DEST"
+      },
+      "on": {
+        "no": 14,
+        "name": "Sebastian BERHALTER"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "USA",
+      "off": {
+        "no": 10,
+        "name": "Christian PULISIC"
+      },
+      "on": {
+        "no": 9,
+        "name": "Ricardo PEPI"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "USA",
+      "off": {
+        "no": 8,
+        "name": "Weston McKENNIE"
+      },
+      "on": {
+        "no": 7,
+        "name": "Giovanni REYNA"
+      },
+      "stoppageTime": 5
+    }
+  ],
+  "cards": [
+    {
+      "minute": 64,
+      "teamId": "USA",
+      "player": {
+        "no": 20,
+        "name": "Folarin BALOGUN"
+      },
+      "card": "second-yellow"
+    },
+    {
+      "minute": 80,
+      "teamId": "BIH",
+      "player": {
+        "no": 21,
+        "name": "Stjepan RADELJIC"
+      },
+      "card": "yellow"
+    }
+  ]
 }
