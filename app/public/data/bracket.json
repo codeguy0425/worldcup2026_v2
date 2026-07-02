@@ -151,7 +151,7 @@
         "team2Original": "3A/E/H/I/J",
         "team1Resolved": true,
         "team2Resolved": true,
-        "score1": 2,
+        "score1": 3,
         "score2": 2,
         "groundId": "seattle"
       },
@@ -306,7 +306,7 @@
         "date": "2026-07-07",
         "timeUtc": "00:00",
         "team1Id": "USA",
-        "team2Id": "SEN",
+        "team2Id": "BEL",
         "team1Original": "W81",
         "team2Original": "W82",
         "team1Resolved": false,

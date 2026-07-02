@@ -3000,7 +3000,7 @@
     "groundId": "seattle",
     "num": 82,
     "stage": "r32",
-    "score1": 2,
+    "score1": 3,
     "score2": 2,
     "goals": [
       {
@@ -3209,7 +3209,7 @@
     "time": "08:00",
     "timeUtc": "00:00",
     "team1Id": "USA",
-    "team2Id": "SEN",
+    "team2Id": "BEL",
     "group": "",
     "groundId": "seattle",
     "num": 94,

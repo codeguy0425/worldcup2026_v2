@@ -84,10 +84,25 @@ async function main() {
     }
     if (!ofm || !ofm.score?.ft) continue
 
-    const [s1, s2] = ofm.score.ft
+    // Use ET score if available (decides the winner), otherwise FT
+    const scoreToUse = ofm.score.et || ofm.score.ft
+    const [s1, s2] = scoreToUse
+    let changed = false
     if (match.score1 !== s1 || match.score2 !== s2) {
       match.score1 = s1
       match.score2 = s2
+      changed = true
+    }
+    // Capture penalty shootout data
+    if (ofm.score.p) {
+      const pen1 = ofm.score.p[0], pen2 = ofm.score.p[1]
+      if (match.penalty1 !== pen1 || match.penalty2 !== pen2) {
+        match.penalty1 = pen1
+        match.penalty2 = pen2
+        changed = true
+      }
+    }
+    if (changed) {
       match.goals = buildGoals(ofm, match.team1Id, match.team2Id)
       updated++
     }

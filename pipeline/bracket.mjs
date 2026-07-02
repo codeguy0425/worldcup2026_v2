@@ -88,7 +88,13 @@ export function computeBracket(matches, teamsMap, groupLabels, fairPlayScores = 
 
       if (hasRes) {
         if (m.score1 > m.score2) { resolvedWinners[m.id] = resolvedT1; resolvedLosers[m.id] = resolvedT2 }
-        else { resolvedWinners[m.id] = resolvedT2; resolvedLosers[m.id] = resolvedT1 }
+        else if (m.score1 < m.score2) { resolvedWinners[m.id] = resolvedT2; resolvedLosers[m.id] = resolvedT1 }
+        else if (m.penalty1 !== undefined && m.penalty2 !== undefined) {
+          // Penalty shootout decides the winner when scores are tied
+          if (m.penalty1 > m.penalty2) { resolvedWinners[m.id] = resolvedT1; resolvedLosers[m.id] = resolvedT2 }
+          else { resolvedWinners[m.id] = resolvedT2; resolvedLosers[m.id] = resolvedT1 }
+        }
+        // If still tied and no penalties data, fall through — leave unresolved
       }
 
       return {
