@@ -273,8 +273,6 @@ export function MatchPage() {
   const enMap2 = useJson<any[]>(enPath2)
   const zhMap1 = useJson<any[]>(zhPath1)
   const zhMap2 = useJson<any[]>(zhPath2)
-  const { data: scorerNameData } = useJson<Record<string, string>>('/data/scorer-names.json')
-  const scorerNameMap = new Map(Object.entries(scorerNameData ?? {}))
   const { data: overrideData } = useJson<any>('/data/scorer-no-override.json')
   const overrideMap = new Map<string, number>()
   if (overrideData) {
@@ -292,6 +290,14 @@ export function MatchPage() {
   const team2En = enMap2.data
   const team1Zh = zhMap1.data
   const team2Zh = zhMap2.data
+
+  // Build scorer name lookup from per-team ZH squad data (replaces scorer-names.json)
+  const zhScorerMap = new Map<string, string>()
+  if (curMatch) {
+    if (team1Zh) for (const p of team1Zh) zhScorerMap.set(curMatch.team1Id + ':' + p.no, p.name)
+    if (team2Zh) for (const p of team2Zh) zhScorerMap.set(curMatch.team2Id + ':' + p.no, p.name)
+  }
+
   if (curMatch) {
     if (team1En) for (const p of team1En) enPlayerMap.set(curMatch.team1Id + ':' + p.no, p.name)
     if (team2En) for (const p of team2En) enPlayerMap.set(curMatch.team2Id + ':' + p.no, p.name)
@@ -633,7 +639,7 @@ export function MatchPage() {
                     background: g.ownGoal ? (g.teamId !== m.team1Id ? '#22d3ee' : '#f472b6') : (g.teamId === m.team1Id ? '#22d3ee' : '#f472b6'),
                     border: '2px solid rgba(15,23,42,.6)',
                     zIndex: 2,
-                  }} title={`${(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; if (lang2 === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + (overrideMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId).toLowerCase() + ':' + g.scorer.toLowerCase()) || g.scorer.toLowerCase())); if (n) return n; } return g.scorer; })()} ${g.minute}'`} />
+                  }} title={`${(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; if (lang2 === 'zh') { const n = g.scorerNo !== undefined ? zhScorerMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : null; if (n) return n; } return g.scorer; })()} ${g.minute}'`} />
                 )
               })}
               {/* Minute labels */}
@@ -657,7 +663,7 @@ export function MatchPage() {
                 {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team2Id : g.teamId === m.team1Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
                     <span style={{ color: '#22d3ee', fontWeight: 600 }}>{g.minute}'{g.stoppageTime ? `+${g.stoppageTime}` : ''}</span>
-                    <span style={{ color: 'var(--text)' }}> {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + (overrideMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId).toLowerCase() + ':' + g.scorer.toLowerCase()) || g.scorer.toLowerCase())); if (n) return n; } return g.scorer; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> #{g.scorerNo}</span> : ''}</span>
+                    <span style={{ color: 'var(--text)' }}> {(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? zhScorerMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : null; if (n) return n; } return g.scorer; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> #{g.scorerNo}</span> : ''}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}> (og)</span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}> (P)</span>}
                     {g.minute > 90 && <span style={{ color: 'var(--accent)', fontSize: '9px' }}> (ET)</span>}
@@ -667,7 +673,7 @@ export function MatchPage() {
               <div style={{ textAlign: 'right' }}>
                 {m.goals!.filter(g => (g.ownGoal ? g.teamId === m.team1Id : g.teamId === m.team2Id)).map((g, i) => (
                   <div key={i} style={{ marginBottom: '3px' }}>
-                    <span style={{ color: 'var(--text)' }}>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : scorerNameMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + (overrideMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId).toLowerCase() + ':' + g.scorer.toLowerCase()) || g.scorer.toLowerCase())); if (n) return n + ' '; } return g.scorer + ' '; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>#{g.scorerNo} </span> : ''}</span>
+                    <span style={{ color: 'var(--text)' }}>{(() => { const lang = t.lang === 'En' ? 'zh' : 'en'; if (lang === 'zh') { const n = g.scorerNo !== undefined ? zhScorerMap.get((g.ownGoal ? (g.teamId === m.team1Id ? m.team2Id : m.team1Id) : g.teamId) + ':' + g.scorerNo) : null; if (n) return n + ' '; } return g.scorer + ' '; })()}{g.scorerNo !== undefined ? <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>#{g.scorerNo} </span> : ''}</span>
                     {g.ownGoal && <span style={{ color: 'var(--text-muted)' }}>(og) </span>}
                     {g.penalty && <span style={{ color: 'var(--text-muted)' }}>(P) </span>}
                     {g.minute > 90 && <span style={{ color: 'var(--accent)', fontSize: '9px' }}>(ET) </span>}
