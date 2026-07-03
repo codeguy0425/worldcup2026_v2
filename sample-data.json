@@ -3502,7 +3502,26 @@
       "group": "",
       "groundId": "los_angeles",
       "num": 84,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 3,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 36,
+          "scorer": "Mikel Oyarzabal",
+          "teamId": "1H"
+        },
+        {
+          "minute": 66,
+          "scorer": "Pedro Porro",
+          "teamId": "1H"
+        },
+        {
+          "minute": 89,
+          "scorer": "Mikel Oyarzabal",
+          "teamId": "1H"
+        }
+      ]
     },
     {
       "id": 85,

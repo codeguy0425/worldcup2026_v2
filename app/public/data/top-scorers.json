@@ -45,6 +45,15 @@
     "rank": 3
   },
   {
+    "scorer": "Mikel Oyarzabal",
+    "teamId": "ESP",
+    "teamName": "Spain",
+    "flag": "🇪🇸",
+    "goals": 4,
+    "penalties": 0,
+    "rank": 3
+  },
+  {
     "scorer": "Ousmane Dembélé",
     "teamId": "FRA",
     "teamName": "France",
@@ -301,15 +310,6 @@
     "teamId": "URU",
     "teamName": "Uruguay",
     "flag": "🇺🇾",
-    "goals": 2,
-    "penalties": 0,
-    "rank": 5
-  },
-  {
-    "scorer": "Mikel Oyarzabal",
-    "teamId": "ESP",
-    "teamName": "Spain",
-    "flag": "🇪🇸",
     "goals": 2,
     "penalties": 0,
     "rank": 5
@@ -1219,6 +1219,15 @@
     "teamId": "TUN",
     "teamName": "Tunisia",
     "flag": "🇹🇳",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 6
+  },
+  {
+    "scorer": "Pedro Porro",
+    "teamId": "ESP",
+    "teamName": "Spain",
+    "flag": "🇪🇸",
     "goals": 1,
     "penalties": 0,
     "rank": 6
