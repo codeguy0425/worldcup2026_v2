@@ -172,11 +172,13 @@ async function main() {
   const target = process.argv[2];
   
   if (target === 'all') {
-    const done = new Set(Object.keys(matchDetail));
-    let added = 0, skipped = 0, failed = 0;
+    const existing = matchDetail;
+    let added = 0, skipped = 0, refetched = 0, failed = 0;
     
     for (const [matchId, fifaUrl] of Object.entries(urlMap)) {
-      if (done.has(String(matchId))) {
+      // Skip only if already has real lineup data (startingXI not empty)
+      const existingEntry = existing[String(matchId)];
+      if (existingEntry?.team1?.startingXI?.length > 0 || existingEntry?.team2?.startingXI?.length > 0) {
         skipped++;
         continue;
       }
@@ -185,7 +187,8 @@ async function main() {
       try {
         const entry = await processMatch(matchId, fifaUrl);
         matchDetail[matchId] = entry;
-        added++;
+        if (existingEntry) refetched++;
+        else added++;
         console.log(` ✅ ${entry.team1.teamId} vs ${entry.team2.teamId} (${entry.substitutions.length} subs, ${entry.cards.length} cards)`);
       } catch (e) {
         failed++;
@@ -196,7 +199,7 @@ async function main() {
       await new Promise(r => setTimeout(r, 200));
     }
     
-    console.log(`\nDone! Added ${added}, skipped ${skipped}, failed ${failed}. Total: ${Object.keys(matchDetail).length}`);
+    console.log(`\nDone! Added ${added}, refetched ${refetched}, skipped ${skipped}, failed ${failed}. Total: ${Object.keys(matchDetail).length}`);
     fs.writeFileSync('./app/public/data/match-detail.json', JSON.stringify(matchDetail, null, 2));
     syncPerMatchFiles(matchDetail);
     
