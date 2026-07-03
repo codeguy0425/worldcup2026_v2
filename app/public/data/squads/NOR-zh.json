@@ -1,1 +1,210 @@
-[{"no":1,"pos":"龍門","name":"葉赫萬·迪烏夫","club":"尼斯","captain":false,"viceCaptain":false},{"no":16,"pos":"龍門","name":"愛德華·門迪","club":"吉達國民","captain":false,"viceCaptain":false},{"no":23,"pos":"龍門","name":"莫里·迪亞烏","club":"勒阿弗爾","captain":false,"viceCaptain":false},{"no":2,"pos":"後衛","name":"馬馬杜·沙亞","club":"切爾西","captain":false,"viceCaptain":false},{"no":3,"pos":"後衛","name":"卡利杜·高列巴尼","club":"利雅得新月","captain":false,"viceCaptain":false},{"no":4,"pos":"後衛","name":"艾度拿爾·錫克","club":"海法馬卡比","captain":false,"viceCaptain":false},{"no":14,"pos":"後衛","name":"伊斯梅爾·雅各布斯","club":"加拉塔沙雷","captain":false,"viceCaptain":false},{"no":15,"pos":"後衛","name":"克雷平·迪亞塔","club":"摩納哥","captain":false,"viceCaptain":false},{"no":19,"pos":"後衛","name":"穆沙·尼亞卡泰","club":"里昂","captain":false,"viceCaptain":false},{"no":24,"pos":"後衛","name":"安托萬·門迪","club":"尼斯","captain":false,"viceCaptain":false},{"no":25,"pos":"後衛","name":"艾爾-哈吉·馬歷·迪奧夫","club":"西漢姆聯","captain":false,"viceCaptain":false},{"no":5,"pos":"中場","name":"伊祖沙·古爾","club":"埃弗頓","captain":false,"viceCaptain":false},{"no":6,"pos":"中場","name":"帕泰·西斯","club":"巴列卡諾閃電","captain":false,"viceCaptain":false},{"no":8,"pos":"中場","name":"拉明·卡馬拉","club":"摩納哥","captain":false,"viceCaptain":false},{"no":17,"pos":"中場","name":"帕普·馬塔爾·沙亞","club":"熱刺","captain":false,"viceCaptain":false},{"no":21,"pos":"中場","name":"穆罕默杜·迪亞拉","club":"桑德蘭","captain":false,"viceCaptain":false},{"no":22,"pos":"中場","name":"巴拉·薩波科·尼戴耶","club":"拜仁慕尼黑","captain":false,"viceCaptain":false},{"no":26,"pos":"中場","name":"柏比·古爾","club":"比利亞雷阿爾","captain":false,"viceCaptain":false},{"no":7,"pos":"前鋒","name":"阿辛尼·迪奧","club":"科莫","captain":false,"viceCaptain":false},{"no":9,"pos":"前鋒","name":"班巴·迪昂","club":"洛里昂","captain":false,"viceCaptain":false},{"no":10,"pos":"前鋒","name":"沙迪奧·文尼","club":"利雅得勝利","captain":false,"viceCaptain":false},{"no":11,"pos":"前鋒","name":"尼高拉斯·積遜","club":"拜仁慕尼黑","captain":false,"viceCaptain":false},{"no":12,"pos":"前鋒","name":"謝里夫·尼戴耶","club":"薩姆松體育","captain":false,"viceCaptain":false},{"no":13,"pos":"前鋒","name":"伊利文·尼戴耶","club":"埃弗頓","captain":false,"viceCaptain":false},{"no":18,"pos":"前鋒","name":"伊斯美拿·沙亞","club":"水晶宮","captain":false,"viceCaptain":false},{"no":20,"pos":"前鋒","name":"伊巴謙·麥巴耶","club":"巴黎聖日耳曼","captain":false,"viceCaptain":false}]
+[
+  {
+    "no": 1,
+    "pos": "龍門",
+    "name": "厄爾延·尼蘭",
+    "club": "塞維利亞",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 12,
+    "pos": "龍門",
+    "name": "桑德·唐維克",
+    "club": "漢堡",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 13,
+    "pos": "龍門",
+    "name": "埃吉爾·塞爾維克",
+    "club": "沃特福德",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 3,
+    "pos": "後衛",
+    "name": "克里斯托弗·阿耶",
+    "club": "布倫特福德",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 4,
+    "pos": "後衛",
+    "name": "里奧·奧斯迪加特",
+    "club": "熱那亞",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 5,
+    "pos": "後衛",
+    "name": "大衛·摩拿·禾菲",
+    "club": "狼隊",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 15,
+    "pos": "後衛",
+    "name": "弗雷德里克·安德烈·比約肯",
+    "club": "博德閃耀",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 16,
+    "pos": "後衛",
+    "name": "馬古斯·賀格倫·柏達臣",
+    "club": "拖連奴",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 17,
+    "pos": "後衛",
+    "name": "托爾比約恩·赫格姆",
+    "club": "博洛尼亞",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 24,
+    "pos": "後衛",
+    "name": "松德雷·隆奧斯",
+    "club": "打吡郡",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 25,
+    "pos": "後衛",
+    "name": "亨里克·法爾克納",
+    "club": "維京",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 2,
+    "pos": "中場",
+    "name": "莫滕·托爾斯比",
+    "club": "克雷莫納",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 6,
+    "pos": "中場",
+    "name": "帕特里克·貝治",
+    "club": "博德閃耀",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 8,
+    "pos": "中場",
+    "name": "桑德·貝格",
+    "club": "富勒姆",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 10,
+    "pos": "中場",
+    "name": "馬田·奧迪加特",
+    "club": "阿森納",
+    "captain": true,
+    "viceCaptain": false
+  },
+  {
+    "no": 14,
+    "pos": "中場",
+    "name": "弗雷德里克·奧爾斯內斯",
+    "club": "本菲卡",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 18,
+    "pos": "中場",
+    "name": "基斯甸·托爾斯特韋特",
+    "club": "薩斯索羅",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 19,
+    "pos": "中場",
+    "name": "泰路·阿斯加特",
+    "club": "流浪者",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 21,
+    "pos": "中場",
+    "name": "安達斯·舒捷爾達魯普",
+    "club": "本菲卡",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 22,
+    "pos": "中場",
+    "name": "奧斯卡·巴布",
+    "club": "富勒姆",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 23,
+    "pos": "中場",
+    "name": "延斯·彼得·海于格",
+    "club": "博德閃耀",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 7,
+    "pos": "前鋒",
+    "name": "阿歷山大·索洛夫",
+    "club": "馬德里競技",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 9,
+    "pos": "前鋒",
+    "name": "艾寧·夏蘭特",
+    "club": "曼城",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 11,
+    "pos": "前鋒",
+    "name": "佐根·史特蘭特·拿臣",
+    "club": "水晶宮",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 20,
+    "pos": "前鋒",
+    "name": "安東尼奧·盧沙",
+    "club": "RB萊比錫",
+    "captain": false,
+    "viceCaptain": false
+  },
+  {
+    "no": 26,
+    "pos": "前鋒",
+    "name": "尤利安·呂爾松",
+    "club": "多特蒙德",
+    "captain": false,
+    "viceCaptain": false
+  }
+]
