@@ -1,18 +1,333 @@
 {
   "team1": {
     "teamId": "SUI",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Murat Yakin"
   },
   "team2": {
     "teamId": "ALG",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW",
+        "captain": true
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      }
+    ],
     "coach": "Vladimir PETKOVIC"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 58,
+      "teamId": "ALG",
+      "off": {
+        "no": 8,
+        "name": "Houssem AOUAR"
+      },
+      "on": {
+        "no": 13,
+        "name": "Jaouen HADJAM"
+      }
+    },
+    {
+      "minute": 58,
+      "teamId": "ALG",
+      "off": {
+        "no": 6,
+        "name": "Ramiz ZERROUKI"
+      },
+      "on": {
+        "no": 9,
+        "name": "Amine GOUIRI"
+      }
+    },
+    {
+      "minute": 70,
+      "teamId": "SUI",
+      "off": {
+        "no": 17,
+        "name": "Ruben VARGAS"
+      },
+      "on": {
+        "no": 22,
+        "name": "Fabian RIEDER"
+      }
+    },
+    {
+      "minute": 70,
+      "teamId": "SUI",
+      "off": {
+        "no": 9,
+        "name": "Johan MANZAMBI"
+      },
+      "on": {
+        "no": 19,
+        "name": "Noah OKAFOR"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "ALG",
+      "off": {
+        "no": 19,
+        "name": "Nabil BENTALEB"
+      },
+      "on": {
+        "no": 14,
+        "name": "Hicham BOUDAOUI"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "ALG",
+      "off": {
+        "no": 7,
+        "name": "Riyad MAHREZ"
+      },
+      "on": {
+        "no": 11,
+        "name": "Anis HADJ MOUSSA"
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "SUI",
+      "off": {
+        "no": 7,
+        "name": "Breel EMBOLO"
+      },
+      "on": {
+        "no": 23,
+        "name": "Zeki AMDOUNI"
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "ALG",
+      "off": {
+        "no": 17,
+        "name": "Rafik BELGHALI"
+      },
+      "on": {
+        "no": 20,
+        "name": "Adil BOULBINA"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "SUI",
+      "off": {
+        "no": 11,
+        "name": "Dan NDOYE"
+      },
+      "on": {
+        "no": 20,
+        "name": "Michel AEBISCHER"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "SUI",
+      "off": {
+        "no": 6,
+        "name": "Denis ZAKARIA"
+      },
+      "on": {
+        "no": 3,
+        "name": "Silvan WIDMER"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 36,
+      "teamId": "ALG",
+      "player": {
+        "no": 10,
+        "name": "Fares CHAIBI"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 72,
+      "teamId": "ALG",
+      "player": {
+        "no": 14,
+        "name": "Hicham BOUDAOUI"
+      },
+      "card": "yellow"
+    }
+  ]
 }
