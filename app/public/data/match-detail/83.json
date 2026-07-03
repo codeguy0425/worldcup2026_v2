@@ -1,18 +1,329 @@
 {
   "team1": {
     "teamId": "POR",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 20,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 15,
+        "pos": "MF"
+      },
+      {
+        "no": 23,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      },
+      {
+        "no": 18,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Roberto Martínez Montoliú"
   },
   "team2": {
     "teamId": "CRO",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 13,
+        "pos": "MF"
+      },
+      {
+        "no": 16,
+        "pos": "MF"
+      },
+      {
+        "no": 17,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 14,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Zlatko Dalić"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 62,
+      "teamId": "POR",
+      "off": {
+        "no": 18,
+        "name": "PEDRO NETO"
+      },
+      "on": {
+        "no": 26,
+        "name": "FRANCISCO CONCEICAO"
+      }
+    },
+    {
+      "minute": 62,
+      "teamId": "POR",
+      "off": {
+        "no": 23,
+        "name": "VITINHA"
+      },
+      "on": {
+        "no": 10,
+        "name": "BERNARDO SILVA"
+      }
+    },
+    {
+      "minute": 62,
+      "teamId": "POR",
+      "off": {
+        "no": 8,
+        "name": "BRUNO FERNANDES"
+      },
+      "on": {
+        "no": 2,
+        "name": "NELSON SEMEDO"
+      }
+    },
+    {
+      "minute": 62,
+      "teamId": "POR",
+      "off": {
+        "no": 20,
+        "name": "JOAO CANCELO"
+      },
+      "on": {
+        "no": 9,
+        "name": "GONCALO RAMOS"
+      }
+    },
+    {
+      "minute": 68,
+      "teamId": "CRO",
+      "off": {
+        "no": 16,
+        "name": "Martin BATURINA"
+      },
+      "on": {
+        "no": 15,
+        "name": "Mario PASALIC"
+      }
+    },
+    {
+      "minute": 81,
+      "teamId": "POR",
+      "off": {
+        "no": 7,
+        "name": "CRISTIANO RONALDO"
+      },
+      "on": {
+        "no": 21,
+        "name": "RUBEN NEVES"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "CRO",
+      "off": {
+        "no": 13,
+        "name": "Nikola VLASIC"
+      },
+      "on": {
+        "no": 4,
+        "name": "Josko GVARDIOL"
+      },
+      "stoppageTime": 2
+    },
+    {
+      "minute": 90,
+      "teamId": "CRO",
+      "off": {
+        "no": 8,
+        "name": "Mateo KOVACIC"
+      },
+      "on": {
+        "no": 9,
+        "name": "Andrej KRAMARIC"
+      },
+      "stoppageTime": 6
+    }
+  ],
+  "cards": [
+    {
+      "minute": 17,
+      "teamId": "POR",
+      "player": {
+        "no": 3,
+        "name": "RUBEN DIAS"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 59,
+      "teamId": "CRO",
+      "player": {
+        "no": 10,
+        "name": "Luka MODRIC"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 90,
+      "teamId": "CRO",
+      "player": {
+        "no": 14,
+        "name": "Ivan PERISIC"
+      },
+      "card": "yellow"
+    }
+  ]
 }
