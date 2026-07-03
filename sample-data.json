@@ -3555,7 +3555,21 @@
       "group": "",
       "groundId": "vancouver",
       "num": 85,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 2,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 10,
+          "scorer": "Breel Embolo",
+          "teamId": "1B"
+        },
+        {
+          "minute": 46,
+          "scorer": "Dan Ndoye",
+          "teamId": "1B"
+        }
+      ]
     },
     {
       "id": 86,
