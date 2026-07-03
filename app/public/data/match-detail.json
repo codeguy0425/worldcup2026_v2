@@ -25827,20 +25827,313 @@
   "84": {
     "team1": {
       "teamId": "ESP",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 23,
+          "pos": "GK"
+        },
+        {
+          "no": 12,
+          "pos": "DF"
+        },
+        {
+          "no": 14,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF"
+        },
+        {
+          "no": 24,
+          "pos": "DF"
+        },
+        {
+          "no": 15,
+          "pos": "MF"
+        },
+        {
+          "no": 16,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW"
+        },
+        {
+          "no": 19,
+          "pos": "FW"
+        },
+        {
+          "no": 21,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 26
+        }
+      ],
       "coach": "Luis de la Fuente Castillo"
     },
     "team2": {
       "teamId": "AUT",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 8,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "MF"
+        },
+        {
+          "no": 18,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 24,
+          "pos": "MF"
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 21
+        }
+      ],
       "coach": "Ralf RANGNICK"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 60,
+        "teamId": "AUT",
+        "off": {
+          "no": 11,
+          "name": "Michael GREGORITSCH"
+        },
+        "on": {
+          "no": 7,
+          "name": "Marko ARNAUTOVIC"
+        }
+      },
+      {
+        "minute": 60,
+        "teamId": "AUT",
+        "off": {
+          "no": 18,
+          "name": "Romano SCHMID"
+        },
+        "on": {
+          "no": 14,
+          "name": "Sasa KALAJDZIC"
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "ESP",
+        "off": {
+          "no": 15,
+          "name": "Alex BAENA"
+        },
+        "on": {
+          "no": 7,
+          "name": "Ferran TORRES"
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "ESP",
+        "off": {
+          "no": 10,
+          "name": "Dani OLMO"
+        },
+        "on": {
+          "no": 6,
+          "name": "Mikel MERINO"
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "ESP",
+        "off": {
+          "no": 19,
+          "name": "Lamine YAMAL"
+        },
+        "on": {
+          "no": 9,
+          "name": "GAVI"
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "AUT",
+        "off": {
+          "no": 5,
+          "name": "Stefan POSCH"
+        },
+        "on": {
+          "no": 22,
+          "name": "Alexander PRASS"
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "ESP",
+        "off": {
+          "no": 14,
+          "name": "Aymeric LAPORTE"
+        },
+        "on": {
+          "no": 2,
+          "name": "Marc PUBILL"
+        },
+        "stoppageTime": 3
+      },
+      {
+        "minute": 90,
+        "teamId": "ESP",
+        "off": {
+          "no": 20,
+          "name": "PEDRI"
+        },
+        "on": {
+          "no": 8,
+          "name": "Fabian RUIZ"
+        },
+        "stoppageTime": 3
+      }
+    ],
+    "cards": [
+      {
+        "minute": 83,
+        "teamId": "AUT",
+        "player": {
+          "no": 5,
+          "name": "Stefan POSCH"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "85": {
     "team1": {
