@@ -3489,7 +3489,28 @@
       "group": "",
       "groundId": "toronto",
       "num": 83,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 2,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 53,
+          "scorer": "Ivan Perisic",
+          "teamId": "2L"
+        },
+        {
+          "minute": 68,
+          "scorer": "Cristiano Ronaldo",
+          "teamId": "2K",
+          "penalty": true
+        },
+        {
+          "minute": 90,
+          "scorer": "Gonçalo Ramos",
+          "teamId": "2K",
+          "stoppageTime": 4
+        }
+      ]
     },
     {
       "id": 84,
