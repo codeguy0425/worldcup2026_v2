@@ -270,6 +270,15 @@
     "rank": 5
   },
   {
+    "scorer": "Emam Ashour",
+    "teamId": "EGY",
+    "teamName": "Egypt",
+    "flag": "🇪🇬",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Ermin Mahmic",
     "teamId": "BIH",
     "teamName": "Bosnia & Herzegovina",
@@ -634,15 +643,6 @@
     "teamId": "UZB",
     "teamName": "Uzbekistan",
     "flag": "🇺🇿",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 6
-  },
-  {
-    "scorer": "Emam Ashour",
-    "teamId": "EGY",
-    "teamName": "Egypt",
-    "flag": "🇪🇬",
     "goals": 1,
     "penalties": 0,
     "rank": 6

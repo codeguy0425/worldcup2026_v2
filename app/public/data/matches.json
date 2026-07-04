@@ -2939,6 +2939,23 @@
     "groundId": "dallas",
     "num": 88,
     "stage": "r32",
+    "score1": 1,
+    "score2": 1,
+    "penalty1": 2,
+    "penalty2": 4,
+    "goals": [
+      {
+        "minute": 13,
+        "scorer": "Emam Ashour",
+        "teamId": "EGY"
+      },
+      {
+        "minute": 55,
+        "scorer": "Mohamed Hany",
+        "teamId": "AUS",
+        "ownGoal": true
+      }
+    ],
     "team1Original": "2D",
     "team2Original": "2G"
   },
@@ -3039,11 +3056,13 @@
     "time": "00:00",
     "timeUtc": "16:00",
     "team1Id": "W86",
-    "team2Id": "W88",
+    "team2Id": "EGY",
     "group": "",
     "groundId": "atlanta",
     "num": 95,
-    "stage": "r16"
+    "stage": "r16",
+    "team1Original": "W86",
+    "team2Original": "W88"
   },
   {
     "id": 96,

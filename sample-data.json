@@ -3608,7 +3608,24 @@
       "group": "",
       "groundId": "dallas",
       "num": 88,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 1,
+      "score2": 1,
+      "penalty1": 2,
+      "penalty2": 4,
+      "goals": [
+        {
+          "minute": 13,
+          "scorer": "Emam Ashour",
+          "teamId": "2G"
+        },
+        {
+          "minute": 55,
+          "scorer": "Mohamed Hany",
+          "teamId": "2D",
+          "ownGoal": true
+        }
+      ]
     },
     {
       "id": 89,
