@@ -3244,48 +3244,56 @@
     ],
     "team1Original": "2D",
     "team2Original": "2G",
-    "penaltyShootout": [
-      {
-        "player": "Harry Souttar",
-        "no": 19,
-        "scored": false
-      },
-      {
-        "player": "Mahmoud Saber",
-        "no": 21,
-        "scored": true
-      },
-      {
-        "player": "Jackson Irvine",
-        "no": 22,
-        "scored": true
-      },
-      {
-        "player": "Ramy Rabia",
-        "no": 5,
-        "scored": true
-      },
-      {
-        "player": "Awer Mabil",
-        "no": 11,
-        "scored": true
-      },
-      {
-        "player": "Mohamed Salah",
-        "no": 10,
-        "scored": true
-      },
-      {
-        "player": "Lucas Herrington",
-        "no": 25,
-        "scored": false
-      },
-      {
-        "player": "Hossam Abdelmaguid",
-        "no": 4,
-        "scored": true
-      }
-    ]
+    "penaltyShootout": {
+      "AUS": [
+        {
+          "player": "Harry Souttar",
+          "no": 19,
+          "scored": false
+        },
+        {
+          "player": "Jackson Irvine",
+          "no": 22,
+          "scored": true
+        },
+        {
+          "player": "Awer Mabil",
+          "no": 11,
+          "scored": true
+        },
+        {
+          "player": "Lucas Herrington",
+          "no": 25,
+          "scored": false
+        }
+      ],
+      "EGY": [
+        {
+          "player": "Mahmoud Saber",
+          "no": 21,
+          "scored": true
+        },
+        {
+          "player": "Ramy Rabia",
+          "no": 5,
+          "scored": true
+        },
+        {
+          "player": "Mohamed Salah",
+          "no": 10,
+          "scored": true
+        },
+        {
+          "player": "Hossam Abdelmaguid",
+          "no": 4,
+          "scored": true
+        }
+      ]
+    },
+    "penaltySequence": {
+      "AUS": "NYYN",
+      "EGY": "YYYY"
+    }
   },
   {
     "id": 89,
