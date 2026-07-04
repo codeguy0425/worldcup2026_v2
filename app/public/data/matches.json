@@ -3242,7 +3242,49 @@
       }
     ],
     "team1Original": "2D",
-    "team2Original": "2G"
+    "team2Original": "2G",
+    "penaltyShootout": [
+      {
+        "player": "Souttar",
+        "no": 0,
+        "scored": false
+      },
+      {
+        "player": "Irvine",
+        "no": 0,
+        "scored": true
+      },
+      {
+        "player": "Mabil",
+        "no": 0,
+        "scored": true
+      },
+      {
+        "player": "Herrington",
+        "no": 0,
+        "scored": false
+      },
+      {
+        "player": "Saber",
+        "no": 0,
+        "scored": true
+      },
+      {
+        "player": "Rabia",
+        "no": 0,
+        "scored": true
+      },
+      {
+        "player": "Salah",
+        "no": 0,
+        "scored": true
+      },
+      {
+        "player": "Abdelmaguid",
+        "no": 0,
+        "scored": true
+      }
+    ]
   },
   {
     "id": 89,
