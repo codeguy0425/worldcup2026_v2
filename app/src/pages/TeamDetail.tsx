@@ -44,7 +44,7 @@ export function TeamPage() {
   const { id } = useParams()
   const { t } = useLang()
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
-  const { data: matches, loading } = useJson<Match[]>('/data/matches.json?v=3')
+  const { data: matches, loading } = useJson<Match[]>('/data/matches.json?v=4')
 
   const team = teamData?.teams.find(t => t.id === id)
   const teamMap = new Map(teamData?.teams.map(t => [t.id, t]) ?? [])
