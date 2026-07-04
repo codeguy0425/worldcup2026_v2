@@ -98,6 +98,27 @@ const urlMap = {
   86: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021521',  // ARG vs CPV
   87: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021517',  // COL vs GHA
   88: 'https://www.fifa.com/en/match-centre/match/17/285023/289287/400021515',  // AUS vs EGY
+  // R16
+  89: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021533',  // PAR vs FRA
+  90: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021530',  // CAN vs MAR
+  91: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021532',  // BRA vs NOR
+  92: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021531',  // MEX vs ENG
+  93: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021529',  // POR vs ESP
+  94: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021534',  // USA vs BEL
+  95: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021528',  // ARG vs EGY
+  96: 'https://www.fifa.com/en/match-centre/match/17/285023/289288/400021535',  // SUI vs COL
+  // QF (winner placeholders — known FIFA URLs)
+  97: 'https://www.fifa.com/en/match-centre/match/17/285023/289289/400021536',  // W89 vs MAR (PAR/FRA winner vs MAR)
+  98: 'https://www.fifa.com/en/match-centre/match/17/285023/289289/400021538',  // W93 vs W94
+  99: 'https://www.fifa.com/en/match-centre/match/17/285023/289289/400021539',  // W91 vs W92
+  100: 'https://www.fifa.com/en/match-centre/match/17/285023/289289/400021537', // W95 vs W96
+  // SF
+  101: 'https://www.fifa.com/en/match-centre/match/17/285023/289290/400021541', // W97 vs W98
+  102: 'https://www.fifa.com/en/match-centre/match/17/285023/289290/400021540', // W99 vs W100
+  // Third place
+  103: 'https://www.fifa.com/en/match-centre/match/17/285023/289291/400021542', // RU101 vs RU102
+  // Final
+  104: 'https://www.fifa.com/en/match-centre/match/17/285023/289292/400021543', // W101 vs W102
 };
 
 module.exports = { urlMap };

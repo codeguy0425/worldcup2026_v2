@@ -1,0 +1,393 @@
+{
+  "team1": {
+    "teamId": "CAN",
+    "formation": "4-4-2",
+    "startingXI": [
+      {
+        "no": 16,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 12,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 26
+      }
+    ],
+    "coach": "Jesse Alan Marsch"
+  },
+  "team2": {
+    "teamId": "MAR",
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 23,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 21
+      }
+    ],
+    "coach": "Mohamed OUAHBI"
+  },
+  "substitutions": [
+    {
+      "minute": 22,
+      "teamId": "MAR",
+      "off": {
+        "no": 11,
+        "name": "Ismael SAIBARI"
+      },
+      "on": {
+        "no": 9,
+        "name": "Soufiane RAHIMI"
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "CAN",
+      "off": {
+        "no": 12,
+        "name": "Tani OLUWASEYI"
+      },
+      "on": {
+        "no": 9,
+        "name": "Cyle LARIN"
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "MAR",
+      "off": {
+        "no": 6,
+        "name": "Ayyoub BOUADDI"
+      },
+      "on": {
+        "no": 4,
+        "name": "Sofyan AMRABAT"
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "MAR",
+      "off": {
+        "no": 23,
+        "name": "Bilal EL KHANNOUSS"
+      },
+      "on": {
+        "no": 7,
+        "name": "Chemsdine TALBI"
+      }
+    },
+    {
+      "minute": 78,
+      "teamId": "CAN",
+      "off": {
+        "no": 20,
+        "name": "Ali AHMED"
+      },
+      "on": {
+        "no": 24,
+        "name": "Promise DAVID"
+      }
+    },
+    {
+      "minute": 78,
+      "teamId": "CAN",
+      "off": {
+        "no": 22,
+        "name": "Richie LARYEA"
+      },
+      "on": {
+        "no": 14,
+        "name": "Jacob SHAFFELBURG"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "CAN",
+      "off": {
+        "no": 17,
+        "name": "Tajon BUCHANAN"
+      },
+      "on": {
+        "no": 26,
+        "name": "Jayden NELSON"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "CAN",
+      "off": {
+        "no": 23,
+        "name": "Niko SIGUR"
+      },
+      "on": {
+        "no": 21,
+        "name": "Jonathan OSORIO"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "MAR",
+      "off": {
+        "no": 14,
+        "name": "Issa DIOP"
+      },
+      "on": {
+        "no": 5,
+        "name": "Marwane SAADANE"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "MAR",
+      "off": {
+        "no": 8,
+        "name": "Azzedine OUNAHI"
+      },
+      "on": {
+        "no": 15,
+        "name": "Samir EL MOURABET"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 40,
+      "teamId": "CAN",
+      "player": {
+        "no": 22,
+        "name": "Richie LARYEA"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 43,
+      "teamId": "CAN",
+      "player": {
+        "no": 10,
+        "name": "Jonathan DAVID"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 49,
+      "teamId": "CAN",
+      "player": {
+        "no": 4,
+        "name": "Luc DE FOUGEROLLES"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 67,
+      "teamId": "CAN",
+      "player": {
+        "no": 9,
+        "name": "Cyle LARIN"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 20,
+      "teamId": "MAR",
+      "player": {
+        "no": 25,
+        "name": "Redouane HALHAL"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 40,
+      "teamId": "MAR",
+      "player": {
+        "no": 2,
+        "name": "Achraf HAKIMI"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 45,
+      "teamId": "MAR",
+      "player": {
+        "no": 8,
+        "name": "Azzedine OUNAHI"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 45,
+      "teamId": "MAR",
+      "player": {
+        "no": 23,
+        "name": "Bilal EL KHANNOUSS"
+      },
+      "card": "yellow"
+    }
+  ]
+}
