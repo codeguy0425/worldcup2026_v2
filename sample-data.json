@@ -3655,7 +3655,57 @@
           "teamId": "2D",
           "ownGoal": true
         }
-      ]
+      ],
+      "penaltySequence": {
+        "AUS": "NYYN",
+        "EGY": "YYYY"
+      },
+      "penaltyShootout": {
+        "AUS": [
+          {
+            "player": "Harry Souttar",
+            "no": 19,
+            "scored": false
+          },
+          {
+            "player": "Jackson Irvine",
+            "no": 22,
+            "scored": true
+          },
+          {
+            "player": "Awer Mabil",
+            "no": 11,
+            "scored": true
+          },
+          {
+            "player": "Lucas Herrington",
+            "no": 25,
+            "scored": false
+          }
+        ],
+        "EGY": [
+          {
+            "player": "Mahmoud Saber",
+            "no": 21,
+            "scored": true
+          },
+          {
+            "player": "Ramy Rabia",
+            "no": 5,
+            "scored": true
+          },
+          {
+            "player": "Mohamed Salah",
+            "no": 10,
+            "scored": true
+          },
+          {
+            "player": "Hossam Abdelmaguid",
+            "no": 4,
+            "scored": true
+          }
+        ]
+      }
     },
     {
       "id": 89,
