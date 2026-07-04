@@ -3625,7 +3625,16 @@
       "group": "",
       "groundId": "kansas_city",
       "num": 87,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 1,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 14,
+          "scorer": "Jhon Arias",
+          "teamId": "1K"
+        }
+      ]
     },
     {
       "id": 88,

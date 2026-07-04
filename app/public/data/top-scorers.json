@@ -950,6 +950,16 @@
     "scorerNo": 6
   },
   {
+    "scorer": "Jhon Arias",
+    "teamId": "COL",
+    "teamName": "Colombia",
+    "flag": "🇨🇴",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 7,
+    "scorerNo": 11
+  },
+  {
     "scorer": "João Neves",
     "teamId": "POR",
     "teamName": "Portugal",

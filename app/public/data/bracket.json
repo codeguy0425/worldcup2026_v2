@@ -226,6 +226,8 @@
         "team2Original": "3D/E/I/J/L",
         "team1Resolved": true,
         "team2Resolved": true,
+        "score1": 1,
+        "score2": 0,
         "groundId": "kansas_city"
       },
       {
@@ -344,7 +346,7 @@
         "date": "2026-07-07",
         "timeUtc": "20:00",
         "team1Id": "SUI",
-        "team2Id": "W87",
+        "team2Id": "COL",
         "team1Original": "W85",
         "team2Original": "W87",
         "team1Resolved": false,

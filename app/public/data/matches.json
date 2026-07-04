@@ -3208,6 +3208,16 @@
     "groundId": "kansas_city",
     "num": 87,
     "stage": "r32",
+    "score1": 1,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 14,
+        "scorer": "Jhon Arias",
+        "teamId": "COL",
+        "scorerNo": 11
+      }
+    ],
     "team1Original": "1K",
     "team2Original": "3D/E/I/J/L"
   },
@@ -3407,7 +3417,7 @@
     "time": "04:00",
     "timeUtc": "20:00",
     "team1Id": "SUI",
-    "team2Id": "W87",
+    "team2Id": "COL",
     "group": "",
     "groundId": "vancouver",
     "num": 96,
