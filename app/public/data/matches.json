@@ -3189,7 +3189,8 @@
         "minute": 111,
         "scorer": "Diney Borges",
         "teamId": "ARG",
-        "ownGoal": true
+        "ownGoal": true,
+        "scorerNo": 3
       }
     ],
     "team1Original": "1J",
