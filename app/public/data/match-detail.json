@@ -26472,33 +26472,553 @@
     "team1": {
       "teamId": "ARG",
       "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "startingXI": [
+        {
+          "no": 23,
+          "pos": "GK"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 25,
+          "pos": "DF"
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 24,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 16,
+          "pos": "FW"
+        },
+        {
+          "no": 22,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 21
+        }
+      ],
       "coach": "Lionel SCALONI"
     },
     "team2": {
       "teamId": "CPV",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-4-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 22,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 15,
+          "pos": "MF"
+        },
+        {
+          "no": 21,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "FW",
+          "captain": true
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 19
+        }
+      ],
       "coach": "Pedro Leitão Brito"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 63,
+        "teamId": "ARG",
+        "off": {
+          "no": 16,
+          "name": "Thiago ALMADA"
+        },
+        "on": {
+          "no": 15,
+          "name": "Nico GONZALEZ"
+        }
+      },
+      {
+        "minute": 63,
+        "teamId": "ARG",
+        "off": {
+          "no": 22,
+          "name": "Lautaro MARTINEZ"
+        },
+        "on": {
+          "no": 9,
+          "name": "Julian ALVAREZ"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "CPV",
+        "off": {
+          "no": 21,
+          "name": "NUNO DA COSTA"
+        },
+        "on": {
+          "no": 19,
+          "name": "DAILON LIVRAMENTO"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "CPV",
+        "off": {
+          "no": 15,
+          "name": "LAROS DUARTE"
+        },
+        "on": {
+          "no": 10,
+          "name": "JAMIRO MONTEIRO"
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "CPV",
+        "off": {
+          "no": 7,
+          "name": "JOVANE CABRAL"
+        },
+        "on": {
+          "no": 26,
+          "name": "HELIO VARELA"
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "CPV",
+        "off": {
+          "no": 20,
+          "name": "RYAN MENDES"
+        },
+        "on": {
+          "no": 17,
+          "name": "WILLY SEMEDO"
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "ARG",
+        "off": {
+          "no": 7,
+          "name": "Rodrigo DE PAUL"
+        },
+        "on": {
+          "no": 5,
+          "name": "Leandro PAREDES"
+        }
+      },
+      {
+        "minute": 85,
+        "teamId": "ARG",
+        "off": {
+          "no": 25,
+          "name": "Facundo MEDINA"
+        },
+        "on": {
+          "no": 3,
+          "name": "Nicolas TAGLIAFICO"
+        }
+      },
+      {
+        "minute": 100,
+        "teamId": "CPV",
+        "off": {
+          "no": 6,
+          "name": "KEVIN PINA"
+        },
+        "on": {
+          "no": 9,
+          "name": "GILSON BENCHIMOL"
+        }
+      },
+      {
+        "minute": 100,
+        "teamId": "CPV",
+        "off": {
+          "no": 14,
+          "name": "DEROY DUARTE"
+        },
+        "on": {
+          "no": 16,
+          "name": "YANNICK SEMEDO"
+        }
+      },
+      {
+        "minute": 104,
+        "teamId": "ARG",
+        "off": {
+          "no": 26,
+          "name": "Nahuel MOLINA"
+        },
+        "on": {
+          "no": 4,
+          "name": "Gonzalo MONTIEL"
+        }
+      }
+    ],
+    "cards": [
+      {
+        "minute": 115,
+        "teamId": "ARG",
+        "player": {
+          "no": 4,
+          "name": "Gonzalo MONTIEL"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 68,
+        "teamId": "CPV",
+        "player": {
+          "no": 6,
+          "name": "KEVIN PINA"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "87": {
     "team1": {
       "teamId": "COL",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 12,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 14,
+          "pos": "DF"
+        },
+        {
+          "no": 17,
+          "pos": "DF"
+        },
+        {
+          "no": 23,
+          "pos": "DF"
+        },
+        {
+          "no": 10,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 11,
+          "pos": "MF"
+        },
+        {
+          "no": 16,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 26
+        }
+      ],
       "coach": "Néstor Gabriel Lorenzo"
     },
     "team2": {
       "teamId": "GHA",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 14,
+          "pos": "DF"
+        },
+        {
+          "no": 18,
+          "pos": "DF"
+        },
+        {
+          "no": 23,
+          "pos": "DF"
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "MF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 11,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 19,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        }
+      ],
       "coach": "Carlos QUEIROZ"
     },
     "substitutions": [],
@@ -26507,19 +27027,293 @@
   "88": {
     "team1": {
       "teamId": "AUS",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "3-4-3",
+      "startingXI": [
+        {
+          "no": 18,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 19,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 25,
+          "pos": "DF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 13,
+          "pos": "MF"
+        },
+        {
+          "no": 22,
+          "pos": "MF"
+        },
+        {
+          "no": 17,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 26
+        }
+      ],
       "coach": "Tony Popović"
     },
     "team2": {
       "teamId": "EGY",
       "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "startingXI": [
+        {
+          "no": 23,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 15,
+          "pos": "DF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 11,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 22,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 25
+        }
+      ],
       "coach": "Hossam Hassan Hussein"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 67,
+        "teamId": "EGY",
+        "off": {
+          "no": 11,
+          "name": "MOSTAFA ZICO"
+        },
+        "on": {
+          "no": 12,
+          "name": "HAISSEM HASSAN"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "EGY",
+        "off": {
+          "no": 14,
+          "name": "HAMDY FATHY"
+        },
+        "on": {
+          "no": 4,
+          "name": "HOSSAM ABDELMAGUID"
+        }
+      },
+      {
+        "minute": 74,
+        "teamId": "AUS",
+        "off": {
+          "no": 20,
+          "name": "Cristian VOLPATO"
+        },
+        "on": {
+          "no": 10,
+          "name": "Ajdin HRUSTIC"
+        }
+      },
+      {
+        "minute": 74,
+        "teamId": "AUS",
+        "off": {
+          "no": 17,
+          "name": "Nestory IRANKUNDA"
+        },
+        "on": {
+          "no": 9,
+          "name": "Mohamed TOURE"
+        }
+      },
+      {
+        "minute": 80,
+        "teamId": "EGY",
+        "off": {
+          "no": 15,
+          "name": "KARIM HAFEZ"
+        },
+        "on": {
+          "no": 7,
+          "name": "TREZEGUET"
+        }
+      },
+      {
+        "minute": 119,
+        "teamId": "AUS",
+        "off": {
+          "no": 18,
+          "name": "Patrick BEACH"
+        },
+        "on": {
+          "no": 1,
+          "name": "Mathew RYAN"
+        }
+      },
+      {
+        "minute": 120,
+        "teamId": "EGY",
+        "off": {
+          "no": 19,
+          "name": "MARAWAN ATTIA"
+        },
+        "on": {
+          "no": 21,
+          "name": "MAHMOUD SABER"
+        },
+        "stoppageTime": 1
+      }
+    ],
+    "cards": [
+      {
+        "minute": 104,
+        "teamId": "EGY",
+        "player": {
+          "no": 12,
+          "name": "HAISSEM HASSAN"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 120,
+        "teamId": "EGY",
+        "player": {
+          "no": 2,
+          "name": "YASSER IBRAHIM"
+        },
+        "card": "yellow"
+      }
+    ]
   }
 }

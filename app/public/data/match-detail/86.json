@@ -2,17 +2,353 @@
   "team1": {
     "teamId": "ARG",
     "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 16,
+        "pos": "FW"
+      },
+      {
+        "no": 22,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      }
+    ],
     "coach": "Lionel SCALONI"
   },
   "team2": {
     "teamId": "CPV",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-4-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 22,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 15,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "FW",
+        "captain": true
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 19
+      }
+    ],
     "coach": "Pedro Leitão Brito"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 63,
+      "teamId": "ARG",
+      "off": {
+        "no": 16,
+        "name": "Thiago ALMADA"
+      },
+      "on": {
+        "no": 15,
+        "name": "Nico GONZALEZ"
+      }
+    },
+    {
+      "minute": 63,
+      "teamId": "ARG",
+      "off": {
+        "no": 22,
+        "name": "Lautaro MARTINEZ"
+      },
+      "on": {
+        "no": 9,
+        "name": "Julian ALVAREZ"
+      }
+    },
+    {
+      "minute": 67,
+      "teamId": "CPV",
+      "off": {
+        "no": 21,
+        "name": "NUNO DA COSTA"
+      },
+      "on": {
+        "no": 19,
+        "name": "DAILON LIVRAMENTO"
+      }
+    },
+    {
+      "minute": 67,
+      "teamId": "CPV",
+      "off": {
+        "no": 15,
+        "name": "LAROS DUARTE"
+      },
+      "on": {
+        "no": 10,
+        "name": "JAMIRO MONTEIRO"
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "CPV",
+      "off": {
+        "no": 7,
+        "name": "JOVANE CABRAL"
+      },
+      "on": {
+        "no": 26,
+        "name": "HELIO VARELA"
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "CPV",
+      "off": {
+        "no": 20,
+        "name": "RYAN MENDES"
+      },
+      "on": {
+        "no": 17,
+        "name": "WILLY SEMEDO"
+      }
+    },
+    {
+      "minute": 84,
+      "teamId": "ARG",
+      "off": {
+        "no": 7,
+        "name": "Rodrigo DE PAUL"
+      },
+      "on": {
+        "no": 5,
+        "name": "Leandro PAREDES"
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "ARG",
+      "off": {
+        "no": 25,
+        "name": "Facundo MEDINA"
+      },
+      "on": {
+        "no": 3,
+        "name": "Nicolas TAGLIAFICO"
+      }
+    },
+    {
+      "minute": 100,
+      "teamId": "CPV",
+      "off": {
+        "no": 6,
+        "name": "KEVIN PINA"
+      },
+      "on": {
+        "no": 9,
+        "name": "GILSON BENCHIMOL"
+      }
+    },
+    {
+      "minute": 100,
+      "teamId": "CPV",
+      "off": {
+        "no": 14,
+        "name": "DEROY DUARTE"
+      },
+      "on": {
+        "no": 16,
+        "name": "YANNICK SEMEDO"
+      }
+    },
+    {
+      "minute": 104,
+      "teamId": "ARG",
+      "off": {
+        "no": 26,
+        "name": "Nahuel MOLINA"
+      },
+      "on": {
+        "no": 4,
+        "name": "Gonzalo MONTIEL"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 115,
+      "teamId": "ARG",
+      "player": {
+        "no": 4,
+        "name": "Gonzalo MONTIEL"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 68,
+      "teamId": "CPV",
+      "player": {
+        "no": 6,
+        "name": "KEVIN PINA"
+      },
+      "card": "yellow"
+    }
+  ]
 }

@@ -3582,7 +3582,37 @@
       "group": "",
       "groundId": "miami",
       "num": 86,
-      "stage": "r32"
+      "stage": "r32",
+      "score1": 3,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 29,
+          "scorer": "Lionel Messi",
+          "teamId": "1J"
+        },
+        {
+          "minute": 59,
+          "scorer": "Deroy Duarte",
+          "teamId": "2H"
+        },
+        {
+          "minute": 92,
+          "scorer": "Lisandro Martínez",
+          "teamId": "1J"
+        },
+        {
+          "minute": 103,
+          "scorer": "Sidny Lopes Cabral",
+          "teamId": "2H"
+        },
+        {
+          "minute": 111,
+          "scorer": "Diney Borges",
+          "teamId": "1J",
+          "ownGoal": true
+        }
+      ]
     },
     {
       "id": 87,

@@ -1,18 +1,292 @@
 {
   "team1": {
     "teamId": "AUS",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "3-4-3",
+    "startingXI": [
+      {
+        "no": 18,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 13,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Tony Popović"
   },
   "team2": {
     "teamId": "EGY",
     "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 19,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 22,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 25
+      }
+    ],
     "coach": "Hossam Hassan Hussein"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 67,
+      "teamId": "EGY",
+      "off": {
+        "no": 11,
+        "name": "MOSTAFA ZICO"
+      },
+      "on": {
+        "no": 12,
+        "name": "HAISSEM HASSAN"
+      }
+    },
+    {
+      "minute": 67,
+      "teamId": "EGY",
+      "off": {
+        "no": 14,
+        "name": "HAMDY FATHY"
+      },
+      "on": {
+        "no": 4,
+        "name": "HOSSAM ABDELMAGUID"
+      }
+    },
+    {
+      "minute": 74,
+      "teamId": "AUS",
+      "off": {
+        "no": 20,
+        "name": "Cristian VOLPATO"
+      },
+      "on": {
+        "no": 10,
+        "name": "Ajdin HRUSTIC"
+      }
+    },
+    {
+      "minute": 74,
+      "teamId": "AUS",
+      "off": {
+        "no": 17,
+        "name": "Nestory IRANKUNDA"
+      },
+      "on": {
+        "no": 9,
+        "name": "Mohamed TOURE"
+      }
+    },
+    {
+      "minute": 80,
+      "teamId": "EGY",
+      "off": {
+        "no": 15,
+        "name": "KARIM HAFEZ"
+      },
+      "on": {
+        "no": 7,
+        "name": "TREZEGUET"
+      }
+    },
+    {
+      "minute": 119,
+      "teamId": "AUS",
+      "off": {
+        "no": 18,
+        "name": "Patrick BEACH"
+      },
+      "on": {
+        "no": 1,
+        "name": "Mathew RYAN"
+      }
+    },
+    {
+      "minute": 120,
+      "teamId": "EGY",
+      "off": {
+        "no": 19,
+        "name": "MARAWAN ATTIA"
+      },
+      "on": {
+        "no": 21,
+        "name": "MAHMOUD SABER"
+      },
+      "stoppageTime": 1
+    }
+  ],
+  "cards": [
+    {
+      "minute": 104,
+      "teamId": "EGY",
+      "player": {
+        "no": 12,
+        "name": "HAISSEM HASSAN"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 120,
+      "teamId": "EGY",
+      "player": {
+        "no": 2,
+        "name": "YASSER IBRAHIM"
+      },
+      "card": "yellow"
+    }
+  ]
 }
