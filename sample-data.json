@@ -3740,7 +3740,27 @@
       "group": "",
       "groundId": "houston",
       "num": 90,
-      "stage": "r16"
+      "stage": "r16",
+      "score1": 0,
+      "score2": 3,
+      "goals": [
+        {
+          "minute": 50,
+          "scorer": "Azzedine Ounahi",
+          "teamId": "W75"
+        },
+        {
+          "minute": 82,
+          "scorer": "Azzedine Ounahi",
+          "teamId": "W75"
+        },
+        {
+          "minute": 90,
+          "scorer": "Soufiane Rahimi",
+          "teamId": "W75",
+          "stoppageTime": 8
+        }
+      ]
     },
     {
       "id": 91,
