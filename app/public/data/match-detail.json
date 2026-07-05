@@ -28015,20 +28015,282 @@
   "91": {
     "team1": {
       "teamId": "BRA",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 16,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 22,
+          "pos": "FW"
+        },
+        {
+          "no": 26,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 6
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 25
+        }
+      ],
       "coach": "Carlo Ancelotti"
     },
     "team2": {
       "teamId": "NOR",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 17,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        },
+        {
+          "no": 26,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 11
+        }
+      ],
       "coach": "Ståle Solbakken"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 58,
+        "teamId": "BRA",
+        "off": {
+          "no": 9,
+          "name": "MATHEUS CUNHA"
+        },
+        "on": {
+          "no": 19,
+          "name": "ENDRICK"
+        }
+      },
+      {
+        "minute": 63,
+        "teamId": "NOR",
+        "off": {
+          "no": 26,
+          "name": "Julian RYERSON"
+        },
+        "on": {
+          "no": 14,
+          "name": "Fredrik AURSNES"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "BRA",
+        "off": {
+          "no": 22,
+          "name": "GABRIEL MARTINELLI"
+        },
+        "on": {
+          "no": 10,
+          "name": "NEYMAR JR"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "BRA",
+        "off": {
+          "no": 26,
+          "name": "RAYAN"
+        },
+        "on": {
+          "no": 18,
+          "name": "DANILO SANTOS"
+        }
+      },
+      {
+        "minute": 79,
+        "teamId": "BRA",
+        "off": {
+          "no": 8,
+          "name": "BRUNO GUIMARAES"
+        },
+        "on": {
+          "no": 2,
+          "name": "EDERSON SILVA"
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "NOR",
+        "off": {
+          "no": 5,
+          "name": "David MOLLER WOLFE"
+        },
+        "on": {
+          "no": 4,
+          "name": "Leo OSTIGARD"
+        },
+        "stoppageTime": 5
+      }
+    ],
+    "cards": [
+      {
+        "minute": 90,
+        "teamId": "BRA",
+        "player": {
+          "no": 10,
+          "name": "NEYMAR JR"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "92": {
     "team1": {

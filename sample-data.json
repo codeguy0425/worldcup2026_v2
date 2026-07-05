@@ -3783,7 +3783,28 @@
       "group": "",
       "groundId": "new_york",
       "num": 91,
-      "stage": "r16"
+      "stage": "r16",
+      "score1": 1,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 79,
+          "scorer": "Erling Haaland",
+          "teamId": "W78"
+        },
+        {
+          "minute": 90,
+          "scorer": "Erling Haaland",
+          "teamId": "W78"
+        },
+        {
+          "minute": 90,
+          "scorer": "Neymar",
+          "teamId": "W76",
+          "stoppageTime": 10,
+          "penalty": true
+        }
+      ]
     },
     {
       "id": 92,

@@ -290,6 +290,8 @@
         "team2Original": "W78",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 1,
+        "score2": 2,
         "groundId": "new_york"
       },
       {
@@ -390,7 +392,7 @@
         "round": "Quarter-final",
         "date": "2026-07-11",
         "timeUtc": "21:00",
-        "team1Id": "W91",
+        "team1Id": "NOR",
         "team2Id": "W92",
         "team1Original": "W91",
         "team2Original": "W92",
