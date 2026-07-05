@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "BRA",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Carlo Ancelotti"
+  },
+  "team2": {
+    "teamId": "NOR",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Ståle Solbakken"
+  },
+  "substitutions": [],
+  "cards": []
+}

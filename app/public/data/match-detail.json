@@ -27316,6 +27316,309 @@
       }
     ]
   },
+  "89": {
+    "team1": {
+      "teamId": "PAR",
+      "formation": "5-4-1",
+      "startingXI": [
+        {
+          "no": 12,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 15,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 23,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 25
+        }
+      ],
+      "coach": "Gustavo ALFARO"
+    },
+    "team2": {
+      "teamId": "FRA",
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 16,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 17,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 14,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 10,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        },
+        {
+          "no": 12,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 9
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 22
+        }
+      ],
+      "coach": "Didier Deschamps"
+    },
+    "substitutions": [
+      {
+        "minute": 58,
+        "teamId": "PAR",
+        "off": {
+          "no": 3,
+          "name": "Omar ALDERETE"
+        },
+        "on": {
+          "no": 13,
+          "name": "Jose CANALE"
+        }
+      },
+      {
+        "minute": 61,
+        "teamId": "PAR",
+        "off": {
+          "no": 19,
+          "name": "Julio ENCISO"
+        },
+        "on": {
+          "no": 24,
+          "name": "Gustavo CABALLERO"
+        }
+      },
+      {
+        "minute": 61,
+        "teamId": "FRA",
+        "off": {
+          "no": 12,
+          "name": "Bradley BARCOLA"
+        },
+        "on": {
+          "no": 20,
+          "name": "Desire DOUE"
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "PAR",
+        "off": {
+          "no": 10,
+          "name": "Miguel ALMIRON"
+        },
+        "on": {
+          "no": 21,
+          "name": "Gabriel AVALOS"
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "PAR",
+        "off": {
+          "no": 8,
+          "name": "Diego GOMEZ"
+        },
+        "on": {
+          "no": 11,
+          "name": "MAURICIO"
+        }
+      },
+      {
+        "minute": 84,
+        "teamId": "FRA",
+        "off": {
+          "no": 7,
+          "name": "Ousmane DEMBELE"
+        },
+        "on": {
+          "no": 24,
+          "name": "Rayan CHERKI"
+        }
+      }
+    ],
+    "cards": [
+      {
+        "minute": 19,
+        "teamId": "FRA",
+        "player": {
+          "no": 12,
+          "name": "Bradley BARCOLA"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 81,
+        "teamId": "FRA",
+        "player": {
+          "no": 6,
+          "name": "Manu KONE"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 90,
+        "teamId": "FRA",
+        "player": {
+          "no": 11,
+          "name": "Michael OLISE"
+        },
+        "card": "yellow"
+      }
+    ]
+  },
   "90": {
     "team1": {
       "teamId": "CAN",
@@ -27708,5 +28011,131 @@
         "card": "yellow"
       }
     ]
+  },
+  "91": {
+    "team1": {
+      "teamId": "BRA",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Carlo Ancelotti"
+    },
+    "team2": {
+      "teamId": "NOR",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Ståle Solbakken"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "92": {
+    "team1": {
+      "teamId": "MEX",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Javier Aguirre Onaindía"
+    },
+    "team2": {
+      "teamId": "ENG",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Thomas Tuchel"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "93": {
+    "team1": {
+      "teamId": "POR",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Roberto Martínez Montoliú"
+    },
+    "team2": {
+      "teamId": "ESP",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Luis de la Fuente Castillo"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "94": {
+    "team1": {
+      "teamId": "USA",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Mauricio POCHETTINO"
+    },
+    "team2": {
+      "teamId": "BEL",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Rudi Garcia"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "95": {
+    "team1": {
+      "teamId": "ARG",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Lionel SCALONI"
+    },
+    "team2": {
+      "teamId": "EGY",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Hossam Hassan Hussein"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "96": {
+    "team1": {
+      "teamId": "SUI",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Murat Yakin"
+    },
+    "team2": {
+      "teamId": "COL",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Néstor Gabriel Lorenzo"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "97": {
+    "team1": {
+      "teamId": "FRA",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Didier Deschamps"
+    },
+    "team2": {
+      "teamId": "MAR",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Mohamed OUAHBI"
+    },
+    "substitutions": [],
+    "cards": []
   }
 }

@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "FRA",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Didier Deschamps"
+  },
+  "team2": {
+    "teamId": "MAR",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Mohamed OUAHBI"
+  },
+  "substitutions": [],
+  "cards": []
+}

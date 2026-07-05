@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "MEX",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Javier Aguirre Onaindía"
+  },
+  "team2": {
+    "teamId": "ENG",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Thomas Tuchel"
+  },
+  "substitutions": [],
+  "cards": []
+}

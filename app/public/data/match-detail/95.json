@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "ARG",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Lionel SCALONI"
+  },
+  "team2": {
+    "teamId": "EGY",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Hossam Hassan Hussein"
+  },
+  "substitutions": [],
+  "cards": []
+}

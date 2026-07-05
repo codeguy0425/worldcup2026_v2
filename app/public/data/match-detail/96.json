@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "SUI",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Murat Yakin"
+  },
+  "team2": {
+    "teamId": "COL",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Néstor Gabriel Lorenzo"
+  },
+  "substitutions": [],
+  "cards": []
+}
