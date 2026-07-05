@@ -260,6 +260,8 @@
         "team2Original": "W77",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 0,
+        "score2": 1,
         "groundId": "philadelphia"
       },
       {
@@ -362,7 +364,7 @@
         "round": "Quarter-final",
         "date": "2026-07-09",
         "timeUtc": "20:00",
-        "team1Id": "W89",
+        "team1Id": "FRA",
         "team2Id": "MAR",
         "team1Original": "W89",
         "team2Original": "W90",
