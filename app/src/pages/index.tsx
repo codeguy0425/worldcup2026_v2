@@ -245,7 +245,7 @@ export function SchedulePage() {
 export function MatchPage() {
   const { t } = useLang()
   const { id } = useParams()
-  const { data: matches, loading } = useJson<Match[]>('/data/matches.json?v=5')
+  const { data: matches, loading } = useJson<Match[]>('/data/matches.json')
   const { data: teamData } = useJson<{ teams: Team[] }>('/data/teams.json')
   const { data: stadiumData } = useJson<{ stadiums: StadiumInfo[] }>('/data/stadiums.json')
   const { data: bracketData } = useJson<BracketData>('/data/bracket.json')
