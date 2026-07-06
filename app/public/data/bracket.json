@@ -320,6 +320,8 @@
         "team2Original": "W84",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 0,
+        "score2": 1,
         "groundId": "dallas"
       },
       {
@@ -381,7 +383,7 @@
         "round": "Quarter-final",
         "date": "2026-07-10",
         "timeUtc": "19:00",
-        "team1Id": "W93",
+        "team1Id": "ESP",
         "team2Id": "W94",
         "team1Original": "W93",
         "team2Original": "W94",
