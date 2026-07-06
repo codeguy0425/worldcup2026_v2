@@ -3156,6 +3156,37 @@
     "groundId": "mexico_city",
     "num": 92,
     "stage": "r16",
+    "score1": 2,
+    "score2": 3,
+    "goals": [
+      {
+        "minute": 36,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG"
+      },
+      {
+        "minute": 38,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG"
+      },
+      {
+        "minute": 42,
+        "scorer": "Julián Quiñones",
+        "teamId": "MEX"
+      },
+      {
+        "minute": 60,
+        "scorer": "Harry Kane",
+        "teamId": "ENG",
+        "penalty": true
+      },
+      {
+        "minute": 69,
+        "scorer": "Raúl Jiménez",
+        "teamId": "MEX",
+        "penalty": true
+      }
+    ],
     "team1Original": "W79",
     "team2Original": "W80"
   },
@@ -3254,7 +3285,7 @@
     "time": "05:00",
     "timeUtc": "21:00",
     "team1Id": "NOR",
-    "team2Id": "W92",
+    "team2Id": "ENG",
     "group": "",
     "groundId": "miami",
     "num": 99,

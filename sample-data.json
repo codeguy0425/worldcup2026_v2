@@ -3817,7 +3817,38 @@
       "group": "",
       "groundId": "mexico_city",
       "num": 92,
-      "stage": "r16"
+      "stage": "r16",
+      "score1": 2,
+      "score2": 3,
+      "goals": [
+        {
+          "minute": 36,
+          "scorer": "Jude Bellingham",
+          "teamId": "W80"
+        },
+        {
+          "minute": 38,
+          "scorer": "Jude Bellingham",
+          "teamId": "W80"
+        },
+        {
+          "minute": 42,
+          "scorer": "Julián Quiñones",
+          "teamId": "W79"
+        },
+        {
+          "minute": 60,
+          "scorer": "Harry Kane",
+          "teamId": "W80",
+          "penalty": true
+        },
+        {
+          "minute": 69,
+          "scorer": "Raúl Jiménez",
+          "teamId": "W79",
+          "penalty": true
+        }
+      ]
     },
     {
       "id": 93,

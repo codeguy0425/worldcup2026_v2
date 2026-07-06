@@ -31,8 +31,8 @@
     "teamId": "ENG",
     "teamName": "England",
     "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "goals": 5,
-    "penalties": 1,
+    "goals": 6,
+    "penalties": 2,
     "rank": 2
   },
   {
@@ -40,6 +40,24 @@
     "teamId": "SEN",
     "teamName": "Senegal",
     "flag": "🇸🇳",
+    "goals": 4,
+    "penalties": 0,
+    "rank": 3
+  },
+  {
+    "scorer": "Jude Bellingham",
+    "teamId": "ENG",
+    "teamName": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "goals": 4,
+    "penalties": 0,
+    "rank": 3
+  },
+  {
+    "scorer": "Julián Quiñones",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
     "goals": 4,
     "penalties": 0,
     "rank": 3
@@ -153,15 +171,6 @@
     "rank": 4
   },
   {
-    "scorer": "Julián Quiñones",
-    "teamId": "MEX",
-    "teamName": "Mexico",
-    "flag": "🇲🇽",
-    "goals": 3,
-    "penalties": 0,
-    "rank": 4
-  },
-  {
     "scorer": "Kai Havertz",
     "teamId": "GER",
     "teamName": "Germany",
@@ -177,6 +186,15 @@
     "flag": "🇧🇷",
     "goals": 3,
     "penalties": 0,
+    "rank": 4
+  },
+  {
+    "scorer": "Raúl Jiménez",
+    "teamId": "MEX",
+    "teamName": "Mexico",
+    "flag": "🇲🇽",
+    "goals": 3,
+    "penalties": 1,
     "rank": 4
   },
   {
@@ -306,15 +324,6 @@
     "rank": 5
   },
   {
-    "scorer": "Jude Bellingham",
-    "teamId": "ENG",
-    "teamName": "England",
-    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-    "goals": 2,
-    "penalties": 0,
-    "rank": 5
-  },
-  {
     "scorer": "Leandro Trossard",
     "teamId": "BEL",
     "teamName": "Belgium",
@@ -364,15 +373,6 @@
     "teamId": "IRN",
     "teamName": "Iran",
     "flag": "🇮🇷",
-    "goals": 2,
-    "penalties": 0,
-    "rank": 5
-  },
-  {
-    "scorer": "Raúl Jiménez",
-    "teamId": "MEX",
-    "teamName": "Mexico",
-    "flag": "🇲🇽",
     "goals": 2,
     "penalties": 0,
     "rank": 5
