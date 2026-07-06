@@ -28295,20 +28295,365 @@
   "92": {
     "team1": {
       "teamId": "MEX",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF",
+          "captain": true
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 23,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 19,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 16,
+          "pos": "FW"
+        },
+        {
+          "no": 25,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 26
+        },
+        {
+          "no": 10
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 22
+        }
+      ],
       "coach": "Javier Aguirre Onaindía"
     },
     "team2": {
       "teamId": "ENG",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 18,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 13
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 5
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 22
+        }
+      ],
       "coach": "Thomas Tuchel"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 57,
+        "teamId": "ENG",
+        "off": {
+          "no": 7,
+          "name": "Bukayo SAKA"
+        },
+        "on": {
+          "no": 5,
+          "name": "John STONES"
+        }
+      },
+      {
+        "minute": 61,
+        "teamId": "MEX",
+        "off": {
+          "no": 19,
+          "name": "Gilberto MORA"
+        },
+        "on": {
+          "no": 11,
+          "name": "Santiago GIMENEZ"
+        }
+      },
+      {
+        "minute": 61,
+        "teamId": "MEX",
+        "off": {
+          "no": 7,
+          "name": "Luis ROMO"
+        },
+        "on": {
+          "no": 26,
+          "name": "Brian GUTIERREZ"
+        }
+      },
+      {
+        "minute": 75,
+        "teamId": "ENG",
+        "off": {
+          "no": 8,
+          "name": "Elliot ANDERSON"
+        },
+        "on": {
+          "no": 15,
+          "name": "Dan BURN"
+        }
+      },
+      {
+        "minute": 75,
+        "teamId": "ENG",
+        "off": {
+          "no": 3,
+          "name": "Nico OREILLY"
+        },
+        "on": {
+          "no": 25,
+          "name": "Djed SPENCE"
+        }
+      },
+      {
+        "minute": 79,
+        "teamId": "MEX",
+        "off": {
+          "no": 2,
+          "name": "Jorge SANCHEZ"
+        },
+        "on": {
+          "no": 8,
+          "name": "Alvaro FIDALGO"
+        }
+      },
+      {
+        "minute": 81,
+        "teamId": "MEX",
+        "off": {
+          "no": 16,
+          "name": "Julian QUINONES"
+        },
+        "on": {
+          "no": 22,
+          "name": "Guillermo MARTINEZ"
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "ENG",
+        "off": {
+          "no": 9,
+          "name": "Harry KANE"
+        },
+        "on": {
+          "no": 17,
+          "name": "Morgan ROGERS"
+        }
+      }
+    ],
+    "cards": [
+      {
+        "minute": 71,
+        "teamId": "MEX",
+        "player": {
+          "no": 2,
+          "name": "Jorge SANCHEZ"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 90,
+        "teamId": "MEX",
+        "player": {
+          "no": 5,
+          "name": "Johan VASQUEZ"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 1,
+        "teamId": "ENG",
+        "player": {
+          "no": 4,
+          "name": "Declan RICE"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 54,
+        "teamId": "ENG",
+        "player": {
+          "no": 26,
+          "name": "Jarell QUANSAH"
+        },
+        "card": "second-yellow"
+      },
+      {
+        "minute": 68,
+        "teamId": "ENG",
+        "player": {
+          "no": 6,
+          "name": "Marc GUEHI"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 72,
+        "teamId": "ENG",
+        "player": {
+          "no": 3,
+          "name": "Nico OREILLY"
+        },
+        "card": "yellow"
+      },
+      {
+        "minute": 90,
+        "teamId": "ENG",
+        "player": {
+          "no": 14,
+          "name": "Jordan HENDERSON"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "93": {
     "team1": {
@@ -28396,6 +28741,24 @@
       "startingXI": [],
       "substitutes": [],
       "coach": "Mohamed OUAHBI"
+    },
+    "substitutions": [],
+    "cards": []
+  },
+  "99": {
+    "team1": {
+      "teamId": "NOR",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Ståle Solbakken"
+    },
+    "team2": {
+      "teamId": "ENG",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Thomas Tuchel"
     },
     "substitutions": [],
     "cards": []

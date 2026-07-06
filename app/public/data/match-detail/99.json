@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "NOR",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Ståle Solbakken"
+  },
+  "team2": {
+    "teamId": "ENG",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Thomas Tuchel"
+  },
+  "substitutions": [],
+  "cards": []
+}
