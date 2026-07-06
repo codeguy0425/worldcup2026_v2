@@ -755,7 +755,8 @@ export function MatchPage() {
               subOnMap.set(key, label)
             }
           }
-          const cardIcon: Record<string, string> = { yellow: '🟡', red: '🔴' }
+          const cardIcon: Record<string, string> = { yellow: '🟡', 'second-yellow': '🔴', red: '🔴' }
+          const cardLabel: Record<string, string> = { yellow: '', 'second-yellow': ' (2Y)', red: ' (RC)' }
 
           function renderTeamSide(td: TeamDetail, side: 'left'|'right') {
             const isLeft = side === 'left'
@@ -848,7 +849,7 @@ export function MatchPage() {
                     const team = teamMap.get(c.teamId)
                     return (
                       <div key={i} style={{ marginBottom: '3px' }}>
-                        <span>{cardIcon[c.card] || '🟨'}</span>
+                        <span>{cardIcon[c.card] || '🟨'}</span>{cardLabel[c.card] || ''}
                         {' '}<span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--accent)' }}>{t}'</span>
                         {' '}<span style={{ fontWeight: 500 }}>{pn(c.teamId, c.player.no)}</span>
                         <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}> #{c.player.no}</span>
