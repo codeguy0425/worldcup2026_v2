@@ -1,18 +1,329 @@
 {
   "team1": {
     "teamId": "USA",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "3-5-2",
+    "startingXI": [
+      {
+        "no": 24,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 16,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 17,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Mauricio POCHETTINO"
   },
   "team2": {
     "teamId": "BEL",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 21,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 8,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 23,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      },
+      {
+        "no": 14,
+        "pos": "FW"
+      },
+      {
+        "no": 17,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Rudi Garcia"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 21,
+      "teamId": "BEL",
+      "off": {
+        "no": 24,
+        "name": "Amadou ONANA"
+      },
+      "on": {
+        "no": 20,
+        "name": "Hans VANAKEN"
+      }
+    },
+    {
+      "minute": 59,
+      "teamId": "USA",
+      "off": {
+        "no": 10,
+        "name": "Christian PULISIC"
+      },
+      "on": {
+        "no": 14,
+        "name": "Sebastian BERHALTER"
+      }
+    },
+    {
+      "minute": 67,
+      "teamId": "BEL",
+      "off": {
+        "no": 17,
+        "name": "Charles DE KETELAERE"
+      },
+      "on": {
+        "no": 9,
+        "name": "Romelu LUKAKU"
+      }
+    },
+    {
+      "minute": 67,
+      "teamId": "BEL",
+      "off": {
+        "no": 14,
+        "name": "Dodi LUKEBAKIO"
+      },
+      "on": {
+        "no": 11,
+        "name": "Jeremy DOKU"
+      }
+    },
+    {
+      "minute": 72,
+      "teamId": "USA",
+      "off": {
+        "no": 4,
+        "name": "Tyler ADAMS"
+      },
+      "on": {
+        "no": 9,
+        "name": "Ricardo PEPI"
+      }
+    },
+    {
+      "minute": 89,
+      "teamId": "BEL",
+      "off": {
+        "no": 10,
+        "name": "Leandro TROSSARD"
+      },
+      "on": {
+        "no": 22,
+        "name": "Alexis SAELEMAEKERS"
+      }
+    },
+    {
+      "minute": 89,
+      "teamId": "BEL",
+      "off": {
+        "no": 23,
+        "name": "Nicolas RASKIN"
+      },
+      "on": {
+        "no": 6,
+        "name": "Axel WITSEL"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "USA",
+      "off": {
+        "no": 20,
+        "name": "Folarin BALOGUN"
+      },
+      "on": {
+        "no": 19,
+        "name": "Haji WRIGHT"
+      },
+      "stoppageTime": 2
+    },
+    {
+      "minute": 90,
+      "teamId": "USA",
+      "off": {
+        "no": 5,
+        "name": "Antonee ROBINSON"
+      },
+      "on": {
+        "no": 18,
+        "name": "Max ARFSTEN"
+      },
+      "stoppageTime": 2
+    }
+  ],
+  "cards": [
+    {
+      "minute": 35,
+      "teamId": "USA",
+      "player": {
+        "no": 8,
+        "name": "Weston McKENNIE"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 69,
+      "teamId": "USA",
+      "player": {
+        "no": 17,
+        "name": "Malik TILLMAN"
+      },
+      "card": "yellow"
+    }
+  ]
 }

@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "ESP",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Luis de la Fuente Castillo"
+  },
+  "team2": {
+    "teamId": "BEL",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Rudi Garcia"
+  },
+  "substitutions": [],
+  "cards": []
+}
