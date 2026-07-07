@@ -350,6 +350,8 @@
         "team2Original": "W88",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 3,
+        "score2": 2,
         "groundId": "atlanta"
       },
       {
@@ -411,7 +413,7 @@
         "round": "Quarter-final",
         "date": "2026-07-12",
         "timeUtc": "01:00",
-        "team1Id": "W95",
+        "team1Id": "ARG",
         "team2Id": "W96",
         "team1Original": "W95",
         "team2Original": "W96",

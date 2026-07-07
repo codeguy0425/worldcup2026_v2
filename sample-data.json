@@ -3927,7 +3927,37 @@
       "group": "",
       "groundId": "atlanta",
       "num": 95,
-      "stage": "r16"
+      "stage": "r16",
+      "score1": 3,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 15,
+          "scorer": "Yasser Ibrahim",
+          "teamId": "W88"
+        },
+        {
+          "minute": 67,
+          "scorer": "Mostafa Zico",
+          "teamId": "W88"
+        },
+        {
+          "minute": 79,
+          "scorer": "Cristian Romero",
+          "teamId": "W86"
+        },
+        {
+          "minute": 83,
+          "scorer": "Lionel Messi",
+          "teamId": "W86"
+        },
+        {
+          "minute": 90,
+          "scorer": "Enzo Fernández",
+          "teamId": "W86",
+          "stoppageTime": 2
+        }
+      ]
     },
     {
       "id": 96,

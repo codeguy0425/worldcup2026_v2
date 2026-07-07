@@ -3547,6 +3547,41 @@
     "groundId": "atlanta",
     "num": 95,
     "stage": "r16",
+    "score1": 3,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 15,
+        "scorer": "Yasser Ibrahim",
+        "teamId": "EGY",
+        "scorerNo": 2
+      },
+      {
+        "minute": 67,
+        "scorer": "Mostafa Zico",
+        "teamId": "EGY",
+        "scorerNo": 11
+      },
+      {
+        "minute": 79,
+        "scorer": "Cristian Romero",
+        "teamId": "ARG",
+        "scorerNo": 13
+      },
+      {
+        "minute": 83,
+        "scorer": "Lionel Messi",
+        "teamId": "ARG",
+        "scorerNo": 10
+      },
+      {
+        "minute": 90,
+        "scorer": "Enzo Fernández",
+        "teamId": "ARG",
+        "stoppageTime": 2,
+        "scorerNo": 24
+      }
+    ],
     "team1Original": "W86",
     "team2Original": "W88"
   },
@@ -3616,12 +3651,14 @@
     "date": "2026-07-12",
     "time": "09:00",
     "timeUtc": "01:00",
-    "team1Id": "W95",
+    "team1Id": "ARG",
     "team2Id": "W96",
     "group": "",
     "groundId": "kansas_city",
     "num": 100,
-    "stage": "qf"
+    "stage": "qf",
+    "team1Original": "W95",
+    "team2Original": "W96"
   },
   {
     "id": 101,
