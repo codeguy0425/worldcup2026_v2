@@ -198,6 +198,15 @@
     "rank": 4
   },
   {
+    "scorer": "Romelu Lukaku",
+    "teamId": "BEL",
+    "teamName": "Belgium",
+    "flag": "🇧🇪",
+    "goals": 3,
+    "penalties": 0,
+    "rank": 4
+  },
+  {
     "scorer": "Yoane Wissa",
     "teamId": "COD",
     "teamName": "DR Congo",
@@ -258,6 +267,15 @@
     "flag": "🇨🇭",
     "goals": 2,
     "penalties": 1,
+    "rank": 5
+  },
+  {
+    "scorer": "Charles De Ketelaere",
+    "teamId": "BEL",
+    "teamName": "Belgium",
+    "flag": "🇧🇪",
+    "goals": 2,
+    "penalties": 0,
     "rank": 5
   },
   {
@@ -333,6 +351,15 @@
     "rank": 5
   },
   {
+    "scorer": "Malik Tillman",
+    "teamId": "USA",
+    "teamName": "USA",
+    "flag": "🇺🇸",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 5
+  },
+  {
     "scorer": "Marko Arnautovic",
     "teamId": "AUT",
     "teamName": "Austria",
@@ -382,15 +409,6 @@
     "teamId": "ALG",
     "teamName": "Algeria",
     "flag": "🇩🇿",
-    "goals": 2,
-    "penalties": 0,
-    "rank": 5
-  },
-  {
-    "scorer": "Romelu Lukaku",
-    "teamId": "BEL",
-    "teamName": "Belgium",
-    "flag": "🇧🇪",
     "goals": 2,
     "penalties": 0,
     "rank": 5
@@ -774,6 +792,15 @@
     "rank": 6
   },
   {
+    "scorer": "Hans Vanaken",
+    "teamId": "BEL",
+    "teamName": "Belgium",
+    "flag": "🇧🇪",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 6
+  },
+  {
     "scorer": "Hassan Al-Haydos",
     "teamId": "QAT",
     "teamName": "Qatar",
@@ -1066,15 +1093,6 @@
     "teamId": "EGY",
     "teamName": "Egypt",
     "flag": "🇪🇬",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 6
-  },
-  {
-    "scorer": "Malik Tillman",
-    "teamId": "USA",
-    "teamName": "USA",
-    "flag": "🇺🇸",
     "goals": 1,
     "penalties": 0,
     "rank": 6

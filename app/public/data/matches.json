@@ -3227,6 +3227,36 @@
     "groundId": "seattle",
     "num": 94,
     "stage": "r16",
+    "score1": 1,
+    "score2": 4,
+    "goals": [
+      {
+        "minute": 9,
+        "scorer": "Charles De Ketelaere",
+        "teamId": "BEL"
+      },
+      {
+        "minute": 31,
+        "scorer": "Malik Tillman",
+        "teamId": "USA"
+      },
+      {
+        "minute": 33,
+        "scorer": "Charles De Ketelaere",
+        "teamId": "BEL"
+      },
+      {
+        "minute": 57,
+        "scorer": "Hans Vanaken",
+        "teamId": "BEL"
+      },
+      {
+        "minute": 90,
+        "scorer": "Romelu Lukaku",
+        "teamId": "BEL",
+        "stoppageTime": 3
+      }
+    ],
     "team1Original": "W81",
     "team2Original": "W82"
   },
@@ -3282,7 +3312,7 @@
     "time": "03:00",
     "timeUtc": "19:00",
     "team1Id": "ESP",
-    "team2Id": "W94",
+    "team2Id": "BEL",
     "group": "",
     "groundId": "los_angeles",
     "num": 98,

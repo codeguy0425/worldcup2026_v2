@@ -3884,7 +3884,37 @@
       "group": "",
       "groundId": "seattle",
       "num": 94,
-      "stage": "r16"
+      "stage": "r16",
+      "score1": 1,
+      "score2": 4,
+      "goals": [
+        {
+          "minute": 9,
+          "scorer": "Charles De Ketelaere",
+          "teamId": "W82"
+        },
+        {
+          "minute": 31,
+          "scorer": "Malik Tillman",
+          "teamId": "W81"
+        },
+        {
+          "minute": 33,
+          "scorer": "Charles De Ketelaere",
+          "teamId": "W82"
+        },
+        {
+          "minute": 57,
+          "scorer": "Hans Vanaken",
+          "teamId": "W82"
+        },
+        {
+          "minute": 90,
+          "scorer": "Romelu Lukaku",
+          "teamId": "W82",
+          "stoppageTime": 3
+        }
+      ]
     },
     {
       "id": 95,
