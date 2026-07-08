@@ -3975,7 +3975,67 @@
       "score2": 0,
       "penalty1": 4,
       "penalty2": 3,
-      "goals": []
+      "goals": [],
+      "penaltyShootout": {
+        "SUI": [
+          {
+            "player": "Granit Xhaka",
+            "no": 10,
+            "scored": true
+          },
+          {
+            "player": "Zeki Amdouni",
+            "no": 23,
+            "scored": true
+          },
+          {
+            "player": "Manuel Akanji",
+            "no": 5,
+            "scored": false
+          },
+          {
+            "player": "Cedric Itten",
+            "no": 26,
+            "scored": true
+          },
+          {
+            "player": "Rubén Vargas",
+            "no": 17,
+            "scored": true
+          }
+        ],
+        "COL": [
+          {
+            "player": "Juan Fernando Quintero",
+            "no": 20,
+            "scored": true
+          },
+          {
+            "player": "Davinson Sánchez",
+            "no": 23,
+            "scored": false
+          },
+          {
+            "player": "Jaminton Campaz",
+            "no": 21,
+            "scored": true
+          },
+          {
+            "player": "Cucho Hernández",
+            "no": 19,
+            "scored": false
+          },
+          {
+            "player": "Luis Díaz",
+            "no": 7,
+            "scored": true
+          }
+        ]
+      },
+      "penaltySequence": {
+        "SUI": "YYNYY",
+        "COL": "YNYNY"
+      }
     },
     {
       "id": 97,
