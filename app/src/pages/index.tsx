@@ -72,6 +72,7 @@ interface Match {
   team1Original?: string; team2Original?: string
   penaltySequence?: Record<string, string>
   penaltyShootout?: Record<string, {player: string; scored: boolean}[]>
+  firstKicker?: string
 }
 
 interface GoalEvent {
@@ -690,31 +691,42 @@ export function MatchPage() {
           <div style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border)' }}>
             <h4 style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'center' }}>{t.match.penaltyShootout}</h4>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <table style={{ borderCollapse: 'collapse' }}>
-                <tbody>
-                  {[m.team1Id, m.team2Id].map(tid => {
-                    const team = teamMap.get(tid)
-                    const seq = (m.penaltySequence?.[tid] || '').split('')
-                    return (
-                      <tr key={tid}>
-                        <td style={{ padding: '3px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap', fontSize: '11px' }}>{team?.flag} {team?.name || tid}</td>
-                        <td style={{ padding: '3px 6px' }}>
-                          <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-                            {seq.map((c: string, i: number) => (
-                              <span key={i} style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
-                            ))}
-                          </div>
-                        </td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
+              {(() => {
+                const st = (m as any).firstKicker
+                  ? [(m as any).firstKicker, m.team1Id === (m as any).firstKicker ? m.team2Id : m.team1Id]
+                  : [m.team1Id, m.team2Id]
+                return (
+                  <table style={{ borderCollapse: 'collapse' }}>
+                    <tbody>
+                      {st.map(tid => {
+                        const team = teamMap.get(tid)
+                        const seq = (m.penaltySequence?.[tid] || '').split('')
+                        return (
+                          <tr key={tid}>
+                            <td style={{ padding: '3px 10px', textAlign: 'right', fontWeight: 600, whiteSpace: 'nowrap', fontSize: '11px' }}>{team?.flag} {team?.name || tid}</td>
+                            <td style={{ padding: '3px 6px' }}>
+                              <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+                                {seq.map((c: string, i: number) => (
+                                  <span key={i} style={{ display: 'inline-block', width: '12px', height: '12px', borderRadius: '50%', background: c === 'Y' ? '#34d399' : '#fb7185' }} />
+                                ))}
+                              </div>
+                            </td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                )
+              })()}
             </div>
             {/* Vertical name list per team in sequence */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginTop: '8px', fontSize: '10px' }}>
-              {[m.team1Id, m.team2Id].map(tid => {
-                const kicks = (m as any).penaltyShootout?.[tid] || []
+              {(() => {
+                const st = (m as any).firstKicker
+                  ? [(m as any).firstKicker, m.team1Id === (m as any).firstKicker ? m.team2Id : m.team1Id]
+                  : [m.team1Id, m.team2Id]
+                return st.map(tid => {
+                  const kicks = (m as any).penaltyShootout?.[tid] || []
                 return (
                   <div key={tid} style={{ textAlign: 'left' }}>
                     {kicks.map((k: {player: string; no?: number; scored: boolean}, i: number) => {
@@ -729,7 +741,7 @@ export function MatchPage() {
                     })}
                   </div>
                 )
-              })}
+              })})()}
             </div>
           </div>
         )}

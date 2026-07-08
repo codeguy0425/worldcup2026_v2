@@ -4032,6 +4032,7 @@
           }
         ]
       },
+      "firstKicker": "COL",
       "penaltySequence": {
         "SUI": "YYNYY",
         "COL": "YNYNY"
