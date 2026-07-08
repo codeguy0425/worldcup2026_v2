@@ -3147,6 +3147,7 @@
           }
         ]
       },
+      "firstKicker": "PAR",
       "goals": [
         {
           "minute": 42,
@@ -3248,7 +3249,8 @@
             "scored": true
           }
         ]
-      }
+      },
+      "firstKicker": "NED"
     },
     {
       "id": 76,
@@ -3714,7 +3716,8 @@
             "scored": true
           }
         ]
-      }
+      },
+      "firstKicker": "AUS"
     },
     {
       "id": 89,
