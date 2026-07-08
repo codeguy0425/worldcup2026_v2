@@ -1,18 +1,361 @@
 {
   "team1": {
     "teamId": "SUI",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Murat Yakin"
   },
   "team2": {
     "teamId": "COL",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 12,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 23,
+        "pos": "DF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 11,
+        "pos": "MF"
+      },
+      {
+        "no": 16,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 25,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Néstor Gabriel Lorenzo"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 66,
+      "teamId": "COL",
+      "off": {
+        "no": 11,
+        "name": "Jhon ARIAS"
+      },
+      "on": {
+        "no": 21,
+        "name": "Jaminton CAMPAZ"
+      }
+    },
+    {
+      "minute": 66,
+      "teamId": "COL",
+      "off": {
+        "no": 10,
+        "name": "James RODRIGUEZ"
+      },
+      "on": {
+        "no": 20,
+        "name": "Juan QUINTERO"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "SUI",
+      "off": {
+        "no": 13,
+        "name": "Ricardo RODRIGUEZ"
+      },
+      "on": {
+        "no": 2,
+        "name": "Miro MUHEIM"
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "COL",
+      "off": {
+        "no": 16,
+        "name": "Jefferson LERMA"
+      },
+      "on": {
+        "no": 6,
+        "name": "Richard RIOS"
+      }
+    },
+    {
+      "minute": 82,
+      "teamId": "COL",
+      "off": {
+        "no": 25,
+        "name": "Luis SUAREZ"
+      },
+      "on": {
+        "no": 19,
+        "name": "Cucho HERNANDEZ"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "SUI",
+      "off": {
+        "no": 7,
+        "name": "Breel EMBOLO"
+      },
+      "on": {
+        "no": 26,
+        "name": "Cedric ITTEN"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "SUI",
+      "off": {
+        "no": 6,
+        "name": "Denis ZAKARIA"
+      },
+      "on": {
+        "no": 3,
+        "name": "Silvan WIDMER"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "SUI",
+      "off": {
+        "no": 11,
+        "name": "Dan NDOYE"
+      },
+      "on": {
+        "no": 17,
+        "name": "Ruben VARGAS"
+      },
+      "stoppageTime": 1
+    },
+    {
+      "minute": 103,
+      "teamId": "SUI",
+      "off": {
+        "no": 22,
+        "name": "Fabian RIEDER"
+      },
+      "on": {
+        "no": 23,
+        "name": "Zeki AMDOUNI"
+      }
+    },
+    {
+      "minute": 118,
+      "teamId": "COL",
+      "off": {
+        "no": 3,
+        "name": "Jhon LUCUMI"
+      },
+      "on": {
+        "no": 13,
+        "name": "Yerry MINA"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 51,
+      "teamId": "SUI",
+      "player": {
+        "no": 10,
+        "name": "Granit XHAKA"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 59,
+      "teamId": "SUI",
+      "player": {
+        "no": 6,
+        "name": "Denis ZAKARIA"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 105,
+      "teamId": "SUI",
+      "player": {
+        "no": 2,
+        "name": "Miro MUHEIM"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 60,
+      "teamId": "COL",
+      "player": {
+        "no": 25,
+        "name": "Luis SUAREZ"
+      },
+      "card": "yellow"
+    },
+    {
+      "minute": 94,
+      "teamId": "COL",
+      "player": {
+        "no": 23,
+        "name": "Davinson SANCHEZ"
+      },
+      "card": "yellow"
+    }
+  ]
 }
