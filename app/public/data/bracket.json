@@ -365,7 +365,11 @@
         "team2Original": "W87",
         "team1Resolved": false,
         "team2Resolved": false,
-        "groundId": "vancouver"
+        "score1": 0,
+        "score2": 0,
+        "groundId": "vancouver",
+        "penalty1": 4,
+        "penalty2": 3
       }
     ],
     "qf": [
@@ -414,7 +418,7 @@
         "date": "2026-07-12",
         "timeUtc": "01:00",
         "team1Id": "ARG",
-        "team2Id": "W96",
+        "team2Id": "SUI",
         "team1Original": "W95",
         "team2Original": "W96",
         "team1Resolved": false,
