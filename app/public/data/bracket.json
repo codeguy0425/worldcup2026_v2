@@ -399,6 +399,8 @@
         "team2Original": "W94",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 2,
+        "score2": 1,
         "groundId": "los_angeles"
       },
       {
@@ -435,7 +437,7 @@
         "date": "2026-07-14",
         "timeUtc": "19:00",
         "team1Id": "FRA",
-        "team2Id": "W98",
+        "team2Id": "ESP",
         "team1Original": "W97",
         "team2Original": "W98",
         "team1Resolved": false,

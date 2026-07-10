@@ -4079,7 +4079,26 @@
       "group": "",
       "groundId": "los_angeles",
       "num": 98,
-      "stage": "qf"
+      "stage": "qf",
+      "score1": 2,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 30,
+          "scorer": "Fabián Ruiz",
+          "teamId": "W93"
+        },
+        {
+          "minute": 41,
+          "scorer": "Charles De Ketelaere",
+          "teamId": "W94"
+        },
+        {
+          "minute": 88,
+          "scorer": "Mikel Merino",
+          "teamId": "W93"
+        }
+      ]
     },
     {
       "id": 99,
