@@ -1,18 +1,321 @@
 {
   "team1": {
     "teamId": "FRA",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 16,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 17,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 26
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      }
+    ],
     "coach": "Didier Deschamps"
   },
   "team2": {
     "teamId": "MAR",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF",
+        "captain": true
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "DF"
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 23,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 21
+      }
+    ],
     "coach": "Mohamed OUAHBI"
   },
-  "substitutions": [],
-  "cards": []
+  "substitutions": [
+    {
+      "minute": 62,
+      "teamId": "MAR",
+      "off": {
+        "no": 6,
+        "name": "Ayyoub BOUADDI"
+      },
+      "on": {
+        "no": 4,
+        "name": "Sofyan AMRABAT"
+      }
+    },
+    {
+      "minute": 62,
+      "teamId": "MAR",
+      "off": {
+        "no": 23,
+        "name": "Bilal EL KHANNOUSS"
+      },
+      "on": {
+        "no": 9,
+        "name": "Soufiane RAHIMI"
+      }
+    },
+    {
+      "minute": 71,
+      "teamId": "FRA",
+      "off": {
+        "no": 6,
+        "name": "Manu KONE"
+      },
+      "on": {
+        "no": 18,
+        "name": "Warren ZAIRE-EMERY"
+      }
+    },
+    {
+      "minute": 74,
+      "teamId": "MAR",
+      "off": {
+        "no": 26,
+        "name": "Anass SALAH EDDINE"
+      },
+      "on": {
+        "no": 13,
+        "name": "Zakaria EL OUAHDI"
+      }
+    },
+    {
+      "minute": 74,
+      "teamId": "MAR",
+      "off": {
+        "no": 10,
+        "name": "Brahim DIAZ"
+      },
+      "on": {
+        "no": 16,
+        "name": "Gessime YASSINE"
+      }
+    },
+    {
+      "minute": 77,
+      "teamId": "FRA",
+      "off": {
+        "no": 10,
+        "name": "Kylian MBAPPE"
+      },
+      "on": {
+        "no": 22,
+        "name": "Jean-Philippe MATETA"
+      }
+    },
+    {
+      "minute": 77,
+      "teamId": "FRA",
+      "off": {
+        "no": 20,
+        "name": "Desire DOUE"
+      },
+      "on": {
+        "no": 12,
+        "name": "Bradley BARCOLA"
+      }
+    },
+    {
+      "minute": 85,
+      "teamId": "MAR",
+      "off": {
+        "no": 7,
+        "name": "Chemsdine TALBI"
+      },
+      "on": {
+        "no": 17,
+        "name": "Amine SBAI"
+      }
+    },
+    {
+      "minute": 87,
+      "teamId": "FRA",
+      "off": {
+        "no": 5,
+        "name": "Jules KOUNDE"
+      },
+      "on": {
+        "no": 2,
+        "name": "Malo GUSTO"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "minute": 63,
+      "teamId": "MAR",
+      "player": {
+        "no": 14,
+        "name": "Issa DIOP"
+      },
+      "card": "yellow"
+    }
+  ]
 }
