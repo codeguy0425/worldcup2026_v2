@@ -521,7 +521,6 @@ export function MatchPage() {
             return null
           })()
           const winnerTeam = winnerTeamId ? teamMap.get(winnerTeamId) : null
-          const winnerLabel = winnerTeam ? winnerTeam.name : t.match.winner
           return (
             <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)' }}>
               <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{t.match.winner} → {nextRoundInfo.round}</div>
@@ -533,7 +532,7 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px',
                 }}>
                   {hm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hm.date, hm.timeUtc, lang2)} ${toHkt(hm.date, hm.timeUtc).time}` })()}</span>}
-                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{winnerLabel}</span>
+                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{winnerTeam ? `${winnerTeam.flag} ${winnerTeam.name}` : t.match.winner}</span>
                   <span>vs</span>
                   <span>{oppTeam ? `${oppTeam.flag} ${oppTeam.name}` : oppId}</span>
                 </Link>
