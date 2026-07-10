@@ -4052,7 +4052,21 @@
       "group": "",
       "groundId": "boston",
       "num": 97,
-      "stage": "qf"
+      "stage": "qf",
+      "score1": 2,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 60,
+          "scorer": "Kylian Mbappé",
+          "teamId": "W89"
+        },
+        {
+          "minute": 66,
+          "scorer": "Ousmane Dembélé",
+          "teamId": "W89"
+        }
+      ]
     },
     {
       "id": 98,

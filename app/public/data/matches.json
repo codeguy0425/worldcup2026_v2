@@ -3401,6 +3401,20 @@
     "groundId": "boston",
     "num": 97,
     "stage": "qf",
+    "score1": 2,
+    "score2": 0,
+    "goals": [
+      {
+        "minute": 60,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA"
+      },
+      {
+        "minute": 66,
+        "scorer": "Ousmane Dembélé",
+        "teamId": "FRA"
+      }
+    ],
     "team1Original": "W89",
     "team2Original": "W90"
   },
@@ -3455,12 +3469,14 @@
     "date": "2026-07-14",
     "time": "03:00",
     "timeUtc": "19:00",
-    "team1Id": "W97",
+    "team1Id": "FRA",
     "team2Id": "W98",
     "group": "",
     "groundId": "dallas",
     "num": 101,
-    "stage": "sf"
+    "stage": "sf",
+    "team1Original": "W97",
+    "team2Original": "W98"
   },
   {
     "id": 102,

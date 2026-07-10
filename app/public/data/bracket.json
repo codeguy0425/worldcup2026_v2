@@ -384,6 +384,8 @@
         "team2Original": "W90",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 2,
+        "score2": 0,
         "groundId": "boston"
       },
       {
@@ -432,7 +434,7 @@
         "round": "Semi-final",
         "date": "2026-07-14",
         "timeUtc": "19:00",
-        "team1Id": "W97",
+        "team1Id": "FRA",
         "team2Id": "W98",
         "team1Original": "W97",
         "team2Original": "W98",
