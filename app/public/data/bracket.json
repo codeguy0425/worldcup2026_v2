@@ -414,6 +414,8 @@
         "team2Original": "W92",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 1,
+        "score2": 2,
         "groundId": "miami"
       },
       {
@@ -449,7 +451,7 @@
         "round": "Semi-final",
         "date": "2026-07-15",
         "timeUtc": "19:00",
-        "team1Id": "W99",
+        "team1Id": "ENG",
         "team2Id": "W100",
         "team1Original": "W99",
         "team2Original": "W100",

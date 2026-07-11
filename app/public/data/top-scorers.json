@@ -36,6 +36,15 @@
     "rank": 3
   },
   {
+    "scorer": "Jude Bellingham",
+    "teamId": "ENG",
+    "teamName": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "goals": 6,
+    "penalties": 0,
+    "rank": 3
+  },
+  {
     "scorer": "Ousmane Dembélé",
     "teamId": "FRA",
     "teamName": "France",
@@ -49,15 +58,6 @@
     "teamId": "SEN",
     "teamName": "Senegal",
     "flag": "🇸🇳",
-    "goals": 4,
-    "penalties": 0,
-    "rank": 5
-  },
-  {
-    "scorer": "Jude Bellingham",
-    "teamId": "ENG",
-    "teamName": "England",
-    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
     "goals": 4,
     "penalties": 0,
     "rank": 5
@@ -562,6 +562,15 @@
     "teamId": "ALG",
     "teamName": "Algeria",
     "flag": "🇩🇿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 8
+  },
+  {
+    "scorer": "Andreas Schjelderup",
+    "teamId": "NOR",
+    "teamName": "Norway",
+    "flag": "🇳🇴",
     "goals": 1,
     "penalties": 0,
     "rank": 8

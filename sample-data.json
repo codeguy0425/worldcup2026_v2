@@ -4111,7 +4111,27 @@
       "group": "",
       "groundId": "miami",
       "num": 99,
-      "stage": "qf"
+      "stage": "qf",
+      "score1": 1,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 36,
+          "scorer": "Andreas Schjelderup",
+          "teamId": "W91"
+        },
+        {
+          "minute": 45,
+          "scorer": "Jude Bellingham",
+          "teamId": "W92",
+          "stoppageTime": 2
+        },
+        {
+          "minute": 93,
+          "scorer": "Jude Bellingham",
+          "teamId": "W92"
+        }
+      ]
     },
     {
       "id": 100,

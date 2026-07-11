@@ -3464,6 +3464,26 @@
     "groundId": "miami",
     "num": 99,
     "stage": "qf",
+    "score1": 1,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 36,
+        "scorer": "Andreas Schjelderup",
+        "teamId": "NOR"
+      },
+      {
+        "minute": 45,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG",
+        "stoppageTime": 2
+      },
+      {
+        "minute": 93,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG"
+      }
+    ],
     "team1Original": "W91",
     "team2Original": "W92"
   },
@@ -3503,12 +3523,14 @@
     "date": "2026-07-15",
     "time": "03:00",
     "timeUtc": "19:00",
-    "team1Id": "W99",
+    "team1Id": "ENG",
     "team2Id": "W100",
     "group": "",
     "groundId": "atlanta",
     "num": 102,
-    "stage": "sf"
+    "stage": "sf",
+    "team1Original": "W99",
+    "team2Original": "W100"
   },
   {
     "id": 103,
