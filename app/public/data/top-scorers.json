@@ -340,6 +340,16 @@
     "scorerNo": 15
   },
   {
+    "scorer": "Dan Ndoye",
+    "teamId": "SUI",
+    "teamName": "Switzerland",
+    "flag": "🇨🇭",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 7,
+    "scorerNo": 11
+  },
+  {
     "scorer": "Daniel Muñoz",
     "teamId": "COL",
     "teamName": "Colombia",
@@ -378,6 +388,16 @@
     "penalties": 0,
     "rank": 7,
     "scorerNo": 21
+  },
+  {
+    "scorer": "Lautaro Martínez",
+    "teamId": "ARG",
+    "teamName": "Argentina",
+    "flag": "🇦🇷",
+    "goals": 2,
+    "penalties": 1,
+    "rank": 7,
+    "scorerNo": 22
   },
   {
     "scorer": "Leandro Trossard",
@@ -590,6 +610,16 @@
     "scorerNo": 9
   },
   {
+    "scorer": "Alexis Mac Allister",
+    "teamId": "ARG",
+    "teamName": "Argentina",
+    "flag": "🇦🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 8,
+    "scorerNo": 20
+  },
+  {
     "scorer": "Alexis Saelemaekers",
     "teamId": "BEL",
     "teamName": "Belgium",
@@ -754,16 +784,6 @@
     "teamId": "JPN",
     "teamName": "Japan",
     "flag": "🇯🇵",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 8,
-    "scorerNo": 11
-  },
-  {
-    "scorer": "Dan Ndoye",
-    "teamId": "SUI",
-    "teamName": "Switzerland",
-    "flag": "🇨🇭",
     "goals": 1,
     "penalties": 0,
     "rank": 8,
@@ -1100,6 +1120,15 @@
     "scorerNo": 25
   },
   {
+    "scorer": "Julián Álvarez",
+    "teamId": "ARG",
+    "teamName": "Argentina",
+    "flag": "🇦🇷",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 8
+  },
+  {
     "scorer": "Julio Enciso",
     "teamId": "PAR",
     "teamName": "Paraguay",
@@ -1198,16 +1227,6 @@
     "penalties": 0,
     "rank": 8,
     "scorerNo": 19
-  },
-  {
-    "scorer": "Lautaro Martínez",
-    "teamId": "ARG",
-    "teamName": "Argentina",
-    "flag": "🇦🇷",
-    "goals": 1,
-    "penalties": 1,
-    "rank": 8,
-    "scorerNo": 22
   },
   {
     "scorer": "Leo Østigard",

@@ -429,6 +429,8 @@
         "team2Original": "W96",
         "team1Resolved": false,
         "team2Resolved": false,
+        "score1": 3,
+        "score2": 1,
         "groundId": "kansas_city"
       }
     ],
@@ -452,7 +454,7 @@
         "date": "2026-07-15",
         "timeUtc": "19:00",
         "team1Id": "ENG",
-        "team2Id": "W100",
+        "team2Id": "ARG",
         "team1Original": "W99",
         "team2Original": "W100",
         "team1Resolved": false,

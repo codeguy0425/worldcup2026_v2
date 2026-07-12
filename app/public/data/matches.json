@@ -3787,6 +3787,34 @@
     "groundId": "kansas_city",
     "num": 100,
     "stage": "qf",
+    "score1": 3,
+    "score2": 1,
+    "goals": [
+      {
+        "minute": 10,
+        "scorer": "Alexis Mac Allister",
+        "teamId": "ARG",
+        "scorerNo": 20
+      },
+      {
+        "minute": 67,
+        "scorer": "Dan Ndoye",
+        "teamId": "SUI",
+        "scorerNo": 11
+      },
+      {
+        "minute": 112,
+        "scorer": "Julián Álvarez",
+        "teamId": "ARG"
+      },
+      {
+        "minute": 120,
+        "scorer": "Lautaro Martínez",
+        "teamId": "ARG",
+        "stoppageTime": 1,
+        "scorerNo": 22
+      }
+    ],
     "team1Original": "W95",
     "team2Original": "W96"
   },
@@ -3812,7 +3840,7 @@
     "time": "03:00",
     "timeUtc": "19:00",
     "team1Id": "ENG",
-    "team2Id": "W100",
+    "team2Id": "ARG",
     "group": "",
     "groundId": "atlanta",
     "num": 102,

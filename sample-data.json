@@ -4144,7 +4144,32 @@
       "group": "",
       "groundId": "kansas_city",
       "num": 100,
-      "stage": "qf"
+      "stage": "qf",
+      "score1": 3,
+      "score2": 1,
+      "goals": [
+        {
+          "minute": 10,
+          "scorer": "Alexis Mac Allister",
+          "teamId": "W95"
+        },
+        {
+          "minute": 67,
+          "scorer": "Dan Ndoye",
+          "teamId": "W96"
+        },
+        {
+          "minute": 112,
+          "scorer": "Julián Álvarez",
+          "teamId": "W95"
+        },
+        {
+          "minute": 120,
+          "scorer": "Lautaro Martínez",
+          "teamId": "W95",
+          "stoppageTime": 1
+        }
+      ]
     },
     {
       "id": 101,
