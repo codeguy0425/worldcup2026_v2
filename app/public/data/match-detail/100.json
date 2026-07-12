@@ -1,18 +1,209 @@
 {
   "team1": {
     "teamId": "ARG",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-1-3-2",
+    "startingXI": [
+      {
+        "no": 23,
+        "pos": "GK"
+      },
+      {
+        "no": 3,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "MF"
+      },
+      {
+        "no": 20,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 9,
+        "pos": "FW"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 11
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 22
+      }
+    ],
     "coach": "Lionel SCALONI"
   },
   "team2": {
     "teamId": "SUI",
-    "formation": "4-4-2",
-    "startingXI": [],
-    "substitutes": [],
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 1,
+        "pos": "GK"
+      },
+      {
+        "no": 4,
+        "pos": "DF"
+      },
+      {
+        "no": 5,
+        "pos": "DF"
+      },
+      {
+        "no": 13,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "MF"
+      },
+      {
+        "no": 8,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 15,
+        "pos": "MF"
+      },
+      {
+        "no": 22,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 12
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 2
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 20
+      },
+      {
+        "no": 16
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 26
+      }
+    ],
     "coach": "Murat Yakin"
   },
   "substitutions": [],
-  "cards": []
+  "cards": [
+    {
+      "minute": 44,
+      "teamId": "SUI",
+      "player": {
+        "no": 7,
+        "name": "Breel EMBOLO"
+      },
+      "card": "yellow"
+    }
+  ]
 }

@@ -1,0 +1,18 @@
+{
+  "team1": {
+    "teamId": "FRA",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Didier Deschamps"
+  },
+  "team2": {
+    "teamId": "ESP",
+    "formation": "4-4-2",
+    "startingXI": [],
+    "substitutes": [],
+    "coach": "Luis de la Fuente Castillo"
+  },
+  "substitutions": [],
+  "cards": []
+}

@@ -30681,35 +30681,532 @@
   "99": {
     "team1": {
       "teamId": "NOR",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-2-3",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 17,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 21,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 26,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 13
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 22
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 20
+        }
+      ],
       "coach": "Ståle Solbakken"
     },
     "team2": {
       "teamId": "ENG",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 2,
+          "pos": "DF"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 4,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW",
+          "captain": true
+        },
+        {
+          "no": 18,
+          "pos": "FW"
+        },
+        {
+          "no": 20,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 13
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 7
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 22
+        }
+      ],
       "coach": "Thomas Tuchel"
     },
-    "substitutions": [],
-    "cards": []
+    "substitutions": [
+      {
+        "minute": 60,
+        "teamId": "NOR",
+        "off": {
+          "no": 26,
+          "name": "Julian RYERSON"
+        },
+        "on": {
+          "no": 14,
+          "name": "Fredrik AURSNES"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "NOR",
+        "off": {
+          "no": 7,
+          "name": "Alexander SORLOTH"
+        },
+        "on": {
+          "no": 22,
+          "name": "Oscar BOBB"
+        }
+      },
+      {
+        "minute": 67,
+        "teamId": "NOR",
+        "off": {
+          "no": 21,
+          "name": "Andreas SCHJELDERUP"
+        },
+        "on": {
+          "no": 20,
+          "name": "Antonio NUSA"
+        }
+      },
+      {
+        "minute": 71,
+        "teamId": "ENG",
+        "off": {
+          "no": 18,
+          "name": "Anthony GORDON"
+        },
+        "on": {
+          "no": 24,
+          "name": "Reece JAMES"
+        }
+      },
+      {
+        "minute": 86,
+        "teamId": "ENG",
+        "off": {
+          "no": 3,
+          "name": "Nico OREILLY"
+        },
+        "on": {
+          "no": 25,
+          "name": "Djed SPENCE"
+        }
+      },
+      {
+        "minute": 89,
+        "teamId": "ENG",
+        "off": {
+          "no": 2,
+          "name": "Ezri KONSA"
+        },
+        "on": {
+          "no": 17,
+          "name": "Morgan ROGERS"
+        }
+      },
+      {
+        "minute": 90,
+        "teamId": "NOR",
+        "off": {
+          "no": 5,
+          "name": "David MOLLER WOLFE"
+        },
+        "on": {
+          "no": 16,
+          "name": "Marcus HOLMGREN PEDERSEN"
+        }
+      },
+      {
+        "minute": 111,
+        "teamId": "ENG",
+        "off": {
+          "no": 10,
+          "name": "Jude BELLINGHAM"
+        },
+        "on": {
+          "no": 15,
+          "name": "Dan BURN"
+        }
+      }
+    ],
+    "cards": [
+      {
+        "minute": 117,
+        "teamId": "NOR",
+        "player": {
+          "no": 3,
+          "name": "Kristoffer AJER"
+        },
+        "card": "yellow"
+      }
+    ]
   },
   "100": {
     "team1": {
       "teamId": "ARG",
-      "formation": "4-4-2",
-      "startingXI": [],
-      "substitutes": [],
+      "formation": "4-1-3-2",
+      "startingXI": [
+        {
+          "no": 23,
+          "pos": "GK"
+        },
+        {
+          "no": 3,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 26,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "MF"
+        },
+        {
+          "no": 20,
+          "pos": "MF"
+        },
+        {
+          "no": 24,
+          "pos": "MF"
+        },
+        {
+          "no": 9,
+          "pos": "FW"
+        },
+        {
+          "no": 10,
+          "pos": "FW",
+          "captain": true
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 1
+        },
+        {
+          "no": 12
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 4
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 8
+        },
+        {
+          "no": 11
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 15
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 22
+        }
+      ],
       "coach": "Lionel SCALONI"
     },
     "team2": {
       "teamId": "SUI",
+      "formation": "4-2-3-1",
+      "startingXI": [
+        {
+          "no": 1,
+          "pos": "GK"
+        },
+        {
+          "no": 4,
+          "pos": "DF"
+        },
+        {
+          "no": 5,
+          "pos": "DF"
+        },
+        {
+          "no": 13,
+          "pos": "DF"
+        },
+        {
+          "no": 6,
+          "pos": "MF"
+        },
+        {
+          "no": 8,
+          "pos": "MF"
+        },
+        {
+          "no": 10,
+          "pos": "MF",
+          "captain": true
+        },
+        {
+          "no": 15,
+          "pos": "MF"
+        },
+        {
+          "no": 22,
+          "pos": "MF"
+        },
+        {
+          "no": 7,
+          "pos": "FW"
+        },
+        {
+          "no": 11,
+          "pos": "FW"
+        }
+      ],
+      "substitutes": [
+        {
+          "no": 12
+        },
+        {
+          "no": 21
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": 3
+        },
+        {
+          "no": 18
+        },
+        {
+          "no": 24
+        },
+        {
+          "no": 25
+        },
+        {
+          "no": 14
+        },
+        {
+          "no": 20
+        },
+        {
+          "no": 16
+        },
+        {
+          "no": 17
+        },
+        {
+          "no": 19
+        },
+        {
+          "no": 23
+        },
+        {
+          "no": 26
+        }
+      ],
+      "coach": "Murat Yakin"
+    },
+    "substitutions": [],
+    "cards": [
+      {
+        "minute": 44,
+        "teamId": "SUI",
+        "player": {
+          "no": 7,
+          "name": "Breel EMBOLO"
+        },
+        "card": "yellow"
+      }
+    ]
+  },
+  "101": {
+    "team1": {
+      "teamId": "FRA",
       "formation": "4-4-2",
       "startingXI": [],
       "substitutes": [],
-      "coach": "Murat Yakin"
+      "coach": "Didier Deschamps"
+    },
+    "team2": {
+      "teamId": "ESP",
+      "formation": "4-4-2",
+      "startingXI": [],
+      "substitutes": [],
+      "coach": "Luis de la Fuente Castillo"
     },
     "substitutions": [],
     "cards": []
