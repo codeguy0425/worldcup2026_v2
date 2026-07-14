@@ -566,7 +566,7 @@ export function MatchPage() {
           const htm = allMatches.find(x => x.id === tm?.matchId)
           return (
             <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-              <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}</div>
+              <div style={{ fontWeight: 600, color: '#34d399', marginBottom: '6px' }}>{t.match.winner} → {nextRoundInfo.winnerRound}</div>
               {fm && (
                 <Link to={`/match/${fm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
@@ -575,12 +575,12 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px', marginBottom: '4px',
                 }}>
                   {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hfm.date, hfm.timeUtc, lang2)} ${toHkt(hfm.date, hfm.timeUtc).time}` })()}</span>}
-                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{nextRoundInfo.winnerTeam || t.match.winner}</span>
+                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{nextRoundInfo.winnerTeam || t.match.winner}</span>
                   <span>vs</span>
                   <span>{fOpp || 'TBD'}</span>
                 </Link>
               )}
-              <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}</div>
+              <div style={{ fontWeight: 600, color: '#fb7185', marginBottom: '6px' }}>{t.match.loser} → {nextRoundInfo.loserRound}</div>
               {tm && (
                 <Link to={`/match/${tm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
@@ -589,7 +589,7 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px',
                 }}>
                   {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(htm.date, htm.timeUtc, lang2)} ${toHkt(htm.date, htm.timeUtc).time}` })()}</span>}
-                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{nextRoundInfo.loserTeam || t.match.loser}</span>
+                  <span style={{ fontWeight: 600, fontSize: '10px' }}>{nextRoundInfo.loserTeam || t.match.loser}</span>
                   <span>vs</span>
                   <span>{tOpp || 'TBD'}</span>
                 </Link>
