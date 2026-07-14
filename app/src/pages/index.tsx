@@ -356,12 +356,26 @@ export function MatchPage() {
         const o = teamMap.get(oppId)
         return o ? `${o.flag} ${o.name}` : /^[WL]\d+$/.test(oppId) ? oppId : null
       })() : null
+      const winnerTeam = finalMatch ? (() => {
+        const isT1 = finalMatch.team1Original === wId
+        const wid = isT1 ? finalMatch.team1Id : finalMatch.team2Id
+        const w = teamMap.get(wid)
+        return w ? `${w.flag} ${w.name}` : wid
+      })() : null
+      const loserTeam = thirdMatch ? (() => {
+        const isT1 = thirdMatch.team1Original === lId
+        const lid = isT1 ? thirdMatch.team1Id : thirdMatch.team2Id
+        const l = teamMap.get(lid)
+        return l ? `${l.flag} ${l.name}` : lid
+      })() : null
       return {
         type: 'sf',
         winnerRound: t.round.final,
         winnerOpp: fOpp,
+        winnerTeam,
         loserRound: t.round.third,
         loserOpp: tOpp,
+        loserTeam,
       }
     }
 
@@ -552,7 +566,7 @@ export function MatchPage() {
           const htm = allMatches.find(x => x.id === tm?.matchId)
           return (
             <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-              <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}{nextRoundInfo.winnerOpp ? ` vs ${nextRoundInfo.winnerOpp}` : ''}</div>
+              <div><span style={{ fontWeight: 600, color: '#34d399' }}>{nextRoundInfo.winnerTeam || t.match.winner}</span> → {nextRoundInfo.winnerRound}{nextRoundInfo.winnerOpp ? ` vs ${nextRoundInfo.winnerOpp}` : ''}</div>
               {fm && (
                 <Link to={`/match/${fm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
@@ -561,12 +575,12 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px', marginBottom: '4px',
                 }}>
                   {hfm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(hfm.date, hfm.timeUtc, lang2)} ${toHkt(hfm.date, hfm.timeUtc).time}` })()}</span>}
-                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{t.match.winner}</span>
+                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#34d399' }}>{nextRoundInfo.winnerTeam || t.match.winner}</span>
                   <span>vs</span>
                   <span>{fOpp || 'TBD'}</span>
                 </Link>
               )}
-              <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}{nextRoundInfo.loserOpp ? ` vs ${nextRoundInfo.loserOpp}` : ''}</div>
+              <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{nextRoundInfo.loserTeam || t.match.loser}</span> → {nextRoundInfo.loserRound}{nextRoundInfo.loserOpp ? ` vs ${nextRoundInfo.loserOpp}` : ''}</div>
               {tm && (
                 <Link to={`/match/${tm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
@@ -575,7 +589,7 @@ export function MatchPage() {
                   textDecoration: 'none', color: 'inherit', fontSize: '11px',
                 }}>
                   {htm && <span style={{ fontSize: '7px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)', minWidth: '22px' }}>{(() => { const lang2 = t.lang === 'En' ? 'zh' : 'en'; return `${hktDateLabel(htm.date, htm.timeUtc, lang2)} ${toHkt(htm.date, htm.timeUtc).time}` })()}</span>}
-                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{t.match.loser}</span>
+                  <span style={{ fontWeight: 600, fontSize: '10px', color: '#fb7185' }}>{nextRoundInfo.loserTeam || t.match.loser}</span>
                   <span>vs</span>
                   <span>{tOpp || 'TBD'}</span>
                 </Link>
