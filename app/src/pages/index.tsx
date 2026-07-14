@@ -348,13 +348,13 @@ export function MatchPage() {
         const isT1 = finalMatch.team1Original === wId
         const oppId = isT1 ? finalMatch.team2Id : finalMatch.team1Id
         const o = teamMap.get(oppId)
-        return o ? `${o.flag} ${o.name}` : null
+        return o ? `${o.flag} ${o.name}` : /^[WL]\d+$/.test(oppId) ? oppId : null
       })() : null
       const tOpp = thirdMatch ? (() => {
         const isT1 = thirdMatch.team1Original === lId
         const oppId = isT1 ? thirdMatch.team2Id : thirdMatch.team1Id
         const o = teamMap.get(oppId)
-        return o ? `${o.flag} ${o.name}` : null
+        return o ? `${o.flag} ${o.name}` : /^[WL]\d+$/.test(oppId) ? oppId : null
       })() : null
       return {
         type: 'sf',
