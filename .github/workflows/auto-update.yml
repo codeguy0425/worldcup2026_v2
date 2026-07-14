@@ -2,9 +2,6 @@ name: Auto-Update Scores
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 23 * * *'   # 7am HKT
-    - cron: '0 5 * * *'    # 1pm HKT
 
 permissions:
   contents: write
