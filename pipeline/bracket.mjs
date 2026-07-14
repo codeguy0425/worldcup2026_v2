@@ -101,7 +101,7 @@ export function computeBracket(matches, teamsMap, groupLabels, fairPlayScores = 
         matchId: m.id, round: m.round, date: m.date, timeUtc: m.timeUtc,
         team1Id: resolvedT1, team2Id: resolvedT2,
         team1Original: m.team1Id, team2Original: m.team2Id,
-        team1Resolved: t1 !== m.team1Id, team2Resolved: t2 !== m.team2Id,
+        team1Resolved: resolvedT1 !== m.team1Id, team2Resolved: resolvedT2 !== m.team2Id,
         score1: m.score1, score2: m.score2, groundId: m.groundId,
         penalty1: m.penalty1, penalty2: m.penalty2,
       }

@@ -258,8 +258,8 @@
         "team2Id": "FRA",
         "team1Original": "W74",
         "team2Original": "W77",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 0,
         "score2": 1,
         "groundId": "philadelphia"
@@ -273,8 +273,8 @@
         "team2Id": "MAR",
         "team1Original": "W73",
         "team2Original": "W75",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 0,
         "score2": 3,
         "groundId": "houston"
@@ -288,8 +288,8 @@
         "team2Id": "NOR",
         "team1Original": "W76",
         "team2Original": "W78",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 1,
         "score2": 2,
         "groundId": "new_york"
@@ -303,8 +303,8 @@
         "team2Id": "ENG",
         "team1Original": "W79",
         "team2Original": "W80",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 2,
         "score2": 3,
         "groundId": "mexico_city"
@@ -318,8 +318,8 @@
         "team2Id": "ESP",
         "team1Original": "W83",
         "team2Original": "W84",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 0,
         "score2": 1,
         "groundId": "dallas"
@@ -333,8 +333,8 @@
         "team2Id": "BEL",
         "team1Original": "W81",
         "team2Original": "W82",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 1,
         "score2": 4,
         "groundId": "seattle"
@@ -348,8 +348,8 @@
         "team2Id": "EGY",
         "team1Original": "W86",
         "team2Original": "W88",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 3,
         "score2": 2,
         "groundId": "atlanta"
@@ -363,8 +363,8 @@
         "team2Id": "COL",
         "team1Original": "W85",
         "team2Original": "W87",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 0,
         "score2": 0,
         "groundId": "vancouver",
@@ -382,8 +382,8 @@
         "team2Id": "MAR",
         "team1Original": "W89",
         "team2Original": "W90",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 2,
         "score2": 0,
         "groundId": "boston"
@@ -397,8 +397,8 @@
         "team2Id": "BEL",
         "team1Original": "W93",
         "team2Original": "W94",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 2,
         "score2": 1,
         "groundId": "los_angeles"
@@ -412,8 +412,8 @@
         "team2Id": "ENG",
         "team1Original": "W91",
         "team2Original": "W92",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 1,
         "score2": 2,
         "groundId": "miami"
@@ -427,8 +427,8 @@
         "team2Id": "SUI",
         "team1Original": "W95",
         "team2Original": "W96",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 3,
         "score2": 1,
         "groundId": "kansas_city"
@@ -444,8 +444,8 @@
         "team2Id": "ESP",
         "team1Original": "W97",
         "team2Original": "W98",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "score1": 0,
         "score2": 2,
         "groundId": "dallas"
@@ -459,8 +459,8 @@
         "team2Id": "ARG",
         "team1Original": "W99",
         "team2Original": "W100",
-        "team1Resolved": false,
-        "team2Resolved": false,
+        "team1Resolved": true,
+        "team2Resolved": true,
         "groundId": "atlanta"
       }
     ],
@@ -474,7 +474,7 @@
         "team2Id": "L102",
         "team1Original": "L101",
         "team2Original": "L102",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "miami"
       }
@@ -489,7 +489,7 @@
         "team2Id": "W102",
         "team1Original": "W101",
         "team2Original": "W102",
-        "team1Resolved": false,
+        "team1Resolved": true,
         "team2Resolved": false,
         "groundId": "new_york"
       }
