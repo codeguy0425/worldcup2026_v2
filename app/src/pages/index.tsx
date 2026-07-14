@@ -341,17 +341,17 @@ export function MatchPage() {
     // SF → Final (winner) + Third place (loser)
     if (m.stage === 'sf') {
       const finalMs = bracketData.rounds['final'] || []
-      const finalMatch = finalMs.find((n: BracketMatch) => n.team1Id === wId || n.team2Id === wId)
+      const finalMatch = finalMs.find((n: BracketMatch) => n.team1Original === wId || n.team2Original === wId)
       const thirdMs = bracketData.rounds['third'] || []
-      const thirdMatch = thirdMs.find((n: BracketMatch) => n.team1Id === lId || n.team2Id === lId)
+      const thirdMatch = thirdMs.find((n: BracketMatch) => n.team1Original === lId || n.team2Original === lId)
       const fOpp = finalMatch ? (() => {
-        const isT1 = finalMatch.team1Id === wId
+        const isT1 = finalMatch.team1Original === wId
         const oppId = isT1 ? finalMatch.team2Id : finalMatch.team1Id
         const o = teamMap.get(oppId)
         return o ? `${o.flag} ${o.name}` : null
       })() : null
       const tOpp = thirdMatch ? (() => {
-        const isT1 = thirdMatch.team1Id === lId
+        const isT1 = thirdMatch.team1Original === lId
         const oppId = isT1 ? thirdMatch.team2Id : thirdMatch.team1Id
         const o = teamMap.get(oppId)
         return o ? `${o.flag} ${o.name}` : null
