@@ -566,7 +566,7 @@ export function MatchPage() {
           const htm = allMatches.find(x => x.id === tm?.matchId)
           return (
             <div style={{ marginTop: '14px', fontSize: '11px', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-              <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}{nextRoundInfo.winnerOpp ? ` vs ${nextRoundInfo.winnerOpp}` : ''}</div>
+              <div><span style={{ fontWeight: 600, color: '#34d399' }}>{t.match.winner}</span> → {nextRoundInfo.winnerRound}</div>
               {fm && (
                 <Link to={`/match/${fm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
@@ -580,7 +580,7 @@ export function MatchPage() {
                   <span>{fOpp || 'TBD'}</span>
                 </Link>
               )}
-              <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}{nextRoundInfo.loserOpp ? ` vs ${nextRoundInfo.loserOpp}` : ''}</div>
+              <div><span style={{ fontWeight: 600, color: '#fb7185' }}>{t.match.loser}</span> → {nextRoundInfo.loserRound}</div>
               {tm && (
                 <Link to={`/match/${tm.matchId}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: '4px',
