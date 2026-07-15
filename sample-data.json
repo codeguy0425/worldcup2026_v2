@@ -4210,7 +4210,26 @@
       "group": "",
       "groundId": "atlanta",
       "num": 102,
-      "stage": "sf"
+      "stage": "sf",
+      "score1": 1,
+      "score2": 2,
+      "goals": [
+        {
+          "minute": 55,
+          "scorer": "Anthony Gordon",
+          "teamId": "W99"
+        },
+        {
+          "minute": 86,
+          "scorer": "Enzo Fernández",
+          "teamId": "W100"
+        },
+        {
+          "minute": 92,
+          "scorer": "Lautaro Martínez",
+          "teamId": "W100"
+        }
+      ]
     },
     {
       "id": 103,

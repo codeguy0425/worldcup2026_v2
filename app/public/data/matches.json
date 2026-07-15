@@ -3863,6 +3863,28 @@
     "groundId": "atlanta",
     "num": 102,
     "stage": "sf",
+    "score1": 1,
+    "score2": 2,
+    "goals": [
+      {
+        "minute": 55,
+        "scorer": "Anthony Gordon",
+        "teamId": "ENG",
+        "scorerNo": 18
+      },
+      {
+        "minute": 86,
+        "scorer": "Enzo Fernández",
+        "teamId": "ARG",
+        "scorerNo": 24
+      },
+      {
+        "minute": 92,
+        "scorer": "Lautaro Martínez",
+        "teamId": "ARG",
+        "scorerNo": 22
+      }
+    ],
     "team1Original": "W99",
     "team2Original": "W100"
   },
@@ -3873,7 +3895,7 @@
     "time": "05:00",
     "timeUtc": "21:00",
     "team1Id": "FRA",
-    "team2Id": "L102",
+    "team2Id": "ENG",
     "group": "",
     "groundId": "miami",
     "num": 103,
@@ -3888,7 +3910,7 @@
     "time": "03:00",
     "timeUtc": "19:00",
     "team1Id": "ESP",
-    "team2Id": "W102",
+    "team2Id": "ARG",
     "group": "",
     "groundId": "new_york",
     "num": 104,

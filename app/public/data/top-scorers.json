@@ -210,6 +210,16 @@
     "scorerNo": 7
   },
   {
+    "scorer": "Lautaro Martínez",
+    "teamId": "ARG",
+    "teamName": "Argentina",
+    "flag": "🇦🇷",
+    "goals": 3,
+    "penalties": 1,
+    "rank": 6,
+    "scorerNo": 22
+  },
+  {
     "scorer": "Matheus Cunha",
     "teamId": "BRA",
     "teamName": "Brazil",
@@ -370,6 +380,16 @@
     "scorerNo": 8
   },
   {
+    "scorer": "Enzo Fernández",
+    "teamId": "ARG",
+    "teamName": "Argentina",
+    "flag": "🇦🇷",
+    "goals": 2,
+    "penalties": 0,
+    "rank": 7,
+    "scorerNo": 24
+  },
+  {
     "scorer": "Ermin Mahmic",
     "teamId": "BIH",
     "teamName": "Bosnia & Herzegovina",
@@ -388,16 +408,6 @@
     "penalties": 0,
     "rank": 7,
     "scorerNo": 21
-  },
-  {
-    "scorer": "Lautaro Martínez",
-    "teamId": "ARG",
-    "teamName": "Argentina",
-    "flag": "🇦🇷",
-    "goals": 2,
-    "penalties": 1,
-    "rank": 7,
-    "scorerNo": 22
   },
   {
     "scorer": "Leandro Trossard",
@@ -690,6 +700,16 @@
     "scorerNo": 11
   },
   {
+    "scorer": "Anthony Gordon",
+    "teamId": "ENG",
+    "teamName": "England",
+    "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 8,
+    "scorerNo": 18
+  },
+  {
     "scorer": "Antonio Nusa",
     "teamId": "NOR",
     "teamName": "Norway",
@@ -838,16 +858,6 @@
     "penalties": 0,
     "rank": 8,
     "scorerNo": 14
-  },
-  {
-    "scorer": "Enzo Fernández",
-    "teamId": "ARG",
-    "teamName": "Argentina",
-    "flag": "🇦🇷",
-    "goals": 1,
-    "penalties": 0,
-    "rank": 8,
-    "scorerNo": 24
   },
   {
     "scorer": "Fabián Ruiz",
