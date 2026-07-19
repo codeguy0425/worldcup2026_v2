@@ -1,0 +1,262 @@
+{
+  "team1": {
+    "teamId": "FRA",
+    "formation": "4-2-3-1",
+    "startingXI": [
+      {
+        "no": 16,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 15,
+        "pos": "DF"
+      },
+      {
+        "no": 19,
+        "pos": "DF"
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 14,
+        "pos": "MF"
+      },
+      {
+        "no": 18,
+        "pos": "MF"
+      },
+      {
+        "no": 24,
+        "pos": "MF"
+      },
+      {
+        "no": 10,
+        "pos": "FW",
+        "captain": true
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 20,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 4
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 17
+      },
+      {
+        "no": 21
+      },
+      {
+        "no": 6
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 13
+      },
+      {
+        "no": 25
+      },
+      {
+        "no": 7
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 22
+      }
+    ],
+    "coach": "Didier Deschamps"
+  },
+  "team2": {
+    "teamId": "ENG",
+    "formation": "4-1-2-3",
+    "startingXI": [
+      {
+        "no": 13,
+        "pos": "GK"
+      },
+      {
+        "no": 2,
+        "pos": "DF"
+      },
+      {
+        "no": 6,
+        "pos": "DF"
+      },
+      {
+        "no": 25,
+        "pos": "DF"
+      },
+      {
+        "no": 26,
+        "pos": "DF"
+      },
+      {
+        "no": 4,
+        "pos": "MF",
+        "captain": true
+      },
+      {
+        "no": 17,
+        "pos": "MF"
+      },
+      {
+        "no": 21,
+        "pos": "MF"
+      },
+      {
+        "no": 7,
+        "pos": "FW"
+      },
+      {
+        "no": 11,
+        "pos": "FW"
+      },
+      {
+        "no": 22,
+        "pos": "FW"
+      }
+    ],
+    "substitutes": [
+      {
+        "no": 1
+      },
+      {
+        "no": 23
+      },
+      {
+        "no": 3
+      },
+      {
+        "no": 5
+      },
+      {
+        "no": 12
+      },
+      {
+        "no": 15
+      },
+      {
+        "no": 24
+      },
+      {
+        "no": 8
+      },
+      {
+        "no": 10
+      },
+      {
+        "no": 14
+      },
+      {
+        "no": 9
+      },
+      {
+        "no": 18
+      },
+      {
+        "no": 19
+      },
+      {
+        "no": 20
+      }
+    ],
+    "coach": "Thomas Tuchel"
+  },
+  "substitutions": [
+    {
+      "minute": 79,
+      "teamId": "ENG",
+      "off": {
+        "no": 22,
+        "name": "Ivan TONEY"
+      },
+      "on": {
+        "no": 8,
+        "name": "Elliot ANDERSON"
+      }
+    },
+    {
+      "minute": 79,
+      "teamId": "ENG",
+      "off": {
+        "no": 21,
+        "name": "Eberechi EZE"
+      },
+      "on": {
+        "no": 10,
+        "name": "Jude BELLINGHAM"
+      }
+    },
+    {
+      "minute": 83,
+      "teamId": "ENG",
+      "off": {
+        "no": 26,
+        "name": "Jarell QUANSAH"
+      },
+      "on": {
+        "no": 24,
+        "name": "Reece JAMES"
+      }
+    },
+    {
+      "minute": 90,
+      "teamId": "FRA",
+      "off": {
+        "no": 2,
+        "name": "Malo GUSTO"
+      },
+      "on": {
+        "no": 5,
+        "name": "Jules KOUNDE"
+      },
+      "stoppageTime": 1
+    },
+    {
+      "minute": 90,
+      "teamId": "ENG",
+      "off": {
+        "no": 6,
+        "name": "Marc GUEHI"
+      },
+      "on": {
+        "no": 12,
+        "name": "Trevoh CHALOBAH"
+      },
+      "stoppageTime": 2
+    }
+  ],
+  "cards": []
+}

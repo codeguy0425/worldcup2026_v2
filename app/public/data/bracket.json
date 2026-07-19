@@ -478,6 +478,8 @@
         "team2Original": "L102",
         "team1Resolved": true,
         "team2Resolved": true,
+        "score1": 4,
+        "score2": 6,
         "groundId": "miami"
       }
     ],

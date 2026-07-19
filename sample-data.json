@@ -4242,7 +4242,65 @@
       "group": "",
       "groundId": "miami",
       "num": 103,
-      "stage": "third"
+      "stage": "third",
+      "score1": 4,
+      "score2": 6,
+      "goals": [
+        {
+          "minute": 3,
+          "scorer": "Declan Rice",
+          "teamId": "L102"
+        },
+        {
+          "minute": 18,
+          "scorer": "Ezri Konsa",
+          "teamId": "L102"
+        },
+        {
+          "minute": 37,
+          "scorer": "Bukayo Saka",
+          "teamId": "L102"
+        },
+        {
+          "minute": 45,
+          "scorer": "Bukayo Saka",
+          "teamId": "L102",
+          "stoppageTime": 1
+        },
+        {
+          "minute": 48,
+          "scorer": "Kylian Mbappé",
+          "teamId": "L101"
+        },
+        {
+          "minute": 54,
+          "scorer": "Bradley Barcola",
+          "teamId": "L101"
+        },
+        {
+          "minute": 66,
+          "scorer": "Kylian Mbappé",
+          "teamId": "L101"
+        },
+        {
+          "minute": 87,
+          "scorer": "Bukayo Saka",
+          "teamId": "L102",
+          "penalty": true
+        },
+        {
+          "minute": 90,
+          "scorer": "Ousmane Dembélé",
+          "teamId": "L101",
+          "stoppageTime": 6
+        },
+        {
+          "minute": 90,
+          "scorer": "Jude Bellingham",
+          "teamId": "L102",
+          "stoppageTime": 8
+        }
+      ]
     },
     {
       "id": 104,

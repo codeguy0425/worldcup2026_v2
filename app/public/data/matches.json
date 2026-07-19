@@ -3900,6 +3900,74 @@
     "groundId": "miami",
     "num": 103,
     "stage": "third",
+    "score1": 4,
+    "score2": 6,
+    "goals": [
+      {
+        "minute": 3,
+        "scorer": "Declan Rice",
+        "teamId": "ENG",
+        "scorerNo": 4
+      },
+      {
+        "minute": 18,
+        "scorer": "Ezri Konsa",
+        "teamId": "ENG",
+        "scorerNo": 2
+      },
+      {
+        "minute": 37,
+        "scorer": "Bukayo Saka",
+        "teamId": "ENG",
+        "scorerNo": 7
+      },
+      {
+        "minute": 45,
+        "scorer": "Bukayo Saka",
+        "teamId": "ENG",
+        "stoppageTime": 1,
+        "scorerNo": 7
+      },
+      {
+        "minute": 48,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA",
+        "scorerNo": 10
+      },
+      {
+        "minute": 54,
+        "scorer": "Bradley Barcola",
+        "teamId": "FRA",
+        "scorerNo": 12
+      },
+      {
+        "minute": 66,
+        "scorer": "Kylian Mbappé",
+        "teamId": "FRA",
+        "scorerNo": 10
+      },
+      {
+        "minute": 87,
+        "scorer": "Bukayo Saka",
+        "teamId": "ENG",
+        "penalty": true,
+        "scorerNo": 7
+      },
+      {
+        "minute": 90,
+        "scorer": "Ousmane Dembélé",
+        "teamId": "FRA",
+        "stoppageTime": 6,
+        "scorerNo": 7
+      },
+      {
+        "minute": 90,
+        "scorer": "Jude Bellingham",
+        "teamId": "ENG",
+        "stoppageTime": 8,
+        "scorerNo": 10
+      }
+    ],
     "team1Original": "L101",
     "team2Original": "L102"
   },
