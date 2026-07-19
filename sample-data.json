@@ -4313,7 +4313,16 @@
       "group": "",
       "groundId": "new_york",
       "num": 104,
-      "stage": "final"
+      "stage": "final",
+      "score1": 1,
+      "score2": 0,
+      "goals": [
+        {
+          "minute": 106,
+          "scorer": "Ferran Torres",
+          "teamId": "W101"
+        }
+      ]
     }
   ],
   "bracket": {

@@ -495,6 +495,8 @@
         "team2Original": "W102",
         "team1Resolved": true,
         "team2Resolved": true,
+        "score1": 1,
+        "score2": 0,
         "groundId": "new_york"
       }
     ]

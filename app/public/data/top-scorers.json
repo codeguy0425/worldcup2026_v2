@@ -910,6 +910,16 @@
     "scorerNo": 23
   },
   {
+    "scorer": "Ferran Torres",
+    "teamId": "ESP",
+    "teamName": "Spain",
+    "flag": "🇪🇸",
+    "goals": 1,
+    "penalties": 0,
+    "rank": 9,
+    "scorerNo": 7
+  },
+  {
     "scorer": "Finn Surman",
     "teamId": "NZL",
     "teamName": "New Zealand",
