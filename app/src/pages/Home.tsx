@@ -151,6 +151,7 @@ export function HomePage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span style={{ fontSize: '20px' }}>{topScorer.flag}</span>
                   <span style={{ fontWeight: 600 }}>{topScorer.scorer}</span>
+                  {topScorer.scorerNo !== undefined && <span style={{ fontSize: '9px', color: 'var(--text-muted)' }}>#{topScorer.scorerNo}</span>}
                   <span style={{ color: 'var(--text-muted)' }}>—</span>
                   <span style={{ fontWeight: 700, fontSize: '16px', color: 'var(--accent)' }}>{topScorer.goals} {t.home.goals}</span>
                 </div>
