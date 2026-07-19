@@ -10,7 +10,7 @@ interface Match {
   score1?: number; score2?: number; timeUtc?: string; time?: string
   penalty1?: number; penalty2?: number
 }
-interface Team { id: string; name: string; flag: string }
+interface Team { id: string; name: string; nameZh: string; flag: string }
 
 interface TopScorer {
   scorer: string; teamId: string; teamName: string; flag: string
@@ -100,7 +100,7 @@ export function HomePage() {
           padding: '10px 14px', marginBottom: '20px', fontSize: '13px', fontWeight: 500,
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '6px',
         }}>
-          <span>🏆 Tournament ended</span>
+          <span>{t.home.tournamentEnded}</span>
         </div>
 
         {/* Quick links */}
@@ -134,10 +134,10 @@ export function HomePage() {
               🏆 {t.home.finalStandings}
             </div>
             <div style={{ padding: '10px 14px', fontSize: '13px', lineHeight: '2' }}>
-              <div>🥇 <strong>{t.round.champion}</strong>  {champion ? `${teamMap.get(champion)?.flag || ''} ${teamMap.get(champion)?.name || champion}` : '—'}</div>
-              <div>🥈 <strong>{t.round.runnerUp}</strong>  {runnerUp ? `${teamMap.get(runnerUp)?.flag || ''} ${teamMap.get(runnerUp)?.name || runnerUp}` : '—'}</div>
-              <div>🥉 <strong>{t.round.thirdPlace}</strong>  {thirdPlace ? `${teamMap.get(thirdPlace)?.flag || ''} ${teamMap.get(thirdPlace)?.name || thirdPlace}` : '—'}</div>
-              <div style={{ opacity: 0.6 }}>  <strong>{t.round.fourthPlace}</strong>  {fourthPlace ? `${teamMap.get(fourthPlace)?.flag || ''} ${teamMap.get(fourthPlace)?.name || fourthPlace}` : '—'}</div>
+              <div>🥇 <strong>{t.round.champion}</strong>  {champion ? `${teamMap.get(champion)?.flag || ''} ${t.lang === 'zh' ? teamMap.get(champion)?.nameZh || teamMap.get(champion)?.name : teamMap.get(champion)?.name || champion}` : '—'}</div>
+              <div>🥈 <strong>{t.round.runnerUp}</strong>  {runnerUp ? `${teamMap.get(runnerUp)?.flag || ''} ${t.lang === 'zh' ? teamMap.get(runnerUp)?.nameZh || teamMap.get(runnerUp)?.name : teamMap.get(runnerUp)?.name || runnerUp}` : '—'}</div>
+              <div>🥉 <strong>{t.round.thirdPlace}</strong>  {thirdPlace ? `${teamMap.get(thirdPlace)?.flag || ''} ${t.lang === 'zh' ? teamMap.get(thirdPlace)?.nameZh || teamMap.get(thirdPlace)?.name : teamMap.get(thirdPlace)?.name || thirdPlace}` : '—'}</div>
+              <div style={{ opacity: 0.6 }}>  <strong>{t.round.fourthPlace}</strong>  {fourthPlace ? `${teamMap.get(fourthPlace)?.flag || ''} ${t.lang === 'zh' ? teamMap.get(fourthPlace)?.nameZh || teamMap.get(fourthPlace)?.name : teamMap.get(fourthPlace)?.name || fourthPlace}` : '—'}</div>
             </div>
           </div>
 
@@ -177,11 +177,11 @@ export function HomePage() {
                     {viutvIds.has(m.id) && <span>📺</span>}
                   </span>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '7px', color: 'var(--text-muted)', fontWeight: 600, minWidth: '18px', textAlign: 'center', letterSpacing: '0.2px' }}>
-                    {m.stage === 'group' ? m.group : ({r32:'R32',r16:'R16',qf:'QF',sf:'SF',third:'3rd',final:'Final'})[m.stage] || ''}
+                    {m.stage === 'group' ? m.group : ({r32:t.round.r32,r16:t.round.r16,qf:t.round.qf,sf:t.round.sf,third:t.round.third,final:t.round.final})[m.stage] || ''}
                   </span>
-                  <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t1?.name || m.team1Id}</span>
+                  <span style={{ flex: 1, textAlign: 'right' }}>{t1?.flag || ''} {t.lang === 'zh' ? t1?.nameZh || t1?.name : t1?.name || m.team1Id}</span>
                   <span style={{ fontWeight: 700, fontSize: '12px', minWidth: '22px', textAlign: 'center' }}>{fmtScore(m)}</span>
-                  <span style={{ flex: 1 }}>{t2?.name || m.team2Id} {t2?.flag || ''}</span>
+                  <span style={{ flex: 1 }}>{t.lang === 'zh' ? t2?.nameZh || t2?.name : t2?.name || m.team2Id} {t2?.flag || ''}</span>
                 </Link>
               )
             })}
