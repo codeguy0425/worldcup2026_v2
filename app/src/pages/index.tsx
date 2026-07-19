@@ -781,7 +781,7 @@ export function MatchPage() {
             }
           }
           const cardIcon: Record<string, string> = { yellow: '🟡', 'second-yellow': '🔴', red: '🔴' }
-          const cardLabel: Record<string, string> = { yellow: '', 'second-yellow': ' (2Y)', red: ' (RC)' }
+          const cardLabel: Record<string, string> = { yellow: '', 'second-yellow': ' (2Y)', red: '' }
 
           function renderTeamSide(td: TeamDetail, side: 'left'|'right') {
             const isLeft = side === 'left'
